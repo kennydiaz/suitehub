@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const editions = [
+  {
+    key:        'lite',
+    name:       'Lite Edition',
+    tagline:    'Get started',
+    price:      19,
+    priceYearly: 190,
+    color:      'sky',
+    icon:       'fa-rocket',
+    ideal:      'Small business taking its first steps into digital — an independent practice, a small distributor, a freelancer with a steady client list.',
+    description:'The basics done right. Customers, products and services organized; quotes that look professional; invoices that meet basic DGI rules. No bloated features you will never use.',
+    limits: {
+      branches: 1, users: 3, records: 500, storage: '2 GB',
+    },
+    modules: [
+      { icon: 'fa-users',         name: 'Customers',      desc: 'Basic CRUD, search, filters' },
+      { icon: 'fa-screwdriver-wrench', name: 'Services', desc: 'Catalog of billable services' },
+      { icon: 'fa-boxes-stacked', name: 'Inventory',      desc: 'Products with manual stock' },
+      { icon: 'fa-file-invoice',  name: 'Quotes',         desc: 'Up to 50 quotes/month' },
+      { icon: 'fa-receipt',       name: 'Invoices',       desc: 'Up to 100 invoices/month (no e-invoicing)' },
+      { icon: 'fa-chart-line',    name: 'Reports',        desc: '6 pre-built reports with filters' },
+    ],
+    extras: ['Email support', 'Automatic updates', 'Daily backup'],
+  },
+  {
+    key:        'core',
+    name:       'Core Edition',
+    tagline:    'The essentials',
+    price:      49,
+    priceYearly: 490,
+    color:      'cyan',
+    icon:       'fa-bolt',
+    ideal:      'Established SME with 5-10 employees and 1 or 2 branches — the restaurant with two locations, the clinic with a main practice and a satellite, the regional distributor.',
+    description:'The edition that turns on DGI electronic invoicing with any of the 3 certified PACs (Digifact, HKA, Factura Fácil). Accounts receivable with multi-invoice receipts. Saved SQL reports for analytics. A second branch included.',
+    limits: {
+      branches: 2, users: 8, records: 5000, storage: '10 GB',
+    },
+    modules: [
+      { icon: 'fa-receipt',           name: 'DGI electronic invoicing', desc: '32 DGI rules verified, 0 production rejections' },
+      { icon: 'fa-hand-holding-dollar', name: 'AR with multi-invoice receipts', desc: 'One payment applied across several invoices' },
+      { icon: 'fa-file-invoice',      name: 'Quotes with conversion',   desc: 'Accepted quote → invoice in 1 click' },
+      { icon: 'fa-arrow-right-arrow-left', name: 'Inventory movements', desc: 'In, out, adjustments with audit trail' },
+      { icon: 'fa-chart-column',      name: 'Level 2 reports (SQL)',    desc: 'Admin writes saved SELECTs with whitelist' },
+      { icon: 'fa-file-pdf',          name: 'Editable PDF templates',   desc: 'Customize invoice, quote and receipt' },
+    ],
+    extras: ['Email + WhatsApp support', 'Installable PWA', 'Guided setup'],
+  },
+  {
+    key:        'pro',
+    name:       'Pro Edition',
+    tagline:    'Most popular',
+    price:      99,
+    priceYearly: 990,
+    color: 'brand',
+    featured:   true,
+    icon:       'fa-crown',
+    ideal:      'Mid-size SME with 15-30 employees and 3-5 branches — the workshop chain, the restaurant with 4 locations, the distributor with central warehouse + stores, the medical group with several practices.',
+    description:'The leap to professional. Real multi-branch with consolidation, scheduled automations (collection reminders, follow-ups), REST API to integrate with your accounting or e-commerce, WhatsApp Business to talk to customers from inside the system. Optional white-label.',
+    limits: {
+      branches: 5, users: 20, records: 50000, storage: '50 GB',
+    },
+    modules: [
+      { icon: 'fa-building',     name: 'Multi-branch',            desc: 'Inventory, sales and reports per branch or consolidated' },
+      { icon: 'fa-robot',        name: 'Automations',             desc: 'Collection reminders, follow-ups, stock alerts' },
+      { icon: 'fa-code',         name: 'REST API',                desc: '100,000 calls/month with OpenAPI 3.0' },
+      { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Meta-approved templates + automatic dispatch' },
+      { icon: 'fa-arrows-up-down-left-right', name: 'Inter-branch transfers', desc: 'Atomic double movement, audited' },
+      { icon: 'fa-chart-pie',    name: 'Level 3 reports (PDF)',   desc: 'Dynamic templates with editable placeholders' },
+    ],
+    extras: ['Priority support', 'Assisted onboarding (4h)', 'Initial training'],
+  },
+  {
+    key:        'enterprise',
+    name:       'Enterprise Edition',
+    tagline:    'No limits',
+    price:      199,
+    priceYearly: 1990,
+    color:      'amber',
+    icon:       'fa-trophy',
+    ideal:      'Large enterprise or chain with unlimited branches, 30+ users, integration with legacy systems and advanced audit requirements.',
+    description:'When your operation needs more than any standard "plan" offers. Full white-label (sell SuiteHub under your brand), unlimited API, 24/7 SLA, dedicated onboarding, support for custom integrations. AI-powered reports surface patterns your human reports never see.',
+    limits: {
+      branches: 'Unlimited', users: 50, records: 'Unlimited', storage: '200 GB',
+    },
+    modules: [
+      { icon: 'fa-brain',           name: 'AI-powered reports',       desc: 'Forecasting, anomalies, automatic insights' },
+      { icon: 'fa-palette',         name: 'Full white-label',         desc: 'Sell SuiteHub under your brand, domain and branding' },
+      { icon: 'fa-code-branch',     name: 'Unlimited API',            desc: 'No call cap, bidirectional webhooks' },
+      { icon: 'fa-headset',         name: '24/7 support',             desc: 'SLA with contractual response time' },
+      { icon: 'fa-graduation-cap',  name: 'Dedicated onboarding',     desc: 'Assigned SuiteHub consultant (in Panama via PROOQ), migration plan' },
+      { icon: 'fa-plug',            name: 'Custom integrations',      desc: 'Connection with the company’s legacy systems' },
+    ],
+    extras: ['Contractual SLA', 'Dedicated account manager', 'Geographic backup (Tier 3)'],
+  },
+];
+
+const colorMap = {
+  sky:    { bg: 'from-sky-500/10', border: 'border-sky-500/30', text: 'text-sky-400', dot: 'bg-sky-400' },
+  cyan:   { bg: 'from-cyan-500/10', border: 'border-cyan-500/30', text: 'text-cyan-400', dot: 'bg-cyan-400' },
+  brand: { bg: 'from-brand-500/15', border: 'border-brand-500/40', text: 'text-brand-300', dot: 'bg-brand-400' },
+  amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
+};
+---
+<BaseLayout title="Editions · SuiteHub" description="Four editions of SuiteHub: Lite ($19), Core ($49), Pro ($99), Enterprise ($199). Grow without migrating.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="eyebrow">The 4 editions</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          One platform. <span class="text-gradient">You choose</span> how much horsepower you need.
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed">
+          Same core, same flow, same data. Changing edition is moving a slider — not migrating to another system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {editions.map((ed, i) => {
+    const c = colorMap[ed.color];
+    return (
+      <section id={ed.key} class={`section relative ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
+        <div class="wrap">
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+            <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+              <div class={`text-xs uppercase tracking-wider ${c.text} font-semibold mb-3`}>
+                <i class={`fa-solid ${ed.icon} mr-1`}></i> {ed.tagline}
+              </div>
+              <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{ed.name}</h2>
+              <p class="text-base text-ink-300 leading-relaxed mb-3">{ed.description}</p>
+              <p class="text-sm text-ink-400 italic mb-6">
+                <strong class="text-ink-200">Ideal for:</strong> {ed.ideal}
+              </p>
+
+              <div class={`rounded-2xl border ${c.border} bg-gradient-to-b ${c.bg} to-transparent p-6 mb-6`}>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-5xl font-display font-bold">${ed.price}</span>
+                  <span class="text-base text-ink-400">/mo</span>
+                </div>
+                <p class={`text-sm ${c.text} mt-1`}>
+                  or ${ed.priceYearly} a year <span class="text-ink-500">(16% off)</span>
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Branches</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.branches}</div>
+                </div>
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Users</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.users}</div>
+                </div>
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Records</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.records}</div>
+                </div>
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Storage</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.storage}</div>
+                </div>
+              </div>
+
+              <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(ed.name)}`}
+                 target="_blank" rel="noopener" class="btn-primary w-full">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Get a quote for {ed.name}
+              </a>
+            </div>
+
+            <div class="lg:col-span-7">
+              <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Modules included</h3>
+              <div class="grid sm:grid-cols-2 gap-3">
+                {ed.modules.map(m => (
+                  <div class="card-glass p-5 flex items-start gap-3 hover:border-white/15 transition-colors">
+                    <div class={`w-10 h-10 rounded-lg flex items-center justify-center ${c.text} bg-white/5 flex-shrink-0`}>
+                      <i class={`fa-solid ${m.icon}`}></i>
+                    </div>
+                    <div>
+                      <div class="font-display font-semibold text-sm">{m.name}</div>
+                      <div class="text-xs text-ink-400 mt-1 leading-relaxed">{m.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                {ed.extras.map(x => (
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full bg-white/5 border border-white/10 text-ink-300">
+                    <span class={`w-1.5 h-1.5 rounded-full ${c.dot}`}></span>
+                    {x}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass gradient-border p-10 lg:p-14 text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
+          Not sure <span class="text-gradient">which one to pick</span>?
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          Check the <a href="/en/pricing" class="text-brand-400 hover:text-brand-300">full comparison table</a> or chat with us for 10 minutes on WhatsApp and we'll recommend the right fit for your business.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/en/pricing" class="btn-secondary"><i class="fa-solid fa-table-list"></i> See comparison table</a>
+          <a href="https://wa.me/50766326006?text=Hello%2C%20I%27m%20not%20sure%20which%20edition%20fits" target="_blank" rel="noopener" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Get a recommendation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

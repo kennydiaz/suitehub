@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const updated = '2 de mayo de 2026';
+---
+<BaseLayout title="Términos y condiciones · SuiteHub" description="Términos y condiciones del servicio SuiteHub, operado en Panamá por PROOQ S.A. como partner oficial.">
+
+  <section class="section">
+    <div class="wrap max-w-3xl">
+      <span class="eyebrow">Documento legal</span>
+      <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4">Términos y condiciones</h1>
+      <p class="text-sm text-ink-400 mb-12">Última actualización: {updated}</p>
+
+      <article class="prose-legal space-y-6 text-ink-300 leading-relaxed">
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">1. Acerca de este acuerdo</h2>
+          <p>
+            Estos términos rigen la relación entre <strong class="text-white">SuiteHub</strong> ("SuiteHub", "nosotros") y
+            la empresa o persona natural que contrata el servicio ("Cliente", "tú"). En la República de Panamá, SuiteHub
+            es operado por su partner oficial <strong class="text-white">PROOQ S.A.</strong>, quien actúa como contraparte
+            contractual local.
+          </p>
+          <p>
+            Al contratar SuiteHub en cualquiera de sus ediciones (Lite, Core, Pro, Enterprise) aceptas estos términos.
+            Si no estás de acuerdo, no uses el servicio.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">2. El servicio</h2>
+          <p>
+            SuiteHub es una plataforma SaaS (software-as-a-service) para gestión empresarial. Las funcionalidades
+            incluidas dependen de la edición contratada — la <a href="/precios" class="text-brand-400 hover:text-brand-300">tabla comparativa de precios</a> es parte integrante de este acuerdo.
+          </p>
+          <p>
+            Garantizamos disponibilidad mensual:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong class="text-white">Lite y Core</strong>: 99.0% (objetivo, sin SLA contractual).</li>
+            <li><strong class="text-white">Pro</strong>: 99.5% (objetivo, sin SLA contractual).</li>
+            <li><strong class="text-white">Enterprise</strong>: 99.9% con SLA contractual y créditos por incumplimiento.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">3. Pago y facturación</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>El precio publicado en <a href="/precios" class="text-brand-400 hover:text-brand-300">/precios</a> es el vigente al momento de contratar.</li>
+            <li>Cobro mensual o anual (con 16% descuento) según elijas. Renovación automática hasta cancelación.</li>
+            <li>Métodos: ACH, Yappy, tarjeta de crédito, depósito bancario. Enterprise puede pagar contra factura a 30 días.</li>
+            <li>Si pagas anual y cancelas a mitad de año, no hay reembolso del tiempo no usado, salvo Enterprise con cláusula contractual diferente.</li>
+            <li>El IVA / ITBMS panameño se incluye en las facturas según corresponda.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">4. Propiedad de los datos</h2>
+          <p>
+            <strong class="text-white">Tus datos son tuyos.</strong> Nosotros somos custodios. Esto incluye:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Información de tus clientes, proveedores y empleados.</li>
+            <li>Facturas, cotizaciones, recibos generados.</li>
+            <li>Reportes guardados, plantillas PDF, configuración.</li>
+          </ul>
+          <p>
+            Al cancelar el servicio, te entregamos un export completo (formato JSON, CSV o SQL según edición)
+            durante un período de gracia de <strong class="text-white">30 días</strong>. Pasado ese plazo, eliminamos
+            definitivamente los datos salvo lo que regulación panameña obligue retener (FE DGI: 5 años).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">5. Tu responsabilidad</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Mantener la confidencialidad de las credenciales de tu cuenta.</li>
+            <li>Garantizar que la información que cargues a SuiteHub sea verídica y cumpla con la ley panameña.</li>
+            <li>No usar el servicio para actividades ilícitas (lavado de activos, evasión fiscal, fraude).</li>
+            <li>Mantener al día tu información de contacto y método de pago.</li>
+            <li>Cumplir con la regulación DGI al emitir facturación electrónica — SuiteHub facilita el flujo, pero la responsabilidad fiscal es tuya.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">6. Nuestra responsabilidad y límites</h2>
+          <p>
+            <strong class="text-white">Responsabilidad limitada</strong>: nuestra responsabilidad máxima ante cualquier reclamo
+            está limitada al monto pagado por ti durante los <strong class="text-white">12 meses anteriores</strong> al evento que dio origen al reclamo.
+          </p>
+          <p>
+            <strong class="text-white">Exclusiones</strong>: no nos hacemos responsables de:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Pérdida de datos por causas de fuerza mayor o decisiones del Cliente (eliminación accidental).</li>
+            <li>Interrupciones causadas por terceros (Hostinger, PAC, internet del Cliente).</li>
+            <li>Daños indirectos, lucro cesante, pérdida de oportunidad comercial.</li>
+            <li>Multas o sanciones DGI causadas por información incorrecta cargada por el Cliente.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">7. Cancelación y suspensión</h2>
+          <p>
+            <strong class="text-white">Tú puedes cancelar</strong> tu suscripción en cualquier momento desde el panel de admin
+            o escribiendo a <a href="mailto:info@suitehub.net" class="text-brand-400 hover:text-brand-300">info@suitehub.net</a>.
+            La cancelación toma efecto al final del período de facturación en curso.
+          </p>
+          <p>
+            <strong class="text-white">Nosotros podemos suspender</strong> el servicio si:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Hay impago de más de <strong class="text-white">15 días</strong> tras la fecha de vencimiento.</li>
+            <li>Detectamos uso indebido (hacking, abuso de API, actividad ilícita).</li>
+            <li>Lo exija una autoridad judicial o regulatoria.</li>
+          </ul>
+          <p>
+            Antes de cualquier suspensión por impago, te avisamos con al menos 7 días de anticipación.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">8. Cambios al servicio y a estos términos</h2>
+          <p>
+            Podemos actualizar funcionalidades, mejorar el sistema o cambiar precios. Para cambios materiales (precio o funciones eliminadas)
+            avisamos con al menos <strong class="text-white">30 días</strong> de anticipación. Si no estás de acuerdo, puedes cancelar sin penalidad.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">9. Propiedad intelectual</h2>
+          <p>
+            SuiteHub, sus logos, código y documentación son propiedad exclusiva de SuiteHub. PROOQ S.A. opera el servicio
+            en Panamá bajo licencia como partner oficial. Tu suscripción te otorga una licencia limitada, no exclusiva e
+            intransferible para usar el servicio durante el plazo contratado.
+          </p>
+          <p>
+            En la edición Enterprise con white-label, la licencia incluye derecho a presentarlo bajo tu marca, pero no a revenderlo a terceros sin contrato adicional.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">10. Jurisdicción y ley aplicable</h2>
+          <p>
+            Este acuerdo se rige por las leyes de la República de Panamá. Cualquier controversia será resuelta
+            en los tribunales ordinarios de la Ciudad de Panamá, salvo que exista cláusula contractual de
+            arbitraje en contratos Enterprise específicos.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-display font-semibold text-white mb-3">11. Contacto</h2>
+          <div class="card-glass p-5 not-italic text-sm space-y-1.5">
+            <div><strong class="text-white">SuiteHub</strong></div>
+            <div class="text-ink-400">Operado en Panamá por <strong class="text-white">PROOQ S.A.</strong> (partner oficial)</div>
+            <div><i class="fa-solid fa-location-dot text-brand-400 w-5"></i> Vía Argentina, Bella Vista, Ciudad de Panamá</div>
+            <div><i class="fa-solid fa-envelope text-brand-400 w-5"></i> <a href="mailto:info@suitehub.net" class="hover:text-white">info@suitehub.net</a></div>
+            <div><i class="fa-brands fa-whatsapp text-brand-400 w-5"></i> <a href="https://wa.me/50766326006" class="hover:text-white">+507 6632-6006</a></div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .prose-legal h2 { @apply scroll-mt-24; }
+  .prose-legal p, .prose-legal ul { @apply text-base; }
+</style>

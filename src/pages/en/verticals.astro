@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const verticals = [
+  {
+    key:    'taller',
+    name:   'HUB Workshop',
+    icon:   'fa-screwdriver-wrench',
+    logo:   '/images/products/taller/dark-600.png',
+    sector: 'Auto-repair shops',
+    short:  'For mechanic shops, quick-service centers and diagnostic centers.',
+    pitch:  'Quick vehicle intake, work orders with services and parts, online booking, vehicle + customer linked, direct e-invoicing.',
+    features: [
+      { icon: 'fa-bolt',           name: 'Quick intake',         desc: 'Capture plate, customer and complaint in 30 seconds' },
+      { icon: 'fa-clipboard-list', name: 'Work orders',          desc: 'Services + parts + time + status' },
+      { icon: 'fa-calendar-days',  name: 'Online booking',       desc: 'Customer books on the web, you confirm' },
+      { icon: 'fa-car',            name: 'Vehicle history',      desc: 'Past services, mileage, upcoming reviews' },
+      { icon: 'fa-tools',          name: 'Service catalog',      desc: 'Prices, duration, assignable technicians' },
+      { icon: 'fa-receipt',        name: 'Electronic invoicing', desc: 'DGI Panama with CUFE and QR' },
+    ],
+    client: 'QS Express — Auto-repair shop in La Chorrera',
+  },
+  {
+    key:    'restaurant',
+    name:   'HUB Restaurant',
+    icon:   'fa-utensils',
+    logo:   '/images/products/restaurant/dark-600.png',
+    sector: 'Restaurants and bars',
+    short:  'For restaurants, cafés, bars and food trucks.',
+    pitch:  'Live table state, orders fired to kitchen and bar, KDS, split bills, tips, delivery integration, shift reports.',
+    features: [
+      { icon: 'fa-table',          name: 'Live tables',          desc: 'Floor map, free/occupied/check requested' },
+      { icon: 'fa-fire',           name: 'Kitchen display (KDS)', desc: 'Order separated by station: kitchen, bar, dessert' },
+      { icon: 'fa-users-rectangle', name: 'Split bills',         desc: 'Per person, per item, mixed' },
+      { icon: 'fa-percent',        name: 'Tips and discounts',   desc: 'Configurable per table or ticket' },
+      { icon: 'fa-motorcycle',     name: 'Delivery',             desc: 'Orders via WhatsApp/web → straight to kitchen' },
+      { icon: 'fa-chart-line',     name: 'Shift reports',        desc: 'Cash close, top dishes, server of the day' },
+    ],
+  },
+  {
+    key:    'pos',
+    name:   'HUB POS',
+    icon:   'fa-cash-register',
+    logo:   '/images/products/pos/dark-600.png',
+    sector: 'Retail point of sale',
+    short:  'For physical stores, mini-markets, boutiques and multi-branch retail.',
+    pitch:  'Register with barcode scanner, real-time inventory control, cash close with reconciliation, returns, customer loyalty.',
+    features: [
+      { icon: 'fa-barcode',        name: 'Barcode scanner',      desc: 'USB or Bluetooth, search by code or name' },
+      { icon: 'fa-warehouse',      name: 'Real-time stock',      desc: 'Every sale decrements inventory instantly' },
+      { icon: 'fa-cash-register',  name: 'Cash close',           desc: 'Per-shift reconciliation, audited differences' },
+      { icon: 'fa-rotate-left',    name: 'Returns',              desc: 'With or without ticket, refund to original method' },
+      { icon: 'fa-id-card',        name: 'Loyalty',              desc: 'Points, recurring-customer discounts' },
+      { icon: 'fa-print',          name: 'Configurable receipts', desc: 'Logo, message, e-invoicing QR' },
+    ],
+  },
+  {
+    key:    'pet',
+    name:   'HUB Pet',
+    icon:   'fa-paw',
+    logo:   '/images/products/pet/dark-600.png',
+    sector: 'Veterinarians and pet shops',
+    short:  'For vet clinics, dog grooming and pet shops.',
+    pitch:  'Digital medical record per pet, automatic vaccine and deworming reminders, owner + pet booking, regulated veterinary products.',
+    features: [
+      { icon: 'fa-file-medical',   name: 'Digital medical record', desc: 'Full history, vaccines, allergies, weight' },
+      { icon: 'fa-bell',           name: 'Automatic reminders',  desc: 'Upcoming vaccine, deworming, checkup' },
+      { icon: 'fa-calendar-check', name: 'Owner + pet booking',  desc: 'Vet, grooming, hospitalization' },
+      { icon: 'fa-prescription',   name: 'Prescriptions with stock', desc: 'Drug + regulated-sales control' },
+      { icon: 'fa-camera',         name: 'Pet gallery',          desc: 'Before/after photos, X-rays' },
+    ],
+  },
+  {
+    key:    'beauty',
+    name:   'HUB Beauty',
+    icon:   'fa-spa',
+    logo:   '/images/products/beauty/dark.svg',
+    sector: 'Beauty salons, spas, barbershops',
+    short:  'For salons, spas, barbershops and aesthetic centers.',
+    pitch:  'Online booking by service and stylist, commissions per stylist, retail products + services, SMS/WhatsApp reminders.',
+    features: [
+      { icon: 'fa-calendar-day',   name: 'Online booking',       desc: 'Customer picks service, time and professional' },
+      { icon: 'fa-percent',        name: 'Stylist commissions',  desc: 'Automatic calculation per service or product' },
+      { icon: 'fa-shopping-bag',   name: 'Products + services',  desc: 'Combined sale on a single ticket' },
+      { icon: 'fa-bell',           name: 'WhatsApp reminders',   desc: 'Confirm attendance 24h ahead' },
+    ],
+  },
+  {
+    key:    'clinic',
+    name:   'HUB Clinic',
+    icon:   'fa-stethoscope',
+    logo:   '/images/products/clinic/dark.svg',
+    sector: 'Practices and clinics',
+    short:  'For medical and dental practices and multi-specialty clinics.',
+    pitch:  'Digital clinical record, doctor schedule, electronic prescriptions, patient history, billing to insurers.',
+    features: [
+      { icon: 'fa-notes-medical',  name: 'Digital records',      desc: 'SOAP, history, vital signs' },
+      { icon: 'fa-calendar-days',  name: 'Multi-doctor schedule', desc: 'Per specialist, room, equipment' },
+      { icon: 'fa-prescription-bottle-medical', name: 'Digital prescriptions', desc: 'Signed PDF or printed, regulated control' },
+      { icon: 'fa-shield-heart',   name: 'Health insurance',     desc: 'Billing to insurers with codes' },
+    ],
+  },
+  {
+    key:    'gym',
+    name:   'HUB Gym',
+    icon:   'fa-dumbbell',
+    logo:   '/images/products/gym/dark.svg',
+    sector: 'Gyms, crossfit, yoga',
+    short:  'For gyms, crossfit boxes, yoga studios and sports centers.',
+    pitch:  'Monthly/annual memberships, QR access control, classes with capacity caps, assignable trainers, churn alerts.',
+    features: [
+      { icon: 'fa-id-card',        name: 'Memberships',          desc: 'Recurring billing, freeze, suspend' },
+      { icon: 'fa-qrcode',         name: 'Access control',       desc: 'Customer enters by scanning QR from their app' },
+      { icon: 'fa-people-group',   name: 'Capacity classes',     desc: 'Online booking, waitlist' },
+      { icon: 'fa-chart-line',     name: 'Retention',            desc: 'Alert if a member misses 14 days' },
+    ],
+  },
+  {
+    key:    'lavanderia',
+    name:   'HUB Laundry',
+    icon:   'fa-soap',
+    logo:   '/images/products/lavanderia/dark.svg',
+    sector: 'Professional laundries',
+    short:  'For laundries, dry cleaners and ironing services.',
+    pitch:  'Receipt with pickup code, process stage (wash/dry/iron), price by kilo or by item, ready-when-done reminder.',
+    features: [
+      { icon: 'fa-receipt',        name: 'Receipt with code',    desc: 'Customer picks up with their unique code' },
+      { icon: 'fa-spinner',        name: 'Process stages',       desc: 'Received → washed → dried → ready' },
+      { icon: 'fa-weight-hanging', name: 'Per kilo or per item', desc: 'Configurable per service' },
+      { icon: 'fa-mobile-screen',  name: 'WhatsApp notice',      desc: 'Auto-message when ready' },
+    ],
+  },
+  {
+    key:    'inmobiliaria',
+    name:   'HUB Real Estate',
+    icon:   'fa-building',
+    logo:   '/images/products/inmobiliaria/dark.svg',
+    sector: 'Real estate',
+    short:  'For real estate agencies and small developers.',
+    pitch:  'Property portfolio, leads with pipeline stages, rental contracts with recurring billing, agents with commissions.',
+    features: [
+      { icon: 'fa-house',          name: 'Property catalog',     desc: 'Photos, video, price, status' },
+      { icon: 'fa-funnel-dollar',  name: 'Lead pipeline',        desc: 'Interested → visit → offer → close' },
+      { icon: 'fa-file-contract',  name: 'Rental contracts',     desc: 'Auto-monthly billing, deposits' },
+      { icon: 'fa-handshake',      name: 'Agent commissions',    desc: 'Per closed sale or managed rental' },
+    ],
+  },
+  {
+    key:    'hotel',
+    name:   'HUB Hotel',
+    icon:   'fa-hotel',
+    logo:   '/images/products/hotel/dark.svg',
+    sector: 'Boutique hotels and hostels',
+    short:  'For boutique hotels, hostels, glampings and B&Bs.',
+    pitch:  'Room calendar, reservations per channel (Booking/Airbnb/direct), check-in/out with invoice, minibar consumption, housekeeping.',
+    features: [
+      { icon: 'fa-calendar',       name: 'Tape chart',           desc: 'Calendar view of occupancy per room' },
+      { icon: 'fa-bell-concierge', name: 'Check-in / out',       desc: 'Passport, digital signature, instant invoice' },
+      { icon: 'fa-bed',            name: 'Housekeeping',         desc: 'Room status: clean/dirty/inspection' },
+      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Sync with Booking, Airbnb, Expedia (Pro+)' },
+    ],
+  },
+  {
+    key:    'phone',
+    name:   'HUB Phone',
+    icon:   'fa-mobile-screen',
+    logo:   '/images/products/phone/dark-600.png',
+    sector: 'Phone repair shops',
+    short:  'For phone, tablet and laptop repair shops.',
+    pitch:  'Device intake with diagnosis, quote per damage, parts linked to the order, digital warranty, ticket with code.',
+    features: [
+      { icon: 'fa-magnifying-glass', name: 'Initial diagnosis',  desc: 'Model, visible damage, password, accessories' },
+      { icon: 'fa-money-bill-trend-up', name: 'Customer quote',  desc: 'Approve and proceed / decline and return' },
+      { icon: 'fa-microchip',      name: 'Linked parts',         desc: 'Stock decrements when installed' },
+      { icon: 'fa-shield',         name: 'Digital warranty',     desc: 'PDF with QR for later claims' },
+    ],
+  },
+  {
+    key:    'traffic',
+    name:   'HUB Traffic',
+    icon:   'fa-people-arrows',
+    logo:   '/images/products/traffic/dark-600.png',
+    sector: 'Footfall analytics and shopper behavior',
+    short:  'For retail stores, malls, brick-and-mortar locations and high-traffic venues.',
+    pitch:  'Automatic people counting, zone heatmaps, dwell time, visit-to-sale conversion cross-referenced with your POS, hour/day comparisons and real-time capacity alerts.',
+    features: [
+      { icon: 'fa-people-line',     name: 'People counting',      desc: 'Real-time ins and outs via sensor or camera' },
+      { icon: 'fa-fire',            name: 'Heatmaps',             desc: 'Hot and cold zones by hour, day, week' },
+      { icon: 'fa-stopwatch',       name: 'Dwell time',           desc: 'Average time people spend in each zone' },
+      { icon: 'fa-arrow-trend-up',  name: 'Visit→sale conversion', desc: 'Cross-reference with HUB POS to measure real close rate' },
+      { icon: 'fa-chart-column',    name: 'Comparisons',          desc: 'Peak hour, busiest day, peaks vs. average' },
+      { icon: 'fa-bell',            name: 'Capacity alerts',      desc: 'Alert when the people limit is exceeded' },
+    ],
+  },
+];
+---
+<BaseLayout title="Verticals · SuiteHub" description="12 specialized SuiteHub verticals: HUB Workshop, Restaurant, POS, Pet, Beauty, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="eyebrow">12 specialized verticals</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          SuiteHub <span class="text-gradient">for your industry</span>, not generic.
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed">
+          Each vertical inherits the SuiteHub core and adds the flows, jargon and screens
+          your industry needs. No paying for features from another industry you'll never use.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Index -->
+  <section class="pb-12">
+    <div class="wrap">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        {verticals.map(v => (
+          <a href={`#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors">
+            <div class="w-9 h-9 mx-auto rounded-lg bg-brand-600/15 text-brand-400 flex items-center justify-center mb-2 group-hover:bg-brand-600/25 transition-colors">
+              <i class={`fa-solid ${v.icon}`}></i>
+            </div>
+            <div class="text-xs font-display font-semibold">{v.name}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Each vertical in detail -->
+  {verticals.map((v, i) => (
+    <section id={v.key} class={`section ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
+      <div class="wrap">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+          <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+            {v.logo ? (
+              <img src={v.logo} alt={v.name} class="h-20 w-auto mb-6" />
+            ) : (
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-3xl mb-6 shadow-glow-sm">
+                <i class={`fa-solid ${v.icon}`}></i>
+              </div>
+            )}
+            <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold mb-2">{v.sector}</div>
+            <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{v.name}</h2>
+            <p class="text-base text-ink-300 leading-relaxed mb-6">{v.pitch}</p>
+
+            {v.client && (
+              <div class="card-glass p-4 mb-6">
+                <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">
+                  <i class="fa-solid fa-circle-check"></i> In production
+                </div>
+                <div class="text-sm text-ink-200">{v.client}</div>
+              </div>
+            )}
+
+            <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(v.name)}`}
+               target="_blank" rel="noopener" class="btn-primary">
+              <i class="fa-brands fa-whatsapp"></i>
+              Ask about {v.name}
+            </a>
+          </div>
+
+          <div class="lg:col-span-7">
+            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Vertical-specific features</h3>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {v.features.map(f => (
+                <div class="card-glass p-5 hover:border-white/15 transition-colors">
+                  <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-400 bg-white/5 flex-shrink-0">
+                      <i class={`fa-solid ${f.icon}`}></i>
+                    </div>
+                    <div>
+                      <div class="font-display font-semibold text-sm">{f.name}</div>
+                      <div class="text-xs text-ink-400 mt-1 leading-relaxed">{f.desc}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="mt-6 text-xs text-ink-500">
+              + All SuiteHub core features depending on the edition you pick.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass gradient-border text-center p-10 lg:p-14 max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
+          Is your industry <span class="text-gradient">not on the list</span>?
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          If your industry has 50+ potential businesses in Panama, we can build a specific vertical for you.
+          Tell us on WhatsApp and we'll evaluate.
+        </p>
+        <a href="https://wa.me/50766326006?text=My%20industry%20is%20...%20can%20you%20build%20a%20vertical%3F" target="_blank" rel="noopener" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Tell us about your industry
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

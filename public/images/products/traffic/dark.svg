@@ -1,0 +1,24 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <title>HUB TRAFFIC</title>
+  <polygon points="100,20 161.5,55 161.5,125 100,160 38.5,125 38.5,55" fill="#16263D"/>
+  <line x1="100" y1="90" x2="68" y2="70" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="100" y1="90" x2="132" y2="70" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="100" y1="90" x2="132" y2="110" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="100" y1="90" x2="68" y2="110" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="68" cy="70" r="5" fill="#6EE7B7"/>
+  <circle cx="132" cy="70" r="5" fill="#6EE7B7"/>
+  <circle cx="132" cy="110" r="5" fill="#6EE7B7"/>
+  <circle cx="68" cy="110" r="5" fill="#6EE7B7"/>
+  <circle cx="100" cy="90" r="11" fill="#FFFFFF"/>
+  <circle cx="100" cy="90" r="11" fill="none" stroke="#6EE7B7" stroke-width="2"/>
+  <path d="M116 0H469V617H1064V0H1416V1490H1064V905H469V1490H116Z" fill="#FFFFFF" transform="translate(200.00,105.00) scale(0.0410,-0.0410)"/>
+  <path d="M744 -19C1119 -19 1373 196 1373 529V1490H1020V558C1020 401 909 289 744 289C581 289 469 401 469 558V1490H116V529C116 196 367 -19 744 -19Z" fill="#FFFFFF" transform="translate(259.88,105.00) scale(0.0410,-0.0410)"/>
+  <path d="M116 0H780C1110 0 1297 176 1297 416C1297 632 1141 767 962 774V790C1124 823 1239 941 1239 1112C1239 1337 1067 1490 734 1490H116ZM469 285V647H704C843 647 929 572 929 456C929 350 855 285 697 285ZM469 876V1208H680C802 1208 879 1145 879 1045C879 938 793 876 674 876Z" fill="#FFFFFF" transform="translate(317.95,105.00) scale(0.0410,-0.0410)"/>
+  <path d="M83 1265H543V0H810V1265H1269V1490H83Z" fill="#6EE7B7" transform="translate(202.00,140.00) scale(0.0098,-0.0098)"/>
+  <path d="M150 0H417V547H695L988 0H1287L964 592C1140 662 1232 811 1232 1013C1232 1297 1050 1490 707 1490H150ZM417 768V1266H666C869 1266 959 1172 959 1013C959 855 869 768 668 768Z" fill="#6EE7B7" transform="translate(219.20,140.00) scale(0.0098,-0.0098)"/>
+  <path d="M50 0H342L464 369H1021L1148 0H1441L909 1490H570ZM535 584 598 774C639 907 684 1074 737 1282C792 1076 839 911 883 774L948 584Z" fill="#6EE7B7" transform="translate(236.25,140.00) scale(0.0098,-0.0098)"/>
+  <path d="M150 0H417V596H1037V818H417V1265H1104V1490H150Z" fill="#6EE7B7" transform="translate(254.80,140.00) scale(0.0098,-0.0098)"/>
+  <path d="M150 0H417V596H1037V818H417V1265H1104V1490H150Z" fill="#6EE7B7" transform="translate(270.56,140.00) scale(0.0098,-0.0098)"/>
+  <path d="M417 1490H150V0H417Z" fill="#6EE7B7" transform="translate(286.32,140.00) scale(0.0098,-0.0098)"/>
+  <path d="M785 -20C1137 -20 1373 211 1414 496H1144C1110 320 966 219 788 219C546 219 371 402 371 744C371 1082 545 1271 789 1271C967 1271 1111 1170 1144 994H1413C1366 1320 1112 1510 785 1510C396 1510 103 1226 103 744C103 264 393 -20 785 -20Z" fill="#6EE7B7" transform="translate(295.85,140.00) scale(0.0098,-0.0098)"/>
+</svg>

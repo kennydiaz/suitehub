@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const valores = [
+  {
+    icon: 'fa-bullseye',
+    title: 'Pragmáticos',
+    desc: 'No vendemos tecnología por moda. Cada función existe porque resuelve un dolor real medido en un cliente real.',
+  },
+  {
+    icon: 'fa-handshake',
+    title: 'Cercanos',
+    desc: 'Un WhatsApp y respondemos. Sin tickets, sin niveles de soporte. La PYME panameña no necesita protocolos corporativos.',
+  },
+  {
+    icon: 'fa-shield-halved',
+    title: 'Rigurosos',
+    desc: 'Facturación electrónica certificada DGI, código con tests automatizados, backups diarios. Tu operación no es un experimento.',
+  },
+  {
+    icon: 'fa-rocket',
+    title: 'Veloces',
+    desc: 'Setup en 24 horas. Cambios pequeños el mismo día. La PYME no puede esperar 6 meses de implementación corporativa.',
+  },
+];
+
+// TODO: confirmar año exacto de fundación de SuiteHub para reemplazar el placeholder.
+const hitos = [
+  {
+    year: '20XX',
+    title: 'Nace SuiteHub',
+    desc:  'Fundamos SuiteHub con una premisa clara: software empresarial hecho para la PYME panameña, no traducido de otro mercado.',
+  },
+  {
+    year: '20XX',
+    title: 'Alianza con PROOQ S.A.',
+    desc:  'Firmamos partnership con PROOQ S.A., empresa panameña con más de una década de experiencia en consultoría tecnológica, como representante oficial de SuiteHub en Panamá.',
+  },
+  {
+    year: '2026 Q1',
+    title: 'Primera factura electrónica DGI',
+    desc:  'QS Express emite la primera FE con SuiteHub. 0 rechazos en producción desde el día uno.',
+  },
+  {
+    year: '2026 Q2',
+    title: 'Lanzamiento de la familia HUB',
+    desc:  'Cuatro ediciones (Lite/Core/Pro/Enterprise) + 12 verticales especializados.',
+  },
+  {
+    year: 'Hoy',
+    title: '+30 PYMEs activas',
+    desc:  'Talleres, restaurantes, retail, clínicas, veterinarias y más facturando con SuiteHub en Panamá.',
+  },
+];
+---
+<BaseLayout title="Sobre nosotros · SuiteHub" description="SuiteHub es la suite empresarial hecha para la PYME panameña. En Panamá nos representa PROOQ S.A. como partner oficial.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="eyebrow">Nosotros</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          Software empresarial <span class="text-gradient">hecho en Panamá</span><br/>
+          para la PYME panameña.
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed">
+          SuiteHub es el resultado de más de una década entendiendo cómo opera el negocio panameño,
+          no un sistema gringo o español traducido.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiénes somos -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <span class="eyebrow">Quiénes somos</span>
+          <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
+            <span class="text-gradient">SuiteHub</span>, suite empresarial para la PYME panameña.
+          </h2>
+          <div class="space-y-4 text-ink-300 leading-relaxed">
+            <p>
+              <strong class="text-white">SuiteHub</strong> es una plataforma de gestión empresarial construida
+              específicamente para la PYME panameña, con foco en facturación electrónica DGI, multi-sucursal
+              y crecimiento sin migraciones.
+            </p>
+            <p>
+              No somos un revendedor de software gringo. Cada línea de código de SuiteHub se escribe pensando en
+              cómo factura un taller en La Chorrera, cómo opera un restaurante en Casco Viejo, cómo agenda una
+              clínica en Bella Vista.
+            </p>
+            <p>
+              En Panamá nos representa <strong class="text-white">PROOQ S.A.</strong>, partner oficial con más
+              de una década de experiencia en consultoría y desarrollo de software para empresas locales.
+              Ellos llevan adelante la implementación, soporte y onboarding en territorio panameño.
+            </p>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="card-glass p-8 lg:p-10">
+            <div class="grid grid-cols-2 gap-6">
+              <div>
+                <!-- TODO: reemplazar 20XX por el año real de fundación de SuiteHub -->
+                <div class="text-3xl font-display font-bold text-brand-400">20XX</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Fundación SuiteHub</div>
+              </div>
+              <div>
+                <div class="text-3xl font-display font-bold text-brand-400">+30</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">PYMEs activas</div>
+              </div>
+              <div>
+                <div class="text-3xl font-display font-bold text-brand-400">12</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Verticales</div>
+              </div>
+              <div>
+                <div class="text-3xl font-display font-bold text-brand-400">100%</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Panameño</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-400"></i>
+              Vía Argentina, Bella Vista, Panamá
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">
+          Cuatro principios <span class="text-gradient">que no negociamos.</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {valores.map(v => (
+          <div class="card-glass p-7">
+            <div class="w-12 h-12 rounded-xl bg-brand-600/15 text-brand-400 flex items-center justify-center text-xl mb-4">
+              <i class={`fa-solid ${v.icon}`}></i>
+            </div>
+            <h3 class="text-lg font-display font-semibold mb-2">{v.title}</h3>
+            <p class="text-sm text-ink-400 leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Línea de tiempo -->
+  <section class="section">
+    <div class="wrap max-w-3xl">
+      <div class="text-center mb-14">
+        <span class="eyebrow">Nuestro recorrido</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">
+          De los inicios a <span class="text-gradient">hoy.</span>
+        </h2>
+      </div>
+
+      <div class="relative">
+        <!-- Línea vertical -->
+        <div class="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500 via-brand-500/50 to-transparent"></div>
+
+        <ol class="space-y-8">
+          {hitos.map((h, i) => (
+            <li class={`relative pl-12 lg:pl-0 lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center ${i % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+              <!-- Dot -->
+              <div class="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-2 w-8 h-8 rounded-full bg-brand-600 ring-4 ring-navy-950 flex items-center justify-center">
+                <span class="w-2 h-2 rounded-full bg-white"></span>
+              </div>
+
+              <div class={`card-glass p-6 ${i % 2 === 0 ? 'lg:col-start-1 lg:text-right' : 'lg:col-start-2'}`}>
+                <div class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-2">{h.year}</div>
+                <h3 class="font-display font-semibold text-lg mb-2">{h.title}</h3>
+                <p class="text-sm text-ink-400 leading-relaxed">{h.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap max-w-3xl text-center">
+      <span class="eyebrow">El equipo</span>
+      <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
+        Pequeños, <span class="text-gradient">enfocados</span>, accesibles.
+      </h2>
+      <p class="text-ink-300 leading-relaxed mb-10">
+        Somos un equipo compacto: desarrollo, soporte y ventas. Cuando contratas SuiteHub, hablas con quien escribe el código,
+        no con un agente de un call center. En Panamá la implementación y soporte de primera línea la lleva
+        nuestro partner oficial PROOQ S.A. La proximidad es nuestra ventaja.
+      </p>
+      <div class="card-glass p-8 lg:p-10 inline-block">
+        <div class="text-sm text-ink-400 mb-3">¿Quieres conocer al equipo?</div>
+        <a href="https://wa.me/50766326006?text=Quiero%20conocer%20al%20equipo%20de%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Agenda una llamada
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass gradient-border text-center p-10 lg:p-14 max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
+          Construyamos algo <span class="text-gradient">juntos.</span>
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          Si tu PYME está lista para dar el salto digital, conversemos.
+          Te enseñamos SuiteHub en vivo y te ayudamos a decidir si encaja con tu operación.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/50766326006?text=Quiero%20conversar%20con%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="mailto:info@suitehub.net?subject=Quiero%20conocer%20SuiteHub" class="btn-secondary">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

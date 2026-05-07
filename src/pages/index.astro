@@ -1,0 +1,518 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const ediciones = [
+  {
+    key:    'lite',
+    name:   'Edición Lite',
+    tagline:'Empieza ya',
+    price:  19,
+    color:  'from-sky-500/20 to-sky-500/5',
+    border: 'border-sky-500/30',
+    accent: 'text-sky-400',
+    ideal:  'Negocio chico, 1 sucursal, hasta 3 usuarios',
+    features: [
+      'Clientes, productos, servicios',
+      'Cotizaciones y facturas básicas',
+      'Hasta 500 registros',
+      'Soporte por email',
+    ],
+  },
+  {
+    key:    'core',
+    name:   'Edición Core',
+    tagline:'Lo esencial',
+    price:  49,
+    color:  'from-cyan-500/20 to-cyan-500/5',
+    border: 'border-cyan-500/30',
+    accent: 'text-cyan-400',
+    ideal:  '2 sucursales, 8 usuarios, FE certificada',
+    features: [
+      'Todo de Lite +',
+      'Facturación electrónica DGI',
+      'CxC con recibos multi-factura',
+      'Inventario + movimientos',
+      'Reportes pre-armados',
+    ],
+  },
+  {
+    key:     'pro',
+    name:    'Edición Pro',
+    tagline: 'Más popular',
+    price:   99,
+    color:   'from-brand-600/30 to-brand-600/5',
+    border:  'border-brand-500/50',
+    accent:  'text-brand-300',
+    featured: true,
+    ideal:   'Hasta 5 sucursales, 20 usuarios, automatizaciones',
+    features: [
+      'Todo de Core +',
+      'Multi-sucursal con consolidación',
+      'API REST + 100K calls/mes',
+      'Automatizaciones programadas',
+      'WhatsApp Business integrado',
+      'Reportes SQL + plantillas PDF',
+    ],
+  },
+  {
+    key:    'enterprise',
+    name:   'Edición Enterprise',
+    tagline:'Sin límites',
+    price:  199,
+    color:  'from-amber-500/20 to-amber-500/5',
+    border: 'border-amber-500/30',
+    accent: 'text-amber-400',
+    ideal:  'Sucursales ilimitadas, 50 usuarios incluidos',
+    features: [
+      'Todo de Pro +',
+      'Reportes con IA',
+      'White-label completo',
+      'API ilimitada',
+      'Soporte prioritario 24/7',
+      'Onboarding dedicado',
+    ],
+  },
+];
+
+const verticales = [
+  { key: 'taller',     name: 'HUB Taller',     desc: 'Talleres mecánicos',         icon: 'fa-screwdriver-wrench' },
+  { key: 'restaurant', name: 'HUB Restaurant', desc: 'Restaurantes y bares',       icon: 'fa-utensils' },
+  { key: 'pos',        name: 'HUB POS',        desc: 'Punto de venta retail',      icon: 'fa-cash-register' },
+  { key: 'pet',        name: 'HUB Pet',        desc: 'Veterinarias y pet shops',   icon: 'fa-paw' },
+  { key: 'lavanderia', name: 'HUB Lavandería', desc: 'Lavanderías profesionales',  icon: 'fa-soap' },
+  { key: 'beauty',     name: 'HUB Beauty',     desc: 'Salones de belleza, spas',   icon: 'fa-spa' },
+  { key: 'clinic',     name: 'HUB Clinic',     desc: 'Consultorios y clínicas',    icon: 'fa-stethoscope' },
+  { key: 'gym',        name: 'HUB Gym',        desc: 'Gimnasios y crossfits',      icon: 'fa-dumbbell' },
+  { key: 'inmobiliaria', name: 'HUB Inmobiliaria', desc: 'Bienes raíces',          icon: 'fa-building' },
+  { key: 'hotel',      name: 'HUB Hotel',      desc: 'Hoteles boutique',           icon: 'fa-hotel' },
+  { key: 'phone',      name: 'HUB Phone',      desc: 'Reparación de celulares',    icon: 'fa-mobile-screen' },
+  { key: 'traffic',    name: 'HUB Traffic',    desc: 'Conteo y heatmaps en tienda', icon: 'fa-people-arrows' },
+];
+
+const pacs = [
+  {
+    name: 'Digifact',
+    desc: 'PAC certificado DGI con API moderna',
+    icon: 'fa-bolt',
+    color: 'text-brand-400',
+  },
+  {
+    name: 'The Factory HKA',
+    desc: 'Líder regional en facturación electrónica',
+    icon: 'fa-industry',
+    color: 'text-sky-400',
+  },
+  {
+    name: 'Factura Fácil',
+    desc: 'PAC panameño con foco en simplicidad',
+    icon: 'fa-receipt',
+    color: 'text-emerald-400',
+  },
+];
+
+const testimonios = [
+  {
+    quote: 'Cambiamos de un sistema viejo a Edición Pro y en una semana ya facturábamos electrónicamente sin un solo rechazo de DGI. La diferencia es brutal.',
+    author: 'Raúl Romero',
+    role:   'Técnico Principal — QS Express',
+    initial: 'R',
+    logo:    '/images/tallerqsexpress.png',
+  },
+  {
+    quote: 'Lo que más me gustó es que no tuve que cambiar mi forma de trabajar. El equipo de SuiteHub adaptó la plataforma a nuestro flujo, no al revés.',
+    author: 'Carmen Aguilar',
+    role:   'Gerente — Restaurante La Esquina',
+    initial: 'C',
+    logo:    null,
+  },
+  {
+    quote: 'Antes hacía cuentas por cobrar en Excel. Ahora veo los saldos vencidos en tiempo real y los recibos multi-factura me ahorraron horas semanales.',
+    author: 'Luis Fernández',
+    role:   'Contador — Distribuidora Tropical',
+    initial: 'L',
+    logo:    null,
+  },
+];
+
+const stats = [
+  { num: '+30',  label: 'PYMEs activas en Panamá' },
+  { num: '12',   label: 'Verticales especializadas' },
+  { num: '3',    label: 'PACs DGI integrados' },
+  { num: '<24h', label: 'Tiempo de respuesta soporte' },
+];
+---
+<BaseLayout
+  title="SuiteHub — Suite empresarial para tu PYME que sí escala"
+  description="SuiteHub es la plataforma de gestión panameña: facturación electrónica DGI (Digifact, HKA, Factura Fácil), multi-sucursal, automatizaciones, API. Disponible en español e inglés. Desde $19/mes.">
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-x-0 top-0 h-[600px] bg-radial-brand pointer-events-none" aria-hidden="true"></div>
+
+    <div class="wrap relative section">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="animate-fade-up">
+          <span class="eyebrow">
+            <i class="fa-solid fa-bolt mr-1"></i> Suite empresarial panameña · Hecha para PYMEs
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05] tracking-tight">
+            Suite empresarial<br/>
+            <span class="text-gradient">que sí escala</span><br/>
+            contigo.
+          </h1>
+          <p class="mt-6 text-lg text-ink-300 max-w-xl leading-relaxed">
+            SuiteHub es la plataforma de gestión construida para la PYME panameña:
+            <strong class="text-white">facturación electrónica DGI</strong>, multi-sucursal,
+            automatizaciones y API REST.
+            <span class="text-brand-300">Desde $19/mes.</span>
+          </p>
+
+          <!-- Idiomas badge -->
+          <div class="mt-5 inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300">
+            <i class="fa-solid fa-globe"></i>
+            Disponible en <strong class="text-white">Español</strong> e <strong class="text-white">Inglés</strong>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/50766326006?text=Hola%2C%20quiero%20una%20demo"
+               target="_blank" rel="noopener" class="btn-primary text-base">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              Hablar con ventas ahora
+            </a>
+            <a href="#tiers" class="btn-secondary text-base">
+              Ver ediciones y precios
+              <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-ink-400">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+              3 PACs certificados DGI
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-clock text-brand-400"></i>
+              Setup en 24h
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-headset text-brand-400"></i>
+              Soporte ES / EN
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual: logo SuiteHub GRANDE + cards de verticales debajo -->
+        <div class="relative animate-fade-in">
+          <div class="relative">
+            <!-- Glow orb -->
+            <div class="absolute -inset-12 bg-brand-600/20 rounded-full blur-3xl"></div>
+
+            <!-- Logo SuiteHub grande, centrado -->
+            <div class="relative card-glass p-3 lg:p-5 shadow-glow text-center mb-6">
+              <img src="/images/products/suite/dark-1200.png"
+                   alt="SuiteHub"
+                   class="w-full mx-auto" />
+            </div>
+
+            <!-- Las 4 ediciones (hijas de SuiteHub) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 relative">
+              <a href="/productos#lite" class="card-glass p-0.5 rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-transform">
+                <img src="/images/products/lite/dark-600.png" alt="HUB Lite" class="w-full" />
+              </a>
+              <a href="/productos#core" class="card-glass p-0.5 rotate-[-1deg] hover:rotate-0 hover:scale-105 transition-transform">
+                <img src="/images/products/core/dark-600.png" alt="HUB Core" class="w-full" />
+              </a>
+              <a href="/productos#pro" class="card-glass p-0.5 rotate-[1deg] hover:rotate-0 hover:scale-105 transition-transform">
+                <img src="/images/products/pro/dark-600.png" alt="HUB Pro" class="w-full" />
+              </a>
+              <a href="/productos#enterprise" class="card-glass p-0.5 rotate-[3deg] hover:rotate-0 hover:scale-105 transition-transform">
+                <img src="/images/products/enterprise/dark-600.png" alt="HUB Enterprise" class="w-full" />
+              </a>
+            </div>
+
+            <!-- Floating badge -->
+            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 card-glass px-5 py-3 flex items-center gap-3 shadow-2xl">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs font-medium">+30 negocios facturando hoy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="reveal mt-20 lg:mt-28 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+        {stats.map((s, i) => (
+          <div class={`reveal reveal-delay-${i + 1} bg-navy-950 p-6 lg:p-8 text-center`}>
+            <div class="text-3xl lg:text-4xl font-display font-bold text-white">{s.num}</div>
+            <div class="text-xs uppercase tracking-wider text-ink-400 mt-2">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       PACs INTEGRADOS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="py-16 sm:py-20 bg-navy-900/30 border-y border-white/5">
+    <div class="wrap">
+      <div class="text-center mb-10">
+        <span class="eyebrow">Facturación electrónica DGI</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold">
+          Integrados con los <span class="text-gradient">3 PACs certificados</span> de Panamá
+        </h2>
+        <p class="mt-3 text-sm text-ink-400 max-w-xl mx-auto">
+          Tú eliges con cuál PAC trabajar. SuiteHub se conecta directo y maneja todo el flujo XML, CUFE y QR sin que tengas que pensar en regulación.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        {pacs.map((p, i) => (
+          <div class={`reveal reveal-delay-${i + 1} card-glass p-6 text-center hover:border-brand-500/30 transition-colors`}>
+            <div class={`w-12 h-12 mx-auto rounded-xl bg-white/5 flex items-center justify-center text-2xl mb-3 ${p.color}`}>
+              <i class={`fa-solid ${p.icon}`}></i>
+            </div>
+            <div class="font-display font-semibold text-base">{p.name}</div>
+            <p class="text-xs text-ink-400 mt-1.5">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       EDICIONES
+       ════════════════════════════════════════════════════════════ -->
+  <section id="tiers" class="section relative">
+    <div class="wrap">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <span class="eyebrow">La familia SuiteHub</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
+          Cuatro ediciones. <span class="text-gradient">Crece sin migrar.</span>
+        </h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">
+          Empieza con lo básico hoy y sube de edición cuando lo necesites — sin migrar datos,
+          sin reaprender, sin downtime. Mismo núcleo, más músculo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {ediciones.map((t, i) => (
+          <div class={`reveal reveal-delay-${i + 1} relative rounded-2xl border ${t.border} bg-gradient-to-b ${t.color} p-6 ${t.featured ? 'lg:scale-105 lg:-mt-2 shadow-glow' : ''}`}>
+            {t.featured && (
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-[10px] font-semibold uppercase tracking-wider rounded-full">
+                Más popular
+              </span>
+            )}
+            <div class={`text-xs uppercase tracking-wider ${t.accent} font-semibold mb-2`}>{t.tagline}</div>
+            <h3 class="text-2xl font-display font-bold mb-1">{t.name}</h3>
+            <p class="text-xs text-ink-400 mb-5 min-h-[36px]">{t.ideal}</p>
+            <div class="mb-6">
+              <span class="text-4xl font-display font-bold">${t.price}</span>
+              <span class="text-sm text-ink-400">/mes</span>
+            </div>
+            <ul class="space-y-2.5 mb-7 text-sm">
+              {t.features.map(f => (
+                <li class="flex items-start gap-2">
+                  <i class={`fa-solid fa-check ${t.accent} mt-1 text-xs`}></i>
+                  <span class="text-ink-200">{f}</span>
+                </li>
+              ))}
+            </ul>
+            <a href={`/productos#${t.key}`}
+               class={`block w-full text-center py-2.5 rounded-xl text-sm font-medium transition-colors ${t.featured ? 'bg-brand-600 hover:bg-brand-500 text-white' : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'}`}>
+              Ver detalles
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center mt-10 text-sm text-ink-400">
+        16% de descuento pagando anual · Setup gratuito · Sin contratos largos
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       VERTICALES
+       ════════════════════════════════════════════════════════════ -->
+  <section id="verticales" class="section bg-navy-900/50 relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-600/10 rounded-full blur-3xl"></div>
+
+    <div class="wrap relative">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <span class="eyebrow">Verticales especializados</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
+          SuiteHub hablada <span class="text-gradient">en tu idioma.</span>
+        </h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">
+          Cada industria tiene su jerga, su flujo, sus necesidades.
+          Tomamos SuiteHub y la afinamos para tu negocio específico — lista para usarse desde el día uno.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {verticales.map((v, i) => (
+          <a href={`/verticales#${v.key}`}
+             class={`reveal reveal-delay-${(i % 4) + 1} group card-glass p-5 hover:border-brand-500/30 hover:bg-white/[0.05] transition-all`}>
+            <div class="w-11 h-11 rounded-xl bg-brand-600/15 flex items-center justify-center text-brand-400 mb-4 group-hover:bg-brand-600/25 group-hover:text-brand-300 transition-colors">
+              <i class={`fa-solid ${v.icon} text-lg`}></i>
+            </div>
+            <h3 class="text-base font-display font-semibold mb-1">{v.name}</h3>
+            <p class="text-xs text-ink-400">{v.desc}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/verticales" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 text-sm font-medium">
+          Conoce todos los verticales <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CASO DE ÉXITO QS EXPRESS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass overflow-hidden grid lg:grid-cols-5 gap-0">
+        <div class="lg:col-span-3 p-10 lg:p-14 flex flex-col justify-center">
+          <span class="eyebrow">
+            <i class="fa-solid fa-star mr-1"></i> Caso de éxito
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
+            QS Express triplicó su <span class="text-gradient">capacidad operativa</span>
+          </h2>
+          <p class="text-ink-300 leading-relaxed mb-8">
+            Un taller mecánico en La Chorrera con 20+ años de experiencia migró desde
+            Excel y libretas. En 4 semanas ya estaban facturando electrónicamente,
+            agendando online y siguiendo cada orden de trabajo en tiempo real.
+          </p>
+
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div>
+              <div class="text-3xl font-display font-bold text-brand-400">3×</div>
+              <div class="text-xs text-ink-400 mt-1">Más órdenes/día</div>
+            </div>
+            <div>
+              <div class="text-3xl font-display font-bold text-brand-400">0</div>
+              <div class="text-xs text-ink-400 mt-1">Rechazos DGI</div>
+            </div>
+            <div>
+              <div class="text-3xl font-display font-bold text-brand-400">4 sem</div>
+              <div class="text-xs text-ink-400 mt-1">Para estar 100%</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="/casos#qs-express" class="btn-secondary">
+              Leer el caso completo <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="https://tallerqsexpress.com" target="_blank" rel="noopener"
+               class="btn-ghost text-sm">
+              Ver tallerqsexpress.com <i class="fa-solid fa-external-link text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual del caso -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-navy-800 to-navy-900 p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-white/5">
+          <div class="text-center">
+            <img src="/images/tallerqsexpress.png" alt="QS Express"
+                 class="w-32 mx-auto mb-4 rounded-xl bg-white/5 p-3" />
+            <img src="/images/products/taller/dark-600.png" alt="HUB Taller"
+                 class="w-40 mx-auto mb-4 opacity-90" />
+            <div class="text-sm text-ink-400">Taller mecánico — La Chorrera</div>
+            <div class="mt-4 inline-flex items-center gap-2 text-xs text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full">
+              <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+              Activo desde 2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       TESTIMONIOS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <span class="eyebrow">Lo que dicen los clientes</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
+          Construido <span class="text-gradient">junto a quienes lo usan.</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        {testimonios.map((t, i) => (
+          <figure class={`reveal reveal-delay-${i + 1} card-glass p-7 flex flex-col`}>
+            <div class="text-brand-400 text-2xl mb-4">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <blockquote class="text-ink-200 leading-relaxed flex-1 italic">
+              "{t.quote}"
+            </blockquote>
+            <figcaption class="mt-6 pt-6 border-t border-white/5 flex items-center gap-3">
+              {t.logo ? (
+                <img src={t.logo} alt={t.author} class="w-10 h-10 rounded-full bg-white/10 object-contain p-1" />
+              ) : (
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-sm">
+                  {t.initial}
+                </div>
+              )}
+              <div>
+                <div class="text-sm font-medium text-white">{t.author}</div>
+                <div class="text-xs text-ink-400">{t.role}</div>
+              </div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CTA FINAL
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section relative overflow-hidden">
+    <div class="absolute inset-0 bg-radial-brand pointer-events-none"></div>
+
+    <div class="wrap relative">
+      <div class="card-glass gradient-border text-center p-12 lg:p-16 max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-5">
+          Te ayudamos a <span class="text-gradient">empezar hoy.</span>
+        </h2>
+        <p class="text-ink-300 max-w-xl mx-auto leading-relaxed mb-10">
+          Conversemos por WhatsApp y te muestro SuiteHub en vivo en menos de 15 minutos.
+          Sin compromiso, sin formularios eternos.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/50766326006?text=Hola%2C%20quiero%20agendar%20una%20demo"
+             target="_blank" rel="noopener"
+             class="btn-primary text-base px-8">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            Hablar por WhatsApp
+          </a>
+          <a href="mailto:info@suitehub.net?subject=Quiero%20conocer%20SuiteHub"
+             class="btn-secondary text-base px-8">
+            <i class="fa-solid fa-envelope"></i>
+            Escribir por email
+          </a>
+        </div>
+        <p class="mt-8 text-xs text-ink-500">
+          O llámanos al <a href="tel:+50766326006" class="text-ink-300 hover:text-white">+507 6632-6006</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

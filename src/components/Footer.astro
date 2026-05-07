@@ -1,0 +1,115 @@
+---
+import { getLocaleFromUrl, useTranslations, localizedHref } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+
+const productsHref  = localizedHref('products', locale);
+const verticalsHref = localizedHref('verticals', locale);
+const casesHref     = localizedHref('cases', locale);
+const pricingHref   = localizedHref('pricing', locale);
+const aboutHref     = localizedHref('about', locale);
+const contactHref   = localizedHref('contact', locale);
+const privacyHref   = localizedHref('privacy', locale);
+const termsHref     = localizedHref('terms', locale);
+
+const cols = [
+  {
+    title: t('footer.col.product'),
+    links: [
+      { label: t('footer.editions.lite'),       href: `${productsHref}#lite` },
+      { label: t('footer.editions.core'),       href: `${productsHref}#core` },
+      { label: t('footer.editions.pro'),        href: `${productsHref}#pro` },
+      { label: t('footer.editions.enterprise'), href: `${productsHref}#enterprise` },
+    ],
+  },
+  {
+    title: t('footer.col.verticals'),
+    links: [
+      { label: t('footer.verticals.workshop'),   href: `${verticalsHref}#taller` },
+      { label: t('footer.verticals.restaurant'), href: `${verticalsHref}#restaurant` },
+      { label: t('footer.verticals.pos'),        href: `${verticalsHref}#pos` },
+      { label: t('footer.verticals.all'),        href: verticalsHref },
+    ],
+  },
+  {
+    title: t('footer.col.company'),
+    links: [
+      { label: t('footer.company.cases'),   href: casesHref },
+      { label: t('footer.company.pricing'), href: pricingHref },
+      { label: t('footer.company.about'),   href: aboutHref },
+      { label: t('footer.company.contact'), href: contactHref },
+    ],
+  },
+];
+
+const moreText = t('wa.text.more');
+---
+<footer class="border-t border-white/5 bg-navy-950">
+  <div class="wrap py-16">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <!-- Brand col -->
+      <div class="md:col-span-4">
+        <img src="/images/products/suite/dark.svg" alt="SuiteHub"
+             class="h-10 w-auto mb-5" />
+        <p class="text-sm text-ink-400 leading-relaxed mb-6 max-w-sm">
+          {t('footer.tagline')}
+        </p>
+        <div class="space-y-2 text-sm text-ink-400">
+          <div><i class="fa-solid fa-location-dot w-5 text-brand-400"></i> Vía Argentina, Bella Vista, {locale === 'en' ? 'Panama' : 'Panamá'}</div>
+          <div><i class="fa-brands fa-whatsapp w-5 text-brand-400"></i> <a href="https://wa.me/50766326006" class="hover:text-white">+507 6632-6006</a></div>
+          <div><i class="fa-solid fa-envelope w-5 text-brand-400"></i> <a href="mailto:info@suitehub.net" class="hover:text-white">info@suitehub.net</a></div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="mt-5 inline-flex items-center gap-2 text-xs text-ink-500">
+          <i class="fa-solid fa-globe"></i>
+          {t('footer.langs.label')}
+          <span class="text-ink-300 font-medium">Español</span>
+          <span>·</span>
+          <span class="text-ink-300 font-medium">English</span>
+        </div>
+      </div>
+
+      <!-- Link cols -->
+      {cols.map(col => (
+        <div class="md:col-span-2 lg:col-span-2">
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400 mb-4">{col.title}</h4>
+          <ul class="space-y-2">
+            {col.links.map(l => (
+              <li><a href={l.href} class="text-sm text-ink-300 hover:text-white transition-colors">{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <!-- CTA col -->
+      <div class="md:col-span-2 lg:col-span-2">
+        <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400 mb-4">{t('footer.col.cta')}</h4>
+        <a href={`https://wa.me/50766326006?text=${moreText}`}
+           target="_blank" rel="noopener"
+           class="btn-primary w-full text-sm">
+          <i class="fa-brands fa-whatsapp"></i> {t('footer.cta.button')}
+        </a>
+        <p class="text-[10px] text-ink-500 mt-3 leading-relaxed">
+          {t('footer.cta.note')}
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-ink-500">
+        © {year} <span class="text-ink-300">SuiteHub</span> — {t('footer.copyright')}
+      </p>
+      <div class="flex items-center gap-4 text-xs text-ink-500">
+        <a href={privacyHref} class="hover:text-ink-200">{t('footer.privacy')}</a>
+        <span class="opacity-30">•</span>
+        <a href={termsHref} class="hover:text-ink-200">{t('footer.terms')}</a>
+        <span class="opacity-30">•</span>
+        <span>{t('footer.madeWith')} <i class="fa-solid fa-heart text-brand-500"></i> {t('footer.madeIn')}</span>
+      </div>
+    </div>
+  </div>
+</footer>

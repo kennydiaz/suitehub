@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const values = [
+  {
+    icon: 'fa-bullseye',
+    title: 'Pragmatic',
+    desc: 'We don\'t sell technology because it\'s trendy. Every feature exists because it solves a real pain measured in a real customer.',
+  },
+  {
+    icon: 'fa-handshake',
+    title: 'Close',
+    desc: 'A WhatsApp message and we reply. No tickets, no support tiers. The Panamanian SME doesn\'t need corporate protocols.',
+  },
+  {
+    icon: 'fa-shield-halved',
+    title: 'Rigorous',
+    desc: 'DGI-certified electronic invoicing, code with automated tests, daily backups. Your operation isn\'t an experiment.',
+  },
+  {
+    icon: 'fa-rocket',
+    title: 'Fast',
+    desc: 'Setup in 24 hours. Small changes the same day. The SME can\'t wait for 6 months of corporate implementation.',
+  },
+];
+
+// TODO: confirm SuiteHub's actual founding year and replace the placeholder.
+const milestones = [
+  {
+    year: '20XX',
+    title: 'SuiteHub is born',
+    desc:  'We launch SuiteHub with one premise: enterprise software built for the Panamanian SME, not translated from another market.',
+  },
+  {
+    year: '20XX',
+    title: 'Partnership with PROOQ S.A.',
+    desc:  'We sign a partnership with PROOQ S.A., a Panamanian company with over a decade of consulting experience, as our official representative in Panama.',
+  },
+  {
+    year: '2026 Q1',
+    title: 'First DGI electronic invoice',
+    desc:  'QS Express issues the first electronic invoice with SuiteHub. Zero rejections in production from day one.',
+  },
+  {
+    year: '2026 Q2',
+    title: 'Launch of the HUB family',
+    desc:  'Four editions (Lite/Core/Pro/Enterprise) + 12 specialized verticals.',
+  },
+  {
+    year: 'Today',
+    title: '+30 active SMEs',
+    desc:  'Workshops, restaurants, retail, clinics, vets and more invoicing with SuiteHub across Panama.',
+  },
+];
+---
+<BaseLayout title="About us · SuiteHub" description="SuiteHub is the business suite built for the Panamanian SME. In Panama we are represented by PROOQ S.A. as our official partner.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="eyebrow">About us</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          Business software <span class="text-gradient">made in Panama</span><br/>
+          for the Panamanian SME.
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed">
+          SuiteHub is the result of more than a decade understanding how Panamanian business actually operates,
+          not an American or Spanish system translated.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <span class="eyebrow">Who we are</span>
+          <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
+            <span class="text-gradient">SuiteHub</span>, business suite for the Panamanian SME.
+          </h2>
+          <div class="space-y-4 text-ink-300 leading-relaxed">
+            <p>
+              <strong class="text-white">SuiteHub</strong> is a business management platform built specifically
+              for the Panamanian SME, with a focus on DGI electronic invoicing, multi-branch and growth without
+              migrations.
+            </p>
+            <p>
+              We are not a reseller of foreign software. Every line of SuiteHub code is written thinking about
+              how a workshop in La Chorrera invoices, how a restaurant in Casco Viejo operates, how a clinic in
+              Bella Vista books appointments.
+            </p>
+            <p>
+              In Panama we are represented by <strong class="text-white">PROOQ S.A.</strong>, our official partner
+              with over a decade of experience in consulting and software development for local businesses.
+              They handle implementation, support and onboarding on the ground.
+            </p>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="card-glass p-8 lg:p-10">
+            <div class="grid grid-cols-2 gap-6">
+              <div>
+                <!-- TODO: replace 20XX with the actual SuiteHub founding year -->
+                <div class="text-3xl font-display font-bold text-brand-400">20XX</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">SuiteHub founded</div>
+              </div>
+              <div>
+                <div class="text-3xl font-display font-bold text-brand-400">+30</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Active SMEs</div>
+              </div>
+              <div>
+                <div class="text-3xl font-display font-bold text-brand-400">12</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Verticals</div>
+              </div>
+              <div>
+                <div class="text-3xl font-display font-bold text-brand-400">100%</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Panamanian</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-400"></i>
+              Vía Argentina, Bella Vista, Panama
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="eyebrow">How we work</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">
+          Four principles <span class="text-gradient">we don't compromise on.</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {values.map(v => (
+          <div class="card-glass p-7">
+            <div class="w-12 h-12 rounded-xl bg-brand-600/15 text-brand-400 flex items-center justify-center text-xl mb-4">
+              <i class={`fa-solid ${v.icon}`}></i>
+            </div>
+            <h3 class="text-lg font-display font-semibold mb-2">{v.title}</h3>
+            <p class="text-sm text-ink-400 leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section">
+    <div class="wrap max-w-3xl">
+      <div class="text-center mb-14">
+        <span class="eyebrow">Our journey</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">
+          From day one to <span class="text-gradient">today.</span>
+        </h2>
+      </div>
+
+      <div class="relative">
+        <div class="absolute left-4 lg:left-1/2 lg:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500 via-brand-500/50 to-transparent"></div>
+
+        <ol class="space-y-8">
+          {milestones.map((h, i) => (
+            <li class={`relative pl-12 lg:pl-0 lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center ${i % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+              <div class="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-2 w-8 h-8 rounded-full bg-brand-600 ring-4 ring-navy-950 flex items-center justify-center">
+                <span class="w-2 h-2 rounded-full bg-white"></span>
+              </div>
+
+              <div class={`card-glass p-6 ${i % 2 === 0 ? 'lg:col-start-1 lg:text-right' : 'lg:col-start-2'}`}>
+                <div class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-2">{h.year}</div>
+                <h3 class="font-display font-semibold text-lg mb-2">{h.title}</h3>
+                <p class="text-sm text-ink-400 leading-relaxed">{h.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap max-w-3xl text-center">
+      <span class="eyebrow">The team</span>
+      <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
+        Small, <span class="text-gradient">focused</span>, accessible.
+      </h2>
+      <p class="text-ink-300 leading-relaxed mb-10">
+        We're a compact team: development, support and sales. When you contract SuiteHub you talk to whoever writes the code,
+        not a call-center agent. In Panama, on-the-ground implementation and first-line support are handled by our
+        official partner PROOQ S.A. Closeness is our advantage.
+      </p>
+      <div class="card-glass p-8 lg:p-10 inline-block">
+        <div class="text-sm text-ink-400 mb-3">Want to meet the team?</div>
+        <a href="https://wa.me/50766326006?text=I%27d%20like%20to%20meet%20the%20SuiteHub%20team" target="_blank" rel="noopener" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Book a call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass gradient-border text-center p-10 lg:p-14 max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
+          Let's build something <span class="text-gradient">together.</span>
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          If your SME is ready to take the digital leap, let's talk.
+          We'll show you SuiteHub live and help you decide if it fits your operation.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/50766326006?text=I%27d%20like%20to%20talk%20to%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="mailto:info@suitehub.net?subject=I%27d%20like%20to%20learn%20about%20SuiteHub" class="btn-secondary">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

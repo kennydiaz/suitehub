@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const ediciones = [
+  {
+    key:        'lite',
+    name:       'Edición Lite',
+    tagline:    'Empieza ya',
+    price:      19,
+    priceYearly: 190,
+    color:      'sky',
+    icon:       'fa-rocket',
+    ideal:      'Negocio chico que está empezando a digitalizarse — un consultorio independiente, una distribuidora pequeña, un freelancer con cartera fija.',
+    description:'Lo básico bien hecho. Clientes, productos y servicios organizados, cotizaciones que se ven profesionales, facturas que cumplen con DGI básico. Sin sobreasignación de funciones que no vas a usar.',
+    limits: {
+      sucursales: 1, usuarios: 3, registros: 500, almacenamiento: '2 GB',
+    },
+    modulos: [
+      { icon: 'fa-users',         name: 'Clientes',       desc: 'CRUD básico, búsqueda, filtros' },
+      { icon: 'fa-screwdriver-wrench', name: 'Servicios', desc: 'Catálogo de servicios facturables' },
+      { icon: 'fa-boxes-stacked', name: 'Inventario',     desc: 'Productos con stock manual' },
+      { icon: 'fa-file-invoice',  name: 'Cotizaciones',   desc: 'Hasta 50 cotizaciones/mes' },
+      { icon: 'fa-receipt',       name: 'Facturas',       desc: 'Hasta 100 facturas/mes (sin FE electrónica)' },
+      { icon: 'fa-chart-line',    name: 'Reportes',       desc: '6 reportes pre-armados con filtros' },
+    ],
+    extras: ['Soporte por email', 'Updates automáticos', 'Backup diario'],
+  },
+  {
+    key:        'core',
+    name:       'Edición Core',
+    tagline:    'Lo esencial',
+    price:      49,
+    priceYearly: 490,
+    color:      'cyan',
+    icon:       'fa-bolt',
+    ideal:      'PYME consolidada de 5-10 empleados con 1 o 2 sucursales — el restaurante con dos locales, la clínica con consultorio principal y satélite, la distribuidora regional.',
+    description:'La edición que activa la facturación electrónica DGI con cualquiera de los 3 PACs certificados (Digifact, HKA, Factura Fácil). Cuentas por cobrar con recibos multi-factura. Reportes con SQL guardado para los analíticos. Una segunda sucursal incluida.',
+    limits: {
+      sucursales: 2, usuarios: 8, registros: 5000, almacenamiento: '10 GB',
+    },
+    modulos: [
+      { icon: 'fa-receipt',           name: 'Facturación electrónica DGI', desc: '32 reglas DGI verificadas, 0 rechazos en producción' },
+      { icon: 'fa-hand-holding-dollar', name: 'CxC con recibos multi-factura', desc: 'Un pago aplicado a varias facturas a la vez' },
+      { icon: 'fa-file-invoice',      name: 'Cotizaciones con conversión', desc: 'Cotización aceptada → factura en 1 click' },
+      { icon: 'fa-arrow-right-arrow-left', name: 'Movimientos de inventario', desc: 'Entradas, salidas, ajustes con auditoría' },
+      { icon: 'fa-chart-column',      name: 'Reportes Nivel 2 (SQL)',     desc: 'Admin escribe SELECTs guardados con whitelist' },
+      { icon: 'fa-file-pdf',          name: 'Plantillas PDF editables',   desc: 'Personaliza factura, cotización y recibo' },
+    ],
+    extras: ['Soporte por email + WhatsApp', 'PWA instalable', 'Setup guiado'],
+  },
+  {
+    key:        'pro',
+    name:       'Edición Pro',
+    tagline:    'Más popular',
+    price:      99,
+    priceYearly: 990,
+    color: 'brand',
+    featured:   true,
+    icon:       'fa-crown',
+    ideal:      'PYME mediana de 15-30 empleados con 3-5 sucursales — la cadena de talleres, el restaurante con 4 locales, la distribuidora con bodega central + tiendas, el grupo médico con varios consultorios.',
+    description:'El salto a profesional. Multi-sucursal real con consolidación, automatizaciones programadas (recordatorios de cobro, seguimientos), API REST para integrar con tu contabilidad o e-commerce, WhatsApp Business para comunicarte con clientes desde el sistema. White-label opcional.',
+    limits: {
+      sucursales: 5, usuarios: 20, registros: 50000, almacenamiento: '50 GB',
+    },
+    modulos: [
+      { icon: 'fa-building',     name: 'Multi-sucursal',          desc: 'Inventario, ventas y reportes por sucursal o consolidados' },
+      { icon: 'fa-robot',        name: 'Automatizaciones',        desc: 'Recordatorios de cobro, seguimientos, alertas de stock' },
+      { icon: 'fa-code',         name: 'API REST',                desc: '100,000 llamadas/mes con OpenAPI 3.0' },
+      { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Plantillas Meta-aprobadas + envío automático' },
+      { icon: 'fa-arrows-up-down-left-right', name: 'Transferencias inter-sucursal', desc: 'Movimiento doble atómico, auditado' },
+      { icon: 'fa-chart-pie',    name: 'Reportes Nivel 3 (PDF)',  desc: 'Plantillas dinámicas con placeholders editables' },
+    ],
+    extras: ['Soporte prioritario', 'Onboarding asistido (4h)', 'Capacitación inicial'],
+  },
+  {
+    key:        'enterprise',
+    name:       'Edición Enterprise',
+    tagline:    'Sin límites',
+    price:      199,
+    priceYearly: 1990,
+    color:      'amber',
+    icon:       'fa-trophy',
+    ideal:      'Empresa grande o cadena con sucursales ilimitadas, +30 usuarios, integración con sistemas legacy, requisitos de auditoría avanzada.',
+    description:'Cuando tu operación necesita más de lo que cualquier "plan" estándar ofrece. White-label completo (vende SuiteHub con tu marca), API ilimitada, SLA 24/7, onboarding dedicado, soporte para integraciones custom. Reportes con IA para descubrir patrones que tus reportes humanos no ven.',
+    limits: {
+      sucursales: 'Ilimitadas', usuarios: 50, registros: 'Ilimitados', almacenamiento: '200 GB',
+    },
+    modulos: [
+      { icon: 'fa-brain',           name: 'Reportes con IA',         desc: 'Forecasting, anomalías, insights automáticos' },
+      { icon: 'fa-palette',         name: 'White-label completo',    desc: 'Vende SuiteHub con tu marca, dominio y branding' },
+      { icon: 'fa-code-branch',     name: 'API ilimitada',           desc: 'Sin tope de llamadas, webhooks bidireccionales' },
+      { icon: 'fa-headset',         name: 'Soporte 24/7',            desc: 'SLA con tiempo de respuesta por contrato' },
+      { icon: 'fa-graduation-cap',  name: 'Onboarding dedicado',     desc: 'Consultor SuiteHub asignado (en Panamá vía PROOQ), plan de migración' },
+      { icon: 'fa-plug',            name: 'Integraciones custom',    desc: 'Conexión con sistemas legacy de la empresa' },
+    ],
+    extras: ['SLA contractual', 'Account manager dedicado', 'Backup geográfico (Tier 3)'],
+  },
+];
+
+const colorMap = {
+  sky:    { bg: 'from-sky-500/10', border: 'border-sky-500/30', text: 'text-sky-400', dot: 'bg-sky-400' },
+  cyan:   { bg: 'from-cyan-500/10', border: 'border-cyan-500/30', text: 'text-cyan-400', dot: 'bg-cyan-400' },
+  brand: { bg: 'from-brand-500/15', border: 'border-brand-500/40', text: 'text-brand-300', dot: 'bg-brand-400' },
+  amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
+};
+---
+<BaseLayout title="Ediciones · SuiteHub" description="Cuatro ediciones de SuiteHub: Lite ($19), Core ($49), Pro ($99), Enterprise ($199). Crece sin migrar.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="eyebrow">Las 4 ediciones</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          Una plataforma. <span class="text-gradient">Tú eliges</span> cuánta fuerza necesitas.
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed">
+          Mismo núcleo, mismo flujo, mismos datos. Cambiar de edición es subir un slider — no migrar a otro sistema.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {ediciones.map((ed, i) => {
+    const c = colorMap[ed.color];
+    return (
+      <section id={ed.key} class={`section relative ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
+        <div class="wrap">
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+            <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+              <div class={`text-xs uppercase tracking-wider ${c.text} font-semibold mb-3`}>
+                <i class={`fa-solid ${ed.icon} mr-1`}></i> {ed.tagline}
+              </div>
+              <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{ed.name}</h2>
+              <p class="text-base text-ink-300 leading-relaxed mb-3">{ed.description}</p>
+              <p class="text-sm text-ink-400 italic mb-6">
+                <strong class="text-ink-200">Ideal para:</strong> {ed.ideal}
+              </p>
+
+              <div class={`rounded-2xl border ${c.border} bg-gradient-to-b ${c.bg} to-transparent p-6 mb-6`}>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-5xl font-display font-bold">${ed.price}</span>
+                  <span class="text-base text-ink-400">/mes</span>
+                </div>
+                <p class={`text-sm ${c.text} mt-1`}>
+                  o ${ed.priceYearly} al año <span class="text-ink-500">(16% off)</span>
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Sucursales</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.sucursales}</div>
+                </div>
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Usuarios</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.usuarios}</div>
+                </div>
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Registros</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.registros}</div>
+                </div>
+                <div class="card-glass p-3">
+                  <div class="text-[10px] uppercase tracking-wider text-ink-500">Almacenamiento</div>
+                  <div class="text-lg font-display font-semibold mt-0.5">{ed.limits.almacenamiento}</div>
+                </div>
+              </div>
+
+              <a href={`https://wa.me/50766326006?text=Hola%2C%20quiero%20info%20de%20${encodeURIComponent(ed.name)}`}
+                 target="_blank" rel="noopener" class="btn-primary w-full">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Cotizar {ed.name}
+              </a>
+            </div>
+
+            <div class="lg:col-span-7">
+              <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Módulos incluidos</h3>
+              <div class="grid sm:grid-cols-2 gap-3">
+                {ed.modulos.map(m => (
+                  <div class="card-glass p-5 flex items-start gap-3 hover:border-white/15 transition-colors">
+                    <div class={`w-10 h-10 rounded-lg flex items-center justify-center ${c.text} bg-white/5 flex-shrink-0`}>
+                      <i class={`fa-solid ${m.icon}`}></i>
+                    </div>
+                    <div>
+                      <div class="font-display font-semibold text-sm">{m.name}</div>
+                      <div class="text-xs text-ink-400 mt-1 leading-relaxed">{m.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                {ed.extras.map(x => (
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full bg-white/5 border border-white/10 text-ink-300">
+                    <span class={`w-1.5 h-1.5 rounded-full ${c.dot}`}></span>
+                    {x}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass gradient-border p-10 lg:p-14 text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
+          ¿No estás seguro <span class="text-gradient">cuál escoger</span>?
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          Mira la <a href="/precios" class="text-brand-400 hover:text-brand-300">tabla comparativa completa</a> o conversemos 10 minutos por WhatsApp y te recomendamos según tu negocio.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/precios" class="btn-secondary"><i class="fa-solid fa-table-list"></i> Ver tabla comparativa</a>
+          <a href="https://wa.me/50766326006?text=Hola%2C%20no%20se%20cual%20edicion%20me%20conviene" target="_blank" rel="noopener" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Pide recomendación
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

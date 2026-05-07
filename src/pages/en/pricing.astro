@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const editions = [
+  { key: 'lite',       name: 'Lite',       price: 19,  yearly: 190,  color: 'sky',    featured: false },
+  { key: 'core',       name: 'Core',       price: 49,  yearly: 490,  color: 'cyan',   featured: false },
+  { key: 'pro',        name: 'Pro',        price: 99,  yearly: 990,  color: 'brand', featured: true  },
+  { key: 'enterprise', name: 'Enterprise', price: 199, yearly: 1990, color: 'amber',  featured: false },
+];
+
+const comparison = [
+  {
+    title: 'Limits',
+    rows: [
+      { label: 'Branches',                       lite: '1',     core: '2',      pro: '5',          enterprise: 'Unlimited' },
+      { label: 'Included users',                 lite: '3',     core: '8',      pro: '20',         enterprise: '50' },
+      { label: 'Records (customers/products)',   lite: '500',   core: '5,000',  pro: '50,000',     enterprise: 'Unlimited' },
+      { label: 'Storage',                        lite: '2 GB',  core: '10 GB',  pro: '50 GB',      enterprise: '200 GB' },
+      { label: 'Transactions/month',             lite: '100',   core: '1,000',  pro: '10,000',     enterprise: 'Unlimited' },
+    ],
+  },
+  {
+    title: 'Core and operations',
+    rows: [
+      { label: 'Customer CRUD', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Products and services catalog', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Quotes', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Quote → invoice conversion', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Inventory with audited movements', lite: 'Manual', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Stock per branch', lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+    ],
+  },
+  {
+    title: 'DGI electronic invoicing',
+    rows: [
+      { label: 'Basic invoices (no DGI)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Digifact', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC The Factory HKA', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Factura Fácil', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'CUFE + official DGI QR', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Invoice cancellation', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Credit notes', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+    ],
+  },
+  {
+    title: 'Multi-branch',
+    rows: [
+      { label: 'Branch management',                 lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'Users assignable per branch',       lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'Inter-branch transfers',            lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'Reports consolidated or per branch', lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+    ],
+  },
+  {
+    title: 'Reports',
+    rows: [
+      { label: 'Level 1 — Pre-built reports',        lite: '6 reports',   core: '15+ reports',  pro: 'All',    enterprise: 'All' },
+      { label: 'Level 2 — Saved SQL (whitelist)',    lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
+      { label: 'Level 3 — Editable PDF templates',   lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
+      { label: 'AI-powered reports',                 lite: '—',           core: '—',            pro: '—',      enterprise: '✓' },
+      { label: 'CSV / PDF export',                   lite: '✓',           core: '✓',            pro: '✓',      enterprise: '✓' },
+    ],
+  },
+  {
+    title: 'Automation and integrations',
+    rows: [
+      { label: 'AR with multi-invoice receipts',  lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Receivables aging',                lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Scheduled automations',            lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'REST API',                         lite: '—', core: '—', pro: '100K/mo', enterprise: 'Unlimited' },
+      { label: 'Webhooks',                         lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'WhatsApp Business integrated',     lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+    ],
+  },
+  {
+    title: 'White-label and branding',
+    rows: [
+      { label: 'Your logo and colors',  lite: '—',     core: 'Basic', pro: '✓',      enterprise: '✓' },
+      { label: 'Your own domain',        lite: '—',     core: '—',     pro: 'Add-on', enterprise: '✓' },
+      { label: 'Outbound email with your domain', lite: '—', core: '—', pro: 'Add-on', enterprise: '✓' },
+      { label: 'Full white-label (resell)', lite: '—', core: '—',  pro: '—',      enterprise: '✓' },
+    ],
+  },
+  {
+    title: 'Support and onboarding',
+    rows: [
+      { label: 'Email support',     lite: '✓',     core: '✓',         pro: '✓',           enterprise: '✓' },
+      { label: 'WhatsApp support',  lite: '—',     core: '✓',         pro: 'Priority',     enterprise: '24/7' },
+      { label: 'Guided setup',      lite: '—',     core: 'Basic',     pro: '4 hours',     enterprise: 'Dedicated' },
+      { label: 'Initial training',  lite: '—',     core: '1 session', pro: '3 sessions',  enterprise: 'Unlimited' },
+      { label: 'Contractual SLA',   lite: '—',     core: '—',         pro: '—',           enterprise: '✓' },
+      { label: 'Account manager',   lite: '—',     core: '—',         pro: '—',           enterprise: 'Dedicated' },
+    ],
+  },
+  {
+    title: 'Languages and localization',
+    rows: [
+      { label: 'Spanish',                  lite: '✓',     core: '✓',     pro: '✓',     enterprise: '✓' },
+      { label: 'English',                  lite: '✓',     core: '✓',     pro: '✓',     enterprise: '✓' },
+      { label: 'Panama compliance',        lite: '✓',     core: '✓',     pro: '✓',     enterprise: '✓' },
+      { label: 'Other LATAM countries',    lite: '—',     core: '—',     pro: 'On request', enterprise: 'On request' },
+    ],
+  },
+];
+
+const colorMap = {
+  sky:    'text-sky-400',
+  cyan:   'text-cyan-400',
+  brand: 'text-brand-300',
+  amber:  'text-amber-400',
+};
+---
+<BaseLayout title="Pricing and comparison · SuiteHub" description="Full comparison table of the 4 SuiteHub editions. From $19/month with 16% off when paying annually.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="eyebrow">Pricing and comparison</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          <span class="text-gradient">Transparent</span> pricing.<br/>
+          No surprises.
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed">
+          Everything that's included is right here. No "*conditions apply" or "ask a sales rep for your custom quote".
+          Move up an edition whenever you need to — no penalties.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing cards -->
+  <section class="pb-12">
+    <div class="wrap">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {editions.map(e => (
+          <div class={`relative card-glass p-6 ${e.featured ? 'border-brand-500/50 shadow-glow' : ''}`}>
+            {e.featured && (
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-[10px] font-semibold uppercase tracking-wider rounded-full">
+                Most popular
+              </span>
+            )}
+            <div class={`text-xs uppercase tracking-wider font-semibold mb-2 ${colorMap[e.color]}`}>Edition</div>
+            <h3 class="text-2xl font-display font-bold mb-3">{e.name}</h3>
+            <div class="mb-2">
+              <span class="text-4xl font-display font-bold">${e.price}</span>
+              <span class="text-sm text-ink-400">/mo</span>
+            </div>
+            <div class="text-xs text-ink-500 mb-5">or ${e.yearly}/year</div>
+            <a href={`/en/products#${e.key}`} class={`block text-center text-sm py-2 rounded-lg transition-colors ${e.featured ? 'bg-brand-600 hover:bg-brand-500 text-white' : 'bg-white/5 hover:bg-white/10 text-white'}`}>
+              See details
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison table -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="text-2xl font-display font-bold mb-2">Full comparison</h2>
+      <p class="text-sm text-ink-400 mb-8">What's included in each edition, no fine print.</p>
+
+      <div class="card-glass overflow-x-auto">
+        <table class="w-full text-sm min-w-[760px]">
+          <thead class="sticky top-20 bg-navy-950 z-10">
+            <tr class="border-b border-white/10">
+              <th class="text-left p-5 font-display font-semibold text-ink-200 w-[40%]">Feature</th>
+              {editions.map(e => (
+                <th class={`p-5 text-center font-display font-semibold ${e.featured ? 'bg-brand-500/5' : ''}`}>
+                  <div class={`text-xs uppercase tracking-wider mb-1 ${colorMap[e.color]}`}>{e.name}</div>
+                  <div class="text-xs text-ink-500 font-normal">${e.price}/mo</div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map(cat => (
+              <Fragment>
+                <tr class="bg-brand-500/5">
+                  <td colspan="5" class="p-3 px-5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+                    {cat.title}
+                  </td>
+                </tr>
+                {cat.rows.map((row, idx) => (
+                  <tr class={`border-b border-white/5 ${idx % 2 === 0 ? '' : 'bg-white/[0.015]'}`}>
+                    <td class="p-4 px-5 text-ink-300">{row.label}</td>
+                    <td class="p-4 text-center text-ink-200">{row.lite === '✓' ? <i class="fa-solid fa-check text-emerald-400"></i> : row.lite === '—' ? <span class="text-ink-600">—</span> : row.lite}</td>
+                    <td class="p-4 text-center text-ink-200">{row.core === '✓' ? <i class="fa-solid fa-check text-emerald-400"></i> : row.core === '—' ? <span class="text-ink-600">—</span> : row.core}</td>
+                    <td class="p-4 text-center text-ink-200 bg-brand-500/[0.03]">{row.pro === '✓' ? <i class="fa-solid fa-check text-emerald-400"></i> : row.pro === '—' ? <span class="text-ink-600">—</span> : row.pro}</td>
+                    <td class="p-4 text-center text-ink-200">{row.enterprise === '✓' ? <i class="fa-solid fa-check text-emerald-400"></i> : row.enterprise === '—' ? <span class="text-ink-600">—</span> : row.enterprise}</td>
+                  </tr>
+                ))}
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-ink-500 mt-6 text-center">
+        Notice anything missing? <a href="https://wa.me/50766326006?text=I%20have%20a%20question%20about%20pricing" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300">Ask us on WhatsApp</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap max-w-3xl">
+      <div class="text-center mb-12">
+        <span class="eyebrow">Frequently asked questions</span>
+        <h2 class="text-3xl font-display font-bold">About pricing and contracting</h2>
+      </div>
+      <div class="space-y-3">
+        <details class="card-glass group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
+            Do I have to sign an annual contract?
+            <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
+            No. You pay month to month and cancel whenever you want. If you pay a year up front you get 16% off, but it's not required.
+          </div>
+        </details>
+        <details class="card-glass group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
+            What happens if I exceed my edition limits?
+            <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
+            The system warns you at 80% of the limit. You can move up to the next edition from inside the platform without migrating data or losing your configuration.
+          </div>
+        </details>
+        <details class="card-glass group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
+            Is setup billed separately?
+            <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
+            Setup is free in Lite and Core (self-service). In Pro we include 4 hours of assisted onboarding. In Enterprise we assign a dedicated consultant.
+          </div>
+        </details>
+        <details class="card-glass group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
+            Can I add extra users?
+            <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
+            Yes. Each additional user costs $5/mo in Lite, $4/mo in Core, $3/mo in Pro and $2/mo in Enterprise.
+          </div>
+        </details>
+        <details class="card-glass group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
+            How do I pay? Do you accept ACH, Yappy, credit card?
+            <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
+            We accept ACH, Yappy, credit card and bank deposit. Enterprise accounts can pay against invoice on net-30 terms.
+          </div>
+        </details>
+        <details class="card-glass group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
+            What does the e-invoicing PAC cost cover?
+            <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
+            The PAC cost (Digifact, HKA or Factura Fácil) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="card-glass gradient-border text-center p-10 lg:p-14 max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
+          Still have questions?
+        </h2>
+        <p class="text-ink-300 mb-8">Chat with us on WhatsApp and we'll recommend the right fit for your operation.</p>
+        <a href="https://wa.me/50766326006?text=I%20have%20questions%20about%20SuiteHub%20pricing" target="_blank" rel="noopener" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

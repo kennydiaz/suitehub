@@ -1,0 +1,176 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLocaleFromUrl, useTranslations, alternateHref } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const isEn = locale === 'en';
+
+const defaultTitle = isEn
+  ? 'SuiteHub — Business management suite for Panamanian SMEs'
+  : 'SuiteHub — Suite empresarial para la PYME panameña';
+
+const defaultDesc = isEn
+  ? 'SuiteHub is the management platform your business needs: DGI e-invoicing, multi-branch, automations, API. From $19/month. Available in Spanish and English.'
+  : 'SuiteHub es la plataforma de gestión que tu negocio necesita: facturación electrónica DGI, multi-sucursal, automatizaciones, API. Desde $19/mes. Disponible en español e inglés.';
+
+const {
+  title       = defaultTitle,
+  description = defaultDesc,
+  ogImage     = '/images/products/suite/light-1200.png',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const altPath   = alternateHref(Astro.url.pathname, isEn ? 'es' : 'en');
+const altUrl    = new URL(altPath, Astro.site).toString();
+const esUrl     = isEn ? altUrl : canonical;
+const enUrl     = isEn ? canonical : altUrl;
+
+const htmlLang  = isEn ? 'en' : 'es';
+const ogLocale  = isEn ? 'en_US' : 'es_PA';
+const altOgLoc  = isEn ? 'es_PA' : 'en_US';
+---
+<!DOCTYPE html>
+<html lang={htmlLang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="es"      href={esUrl} />
+    <link rel="alternate" hreflang="en"      href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon-hex.svg" />
+    <link rel="icon" type="image/png" sizes="32x32"  href="/favicons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicons/favicon-192.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={canonical} />
+    <meta property="og:image"       content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:site_name"   content="SuiteHub" />
+    <meta property="og:locale"      content={ogLocale} />
+    <meta property="og:locale:alternate" content={altOgLoc} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={new URL(ogImage, Astro.site).toString()} />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0A2540" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- JSON-LD: SoftwareApplication + Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SuiteHub",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://suitehub.net",
+      "description": description,
+      "offers": [
+        { "@type": "Offer", "name": isEn ? "Lite Edition"       : "Edición Lite",       "price": "19",  "priceCurrency": "USD" },
+        { "@type": "Offer", "name": isEn ? "Core Edition"       : "Edición Core",       "price": "49",  "priceCurrency": "USD" },
+        { "@type": "Offer", "name": isEn ? "Pro Edition"        : "Edición Pro",        "price": "99",  "priceCurrency": "USD" },
+        { "@type": "Offer", "name": isEn ? "Enterprise Edition" : "Edición Enterprise", "price": "199", "priceCurrency": "USD" }
+      ],
+      "inLanguage": ["es", "en"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "SuiteHub",
+        "legalName": "PROOQ S.A.",
+        "url": "https://suitehub.net",
+        "logo": "https://suitehub.net/images/products/suite/light-600.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vía Argentina, Bella Vista",
+          "addressLocality": isEn ? "Panama City" : "Ciudad de Panamá",
+          "addressCountry": "PA"
+        },
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+507-6632-6006",
+          "contactType": "sales",
+          "email": "info@suitehub.net",
+          "areaServed": "PA",
+          "availableLanguage": ["es", "en"]
+        }]
+      }
+    })} />
+  </head>
+  <body>
+    <Header />
+    <main class="pt-20">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- WhatsApp floating -->
+    <a href={`https://wa.me/50766326006?text=${t('wa.text.more')}`}
+       target="_blank" rel="noopener"
+       aria-label={t('wa.float.aria')}
+       class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white text-2xl flex items-center justify-center shadow-2xl shadow-emerald-500/30 transition-transform hover:scale-110">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll-reveal: añade .is-visible cuando el elemento entra al viewport -->
+    <script is:inline>
+      (function () {
+        if (typeof IntersectionObserver === 'undefined') return;
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+        document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+      })();
+    </script>
+
+    <!-- ════════════════════════════════════════════════════════════
+         Analytics — descomentar uno cuando contrates servicio
+         ════════════════════════════════════════════════════════════ -->
+
+    <!-- OPCIÓN 1: Plausible (privacy-first, $9/mes) -->
+    <!-- <script defer data-domain="suitehub.net" src="https://plausible.io/js/script.js"></script> -->
+
+    <!-- OPCIÓN 2: Google Analytics 4 (gratis) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+  </body>
+</html>
