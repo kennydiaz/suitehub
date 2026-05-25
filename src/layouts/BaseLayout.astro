@@ -15,12 +15,12 @@ const t = useTranslations(locale);
 const isEn = locale === 'en';
 
 const defaultTitle = isEn
-  ? 'SuiteHub — Business management suite for Panamanian SMEs'
-  : 'SuiteHub — Suite empresarial para la PYME panameña';
+  ? 'SuiteHub — Multi-country business management suite for SMBs'
+  : 'SuiteHub — Suite empresarial multi-país para PYMEs';
 
 const defaultDesc = isEn
-  ? 'SuiteHub is the management platform your business needs: DGI e-invoicing, multi-branch, automations, API. From $19/month. Available in Spanish and English.'
-  : 'SuiteHub es la plataforma de gestión que tu negocio necesita: facturación electrónica DGI, multi-sucursal, automatizaciones, API. Desde $19/mes. Disponible en español e inglés.';
+  ? 'A PROOQ LLC (USA) product. Multi-jurisdiction electronic invoicing (DGI Panama live; SENIAT Venezuela, Facturae Spain, US state-level on 2026 roadmap), multi-branch, automations, API. From $19/month. Available in Spanish and English.'
+  : 'Producto de PROOQ LLC (USA). Facturación electrónica multi-jurisdicción (DGI Panamá en vivo; SENIAT Venezuela, Facturae España y compliance USA en roadmap 2026), multi-sucursal, automatizaciones, API. Desde $19/mes. Disponible en español e inglés.';
 
 const {
   title       = defaultTitle,
@@ -104,23 +104,67 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
       "publisher": {
         "@type": "Organization",
         "name": "SuiteHub",
-        "legalName": "PROOQ S.A.",
+        "legalName": "PROOQ LLC",
         "url": "https://suitehub.net",
         "logo": "https://suitehub.net/images/products/suite/light-600.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Vía Argentina, Bella Vista",
-          "addressLocality": isEn ? "Panama City" : "Ciudad de Panamá",
-          "addressCountry": "PA"
-        },
-        "contactPoint": [{
-          "@type": "ContactPoint",
-          "telephone": "+507-6632-6006",
-          "contactType": "sales",
-          "email": "info@suitehub.net",
-          "areaServed": "PA",
-          "availableLanguage": ["es", "en"]
-        }]
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Elmwood Park",
+            "addressLocality": "Chicago",
+            "addressRegion": "IL",
+            "postalCode": "60707-2003",
+            "addressCountry": "US"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Vía Argentina, Bella Vista",
+            "addressLocality": isEn ? "Panama City" : "Ciudad de Panamá",
+            "addressCountry": "PA"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle La Línea 15",
+            "addressLocality": "Puerto Real",
+            "addressRegion": "Andalucía",
+            "postalCode": "11510",
+            "addressCountry": "ES"
+          }
+        ],
+        "areaServed": ["PA", "US", "VE", "ES"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-708-540-0888",
+            "contactType": "sales",
+            "email": "info@suitehub.net",
+            "areaServed": "US",
+            "availableLanguage": ["es", "en"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+507-6632-6006",
+            "contactType": "sales",
+            "email": "info@suitehub.net",
+            "areaServed": "PA",
+            "availableLanguage": ["es", "en"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+34-641-246302",
+            "contactType": "sales",
+            "email": "info@suitehub.net",
+            "areaServed": "ES",
+            "availableLanguage": ["es", "en"]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "info@suitehub.net",
+            "areaServed": "VE",
+            "availableLanguage": ["es", "en"]
+          }
+        ]
       }
     })} />
   </head>

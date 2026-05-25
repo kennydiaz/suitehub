@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.DS_Store
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# OS
+Thumbs.db
+
+# Astro
+.astro/
+
+# Build cache (dist/ se MANTIENE en git por convencion del proyecto)

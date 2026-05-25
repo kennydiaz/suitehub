@@ -1,16 +1,74 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const offices = [
+  {
+    flag: '🇺🇸',
+    country: 'USA',
+    role: 'Sede legal — PROOQ LLC',
+    address: ['Elmwood Park', 'Chicago, IL 60707-2003'],
+    phones: [
+      { label: '+1 708 540 0888', tel: '+17085400888' },
+      { label: '+1 708 527 5567', tel: '+17085275567' },
+    ],
+    wa: '+17085400888',
+    waText: 'Hola%2C%20me%20interesa%20SuiteHub%20desde%20USA',
+  },
+  {
+    flag: '🇵🇦',
+    country: 'Panamá',
+    role: 'Operación local — PROOQ S.A.',
+    address: ['Vía Argentina', 'Bella Vista, Ciudad de Panamá'],
+    phones: [
+      { label: '+507 6632-6006', tel: '+50766326006' },
+    ],
+    wa: '50766326006',
+    waText: 'Hola%2C%20me%20interesa%20SuiteHub',
+  },
+  {
+    flag: '🇪🇸',
+    country: 'España',
+    role: 'Soft launch — operación remota',
+    address: ['Calle La Línea 15', 'Puerto Real, Andalucía 11510'],
+    phones: [
+      { label: '+34 641 246 302', tel: '+34641246302' },
+      { label: '+34 742 067 178', tel: '+34742067178' },
+    ],
+    wa: '34641246302',
+    waText: 'Hola%2C%20me%20interesa%20SuiteHub%20desde%20Espa%C3%B1a',
+  },
+  {
+    flag: '🇻🇪',
+    country: 'Venezuela',
+    role: 'Soft launch — atención por email / WhatsApp',
+    address: null,
+    phones: [],
+    wa: '50766326006',
+    waText: 'Hola%2C%20me%20interesa%20SuiteHub%20desde%20Venezuela',
+  },
+];
 ---
-<BaseLayout title="Contacto · SuiteHub" description="Conversemos sobre cómo SuiteHub puede ayudar a tu negocio.">
-  <section class="section">
-    <div class="wrap">
-      <div class="text-center mb-14 max-w-2xl mx-auto">
+<BaseLayout title="Contacto · SuiteHub" description="Cuatro países, una sola plataforma. Oficinas en USA (PROOQ LLC), Panamá (PROOQ S.A.) y España. Soft launch en Venezuela.">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-12 pb-12">
+      <div class="text-center max-w-2xl mx-auto">
         <span class="eyebrow">Hablemos</span>
         <h1 class="text-4xl sm:text-5xl font-display font-bold">¿Listo para conocer <span class="text-gradient">SuiteHub</span>?</h1>
-        <p class="text-ink-300 mt-5">El medio más rápido es WhatsApp. Distribuido en Panamá por PROOQ S.A. — respuesta en minutos durante horario laboral.</p>
+        <p class="text-ink-300 mt-5">
+          Producto de <strong class="text-white">PROOQ LLC</strong> (USA). Operación local en Panamá vía PROOQ S.A.
+          Soft launch en USA, Venezuela y España. WhatsApp es el medio más rápido — respuesta en minutos durante horario laboral.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="grid lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+  <!-- Canales rápidos -->
+  <section class="pb-8">
+    <div class="wrap">
+      <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
         <a href="https://wa.me/50766326006?text=Hola%2C%20me%20interesa%20SuiteHub"
            target="_blank" rel="noopener"
            class="card-glass p-7 text-center hover:border-emerald-500/30 transition-colors">
@@ -19,7 +77,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="text-lg font-display font-semibold">WhatsApp</div>
           <div class="text-sm text-ink-400 mt-1 mb-3">Conversación inmediata</div>
-          <div class="text-brand-400 text-sm font-medium">+507 6632-6006</div>
+          <div class="text-brand-400 text-sm font-medium">+507 6632-6006 (sede operativa PA)</div>
         </a>
 
         <a href="mailto:info@suitehub.net"
@@ -31,15 +89,64 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="text-sm text-ink-400 mt-1 mb-3">Para temas formales</div>
           <div class="text-brand-400 text-sm font-medium">info@suitehub.net</div>
         </a>
+      </div>
+    </div>
+  </section>
 
-        <div class="card-glass p-7 text-center">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 mx-auto mb-4 flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-location-dot"></i>
+  <!-- Oficinas / canales por país -->
+  <section class="section">
+    <div class="wrap">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="eyebrow">Nuestros canales</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">
+          Cuatro países, <span class="text-gradient">un solo equipo.</span>
+        </h2>
+        <p class="mt-4 text-ink-300 text-sm">
+          Atendemos clientes desde nuestras sedes en USA, Panamá y España. Venezuela en soft launch — leads via email/WhatsApp.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        {offices.map(o => (
+          <div class="card-glass p-7">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <div class="text-2xl mb-1">{o.flag}</div>
+                <div class="text-lg font-display font-semibold">{o.country}</div>
+                <div class="text-xs text-ink-400">{o.role}</div>
+              </div>
+            </div>
+
+            {o.address && (
+              <div class="text-sm text-ink-300 mt-3 flex items-start gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 mt-1"></i>
+                <span>{o.address[0]}<br/>{o.address[1]}</span>
+              </div>
+            )}
+
+            {o.phones.length > 0 && (
+              <div class="mt-3 space-y-1.5">
+                {o.phones.map(p => (
+                  <a href={`tel:${p.tel}`} class="text-sm text-ink-300 hover:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-brand-400 text-xs"></i>
+                    {p.label}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            <div class="mt-4 pt-4 border-t border-white/5 flex flex-wrap gap-2">
+              <a href={`https://wa.me/${o.wa}?text=${o.waText}`} target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 hover:bg-emerald-500/20 transition-colors">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+              </a>
+              <a href="mailto:info@suitehub.net"
+                 class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 hover:bg-brand-500/20 transition-colors">
+                <i class="fa-solid fa-envelope"></i> info@suitehub.net
+              </a>
+            </div>
           </div>
-          <div class="text-lg font-display font-semibold">Oficina</div>
-          <div class="text-sm text-ink-400 mt-1 mb-3">Visítanos</div>
-          <div class="text-ink-200 text-sm">Vía Argentina<br/>Bella Vista, Panamá</div>
-        </div>
+        ))}
       </div>
     </div>
   </section>

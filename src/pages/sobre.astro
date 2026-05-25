@@ -10,12 +10,12 @@ const valores = [
   {
     icon: 'fa-handshake',
     title: 'Cercanos',
-    desc: 'Un WhatsApp y respondemos. Sin tickets, sin niveles de soporte. La PYME panameña no necesita protocolos corporativos.',
+    desc: 'Un WhatsApp y respondemos. Sin tickets, sin niveles de soporte. La PYME no necesita protocolos corporativos.',
   },
   {
     icon: 'fa-shield-halved',
     title: 'Rigurosos',
-    desc: 'Facturación electrónica certificada DGI, código con tests automatizados, backups diarios. Tu operación no es un experimento.',
+    desc: 'Facturación electrónica certificada, código con tests automatizados, backups diarios. Tu operación no es un experimento.',
   },
   {
     icon: 'fa-rocket',
@@ -29,11 +29,11 @@ const hitos = [
   {
     year: '20XX',
     title: 'Nace SuiteHub',
-    desc:  'Fundamos SuiteHub con una premisa clara: software empresarial hecho para la PYME panameña, no traducido de otro mercado.',
+    desc:  'Fundamos SuiteHub con una premisa clara: software empresarial hecho para la PYME hispanohablante, no traducido de otro mercado.',
   },
   {
     year: '2026 Q1',
-    title: 'Primera factura electrónica DGI',
+    title: 'Primera factura electrónica DGI Panamá',
     desc:  'QS Express emite la primera FE con SuiteHub. 0 rechazos en producción desde el día uno.',
   },
   {
@@ -42,13 +42,18 @@ const hitos = [
     desc:  'Cuatro ediciones (Lite/Core/Pro/Enterprise) + 12 verticales especializados.',
   },
   {
+    year: '2026',
+    title: 'Reposicionamiento multi-país',
+    desc:  'SuiteHub pasa a ser producto de PROOQ LLC (USA) con operación local en Panamá vía PROOQ S.A. Soft launch en USA, Venezuela y España.',
+  },
+  {
     year: 'Hoy',
-    title: '+30 PYMEs activas',
-    desc:  'Talleres, restaurantes, retail, clínicas, veterinarias y más facturando con SuiteHub en Panamá.',
+    title: '+30 PYMEs activas en Panamá',
+    desc:  'Talleres, restaurantes, retail, clínicas, veterinarias y más facturando con SuiteHub en Panamá. USA/Venezuela/España en evaluación.',
   },
 ];
 ---
-<BaseLayout title="Sobre nosotros · SuiteHub" description="SuiteHub es la suite empresarial hecha para la PYME panameña.">
+<BaseLayout title="Sobre nosotros · SuiteHub" description="SuiteHub es la suite empresarial multi-jurisdicción para PYMEs en Panamá, USA, Venezuela y España. Producto de PROOQ LLC (USA).">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -57,12 +62,12 @@ const hitos = [
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">Nosotros</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          Software empresarial <span class="text-gradient">hecho en Panamá</span><br/>
-          para la PYME panameña.
+          Software empresarial <span class="text-gradient">desde Panamá</span><br/>
+          para PYMEs en cuatro países.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          SuiteHub es el resultado de más de una década entendiendo cómo opera el negocio panameño,
-          no un sistema gringo o español traducido.
+          SuiteHub es el resultado de más de una década entendiendo cómo opera el negocio hispanohablante.
+          Hoy producto de <strong class="text-white">PROOQ LLC</strong> (USA), con operación local en Panamá vía PROOQ S.A., y expansión activa a USA, Venezuela y España.
         </p>
       </div>
     </div>
@@ -75,21 +80,21 @@ const hitos = [
         <div class="lg:col-span-7">
           <span class="eyebrow">Quiénes somos</span>
           <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-            <span class="text-gradient">SuiteHub</span>, suite empresarial para la PYME panameña.
+            <span class="text-gradient">SuiteHub</span>, suite empresarial multi-país.
           </h2>
           <div class="space-y-4 text-ink-300 leading-relaxed">
             <p>
-              <strong class="text-white">SuiteHub</strong> es una plataforma de gestión empresarial construida
-              específicamente para la PYME panameña, con foco en facturación electrónica DGI, multi-sucursal
-              y crecimiento sin migraciones.
+              <strong class="text-white">SuiteHub</strong> es una plataforma de gestión empresarial multi-jurisdicción
+              para PYMEs en <strong class="text-white">Panamá, USA, Venezuela y España</strong>, con facturación electrónica adaptable
+              a cada jurisdicción, multi-sucursal y crecimiento sin migraciones.
             </p>
             <p>
               No somos un revendedor de software gringo. Cada línea de código de SuiteHub se escribe pensando en
-              cómo factura un taller en La Chorrera, cómo opera un restaurante en Casco Viejo, cómo agenda una
+              cómo factura un taller en La Chorrera, cómo opera un restaurante hispano en Chicago, cómo agenda una
               clínica en Bella Vista.
             </p>
             <p class="text-sm text-ink-500 pt-2">
-              En Panamá, SuiteHub se distribuye a través de PROOQ S.A.
+              Producto de <strong class="text-ink-300">PROOQ LLC</strong> (USA). Operación local en Panamá a través de PROOQ S.A.
             </p>
           </div>
         </div>
@@ -103,20 +108,30 @@ const hitos = [
               </div>
               <div>
                 <div class="text-3xl font-display font-bold text-brand-400">+30</div>
-                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">PYMEs activas</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">PYMEs activas (PA)</div>
               </div>
               <div>
                 <div class="text-3xl font-display font-bold text-brand-400">12</div>
                 <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Verticales</div>
               </div>
               <div>
-                <div class="text-3xl font-display font-bold text-brand-400">100%</div>
-                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Panameño</div>
+                <div class="text-3xl font-display font-bold text-brand-400">4</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Países objetivo</div>
               </div>
             </div>
-            <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-brand-400"></i>
-              Vía Argentina, Bella Vista, Panamá
+            <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 space-y-1.5">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                Elmwood Park, Chicago IL · USA (PROOQ LLC)
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                Vía Argentina, Bella Vista · Panamá
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                Calle La Línea 15, Puerto Real · Andalucía, España
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # SuiteHub — Sitio corporativo (suitehub.net)
 
-Sitio marketing de **SuiteHub** — suite empresarial para PYMEs panameñas. Operada en Panamá por PROOQ S.A. como partner oficial.
+Sitio marketing de **SuiteHub** — suite empresarial multi-jurisdicción para PYMEs en **Panamá, USA, Venezuela y España**. Producto de **PROOQ LLC** (USA), operado en Panamá por **PROOQ S.A.** Hoy clientes en producción real en Panamá; soft launch en USA, Venezuela y España con lanzamiento comercial pleno previsto para 2026.
 
 100% estático con Astro 5 + Tailwind 3. Bilingüe (ES default + EN bajo `/en/`). Deploy a Hostinger.
 

@@ -10,17 +10,17 @@ const values = [
   {
     icon: 'fa-handshake',
     title: 'Close',
-    desc: 'A WhatsApp message and we reply. No tickets, no support tiers. The Panamanian SME doesn\'t need corporate protocols.',
+    desc: 'A WhatsApp message and we reply. No tickets, no support tiers. SMBs don\'t need corporate protocols.',
   },
   {
     icon: 'fa-shield-halved',
     title: 'Rigorous',
-    desc: 'DGI-certified electronic invoicing, code with automated tests, daily backups. Your operation isn\'t an experiment.',
+    desc: 'Certified electronic invoicing, code with automated tests, daily backups. Your operation isn\'t an experiment.',
   },
   {
     icon: 'fa-rocket',
     title: 'Fast',
-    desc: 'Setup in 24 hours. Small changes the same day. The SME can\'t wait for 6 months of corporate implementation.',
+    desc: 'Setup in 24 hours. Small changes the same day. SMBs can\'t wait for 6 months of corporate implementation.',
   },
 ];
 
@@ -29,11 +29,11 @@ const milestones = [
   {
     year: '20XX',
     title: 'SuiteHub is born',
-    desc:  'We launch SuiteHub with one premise: enterprise software built for the Panamanian SME, not translated from another market.',
+    desc:  'We launch SuiteHub with one premise: enterprise software built for the Spanish-speaking SMB, not translated from another market.',
   },
   {
     year: '2026 Q1',
-    title: 'First DGI electronic invoice',
+    title: 'First DGI Panama electronic invoice',
     desc:  'QS Express issues the first electronic invoice with SuiteHub. Zero rejections in production from day one.',
   },
   {
@@ -42,13 +42,18 @@ const milestones = [
     desc:  'Four editions (Lite/Core/Pro/Enterprise) + 12 specialized verticals.',
   },
   {
+    year: '2026',
+    title: 'Multi-country repositioning',
+    desc:  'SuiteHub becomes a PROOQ LLC (USA) product with local operations in Panama via PROOQ S.A. Soft launch in USA, Venezuela, and Spain.',
+  },
+  {
     year: 'Today',
-    title: '+30 active SMEs',
-    desc:  'Workshops, restaurants, retail, clinics, vets and more invoicing with SuiteHub across Panama.',
+    title: '+30 active SMBs in Panama',
+    desc:  'Workshops, restaurants, retail, clinics, vets and more invoicing with SuiteHub across Panama. USA/Venezuela/Spain in evaluation.',
   },
 ];
 ---
-<BaseLayout title="About us · SuiteHub" description="SuiteHub is the business suite built for the Panamanian SME.">
+<BaseLayout title="About us · SuiteHub" description="SuiteHub is the multi-jurisdiction business suite for SMBs across Panama, USA, Venezuela, and Spain. A PROOQ LLC (USA) product.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -57,12 +62,12 @@ const milestones = [
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">About us</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          Business software <span class="text-gradient">made in Panama</span><br/>
-          for the Panamanian SME.
+          Business software <span class="text-gradient">from Panama</span><br/>
+          for SMBs across four countries.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          SuiteHub is the result of more than a decade understanding how Panamanian business actually operates,
-          not an American or Spanish system translated.
+          SuiteHub is the result of more than a decade understanding how Spanish-speaking businesses actually operate.
+          Today a <strong class="text-white">PROOQ LLC</strong> (USA) product, with local operations in Panama via PROOQ S.A., and active expansion to USA, Venezuela, and Spain.
         </p>
       </div>
     </div>
@@ -75,21 +80,21 @@ const milestones = [
         <div class="lg:col-span-7">
           <span class="eyebrow">Who we are</span>
           <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-            <span class="text-gradient">SuiteHub</span>, business suite for the Panamanian SME.
+            <span class="text-gradient">SuiteHub</span>, multi-country business suite.
           </h2>
           <div class="space-y-4 text-ink-300 leading-relaxed">
             <p>
-              <strong class="text-white">SuiteHub</strong> is a business management platform built specifically
-              for the Panamanian SME, with a focus on DGI electronic invoicing, multi-branch and growth without
-              migrations.
+              <strong class="text-white">SuiteHub</strong> is a multi-jurisdiction business management platform
+              for SMBs across <strong class="text-white">Panama, USA, Venezuela, and Spain</strong>, with electronic invoicing
+              adaptable to each jurisdiction, multi-branch, and growth without migrations.
             </p>
             <p>
               We are not a reseller of foreign software. Every line of SuiteHub code is written thinking about
-              how a workshop in La Chorrera invoices, how a restaurant in Casco Viejo operates, how a clinic in
+              how a workshop in La Chorrera invoices, how a Hispanic restaurant in Chicago operates, how a clinic in
               Bella Vista books appointments.
             </p>
             <p class="text-sm text-ink-500 pt-2">
-              In Panama, SuiteHub is distributed through PROOQ S.A.
+              A <strong class="text-ink-300">PROOQ LLC</strong> (USA) product. Local operations in Panama through PROOQ S.A.
             </p>
           </div>
         </div>
@@ -103,20 +108,30 @@ const milestones = [
               </div>
               <div>
                 <div class="text-3xl font-display font-bold text-brand-400">+30</div>
-                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Active SMEs</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Active SMBs (PA)</div>
               </div>
               <div>
                 <div class="text-3xl font-display font-bold text-brand-400">12</div>
                 <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Verticals</div>
               </div>
               <div>
-                <div class="text-3xl font-display font-bold text-brand-400">100%</div>
-                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Panamanian</div>
+                <div class="text-3xl font-display font-bold text-brand-400">4</div>
+                <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Target countries</div>
               </div>
             </div>
-            <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-brand-400"></i>
-              Vía Argentina, Bella Vista, Panama
+            <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 space-y-1.5">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                Elmwood Park, Chicago IL · USA (PROOQ LLC)
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                Vía Argentina, Bella Vista · Panama
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                Calle La Línea 15, Puerto Real · Andalucía, Spain
+              </div>
             </div>
           </div>
         </div>
