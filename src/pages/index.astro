@@ -108,6 +108,12 @@ const pacs = [
     icon: 'fa-receipt',
     color: 'text-emerald-400',
   },
+  {
+    name: 'eFacturapty',
+    desc: 'PAC panameño certificado por la DGI',
+    icon: 'fa-file-invoice',
+    color: 'text-amber-400',
+  },
 ];
 
 const testimonios = [
@@ -264,13 +270,13 @@ const stats = [
       <div class="text-center mb-10">
         <span class="eyebrow">Facturación electrónica multi-jurisdicción</span>
         <h2 class="text-2xl sm:text-3xl font-display font-bold">
-          Hoy <span class="text-gradient">3 PACs DGI Panamá</span> en producción · Roadmap 2026: SENIAT VE, Facturae ES, compliance US
+          Hoy <span class="text-gradient">4 PACs DGI Panamá</span> en producción · Roadmap 2026: SENIAT VE, Facturae ES, compliance US
         </h2>
         <p class="mt-3 text-sm text-ink-400 max-w-xl mx-auto">
           Tú eliges con cuál PAC trabajar. SuiteHub se conecta directo y maneja todo el flujo XML, CUFE y QR sin que tengas que pensar en regulación. Capa adaptador diseñada para abstraer cualquier jurisdicción.
         </p>
       </div>
-      <div class="grid sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
         {pacs.map((p, i) => (
           <div class={`reveal reveal-delay-${i + 1} card-glass p-6 text-center hover:border-brand-500/30 transition-colors`}>
             <div class={`w-12 h-12 mx-auto rounded-xl bg-white/5 flex items-center justify-center text-2xl mb-3 ${p.color}`}>
