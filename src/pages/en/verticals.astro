@@ -25,6 +25,8 @@ const verticals = [
     name:   'HUB Restaurant',
     icon:   'fa-utensils',
     logo:   '/images/products/restaurant/dark-600.png',
+    screenshot: '/images/products/restaurant/web-1280.webp',
+    screenshotH: 875,
     sector: 'Restaurants and bars',
     short:  'For restaurants, cafés, bars and food trucks.',
     pitch:  'Live table state, orders fired to kitchen and bar, KDS, split bills, tips, delivery integration, shift reports.',
@@ -42,16 +44,18 @@ const verticals = [
     name:   'HUB POS',
     icon:   'fa-cash-register',
     logo:   '/images/products/pos/dark-600.png',
-    sector: 'Retail point of sale',
-    short:  'For physical stores, mini-markets, boutiques and multi-branch retail.',
-    pitch:  'Register with barcode scanner, real-time inventory control, cash close with reconciliation, returns, customer loyalty.',
+    screenshot: '/images/products/pos/web-1280.webp',
+    screenshotH: 996,
+    sector: 'Point of sale · register',
+    short:  'For food trucks, quick-service, cafés and bars: charge fast, with or without internet.',
+    pitch:  'The register itself. Take the order by table or to-go, apply modifiers, fire it to the kitchen, generate the pre-bill and charge with any method. Cash close with reconciliation. Installable as an app and runs locally without depending on the internet.',
     features: [
-      { icon: 'fa-barcode',        name: 'Barcode scanner',      desc: 'USB or Bluetooth, search by code or name' },
-      { icon: 'fa-warehouse',      name: 'Real-time stock',      desc: 'Every sale decrements inventory instantly' },
-      { icon: 'fa-cash-register',  name: 'Cash close',           desc: 'Per-shift reconciliation, audited differences' },
-      { icon: 'fa-rotate-left',    name: 'Returns',              desc: 'With or without ticket, refund to original method' },
-      { icon: 'fa-id-card',        name: 'Loyalty',              desc: 'Points, recurring-customer discounts' },
-      { icon: 'fa-print',          name: 'Configurable receipts', desc: 'Logo, message, e-invoicing QR' },
+      { icon: 'fa-bolt',            name: 'Fast order taking',    desc: 'By table or to-go, products by category in seconds' },
+      { icon: 'fa-pen',             name: 'Modifiers and notes',  desc: 'Doneness, paid extras, per-item notes' },
+      { icon: 'fa-money-bill-wave', name: 'Pre-bill and checkout', desc: 'Multi-method (cash, card, Yappy, mixed), automatic change' },
+      { icon: 'fa-cash-register',   name: 'Cash close',           desc: 'Per-shift reconciliation, audited differences' },
+      { icon: 'fa-wifi',            name: 'Works offline',        desc: 'Installable PWA; keeps charging without internet and syncs later' },
+      { icon: 'fa-qrcode',          name: 'Receipt with e-invoice QR', desc: 'Configurable receipt with CUFE and DGI QR' },
     ],
   },
   {
@@ -59,6 +63,8 @@ const verticals = [
     name:   'HUB Pet',
     icon:   'fa-paw',
     logo:   '/images/products/pet/dark-600.png',
+    screenshot: '/images/products/pet/web-1280.webp',
+    screenshotH: 994,
     sector: 'Veterinarians and pet shops',
     short:  'For vet clinics, dog grooming and pet shops.',
     pitch:  'Digital medical record per pet, automatic vaccine and deworming reminders, owner + pet booking, regulated veterinary products.',
@@ -263,6 +269,11 @@ const verticals = [
           </div>
 
           <div class="lg:col-span-7">
+            {v.screenshot && (
+              <figure class="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-glow-sm bg-navy-950">
+                <img src={v.screenshot} alt={`${v.name} screenshot`} width="1280" height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
+              </figure>
+            )}
             <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Vertical-specific features</h3>
             <div class="grid sm:grid-cols-2 gap-3">
               {v.features.map(f => (

@@ -25,6 +25,8 @@ const verticales = [
     name:   'HUB Restaurant',
     icon:   'fa-utensils',
     logo:   '/images/products/restaurant/dark-600.png',
+    screenshot: '/images/products/restaurant/web-1280.webp',
+    screenshotH: 875,
     sector: 'Restaurantes y bares',
     short:  'Para restaurantes, cafeterías, bares y food trucks.',
     pitch:  'Mesas con estado en vivo, comandas que llegan a cocina y barra, KDS, división de cuentas, propinas, integración con domicilio, reportes por turno.',
@@ -42,16 +44,18 @@ const verticales = [
     name:   'HUB POS',
     icon:   'fa-cash-register',
     logo:   '/images/products/pos/dark-600.png',
-    sector: 'Punto de venta retail',
-    short:  'Para tiendas físicas, minimarkets, boutiques y retail multi-sucursal.',
-    pitch:  'Caja registradora con escáner de código de barras, control de inventario en tiempo real, cierre de caja con arqueo, devoluciones, fidelización de clientes.',
+    screenshot: '/images/products/pos/web-1280.webp',
+    screenshotH: 996,
+    sector: 'Punto de venta · caja',
+    short:  'Para food trucks, quick-service, cafeterías y barras: cobra rápido, con o sin internet.',
+    pitch:  'La caja en sí. Toma el pedido por mesa o para llevar, aplica modificadores, lo envía a cocina, genera la pre-cuenta y cobra con cualquier método. Cierre de caja con arqueo. Instalable como app y funciona en local sin depender de internet.',
     features: [
-      { icon: 'fa-barcode',        name: 'Lector de barras',     desc: 'USB o Bluetooth, búsqueda por código o nombre' },
-      { icon: 'fa-warehouse',      name: 'Stock en tiempo real', desc: 'Cada venta descuenta inventario al instante' },
-      { icon: 'fa-cash-register',  name: 'Cierre de caja',       desc: 'Arqueo por turno, diferencias auditadas' },
-      { icon: 'fa-rotate-left',    name: 'Devoluciones',         desc: 'Con o sin ticket, reembolso al método original' },
-      { icon: 'fa-id-card',        name: 'Fidelización',         desc: 'Puntos, descuentos por cliente recurrente' },
-      { icon: 'fa-print',          name: 'Tickets configurables', desc: 'Logo, mensaje, código QR de FE' },
+      { icon: 'fa-bolt',            name: 'Tomar pedido rápido',  desc: 'Por mesa o para llevar, productos por categoría en segundos' },
+      { icon: 'fa-pen',             name: 'Modificadores y notas', desc: 'Término, extras con precio, notas por ítem' },
+      { icon: 'fa-money-bill-wave', name: 'Pre-cuenta y cobro',   desc: 'Multi-método (efectivo, tarjeta, Yappy, mixto), vuelto automático' },
+      { icon: 'fa-cash-register',   name: 'Cierre de caja',       desc: 'Arqueo por turno, diferencias auditadas' },
+      { icon: 'fa-wifi',            name: 'Funciona offline',     desc: 'PWA instalable; sigue cobrando sin internet y sincroniza luego' },
+      { icon: 'fa-qrcode',          name: 'Ticket con QR de FE',  desc: 'Recibo configurable con CUFE y QR de la DGI' },
     ],
   },
   {
@@ -59,6 +63,8 @@ const verticales = [
     name:   'HUB Pet',
     icon:   'fa-paw',
     logo:   '/images/products/pet/dark-600.png',
+    screenshot: '/images/products/pet/web-1280.webp',
+    screenshotH: 994,
     sector: 'Veterinarias y pet shops',
     short:  'Para clínicas veterinarias, peluquerías caninas y pet shops.',
     pitch:  'Ficha médica digital por mascota, recordatorios automáticos de vacunas y desparasitación, agenda con dueño + mascota, productos veterinarios con receta.',
@@ -265,6 +271,11 @@ const verticales = [
 
           <!-- Features grid -->
           <div class="lg:col-span-7">
+            {v.screenshot && (
+              <figure class="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-glow-sm bg-navy-950">
+                <img src={v.screenshot} alt={`Captura de pantalla de ${v.name}`} width="1280" height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
+              </figure>
+            )}
             <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Funciones específicas del vertical</h3>
             <div class="grid sm:grid-cols-2 gap-3">
               {v.features.map(f => (
