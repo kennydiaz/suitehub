@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="224" viewBox="228 23 224 224" role="img">
+  <title>HUB Carwash</title>
+  <desc>Insignia hexagonal flat-top con esquinas redondeadas en azul agua, con la silueta de un auto y gotas de agua.</desc>
+
+  <path d="M 425 147.12 L 393 202.58 Q 386 214.7 372 214.7 L 308 214.7 Q 294 214.7 287 202.58 L 255 147.12 Q 248 135 255 122.88 L 287 67.42 Q 294 55.3 308 55.3 L 372 55.3 Q 386 55.3 393 67.42 L 425 122.88 Q 432 135 425 147.12 Z" fill="#0284C7"/>
+
+  <path d="M 340 67.4 Q 346 74 346 80 A 6 6 0 1 1 334 80 Q 334 74 340 67.4 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M 322 75.5 Q 327 81 327 86 A 5 5 0 1 1 317 86 Q 317 81 322 75.5 Z" fill="#ffffff" opacity="0.85"/>
+  <path d="M 358 75.5 Q 363 81 363 86 A 5 5 0 1 1 353 86 Q 353 81 358 75.5 Z" fill="#ffffff" opacity="0.85"/>
+
+  <path d="M 290 154 L 290 140 Q 290 135 296 134 L 312 132 L 322 112 Q 325 108 331 108 L 356 108 Q 361 108 364 111 L 376 132 L 388 134 Q 393 135 393 140 L 393 154 Z" fill="#ffffff"/>
+
+  <path d="M 328 115 L 344 115 L 344 130 L 324 130 Z" fill="#0284C7"/>
+  <path d="M 348 115 L 362 115 L 372 130 L 348 130 Z" fill="#0284C7"/>
+
+  <circle cx="315" cy="154" r="14" fill="#0B3A5B"/>
+  <circle cx="315" cy="154" r="5" fill="#ffffff"/>
+  <circle cx="366" cy="154" r="14" fill="#0B3A5B"/>
+  <circle cx="366" cy="154" r="5" fill="#ffffff"/>
+</svg>

@@ -40,7 +40,7 @@ web/
 │   │   ├── index.astro         # Home ES
 │   │   ├── productos.astro
 │   │   ├── precios.astro
-│   │   ├── verticales.astro    # 12 verticales especializados
+│   │   ├── verticales.astro    # 13 verticales especializados
 │   │   ├── casos.astro         # QS Express + Clean Factory (casos reales)
 │   │   ├── sobre.astro
 │   │   ├── contacto.astro
@@ -62,7 +62,7 @@ web/
 │   ├── robots.txt              # Apunta al sitemap
 │   ├── favicons/               # Set único: 16/32/64/128/192/512 + favicon-hex.svg
 │   └── images/
-│       ├── products/{key}/     # 17 productos × 8 archivos = 136 logos
+│       ├── products/{key}/     # 18 productos (logos en svg/png multi-resolución)
 │       ├── cleanfactory.png    # Logo cliente real
 │       └── tallerqsexpress.png # Logo cliente real
 │
@@ -119,14 +119,11 @@ npm run preview   # Sirve dist/ localmente
 
 ---
 
-## Activar Analytics (cuando lo decidas)
+## Analytics
 
-`src/layouts/BaseLayout.astro` tiene el slot comentado al final del `<body>`. Para activar:
+**Google Analytics 4 activo** (`G-HRWL3FG6SF`) — inyectado vía `src/layouts/BaseLayout.astro` al final del `<body>`, presente en todas las páginas. Pendiente: banner de consentimiento de cookies (Ley 81 PA / GDPR).
 
-1. Descomentar **una** opción:
-   - **Plausible** (privacy-first, ~$9/mes): el `<script>` ya está armado con `data-domain="suitehub.net"`.
-   - **GA4** (gratis): reemplazar `G-XXXXXXXXXX` con tu Measurement ID.
-2. `npm run build` y volver a subir `dist/`.
+> El bloque de Plausible queda comentado como alternativa por si se migra en el futuro.
 
 ---
 
@@ -151,9 +148,9 @@ SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. PA
 
 ## Pendientes
 
-- Activar Analytics (Plausible o GA4)
+- Banner de consentimiento de cookies para GA4 (Ley 81 PA / GDPR)
 - Open Graph image dedicada por página (hoy todas comparten una)
-- Variantes faltantes de logos para 6 verticales (revisar `public/images/products/{beauty,clinic,gym,hotel,inmobiliaria,lavanderia}/` — set completo ya en producción 2026-05-02)
+- Screenshot real (`web-*.webp`) en verticales que aún solo muestran logo (carwash, taller, beauty, clinic, gym, lavanderia, inmobiliaria, phone, traffic)
 - Reemplazar 2 testimonios placeholder en home (Carmen Aguilar, Luis Fernández) con reales cuando estén disponibles
 - Sitemap: agregar `xhtml:link` a páginas internas (no solo home — los slugs ES/EN difieren, requiere `serialize` callback custom)
 - Fase 4 opcional: blog/MDX con artículos editoriales bilingües

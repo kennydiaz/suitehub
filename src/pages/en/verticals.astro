@@ -21,6 +21,23 @@ const verticals = [
     client: 'QS Express — Auto-repair shop in La Chorrera',
   },
   {
+    key:    'carwash',
+    name:   'HUB Carwash',
+    icon:   'fa-spray-can-sparkles',
+    logo:   '/images/products/carwash/hub-carwash-badge.svg',
+    sector: 'Car washes and detailing',
+    short:  'For car washes, express wash, detailing and mobile wash.',
+    pitch:  'Intake by plate, wash packages with price and duration, assignable bays and washers with a live queue, unlimited-wash memberships, ready-when-done customer alert and direct e-invoicing.',
+    features: [
+      { icon: 'fa-bolt',           name: 'Intake by plate',      desc: 'Plate, vehicle type and package in seconds' },
+      { icon: 'fa-layer-group',    name: 'Wash packages',        desc: 'Basic, premium, wax, detailing with price and duration' },
+      { icon: 'fa-warehouse',      name: 'Bays and washers',     desc: 'Assign bay and staff, see the live vehicle queue' },
+      { icon: 'fa-infinity',       name: 'Wash membership',      desc: 'Monthly unlimited-wash plan with recurring billing' },
+      { icon: 'fa-mobile-screen',  name: 'Ready-when-done alert', desc: 'Automatic WhatsApp to the customer when the service is done' },
+      { icon: 'fa-receipt',        name: 'Electronic invoicing', desc: 'DGI Panama with CUFE and QR · multi-country roadmap 2026' },
+    ],
+  },
+  {
     key:    'restaurant',
     name:   'HUB Restaurant',
     icon:   'fa-utensils',
@@ -202,14 +219,14 @@ const verticals = [
   },
 ];
 ---
-<BaseLayout title="Verticals · SuiteHub" description="12 specialized SuiteHub verticals: HUB Workshop, Restaurant, POS, Pet, Beauty, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
+<BaseLayout title="Verticals · SuiteHub" description="13 specialized SuiteHub verticals: HUB Workshop, Carwash, Restaurant, POS, Pet, Beauty, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
     <div class="wrap relative pt-12 pb-16">
       <div class="text-center max-w-3xl mx-auto">
-        <span class="eyebrow">12 specialized verticals</span>
+        <span class="eyebrow">13 specialized verticals</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
           SuiteHub <span class="text-gradient">for your industry</span>, not generic.
         </h1>
