@@ -25,4 +25,9 @@ desktop.ini
 # Astro
 .astro/
 
-# Build cache (dist/ se MANTIENE en git por convencion del proyecto)
+# Build output — regenerado por CI (deploy.yml hace npm run build antes del FTP).
+# No se versiona: ensucia diffs y el CI ignora el dist/ commiteado.
+dist/
+
+# FTP deploy state (lo gestiona la GitHub Action en el servidor)
+.ftp-deploy-sync-state.json
