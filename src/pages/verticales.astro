@@ -6,7 +6,6 @@ const verticales = [
     key:    'taller',
     name:   'HUB Taller',
     icon:   'fa-screwdriver-wrench',
-    logo:   '/images/products/taller/dark-600.png',
     sector: 'Talleres mecánicos',
     short:  'Para talleres mecánicos, autoservicios y centros de diagnóstico.',
     pitch:  'Recepción rápida del vehículo, órdenes de trabajo con servicios y repuestos, agenda online para citas, vehículo + cliente vinculados, facturación electrónica directa.',
@@ -24,7 +23,6 @@ const verticales = [
     key:    'carwash',
     name:   'HUB Carwash',
     icon:   'fa-spray-can-sparkles',
-    logo:   '/images/products/carwash/hub-carwash-badge.svg',
     sector: 'Autolavados y car wash',
     short:  'Para autolavados, car wash express, detailing y lavado a domicilio.',
     pitch:  'Recepción por placa, paquetes de lavado con precio y duración, bahías y lavadores asignables con cola en vivo, membresías de lavados ilimitados, aviso al cliente cuando el auto está listo y facturación electrónica directa.',
@@ -41,7 +39,6 @@ const verticales = [
     key:    'restaurant',
     name:   'HUB Restaurant',
     icon:   'fa-utensils',
-    logo:   '/images/products/restaurant/dark-600.png',
     screenshot: '/images/products/restaurant/web-1280.webp',
     screenshotH: 875,
     sector: 'Restaurantes y bares',
@@ -60,7 +57,6 @@ const verticales = [
     key:    'pos',
     name:   'HUB POS',
     icon:   'fa-cash-register',
-    logo:   '/images/products/pos/dark-600.png',
     screenshot: '/images/products/pos/web-1280.webp',
     screenshotH: 996,
     sector: 'Punto de venta · caja',
@@ -79,7 +75,6 @@ const verticales = [
     key:    'pet',
     name:   'HUB Pet',
     icon:   'fa-paw',
-    logo:   '/images/products/pet/dark-600.png',
     screenshot: '/images/products/pet/web-1280.webp',
     screenshotH: 994,
     sector: 'Veterinarias y pet shops',
@@ -97,7 +92,6 @@ const verticales = [
     key:    'beauty',
     name:   'HUB Beauty',
     icon:   'fa-spa',
-    logo:   '/images/products/beauty/dark.svg',
     sector: 'Salones de belleza, spas, barberías',
     short:  'Para salones, spas, barberías y centros estéticos.',
     pitch:  'Reserva online por servicio y profesional, comisiones por estilista, productos de venta + servicios, recordatorios SMS/WhatsApp.',
@@ -112,7 +106,6 @@ const verticales = [
     key:    'clinic',
     name:   'HUB Clinic',
     icon:   'fa-stethoscope',
-    logo:   '/images/products/clinic/dark.svg',
     sector: 'Consultorios y clínicas',
     short:  'Para consultorios médicos, odontológicos y clínicas multi-especialidad.',
     pitch:  'Expediente clínico digital, agenda por médico, recetas electrónicas, historial de pacientes, facturación a aseguradoras.',
@@ -127,7 +120,6 @@ const verticales = [
     key:    'gym',
     name:   'HUB Gym',
     icon:   'fa-dumbbell',
-    logo:   '/images/products/gym/dark.svg',
     sector: 'Gimnasios, crossfit, yoga',
     short:  'Para gimnasios, boxes de crossfit, estudios de yoga y centros deportivos.',
     pitch:  'Membresías mensuales/anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables, retención por inasistencia.',
@@ -142,7 +134,6 @@ const verticales = [
     key:    'lavanderia',
     name:   'HUB Lavandería',
     icon:   'fa-soap',
-    logo:   '/images/products/lavanderia/dark.svg',
     sector: 'Lavanderías profesionales',
     short:  'Para lavanderías, tintorerías y servicios de planchado.',
     pitch:  'Boleta con código de retiro, etapa del proceso (lavado/secado/planchado), precio por kilo o por prenda, recordatorio cuando está listo.',
@@ -157,7 +148,6 @@ const verticales = [
     key:    'inmobiliaria',
     name:   'HUB Inmobiliaria',
     icon:   'fa-building',
-    logo:   '/images/products/inmobiliaria/dark.svg',
     sector: 'Bienes raíces',
     short:  'Para corredoras inmobiliarias y desarrolladoras pequeñas.',
     pitch:  'Cartera de propiedades, leads con etapa del pipeline, contratos de alquiler con cobro recurrente, agentes con comisiones.',
@@ -172,7 +162,6 @@ const verticales = [
     key:    'hotel',
     name:   'HUB Hotel',
     icon:   'fa-hotel',
-    logo:   '/images/products/hotel/dark.svg',
     screenshot: '/images/products/hotel/web-1200.webp',
     screenshotH: 922,
     sector: 'Hoteles boutique y hostales',
@@ -189,7 +178,6 @@ const verticales = [
     key:    'phone',
     name:   'HUB Phone',
     icon:   'fa-mobile-screen',
-    logo:   '/images/products/phone/dark-600.png',
     sector: 'Reparación de celulares',
     short:  'Para tiendas de reparación de celulares, tablets y laptops.',
     pitch:  'Recepción del equipo con diagnóstico, cotización por daño, repuestos vinculados a la orden, garantía digital, ticket con código.',
@@ -204,7 +192,6 @@ const verticales = [
     key:    'traffic',
     name:   'HUB Traffic',
     icon:   'fa-people-arrows',
-    logo:   '/images/products/traffic/dark-600.png',
     sector: 'Analítica de afluencia y conducta en tienda',
     short:  'Para tiendas, centros comerciales, locales retail y espacios de alto tráfico.',
     pitch:  'Conteo automático de personas, mapas de calor por zona, tiempo de permanencia, conversión visita-venta cruzada con tu POS, comparativas por hora/día y alertas de aforo en tiempo real.',
@@ -244,9 +231,7 @@ const verticales = [
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
         {verticales.map(v => (
           <a href={`#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors">
-            <div class="w-9 h-9 mx-auto rounded-lg bg-brand-600/15 text-brand-400 flex items-center justify-center mb-2 group-hover:bg-brand-600/25 transition-colors">
-              <i class={`fa-solid ${v.icon}`}></i>
-            </div>
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-10 h-10 mx-auto mb-2 group-hover:scale-110 transition-transform" loading="lazy" />
             <div class="text-xs font-display font-semibold">{v.name}</div>
           </a>
         ))}
@@ -261,13 +246,7 @@ const verticales = [
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
           <!-- Header -->
           <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            {v.logo ? (
-              <img src={v.logo} alt={v.name} class="h-20 w-auto mb-6" />
-            ) : (
-              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-3xl mb-6 shadow-glow-sm">
-                <i class={`fa-solid ${v.icon}`}></i>
-              </div>
-            )}
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="h-20 w-20 mb-6" />
             <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold mb-2">{v.sector}</div>
             <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{v.name}</h2>
             <p class="text-base text-ink-300 leading-relaxed mb-6">{v.pitch}</p>

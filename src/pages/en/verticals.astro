@@ -6,7 +6,6 @@ const verticals = [
     key:    'taller',
     name:   'HUB Workshop',
     icon:   'fa-screwdriver-wrench',
-    logo:   '/images/products/taller/dark-600.png',
     sector: 'Auto-repair shops',
     short:  'For mechanic shops, quick-service centers and diagnostic centers.',
     pitch:  'Quick vehicle intake, work orders with services and parts, online booking, vehicle + customer linked, direct e-invoicing.',
@@ -24,7 +23,6 @@ const verticals = [
     key:    'carwash',
     name:   'HUB Carwash',
     icon:   'fa-spray-can-sparkles',
-    logo:   '/images/products/carwash/hub-carwash-badge.svg',
     sector: 'Car washes and detailing',
     short:  'For car washes, express wash, detailing and mobile wash.',
     pitch:  'Intake by plate, wash packages with price and duration, assignable bays and washers with a live queue, unlimited-wash memberships, ready-when-done customer alert and direct e-invoicing.',
@@ -41,7 +39,6 @@ const verticals = [
     key:    'restaurant',
     name:   'HUB Restaurant',
     icon:   'fa-utensils',
-    logo:   '/images/products/restaurant/dark-600.png',
     screenshot: '/images/products/restaurant/web-1280.webp',
     screenshotH: 875,
     sector: 'Restaurants and bars',
@@ -60,7 +57,6 @@ const verticals = [
     key:    'pos',
     name:   'HUB POS',
     icon:   'fa-cash-register',
-    logo:   '/images/products/pos/dark-600.png',
     screenshot: '/images/products/pos/web-1280.webp',
     screenshotH: 996,
     sector: 'Point of sale · register',
@@ -79,7 +75,6 @@ const verticals = [
     key:    'pet',
     name:   'HUB Pet',
     icon:   'fa-paw',
-    logo:   '/images/products/pet/dark-600.png',
     screenshot: '/images/products/pet/web-1280.webp',
     screenshotH: 994,
     sector: 'Veterinarians and pet shops',
@@ -97,7 +92,6 @@ const verticals = [
     key:    'beauty',
     name:   'HUB Beauty',
     icon:   'fa-spa',
-    logo:   '/images/products/beauty/dark.svg',
     sector: 'Beauty salons, spas, barbershops',
     short:  'For salons, spas, barbershops and aesthetic centers.',
     pitch:  'Online booking by service and stylist, commissions per stylist, retail products + services, SMS/WhatsApp reminders.',
@@ -112,7 +106,6 @@ const verticals = [
     key:    'clinic',
     name:   'HUB Clinic',
     icon:   'fa-stethoscope',
-    logo:   '/images/products/clinic/dark.svg',
     sector: 'Practices and clinics',
     short:  'For medical and dental practices and multi-specialty clinics.',
     pitch:  'Digital clinical record, doctor schedule, electronic prescriptions, patient history, billing to insurers.',
@@ -127,7 +120,6 @@ const verticals = [
     key:    'gym',
     name:   'HUB Gym',
     icon:   'fa-dumbbell',
-    logo:   '/images/products/gym/dark.svg',
     sector: 'Gyms, crossfit, yoga',
     short:  'For gyms, crossfit boxes, yoga studios and sports centers.',
     pitch:  'Monthly/annual memberships, QR access control, classes with capacity caps, assignable trainers, churn alerts.',
@@ -142,7 +134,6 @@ const verticals = [
     key:    'lavanderia',
     name:   'HUB Laundry',
     icon:   'fa-soap',
-    logo:   '/images/products/lavanderia/dark.svg',
     sector: 'Professional laundries',
     short:  'For laundries, dry cleaners and ironing services.',
     pitch:  'Receipt with pickup code, process stage (wash/dry/iron), price by kilo or by item, ready-when-done reminder.',
@@ -157,7 +148,6 @@ const verticals = [
     key:    'inmobiliaria',
     name:   'HUB Real Estate',
     icon:   'fa-building',
-    logo:   '/images/products/inmobiliaria/dark.svg',
     sector: 'Real estate',
     short:  'For real estate agencies and small developers.',
     pitch:  'Property portfolio, leads with pipeline stages, rental contracts with recurring billing, agents with commissions.',
@@ -172,7 +162,6 @@ const verticals = [
     key:    'hotel',
     name:   'HUB Hotel',
     icon:   'fa-hotel',
-    logo:   '/images/products/hotel/dark.svg',
     screenshot: '/images/products/hotel/web-1200.webp',
     screenshotH: 922,
     sector: 'Boutique hotels and hostels',
@@ -189,7 +178,6 @@ const verticals = [
     key:    'phone',
     name:   'HUB Phone',
     icon:   'fa-mobile-screen',
-    logo:   '/images/products/phone/dark-600.png',
     sector: 'Phone repair shops',
     short:  'For phone, tablet and laptop repair shops.',
     pitch:  'Device intake with diagnosis, quote per damage, parts linked to the order, digital warranty, ticket with code.',
@@ -204,7 +192,6 @@ const verticals = [
     key:    'traffic',
     name:   'HUB Traffic',
     icon:   'fa-people-arrows',
-    logo:   '/images/products/traffic/dark-600.png',
     sector: 'Footfall analytics and shopper behavior',
     short:  'For retail stores, malls, brick-and-mortar locations and high-traffic venues.',
     pitch:  'Automatic people counting, zone heatmaps, dwell time, visit-to-sale conversion cross-referenced with your POS, hour/day comparisons and real-time capacity alerts.',
@@ -244,9 +231,7 @@ const verticals = [
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
         {verticals.map(v => (
           <a href={`#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors">
-            <div class="w-9 h-9 mx-auto rounded-lg bg-brand-600/15 text-brand-400 flex items-center justify-center mb-2 group-hover:bg-brand-600/25 transition-colors">
-              <i class={`fa-solid ${v.icon}`}></i>
-            </div>
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-10 h-10 mx-auto mb-2 group-hover:scale-110 transition-transform" loading="lazy" />
             <div class="text-xs font-display font-semibold">{v.name}</div>
           </a>
         ))}
@@ -260,13 +245,7 @@ const verticals = [
       <div class="wrap">
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            {v.logo ? (
-              <img src={v.logo} alt={v.name} class="h-20 w-auto mb-6" />
-            ) : (
-              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-3xl mb-6 shadow-glow-sm">
-                <i class={`fa-solid ${v.icon}`}></i>
-              </div>
-            )}
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="h-20 w-20 mb-6" />
             <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold mb-2">{v.sector}</div>
             <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{v.name}</h2>
             <p class="text-base text-ink-300 leading-relaxed mb-6">{v.pitch}</p>

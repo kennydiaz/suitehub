@@ -76,6 +76,7 @@ const editions = [
 
 const verticals = [
   { key: 'taller',     name: 'HUB Workshop',    desc: 'Auto repair shops',         icon: 'fa-screwdriver-wrench' },
+  { key: 'carwash',    name: 'HUB Carwash',     desc: 'Car washes and detailing',  icon: 'fa-spray-can-sparkles' },
   { key: 'restaurant', name: 'HUB Restaurant',  desc: 'Restaurants and bars',      icon: 'fa-utensils' },
   { key: 'pos',        name: 'HUB POS',         desc: 'Checkout terminal for food service', icon: 'fa-cash-register' },
   { key: 'pet',        name: 'HUB Pet',         desc: 'Vets and pet shops',        icon: 'fa-paw' },
@@ -212,23 +213,27 @@ const stats = [
             <div class="absolute -inset-12 bg-brand-600/20 rounded-full blur-3xl"></div>
 
             <div class="relative card-glass p-3 lg:p-5 shadow-glow text-center mb-6">
-              <img src="/images/products/suite/dark-1200.png"
-                   alt="SuiteHub"
-                   class="w-full mx-auto" />
+              <img src="/images/products/suite/badge.svg" alt="SuiteHub" class="h-24 w-24 mx-auto" />
+              <div class="font-display font-extrabold text-3xl mt-3">SuiteHub</div>
+              <div class="text-[11px] uppercase tracking-[0.25em] text-ink-400 mt-1">Business suite</div>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 relative">
-              <a href="/en/products#lite" class="card-glass p-0.5 rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-transform">
-                <img src="/images/products/lite/dark-600.png" alt="HUB Lite" class="w-full" />
+              <a href="/en/products#lite" class="card-glass p-3 rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
+                <img src="/images/products/lite/badge.svg" alt="HUB Lite" class="w-14 h-14" />
+                <span class="text-xs font-display font-semibold">HUB Lite</span>
               </a>
-              <a href="/en/products#core" class="card-glass p-0.5 rotate-[-1deg] hover:rotate-0 hover:scale-105 transition-transform">
-                <img src="/images/products/core/dark-600.png" alt="HUB Core" class="w-full" />
+              <a href="/en/products#core" class="card-glass p-3 rotate-[-1deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
+                <img src="/images/products/core/badge.svg" alt="HUB Core" class="w-14 h-14" />
+                <span class="text-xs font-display font-semibold">HUB Core</span>
               </a>
-              <a href="/en/products#pro" class="card-glass p-0.5 rotate-[1deg] hover:rotate-0 hover:scale-105 transition-transform">
-                <img src="/images/products/pro/dark-600.png" alt="HUB Pro" class="w-full" />
+              <a href="/en/products#pro" class="card-glass p-3 rotate-[1deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
+                <img src="/images/products/pro/badge.svg" alt="HUB Pro" class="w-14 h-14" />
+                <span class="text-xs font-display font-semibold">HUB Pro</span>
               </a>
-              <a href="/en/products#enterprise" class="card-glass p-0.5 rotate-[3deg] hover:rotate-0 hover:scale-105 transition-transform">
-                <img src="/images/products/enterprise/dark-600.png" alt="HUB Enterprise" class="w-full" />
+              <a href="/en/products#enterprise" class="card-glass p-3 rotate-[3deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
+                <img src="/images/products/enterprise/badge.svg" alt="HUB Enterprise" class="w-14 h-14" />
+                <span class="text-xs font-display font-semibold">HUB Enterprise</span>
               </a>
             </div>
 
@@ -351,9 +356,7 @@ const stats = [
         {verticals.map((v, i) => (
           <a href={`/en/verticals#${v.key}`}
              class={`reveal reveal-delay-${(i % 4) + 1} group card-glass p-5 hover:border-brand-500/30 hover:bg-white/[0.05] transition-all`}>
-            <div class="w-11 h-11 rounded-xl bg-brand-600/15 flex items-center justify-center text-brand-400 mb-4 group-hover:bg-brand-600/25 group-hover:text-brand-300 transition-colors">
-              <i class={`fa-solid ${v.icon} text-lg`}></i>
-            </div>
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" loading="lazy" />
             <h3 class="text-base font-display font-semibold mb-1">{v.name}</h3>
             <p class="text-xs text-ink-400">{v.desc}</p>
           </a>
@@ -415,8 +418,10 @@ const stats = [
           <div class="text-center">
             <img src="/images/tallerqsexpress.png" alt="QS Express"
                  class="w-32 mx-auto mb-4 rounded-xl bg-white/5 p-3" />
-            <img src="/images/products/taller/dark-600.png" alt="HUB Workshop"
-                 class="w-40 mx-auto mb-4 opacity-90" />
+            <div class="flex items-center justify-center gap-2.5 mb-4">
+              <img src="/images/products/taller/badge.svg" alt="HUB Workshop" class="w-12 h-12" />
+              <span class="font-display font-bold text-xl">HUB Workshop</span>
+            </div>
             <div class="text-sm text-ink-400">Auto-repair shop — La Chorrera</div>
             <div class="mt-4 inline-flex items-center gap-2 text-xs text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full">
               <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>

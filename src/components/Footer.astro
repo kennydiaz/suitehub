@@ -51,8 +51,10 @@ const moreText = t('wa.text.more');
     <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
       <!-- Brand col -->
       <div class="md:col-span-4">
-        <img src="/images/products/suite/dark.svg" alt="SuiteHub"
-             class="h-10 w-auto mb-5" />
+        <div class="flex items-center gap-2.5 mb-5">
+          <img src="/images/products/suite/badge.svg" alt="SuiteHub" class="h-10 w-10" />
+          <span class="font-display font-extrabold text-xl tracking-tight text-white">SuiteHub</span>
+        </div>
         <p class="text-sm text-ink-400 leading-relaxed mb-6 max-w-sm">
           {t('footer.tagline')}
         </p>
