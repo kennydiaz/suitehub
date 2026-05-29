@@ -1,5 +1,14 @@
 name: Deploy suitehub.net a Hostinger
 
+# Build estatico (Astro) + rsync por SSH a public_html.
+# IMPORTANTE: public_html es COMPARTIDO con las apps PHP (carwash, royalcar,
+# panel, core, lite, pro, beauty, taller, pet, hotel, boutique...). Por eso
+# NO se usa --delete: solo subimos/actualizamos los archivos del sitio y
+# dejamos intactas las carpetas de las otras apps.
+#
+# Requiere los mismos secrets que los demas repos del hosting:
+#   SSH_PRIVATE_KEY, SSH_USER, SSH_HOST
+
 on:
   push:
     branches: [main]
@@ -9,14 +18,18 @@ concurrency:
   group: deploy-suitehub
   cancel-in-progress: false
 
+env:
+  SSH_PORT: "65002"
+  SSH_OPTS: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+  # Sin --delete a proposito (public_html compartido). Solo sincroniza el sitio.
+  RSYNC_OPTS: "-rltvz --no-perms --omit-dir-times"
+
 jobs:
   build-and-deploy:
-    name: Build estatico y FTP a public_html
+    name: Build estatico y rsync a public_html
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node 20
         uses: actions/setup-node@v4
@@ -32,19 +45,13 @@ jobs:
         env:
           PUBLIC_SITE_URL: https://suitehub.net
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /public_html/
-          protocol: ftps
-          port: 21
-          timeout: 60000
-          state-name: .ftp-deploy-sync-state.json
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Configurar llave SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+      - name: Deploy via rsync (SSH)
+        run: |
+          rsync $RSYNC_OPTS -e "ssh -p $SSH_PORT -i ~/.ssh/deploy_key $SSH_OPTS" \
+            ./dist/ "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/u525838892/domains/suitehub.net/public_html/"
