@@ -125,20 +125,6 @@ const testimonials = [
     initial: 'R',
     logo:    '/images/tallerqsexpress.png',
   },
-  {
-    quote: "What I loved is that I didn't have to change how I work. The SuiteHub team adapted the platform to our flow, not the other way around.",
-    author: 'Carmen Aguilar',
-    role:   'Manager — La Esquina Restaurant',
-    initial: 'C',
-    logo:    null,
-  },
-  {
-    quote: 'I used to track receivables in Excel. Now I see overdue balances in real time and the multi-invoice receipts save me hours every week.',
-    author: 'Luis Fernández',
-    role:   'Accountant — Distribuidora Tropical',
-    initial: 'L',
-    logo:    null,
-  },
 ];
 
 const stats = [
@@ -443,7 +429,7 @@ const stats = [
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5">
+      <div class="max-w-2xl mx-auto">
         {testimonials.map((t, i) => (
           <figure class={`reveal reveal-delay-${i + 1} card-glass p-7 flex flex-col`}>
             <div class="text-brand-400 text-2xl mb-4">

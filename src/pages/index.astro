@@ -125,20 +125,6 @@ const testimonios = [
     initial: 'R',
     logo:    '/images/tallerqsexpress.png',
   },
-  {
-    quote: 'Lo que más me gustó es que no tuve que cambiar mi forma de trabajar. El equipo de SuiteHub adaptó la plataforma a nuestro flujo, no al revés.',
-    author: 'Carmen Aguilar',
-    role:   'Gerente — Restaurante La Esquina',
-    initial: 'C',
-    logo:    null,
-  },
-  {
-    quote: 'Antes hacía cuentas por cobrar en Excel. Ahora veo los saldos vencidos en tiempo real y los recibos multi-factura me ahorraron horas semanales.',
-    author: 'Luis Fernández',
-    role:   'Contador — Distribuidora Tropical',
-    initial: 'L',
-    logo:    null,
-  },
 ];
 
 const stats = [
@@ -462,7 +448,7 @@ const stats = [
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5">
+      <div class="max-w-2xl mx-auto">
         {testimonios.map((t, i) => (
           <figure class={`reveal reveal-delay-${i + 1} card-glass p-7 flex flex-col`}>
             <div class="text-brand-400 text-2xl mb-4">
