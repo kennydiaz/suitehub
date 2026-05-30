@@ -1,0 +1,107 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((p) => p.data.lang === 'es' && !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('es-PA', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const url = new URL(`/blog/${d.slug}`, Astro.site).toString();
+const img = new URL(d.heroImage ?? '/images/products/suite/light-1200.png', Astro.site).toString();
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.description,
+  image: img,
+  inLanguage: 'es',
+  datePublished: d.pubDate.toISOString(),
+  dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+  author: { '@type': 'Organization', name: d.author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'SuiteHub',
+    logo: { '@type': 'ImageObject', url: 'https://suitehub.net/images/products/suite/light-600.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://suitehub.net/' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://suitehub.net/blog' },
+    { '@type': 'ListItem', position: 3, name: d.title, item: url },
+  ],
+};
+---
+<BaseLayout title={`${d.title} · SuiteHub`} description={d.description} ogImage={d.heroImage} ogType="article">
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <article class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[360px] bg-radial-brand pointer-events-none"></div>
+    <div class="wrap relative pt-10 pb-20 max-w-3xl">
+
+      <!-- Migas -->
+      <nav class="text-xs text-ink-500 mb-6" aria-label="Migas de pan">
+        <a href="/" class="hover:text-ink-300">Inicio</a>
+        <span class="mx-1.5 opacity-40">/</span>
+        <a href="/blog" class="hover:text-ink-300">Blog</a>
+      </nav>
+
+      <!-- Cabecera -->
+      <header class="mb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {d.tags.map((tag) => (
+            <span class="text-[10px] uppercase tracking-wider font-semibold text-brand-400 bg-brand-500/10 px-2 py-1 rounded">{tag}</span>
+          ))}
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-[1.1]">{d.title}</h1>
+        <div class="mt-5 flex items-center gap-3 text-sm text-ink-400">
+          <span>{d.author}</span>
+          <span class="opacity-40">·</span>
+          <time datetime={d.pubDate.toISOString()}>{fmt(d.pubDate)}</time>
+        </div>
+      </header>
+
+      {d.heroImage && (
+        <img src={d.heroImage} alt={d.title} width="1200" height="630"
+             class="w-full aspect-[1200/630] object-cover rounded-2xl border border-white/10 mb-10 bg-white/5" />
+      )}
+
+      <!-- Cuerpo -->
+      <div class="prose prose-invert prose-lg max-w-none
+                  prose-headings:font-display prose-headings:tracking-tight
+                  prose-a:text-brand-400 hover:prose-a:text-brand-300 prose-a:no-underline
+                  prose-strong:text-white prose-blockquote:border-brand-500
+                  prose-blockquote:text-ink-300 prose-code:text-brand-300">
+        <Content />
+      </div>
+
+      <!-- CTA -->
+      <div class="card-glass gradient-border text-center p-8 mt-12">
+        <h2 class="text-2xl font-display font-bold mb-3">¿Listo para digitalizar tu negocio?</h2>
+        <p class="text-ink-300 mb-6">Conversemos por WhatsApp y te recomendamos la edición según tu operación.</p>
+        <a href="https://wa.me/50766326006?text=Vengo%20del%20blog%20de%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Hablar con ventas
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+</BaseLayout>

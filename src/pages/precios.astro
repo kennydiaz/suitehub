@@ -111,8 +111,31 @@ const colorMap = {
   brand: 'text-brand-300',
   amber:  'text-amber-400',
 };
+
+// Preguntas frecuentes → schema FAQPage (rich result en Google).
+const faqs = [
+  { q: '¿Tengo que firmar contrato anual?', a: 'No. Pagas mes a mes y cancelas cuando quieras. Si pagas un año adelantado obtienes 16% de descuento, pero no es obligatorio.' },
+  { q: '¿Qué pasa si supero los límites de mi edición?', a: 'El sistema te avisa al 80% del límite. Puedes subir a la siguiente edición desde la misma plataforma sin migrar datos ni perder configuración.' },
+  { q: '¿El setup se cobra aparte?', a: 'En Lite y Core el setup es gratuito (autoservicio). En Pro incluimos 4 horas de onboarding asistido. En Enterprise asignamos un consultor dedicado.' },
+  { q: '¿Puedo agregar usuarios extra?', a: 'Sí. Usuario adicional cuesta $5/mes en Lite, $4/mes en Core, $3/mes en Pro, y $2/mes en Enterprise.' },
+  { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Aceptamos transferencia ACH, Yappy, tarjeta de crédito y depósito bancario. Cuentas Enterprise pueden pagar contra factura a 30 días.' },
+  { q: '¿Qué incluye el costo del PAC para FE?', a: 'El costo del PAC (Digifact, HKA, Factura Fácil o eFacturapty) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.' },
+];
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 <BaseLayout title="Precios y comparativa · SuiteHub" description="Tabla comparativa completa de las 4 ediciones de SuiteHub. Desde $24/mes con 16% off pagando anual.">
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </Fragment>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

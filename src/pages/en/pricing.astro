@@ -110,8 +110,31 @@ const colorMap = {
   brand: 'text-brand-300',
   amber:  'text-amber-400',
 };
+
+// FAQ → FAQPage schema (Google rich result).
+const faqs = [
+  { q: 'Do I have to sign an annual contract?', a: "No. You pay month to month and cancel whenever you want. If you pay a year up front you get 16% off, but it's not required." },
+  { q: 'What happens if I exceed my edition limits?', a: 'The system warns you at 80% of the limit. You can move up to the next edition from inside the platform without migrating data or losing your configuration.' },
+  { q: 'Is setup billed separately?', a: 'Setup is free in Lite and Core (self-service). In Pro we include 4 hours of assisted onboarding. In Enterprise we assign a dedicated consultant.' },
+  { q: 'Can I add extra users?', a: 'Yes. Each additional user costs $5/mo in Lite, $4/mo in Core, $3/mo in Pro and $2/mo in Enterprise.' },
+  { q: 'How do I pay? Do you accept ACH, Yappy, credit card?', a: 'We accept ACH, Yappy, credit card and bank deposit. Enterprise accounts can pay against invoice on net-30 terms.' },
+  { q: 'What does the e-invoicing PAC cost cover?', a: 'The PAC cost (Digifact, HKA, Factura Fácil or eFacturapty) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.' },
+];
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 <BaseLayout title="Pricing and comparison · SuiteHub" description="Full comparison table of the 4 SuiteHub editions. From $24/month with 16% off when paying annually.">
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </Fragment>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

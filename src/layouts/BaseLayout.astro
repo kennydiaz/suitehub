@@ -8,6 +8,7 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
 }
 
 const locale = getLocaleFromUrl(Astro.url);
@@ -26,6 +27,7 @@ const {
   title       = defaultTitle,
   description = defaultDesc,
   ogImage     = '/images/products/suite/light-1200.png',
+  ogType      = 'website',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -61,7 +63,7 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
     <!-- Open Graph -->
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type"        content="website" />
+    <meta property="og:type"        content={ogType} />
     <meta property="og:url"         content={canonical} />
     <meta property="og:image"       content={new URL(ogImage, Astro.site).toString()} />
     <meta property="og:site_name"   content="SuiteHub" />
@@ -167,6 +169,35 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
         ]
       }
     })} />
+
+    <!-- JSON-LD: LocalBusiness (operación Panamá — SEO local / Google Maps) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SuiteHub Panamá",
+      "image": "https://suitehub.net/images/products/suite/light-600.png",
+      "url": "https://suitehub.net",
+      "telephone": "+507-6632-6006",
+      "email": "info@suitehub.net",
+      "priceRange": "$24–$192/mes",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vía Argentina, Bella Vista",
+        "addressLocality": isEn ? "Panama City" : "Ciudad de Panamá",
+        "addressCountry": "PA"
+      },
+      "areaServed": ["PA", "US", "VE", "ES"],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }],
+      "sameAs": ["https://panel.suitehub.net"]
+    })} />
+
+    <!-- JSON-LD adicional por página (Article, FAQPage, BreadcrumbList…) -->
+    <slot name="head" />
   </head>
   <body>
     <Header />

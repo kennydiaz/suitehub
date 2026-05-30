@@ -8,6 +8,7 @@ const year = new Date().getFullYear();
 const productsHref  = localizedHref('products', locale);
 const verticalsHref = localizedHref('verticals', locale);
 const casesHref     = localizedHref('cases', locale);
+const blogHref      = localizedHref('blog', locale);
 const pricingHref   = localizedHref('pricing', locale);
 const aboutHref     = localizedHref('about', locale);
 const contactHref   = localizedHref('contact', locale);
@@ -37,6 +38,7 @@ const cols = [
     title: t('footer.col.company'),
     links: [
       { label: t('footer.company.cases'),   href: casesHref },
+      { label: t('footer.company.blog'),    href: blogHref },
       { label: t('footer.company.pricing'), href: pricingHref },
       { label: t('footer.company.about'),   href: aboutHref },
       { label: t('footer.company.contact'), href: contactHref },
@@ -52,7 +54,7 @@ const moreText = t('wa.text.more');
       <!-- Brand col -->
       <div class="md:col-span-4">
         <div class="flex items-center gap-2.5 mb-5">
-          <img src="/images/products/suite/badge.svg" alt="SuiteHub" class="h-10 w-10" />
+          <img src="/images/products/suite/badge.svg" alt="SuiteHub" width="40" height="40" class="h-10 w-10" />
           <span class="font-display font-extrabold text-xl tracking-tight text-white">SuiteHub</span>
         </div>
         <p class="text-sm text-ink-400 leading-relaxed mb-6 max-w-sm">
