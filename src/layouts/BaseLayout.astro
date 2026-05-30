@@ -214,5 +214,17 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
       gtag('js', new Date());
       gtag('config', 'G-HRWL3FG6SF');
     </script>
+
+    <!-- Medición propia SuiteHub → panel.suitehub.net (first-party, no depende de Google) -->
+    <script is:inline>
+      (function(){
+        try {
+          if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
+          var i = new Image();
+          i.src = 'https://panel.suitehub.net/track.php?p=' + encodeURIComponent(location.pathname)
+                + '&r=' + encodeURIComponent(document.referrer) + '&t=' + Date.now();
+        } catch (e) {}
+      })();
+    </script>
   </body>
 </html>
