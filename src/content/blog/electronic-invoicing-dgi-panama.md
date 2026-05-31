@@ -4,7 +4,7 @@ description: "What DGI electronic invoicing is, who is required to use it, how t
 lang: "en"
 slug: "electronic-invoicing-dgi-panama"
 pubDate: 2026-05-30
-author: "SuiteHub Team"
+author: "Kenny Diaz"
 tags: ["electronic invoicing", "DGI", "Panama", "SMBs"]
 heroImage: "/images/products/suite/light-1200.png"
 ---

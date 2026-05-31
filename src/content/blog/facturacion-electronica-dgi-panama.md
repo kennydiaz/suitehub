@@ -4,7 +4,7 @@ description: "Qué es la factura electrónica de la DGI, quiénes están obligad
 lang: "es"
 slug: "facturacion-electronica-dgi-panama"
 pubDate: 2026-05-30
-author: "Equipo SuiteHub"
+author: "Kenny Diaz"
 tags: ["facturación electrónica", "DGI", "Panamá", "PYMEs"]
 heroImage: "/images/products/suite/light-1200.png"
 ---

@@ -26,7 +26,7 @@ const articleLd = {
   inLanguage: 'es',
   datePublished: d.pubDate.toISOString(),
   dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
-  author: { '@type': 'Organization', name: d.author },
+  author: { '@type': 'Person', name: d.author, url: 'https://suitehub.net/sobre' },
   publisher: {
     '@type': 'Organization',
     name: 'SuiteHub',

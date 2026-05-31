@@ -15,7 +15,7 @@ const blog = defineCollection({
     slug: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default('Equipo SuiteHub'),
+    author: z.string().default('Kenny Diaz'),
     tags: z.array(z.string()).default([]),
     heroImage: z.string().optional(),
     draft: z.boolean().default(false),
