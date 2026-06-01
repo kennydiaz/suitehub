@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "marca": "SuiteHub",
+    "empresa": "PROOQ LLC (USA) · operado en Panamá por PROOQ S.A.",
+    "moneda": "USD",
+    "ciclo_anual_factor": 10,
+    "descuento_anual_pct": 16,
+    "modelo_precio_vertical": "edicion_base + delta_vertical",
+    "sku_formato": "HUB-{VERTICAL}-{EDICION}-{CICLO}",
+    "actualizado": "2026-05-30",
+    "notas": [
+      "Fuente única de verdad del catálogo. El sitio Astro y el futuro panel deben leer de aquí.",
+      "anual = mensual * ciclo_anual_factor (10) => ~16% off, igual que las ediciones.",
+      "PAC de facturación electrónica lo contrata y paga el cliente directo; SuiteHub solo integra."
+    ]
+  },
+
+  "ediciones": [
+    {
+      "key": "lite", "name": "Lite", "color": "sky", "featured": false,
+      "precio_mes": 24, "precio_anio": 240,
+      "limites": { "sucursales": 1, "usuarios": 3, "registros": 500, "almacenamiento_gb": 2, "transacciones_mes": 100 },
+      "fe_electronica": false,
+      "salto_clave": "Lo básico: clientes, catálogo, cotizaciones y facturas sin FE electrónica."
+    },
+    {
+      "key": "core", "name": "Core", "color": "cyan", "featured": false,
+      "precio_mes": 36, "precio_anio": 360,
+      "limites": { "sucursales": 2, "usuarios": 8, "registros": 5000, "almacenamiento_gb": 10, "transacciones_mes": 1000 },
+      "fe_electronica": true,
+      "salto_clave": "Activa FE DGI (Digifact/HKA/Factura Fácil/eFacturapty), CxC multi-factura, reportes SQL y plantillas PDF."
+    },
+    {
+      "key": "pro", "name": "Pro", "color": "brand", "featured": true,
+      "precio_mes": 96, "precio_anio": 960,
+      "limites": { "sucursales": 5, "usuarios": 20, "registros": 50000, "almacenamiento_gb": 50, "transacciones_mes": 10000 },
+      "fe_electronica": true,
+      "salto_clave": "Multi-sucursal real, automatizaciones, API REST (100K/mes), webhooks, WhatsApp Business, branding propio."
+    },
+    {
+      "key": "enterprise", "name": "Enterprise", "color": "amber", "featured": false,
+      "precio_mes": 192, "precio_anio": 1920,
+      "limites": { "sucursales": "ilimitadas", "usuarios": 50, "registros": "ilimitados", "almacenamiento_gb": 200, "transacciones_mes": "ilimitadas" },
+      "fe_electronica": true,
+      "salto_clave": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom."
+    }
+  ],
+
+  "addons": [
+    { "key": "usuario_extra", "name": "Usuario adicional", "unidad": "mes", "precio_por_edicion": { "lite": 5, "core": 4, "pro": 3, "enterprise": 2 } },
+    { "key": "dominio_propio", "name": "Dominio propio", "unidad": "mes", "precio_mes": 5, "disponible_desde": "pro", "incluido_en": ["enterprise"], "estado": "PROPUESTA" },
+    { "key": "email_dominio", "name": "Email saliente con tu dominio", "unidad": "mes", "precio_mes": 5, "disponible_desde": "pro", "incluido_en": ["enterprise"], "estado": "PROPUESTA" },
+    { "key": "pac_fe", "name": "PAC facturación electrónica", "nota": "Lo paga el cliente directo al PAC. SuiteHub integra sin cobro.", "precio_mes": 0 }
+  ],
+
+  "deltas_vertical": {
+    "ligero": 10,
+    "medio": 20,
+    "pesado": 30
+  },
+
+  "verticales": [
+    {
+      "key": "taller", "name": "HUB Taller", "sector": "Talleres mecánicos",
+      "grupo": "medio", "delta_mes": 20, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": "QS Express — La Chorrera",
+      "features": ["Recepción rápida por placa", "Órdenes de trabajo (servicios + repuestos)", "Agenda de citas online", "Histórico de vehículos", "Catálogo de servicios", "Facturación electrónica"],
+      "planes": [
+        { "sku": "HUB-TALLER-CORE-MES", "edicion": "core", "precio_mes": 56, "precio_anio": 560 },
+        { "sku": "HUB-TALLER-PRO-MES", "edicion": "pro", "precio_mes": 116, "precio_anio": 1160 },
+        { "sku": "HUB-TALLER-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 212, "precio_anio": 2120 }
+      ]
+    },
+    {
+      "key": "carwash", "name": "HUB Carwash", "sector": "Autolavados y car wash",
+      "grupo": "medio", "delta_mes": 20, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Recepción por placa", "Paquetes de lavado", "Bahías y lavadores con cola en vivo", "Membresía de lavados", "Aviso WhatsApp cuando está listo", "Facturación electrónica"],
+      "planes": [
+        { "sku": "HUB-CARWASH-CORE-MES", "edicion": "core", "precio_mes": 56, "precio_anio": 560 },
+        { "sku": "HUB-CARWASH-PRO-MES", "edicion": "pro", "precio_mes": 116, "precio_anio": 1160 },
+        { "sku": "HUB-CARWASH-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 212, "precio_anio": 2120 }
+      ]
+    },
+    {
+      "key": "restaurant", "name": "HUB Restaurant", "sector": "Restaurantes y bares",
+      "grupo": "pesado", "delta_mes": 30, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Mesas en vivo", "Comanda a cocina (KDS)", "Dividir cuentas", "Propinas y descuentos", "Domicilio", "Reportes por turno"],
+      "planes": [
+        { "sku": "HUB-RESTAURANT-CORE-MES", "edicion": "core", "precio_mes": 66, "precio_anio": 660 },
+        { "sku": "HUB-RESTAURANT-PRO-MES", "edicion": "pro", "precio_mes": 126, "precio_anio": 1260 },
+        { "sku": "HUB-RESTAURANT-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 222, "precio_anio": 2220 }
+      ]
+    },
+    {
+      "key": "pet", "name": "HUB Pet", "sector": "Veterinarias y pet shops",
+      "grupo": "medio", "delta_mes": 20, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Ficha médica digital", "Recordatorios automáticos (vacunas/desparasitación)", "Agenda dueño + mascota", "Recetas con stock", "Galería por mascota"],
+      "planes": [
+        { "sku": "HUB-PET-CORE-MES", "edicion": "core", "precio_mes": 56, "precio_anio": 560 },
+        { "sku": "HUB-PET-PRO-MES", "edicion": "pro", "precio_mes": 116, "precio_anio": 1160 },
+        { "sku": "HUB-PET-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 212, "precio_anio": 2120 }
+      ]
+    },
+    {
+      "key": "beauty", "name": "HUB Beauty", "sector": "Salones, spas, barberías",
+      "grupo": "ligero", "delta_mes": 10, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Reserva online por servicio y profesional", "Comisiones por estilista", "Productos + servicios en un ticket", "Recordatorios WhatsApp"],
+      "planes": [
+        { "sku": "HUB-BEAUTY-CORE-MES", "edicion": "core", "precio_mes": 46, "precio_anio": 460 },
+        { "sku": "HUB-BEAUTY-PRO-MES", "edicion": "pro", "precio_mes": 106, "precio_anio": 1060 },
+        { "sku": "HUB-BEAUTY-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 202, "precio_anio": 2020 }
+      ]
+    },
+    {
+      "key": "clinic", "name": "HUB Clinic", "sector": "Consultorios y clínicas",
+      "grupo": "medio", "delta_mes": 20, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Expediente clínico digital", "Agenda multi-médico", "Recetas digitales", "Facturación a aseguradoras"],
+      "planes": [
+        { "sku": "HUB-CLINIC-CORE-MES", "edicion": "core", "precio_mes": 56, "precio_anio": 560 },
+        { "sku": "HUB-CLINIC-PRO-MES", "edicion": "pro", "precio_mes": 116, "precio_anio": 1160 },
+        { "sku": "HUB-CLINIC-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 212, "precio_anio": 2120 }
+      ]
+    },
+    {
+      "key": "gym", "name": "HUB Gym", "sector": "Gimnasios, crossfit, yoga",
+      "grupo": "medio", "delta_mes": 20, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Membresías con cobro recurrente", "Control de acceso por QR", "Clases con cupo", "Retención por inasistencia"],
+      "planes": [
+        { "sku": "HUB-GYM-CORE-MES", "edicion": "core", "precio_mes": 56, "precio_anio": 560 },
+        { "sku": "HUB-GYM-PRO-MES", "edicion": "pro", "precio_mes": 116, "precio_anio": 1160 },
+        { "sku": "HUB-GYM-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 212, "precio_anio": 2120 }
+      ]
+    },
+    {
+      "key": "lavanderia", "name": "HUB Lavandería", "sector": "Lavanderías profesionales",
+      "grupo": "ligero", "delta_mes": 10, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": "Clean Factory — Panamá",
+      "features": ["Boleta con código de retiro", "Etapas del proceso", "Precio por kilo o prenda", "Aviso WhatsApp cuando está listo"],
+      "planes": [
+        { "sku": "HUB-LAVANDERIA-CORE-MES", "edicion": "core", "precio_mes": 46, "precio_anio": 460 },
+        { "sku": "HUB-LAVANDERIA-PRO-MES", "edicion": "pro", "precio_mes": 106, "precio_anio": 1060 },
+        { "sku": "HUB-LAVANDERIA-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 202, "precio_anio": 2020 }
+      ]
+    },
+    {
+      "key": "inmobiliaria", "name": "HUB Inmobiliaria", "sector": "Bienes raíces",
+      "grupo": "ligero", "delta_mes": 10, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Catálogo de propiedades", "Pipeline de leads", "Contratos de alquiler con cobro recurrente", "Comisiones de agentes"],
+      "planes": [
+        { "sku": "HUB-INMOBILIARIA-CORE-MES", "edicion": "core", "precio_mes": 46, "precio_anio": 460 },
+        { "sku": "HUB-INMOBILIARIA-PRO-MES", "edicion": "pro", "precio_mes": 106, "precio_anio": 1060 },
+        { "sku": "HUB-INMOBILIARIA-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 202, "precio_anio": 2020 }
+      ]
+    },
+    {
+      "key": "hotel", "name": "HUB Hotel", "sector": "Hoteles boutique y hostales",
+      "grupo": "medio", "delta_mes": 20, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Tape chart de ocupación", "Check-in/out con factura", "Housekeeping", "Channel manager (Booking/Airbnb/Expedia, Pro+)"],
+      "planes": [
+        { "sku": "HUB-HOTEL-CORE-MES", "edicion": "core", "precio_mes": 56, "precio_anio": 560 },
+        { "sku": "HUB-HOTEL-PRO-MES", "edicion": "pro", "precio_mes": 116, "precio_anio": 1160 },
+        { "sku": "HUB-HOTEL-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 212, "precio_anio": 2120 }
+      ]
+    },
+    {
+      "key": "phone", "name": "HUB Phone", "sector": "Reparación de celulares",
+      "grupo": "ligero", "delta_mes": 10, "edicion_minima": "core", "delta_estado": "confirmado",
+      "caso_real": null,
+      "features": ["Diagnóstico inicial", "Cotización al cliente", "Repuestos vinculados a la orden", "Garantía digital con QR"],
+      "planes": [
+        { "sku": "HUB-PHONE-CORE-MES", "edicion": "core", "precio_mes": 46, "precio_anio": 460 },
+        { "sku": "HUB-PHONE-PRO-MES", "edicion": "pro", "precio_mes": 106, "precio_anio": 1060 },
+        { "sku": "HUB-PHONE-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 202, "precio_anio": 2020 }
+      ]
+    },
+    {
+      "key": "traffic", "name": "HUB Traffic", "sector": "Analítica de afluencia retail",
+      "grupo": "pesado", "delta_mes": 30, "edicion_minima": "lite", "delta_estado": "PROPUESTA",
+      "caso_real": null,
+      "requiere_hardware": true,
+      "hardware_setup": { "tipo": "one-time", "precio": "cotización por # de sensores/cámaras y local" },
+      "features": ["Conteo de afluencia", "Mapas de calor por zona", "Dwell time", "Conversión visita→venta (cruce con HUB POS)", "Comparativas por hora/día", "Alertas de aforo"],
+      "planes": [
+        { "sku": "HUB-TRAFFIC-LITE-MES", "edicion": "lite", "precio_mes": 54, "precio_anio": 540 },
+        { "sku": "HUB-TRAFFIC-CORE-MES", "edicion": "core", "precio_mes": 66, "precio_anio": 660 },
+        { "sku": "HUB-TRAFFIC-PRO-MES", "edicion": "pro", "precio_mes": 126, "precio_anio": 1260 },
+        { "sku": "HUB-TRAFFIC-ENTERPRISE-MES", "edicion": "enterprise", "precio_mes": 222, "precio_anio": 2220 }
+      ]
+    }
+  ],
+
+  "especiales": [
+    {
+      "key": "pos", "name": "HUB POS", "sector": "Punto de venta / caja",
+      "tipo": "standalone_o_modulo",
+      "standalone": { "sku": "HUB-POS-STANDALONE", "precio_mes": 36, "precio_anio": 360, "estado": "confirmado", "nota": "Caja sola sin el resto del núcleo. Gana sobre el pitch viejo de $240/año (regla: manda el más caro)." },
+      "como_modulo": { "sku": "HUB-POS-ADDON", "precio_mes": 15, "estado": "PROPUESTA", "nota": "Módulo de caja sobre otro vertical (p.ej. Restaurant)." },
+      "features": ["Tomar pedido rápido", "Modificadores y notas", "Pre-cuenta y cobro multi-método", "Cierre de caja con arqueo", "Funciona offline (PWA)", "Ticket con QR de FE"]
+    }
+  ],
+
+  "pendientes": [
+    "Confirmar delta de HUB Traffic (PROPUESTA +$30) y rango del setup de hardware.",
+    "Precios de add-ons dominio propio / email con dominio (PROPUESTA $5 c/u).",
+    "Política de sucursal extra como add-on (hoy se sube cambiando de edición)."
+  ]
+}
