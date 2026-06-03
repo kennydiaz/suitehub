@@ -42,6 +42,7 @@ const verticales = [
   {
     key:    'restaurant',
     name:   'HUB Restaurant',
+    landing: '/verticales/restaurant',
     icon:   'fa-utensils',
     screenshot: '/images/products/restaurant/web-1280.webp',
     screenshotH: 875,
@@ -248,7 +249,10 @@ const verticales = [
     <div class="wrap">
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
         {verticales.map(v => (
-          <a href={`#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors">
+          <a href={v.landing ?? `#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors relative">
+            {v.landing && (
+              <span class="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-2 py-0.5">Ver más</span>
+            )}
             <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-10 h-10 mx-auto mb-2 group-hover:scale-110 transition-transform" loading="lazy" />
             <div class="text-xs font-display font-semibold">{v.name}</div>
           </a>
@@ -278,11 +282,19 @@ const verticales = [
               </div>
             )}
 
-            <a href={`https://wa.me/50766326006?text=Hola%2C%20quiero%20info%20de%20${encodeURIComponent(v.name)}`}
-               target="_blank" rel="noopener" class="btn-primary">
-              <i class="fa-brands fa-whatsapp"></i>
-              Pregunta por {v.name}
-            </a>
+            <div class="flex flex-wrap gap-3">
+              {v.landing && (
+                <a href={v.landing} class="btn-primary">
+                  <i class="fa-solid fa-arrow-right"></i>
+                  Ver todo sobre {v.name}
+                </a>
+              )}
+              <a href={`https://wa.me/50766326006?text=Hola%2C%20quiero%20info%20de%20${encodeURIComponent(v.name)}`}
+                 target="_blank" rel="noopener" class={v.landing ? 'btn-secondary' : 'btn-primary'}>
+                <i class="fa-brands fa-whatsapp"></i>
+                Pregunta por {v.name}
+              </a>
+            </div>
           </div>
 
           <!-- Features grid -->

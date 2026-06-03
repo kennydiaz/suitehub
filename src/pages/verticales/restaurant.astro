@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const wa = (text: string) => `https://wa.me/50766326006?text=${encodeURIComponent(text)}`;
+const waInfo = wa('Hola, quiero info de HUB Restaurant 🍽️');
+const waDemo = wa('Hola, quiero una demo de HUB Restaurant para mi restaurante');
+
+const chips = [
+  '🪑 Mesas en vivo',
+  '👨‍🍳 Comanda a cocina',
+  '💵 Cobro en segundos',
+  '📶 Funciona sin internet',
+];
+
+// Showcase: capturas reales en browser-frames, alternando lados
+const shots = [
+  {
+    img: '/images/products/restaurant/shot-pedido.webp',
+    title: 'Toma el pedido en un toque',
+    desc: 'Productos grandes por categoría, con modificadores (tamaños, extras con precio, quitar ingredientes) y notas. De la orden al cobro en segundos.',
+  },
+  {
+    img: '/images/products/restaurant/shot-mesas.webp',
+    title: 'Controla tu salón en vivo',
+    desc: 'Un plano que emula tu distribución real: mesas libres, ocupadas y con cuenta pedida de un vistazo. Órdenes por mesa con rondas, unir y dividir.',
+  },
+  {
+    img: '/images/products/restaurant/shot-cobro.webp',
+    title: 'Cobra como tu cliente quiera',
+    desc: 'Efectivo, tarjeta, Yappy o pago mixto, con propina y vuelto calculados al instante. Divide la cuenta por persona o por producto sin dramas.',
+  },
+  {
+    img: '/images/products/restaurant/shot-cocina.webp',
+    title: 'Las comandas llegan solas a cocina',
+    desc: 'Cada ítem se rutea por estación (cocina, barra, postre) a su impresora de red o USB. Sin gritos ni papelitos perdidos: tu equipo solo cocina.',
+  },
+  {
+    img: '/images/products/restaurant/shot-reportes.webp',
+    title: 'Mide tu negocio de verdad',
+    desc: 'Ventas, ITBMS, ticket promedio y lo más vendido por turno. Cierre de caja con arqueo y reporte Z imprimible, exportable a Excel.',
+  },
+];
+
+// Funciones (todas reales del producto)
+const features = [
+  { icon: 'fa-table-cells-large', name: 'Gestión de mesas', desc: 'Une, divide y mueve ítems; asigna comensales y divide la cuenta por persona o producto.' },
+  { icon: 'fa-bolt', name: 'Toma de pedido táctil', desc: 'Categorías y productos grandes con modificadores inteligentes; de pedido a cobro en segundos.' },
+  { icon: 'fa-money-bill-wave', name: 'Cobro flexible', desc: 'Efectivo, tarjeta, Yappy o mixto, con propina y vuelto calculado al instante.' },
+  { icon: 'fa-fire-burner', name: 'Comanda a cocina', desc: 'Comanda automática por estación a impresora de red o USB, ruteada por categoría.' },
+  { icon: 'fa-cash-register', name: 'Caja con arqueo', desc: 'Apertura con fondo, movimientos de efectivo y cierre Z con arqueo que detecta faltantes.' },
+  { icon: 'fa-box-open', name: 'Inventario por receta', desc: 'Cada plato descuenta sus ingredientes del stock al venderse: sabes tu costo real y cuándo reponer.' },
+  { icon: 'fa-receipt', name: 'Facturación electrónica DGI', desc: 'Ticket con CUFE y QR de la DGI, conectado a tu PAC. Listo para Panamá.' },
+  { icon: 'fa-wifi', name: 'Funciona sin internet', desc: 'Todo corre en tu red local: se cae la señal y sigues vendiendo. App instalable (PWA).' },
+  { icon: 'fa-tablet-screen-button', name: 'Terminales por dispositivo', desc: 'Configura cada tablet o caja: cuál cobra, cuál solo toma pedidos, cuál imprime y dónde.' },
+];
+
+const benefits = [
+  'Sin comisión por cada venta (0%)',
+  'Mesas, cajas y estaciones ilimitadas en tu red',
+  'Funciona sin internet (PWA instalable)',
+  'Facturación electrónica DGI incluida',
+  'Tus datos son tuyos, en tu propio equipo',
+  'Soporte local · sin contratos eternos',
+];
+
+const title = 'HUB Restaurant — Sistema de gestión para restaurantes y bares';
+const description = 'El sistema que toma pedidos, controla tus mesas y cobra aunque se caiga el internet. Mesas, comanda a cocina, caja con arqueo, inventario por receta y facturación electrónica DGI. Para restaurantes, cafeterías, bares y food trucks de Panamá.';
+---
+<BaseLayout title={title} description={description} ogImage="/images/products/restaurant/web-1280.webp">
+
+  <!-- Breadcrumb JSON-LD -->
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://suitehub.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Verticales", "item": "https://suitehub.net/verticales" },
+      { "@type": "ListItem", "position": 3, "name": "HUB Restaurant", "item": "https://suitehub.net/verticales/restaurant" }
+    ]
+  })} />
+
+  <!-- ░░ HERO ░░ -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-[460px] bg-radial-brand pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+    <div class="wrap relative pt-10 pb-16 sm:pt-14 text-center">
+      <a href="/verticales" class="inline-flex items-center gap-2 text-xs text-ink-400 hover:text-white transition-colors mb-8">
+        <i class="fa-solid fa-arrow-left"></i> Todas las verticales
+      </a>
+
+      <div class="reveal max-w-3xl mx-auto">
+        <img src="/images/products/restaurant/badge.svg" alt="HUB Restaurant" class="h-20 w-20 mx-auto mb-6" />
+        <span class="eyebrow">Restaurantes y bares · Familia SuiteHub</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          HUB <span class="text-gradient">Restaurant</span>
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed max-w-2xl mx-auto">
+          El sistema que toma pedidos, controla tus mesas y cobra —aunque se caiga el internet.
+          Pensado para restaurantes, cafeterías, bares y food trucks.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3 justify-center">
+          <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Pregunta por HUB Restaurant
+          </a>
+          <a href={waDemo} target="_blank" rel="noopener" class="btn-secondary">
+            <i class="fa-solid fa-play"></i> Agenda una demo
+          </a>
+        </div>
+
+        <div class="mt-9 flex flex-wrap gap-2.5 justify-center">
+          {chips.map(c => (
+            <span class="text-sm font-medium card-glass px-4 py-2.5">{c}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROBLEMA → SOLUCIÓN ░░ -->
+  <section class="pb-4">
+    <div class="wrap">
+      <div class="reveal max-w-2xl mx-auto text-center">
+        <p class="text-ink-400">😩 ¿Comandas en papel, meseros gritando a cocina y una caja que nunca cuadra?</p>
+        <p class="text-2xl sm:text-3xl font-display font-bold my-4 leading-tight">
+          Lleva tu salón, tu cocina y tu caja desde <span class="text-gradient">un solo sistema</span>
+        </p>
+        <p class="text-ink-300">
+          Mesas, comandas, cobro e inventario en una sola app —sin comisiones por venta y funcionando
+          aunque se vaya la red. Hecho en Panamá 🇵🇦
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SHOWCASE ░░ -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="text-center text-sm uppercase tracking-[0.2em] text-brand-400 font-semibold mb-16">
+        Así se ve por dentro
+      </h2>
+
+      <div class="space-y-20 lg:space-y-28">
+        {shots.map((s, i) => (
+          <div class="reveal grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <div class="flex items-center gap-3 text-brand-400 font-display font-bold text-sm tracking-widest mb-4">
+                {String(i + 1).padStart(2, '0')}
+                <span class="h-px w-12 bg-gradient-to-r from-brand-500 to-transparent"></span>
+              </div>
+              <h3 class="text-2xl lg:text-3xl font-display font-bold mb-3">{s.title}</h3>
+              <p class="text-ink-300 leading-relaxed">{s.desc}</p>
+            </div>
+            <div class={`show-glow ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <figure class="browser">
+                <div class="browser-bar">
+                  <span class="browser-dot bg-[#ff5f57]"></span>
+                  <span class="browser-dot bg-[#febc2e]"></span>
+                  <span class="browser-dot bg-[#28c840]"></span>
+                  <span class="browser-url">suitehub.net/restaurant</span>
+                </div>
+                <img src={s.img} alt={s.title} width="1440" height="900" loading="lazy" decoding="async" class="w-full h-auto" />
+              </figure>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FUNCIONES ░░ -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="eyebrow">Todo lo que incluye</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">Funciones de HUB Restaurant</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {features.map(f => (
+          <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center text-brand-400 bg-white/5 mb-4">
+              <i class={`fa-solid ${f.icon} text-lg`}></i>
+            </div>
+            <div class="font-display font-semibold mb-1.5">{f.name}</div>
+            <div class="text-sm text-ink-400 leading-relaxed">{f.desc}</div>
+          </div>
+        ))}
+      </div>
+      <p class="mt-7 text-xs text-ink-500 text-center">
+        + Todas las funciones del núcleo SuiteHub según la edición que elijas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ░░ BENEFICIOS / HABLEMOS ░░ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="reveal card-glass gradient-border max-w-3xl mx-auto p-8 lg:p-12 text-center">
+        <span class="eyebrow">Hablemos</span>
+        <h2 class="text-2xl lg:text-3xl font-display font-bold mb-3">
+          Hecho para tu restaurante. Te lo montamos a tu medida.
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          Cada negocio es distinto. Cuéntanos cómo trabajas y armamos HUB Restaurant con tu menú,
+          tus mesas y tu forma de cobrar. Sin contratos eternos.
+        </p>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-xl mx-auto text-left mb-8">
+          {benefits.map(b => (
+            <li class="flex items-start gap-2.5 text-sm text-ink-200">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Escríbenos por WhatsApp
+          </a>
+          <a href="mailto:info@suitehub.net?subject=Quiero%20info%20de%20HUB%20Restaurant" class="btn-secondary">
+            <i class="fa-solid fa-envelope"></i> info@suitehub.net
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CTA FINAL ░░ -->
+  <section class="relative overflow-hidden border-t border-white/5">
+    <div class="absolute inset-x-0 bottom-0 h-[300px] bg-radial-brand pointer-events-none rotate-180"></div>
+    <div class="wrap relative py-20 text-center">
+      <h2 class="reveal text-3xl lg:text-4xl font-display font-bold mb-4">
+        ¿Listo para <span class="text-gradient">ordenar</span>?
+      </h2>
+      <p class="reveal text-ink-300 mb-8 max-w-xl mx-auto">
+        Te hacemos una demo con tu propio menú, sin compromiso. Ves HUB Restaurant funcionando
+        antes de decidir.
+      </p>
+      <a href={waDemo} target="_blank" rel="noopener" class="reveal btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow text-base px-8 py-4">
+        <i class="fa-brands fa-whatsapp text-xl"></i> Agenda tu demo
+      </a>
+    </div>
+  </section>
+
+  <style>
+    .browser {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0B0F1A;
+      box-shadow: 0 38px 84px -30px rgba(0, 0, 0, 0.85);
+    }
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      background: #06192E;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+    .browser-url {
+      margin-left: 10px;
+      font-size: 11px;
+      color: #647088;
+      background: #020617;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-family: ui-monospace, monospace;
+    }
+    .show-glow { position: relative; }
+    .show-glow::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      z-index: -1;
+      border-radius: 16px;
+      background: radial-gradient(60% 80% at 50% 0%, rgba(21, 130, 245, 0.35), transparent 70%);
+      filter: blur(22px);
+    }
+    @media (max-width: 640px) { .browser-url { display: none; } }
+  </style>
+
+</BaseLayout>
