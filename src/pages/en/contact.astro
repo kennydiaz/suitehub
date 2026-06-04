@@ -43,7 +43,8 @@ const offices = [
     role: 'Soft launch — remote operation',
     address: null,
     phones: [
-      { label: '+58 424-8820040', tel: '+584248820040' },
+      { label: '+58 424-8820040', tel: '+584248820040', note: 'Puerto La Cruz · Daniel Velásquez' },
+      { label: '+58 414-8641818', tel: '+584148641818', note: 'Maturín · José Ponce' },
     ],
     wa: '584248820040',
     waText: 'Hello%2C%20I%27m%20interested%20in%20SuiteHub%20from%20Venezuela',
@@ -131,7 +132,7 @@ const offices = [
                 {o.phones.map(p => (
                   <a href={`tel:${p.tel}`} class="text-sm text-ink-300 hover:text-white flex items-center gap-2">
                     <i class="fa-solid fa-phone text-brand-400 text-xs"></i>
-                    {p.label}
+                    <span>{p.label}{p.note && <span class="text-ink-500"> · {p.note}</span>}</span>
                   </a>
                 ))}
               </div>
