@@ -20,8 +20,8 @@ const defaultTitle = isEn
   : 'SuiteHub — Suite empresarial multi-país para PYMEs';
 
 const defaultDesc = isEn
-  ? 'A PROOQ LLC (USA) product. Multi-jurisdiction electronic invoicing (DGI Panama live; SENIAT Venezuela, Facturae Spain, US state-level on 2026 roadmap), multi-branch, automations, API. From $24/month. Available in Spanish and English.'
-  : 'Producto de PROOQ LLC (USA). Facturación electrónica multi-jurisdicción (DGI Panamá en vivo; SENIAT Venezuela, Facturae España y compliance USA en roadmap 2026), multi-sucursal, automatizaciones, API. Desde $24/mes. Disponible en español e inglés.';
+  ? 'A PROOQ LLC (USA) product. Multi-jurisdiction electronic invoicing (DGI Panama live; SENIAT Venezuela, Facturae Spain, DIAN Colombia and US state-level on 2026 roadmap), multi-branch, automations, API. From $24/month. Available in Spanish and English.'
+  : 'Producto de PROOQ LLC (USA). Facturación electrónica multi-jurisdicción (DGI Panamá en vivo; SENIAT Venezuela, Facturae España, DIAN Colombia y compliance USA en roadmap 2026), multi-sucursal, automatizaciones, API. Desde $24/mes. Disponible en español e inglés.';
 
 const {
   title       = defaultTitle,
@@ -133,7 +133,7 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
             "addressCountry": "ES"
           }
         ],
-        "areaServed": ["PA", "US", "VE", "ES"],
+        "areaServed": ["PA", "US", "VE", "ES", "CO"],
         "contactPoint": [
           {
             "@type": "ContactPoint",
@@ -165,6 +165,13 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
             "email": "info@suitehub.net",
             "areaServed": "VE",
             "availableLanguage": ["es", "en"]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "info@suitehub.net",
+            "areaServed": "CO",
+            "availableLanguage": ["es", "en"]
           }
         ]
       }
@@ -186,7 +193,7 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
         "addressLocality": isEn ? "Panama City" : "Ciudad de Panamá",
         "addressCountry": "PA"
       },
-      "areaServed": ["PA", "US", "VE", "ES"],
+      "areaServed": ["PA", "US", "VE", "ES", "CO"],
       "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
