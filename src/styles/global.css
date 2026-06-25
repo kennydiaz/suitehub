@@ -64,6 +64,28 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-200 to-brand-400;
   }
+
+  /* Browser mockup (screenshots de producto) */
+  .browser-mock {
+    @apply rounded-xl overflow-hidden border border-white/10 bg-navy-900 shadow-2xl;
+  }
+  .browser-bar {
+    @apply flex items-center gap-1.5 px-3 py-2.5 bg-white/[0.04] border-b border-white/10;
+  }
+  .browser-bar > span:not(:last-child) {
+    @apply w-2.5 h-2.5 rounded-full;
+  }
+
+  /* Tabs del tour de producto */
+  .tour-tab {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-white/10 text-ink-300 transition-colors cursor-pointer;
+  }
+  .tour-tab:hover {
+    @apply text-white bg-white/5;
+  }
+  .tour-tab[aria-selected="true"] {
+    @apply bg-brand-600 text-white border-brand-500;
+  }
 }
 
 @layer utilities {
@@ -93,6 +115,65 @@
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, black 30%, transparent 90%);
   }
+  /* Aurora animado (fondo del héroe) */
+  .aurora {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .aurora::before,
+  .aurora::after {
+    content: '';
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+  }
+  .aurora::before {
+    width: 540px; height: 540px;
+    left: -8%; top: -25%;
+    background: radial-gradient(circle at 30% 30%, rgba(21,130,245,0.40), transparent 62%);
+    animation: aurora-drift-1 19s ease-in-out infinite alternate;
+  }
+  .aurora::after {
+    width: 480px; height: 480px;
+    right: -6%; top: -12%;
+    background: radial-gradient(circle at 70% 30%, rgba(89,190,255,0.30), transparent 62%);
+    animation: aurora-drift-2 23s ease-in-out infinite alternate;
+  }
+  @keyframes aurora-drift-1 {
+    from { transform: translate3d(0,0,0) scale(1); }
+    to   { transform: translate3d(70px,40px,0) scale(1.18); }
+  }
+  @keyframes aurora-drift-2 {
+    from { transform: translate3d(0,0,0) scale(1); }
+    to   { transform: translate3d(-60px,30px,0) scale(1.12); }
+  }
+
+  /* Lift al hover (tarjetas) */
+  .lift {
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+  .lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 44px -18px rgba(21,130,245,0.40);
+  }
+
+  /* Tilt 3D (imagen del héroe, manejado por JS) */
+  .tilt {
+    transition: transform 0.18s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aurora::before, .aurora::after { animation: none; }
+    .lift { transition: none; }
+    .lift:hover { transform: none; box-shadow: none; }
+    .tilt { transition: none; transform: none !important; }
+  }
+
   /* Gradient border helper */
   .gradient-border {
     position: relative;

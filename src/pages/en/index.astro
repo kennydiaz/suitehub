@@ -133,6 +133,14 @@ const stats = [
   { num: '13',   label: 'Specialized verticals' },
   { num: '<24h', label: 'Support response time' },
 ];
+
+const tour = [
+  { label: 'Tables',   icon: 'fa-chair',         img: '/images/products/restaurant/shot-mesas.webp',    alt: 'SuiteHub — real-time dining room table map' },
+  { label: 'Order',    icon: 'fa-utensils',      img: '/images/products/restaurant/shot-pedido.webp',   alt: 'SuiteHub — order taking by table' },
+  { label: 'Kitchen',  icon: 'fa-fire-burner',   img: '/images/products/restaurant/shot-cocina.webp',   alt: 'SuiteHub — kitchen display screen (KDS)' },
+  { label: 'Checkout', icon: 'fa-cash-register', img: '/images/products/restaurant/shot-cobro.webp',    alt: 'SuiteHub — checkout and electronic invoicing' },
+  { label: 'Reports',  icon: 'fa-chart-line',    img: '/images/products/restaurant/shot-reportes.webp', alt: 'SuiteHub — sales and operations reports' },
+];
 ---
 <BaseLayout
   title="SuiteHub — The multi-country business suite that actually scales"
@@ -140,6 +148,7 @@ const stats = [
 
   <!-- HERO -->
   <section class="relative overflow-hidden">
+    <div class="aurora" aria-hidden="true"></div>
     <div class="absolute inset-0 bg-grid pointer-events-none" aria-hidden="true"></div>
     <div class="absolute inset-x-0 top-0 h-[600px] bg-radial-brand pointer-events-none" aria-hidden="true"></div>
 
@@ -193,43 +202,36 @@ const stats = [
           </div>
         </div>
 
-        <!-- Visual -->
-        <div class="relative animate-fade-in">
-          <div class="relative">
-            <div class="absolute -inset-12 bg-brand-600/20 rounded-full blur-3xl"></div>
+        <!-- Visual: real product in a browser mockup -->
+        <div class="relative animate-fade-in" style="perspective:1200px;">
+          <!-- Glow orb -->
+          <div class="absolute -inset-10 bg-brand-600/20 rounded-full blur-3xl" aria-hidden="true"></div>
 
-            <div class="relative card-glass p-3 lg:p-5 shadow-glow text-center mb-6">
-              <img src="/images/products/suite/badge.svg" alt="SuiteHub" class="h-24 w-24 mx-auto" />
-              <div class="font-display font-extrabold text-3xl mt-3">SuiteHub</div>
-              <div class="text-[11px] uppercase tracking-[0.25em] text-ink-400 mt-1">Business suite</div>
+          <div id="hero-tilt" class="tilt relative browser-mock">
+            <div class="browser-bar">
+              <span class="bg-rose-400/70"></span>
+              <span class="bg-amber-400/70"></span>
+              <span class="bg-emerald-400/70"></span>
+              <span class="ml-3 text-[10px] text-ink-500 truncate">app.suitehub.net · Dashboard</span>
             </div>
+            <img src="/images/hubcore2.webp" alt="SuiteHub dashboard — business management panel"
+                 width="1885" height="931" fetchpriority="high"
+                 class="w-full block" />
+          </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 relative">
-              <a href="/en/products#lite" class="card-glass p-3 rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
-                <img src="/images/products/lite/badge.svg" alt="HUB Lite" class="w-14 h-14" />
-                <span class="text-xs font-display font-semibold">HUB Lite</span>
-              </a>
-              <a href="/en/products#core" class="card-glass p-3 rotate-[-1deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
-                <img src="/images/products/core/badge.svg" alt="HUB Core" class="w-14 h-14" />
-                <span class="text-xs font-display font-semibold">HUB Core</span>
-              </a>
-              <a href="/en/products#pro" class="card-glass p-3 rotate-[1deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
-                <img src="/images/products/pro/badge.svg" alt="HUB Pro" class="w-14 h-14" />
-                <span class="text-xs font-display font-semibold">HUB Pro</span>
-              </a>
-              <a href="/en/products#enterprise" class="card-glass p-3 rotate-[3deg] hover:rotate-0 hover:scale-105 transition-transform flex flex-col items-center gap-2">
-                <img src="/images/products/enterprise/badge.svg" alt="HUB Enterprise" class="w-14 h-14" />
-                <span class="text-xs font-display font-semibold">HUB Enterprise</span>
-              </a>
-            </div>
+          <!-- Floating pill: e-invoicing -->
+          <div class="absolute -top-4 -right-2 sm:-right-5 card-glass px-3.5 py-2 flex items-center gap-2 shadow-2xl">
+            <i class="fa-solid fa-receipt text-emerald-400"></i>
+            <span class="text-xs font-medium">Electronic invoice with CUFE</span>
+          </div>
 
-            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 card-glass px-5 py-3 flex items-center gap-3 shadow-2xl">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span class="text-xs font-medium">24 businesses invoicing today in Panama</span>
-            </div>
+          <!-- Floating pill: live -->
+          <div class="absolute -bottom-5 left-3 sm:-left-5 card-glass px-4 py-2.5 flex items-center gap-3 shadow-2xl">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-xs font-medium">24 businesses invoicing today</span>
           </div>
         </div>
       </div>
@@ -237,10 +239,56 @@ const stats = [
       <div class="reveal mt-20 lg:mt-28 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
         {stats.map((s, i) => (
           <div class={`reveal reveal-delay-${i + 1} bg-navy-950 p-6 lg:p-8 text-center`}>
-            <div class="text-3xl lg:text-4xl font-display font-bold text-white">{s.num}</div>
+            <div class="text-3xl lg:text-4xl font-display font-bold text-white tabular-nums" data-countup={s.num}>{s.num}</div>
             <div class="text-xs uppercase tracking-wider text-ink-400 mt-2">{s.label}</div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TOUR (tabs) -->
+  <section class="section">
+    <div class="wrap">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="eyebrow">A look inside</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
+          This is <span class="text-gradient">SuiteHub in action.</span>
+        </h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">
+          From the dining room to the kitchen, from checkout to reports — walk through a real HUB Restaurant flow.
+          Every vertical looks and feels built for your business.
+        </p>
+      </div>
+
+      <div class="reveal max-w-5xl mx-auto" data-tour>
+        <!-- Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="SuiteHub tour">
+          {tour.map((t, i) => (
+            <button type="button" role="tab" data-tour-tab={i} aria-selected={i === 0 ? 'true' : 'false'} class="tour-tab">
+              <i class={`fa-solid ${t.icon}`}></i> {t.label}
+            </button>
+          ))}
+        </div>
+
+        <!-- Panels -->
+        <div class="browser-mock relative">
+          <div class="browser-bar">
+            <span class="bg-rose-400/70"></span>
+            <span class="bg-amber-400/70"></span>
+            <span class="bg-emerald-400/70"></span>
+            <span class="ml-3 text-[10px] text-ink-500 truncate">app.suitehub.net · HUB Restaurant</span>
+          </div>
+          {tour.map((t, i) => (
+            <img src={t.img} alt={t.alt} width="1440" height="900" loading="lazy"
+                 data-tour-panel={i} class={`w-full block ${i === 0 ? '' : 'hidden'}`} />
+          ))}
+        </div>
+
+        <p class="text-center mt-6 text-sm text-ink-400">
+          Want to see it with your own data?
+          <a href="https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20a%20SuiteHub%20demo" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300 font-medium">Book a live demo</a>.
+        </p>
       </div>
     </div>
   </section>
@@ -259,7 +307,7 @@ const stats = [
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
         {pacs.map((p, i) => (
-          <div class={`reveal reveal-delay-${i + 1} card-glass p-6 text-center hover:border-brand-500/30 transition-colors`}>
+          <div class={`reveal reveal-delay-${i + 1} lift card-glass p-6 text-center hover:border-brand-500/30 transition-colors`}>
             <div class={`w-12 h-12 mx-auto rounded-xl bg-white/5 flex items-center justify-center text-2xl mb-3 ${p.color}`}>
               <i class={`fa-solid ${p.icon}`}></i>
             </div>
@@ -287,7 +335,7 @@ const stats = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {editions.map((t, i) => (
-          <div class={`reveal reveal-delay-${i + 1} relative rounded-2xl border ${t.border} bg-gradient-to-b ${t.color} p-6 ${t.featured ? 'lg:scale-105 lg:-mt-2 shadow-glow' : ''}`}>
+          <div class={`reveal reveal-delay-${i + 1} relative rounded-2xl border ${t.border} bg-gradient-to-b ${t.color} p-6 ${t.featured ? 'lg:scale-105 lg:-mt-2 shadow-glow' : 'lift'}`}>
             {t.featured && (
               <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-[10px] font-semibold uppercase tracking-wider rounded-full">
                 Most popular
@@ -341,7 +389,7 @@ const stats = [
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {verticals.map((v, i) => (
           <a href={`/en/verticals#${v.key}`}
-             class={`reveal reveal-delay-${(i % 4) + 1} group card-glass p-5 hover:border-brand-500/30 hover:bg-white/[0.05] transition-all`}>
+             class={`reveal reveal-delay-${(i % 4) + 1} group lift card-glass p-5 hover:border-brand-500/30 hover:bg-white/[0.05] transition-all`}>
             <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" loading="lazy" />
             <h3 class="text-base font-display font-semibold mb-1">{v.name}</h3>
             <p class="text-xs text-ink-400">{v.desc}</p>
@@ -489,5 +537,66 @@ const stats = [
       </div>
     </div>
   </section>
+
+  <!-- Micro-interactions: count-up · product tour tabs · hero tilt -->
+  <script is:inline>
+    (function () {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Count-up on stats */
+      const counters = document.querySelectorAll('[data-countup]');
+      if (counters.length && !reduce && 'IntersectionObserver' in window) {
+        counters.forEach((el) => {
+          const m = (el.dataset.countup || '').match(/^(\D*)(\d+)(.*)$/);
+          if (m) el.textContent = m[1] + '0' + m[3];
+        });
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            obs.unobserve(e.target);
+            const el = e.target;
+            const raw = el.dataset.countup;
+            const m = raw.match(/^(\D*)(\d+)(.*)$/);
+            if (!m) { el.textContent = raw; return; }
+            const pre = m[1], target = parseInt(m[2], 10), suf = m[3];
+            const dur = 1100, t0 = performance.now();
+            (function tick(now) {
+              const p = Math.min((now - t0) / dur, 1);
+              const eased = 1 - Math.pow(1 - p, 3);
+              el.textContent = pre + Math.round(target * eased) + suf;
+              if (p < 1) requestAnimationFrame(tick); else el.textContent = raw;
+            })(t0);
+          });
+        }, { threshold: 0.4 });
+        counters.forEach((el) => obs.observe(el));
+      }
+
+      /* Product tour tabs */
+      document.querySelectorAll('[data-tour]').forEach((tour) => {
+        const tabs = tour.querySelectorAll('[data-tour-tab]');
+        const panels = tour.querySelectorAll('[data-tour-panel]');
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            const idx = tab.getAttribute('data-tour-tab');
+            tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+            panels.forEach((p) => p.classList.toggle('hidden', p.getAttribute('data-tour-panel') !== idx));
+          });
+        });
+      });
+
+      /* Hero 3D tilt (fine pointer only, no reduced-motion) */
+      const tilt = document.getElementById('hero-tilt');
+      if (tilt && !reduce && window.matchMedia('(pointer: fine)').matches) {
+        const max = 6;
+        tilt.addEventListener('mousemove', (ev) => {
+          const r = tilt.getBoundingClientRect();
+          const px = (ev.clientX - r.left) / r.width - 0.5;
+          const py = (ev.clientY - r.top) / r.height - 0.5;
+          tilt.style.transform = 'rotateY(' + (px * max) + 'deg) rotateX(' + (-py * max) + 'deg)';
+        });
+        tilt.addEventListener('mouseleave', () => { tilt.style.transform = ''; });
+      }
+    })();
+  </script>
 
 </BaseLayout>
