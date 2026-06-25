@@ -1,12 +1,11 @@
 # Catálogo SuiteHub — Conceptos + Precios
 
 > Documento humano del catálogo de precios de SuiteHub (PROOQ LLC / PROOQ S.A.).
-> **Fuente canónica de datos: [`src/data/catalogo.json`](src/data/catalogo.json)** — el sitio Astro y el futuro panel deben leer de ahí. Este MD es el explicativo; si cambian precios, se cambian en el JSON.
-> Origen de los datos de producto: `src/pages/productos.astro` (ediciones), `src/pages/precios.astro` (comparativa), `src/pages/verticales.astro` (verticales).
+> **Fuente canónica: el panel** — `suitehub-panel/src/Catalog.php`, servido como JSON en `https://panel.suitehub.net/?r=catalog/json`. El sitio Astro lo consume en build-time vía [`src/lib/catalog.ts`](src/lib/catalog.ts), con [`src/data/catalogo.json`](src/data/catalogo.json) como copia local de respaldo. Este MD es solo explicativo y puede ir por detrás del panel.
 >
-> Estado: ediciones = precios vivos del sitio. Deltas de verticales = **confirmados** (kennydiaz, 2026-05-30) salvo lo marcado `PROPUESTA`.
+> Modelo vigente: **vertical en línea de edición** (Lite/Core/Pro/Enterprise), sin recargo. El **delta** (Ligero $12 · Medio $24 · Pesado $36) es el precio de **módulos adicionales** por cliente (uso futuro). Descuentos: manuales.
 >
-> Última actualización: 2026-05-30
+> Última actualización: 2026-06-25
 
 ---
 
@@ -43,8 +42,8 @@ Cada SKU = una línea de catálogo con precio único.
 
 | Edición | $/mes | $/año (16% off) | Sucursales | Usuarios | Registros | Almac. | Transac./mes | Salto clave |
 |---|---|---|---|---|---|---|---|---|
-| **Lite** | 24 | 240 | 1 | 3 | 500 | 2 GB | 100 | Básico, **sin** FE electrónica |
-| **Core** | 36 | 360 | 2 | 8 | 5 000 | 10 GB | 1 000 | **Activa FE DGI (4 PACs) + CxC + reportes SQL/PDF** |
+| **Lite** | 24 | 240 | 1 | 3 | 500 | 2 GB | 100 | Básico **con FE DGI incluida** |
+| **Core** | 48 | 480 | 2 | 8 | 5 000 | 10 GB | 1 000 | **Activa FE DGI (4 PACs) + CxC + reportes SQL/PDF** |
 | **Pro** ⭐ | 96 | 960 | 5 | 20 | 50 000 | 50 GB | 10 000 | **Multi-sucursal + automatizaciones + API REST + WhatsApp** |
 | **Enterprise** | 192 | 1 920 | ∞ | 50 | ∞ | 200 GB | ∞ | White-label completo + reportes con IA + SLA + API ∞ |
 
@@ -65,43 +64,32 @@ Cada SKU = una línea de catálogo con precio único.
 
 ---
 
-## Parte 3 — Eje vertical: matriz de catálogo
+## Parte 3 — Eje vertical: vertical en línea de edición
 
-**Modelo elegido: `Edición base + delta de vertical`.** Precio = precio de la edición + delta del vertical (el delta es plano en todas las ediciones, para mantenerlo simple). Anual = mensual × 10.
+**Modelo vigente (2026-06-25): cada vertical se ubica en la línea de precio de la edición** (Lite/Core/Pro/Enterprise) que le corresponda, **sin recargo**. Anual = mensual × 10 (≈16% off). Para los valores vivos, manda el panel (`/?r=catalog/json`).
 
-### Clasificación de verticales por complejidad (define el delta)
-| Grupo | Delta/mes | Verticales |
+| Vertical | Línea de precio | Notas |
 |---|---|---|
-| Ligero | +$10 | HUB Beauty, HUB Lavandería, HUB Inmobiliaria, HUB Phone |
-| Medio | +$20 | HUB Taller, HUB Carwash, HUB Pet, HUB Clinic, HUB Gym, HUB Hotel |
-| Pesado | +$30 | HUB Restaurant, HUB Traffic `(delta PROPUESTA)` |
-| Especial | standalone | HUB POS — ver Parte 4 |
+| **HUB Pet** | desde **Lite ($24)** | entrada; FE incluida |
+| Taller, Carwash, Restaurant, Beauty, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone | desde **Core ($48)** | suben a Pro ($96) / Enterprise ($192) |
+| **HUB Traffic** | desde **Lite ($24)** | analítica; suma setup de hardware one-time |
 
-### Matriz de precios ($/mes)
-Edición mínima = **Core** para todos los verticales que facturan al cliente (ahí se activa la FE). **Excepción: HUB Traffic arranca en Lite** (es analítica, no factura).
+> **Descuentos por cliente: manuales.** HUB POS es caso especial (standalone $36/mes — ver Parte 4).
 
-| Vertical | Rubro | Delta | **Lite** (24) | **Core** (36) | **Pro** (96) | **Enterprise** (192) | Caso real |
-|---|---|---|---|---|---|---|---|
-| **HUB Taller** | Talleres mecánicos | +$20 | — | **$56** | $116 | $212 | QS Express (La Chorrera) |
-| **HUB Carwash** | Autolavados / detailing | +$20 | — | **$56** | $116 | $212 | — |
-| **HUB Pet** | Veterinarias / pet shops | +$20 | — | **$56** | $116 | $212 | — |
-| **HUB Clinic** | Consultorios / clínicas | +$20 | — | **$56** | $116 | $212 | — |
-| **HUB Gym** | Gimnasios / crossfit / yoga | +$20 | — | **$56** | $116 | $212 | — |
-| **HUB Hotel** | Hoteles boutique / hostales | +$20 | — | **$56** | $116 | $212 | — |
-| **HUB Beauty** | Salones / spa / barbería | +$10 | — | **$46** | $106 | $202 | — |
-| **HUB Lavandería** | Lavanderías / tintorerías | +$10 | — | **$46** | $106 | $202 | Clean Factory |
-| **HUB Inmobiliaria** | Bienes raíces | +$10 | — | **$46** | $106 | $202 | — |
-| **HUB Phone** | Reparación de celulares | +$10 | — | **$46** | $106 | $202 | — |
-| **HUB Restaurant** | Restaurantes / bares | +$30 | — | **$66** | $126 | $222 | — |
-| **HUB Traffic** | Analítica afluencia | +$30 ᴾ | **$54** | $66 | $126 | $222 | — + setup HW |
+### Delta = módulos adicionales (uso futuro)
+El **delta** clasifica la complejidad de un vertical y fija el precio de los **módulos adicionales** que un cliente puede contratar. **Hoy no se suma** al precio base del vertical; se reserva para próximas revisiones.
 
-> Anual = columna × 10 (ej. HUB Taller Pro anual = $1 160). `ᴾ` = delta PROPUESTA. HUB Traffic suma **setup de hardware** one-time (cotización por sensores/cámaras).
+| Grupo | Delta/mes (módulo) | Verticales |
+|---|---|---|
+| Ligero | +$12 | Beauty, Lavandería, Inmobiliaria, Phone |
+| Medio | +$24 | Taller, Carwash, Pet, Clinic, Gym, Hotel |
+| Pesado | +$36 | Restaurant, Traffic |
 
 ---
 
 ## Parte 4 — Casos especiales (fuera de la matriz)
 
-> **Regla de reconciliación (kennydiaz, 2026-05-30): manda el más caro.** Donde el catálogo (edición+delta) y el pitch viejo del panel chocaban, gana el precio mayor. Por eso se subieron los pitches de `suitehub-panel/src/Products.php`: Carwash $24→**$56/mes** (Core+$20), POS $240→**$360/año**. *(Cambio en landings en vivo: aplica al hacer push/deploy del panel.)*
+> **Reconciliación histórica (kennydiaz, 2026-05-30):** los pitches del panel `suitehub-panel/src/Products.php` se alinearon con el catálogo: Carwash $24→**$48/mes** (precio estándar), POS $240→**$360/año**. *(Cambio en landings en vivo: aplica al hacer push/deploy del panel.)*
 
 ### HUB POS — caja / punto de venta
 Se vende de dos formas:
@@ -117,7 +105,7 @@ Por decisión 2026-05-30, Traffic entra a la matriz arrancando en **Lite** (es a
 ---
 
 ## Parte 5 — Pendientes para cerrar el catálogo
-- [x] Validar **deltas** de verticales — confirmados (Ligero $10 / Medio $20 / Pesado $30).
+- [x] ~~Validar **deltas** de verticales~~ — **modelo en pausa** (2026-06-25): verticales pasan a precio plano por grupo (entrada 24/240 · estándar 48/480).
 - [x] **Edición mínima** por vertical — Core para todos salvo **Traffic = Lite**.
 - [x] **HUB POS standalone** — $360/año confirmado.
 - [x] **Migración** — fuente canónica = `suitehub-panel/data/catalogo.php`; espejo Astro = `suitehub/src/data/catalogo.json`.

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEdiciones } from '../../lib/catalog';
 
 const editions = [
   {
@@ -11,7 +12,7 @@ const editions = [
     color:      'sky',
     icon:       'fa-rocket',
     ideal:      'Small business taking its first steps into digital — an independent practice, a small distributor, a freelancer with a steady client list.',
-    description:'The basics done right. Customers, products and services organized; quotes that look professional; invoices that meet basic DGI rules. No bloated features you will never use.',
+    description:'The basics done right. Customers, products and services organized; quotes that look professional; DGI electronic invoicing included. No bloated features you will never use.',
     limits: {
       branches: 1, users: 3, records: 500, storage: '2 GB',
     },
@@ -20,7 +21,7 @@ const editions = [
       { icon: 'fa-screwdriver-wrench', name: 'Services', desc: 'Catalog of billable services' },
       { icon: 'fa-boxes-stacked', name: 'Inventory',      desc: 'Products with manual stock' },
       { icon: 'fa-file-invoice',  name: 'Quotes',         desc: 'Up to 50 quotes/month' },
-      { icon: 'fa-receipt',       name: 'Invoices',       desc: 'Up to 100 invoices/month (no e-invoicing)' },
+      { icon: 'fa-receipt',       name: 'E-invoicing',    desc: 'Up to 100 invoices/month with DGI e-invoicing' },
       { icon: 'fa-chart-line',    name: 'Reports',        desc: '6 pre-built reports with filters' },
     ],
     extras: ['Email support', 'Automatic updates', 'Daily backup'],
@@ -29,8 +30,8 @@ const editions = [
     key:        'core',
     name:       'Core Edition',
     tagline:    'The essentials',
-    price:      36,
-    priceYearly: 360,
+    price:      48,
+    priceYearly: 480,
     color:      'cyan',
     icon:       'fa-bolt',
     ideal:      'Established SME with 5-10 employees and 1 or 2 branches — the restaurant with two locations, the clinic with a main practice and a satellite, the regional distributor.',
@@ -97,6 +98,16 @@ const editions = [
   },
 ];
 
+// Prices from the panel's canonical catalog (with local fallback).
+const _ed = await getEdiciones();
+for (const e of editions) {
+  const c = _ed[e.key];
+  if (!c) continue;
+  e.price = c.precio_mes;
+  if ('yearly' in e) e.yearly = c.precio_anio;
+  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
+}
+
 const colorMap = {
   sky:    { bg: 'from-sky-500/10', border: 'border-sky-500/30', text: 'text-sky-400', dot: 'bg-sky-400' },
   cyan:   { bg: 'from-cyan-500/10', border: 'border-cyan-500/30', text: 'text-cyan-400', dot: 'bg-cyan-400' },
@@ -104,7 +115,7 @@ const colorMap = {
   amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
 };
 ---
-<BaseLayout title="Editions · SuiteHub" description="Four editions of SuiteHub: Lite ($24), Core ($36), Pro ($96), Enterprise ($192). Grow without migrating.">
+<BaseLayout title="Editions · SuiteHub" description="Four editions of SuiteHub: Lite ($24), Core ($48), Pro ($96), Enterprise ($192). Grow without migrating.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

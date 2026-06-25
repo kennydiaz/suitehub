@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEdiciones } from '../lib/catalog';
 
 const ediciones = [
   {
@@ -13,7 +14,7 @@ const ediciones = [
     ideal:  'Negocio chico, 1 sucursal, hasta 3 usuarios',
     features: [
       'Clientes, productos, servicios',
-      'Cotizaciones y facturas básicas',
+      'Cotizaciones y facturas electrónicas',
       'Hasta 500 registros',
       'Soporte por email',
     ],
@@ -22,7 +23,7 @@ const ediciones = [
     key:    'core',
     name:   'Edición Core',
     tagline:'Lo esencial',
-    price:  36,
+    price:  48,
     color:  'from-cyan-500/20 to-cyan-500/5',
     border: 'border-cyan-500/30',
     accent: 'text-cyan-400',
@@ -73,6 +74,16 @@ const ediciones = [
     ],
   },
 ];
+
+// Precios desde el catálogo canónico del panel (con respaldo local).
+const _ed = await getEdiciones();
+for (const e of ediciones) {
+  const c = _ed[e.key];
+  if (!c) continue;
+  e.price = c.precio_mes;
+  if ('yearly' in e) e.yearly = c.precio_anio;
+  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
+}
 
 const verticales = [
   { key: 'taller',     name: 'HUB Taller',     desc: 'Talleres mecánicos',         icon: 'fa-screwdriver-wrench' },

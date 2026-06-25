@@ -1,12 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEdiciones } from '../lib/catalog';
 
 const ediciones = [
   { key: 'lite',       name: 'Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
-  { key: 'core',       name: 'Core',       price: 36,  yearly: 360,  color: 'cyan',   featured: false },
+  { key: 'core',       name: 'Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: false },
   { key: 'pro',        name: 'Pro',        price: 96,  yearly: 960,  color: 'brand', featured: true  },
   { key: 'enterprise', name: 'Enterprise', price: 192, yearly: 1920, color: 'amber',  featured: false },
 ];
+
+// Precios desde el catálogo canónico del panel (con respaldo local).
+const _ed = await getEdiciones();
+for (const e of ediciones) {
+  const c = _ed[e.key];
+  if (!c) continue;
+  e.price = c.precio_mes;
+  if ('yearly' in e) e.yearly = c.precio_anio;
+  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
+}
 
 // Estructura comparativa: cada categoría con sus filas. ✓ = incluido, valor = numérico, — = no incluido.
 const comparativa = [
@@ -35,13 +46,13 @@ const comparativa = [
     title: 'Facturación electrónica DGI',
     rows: [
       { label: 'Facturas básicas (sin DGI)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Digifact', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC The Factory HKA', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Factura Fácil', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC eFacturapty', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'CUFE + QR oficial DGI', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'Anulación de facturas', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'Notas de crédito', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Digifact', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC The Factory HKA', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Factura Fácil', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC eFacturapty', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'CUFE + QR oficial DGI', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Anulación de facturas', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Notas de crédito', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
     ],
   },
   {

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEdiciones } from '../lib/catalog';
 
 const ediciones = [
   {
@@ -11,7 +12,7 @@ const ediciones = [
     color:      'sky',
     icon:       'fa-rocket',
     ideal:      'Negocio chico que está empezando a digitalizarse — un consultorio independiente, una distribuidora pequeña, un freelancer con cartera fija.',
-    description:'Lo básico bien hecho. Clientes, productos y servicios organizados, cotizaciones que se ven profesionales, facturas que cumplen con DGI básico. Sin sobreasignación de funciones que no vas a usar.',
+    description:'Lo básico bien hecho. Clientes, productos y servicios organizados, cotizaciones que se ven profesionales y facturación electrónica DGI incluida. Sin sobreasignación de funciones que no vas a usar.',
     limits: {
       sucursales: 1, usuarios: 3, registros: 500, almacenamiento: '2 GB',
     },
@@ -20,7 +21,7 @@ const ediciones = [
       { icon: 'fa-screwdriver-wrench', name: 'Servicios', desc: 'Catálogo de servicios facturables' },
       { icon: 'fa-boxes-stacked', name: 'Inventario',     desc: 'Productos con stock manual' },
       { icon: 'fa-file-invoice',  name: 'Cotizaciones',   desc: 'Hasta 50 cotizaciones/mes' },
-      { icon: 'fa-receipt',       name: 'Facturas',       desc: 'Hasta 100 facturas/mes (sin FE electrónica)' },
+      { icon: 'fa-receipt',       name: 'Facturas electrónicas', desc: 'Hasta 100 facturas/mes con FE DGI' },
       { icon: 'fa-chart-line',    name: 'Reportes',       desc: '6 reportes pre-armados con filtros' },
     ],
     extras: ['Soporte por email', 'Updates automáticos', 'Backup diario'],
@@ -29,8 +30,8 @@ const ediciones = [
     key:        'core',
     name:       'Edición Core',
     tagline:    'Lo esencial',
-    price:      36,
-    priceYearly: 360,
+    price:      48,
+    priceYearly: 480,
     color:      'cyan',
     icon:       'fa-bolt',
     ideal:      'PYME consolidada de 5-10 empleados con 1 o 2 sucursales — el restaurante con dos locales, la clínica con consultorio principal y satélite, la distribuidora regional.',
@@ -97,6 +98,16 @@ const ediciones = [
   },
 ];
 
+// Precios desde el catálogo canónico del panel (con respaldo local).
+const _ed = await getEdiciones();
+for (const e of ediciones) {
+  const c = _ed[e.key];
+  if (!c) continue;
+  e.price = c.precio_mes;
+  if ('yearly' in e) e.yearly = c.precio_anio;
+  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
+}
+
 const colorMap = {
   sky:    { bg: 'from-sky-500/10', border: 'border-sky-500/30', text: 'text-sky-400', dot: 'bg-sky-400' },
   cyan:   { bg: 'from-cyan-500/10', border: 'border-cyan-500/30', text: 'text-cyan-400', dot: 'bg-cyan-400' },
@@ -104,7 +115,7 @@ const colorMap = {
   amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
 };
 ---
-<BaseLayout title="Ediciones · SuiteHub" description="Cuatro ediciones de SuiteHub: Lite ($24), Core ($36), Pro ($96), Enterprise ($192). Crece sin migrar.">
+<BaseLayout title="Ediciones · SuiteHub" description="Cuatro ediciones de SuiteHub: Lite ($24), Core ($48), Pro ($96), Enterprise ($192). Crece sin migrar.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

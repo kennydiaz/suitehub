@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEdiciones } from '../../lib/catalog';
 
 const editions = [
   {
@@ -13,7 +14,7 @@ const editions = [
     ideal:  'Small business, 1 location, up to 3 users',
     features: [
       'Customers, products, services',
-      'Basic quotes and invoices',
+      'Quotes and electronic invoices',
       'Up to 500 records',
       'Email support',
     ],
@@ -22,7 +23,7 @@ const editions = [
     key:    'core',
     name:   'Core Edition',
     tagline:'The essentials',
-    price:  36,
+    price:  48,
     color:  'from-cyan-500/20 to-cyan-500/5',
     border: 'border-cyan-500/30',
     accent: 'text-cyan-400',
@@ -73,6 +74,16 @@ const editions = [
     ],
   },
 ];
+
+// Prices from the panel's canonical catalog (with local fallback).
+const _ed = await getEdiciones();
+for (const e of editions) {
+  const c = _ed[e.key];
+  if (!c) continue;
+  e.price = c.precio_mes;
+  if ('yearly' in e) e.yearly = c.precio_anio;
+  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
+}
 
 const verticals = [
   { key: 'taller',     name: 'HUB Workshop',    desc: 'Auto repair shops',         icon: 'fa-screwdriver-wrench' },
