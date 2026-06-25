@@ -1,13 +1,1 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="100,20 161.5,55 161.5,125 100,160 38.5,125 38.5,55" fill="#16263D"/>
-  <line x1="100" y1="90" x2="68" y2="70" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
-  <line x1="100" y1="90" x2="132" y2="70" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
-  <line x1="100" y1="90" x2="132" y2="110" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
-  <line x1="100" y1="90" x2="68" y2="110" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="68" cy="70" r="6" fill="#06B6D4"/>
-  <circle cx="132" cy="70" r="6" fill="#06B6D4"/>
-  <circle cx="132" cy="110" r="6" fill="#06B6D4"/>
-  <circle cx="68" cy="110" r="6" fill="#06B6D4"/>
-  <circle cx="100" cy="90" r="13" fill="#FFFFFF"/>
-  <circle cx="100" cy="90" r="13" fill="none" stroke="#06B6D4" stroke-width="2.5"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="224" viewBox="228 23 224 224" role="img"><title>SuiteHub</title><desc>Insignia hexagonal flat-top con degradado azul→navy y un ícono de capas (suite de productos) con 3 niveles simétricos y separación uniforme.</desc><defs><linearGradient id="suitehubGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1582F5"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs><path d="M 425 147.12 L 393 202.58 Q 386 214.7 372 214.7 L 308 214.7 Q 294 214.7 287 202.58 L 255 147.12 Q 248 135 255 122.88 L 287 67.42 Q 294 55.3 308 55.3 L 372 55.3 Q 386 55.3 393 67.42 L 425 122.88 Q 432 135 425 147.12 Z" fill="url(#suitehubGrad)"/><path d="M 340 95 L 382 117 L 340 139 L 298 117 Z" fill="#fff"/><path d="M 298 131 L 340 153 L 382 131" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M 298 149 L 340 171 L 382 149" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
