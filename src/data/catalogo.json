@@ -5,7 +5,7 @@
         "moneda": "USD",
         "ciclo_anual_factor": 10,
         "descuento_anual_pct": 16,
-        "modelo_precio_vertical": "Vertical en línea de edición (Lite/Core/Pro/Enterprise), sin recargo. El delta es el precio de módulos adicionales por cliente (uso futuro).",
+        "modelo_precio_vertical": "Vertical en línea de edición (Lite/Core/Pro/Enterprise), sin recargo.",
         "regla": "Descuentos por cliente, manuales.",
         "fuente_canonica": "suitehub-panel/src/Catalog.php",
         "actualizado": "2026-06-25"
@@ -71,60 +71,25 @@
             "precio_anio": 1920,
             "fe_electronica": true,
             "limites": {
-                "sucursales": "Ilimitadas",
+                "sucursales": "1 principal · +$64/mes por adicional",
                 "usuarios": "50",
                 "registros": "Ilimitados",
                 "almacenamiento": "200 GB",
                 "transacciones_mes": "Ilimitadas"
             },
-            "salto_clave": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom."
+            "salto_clave": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom. Sucursales: $192 la principal + $64/mes cada adicional.",
+            "sucursal_principal_mes": 192,
+            "sucursal_adicional_mes": 64,
+            "sucursal_adicional_anio": 640
         }
     ],
-    "addons": [
-        {
-            "key": "usuario_extra",
-            "name": "Usuario adicional",
-            "unidad": "mes",
-            "detalle": "Lite $5 · Core $4 · Pro $3 · Enterprise $2",
-            "estado": "confirmado"
-        },
-        {
-            "key": "dominio_propio",
-            "name": "Dominio propio",
-            "unidad": "mes",
-            "detalle": "$5/mes · desde Pro (incluido en Enterprise)",
-            "estado": "propuesta"
-        },
-        {
-            "key": "email_dominio",
-            "name": "Email saliente con tu dominio",
-            "unidad": "mes",
-            "detalle": "$5/mes · desde Pro (incluido en Enterprise)",
-            "estado": "propuesta"
-        },
-        {
-            "key": "pac_fe",
-            "name": "PAC facturación electrónica",
-            "unidad": "—",
-            "detalle": "Lo paga el cliente directo al PAC. SuiteHub integra sin cobro.",
-            "estado": "confirmado"
-        }
-    ],
-    "deltas_modulo": {
-        "ligero": 12,
-        "medio": 24,
-        "pesado": 36
-    },
     "verticales": [
         {
             "key": "taller",
             "name": "HUB Taller",
             "icon": "fa-screwdriver-wrench",
             "sector": "Talleres mecánicos",
-            "grupo": "medio",
-            "delta_modulo_mes": 24,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": "QS Express — La Chorrera",
             "features": [
                 "Recepción rápida por placa",
@@ -155,10 +120,7 @@
             "name": "HUB Carwash",
             "icon": "fa-spray-can-sparkles",
             "sector": "Autolavados y car wash",
-            "grupo": "medio",
-            "delta_modulo_mes": 24,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Recepción por placa",
@@ -189,10 +151,7 @@
             "name": "HUB Restaurant",
             "icon": "fa-utensils",
             "sector": "Restaurantes y bares",
-            "grupo": "pesado",
-            "delta_modulo_mes": 36,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Mesas en vivo",
@@ -223,10 +182,7 @@
             "name": "HUB Pet",
             "icon": "fa-paw",
             "sector": "Veterinarias y pet shops",
-            "grupo": "medio",
-            "delta_modulo_mes": 24,
             "edicion_minima": "lite",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Ficha médica digital",
@@ -238,8 +194,8 @@
             "nota": null,
             "planes": {
                 "lite": {
-                    "precio_mes": 24,
-                    "precio_anio": 240
+                    "precio_mes": 36,
+                    "precio_anio": 360
                 },
                 "core": {
                     "precio_mes": 48,
@@ -260,10 +216,7 @@
             "name": "HUB Beauty",
             "icon": "fa-spa",
             "sector": "Salones, spas, barberías",
-            "grupo": "ligero",
-            "delta_modulo_mes": 12,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Reserva online por servicio y profesional",
@@ -292,10 +245,7 @@
             "name": "HUB Clinic",
             "icon": "fa-stethoscope",
             "sector": "Consultorios y clínicas",
-            "grupo": "medio",
-            "delta_modulo_mes": 24,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Expediente clínico digital",
@@ -324,10 +274,7 @@
             "name": "HUB Gym",
             "icon": "fa-dumbbell",
             "sector": "Gimnasios, crossfit, yoga",
-            "grupo": "medio",
-            "delta_modulo_mes": 24,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Membresías con cobro recurrente",
@@ -356,10 +303,7 @@
             "name": "HUB Lavandería",
             "icon": "fa-soap",
             "sector": "Lavanderías profesionales",
-            "grupo": "ligero",
-            "delta_modulo_mes": 12,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": "Clean Factory — Panamá",
             "features": [
                 "Boleta con código de retiro",
@@ -388,10 +332,7 @@
             "name": "HUB Inmobiliaria",
             "icon": "fa-building",
             "sector": "Bienes raíces",
-            "grupo": "ligero",
-            "delta_modulo_mes": 12,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Catálogo de propiedades",
@@ -420,10 +361,7 @@
             "name": "HUB Hotel",
             "icon": "fa-hotel",
             "sector": "Hoteles boutique y hostales",
-            "grupo": "medio",
-            "delta_modulo_mes": 24,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Tape chart de ocupación",
@@ -452,10 +390,7 @@
             "name": "HUB Phone",
             "icon": "fa-mobile-screen",
             "sector": "Reparación de celulares",
-            "grupo": "ligero",
-            "delta_modulo_mes": 12,
             "edicion_minima": "core",
-            "delta_estado": "confirmado",
             "caso_real": null,
             "features": [
                 "Diagnóstico inicial",
@@ -484,10 +419,7 @@
             "name": "HUB Traffic",
             "icon": "fa-people-arrows",
             "sector": "Analítica de afluencia retail",
-            "grupo": "pesado",
-            "delta_modulo_mes": 36,
             "edicion_minima": "lite",
-            "delta_estado": "propuesta",
             "caso_real": null,
             "features": [
                 "Conteo de afluencia",
@@ -500,9 +432,70 @@
             "nota": "Suma setup de hardware (cotización por # de sensores/cámaras y local).",
             "planes": {
                 "lite": {
-                    "precio_mes": 24,
-                    "precio_anio": 240
+                    "precio_mes": 36,
+                    "precio_anio": 360
                 },
+                "core": {
+                    "precio_mes": 48,
+                    "precio_anio": 480
+                },
+                "pro": {
+                    "precio_mes": 96,
+                    "precio_anio": 960
+                },
+                "enterprise": {
+                    "precio_mes": 192,
+                    "precio_anio": 1920
+                }
+            }
+        },
+        {
+            "key": "boutique",
+            "name": "HUB Boutique",
+            "icon": "fa-bag-shopping",
+            "sector": "Boutiques y retail de ropa",
+            "edicion_minima": "core",
+            "caso_real": null,
+            "features": [
+                "POS multi-sucursal",
+                "Variantes (talla + color)",
+                "Tienda online (e-commerce)",
+                "Apartados (layaway)",
+                "Traslados entre sucursales",
+                "Facturación electrónica"
+            ],
+            "nota": null,
+            "planes": {
+                "core": {
+                    "precio_mes": 48,
+                    "precio_anio": 480
+                },
+                "pro": {
+                    "precio_mes": 96,
+                    "precio_anio": 960
+                },
+                "enterprise": {
+                    "precio_mes": 192,
+                    "precio_anio": 1920
+                }
+            }
+        },
+        {
+            "key": "market",
+            "name": "HUB Market",
+            "icon": "fa-basket-shopping",
+            "sector": "Minimarkets y supermercados",
+            "edicion_minima": "core",
+            "caso_real": null,
+            "features": [
+                "POS por código de barras",
+                "Venta por peso",
+                "Inventario y compras",
+                "Caja y arqueo",
+                "Facturación electrónica"
+            ],
+            "nota": null,
+            "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
@@ -518,37 +511,7 @@
             }
         }
     ],
-    "especiales": [
-        {
-            "key": "pos",
-            "name": "HUB POS",
-            "icon": "fa-cash-register",
-            "sector": "Punto de venta / caja",
-            "features": [
-                "Tomar pedido rápido",
-                "Modificadores y notas",
-                "Pre-cuenta y cobro multi-método",
-                "Cierre de caja con arqueo",
-                "Funciona offline (PWA)",
-                "Ticket con QR de FE"
-            ],
-            "standalone": {
-                "precio_mes": 36,
-                "precio_anio": 360,
-                "estado": "confirmado",
-                "nota": "Caja sola, sin el resto del núcleo: food truck, barra, quick-service."
-            },
-            "como_modulo": {
-                "precio_mes": 15,
-                "estado": "propuesta",
-                "nota": "Módulo de caja sobre otro vertical (p.ej. Restaurant)."
-            }
-        }
-    ],
     "pendientes": [
-        "Confirmar la línea de edición de cada vertical \"cuando corresponda\" (p. ej. Pet hoy arranca en Lite).",
-        "Definir el catálogo de módulos adicionales que usarán los deltas (Ligero $12 / Medio $24 / Pesado $36).",
-        "Confirmar grupo de HUB Traffic (hoy pesado, propuesta) y rango del setup de hardware.",
-        "Precios de add-ons dominio propio / email con dominio (propuesta $5 c/u)."
+        "Confirmar la línea de edición de cada vertical \"cuando corresponda\" (p. ej. Pet hoy arranca en Lite)."
     ]
 }
