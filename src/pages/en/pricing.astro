@@ -42,14 +42,17 @@ const comparison = [
     ],
   },
   {
-    title: 'DGI electronic invoicing',
+    title: 'Multi-country electronic invoicing',
     rows: [
-      { label: 'Basic invoices (no DGI)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Digifact', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC The Factory HKA', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Factura Fácil', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC eFacturapty', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'CUFE + official DGI QR', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Basic invoices (no e-invoicing)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Digifact — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC The Factory HKA — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Ebi — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Factura Fácil — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC eFacturapty — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'The Factory HKA Venezuela — SENIAT', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'CUFE + official DGI QR (Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'SENIAT Control Number (Venezuela)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Invoice cancellation', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Credit notes', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
     ],
@@ -126,7 +129,7 @@ const faqs = [
   { q: 'What happens if I exceed my edition limits?', a: 'The system warns you at 80% of the limit. You can move up to the next edition from inside the platform without migrating data or losing your configuration.' },
   { q: 'Is setup billed separately?', a: 'Setup is free in Lite and Core (self-service). In Pro we include 4 hours of assisted onboarding. In Enterprise we assign a dedicated consultant.' },
   { q: 'How do I pay? Do you accept ACH, Yappy, credit card?', a: 'We accept ACH, Yappy, credit card and bank deposit. Enterprise accounts can pay against invoice on net-30 terms.' },
-  { q: 'What does the e-invoicing PAC cost cover?', a: 'The PAC cost (Digifact, HKA, Factura Fácil or eFacturapty) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.' },
+  { q: 'What does the e-invoicing PAC cost cover?', a: 'The PAC cost (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.' },
 ];
 const faqLd = {
   '@context': 'https://schema.org',
@@ -287,7 +290,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            The PAC cost (Digifact, HKA, Factura Fácil or eFacturapty) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.
+            The PAC cost (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.
           </div>
         </details>
       </div>

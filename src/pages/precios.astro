@@ -43,14 +43,17 @@ const comparativa = [
     ],
   },
   {
-    title: 'Facturación electrónica DGI',
+    title: 'Facturación electrónica multi-país',
     rows: [
-      { label: 'Facturas básicas (sin DGI)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Digifact', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC The Factory HKA', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Factura Fácil', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC eFacturapty', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'CUFE + QR oficial DGI', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Facturas básicas (sin FE)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Digifact — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC The Factory HKA — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Ebi — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Factura Fácil — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC eFacturapty — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'The Factory HKA Venezuela — SENIAT', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'CUFE + QR oficial DGI (Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Número de Control SENIAT (Venezuela)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Anulación de facturas', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Notas de crédito', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
     ],
@@ -127,7 +130,7 @@ const faqs = [
   { q: '¿Qué pasa si supero los límites de mi edición?', a: 'El sistema te avisa al 80% del límite. Puedes subir a la siguiente edición desde la misma plataforma sin migrar datos ni perder configuración.' },
   { q: '¿El setup se cobra aparte?', a: 'En Lite y Core el setup es gratuito (autoservicio). En Pro incluimos 4 horas de onboarding asistido. En Enterprise asignamos un consultor dedicado.' },
   { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Aceptamos transferencia ACH, Yappy, tarjeta de crédito y depósito bancario. Cuentas Enterprise pueden pagar contra factura a 30 días.' },
-  { q: '¿Qué incluye el costo del PAC para FE?', a: 'El costo del PAC (Digifact, HKA, Factura Fácil o eFacturapty) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.' },
+  { q: '¿Qué incluye el costo del PAC para FE?', a: 'El costo del PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.' },
 ];
 const faqLd = {
   '@context': 'https://schema.org',
@@ -288,7 +291,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            El costo del PAC (Digifact, HKA, Factura Fácil o eFacturapty) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.
+            El costo del PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.
           </div>
         </details>
       </div>

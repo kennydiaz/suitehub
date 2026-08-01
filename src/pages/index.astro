@@ -115,6 +115,12 @@ const pacs = [
     color: 'text-sky-400',
   },
   {
+    name: 'Ebi PAC',
+    desc: 'Emisión SOAP con CUFE, QR y protocolo DGI',
+    icon: 'fa-network-wired',
+    color: 'text-violet-400',
+  },
+  {
     name: 'Factura Fácil',
     desc: 'PAC panameño con foco en simplicidad',
     icon: 'fa-receipt',
@@ -125,6 +131,12 @@ const pacs = [
     desc: 'PAC panameño certificado por la DGI',
     icon: 'fa-file-invoice',
     color: 'text-amber-400',
+  },
+  {
+    name: 'The Factory HKA Venezuela',
+    desc: 'Imprenta Digital SENIAT — Venezuela',
+    icon: 'fa-globe-americas',
+    color: 'text-fuchsia-400',
   },
 ];
 
@@ -155,7 +167,7 @@ const tour = [
 ---
 <BaseLayout
   title="SuiteHub — Suite empresarial multi-país que sí escala"
-  description="Producto de PROOQ LLC (USA). Facturación electrónica multi-jurisdicción (DGI Panamá en vivo; SENIAT Venezuela, Facturae España, DIAN Colombia y compliance USA en roadmap 2026), multi-sucursal, automatizaciones, API. Disponible en español e inglés. Desde $24/mes.">
+  description="Producto de PROOQ LLC (USA). Facturación electrónica multi-jurisdicción (DGI Panamá y SENIAT Venezuela en vivo; Facturae España, DIAN Colombia y compliance USA en roadmap 2026), multi-sucursal, automatizaciones, API. Disponible en español e inglés. Desde $24/mes.">
 
   <!-- ════════════════════════════════════════════════════════════
        HERO
@@ -318,13 +330,13 @@ const tour = [
       <div class="text-center mb-10">
         <span class="eyebrow">Facturación electrónica multi-jurisdicción</span>
         <h2 class="text-2xl sm:text-3xl font-display font-bold">
-          Hoy <span class="text-gradient">4 PACs DGI Panamá</span> en producción · Roadmap 2026: SENIAT VE, Facturae ES, DIAN CO, compliance US
+          Hoy <span class="text-gradient">6 PACs integrados</span> — 5 DGI Panamá + SENIAT Venezuela · Roadmap: Facturae ES, DIAN CO, compliance US
         </h2>
         <p class="mt-3 text-sm text-ink-400 max-w-xl mx-auto">
-          Tú eliges con cuál PAC trabajar. SuiteHub se conecta directo y maneja todo el flujo XML, CUFE y QR sin que tengas que pensar en regulación. Capa adaptador diseñada para abstraer cualquier jurisdicción.
+          Tú eliges con cuál PAC trabajar. SuiteHub se conecta directo y maneja el flujo completo — XML, CUFE y QR en Panamá; JSON y Número de Control en Venezuela — sin que tengas que pensar en regulación. Capa adaptador diseñada para abstraer cualquier jurisdicción.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
         {pacs.map((p, i) => (
           <div class={`reveal reveal-delay-${i + 1} lift card-glass p-6 text-center hover:border-brand-500/30 transition-colors`}>
             <div class={`w-12 h-12 mx-auto rounded-xl bg-white/5 flex items-center justify-center text-2xl mb-3 ${p.color}`}>

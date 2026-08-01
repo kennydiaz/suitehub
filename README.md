@@ -127,13 +127,32 @@ npm run preview   # Sirve dist/ localmente
 
 ---
 
-## PACs integrados (DGI Panamá)
+## PACs integrados
 
-- Digifact (default)
-- The Factory HKA
-- Factura Fácil
+> Fuente canónica de las integraciones: `C:\prooq\_pacs-reference` (fuera de todo repo git y del web root).
+> Ahí viven READMEs, `notas.md` con quirks de producción y el código real de cada PAC. Leer antes de tocar copy de FE.
 
-SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. PAC cost paga directo el cliente.
+**Panamá — DGI (5 conexiones contratables):**
+
+| PAC | Protocolo | Estado |
+|-----|-----------|--------|
+| Digifact (default) | REST + XML | Producción real |
+| The Factory HKA | SOAP (array anidado a `SoapClient`) | CUFE real autorizado por DGI |
+| Ebi PAC | SOAP (objeto `DocumentoElectronico`) | CUFE real autorizado por DGI |
+| Factura Fácil | REST + JSON | Validado en QA |
+| eFacturapty | SOAP (sin `SoapClient`) | Validado en pruebas (CUFE real de test) |
+
+⚠️ **Ebi PAC y The Factory HKA Panamá son el mismo proveedor** — "Ebi PAC" es la marca del web service SOAP de TFHKA (mismo motor WCF). Se listan aparte porque **son cuentas, credenciales, endpoints (`ebi-pac.com`) y licencias distintas** que el cliente contrata por separado, y porque tenemos dos implementaciones independientes. Pero **no contratar dos cuentas creyendo que son PACs distintos**: para un mismo emisor, una basta.
+
+**Venezuela — SENIAT (1 PAC):**
+
+| PAC | Protocolo | Estado |
+|-----|-----------|--------|
+| The Factory HKA Venezuela (Imprenta Digital) | REST + JSON, JWT 12h | Emitiendo en producción |
+
+Régimen SENIAT (Providencias SNAT/2024/000102 y SNAT/2024/000121). **No hay CUFE**: el identificador fiscal es el **Número de Control** (`00-00000001`) + `urlConsulta`. HKA asigna la numeración desde un pool autorizado. IVA 16% e IGTF 3% como renglón propio. No reutiliza nada del HKA de Panamá (aquel es SOAP/DGI).
+
+SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. El costo del PAC lo paga directo el cliente.
 
 ---
 
