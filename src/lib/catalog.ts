@@ -15,7 +15,7 @@ const ENDPOINT = import.meta.env.PUBLIC_CATALOG_URL || 'https://panel.suitehub.n
 
 let _cache: any = null;
 
-/** Catálogo completo (ediciones, verticales, especiales, addons, deltas_modulo, meta). */
+/** Catálogo completo (ediciones, verticales, especiales, addons, meta). Cada vertical trae planes core y pro. */
 export async function getCatalog(): Promise<any> {
   if (_cache) return _cache;
   try {

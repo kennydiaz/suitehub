@@ -29,15 +29,16 @@ const ediciones = [
   {
     key:        'core',
     name:       'Edición Core',
-    tagline:    'Lo esencial',
+    tagline:    'Más vendido',
     price:      48,
     priceYearly: 480,
     color:      'cyan',
+    featured:   true,
     icon:       'fa-bolt',
-    ideal:      'PYME consolidada de 5-10 empleados con 1 o 2 sucursales — el restaurante con dos locales, la clínica con consultorio principal y satélite, la distribuidora regional.',
-    description:'La edición que activa la facturación electrónica con cualquiera de los 5 PACs certificados de la DGI Panamá (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) o con The Factory HKA Venezuela para el régimen SENIAT. Cuentas por cobrar con recibos multi-factura. Reportes con SQL guardado para los analíticos. Una segunda sucursal incluida.',
+    ideal:      'PYME consolidada de 5-10 empleados con una sucursal — el restaurante de barrio, la clínica con su consultorio, la distribuidora regional.',
+    description:'La edición que activa la facturación electrónica con cualquiera de los 5 PACs certificados de la DGI Panamá (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) o con The Factory HKA Venezuela para el régimen SENIAT. Cuentas por cobrar con recibos multi-factura. Reportes con SQL guardado para los analíticos. Todo para una sucursal; cuando abras más, Enterprise.',
     limits: {
-      sucursales: 2, usuarios: 8, registros: 5000, almacenamiento: '10 GB',
+      sucursales: 1, usuarios: 8, registros: 5000, almacenamiento: '10 GB',
     },
     modulos: [
       { icon: 'fa-receipt',           name: 'Facturación electrónica DGI', desc: '32 reglas DGI verificadas, 0 rechazos en producción' },
@@ -52,23 +53,22 @@ const ediciones = [
   {
     key:        'pro',
     name:       'Edición Pro',
-    tagline:    'Más popular',
-    price:      96,
-    priceYearly: 960,
+    tagline:    'Personalizable',
+    price:      64,
+    priceYearly: 640,
     color: 'brand',
-    featured:   true,
     icon:       'fa-crown',
-    ideal:      'PYME mediana de 15-30 empleados con 3-5 sucursales — la cadena de talleres, el restaurante con 4 locales, la distribuidora con bodega central + tiendas, el grupo médico con varios consultorios.',
-    description:'El salto a profesional. Multi-sucursal real con consolidación, automatizaciones programadas (recordatorios de cobro, seguimientos), API REST para integrar con tu contabilidad o e-commerce, WhatsApp Business para comunicarte con clientes desde el sistema. White-label opcional.',
+    ideal:      'PYME de 10-20 empleados que quiere el sistema a su medida — su marca en cada factura, automatizaciones y conexión con su contabilidad o e-commerce.',
+    description:'El salto a personalizable. Tu logo, colores y dominio en facturas, correos y portal; automatizaciones programadas (recordatorios de cobro, seguimientos); API REST para integrar con tu contabilidad o e-commerce; WhatsApp Business para comunicarte con clientes desde el sistema.',
     limits: {
-      sucursales: 5, usuarios: 20, registros: 50000, almacenamiento: '50 GB',
+      sucursales: 1, usuarios: 20, registros: 50000, almacenamiento: '50 GB',
     },
     modulos: [
-      { icon: 'fa-building',     name: 'Multi-sucursal',          desc: 'Inventario, ventas y reportes por sucursal o consolidados' },
+      { icon: 'fa-palette',      name: 'Branding propio',         desc: 'Tu logo, colores y dominio en facturas, correos y portal' },
       { icon: 'fa-robot',        name: 'Automatizaciones',        desc: 'Recordatorios de cobro, seguimientos, alertas de stock' },
       { icon: 'fa-code',         name: 'API REST',                desc: '100,000 llamadas/mes con OpenAPI 3.0' },
       { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Plantillas Meta-aprobadas + envío automático' },
-      { icon: 'fa-arrows-up-down-left-right', name: 'Transferencias inter-sucursal', desc: 'Movimiento doble atómico, auditado' },
+      { icon: 'fa-bolt',         name: 'Webhooks',                desc: 'Avisa a tus sistemas en tiempo real cuando pasa algo' },
       { icon: 'fa-chart-pie',    name: 'Reportes Nivel 3 (PDF)',  desc: 'Plantillas dinámicas con placeholders editables' },
     ],
     extras: ['Soporte prioritario', 'Onboarding asistido (4h)', 'Capacitación inicial'],
@@ -76,21 +76,21 @@ const ediciones = [
   {
     key:        'enterprise',
     name:       'Edición Enterprise',
-    tagline:    'Sin límites',
-    price:      192,
-    priceYearly: 1920,
+    tagline:    'Sucursales',
+    price:      196,
+    priceYearly: 1960,
     color:      'amber',
     icon:       'fa-trophy',
-    ideal:      'Empresa grande o cadena con sucursales ilimitadas, +30 usuarios, integración con sistemas legacy, requisitos de auditoría avanzada.',
-    description:'Cuando tu operación necesita más de lo que cualquier "plan" estándar ofrece. White-label completo (vende SuiteHub con tu marca), API ilimitada, SLA 24/7, onboarding dedicado, soporte para integraciones custom. Reportes con IA para descubrir patrones que tus reportes humanos no ven.',
+    ideal:      'Negocio con varias sucursales — la cadena de talleres, el restaurante con 3 locales, el grupo médico con varios consultorios. Sucursal principal incluida; cada adicional +$64/mes.',
+    description:'La edición multi-sucursal. Inventario, ventas y reportes por sucursal o consolidados, transferencias entre locales y cualquier vertical incluido. White-label completo (vende SuiteHub con tu marca), API ilimitada, SLA, onboarding dedicado e integraciones custom.',
     limits: {
-      sucursales: 'Ilimitadas', usuarios: 50, registros: 'Ilimitados', almacenamiento: '200 GB',
+      sucursales: '1 + $64/mes c/adicional', usuarios: 50, registros: 'Ilimitados', almacenamiento: '200 GB',
     },
     modulos: [
-      { icon: 'fa-brain',           name: 'Reportes con IA',         desc: 'Forecasting, anomalías, insights automáticos' },
+      { icon: 'fa-building',        name: 'Multi-sucursal',          desc: 'Inventario, ventas y reportes por sucursal o consolidados' },
       { icon: 'fa-palette',         name: 'White-label completo',    desc: 'Vende SuiteHub con tu marca, dominio y branding' },
       { icon: 'fa-code-branch',     name: 'API ilimitada',           desc: 'Sin tope de llamadas, webhooks bidireccionales' },
-      { icon: 'fa-headset',         name: 'Soporte 24/7',            desc: 'SLA con tiempo de respuesta por contrato' },
+      { icon: 'fa-arrows-up-down-left-right', name: 'Transferencias inter-sucursal', desc: 'Movimiento doble atómico, auditado' },
       { icon: 'fa-graduation-cap',  name: 'Onboarding dedicado',     desc: 'Consultor SuiteHub asignado, plan de migración' },
       { icon: 'fa-plug',            name: 'Integraciones custom',    desc: 'Conexión con sistemas legacy de la empresa' },
     ],
@@ -115,7 +115,7 @@ const colorMap = {
   amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
 };
 ---
-<BaseLayout title="Ediciones · SuiteHub" description="Cuatro ediciones de SuiteHub: Lite ($24), Core ($48), Pro ($96), Enterprise ($192). Crece sin migrar.">
+<BaseLayout title="Ediciones · SuiteHub" description="Cuatro ediciones de SuiteHub: Lite ($24), Core ($48), Pro ($64), Enterprise ($196). Crece sin migrar.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

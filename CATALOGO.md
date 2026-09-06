@@ -1,116 +1,70 @@
-# Catálogo SuiteHub — Conceptos + Precios
+# Catálogo SuiteHub — Modelo simple (vigente desde 2026-09-06)
 
-> Documento humano del catálogo de precios de SuiteHub (PROOQ LLC / PROOQ S.A.).
-> **Fuente canónica: el panel** — `suitehub-panel/src/Catalog.php`, servido como JSON en `https://panel.suitehub.net/?r=catalog/json`. El sitio Astro lo consume en build-time vía [`src/lib/catalog.ts`](src/lib/catalog.ts), con [`src/data/catalogo.json`](src/data/catalogo.json) como copia local de respaldo. Este MD es solo explicativo y puede ir por detrás del panel.
+> **Fuente canónica: el panel** — `panel.suitehub.net/src/Catalog.php`, servido como JSON en `https://panel.suitehub.net/?r=catalog/json`. El sitio Astro lo consume en build-time vía [`src/lib/catalog.ts`](src/lib/catalog.ts), con [`src/data/catalogo.json`](src/data/catalogo.json) como copia local de respaldo. Este MD es explicativo.
+> Mesa de decisión humana: `_suitehub-brand/catalogo/PRECIOS-2026.xlsx` (aquí se decide, en el panel se aplica).
 >
-> Modelo vigente: **vertical en línea de edición** (Lite/Core/Pro/Enterprise), sin recargo. El **delta** (Ligero $12 · Medio $24 · Pesado $36) es el precio de **módulos adicionales** por cliente (uso futuro). Descuentos: manuales.
->
-> Última actualización: 2026-06-25
+> Última actualización: 2026-09-06 · Moneda USD · Anual = mensual × 10 (≈16% off) · Descuentos por cliente: manuales.
 
 ---
 
-## Parte 1 — Glosario y definiciones (vocabulario oficial)
+## 1. Ediciones (eje horizontal)
 
-Para que ventas, producto y desarrollo hablemos lo mismo.
+| Edición | Etiqueta | $/mes | $/año | Sucursales | Usuarios | Registros | Almac. | Transac./mes | Salto clave |
+|---|---|---|---|---|---|---|---|---|---|
+| **Lite** | Básico | 24 | 240 | 1 | 3 | 500 | 2 GB | 100 | Clientes, catálogo, cotizaciones y FE DGI |
+| **Core** ⭐ | Más vendido | 48 | 480 | 1 | 8 | 5,000 | 10 GB | 1,000 | FE DGI con los PACs autorizados, CxC, inventario auditado, reportes SQL y PDF |
+| **Pro** | Personalizable | 64 | 640 | 1 | 20 | 50,000 | 50 GB | 10,000 | Core + branding propio, automatizaciones, API REST, webhooks, WhatsApp Business |
+| **Enterprise** | Sucursales | 196 | 1,960 | 1 principal · **+$64/mes** por adicional | 50 | Ilimitados | 200 GB | Ilimitadas | Multi-sucursal consolidado, cualquier vertical incluido, SLA, integraciones custom |
 
-| Término | Definición precisa | Qué **NO** es |
+**Multi-sucursal vive solo en Enterprise.** Lite, Core y Pro son de una sucursal.
+
+## 2. Verticales (eje vertical) — dos precios, sin recargo
+
+Cada vertical se vende de dos formas, y nada más:
+
+| Presentación | Precio | Qué es |
 |---|---|---|
-| **Edición** | Eje **horizontal**: nivel de capacidad (Lite / Core / Pro / Enterprise). Controla los **límites** y qué módulos del núcleo se activan. Agnóstica de industria. | ❌ "tier", ❌ "plan" |
-| **Vertical** | Eje **vertical**: adaptación a una industria (HUB Taller, HUB Restaurant…). Es el **núcleo + módulos, flujos, jerga y pantallas del rubro**. Siempre corre **sobre** una edición. | ❌ un producto suelto sin edición detrás |
-| **Núcleo** | Lo común a todas las ediciones y verticales: clientes, catálogo de productos/servicios, cotizaciones, facturas, reportes. | — |
-| **Módulo** | Unidad funcional activable: FE DGI, multi-sucursal, automatizaciones, KDS, agenda, etc. Una edición/vertical = un conjunto de módulos. | — |
-| **Plan / Suscripción** | La **oferta vendible** = `Vertical × Edición × Ciclo`. Es lo que entra al catálogo como línea con precio. | ❌ "edición" a secas |
-| **Ciclo** | Mensual o anual. **Anual = mensual × 10** (≈16% off, igual que las ediciones). | — |
-| **Add-on** | Extra que se cobra **aparte** de la suscripción: usuario extra, dominio propio, email saliente con dominio, sucursal extra. | — |
-| **Límites** | Cuotas numéricas de la edición: sucursales, usuarios, registros, almacenamiento, transacciones/mes. | — |
-| **PAC** | Proveedor de facturación electrónica (Digifact, HKA, Factura Fácil, eFacturapty). **Lo contrata y paga el cliente.** SuiteHub solo integra, sin cobro. | ❌ ingreso de SuiteHub |
-| **Delta de vertical** | Recargo mensual fijo que suma un vertical sobre el precio de la edición. Refleja los módulos de industria. | — |
-| **Edición mínima** | El piso de edición desde el cual tiene sentido vender un vertical (p.ej. los que facturan al cliente requieren mínimo Core, porque ahí se activa la FE). | — |
+| **HUB X** | **$48/mes · $480/año** (línea Core) | El vertical sobre la edición Core |
+| **HUB X Pro** | **$64/mes · $640/año** (línea Pro) | El vertical sobre la edición Pro |
 
-### SKU sugerido
-Formato: `HUB-{VERTICAL}-{EDICION}-{CICLO}` → ej. `HUB-TALLER-PRO-ANUAL`.
-Cada SKU = una línea de catálogo con precio único.
+Verticales en catálogo (15): Taller · Carwash · Restaurant · POS · Market · Boutique · Pet · Beauty · Clinic · Gym · Lavandería · Inmobiliaria · Hotel · Phone · Traffic (el hardware se cotiza aparte).
 
-### Limpiezas de vocabulario pendientes (deuda actual)
-1. **Choque "Ediciones" vs "Productos":** en el nav, *"Ediciones"* apunta a `/productos` (`productos.astro`, route key `products`). Unificar a **Ediciones** en archivo, ruta y label; no usar "Productos" para dos cosas.
-2. Estandarizar **"Vertical"** (no "producto") para HUB Taller/Restaurant/etc. en copy y catálogo.
-3. Separar siempre **incluido** de **add-on** en cada línea (hoy los extras viven sueltos en FAQs).
+- Sin precio propio, sin grupos, sin deltas, sin módulos especiales.
+- Un vertical con varias sucursales → **Enterprise ($196)**, que incluye cualquier vertical.
+- Casos reales: HUB Taller (QS Express — La Chorrera), HUB Lavandería (Clean Factory — Panamá).
+- Fuera del catálogo hasta tener definición: HUB Time, HUB Web, HUB Salon (ver pendientes).
 
----
+Los precios de los verticales **no se editan**: siguen la línea Core/Pro. Cambiar Core o Pro en el panel mueve todos los verticales a la vez.
 
-## Parte 2 — Eje horizontal: Ediciones (precios vivos del sitio)
+## 3. Add-ons (solo estos)
 
-| Edición | $/mes | $/año (16% off) | Sucursales | Usuarios | Registros | Almac. | Transac./mes | Salto clave |
-|---|---|---|---|---|---|---|---|---|
-| **Lite** | 24 | 240 | 1 | 3 | 500 | 2 GB | 100 | Básico **con FE DGI incluida** |
-| **Core** | 48 | 480 | 2 | 8 | 5 000 | 10 GB | 1 000 | **Activa FE DGI (4 PACs) + CxC + reportes SQL/PDF** |
-| **Pro** ⭐ | 96 | 960 | 5 | 20 | 50 000 | 50 GB | 10 000 | **Multi-sucursal + automatizaciones + API REST + WhatsApp** |
-| **Enterprise** | 192 | 1 920 | ∞ | 50 | ∞ | 200 GB | ∞ | White-label completo + reportes con IA + SLA + API ∞ |
-
-**Diferenciadores por edición (resumen de la comparativa):**
-- **Core** prende: FE DGI (Digifact / HKA / Factura Fácil / eFacturapty), CUFE+QR, anulación, notas de crédito, conversión cotización→factura, inventario auditado, CxC multi-factura, aging de cartera, reportes Nivel 2 (SQL) y Nivel 3 (PDF).
-- **Pro** prende: stock por sucursal, gestión multi-sucursal, transferencias inter-sucursal, automatizaciones programadas, API REST (100K/mes), webhooks, WhatsApp Business, branding propio.
-- **Enterprise** prende: reportes con IA, white-label completo (revender), API ilimitada, SLA contractual, account manager, integraciones custom.
-
-### Add-ons (se cobran aparte de la edición)
-| Add-on | Lite | Core | Pro | Enterprise |
-|---|---|---|---|---|
-| Usuario adicional /mes | $5 | $4 | $3 | $2 |
-| Dominio propio | — | — | Add-on | Incluido |
-| Email saliente con tu dominio | — | — | Add-on | Incluido |
-| PAC (FE electrónica) | — | Lo paga el cliente directo al PAC | ← | ← |
-
-> Precios de dominio propio / email con dominio: **PROPUESTA pendiente** (no están en el sitio). Sugerencia inicial: dominio propio +$5/mes, email con dominio +$5/mes.
-
----
-
-## Parte 3 — Eje vertical: vertical en línea de edición
-
-**Modelo vigente (2026-06-25): cada vertical se ubica en la línea de precio de la edición** (Lite/Core/Pro/Enterprise) que le corresponda, **sin recargo**. Anual = mensual × 10 (≈16% off). Para los valores vivos, manda el panel (`/?r=catalog/json`).
-
-| Vertical | Línea de precio | Notas |
+| Add-on | Detalle | Estado |
 |---|---|---|
-| **HUB Pet** | desde **Lite ($24)** | entrada; FE incluida |
-| Taller, Carwash, Restaurant, Beauty, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone | desde **Core ($48)** | suben a Pro ($96) / Enterprise ($192) |
-| **HUB Traffic** | desde **Lite ($24)** | analítica; suma setup de hardware one-time |
+| Usuario adicional | Lite $5 · Core $4 · Pro $3 · Enterprise $2 /mes | confirmado |
+| Sucursal adicional | +$64/mes, solo Enterprise (la principal va incluida) | confirmado |
+| Implementación | $99 una sola vez · **gratis con plan anual** | propuesta |
 
-> **Descuentos por cliente: manuales.** HUB POS es caso especial (standalone $36/mes — ver Parte 4).
+El PAC de facturación electrónica lo contrata y paga el cliente directo a su PAC; SuiteHub integra sin cobro.
 
-### Delta = módulos adicionales (uso futuro)
-El **delta** clasifica la complejidad de un vertical y fija el precio de los **módulos adicionales** que un cliente puede contratar. **Hoy no se suma** al precio base del vertical; se reserva para próximas revisiones.
+## 4. Vocabulario
 
-| Grupo | Delta/mes (módulo) | Verticales |
+- **Edición** (no "tier", no "plan"): Lite / Core / Pro / Enterprise.
+- **Vertical** (no "producto"): HUB Taller, HUB Restaurant…
+- **HUB X / HUB X Pro**: las dos únicas presentaciones de un vertical. Nunca "HUB X Lite".
+- SKU sugerido: `HUB-{VERTICAL}-{CORE|PRO}-{MENSUAL|ANUAL}`.
+
+## 5. Pendientes
+
+- [ ] Confirmar implementación $99 / gratis con anual (hoy *propuesta*).
+- [ ] Beauty vs Salon: el catálogo dice HUB Beauty; el brand kit tiene logo de HUB Salon. Nombre final.
+- [ ] Definir HUB Time (existe en brand kit, no en catálogo).
+- [ ] Entidad en materiales legales (términos, privacidad, footer): decidir dueño de marca/IP entre PROOQ S.A. (Panamá) y PROOQ LLC (EE.UU.) antes de reescribirlos.
+
+## 6. Historial de modelos (para no volver a mezclarlos)
+
+| Cuándo | Modelo | Estado |
 |---|---|---|
-| Ligero | +$12 | Beauty, Lavandería, Inmobiliaria, Phone |
-| Medio | +$24 | Taller, Carwash, Pet, Clinic, Gym, Hotel |
-| Pesado | +$36 | Restaurant, Traffic |
-
----
-
-## Parte 4 — Casos especiales (fuera de la matriz)
-
-> **Reconciliación histórica (kennydiaz, 2026-05-30):** los pitches del panel `suitehub-panel/src/Products.php` se alinearon con el catálogo: Carwash $24→**$48/mes** (precio estándar), POS $240→**$360/año**. *(Cambio en landings en vivo: aplica al hacer push/deploy del panel.)*
-
-### HUB POS — caja / punto de venta
-Se vende de dos formas:
-1. **Standalone** (caja sola, sin el resto del núcleo): **$360/año ($36/mes)** — confirmado. Ideal food truck / barra / quick-service que solo quiere cobrar.
-2. **Como módulo de caja** sobre otro vertical (Restaurant, etc.): **PROPUESTA +$15/mes** sobre la edición.
-
-### HUB Traffic — ahora en la matriz (piso Lite)
-Por decisión 2026-05-30, Traffic entra a la matriz arrancando en **Lite** (es analítica, no factura al cliente) — ver Parte 3. Conserva su componente de hardware:
-- **Setup de hardware:** cotización por # de sensores/cámaras y local (one-time).
-- **Delta de suscripción:** PROPUESTA +$30/mes (no se confirmó número; encaja con grupo "pesado").
-- Se vende mejor como **complemento de HUB POS** (cruce visita→venta) que solo.
-
----
-
-## Parte 5 — Pendientes para cerrar el catálogo
-- [x] ~~Validar **deltas** de verticales~~ — **modelo en pausa** (2026-06-25): verticales pasan a precio plano por grupo (entrada 24/240 · estándar 48/480).
-- [x] **Edición mínima** por vertical — Core para todos salvo **Traffic = Lite**.
-- [x] **HUB POS standalone** — $360/año confirmado.
-- [x] **Migración** — fuente canónica = `suitehub-panel/data/catalogo.php`; espejo Astro = `suitehub/src/data/catalogo.json`.
-- [x] **Reconciliación de precios** — regla "manda el más caro"; pitches Carwash/POS del panel actualizados.
-- [ ] Confirmar **delta de HUB Traffic** (PROPUESTA +$30) y rango del **setup de hardware**.
-- [ ] Precios de add-ons **dominio propio** y **email con dominio** (PROPUESTA $5 c/u).
-- [ ] Política de **sucursal extra** como add-on (hoy se sube cambiando de edición).
-- [ ] Cuando se scaffolde el panel: su módulo *Catálogo de productos* lee de `src/data/catalogo.json`.
+| may-2026 | Puntos ($12/pt) + licencia inicial para restaurantes | retirado |
+| jun-2026 | 3 planes por producto + setup (estudio de mercado) | referencia de mercado, no vigente |
+| 2026-06-25 | Ediciones × verticales con precio propio, grupos y deltas | reemplazado |
+| **2026-09-06** | **Modelo simple: 4 ediciones · vertical = Core o Pro · Enterprise = sucursales** | **vigente** |

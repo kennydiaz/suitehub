@@ -4,9 +4,9 @@ import { getEdiciones } from '../../lib/catalog';
 
 const editions = [
   { key: 'lite',       name: 'Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
-  { key: 'core',       name: 'Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: false },
-  { key: 'pro',        name: 'Pro',        price: 96,  yearly: 960,  color: 'brand', featured: true  },
-  { key: 'enterprise', name: 'Enterprise', price: 192, yearly: 1920, color: 'amber',  featured: false },
+  { key: 'core',       name: 'Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: true  },
+  { key: 'pro',        name: 'Pro',        price: 64,  yearly: 640,  color: 'brand', featured: false },
+  { key: 'enterprise', name: 'Enterprise', price: 196, yearly: 1960, color: 'amber',  featured: false },
 ];
 
 // Prices from the panel's canonical catalog (with local fallback).
@@ -23,7 +23,7 @@ const comparison = [
   {
     title: 'Limits',
     rows: [
-      { label: 'Branches',                       lite: '1',     core: '2',      pro: '5',          enterprise: 'Unlimited' },
+      { label: 'Branches',                       lite: '1',     core: '1',      pro: '1',          enterprise: '1 + $64/mo each additional' },
       { label: 'Included users',                 lite: '3',     core: '8',      pro: '20',         enterprise: '50' },
       { label: 'Records (customers/products)',   lite: '500',   core: '5,000',  pro: '50,000',     enterprise: 'Unlimited' },
       { label: 'Storage',                        lite: '2 GB',  core: '10 GB',  pro: '50 GB',      enterprise: '200 GB' },
@@ -38,7 +38,7 @@ const comparison = [
       { label: 'Quotes', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Quote → invoice conversion', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Inventory with audited movements', lite: 'Manual', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'Stock per branch', lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'Stock per branch', lite: '—', core: '—', pro: '—', enterprise: '✓' },
     ],
   },
   {
@@ -60,10 +60,11 @@ const comparison = [
   {
     title: 'Multi-branch',
     rows: [
-      { label: 'Branch management',                 lite: '—', core: '—', pro: '✓', enterprise: '✓' },
-      { label: 'Users assignable per branch',       lite: '—', core: '—', pro: '✓', enterprise: '✓' },
-      { label: 'Inter-branch transfers',            lite: '—', core: '—', pro: '✓', enterprise: '✓' },
-      { label: 'Reports consolidated or per branch', lite: '—', core: '—', pro: '✓', enterprise: '✓' },
+      { label: 'Branch management',                 lite: '—', core: '—', pro: '—', enterprise: '✓' },
+      { label: 'Users assignable per branch',       lite: '—', core: '—', pro: '—', enterprise: '✓' },
+      { label: 'Inter-branch transfers',            lite: '—', core: '—', pro: '—', enterprise: '✓' },
+      { label: 'Reports consolidated or per branch', lite: '—', core: '—', pro: '—', enterprise: '✓' },
+      { label: 'Any vertical included',              lite: '—', core: '—', pro: '—', enterprise: '✓' },
     ],
   },
   {
@@ -72,7 +73,6 @@ const comparison = [
       { label: 'Level 1 — Pre-built reports',        lite: '6 reports',   core: '15+ reports',  pro: 'All',    enterprise: 'All' },
       { label: 'Level 2 — Saved SQL (whitelist)',    lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
       { label: 'Level 3 — Editable PDF templates',   lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
-      { label: 'AI-powered reports',                 lite: '—',           core: '—',            pro: '—',      enterprise: '✓' },
       { label: 'CSV / PDF export',                   lite: '✓',           core: '✓',            pro: '✓',      enterprise: '✓' },
     ],
   },
@@ -99,7 +99,7 @@ const comparison = [
     rows: [
       { label: 'Email support',     lite: '✓',     core: '✓',         pro: '✓',           enterprise: '✓' },
       { label: 'WhatsApp support',  lite: '—',     core: '✓',         pro: 'Priority',     enterprise: '24/7' },
-      { label: 'Guided setup',      lite: '—',     core: 'Basic',     pro: '4 hours',     enterprise: 'Dedicated' },
+      { label: 'Implementation ($99 once · free with annual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicated' },
       { label: 'Initial training',  lite: '—',     core: '1 session', pro: '3 sessions',  enterprise: 'Unlimited' },
       { label: 'Contractual SLA',   lite: '—',     core: '—',         pro: '—',           enterprise: '✓' },
       { label: 'Account manager',   lite: '—',     core: '—',         pro: '—',           enterprise: 'Dedicated' },
@@ -127,7 +127,7 @@ const colorMap = {
 const faqs = [
   { q: 'Do I have to sign an annual contract?', a: "No. You pay month to month and cancel whenever you want. If you pay a year up front you get 16% off, but it's not required." },
   { q: 'What happens if I exceed my edition limits?', a: 'The system warns you at 80% of the limit. You can move up to the next edition from inside the platform without migrating data or losing your configuration.' },
-  { q: 'Is setup billed separately?', a: 'Setup is free in Lite and Core (self-service). In Pro we include 4 hours of assisted onboarding. In Enterprise we assign a dedicated consultant.' },
+  { q: 'Is implementation billed separately?', a: 'Yes: $99 one time, covering initial configuration, loading your catalog and kickoff training. It is free if you pay the annual plan. In Enterprise we assign a dedicated consultant.' },
   { q: 'How do I pay? Do you accept ACH, Yappy, credit card?', a: 'We accept ACH, Yappy, credit card and bank deposit. Enterprise accounts can pay against invoice on net-30 terms.' },
   { q: 'What does the e-invoicing PAC cost cover?', a: 'The PAC cost (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.' },
 ];
@@ -173,7 +173,7 @@ const faqLd = {
           <div class={`relative card-glass p-6 ${e.featured ? 'border-brand-500/50 shadow-glow' : ''}`}>
             {e.featured && (
               <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-[10px] font-semibold uppercase tracking-wider rounded-full">
-                Most popular
+                Best seller
               </span>
             )}
             <div class={`text-xs uppercase tracking-wider font-semibold mb-2 ${colorMap[e.color]}`}>Edition</div>
@@ -268,11 +268,11 @@ const faqLd = {
         </details>
         <details class="card-glass group">
           <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
-            Is setup billed separately?
+            Is implementation billed separately?
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Setup is free in Lite and Core (self-service). In Pro we include 4 hours of assisted onboarding. In Enterprise we assign a dedicated consultant.
+            Yes: $99 one time, covering initial configuration, loading your catalog and kickoff training. It is free if you pay the annual plan. In Enterprise we assign a dedicated consultant.
           </div>
         </details>
         <details class="card-glass group">

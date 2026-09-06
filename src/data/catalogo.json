@@ -1,23 +1,24 @@
 {
     "meta": {
         "marca": "SuiteHub",
-        "empresa": "PROOQ LLC (USA) · operado en Panamá por PROOQ S.A.",
+        "empresa": "PROOQ S.A. (Panamá) · PROOQ LLC (EE.UU.)",
         "moneda": "USD",
         "ciclo_anual_factor": 10,
         "descuento_anual_pct": 16,
-        "modelo_precio_vertical": "Vertical en línea de edición (Lite/Core/Pro/Enterprise), sin recargo.",
+        "modelo_precio_vertical": "Cada vertical tiene dos precios: la línea Core (\"HUB X\") y la línea Pro (\"HUB X Pro\"). Sin recargo. Multi-sucursal = Enterprise, que incluye cualquier vertical.",
         "regla": "Descuentos por cliente, manuales.",
+        "pac": "El PAC de facturación electrónica lo contrata y paga el cliente directo. SuiteHub integra sin cobro.",
         "fuente_canonica": "suitehub-panel/src/Catalog.php",
-        "actualizado": "2026-06-25"
+        "actualizado": "2026-09-06"
     },
     "ediciones": [
         {
             "key": "lite",
             "name": "Lite",
+            "tagline": "Básico",
             "color": "#0EA5E9",
             "featured": false,
             "precio_mes": 24,
-            "precio_anio": 240,
             "fe_electronica": true,
             "limites": {
                 "sucursales": "1",
@@ -26,49 +27,52 @@
                 "almacenamiento": "2 GB",
                 "transacciones_mes": "100"
             },
-            "salto_clave": "Lo básico con FE DGI incluida: clientes, catálogo, cotizaciones y facturación electrónica."
+            "salto_clave": "Lo básico con FE DGI incluida: clientes, catálogo, cotizaciones y facturación electrónica.",
+            "precio_anio": 240
         },
         {
             "key": "core",
             "name": "Core",
+            "tagline": "Más vendido",
             "color": "#06B6D4",
-            "featured": false,
+            "featured": true,
             "precio_mes": 48,
-            "precio_anio": 480,
             "fe_electronica": true,
             "limites": {
-                "sucursales": "2",
+                "sucursales": "1",
                 "usuarios": "8",
                 "registros": "5,000",
                 "almacenamiento": "10 GB",
                 "transacciones_mes": "1,000"
             },
-            "salto_clave": "Activa FE DGI (Digifact/HKA/Factura Fácil/eFacturapty), CxC multi-factura, reportes SQL y plantillas PDF."
+            "salto_clave": "Todo lo que necesita un negocio de una sucursal: FE DGI con los PACs autorizados, CxC multi-factura, inventario auditado, reportes SQL y plantillas PDF.",
+            "precio_anio": 480
         },
         {
             "key": "pro",
             "name": "Pro",
+            "tagline": "Personalizable",
             "color": "#1582F5",
-            "featured": true,
-            "precio_mes": 96,
-            "precio_anio": 960,
+            "featured": false,
+            "precio_mes": 64,
             "fe_electronica": true,
             "limites": {
-                "sucursales": "5",
+                "sucursales": "1",
                 "usuarios": "20",
                 "registros": "50,000",
                 "almacenamiento": "50 GB",
                 "transacciones_mes": "10,000"
             },
-            "salto_clave": "Multi-sucursal real, automatizaciones, API REST (100K/mes), webhooks, WhatsApp Business, branding propio."
+            "salto_clave": "Core + personalización: branding propio, automatizaciones, API REST, webhooks y WhatsApp Business.",
+            "precio_anio": 640
         },
         {
             "key": "enterprise",
             "name": "Enterprise",
+            "tagline": "Sucursales",
             "color": "#D97706",
             "featured": false,
-            "precio_mes": 192,
-            "precio_anio": 1920,
+            "precio_mes": 196,
             "fe_electronica": true,
             "limites": {
                 "sucursales": "1 principal · +$64/mes por adicional",
@@ -77,10 +81,33 @@
                 "almacenamiento": "200 GB",
                 "transacciones_mes": "Ilimitadas"
             },
-            "salto_clave": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom. Sucursales: $192 la principal + $64/mes cada adicional.",
-            "sucursal_principal_mes": 192,
+            "salto_clave": "Multi-sucursal con reportes consolidados, cualquier vertical incluido, SLA y soporte prioritario. Sucursal principal incluida; cada adicional +$64/mes.",
             "sucursal_adicional_mes": 64,
+            "precio_anio": 1960,
             "sucursal_adicional_anio": 640
+        }
+    ],
+    "addons": [
+        {
+            "key": "usuario_extra",
+            "name": "Usuario adicional",
+            "unidad": "mes",
+            "detalle": "Lite $5 · Core $4 · Pro $3 · Enterprise $2",
+            "estado": "confirmado"
+        },
+        {
+            "key": "sucursal_extra",
+            "name": "Sucursal adicional",
+            "unidad": "mes",
+            "detalle": "+$64/mes por sucursal, solo en Enterprise (incluye la principal)",
+            "estado": "confirmado"
+        },
+        {
+            "key": "implementacion",
+            "name": "Implementación",
+            "unidad": "una vez",
+            "detalle": "$99 una sola vez · gratis con plan anual",
+            "estado": "propuesta"
         }
     ],
     "verticales": [
@@ -89,8 +116,8 @@
             "name": "HUB Taller",
             "icon": "fa-screwdriver-wrench",
             "sector": "Talleres mecánicos",
-            "edicion_minima": "core",
             "caso_real": "QS Express — La Chorrera",
+            "nota": null,
             "features": [
                 "Recepción rápida por placa",
                 "Órdenes de trabajo (servicios + repuestos)",
@@ -99,29 +126,29 @@
                 "Catálogo de servicios",
                 "Facturación electrónica"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "carwash",
             "name": "HUB Carwash",
             "icon": "fa-spray-can-sparkles",
             "sector": "Autolavados y car wash",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Recepción por placa",
                 "Paquetes de lavado",
@@ -130,29 +157,29 @@
                 "Aviso WhatsApp cuando está listo",
                 "Facturación electrónica"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "restaurant",
             "name": "HUB Restaurant",
             "icon": "fa-utensils",
             "sector": "Restaurantes y bares",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Mesas en vivo",
                 "Comanda a cocina (KDS)",
@@ -161,29 +188,123 @@
                 "Domicilio",
                 "Reportes por turno"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
+        },
+        {
+            "key": "pos",
+            "name": "HUB POS",
+            "icon": "fa-cash-register",
+            "sector": "Caja y punto de venta · food service ligero",
+            "caso_real": null,
+            "nota": null,
+            "features": [
+                "Toma de pedido táctil",
+                "Gestión de mesas",
+                "Cobro mixto con propina y vuelto",
+                "Comanda a cocina e impresión por estación",
+                "Kiosko de auto-servicio",
+                "Control de caja (X/Z)",
+                "Funciona sin internet"
+            ],
+            "planes": {
+                "core": {
+                    "precio_mes": 48,
+                    "precio_anio": 480
+                },
+                "pro": {
+                    "precio_mes": 64,
+                    "precio_anio": 640
+                }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
+        },
+        {
+            "key": "market",
+            "name": "HUB Market",
+            "icon": "fa-cart-shopping",
+            "sector": "Minimarkets y supermercados",
+            "caso_real": null,
+            "nota": null,
+            "features": [
+                "Venta rápida por código",
+                "Venta por peso (balanza)",
+                "Inventario con caducidad",
+                "Caja y arqueo",
+                "Compras y proveedores",
+                "Facturación electrónica"
+            ],
+            "planes": {
+                "core": {
+                    "precio_mes": 48,
+                    "precio_anio": 480
+                },
+                "pro": {
+                    "precio_mes": 64,
+                    "precio_anio": 640
+                }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
+        },
+        {
+            "key": "boutique",
+            "name": "HUB Boutique",
+            "icon": "fa-shirt",
+            "sector": "Boutiques de ropa y retail",
+            "caso_real": null,
+            "nota": null,
+            "features": [
+                "Variantes talla × color",
+                "POS táctil",
+                "Tienda online sobre el mismo inventario",
+                "Apartados (layaway)",
+                "Devoluciones con autorización",
+                "Facturación electrónica"
+            ],
+            "planes": {
+                "core": {
+                    "precio_mes": 48,
+                    "precio_anio": 480
+                },
+                "pro": {
+                    "precio_mes": 64,
+                    "precio_anio": 640
+                }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "pet",
             "name": "HUB Pet",
             "icon": "fa-paw",
             "sector": "Veterinarias y pet shops",
-            "edicion_minima": "lite",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Ficha médica digital",
                 "Recordatorios automáticos (vacunas/desparasitación)",
@@ -191,236 +312,232 @@
                 "Recetas con stock",
                 "Galería por mascota"
             ],
-            "nota": null,
             "planes": {
-                "lite": {
-                    "precio_mes": 36,
-                    "precio_anio": 360
-                },
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "beauty",
             "name": "HUB Beauty",
             "icon": "fa-spa",
             "sector": "Salones, spas, barberías",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Reserva online por servicio y profesional",
                 "Comisiones por estilista",
                 "Productos + servicios en un ticket",
                 "Recordatorios WhatsApp"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "clinic",
             "name": "HUB Clinic",
             "icon": "fa-stethoscope",
             "sector": "Consultorios y clínicas",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Expediente clínico digital",
                 "Agenda multi-médico",
                 "Recetas digitales",
                 "Facturación a aseguradoras"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "gym",
             "name": "HUB Gym",
             "icon": "fa-dumbbell",
             "sector": "Gimnasios, crossfit, yoga",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Membresías con cobro recurrente",
                 "Control de acceso por QR",
                 "Clases con cupo",
                 "Retención por inasistencia"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "lavanderia",
             "name": "HUB Lavandería",
             "icon": "fa-soap",
             "sector": "Lavanderías profesionales",
-            "edicion_minima": "core",
             "caso_real": "Clean Factory — Panamá",
+            "nota": null,
             "features": [
                 "Boleta con código de retiro",
                 "Etapas del proceso",
                 "Precio por kilo o prenda",
                 "Aviso WhatsApp cuando está listo"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "inmobiliaria",
             "name": "HUB Inmobiliaria",
             "icon": "fa-building",
             "sector": "Bienes raíces",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Catálogo de propiedades",
                 "Pipeline de leads",
                 "Contratos de alquiler con cobro recurrente",
                 "Comisiones de agentes"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "hotel",
             "name": "HUB Hotel",
             "icon": "fa-hotel",
             "sector": "Hoteles boutique y hostales",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Tape chart de ocupación",
                 "Check-in/out con factura",
                 "Housekeeping",
-                "Channel manager (Booking/Airbnb/Expedia, Pro+)"
+                "Channel manager (Booking/Airbnb/Expedia, Pro)"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "phone",
             "name": "HUB Phone",
             "icon": "fa-mobile-screen",
             "sector": "Reparación de celulares",
-            "edicion_minima": "core",
             "caso_real": null,
+            "nota": null,
             "features": [
                 "Diagnóstico inicial",
                 "Cotización al cliente",
                 "Repuestos vinculados a la orden",
                 "Garantía digital con QR"
             ],
-            "nota": null,
             "planes": {
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
+            },
+            "edicion_minima": "core",
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         },
         {
             "key": "traffic",
             "name": "HUB Traffic",
             "icon": "fa-people-arrows",
             "sector": "Analítica de afluencia retail",
-            "edicion_minima": "lite",
             "caso_real": null,
+            "nota": "El hardware (sensores/cámaras) se cotiza aparte por local.",
             "features": [
                 "Conteo de afluencia",
                 "Mapas de calor por zona",
@@ -429,89 +546,27 @@
                 "Comparativas por hora/día",
                 "Alertas de aforo"
             ],
-            "nota": "Suma setup de hardware (cotización por # de sensores/cámaras y local).",
             "planes": {
-                "lite": {
-                    "precio_mes": 36,
-                    "precio_anio": 360
-                },
                 "core": {
                     "precio_mes": 48,
                     "precio_anio": 480
                 },
                 "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
+                    "precio_mes": 64,
+                    "precio_anio": 640
                 }
-            }
-        },
-        {
-            "key": "boutique",
-            "name": "HUB Boutique",
-            "icon": "fa-bag-shopping",
-            "sector": "Boutiques y retail de ropa",
+            },
             "edicion_minima": "core",
-            "caso_real": null,
-            "features": [
-                "POS multi-sucursal",
-                "Variantes (talla + color)",
-                "Tienda online (e-commerce)",
-                "Apartados (layaway)",
-                "Traslados entre sucursales",
-                "Facturación electrónica"
-            ],
-            "nota": null,
-            "planes": {
-                "core": {
-                    "precio_mes": 48,
-                    "precio_anio": 480
-                },
-                "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
-                }
-            }
-        },
-        {
-            "key": "market",
-            "name": "HUB Market",
-            "icon": "fa-basket-shopping",
-            "sector": "Minimarkets y supermercados",
-            "edicion_minima": "core",
-            "caso_real": null,
-            "features": [
-                "POS por código de barras",
-                "Venta por peso",
-                "Inventario y compras",
-                "Caja y arqueo",
-                "Facturación electrónica"
-            ],
-            "nota": null,
-            "planes": {
-                "core": {
-                    "precio_mes": 48,
-                    "precio_anio": 480
-                },
-                "pro": {
-                    "precio_mes": 96,
-                    "precio_anio": 960
-                },
-                "enterprise": {
-                    "precio_mes": 192,
-                    "precio_anio": 1920
-                }
-            }
+            "precio_mes": 48,
+            "precio_anio": 480,
+            "precio_pro_mes": 64,
+            "precio_pro_anio": 640
         }
     ],
+    "especiales": [],
     "pendientes": [
-        "Confirmar la línea de edición de cada vertical \"cuando corresponda\" (p. ej. Pet hoy arranca en Lite)."
+        "Confirmar implementación: $99 una vez, gratis con plan anual (propuesta).",
+        "Beauty vs Salon: el catálogo dice HUB Beauty; el brand kit tiene logo de HUB Salon. Definir nombre final.",
+        "HUB Time, HUB Web y HUB Salon quedan fuera del catálogo hasta tener definición."
     ]
 }
