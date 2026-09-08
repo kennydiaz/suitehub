@@ -329,17 +329,17 @@
             "precio_pro_anio": 640
         },
         {
-            "key": "beauty",
-            "name": "HUB Beauty",
-            "icon": "fa-spa",
+            "key": "salon",
+            "name": "HUB Salon",
+            "icon": "fa-scissors",
             "sector": "Salones, spas, barberías",
             "caso_real": null,
             "nota": null,
             "features": [
-                "Reserva online por servicio y profesional",
-                "Comisiones por estilista",
-                "Productos + servicios en un ticket",
-                "Recordatorios WhatsApp"
+                "Agenda por estilista",
+                "Reserva online 24/7 con disponibilidad real",
+                "Comisiones por categoría de servicio y retail",
+                "Recordatorios WhatsApp 24 h y 2 h antes"
             ],
             "planes": {
                 "core": {
@@ -566,7 +566,7 @@
     "especiales": [],
     "pendientes": [
         "Confirmar implementación: $99 una vez, gratis con plan anual (propuesta).",
-        "Beauty vs Salon: el catálogo dice HUB Beauty; el brand kit tiene logo de HUB Salon. Definir nombre final.",
-        "HUB Time, HUB Web y HUB Salon quedan fuera del catálogo hasta tener definición."
+        "HUB Salon reemplaza a HUB Beauty (resuelto). Falta renombrar el badge del brand kit (hub-beauty-badge.svg) y decidir su color: hoy comparte #DB2777 con Boutique.",
+        "HUB Time y HUB Web quedan fuera del catálogo hasta tener definición."
     ]
 }
