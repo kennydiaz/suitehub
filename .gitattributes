@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* text=auto eol=lf
+
+# Sin eol=lf, con core.autocrlf=true el checkout devolvia CRLF al arbol y
+# tools/sync-brand.mjs (que escribe LF) veia un cambio en cada badge.
+
