@@ -40,10 +40,11 @@ jobs:
       - name: Install
         run: npm ci
 
-      # Valida los badges contra src/data/brand.json (el kit vendorizado).
-      # No necesita el brand kit en disco: aquí solo hay el checkout de este repo.
-      - name: Verificar marca
-        run: npm run check-brand
+      # Badges contra src/data/brand.json (el kit vendorizado) e imágenes sin
+      # metadata C2PA. No necesita el brand kit en disco: aquí solo hay el
+      # checkout de este repo.
+      - name: Verificar marca y assets
+        run: npm run check-assets
 
       - name: Build
         run: npm run build

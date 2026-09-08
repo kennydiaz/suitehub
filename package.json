@@ -9,7 +9,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "sync-brand": "node tools/sync-brand.mjs",
-    "check-brand": "node tools/sync-brand.mjs --check"
+    "check-brand": "node tools/sync-brand.mjs --check",
+    "strip-c2pa": "node tools/strip-c2pa.mjs",
+    "check-assets": "node tools/sync-brand.mjs --check && node tools/strip-c2pa.mjs --check"
   },
   "keywords": [],
   "author": "",
