@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "sync-brand": "node tools/sync-brand.mjs",
+    "check-brand": "node tools/sync-brand.mjs --check"
   },
   "keywords": [],
   "author": "",
