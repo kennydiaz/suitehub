@@ -81,6 +81,108 @@
     },
     "google_fonts_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap"
   },
+  "theme": {
+    "neutral": {
+      "100": "#f9fafb",
+      "200": "#f4f6f8",
+      "300": "#dfe3e8",
+      "400": "#c4cdd5",
+      "500": "#919eab",
+      "600": "#637381",
+      "700": "#454f5b",
+      "800": "#1c252e",
+      "900": "#141a21",
+      "note": "Grises propios del HUB Theme. NO son la rampa slate del kit."
+    },
+    "semantic": {
+      "info": {
+        "lighter": "#cafdf5",
+        "base": "#00b8d9",
+        "dark": "#006c9c"
+      },
+      "success": {
+        "lighter": "#d3fcd2",
+        "base": "#22c55e",
+        "dark": "#118d57"
+      },
+      "warning": {
+        "lighter": "#fff5cc",
+        "base": "#ffab00",
+        "dark": "#b76e00"
+      },
+      "error": {
+        "lighter": "#ffe9d5",
+        "base": "#ff5630",
+        "dark": "#b71d18"
+      },
+      "special": {
+        "lighter": "#ede9fe",
+        "base": "#7c3aed",
+        "dark": "#5b21b6"
+      }
+    },
+    "surfaces": {
+      "light": {
+        "canvas": "var(--hub-grey-200)",
+        "canvas-rgb": "244, 246, 248",
+        "surface": "#ffffff",
+        "surface-alt": "var(--hub-grey-100)",
+        "border": "rgba(var(--hub-grey-rgb), 0.16)",
+        "border-strong": "rgba(var(--hub-grey-rgb), 0.32)",
+        "fill": "rgba(var(--hub-grey-rgb), 0.12)",
+        "fill-soft": "rgba(var(--hub-grey-rgb), 0.06)",
+        "fill-strong": "rgba(var(--hub-grey-rgb), 0.2)",
+        "text": "var(--hub-grey-800)",
+        "text-soft": "var(--hub-grey-600)",
+        "text-faint": "var(--hub-grey-500)",
+        "chart-grid": "rgba(var(--hub-grey-rgb), 0.24)"
+      },
+      "dark": {
+        "canvas": "#141a21",
+        "canvas-rgb": "20, 26, 33",
+        "surface": "#1c252e",
+        "surface-alt": "#212b36",
+        "border": "rgba(var(--hub-grey-rgb), 0.2)",
+        "border-strong": "rgba(var(--hub-grey-rgb), 0.32)",
+        "text": "#ffffff",
+        "text-soft": "var(--hub-grey-500)",
+        "text-faint": "var(--hub-grey-600)"
+      }
+    },
+    "radii": {
+      "chip": "6px",
+      "sm": "8px",
+      "md": "12px",
+      "card": "16px"
+    },
+    "shadows": {
+      "light": {
+        "card": "0 0 2px 0 rgba(var(--hub-grey-rgb), 0.2), 0 12px 24px -4px rgba(var(--hub-grey-rgb), 0.12)",
+        "pop": "0 0 2px 0 rgba(var(--hub-grey-rgb), 0.24), -20px 20px 40px -4px rgba(var(--hub-grey-rgb), 0.24)",
+        "primary": "0 8px 16px 0 rgba(var(--hub-primary-rgb), 0.24)"
+      },
+      "dark": {
+        "card": "0 0 2px 0 rgba(0, 0, 0, 0.2), 0 12px 24px -4px rgba(0, 0, 0, 0.32)",
+        "pop": "0 0 2px 0 rgba(0, 0, 0, 0.24), -20px 20px 40px -4px rgba(0, 0, 0, 0.24)"
+      }
+    },
+    "layout": {
+      "sidebar-w": "280px",
+      "topbar-h": "72px"
+    },
+    "fonts": {
+      "ui": "\"Public Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "brand": "\"Sora\", var(--hub-font)",
+      "note": "OJO: el HUB Theme usa Public Sans de UI, pero TYPOGRAPHY.md declara Inter. Conflicto real, sin resolver: no se pisa ninguno de los dos hasta decidirlo."
+    },
+    "accent_offsets": {
+      "lighter": -5,
+      "light": -2,
+      "dark": 1,
+      "darker": 3,
+      "note": "Pasos sobre el tono del producto en su rampa. Reproducen exacto el acento esmeralda del hub-theme.css original: 600 -> 100/400/700/900."
+    }
+  },
   "ramps": {
     "prooq.brand": {
       "50": "#EEF9FF",
@@ -356,6 +458,14 @@
         "hover": "#BE185D",
         "dark": "#9D174D"
       },
+      "accent": {
+        "lighter": "#FCE7F3",
+        "light": "#F472B6",
+        "base": "#DB2777",
+        "dark": "#BE185D",
+        "darker": "#831843",
+        "rgb": "219, 39, 119"
+      },
       "assets": {
         "badge": "badges/svg/hub-beauty-badge.svg",
         "logo": null,
@@ -393,6 +503,14 @@
         "soft": "#FDF2F8",
         "hover": "#BE185D",
         "dark": "#9D174D"
+      },
+      "accent": {
+        "lighter": "#FCE7F3",
+        "light": "#F472B6",
+        "base": "#DB2777",
+        "dark": "#BE185D",
+        "darker": "#831843",
+        "rgb": "219, 39, 119"
       },
       "assets": {
         "badge": "badges/svg/hub-boutique-badge.svg",
@@ -453,6 +571,14 @@
         "hover": "#0369A1",
         "dark": "#075985"
       },
+      "accent": {
+        "lighter": "#E0F2FE",
+        "light": "#38BDF8",
+        "base": "#0284C7",
+        "dark": "#0369A1",
+        "darker": "#0C4A6E",
+        "rgb": "2, 132, 199"
+      },
       "assets": {
         "badge": "badges/svg/hub-carwash-badge.svg",
         "logo": "logos/svg/hub-carwash-logo.svg",
@@ -511,6 +637,14 @@
         "soft": "#EFF6FF",
         "hover": "#1D4ED8",
         "dark": "#1E40AF"
+      },
+      "accent": {
+        "lighter": "#DBEAFE",
+        "light": "#60A5FA",
+        "base": "#2563EB",
+        "dark": "#1D4ED8",
+        "darker": "#1E3A8A",
+        "rgb": "37, 99, 235"
       },
       "assets": {
         "badge": "badges/svg/hub-clinic-badge.svg",
@@ -572,6 +706,14 @@
         "hover": "#163758",
         "dark": "#0E2640"
       },
+      "accent": {
+        "lighter": "#D7E2F0",
+        "light": "#4D78AE",
+        "base": "#1F4570",
+        "dark": "#163758",
+        "darker": "#0A2540",
+        "rgb": "31, 69, 112"
+      },
       "assets": {
         "badge": "badges/svg/hub-core-badge.svg",
         "logo": "logos/svg/hub-core-logo.svg",
@@ -632,6 +774,14 @@
         "hover": "#06192E",
         "dark": "#06192E"
       },
+      "accent": {
+        "lighter": "#4D78AE",
+        "light": "#163758",
+        "base": "#0A2540",
+        "dark": "#06192E",
+        "darker": "#06192E",
+        "rgb": "10, 37, 64"
+      },
       "assets": {
         "badge": "badges/svg/hub-enterprise-badge.svg",
         "logo": "logos/svg/hub-enterprise-logo.svg",
@@ -691,6 +841,14 @@
         "hover": "#B91C1C",
         "dark": "#991B1B"
       },
+      "accent": {
+        "lighter": "#FEE2E2",
+        "light": "#F87171",
+        "base": "#DC2626",
+        "dark": "#B91C1C",
+        "darker": "#7F1D1D",
+        "rgb": "220, 38, 38"
+      },
       "assets": {
         "badge": "badges/svg/hub-gym-badge.svg",
         "logo": "logos/svg/hub-gym-logo.svg",
@@ -749,6 +907,14 @@
         "soft": "#FEFCE8",
         "hover": "#A16207",
         "dark": "#854D0E"
+      },
+      "accent": {
+        "lighter": "#FEF9C3",
+        "light": "#FACC15",
+        "base": "#CA8A04",
+        "dark": "#A16207",
+        "darker": "#713F12",
+        "rgb": "202, 138, 4"
       },
       "assets": {
         "badge": "badges/svg/hub-hotel-badge.svg",
@@ -810,6 +976,14 @@
         "hover": "#44403C",
         "dark": "#292524"
       },
+      "accent": {
+        "lighter": "#F5F5F4",
+        "light": "#A8A29E",
+        "base": "#57534E",
+        "dark": "#44403C",
+        "darker": "#1C1917",
+        "rgb": "87, 83, 78"
+      },
       "assets": {
         "badge": "badges/svg/hub-inmobiliaria-badge.svg",
         "logo": "logos/svg/hub-inmobiliaria-logo.svg",
@@ -870,6 +1044,14 @@
         "hover": "#047857",
         "dark": "#065F46"
       },
+      "accent": {
+        "lighter": "#D1FAE5",
+        "light": "#34D399",
+        "base": "#059669",
+        "dark": "#047857",
+        "darker": "#064E3B",
+        "rgb": "5, 150, 105"
+      },
       "assets": {
         "badge": "badges/svg/hub-kiosko-badge.svg",
         "logo": "logos/svg/hub-kiosko-logo.svg",
@@ -925,6 +1107,14 @@
         "soft": "#ECFEFF",
         "hover": "#0891B2",
         "dark": "#0E7490"
+      },
+      "accent": {
+        "lighter": "#ECFEFF",
+        "light": "#67E8F9",
+        "base": "#06B6D4",
+        "dark": "#0891B2",
+        "darker": "#155E75",
+        "rgb": "6, 182, 212"
       },
       "assets": {
         "badge": "badges/svg/hub-lavanderia-badge.svg",
@@ -985,6 +1175,14 @@
         "hover": "#475569",
         "dark": "#334155"
       },
+      "accent": {
+        "lighter": "#F8FAFC",
+        "light": "#CBD5E1",
+        "base": "#64748B",
+        "dark": "#475569",
+        "darker": "#1E293B",
+        "rgb": "100, 116, 139"
+      },
       "assets": {
         "badge": "badges/svg/hub-lite-badge.svg",
         "logo": "logos/svg/hub-lite-logo.svg",
@@ -1044,6 +1242,14 @@
         "hover": "#4D7C0F",
         "dark": "#3F6212"
       },
+      "accent": {
+        "lighter": "#ECFCCB",
+        "light": "#A3E635",
+        "base": "#65A30D",
+        "dark": "#4D7C0F",
+        "darker": "#365314",
+        "rgb": "101, 163, 13"
+      },
       "assets": {
         "badge": "badges/svg/hub-market-badge.svg",
         "logo": "logos/svg/hub-market-logo.svg",
@@ -1102,6 +1308,14 @@
         "soft": "#F0FDFA",
         "hover": "#0F766E",
         "dark": "#115E59"
+      },
+      "accent": {
+        "lighter": "#CCFBF1",
+        "light": "#2DD4BF",
+        "base": "#0D9488",
+        "dark": "#0F766E",
+        "darker": "#134E4A",
+        "rgb": "13, 148, 136"
       },
       "assets": {
         "badge": "badges/svg/hub-pet-badge.svg",
@@ -1163,6 +1377,14 @@
         "hover": "#4338CA",
         "dark": "#3730A3"
       },
+      "accent": {
+        "lighter": "#E0E7FF",
+        "light": "#818CF8",
+        "base": "#4F46E5",
+        "dark": "#4338CA",
+        "darker": "#312E81",
+        "rgb": "79, 70, 229"
+      },
       "assets": {
         "badge": "badges/svg/hub-phone-badge.svg",
         "logo": "logos/svg/hub-phone-logo.svg",
@@ -1221,6 +1443,14 @@
         "soft": "#F0FDF4",
         "hover": "#15803D",
         "dark": "#166534"
+      },
+      "accent": {
+        "lighter": "#DCFCE7",
+        "light": "#4ADE80",
+        "base": "#16A34A",
+        "dark": "#15803D",
+        "darker": "#14532D",
+        "rgb": "22, 163, 74"
       },
       "assets": {
         "badge": "badges/svg/hub-pos-badge.svg",
@@ -1281,6 +1511,14 @@
         "hover": "#6D28D9",
         "dark": "#5B21B6"
       },
+      "accent": {
+        "lighter": "#EDE9FE",
+        "light": "#A78BFA",
+        "base": "#7C3AED",
+        "dark": "#6D28D9",
+        "darker": "#4C1D95",
+        "rgb": "124, 58, 237"
+      },
       "assets": {
         "badge": "badges/svg/hub-pro-badge.svg",
         "logo": "logos/svg/hub-pro-logo.svg",
@@ -1339,6 +1577,14 @@
         "soft": "#FFF7ED",
         "hover": "#C2410C",
         "dark": "#9A3412"
+      },
+      "accent": {
+        "lighter": "#FFEDD5",
+        "light": "#FB923C",
+        "base": "#EA580C",
+        "dark": "#C2410C",
+        "darker": "#7C2D12",
+        "rgb": "234, 88, 12"
       },
       "assets": {
         "badge": "badges/svg/hub-restaurant-badge.svg",
@@ -1399,6 +1645,14 @@
         "soft": "#FDF2F8",
         "hover": "#BE185D",
         "dark": "#9D174D"
+      },
+      "accent": {
+        "lighter": "#FCE7F3",
+        "light": "#F472B6",
+        "base": "#DB2777",
+        "dark": "#BE185D",
+        "darker": "#831843",
+        "rgb": "219, 39, 119"
       },
       "assets": {
         "badge": "badges/svg/hub-salon-badge.svg",
@@ -1478,6 +1732,14 @@
         "hover": "#1269E0",
         "dark": "#1556B6"
       },
+      "accent": {
+        "lighter": "#D9F1FF",
+        "light": "#59BEFF",
+        "base": "#1582F5",
+        "dark": "#1269E0",
+        "darker": "#174A90",
+        "rgb": "21, 130, 245"
+      },
       "assets": {
         "badge": "badges/svg/hub-suitehub-badge.svg",
         "logo": "logos/svg/suitehub-logo.svg",
@@ -1538,6 +1800,14 @@
         "hover": "#D97706",
         "dark": "#B45309"
       },
+      "accent": {
+        "lighter": "#FFFBEB",
+        "light": "#FCD34D",
+        "base": "#F59E0B",
+        "dark": "#D97706",
+        "darker": "#92400E",
+        "rgb": "245, 158, 11"
+      },
       "assets": {
         "badge": "badges/svg/hub-taller-badge.svg",
         "logo": "logos/svg/hub-taller-logo.svg",
@@ -1596,6 +1866,14 @@
         "soft": "#EFF6FF",
         "hover": "#1E3A8A",
         "dark": "#172554"
+      },
+      "accent": {
+        "lighter": "#93C5FD",
+        "light": "#2563EB",
+        "base": "#1E40AF",
+        "dark": "#1E3A8A",
+        "darker": "#172554",
+        "rgb": "30, 64, 175"
       },
       "assets": {
         "badge": "badges/svg/hub-time-badge.svg",
@@ -1656,6 +1934,14 @@
         "hover": "#86198F",
         "dark": "#701A75"
       },
+      "accent": {
+        "lighter": "#F5D0FE",
+        "light": "#D946EF",
+        "base": "#A21CAF",
+        "dark": "#86198F",
+        "darker": "#4A044E",
+        "rgb": "162, 28, 175"
+      },
       "assets": {
         "badge": "badges/svg/hub-traffic-badge.svg",
         "logo": "logos/svg/hub-traffic-logo.svg",
@@ -1715,6 +2001,14 @@
         "soft": "#F5F3FF",
         "hover": "#4C1D95",
         "dark": "#2E1065"
+      },
+      "accent": {
+        "lighter": "#C4B5FD",
+        "light": "#7C3AED",
+        "base": "#5B21B6",
+        "dark": "#4C1D95",
+        "darker": "#2E1065",
+        "rgb": "91, 33, 182"
       },
       "assets": {
         "badge": "badges/svg/hub-web-badge.svg",
