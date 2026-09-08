@@ -1,4 +1,15 @@
+import { readFileSync } from 'node:fs';
 import typography from '@tailwindcss/typography';
+
+// Las rampas corporativas salen del brand kit vendorizado, no de una copia a
+// mano: `npm run sync-brand` las actualiza y `npm run check-brand` las vigila.
+// `ink` se queda aquí porque el kit solo define su tono base (#1E293B = ink.800).
+const { ramps, typography: tipo } = JSON.parse(
+  readFileSync(new URL('./src/data/brand.json', import.meta.url), 'utf8'),
+);
+
+/** "'Sora', 'Inter', system-ui" -> ['Sora', 'Inter', 'system-ui'] */
+const pila = (stack) => stack.split(',').map((f) => f.trim().replace(/^'|'$/g, ''));
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,8 +18,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Sora', 'Inter', 'system-ui', 'sans-serif'],
+        sans: pila(tipo.sans.stack),
+        display: pila(tipo.display.stack),
       },
       colors: {
         // Marca SuiteHub — paleta corporativa
@@ -25,32 +36,8 @@ export default {
           900: '#0F172A',
           950: '#020617',
         },
-        navy: {
-          50:  '#EEF3FA',
-          100: '#D7E2F0',
-          200: '#A8BEDA',
-          300: '#7A9BC4',
-          400: '#4D78AE',
-          500: '#2A5689',
-          600: '#1F4570',
-          700: '#163758',
-          800: '#0E2640',
-          900: '#0A2540',  // navy primario PROOQ
-          950: '#06192E',
-        },
-        brand: {
-          50:  '#EEF9FF',
-          100: '#D9F1FF',
-          200: '#BCE6FF',
-          300: '#8ED6FF',
-          400: '#59BEFF',  // brand acento (light)
-          500: '#2EA1FF',
-          600: '#1582F5',  // brand primario PROOQ
-          700: '#1269E0',
-          800: '#1556B6',
-          900: '#174A90',
-          950: '#122D59',
-        },
+        navy:  ramps['prooq.navy'],   // 900 = #0A2540, navy primario PROOQ
+        brand: ramps['prooq.brand'],  // 600 = #1582F5, brand primario PROOQ
       },
       backgroundImage: {
         'grid-pattern': 'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
