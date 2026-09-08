@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCatalog } from '../../lib/catalog';
+
+const wa = (text: string) => `https://wa.me/50766326006?text=${encodeURIComponent(text)}`;
+const waInfo = wa('Hola, quiero info de HUB Salon ✂️');
+const waDemo = wa('Hola, quiero una demo de HUB Salon para mi salón');
+
+// Precios vivos del catálogo (panel). Respaldo local si el panel no responde en build.
+const cat = await getCatalog();
+const vt = (cat.verticales || []).find((v: any) => v.key === 'salon');
+const precioCore = vt?.planes?.core?.precio_mes ?? 48;
+const precioPro  = vt?.planes?.pro?.precio_mes ?? 64;
+const anualCore  = vt?.planes?.core?.precio_anio ?? precioCore * 10;
+const anualPro   = vt?.planes?.pro?.precio_anio ?? precioPro * 10;
+
+const chips = [
+  '📅 Reserva online 24/7',
+  '🗓️ Agenda por estilista',
+  '💸 Comisiones automáticas',
+  '🧾 Factura electrónica DGI',
+];
+
+// Recorrido: cada pantalla con qué resuelve. Capturas reales de HubSalon v1.1 en /public/images/products/salon.
+const shots = [
+  {
+    img: '/images/products/salon/dashboard.webp', w: 1426, h: 718,
+    title: 'Hoy en tu salón, de un vistazo',
+    desc: 'Citas del día, ingresos, ocupación de la jornada y ticket promedio. Abajo, las próximas citas con su estado y el ranking de estilistas por comisión del mes.',
+    pts: ['Citas activas e ingresos del día', 'Ocupación: horas agendadas sobre disponibles', 'Top estilistas · comisiones del mes'],
+  },
+  {
+    img: '/images/products/salon/agenda.webp', w: 1426, h: 718,
+    title: 'Agenda por estilista',
+    desc: 'Una columna por estilista con las citas en su hora. Cada tarjeta muestra el servicio y su estado: reservada, confirmada, en curso, completada o no show. Navegas por día y ves cuántas citas tiene cada quien.',
+    pts: ['Estados con color: en curso, completada, no show', 'Servicios combinados en una sola cita', 'Lista de espera cuando se llena el día'],
+  },
+  {
+    img: '/images/products/salon/reserva.webp', w: 1426, h: 718,
+    title: 'Reserva online para la clienta',
+    desc: 'Un enlace público con el nombre de tu salón. La clienta elige sucursal, servicio (uno o varios), estilista o "cualquiera disponible", fecha y hora. Solo ve horarios reales.',
+    pts: ['Cuatro pasos: servicio · estilista · fecha · datos', 'Duración y precio visibles', 'Multi-sucursal desde el mismo enlace'],
+  },
+  {
+    img: '/images/products/salon/movil.webp', w: 488, h: 718, phone: true,
+    title: 'Horas valle desde el celular',
+    desc: 'La misma reserva en el teléfono de la clienta. Los horarios en verde llevan el descuento de hora valle que tú definiste; si no hay cupo, deja su WhatsApp y se le avisa cuando se libere uno.',
+    pts: ['Descuento visible solo en franjas valle', 'Aviso automático de cupo liberado', 'Sin app ni cuenta: solo el enlace'],
+  },
+  {
+    img: '/images/products/salon/cobrar.webp', w: 1426, h: 718,
+    title: 'Cobrar y facturar en un ticket',
+    desc: 'Cobras la cita o una venta de mostrador. Servicios y productos en el mismo ticket, propina sobre servicios, método de pago y factura electrónica. Lector de código de barras y atajos F2 buscar · F9 cobrar.',
+    pts: ['Propina 5 / 10 / 15 % sobre servicios', 'Vuelto calculado en efectivo', 'Comisión de la estilista resuelta al cobrar'],
+  },
+  {
+    img: '/images/products/salon/estilistas.webp', w: 1426, h: 718,
+    title: 'Tu equipo y sus comisiones',
+    desc: 'Cada estilista con sus categorías, estado en vivo (disponible / ocupada), citas y generado hoy, y su comisión acumulada del mes. Tasas por categoría de servicio y tasa de retail, editables por persona.',
+    pts: ['Estado en vivo derivado de agenda y horario', 'Comisión por categoría + retail', 'Liquidación de comisiones por quincena en Reportes'],
+  },
+  {
+    img: '/images/products/salon/clientes.webp', w: 1426, h: 718,
+    title: 'Cartera de clientas',
+    desc: 'Total, VIP, frecuentes y nuevas. Cada ficha con teléfono, visitas, gasto acumulado y su próxima cita. Las que llevan tiempo sin venir reciben el aviso de recompra según el ciclo del servicio.',
+    pts: ['Niveles VIP y Frecuente automáticos', 'Agendar desde la ficha', 'Recompra automática por ciclo de servicio'],
+  },
+];
+
+const features = [
+  { icon: 'fa-calendar-check',   name: 'Reserva online 24/7',          desc: 'Servicio, estilista, fecha y hora desde un enlace. Disponibilidad real: jornada, citas y bloqueos. Varios servicios en una cita.' },
+  { icon: 'fa-calendar-days',    name: 'Agenda por estilista',         desc: 'Columna por estilista con estados: reservada, confirmada, en curso, completada, no show. Lista de espera cuando no hay cupo.' },
+  { icon: 'fa-percent',          name: 'Comisiones automáticas',       desc: 'Tasa por categoría de servicio y tasa de retail por estilista. Se calculan al cobrar y quedan congeladas en cada venta.' },
+  { icon: 'fa-receipt',          name: 'Factura electrónica DGI',      desc: 'Servicios y productos en un ticket: propina, vuelto, lector de código de barras y CUFE con QR ante la DGI.' },
+  { icon: 'fa-comment-dots',     name: 'Recordatorios por WhatsApp',   desc: 'Confirmación al reservar, recordatorio 24 h y 2 h antes, y enlace para cancelar o reprogramar sin llamar.' },
+  { icon: 'fa-arrow-trend-down', name: 'Horas valle con descuento',    desc: 'Defines franjas de baja demanda y el descuento aparece solo en esos horarios. Llena las horas muertas.' },
+  { icon: 'fa-heart',            name: 'Cartera de clientas',          desc: 'Niveles VIP y frecuente, historial, gasto acumulado y aviso automático cuando toca volver por su ciclo.' },
+  { icon: 'fa-cash-register',    name: 'Caja por turno',               desc: 'Apertura, arqueo con conteo por denominación, Corte X y Cierre Z, en hoja o ticket térmico.' },
+  { icon: 'fa-store',            name: 'Multi-sucursal',               desc: 'Varias sucursales con selector en el panel y en la reserva online. Inventario de productos por sucursal.' },
+];
+
+const benefits = [
+  'Facturación electrónica DGI incluida',
+  'Funciona sin internet en la red del salón',
+  'Datos del salón en tu propia base, respaldados',
+  'Soporte local por WhatsApp',
+  'Todas las actualizaciones incluidas',
+  'Sin contratos eternos',
+];
+
+const title = 'HUB Salon — Sistema para salones de belleza y barberías en Panamá';
+const description = 'Reserva online 24/7, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica DGI. Desde $' + precioCore + '/mes.';
+---
+<BaseLayout title={title} description={description} ogImage="/images/products/salon/dashboard.webp">
+
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://suitehub.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Verticales", "item": "https://suitehub.net/verticales" },
+      { "@type": "ListItem", "position": 3, "name": "HUB Salon", "item": "https://suitehub.net/verticales/salon" }
+    ]
+  })} />
+
+  <!-- ░░ HERO ░░ -->
+  <section class="relative overflow-hidden hero-salon">
+    <div class="absolute inset-x-0 top-0 h-[460px] bg-radial-brand pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+    <div class="wrap relative pt-10 pb-10 sm:pt-14 text-center">
+      <a href="/verticales" class="inline-flex items-center gap-2 text-xs text-ink-400 hover:text-white transition-colors mb-8">
+        <i class="fa-solid fa-arrow-left"></i> Todas las verticales
+      </a>
+
+      <div class="reveal max-w-3xl mx-auto">
+        <img src="/images/products/salon/badge.svg" alt="HUB Salon" class="h-20 w-20 mx-auto mb-6" />
+        <span class="eyebrow">Salones de belleza y barberías · Familia SuiteHub</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          HUB <span class="text-pink-400">Salon</span>
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed max-w-2xl mx-auto">
+          De la reserva al cobro, todo el salón en una sola pantalla. Tu clienta reserva sola desde el
+          celular, la agenda se llena por estilista, el recordatorio sale por WhatsApp y la comisión queda calculada al cobrar.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3 justify-center">
+          <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Pregunta por HUB Salon
+          </a>
+          <a href={waDemo} target="_blank" rel="noopener" class="btn-secondary">
+            <i class="fa-solid fa-play"></i> Agenda una demo
+          </a>
+        </div>
+
+        <div class="mt-9 flex flex-wrap gap-2.5 justify-center">
+          {chips.map(c => (
+            <span class="text-sm font-medium card-glass px-4 py-2.5">{c}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Portada -->
+      <div class="reveal show-glow max-w-4xl mx-auto mt-14">
+        <figure class="browser">
+          <div class="browser-bar">
+            <span class="browser-dot bg-[#ff5f57]"></span>
+            <span class="browser-dot bg-[#febc2e]"></span>
+            <span class="browser-dot bg-[#28c840]"></span>
+            <span class="browser-url">suitehub.net/salon</span>
+          </div>
+          <img src="/images/products/salon/dashboard.webp" alt="Dashboard de HUB Salon" width="1426" height="718" decoding="async" class="w-full h-auto" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROBLEMA → SOLUCIÓN ░░ -->
+  <section class="pt-10 pb-4">
+    <div class="wrap">
+      <div class="reveal max-w-2xl mx-auto text-center">
+        <p class="text-ink-400">😩 ¿Las citas en un cuaderno, las comisiones en Excel y clientas que no llegan sin avisar?</p>
+        <p class="text-2xl sm:text-3xl font-display font-bold my-4 leading-tight">
+          De la reserva al cobro, todo el salón en <span class="text-pink-400">una sola pantalla</span>
+        </p>
+        <p class="text-ink-300">
+          Reserva online con disponibilidad real, agenda por estilista, recordatorios por WhatsApp,
+          comisiones calculadas al cobrar y factura electrónica en el mismo ticket. Hecho en Panamá 🇵🇦
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ RECORRIDO ░░ -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="text-center text-sm uppercase tracking-[0.2em] text-pink-400 font-semibold mb-16">
+        Así se ve por dentro
+      </h2>
+
+      <div class="space-y-20 lg:space-y-28">
+        {shots.map((s, i) => (
+          <div class={`reveal grid gap-8 lg:gap-14 items-center ${s.phone ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'}`}>
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <div class="flex items-center gap-3 text-pink-400 font-display font-bold text-sm tracking-widest mb-4">
+                {String(i + 1).padStart(2, '0')}
+                <span class="h-px w-12 bg-gradient-to-r from-pink-500 to-transparent"></span>
+              </div>
+              <h3 class="text-2xl lg:text-3xl font-display font-bold mb-3">{s.title}</h3>
+              <p class="text-ink-300 leading-relaxed">{s.desc}</p>
+              <ul class="mt-5 space-y-2">
+                {s.pts.map(p => (
+                  <li class="flex items-start gap-2.5 text-sm text-ink-200">
+                    <i class="fa-solid fa-check text-pink-400 mt-1"></i><span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class={`show-glow ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+              {s.phone ? (
+                <figure class="phone mx-auto">
+                  <img src={s.img} alt={s.title} width={s.w} height={s.h} loading="lazy" decoding="async" class="w-full h-auto" />
+                </figure>
+              ) : (
+                <figure class="browser">
+                  <div class="browser-bar">
+                    <span class="browser-dot bg-[#ff5f57]"></span>
+                    <span class="browser-dot bg-[#febc2e]"></span>
+                    <span class="browser-dot bg-[#28c840]"></span>
+                    <span class="browser-url">suitehub.net/salon</span>
+                  </div>
+                  <img src={s.img} alt={s.title} width={s.w} height={s.h} loading="lazy" decoding="async" class="w-full h-auto" />
+                </figure>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FUNCIONES ░░ -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="eyebrow">Todo lo que incluye</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">Funciones de HUB Salon</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {features.map(f => (
+          <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center text-pink-400 bg-white/5 mb-4">
+              <i class={`fa-solid ${f.icon} text-lg`}></i>
+            </div>
+            <div class="font-display font-semibold mb-1.5">{f.name}</div>
+            <div class="text-sm text-ink-400 leading-relaxed">{f.desc}</div>
+          </div>
+        ))}
+      </div>
+      <p class="mt-7 text-xs text-ink-500 text-center">
+        + Todas las funciones del núcleo SuiteHub: clientes, servicios, productos, promociones, facturas, caja y reportes.
+      </p>
+    </div>
+  </section>
+
+  <!-- ░░ PRECIOS ░░ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="eyebrow">Precios transparentes</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">Dos formas de tenerlo</h2>
+        <p class="text-ink-400 mt-3">Pagas mes a mes. Si pagas el año, son 10 meses. ¿Varias sucursales? Enterprise las consolida.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div class="reveal card-glass p-7">
+          <div class="text-xs uppercase tracking-wider text-ink-400 font-semibold">HUB Salon</div>
+          <div class="mt-2"><span class="text-4xl font-display font-bold">${precioCore}</span><span class="text-sm text-ink-400">/mes</span></div>
+          <div class="text-xs text-ink-500 mt-1">o ${anualCore} al año</div>
+          <p class="text-sm text-ink-300 mt-4">Todo lo de esta página, para una sucursal. Factura electrónica DGI incluida.</p>
+        </div>
+        <div class="reveal card-glass p-7 border-pink-500/40 shadow-glow-sm">
+          <div class="text-xs uppercase tracking-wider text-pink-400 font-semibold">HUB Salon Pro</div>
+          <div class="mt-2"><span class="text-4xl font-display font-bold">${precioPro}</span><span class="text-sm text-ink-400">/mes</span></div>
+          <div class="text-xs text-ink-500 mt-1">o ${anualPro} al año</div>
+          <p class="text-sm text-ink-300 mt-4">Lo mismo, personalizable: tu marca en facturas y correos, automatizaciones, API y webhooks.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-xs text-ink-500 text-center">
+        El PAC de facturación electrónica lo contratas tú directo; nosotros ya estamos conectados a los autorizados por la DGI. <a href="/precios" class="text-brand-400 hover:text-brand-300">Ver comparativa completa</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ░░ HABLEMOS ░░ -->
+  <section class="section pt-0">
+    <div class="wrap">
+      <div class="reveal card-glass gradient-border max-w-3xl mx-auto p-8 lg:p-12 text-center">
+        <span class="eyebrow">Hablemos</span>
+        <h2 class="text-2xl lg:text-3xl font-display font-bold mb-3">
+          Te lo montamos con tus servicios, tus estilistas y tus horarios.
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          Configuramos tu cuenta, cargamos tu carta de servicios y productos, tus estilistas con sus comisiones,
+          y capacitamos a tu equipo. Ves HUB Salon con tus datos antes de decidir.
+        </p>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-xl mx-auto text-left mb-8">
+          {benefits.map(b => (
+            <li class="flex items-start gap-2.5 text-sm text-ink-200">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Escríbenos por WhatsApp
+          </a>
+          <a href="mailto:info@suitehub.net?subject=Quiero%20info%20de%20HUB%20Salon" class="btn-secondary">
+            <i class="fa-solid fa-envelope"></i> info@suitehub.net
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CTA FINAL ░░ -->
+  <section class="relative overflow-hidden border-t border-white/5">
+    <div class="absolute inset-x-0 bottom-0 h-[300px] bg-radial-brand pointer-events-none rotate-180"></div>
+    <div class="wrap relative py-20 text-center">
+      <h2 class="reveal text-3xl lg:text-4xl font-display font-bold mb-4">
+        ¿Lista para que tus clientas <span class="text-pink-400">reserven solas</span>?
+      </h2>
+      <p class="reveal text-ink-300 mb-8 max-w-xl mx-auto">
+        Te hacemos una demo con tu carta de servicios, sin compromiso.
+      </p>
+      <a href={waDemo} target="_blank" rel="noopener" class="reveal btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow text-base px-8 py-4">
+        <i class="fa-brands fa-whatsapp text-xl"></i> Agenda tu demo
+      </a>
+    </div>
+  </section>
+
+  <style>
+    .hero-salon { background-image: radial-gradient(60% 50% at 50% 0%, rgba(219,39,119,.28), transparent 70%), linear-gradient(180deg, #120C19, #06192E 92%); }
+    .browser { border: 1px solid rgba(255,255,255,.1); border-radius: 14px; overflow: hidden; background: #0B0F1A; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+    .browser-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: #06192E; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+    .browser-url { margin-left: 10px; font-size: 11px; color: #647088; background: #020617; border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 5px 12px; font-family: ui-monospace, monospace; }
+    .phone { width: min(300px, 80%); border-radius: 34px; border: 8px solid #141a26; background: #000; overflow: hidden; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+    .show-glow { position: relative; }
+    .show-glow::before { content: ''; position: absolute; inset: -2px; z-index: -1; border-radius: 16px; background: radial-gradient(60% 80% at 50% 0%, rgba(219,39,119,.30), transparent 70%); filter: blur(22px); }
+    @media (max-width: 640px) { .browser-url { display: none; } }
+  </style>
+
+</BaseLayout>

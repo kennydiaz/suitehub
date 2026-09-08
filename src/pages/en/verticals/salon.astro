@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCatalog } from '../../../lib/catalog';
+
+const wa = (text: string) => `https://wa.me/50766326006?text=${encodeURIComponent(text)}`;
+const waInfo = wa("Hi, I'd like info about HUB Salon ✂️");
+const waDemo = wa("Hi, I'd like a demo of HUB Salon for my salon");
+
+// Live prices from the catalog (panel). Local fallback if the panel does not answer at build time.
+const cat = await getCatalog();
+const vt = (cat.verticales || []).find((v: any) => v.key === 'salon');
+const precioCore = vt?.planes?.core?.precio_mes ?? 48;
+const precioPro  = vt?.planes?.pro?.precio_mes ?? 64;
+const anualCore  = vt?.planes?.core?.precio_anio ?? precioCore * 10;
+const anualPro   = vt?.planes?.pro?.precio_anio ?? precioPro * 10;
+
+const chips = [
+  '📅 Online booking 24/7',
+  '🗓️ Schedule per stylist',
+  '💸 Automatic commissions',
+  '🧾 E-invoicing',
+];
+
+// Walkthrough: real screenshots of HubSalon v1.1 in /public/images/products/salon.
+const shots = [
+  {
+    img: '/images/products/salon/dashboard.webp', w: 1426, h: 718,
+    title: 'Your salon today, at a glance',
+    desc: 'Today’s appointments, revenue, occupancy and average ticket. Below, upcoming appointments with status and the stylist ranking by monthly commission.',
+    pts: ['Active appointments and revenue today', 'Occupancy: booked hours over available', 'Top stylists · monthly commissions'],
+  },
+  {
+    img: '/images/products/salon/agenda.webp', w: 1426, h: 718,
+    title: 'Schedule per stylist',
+    desc: 'One column per stylist with appointments at their time. Each card shows the service and status: booked, confirmed, in progress, completed or no-show. Navigate by day and see how many appointments each one has.',
+    pts: ['Color-coded statuses', 'Combined services in one appointment', 'Waitlist when the day is full'],
+  },
+  {
+    img: '/images/products/salon/reserva.webp', w: 1426, h: 718,
+    title: 'Online booking for clients',
+    desc: 'A public link with your salon’s name. Clients pick branch, service(s), stylist or "anyone available", date and time. They only see real openings.',
+    pts: ['Four steps: service · stylist · date · details', 'Duration and price visible', 'Multi-branch from the same link'],
+  },
+  {
+    img: '/images/products/salon/movil.webp', w: 488, h: 718, phone: true,
+    title: 'Off-peak pricing on the phone',
+    desc: 'The same booking on the client’s phone. Green slots carry the off-peak discount you defined; if there is no slot, they leave their WhatsApp and get notified when one opens.',
+    pts: ['Discount shown only in off-peak windows', 'Automatic freed-slot alert', 'No app, no account: just the link'],
+  },
+  {
+    img: '/images/products/salon/cobrar.webp', w: 1426, h: 718,
+    title: 'Checkout and invoice on one ticket',
+    desc: 'Charge the appointment or a walk-in sale. Services and products on the same ticket, tip on services, payment method and e-invoice. Barcode scanner and shortcuts F2 search · F9 charge.',
+    pts: ['Tip 5 / 10 / 15 % on services', 'Change calculated for cash', 'Stylist commission resolved at checkout'],
+  },
+  {
+    img: '/images/products/salon/estilistas.webp', w: 1426, h: 718,
+    title: 'Your team and their commissions',
+    desc: 'Each stylist with categories, live status (available / busy), today’s appointments and revenue, and the month’s commission. Rates per service category and a retail rate, editable per person.',
+    pts: ['Live status from schedule and hours', 'Commission per category + retail', 'Biweekly commission settlement in Reports'],
+  },
+  {
+    img: '/images/products/salon/clientes.webp', w: 1426, h: 718,
+    title: 'Client base',
+    desc: 'Total, VIP, frequent and new. Each profile with phone, visits, total spend and next appointment. Lapsed clients get a rebooking reminder based on the service cycle.',
+    pts: ['Automatic VIP and Frequent tiers', 'Book from the profile', 'Automatic rebooking by service cycle'],
+  },
+];
+
+const features = [
+  { icon: 'fa-calendar-check',   name: 'Online booking 24/7',       desc: 'Service, stylist, date and time from a link. Real availability: hours, appointments and blocks. Several services in one booking.' },
+  { icon: 'fa-calendar-days',    name: 'Schedule per stylist',      desc: 'One column per stylist with statuses: booked, confirmed, in progress, completed, no-show. Waitlist when there is no slot.' },
+  { icon: 'fa-percent',          name: 'Automatic commissions',     desc: 'Rate per service category plus a retail rate per stylist. Calculated at checkout and frozen on each sale.' },
+  { icon: 'fa-receipt',          name: 'E-invoicing',               desc: 'Services and products on one ticket: tip, change, barcode scanner and electronic invoice with the tax authority.' },
+  { icon: 'fa-comment-dots',     name: 'WhatsApp reminders',        desc: 'Confirmation on booking, reminders 24 h and 2 h before, and a link to cancel or reschedule without calling.' },
+  { icon: 'fa-arrow-trend-down', name: 'Off-peak discounts',        desc: 'Define low-demand windows and the discount shows only at those times. Fill the dead hours.' },
+  { icon: 'fa-heart',            name: 'Client base',               desc: 'VIP and frequent tiers, history, total spend and an automatic reminder when it is time to come back.' },
+  { icon: 'fa-cash-register',    name: 'Shift cash register',       desc: 'Open, count by denomination, X report and Z closing, on paper or thermal ticket.' },
+  { icon: 'fa-store',            name: 'Multi-branch',              desc: 'Several branches with a selector in the panel and the booking page. Product inventory per branch.' },
+];
+
+const benefits = [
+  'E-invoicing included',
+  'Works offline on the salon’s network',
+  'Your salon’s data in your own database, backed up',
+  'Local WhatsApp support',
+  'All updates included',
+  'No long-term contracts',
+];
+
+const title = 'HUB Salon — Salon and barbershop management system in Panama';
+const description = 'Online booking 24/7, schedule per stylist, automatic commissions, WhatsApp reminders, off-peak discounts and e-invoicing. From $' + precioCore + '/month.';
+---
+<BaseLayout title={title} description={description} ogImage="/images/products/salon/dashboard.webp">
+
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://suitehub.net/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Verticals", "item": "https://suitehub.net/en/verticals" },
+      { "@type": "ListItem", "position": 3, "name": "HUB Salon", "item": "https://suitehub.net/en/verticals/salon" }
+    ]
+  })} />
+
+  <!-- ░░ HERO ░░ -->
+  <section class="relative overflow-hidden hero-salon">
+    <div class="absolute inset-x-0 top-0 h-[460px] bg-radial-brand pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+    <div class="wrap relative pt-10 pb-10 sm:pt-14 text-center">
+      <a href="/en/verticals" class="inline-flex items-center gap-2 text-xs text-ink-400 hover:text-white transition-colors mb-8">
+        <i class="fa-solid fa-arrow-left"></i> All verticals
+      </a>
+
+      <div class="reveal max-w-3xl mx-auto">
+        <img src="/images/products/salon/badge.svg" alt="HUB Salon" class="h-20 w-20 mx-auto mb-6" />
+        <span class="eyebrow">Auto-repair shops · SuiteHub family</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+          HUB <span class="text-pink-400">Salon</span>
+        </h1>
+        <p class="mt-6 text-lg text-ink-300 leading-relaxed max-w-2xl mx-auto">
+          From booking to checkout, the whole salon on one screen. Clients book themselves from their phone,
+          the schedule fills per stylist, reminders go out on WhatsApp and commissions are calculated at checkout.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3 justify-center">
+          <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Ask about HUB Salon
+          </a>
+          <a href={waDemo} target="_blank" rel="noopener" class="btn-secondary">
+            <i class="fa-solid fa-play"></i> Book a demo
+          </a>
+        </div>
+
+        <div class="mt-9 flex flex-wrap gap-2.5 justify-center">
+          {chips.map(c => (
+            <span class="text-sm font-medium card-glass px-4 py-2.5">{c}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Portada -->
+      <div class="reveal show-glow max-w-4xl mx-auto mt-14">
+        <figure class="browser">
+          <div class="browser-bar">
+            <span class="browser-dot bg-[#ff5f57]"></span>
+            <span class="browser-dot bg-[#febc2e]"></span>
+            <span class="browser-dot bg-[#28c840]"></span>
+            <span class="browser-url">suitehub.net/salon</span>
+          </div>
+          <img src="/images/products/salon/dashboard.webp" alt="HUB Salon dashboard" width="1426" height="718" decoding="async" class="w-full h-auto" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROBLEMA → SOLUCIÓN ░░ -->
+  <section class="pt-10 pb-4">
+    <div class="wrap">
+      <div class="reveal max-w-2xl mx-auto text-center">
+        <p class="text-ink-400">😩 Appointments in a notebook, commissions in Excel and clients who no-show without notice?</p>
+        <p class="text-2xl sm:text-3xl font-display font-bold my-4 leading-tight">
+          From booking to checkout, the whole salon on <span class="text-pink-400">one screen</span>
+        </p>
+        <p class="text-ink-300">
+          Online booking with real availability, schedule per stylist, WhatsApp reminders,
+          commissions calculated at checkout and the e-invoice on the same ticket. Made in Panama 🇵🇦
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ RECORRIDO ░░ -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="text-center text-sm uppercase tracking-[0.2em] text-pink-400 font-semibold mb-16">
+        What it looks like inside
+      </h2>
+
+      <div class="space-y-20 lg:space-y-28">
+        {shots.map((s, i) => (
+          <div class={`reveal grid gap-8 lg:gap-14 items-center ${s.phone ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'}`}>
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <div class="flex items-center gap-3 text-pink-400 font-display font-bold text-sm tracking-widest mb-4">
+                {String(i + 1).padStart(2, '0')}
+                <span class="h-px w-12 bg-gradient-to-r from-pink-500 to-transparent"></span>
+              </div>
+              <h3 class="text-2xl lg:text-3xl font-display font-bold mb-3">{s.title}</h3>
+              <p class="text-ink-300 leading-relaxed">{s.desc}</p>
+              <ul class="mt-5 space-y-2">
+                {s.pts.map(p => (
+                  <li class="flex items-start gap-2.5 text-sm text-ink-200">
+                    <i class="fa-solid fa-check text-pink-400 mt-1"></i><span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class={`show-glow ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+              {s.phone ? (
+                <figure class="phone mx-auto">
+                  <img src={s.img} alt={s.title} width={s.w} height={s.h} loading="lazy" decoding="async" class="w-full h-auto" />
+                </figure>
+              ) : (
+                <figure class="browser">
+                  <div class="browser-bar">
+                    <span class="browser-dot bg-[#ff5f57]"></span>
+                    <span class="browser-dot bg-[#febc2e]"></span>
+                    <span class="browser-dot bg-[#28c840]"></span>
+                    <span class="browser-url">suitehub.net/salon</span>
+                  </div>
+                  <img src={s.img} alt={s.title} width={s.w} height={s.h} loading="lazy" decoding="async" class="w-full h-auto" />
+                </figure>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FUNCIONES ░░ -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="eyebrow">Everything included</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">HUB Salon features</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {features.map(f => (
+          <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center text-pink-400 bg-white/5 mb-4">
+              <i class={`fa-solid ${f.icon} text-lg`}></i>
+            </div>
+            <div class="font-display font-semibold mb-1.5">{f.name}</div>
+            <div class="text-sm text-ink-400 leading-relaxed">{f.desc}</div>
+          </div>
+        ))}
+      </div>
+      <p class="mt-7 text-xs text-ink-500 text-center">
+        + Every SuiteHub core function: customers, services, products, promotions, invoices, cash register and reports.
+      </p>
+    </div>
+  </section>
+
+  <!-- ░░ PRECIOS ░░ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="eyebrow">Transparent pricing</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold">Two ways to get it</h2>
+        <p class="text-ink-400 mt-3">Pay monthly. Pay yearly and it is 10 months. Several locations? Enterprise consolidates them.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div class="reveal card-glass p-7">
+          <div class="text-xs uppercase tracking-wider text-ink-400 font-semibold">HUB Salon</div>
+          <div class="mt-2"><span class="text-4xl font-display font-bold">${precioCore}</span><span class="text-sm text-ink-400">/mo</span></div>
+          <div class="text-xs text-ink-500 mt-1">or ${anualCore} per year</div>
+          <p class="text-sm text-ink-300 mt-4">Everything on this page, for one location. DGI e-invoicing included.</p>
+        </div>
+        <div class="reveal card-glass p-7 border-pink-500/40 shadow-glow-sm">
+          <div class="text-xs uppercase tracking-wider text-pink-400 font-semibold">HUB Salon Pro</div>
+          <div class="mt-2"><span class="text-4xl font-display font-bold">${precioPro}</span><span class="text-sm text-ink-400">/mo</span></div>
+          <div class="text-xs text-ink-500 mt-1">or ${anualPro} per year</div>
+          <p class="text-sm text-ink-300 mt-4">The same, customizable: your brand on invoices and emails, automations, API and webhooks.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-xs text-ink-500 text-center">
+        You contract the e-invoicing PAC directly; we are already connected to the ones authorized by the DGI. <a href="/en/pricing" class="text-brand-400 hover:text-brand-300">See the full comparison</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ░░ HABLEMOS ░░ -->
+  <section class="section pt-0">
+    <div class="wrap">
+      <div class="reveal card-glass gradient-border max-w-3xl mx-auto p-8 lg:p-12 text-center">
+        <span class="eyebrow">Let’s talk</span>
+        <h2 class="text-2xl lg:text-3xl font-display font-bold mb-3">
+          We set it up with your services, your stylists and your hours.
+        </h2>
+        <p class="text-ink-300 mb-8 max-w-xl mx-auto">
+          We configure your account, load your service menu and products, your stylists with their commission rates,
+          and train your team. You see HUB Salon with your data before you decide.
+        </p>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-xl mx-auto text-left mb-8">
+          {benefits.map(b => (
+            <li class="flex items-start gap-2.5 text-sm text-ink-200">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Message us on WhatsApp
+          </a>
+          <a href="mailto:info@suitehub.net?subject=Info%20about%20HUB%20Salon" class="btn-secondary">
+            <i class="fa-solid fa-envelope"></i> info@suitehub.net
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CTA FINAL ░░ -->
+  <section class="relative overflow-hidden border-t border-white/5">
+    <div class="absolute inset-x-0 bottom-0 h-[300px] bg-radial-brand pointer-events-none rotate-180"></div>
+    <div class="wrap relative py-20 text-center">
+      <h2 class="reveal text-3xl lg:text-4xl font-display font-bold mb-4">
+        Ready to let your clients <span class="text-pink-400">book themselves</span>?
+      </h2>
+      <p class="reveal text-ink-300 mb-8 max-w-xl mx-auto">
+        We run a demo with your own service menu, no strings attached.
+      </p>
+      <a href={waDemo} target="_blank" rel="noopener" class="reveal btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow text-base px-8 py-4">
+        <i class="fa-brands fa-whatsapp text-xl"></i> Book your demo
+      </a>
+    </div>
+  </section>
+
+  <style>
+    .hero-salon { background-image: radial-gradient(60% 50% at 50% 0%, rgba(219,39,119,.28), transparent 70%), linear-gradient(180deg, #120C19, #06192E 92%); }
+    .browser { border: 1px solid rgba(255,255,255,.1); border-radius: 14px; overflow: hidden; background: #0B0F1A; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+    .browser-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: #06192E; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+    .browser-url { margin-left: 10px; font-size: 11px; color: #647088; background: #020617; border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 5px 12px; font-family: ui-monospace, monospace; }
+    .phone { width: min(300px, 80%); border-radius: 34px; border: 8px solid #141a26; background: #000; overflow: hidden; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+    .show-glow { position: relative; }
+    .show-glow::before { content: ''; position: absolute; inset: -2px; z-index: -1; border-radius: 16px; background: radial-gradient(60% 80% at 50% 0%, rgba(219,39,119,.30), transparent 70%); filter: blur(22px); }
+    @media (max-width: 640px) { .browser-url { display: none; } }
+  </style>
+
+</BaseLayout>
