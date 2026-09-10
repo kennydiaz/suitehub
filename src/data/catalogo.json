@@ -151,11 +151,11 @@
       "nota": null,
       "features": [
         "Recepción por placa",
-        "Paquetes de lavado",
-        "Bahías y lavadores con cola en vivo",
-        "Membresía de lavados",
-        "Aviso WhatsApp cuando está listo",
-        "Facturación electrónica"
+        "Pistas y lavadores con cola en vivo",
+        "Caja, arqueo y ticket 80 mm",
+        "Comisiones automáticas por lavador",
+        "Fidelidad por sellos",
+        "Facturación electrónica DGI"
       ],
       "planes": {
         "core": {
