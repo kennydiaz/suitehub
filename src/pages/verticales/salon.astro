@@ -1,18 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCatalog } from '../../lib/catalog';
 
 const wa = (text: string) => `https://wa.me/50766326006?text=${encodeURIComponent(text)}`;
 const waInfo = wa('Hola, quiero info de HUB Salon ✂️');
 const waDemo = wa('Hola, quiero una demo de HUB Salon para mi salón');
 
-// Precios vivos del catálogo (panel). Respaldo local si el panel no responde en build.
-const cat = await getCatalog();
-const vt = (cat.verticales || []).find((v: any) => v.key === 'salon');
-const precioCore = vt?.planes?.core?.precio_mes ?? 48;
-const precioPro  = vt?.planes?.pro?.precio_mes ?? 64;
-const anualCore  = vt?.planes?.core?.precio_anio ?? precioCore * 10;
-const anualPro   = vt?.planes?.pro?.precio_anio ?? precioPro * 10;
 
 const chips = [
   '📅 Reserva online 24/7',
@@ -89,7 +81,7 @@ const benefits = [
 ];
 
 const title = 'HUB Salon — Sistema para salones de belleza y barberías en Panamá';
-const description = 'Reserva online 24/7, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica DGI. Desde $' + precioCore + '/mes.';
+const description = 'Reserva online 24/7, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica DGI. Hecho en Panamá.';
 ---
 <BaseLayout title={title} description={description} ogImage="/images/products/salon/dashboard.webp">
 
@@ -242,36 +234,8 @@ const description = 'Reserva online 24/7, agenda por estilista, comisiones autom
     </div>
   </section>
 
-  <!-- ░░ PRECIOS ░░ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="eyebrow">Precios transparentes</span>
-        <h2 class="text-3xl lg:text-4xl font-display font-bold">Dos formas de tenerlo</h2>
-        <p class="text-ink-400 mt-3">Pagas mes a mes. Si pagas el año, son 10 meses. ¿Varias sucursales? Enterprise las consolida.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-        <div class="reveal card-glass p-7">
-          <div class="text-xs uppercase tracking-wider text-ink-400 font-semibold">HUB Salon</div>
-          <div class="mt-2"><span class="text-4xl font-display font-bold">${precioCore}</span><span class="text-sm text-ink-400">/mes</span></div>
-          <div class="text-xs text-ink-500 mt-1">o ${anualCore} al año</div>
-          <p class="text-sm text-ink-300 mt-4">Todo lo de esta página, para una sucursal. Factura electrónica DGI incluida.</p>
-        </div>
-        <div class="reveal card-glass p-7 border-pink-500/40 shadow-glow-sm">
-          <div class="text-xs uppercase tracking-wider text-pink-400 font-semibold">HUB Salon Pro</div>
-          <div class="mt-2"><span class="text-4xl font-display font-bold">${precioPro}</span><span class="text-sm text-ink-400">/mes</span></div>
-          <div class="text-xs text-ink-500 mt-1">o ${anualPro} al año</div>
-          <p class="text-sm text-ink-300 mt-4">Lo mismo, personalizable: tu marca en facturas y correos, automatizaciones, API y webhooks.</p>
-        </div>
-      </div>
-      <p class="mt-6 text-xs text-ink-500 text-center">
-        El PAC de facturación electrónica lo contratas tú directo; nosotros ya estamos conectados a los autorizados por la DGI. <a href="/precios" class="text-brand-400 hover:text-brand-300">Ver comparativa completa</a>.
-      </p>
-    </div>
-  </section>
-
   <!-- ░░ HABLEMOS ░░ -->
-  <section class="section pt-0">
+  <section class="section">
     <div class="wrap">
       <div class="reveal card-glass gradient-border max-w-3xl mx-auto p-8 lg:p-12 text-center">
         <span class="eyebrow">Hablemos</span>
@@ -280,7 +244,7 @@ const description = 'Reserva online 24/7, agenda por estilista, comisiones autom
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
           Configuramos tu cuenta, cargamos tu carta de servicios y productos, tus estilistas con sus comisiones,
-          y capacitamos a tu equipo. Ves HUB Salon con tus datos antes de decidir.
+          y capacitamos a tu equipo. Ves HUB Salon con tus datos antes de decidir. Cotización por proyecto según tu salón y los módulos que necesites.
         </p>
         <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-xl mx-auto text-left mb-8">
           {benefits.map(b => (
