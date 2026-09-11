@@ -4,8 +4,9 @@
  * (src/lib/presentaciones.ts). Una sola plantilla para todos: ningún vertical tiene su
  * propio .astro. Sin precios: el cierre es la cotización por proyecto.
  *
- * Secciones: hero (+ portada) · problema → solución · recorrido (desktop en marco de
- * navegador, móvil en marco de teléfono) · funciones · adicionales · hardware · hablemos · CTA.
+ * Secciones: hero (+ portada) · problema → solución · recorrido (desktop y tablet en marco
+ * de navegador, móvil en marco de teléfono, ticket en papel angosto; con subtítulo cuando
+ * cambia el `grupo`) · funciones · adicionales · hardware · hablemos · CTA.
  * Las opcionales (adicionales, hardware, cta) solo salen si el JSON las trae.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -154,9 +155,12 @@ const breadcrumb = {
 
         <div class="space-y-20 lg:space-y-28">
           {b.recorrido.map((s, i) => {
-            const movil = s.tipo === 'movil';
-            return (
-              <div class={`reveal grid gap-8 lg:gap-14 items-center ${movil ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'}`}>
+            // Teléfono y ticket son angostos: la columna de la imagen se achica.
+            const angosto = s.tipo === 'movil' || s.tipo === 'ticket';
+            // Un grupo nuevo abre con su subtítulo; la numeración sigue corrida.
+            const grupoNuevo = !!s.grupo && s.grupo !== b.recorrido[i - 1]?.grupo;
+            const fila = (
+              <div class={`reveal grid gap-8 lg:gap-14 items-center ${angosto ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'}`}>
                 <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
                   <div class="acento flex items-center gap-3 font-display font-bold text-sm tracking-widest mb-4">
                     {String(i + 1).padStart(2, '0')}
@@ -175,8 +179,12 @@ const breadcrumb = {
                   )}
                 </div>
                 <div class={`show-glow ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  {movil ? (
+                  {s.tipo === 'movil' ? (
                     <figure class="phone mx-auto">
+                      <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
+                    </figure>
+                  ) : s.tipo === 'ticket' ? (
+                    <figure class="ticket mx-auto">
                       <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
                     </figure>
                   ) : (
@@ -193,6 +201,15 @@ const breadcrumb = {
                 </div>
               </div>
             );
+            return grupoNuevo ? (
+              <div>
+                <h3 class="grupo reveal acento flex items-center gap-4 font-display font-semibold text-sm uppercase tracking-[0.2em] mb-10 lg:mb-14">
+                  {s.grupo}
+                  <span class="linea h-px flex-1 max-w-[180px]"></span>
+                </h3>
+                {fila}
+              </div>
+            ) : fila;
           })}
         </div>
       </div>
@@ -364,6 +381,8 @@ const breadcrumb = {
   .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
   .browser-url { margin-left: 10px; font-size: 11px; color: #647088; background: #020617; border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 5px 12px; font-family: ui-monospace, monospace; }
   .phone { width: min(300px, 80%); border-radius: 34px; border: 8px solid #141a26; background: #000; overflow: hidden; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+  /* Comprobante de 80 mm: papel angosto, sin barra de navegador. */
+  .ticket { width: min(320px, 80%); border-radius: 6px; background: #fff; overflow: hidden; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
   .show-glow { position: relative; }
   .show-glow::before { content: ''; position: absolute; inset: -2px; z-index: -1; border-radius: 16px; background: radial-gradient(60% 80% at 50% 0%, color-mix(in srgb, var(--acento) 32%, transparent), transparent 70%); filter: blur(22px); }
   @media (max-width: 640px) { .browser-url { display: none; } }

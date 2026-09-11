@@ -26,9 +26,16 @@ const Partes = z.union([
 
 const Item = z.object({ icono: z.string(), titulo: z.string().min(1), texto: z.string().default('') });
 
+/**
+ * Una pantalla del recorrido. `tipo` elige el marco: desktop y tablet en navegador,
+ * movil en teléfono, ticket como papel angosto. `grupo` abre un subtítulo cuando cambia
+ * respecto a la anterior. `correo` solo lo usa el panel (qué capturas lleva el correo).
+ */
 const Captura = z.object({
   imagen: z.string().min(1),
-  tipo: z.enum(['desktop', 'movil']),
+  tipo: z.enum(['desktop', 'movil', 'ticket', 'tablet']),
+  grupo: z.string().optional(),
+  correo: z.boolean().optional(),
   ancho: z.number().int().positive(),
   alto: z.number().int().positive(),
   titulo: z.string().min(1),
