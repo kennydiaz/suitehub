@@ -29,6 +29,10 @@ export function alternateHref(currentPath: string, targetLocale: Locale): string
   const currentLocale = currentPath.startsWith('/en') ? 'en' : 'es';
   if (currentLocale === targetLocale) return currentPath;
 
+  // Páginas de vertical (generadas desde las presentaciones): el slug es el mismo en los dos idiomas.
+  const vertical = currentPath.match(/^\/(?:en\/verticals|verticales)\/([a-z0-9-]+)\/?$/);
+  if (vertical) return targetLocale === 'en' ? `/en/verticals/${vertical[1]}` : `/verticales/${vertical[1]}`;
+
   const currentRoutes = routes[currentLocale];
   for (const key of Object.keys(currentRoutes) as Array<keyof typeof currentRoutes>) {
     const path = currentRoutes[key];

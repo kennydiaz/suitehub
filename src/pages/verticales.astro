@@ -1,64 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPresentaciones, bloque, imagen, ruta } from '../lib/presentaciones';
 
 const verticales = [
   {
     key:    'taller',
     name:   'HUB Taller',
     icon:   'fa-screwdriver-wrench',
-    landing: '/verticales/taller',
-    screenshot: '/images/products/taller/dashboard.webp',
-    screenshotH: 718,
     sector: 'Talleres mecánicos',
     short:  'Para talleres mecánicos, autoservicios y centros de diagnóstico.',
     pitch:  'Recepción rápida del vehículo, órdenes de trabajo con servicios y repuestos, agenda online para citas, vehículo + cliente vinculados, facturación electrónica directa.',
-    features: [
-      { icon: 'fa-bolt',           name: 'Recepción rápida',     desc: 'Capturas placa, cliente y queja en 30 segundos' },
-      { icon: 'fa-clipboard-list', name: 'Órdenes de trabajo',   desc: 'Servicios + repuestos + tiempo + estado' },
-      { icon: 'fa-calendar-days',  name: 'Agenda de citas online', desc: 'Cliente reserva por la web, tú confirmas' },
-      { icon: 'fa-car',            name: 'Histórico de vehículos', desc: 'Servicios pasados, kilometraje, próximas revisiones' },
-      { icon: 'fa-tools',          name: 'Catálogo de servicios', desc: 'Precios, duración, técnicos asignables' },
-      { icon: 'fa-receipt',        name: 'Facturación electrónica', desc: 'DGI Panamá (CUFE + QR) y SENIAT Venezuela · ES y CO en roadmap' },
-    ],
     cliente: 'QS Express — Taller mecánico en La Chorrera',
   },
   {
     key:    'carwash',
     name:   'HUB Carwash',
-    landing: '/verticales/carwash',
     icon:   'fa-spray-can-sparkles',
-    screenshot: '/images/products/carwash/dashboard.webp',
-    screenshotH: 718,
     sector: 'Autolavados y car wash',
     short:  'Para autolavados, car wash express, detailing y lavado a domicilio.',
     pitch:  'Recepción por placa con historial del vehículo, pistas y lavadores con cola en vivo, caja con arqueo diario, comisiones automáticas por lavador, fidelidad por sellos y facturación electrónica DGI desde la misma orden.',
-    features: [
-      { icon: 'fa-bolt',           name: 'Recepción por placa',  desc: 'Placa, cliente, vehículo e historial en segundos' },
-      { icon: 'fa-warehouse',      name: 'Pistas y lavadores',   desc: 'Asignas pista y personal, ves la cola de vehículos en vivo' },
-      { icon: 'fa-cash-register',  name: 'Caja y arqueo',        desc: 'Efectivo, tarjeta, Yappy, ticket 80 mm y cierre con diferencia' },
-      { icon: 'fa-percent',        name: 'Comisiones automáticas', desc: 'Reparto por lavador al cerrar cada orden, liquidación por período' },
-      { icon: 'fa-medal',          name: 'Fidelidad por sellos', desc: 'Lava N veces y el siguiente es gratis; meta configurable' },
-      { icon: 'fa-receipt',        name: 'Facturación electrónica', desc: 'DGI Panamá: CUFE + QR, consulta RUC/DV y anulación' },
-    ],
   },
   {
     key:    'restaurant',
     name:   'HUB Restaurant',
-    landing: '/verticales/restaurant',
     icon:   'fa-utensils',
-    screenshot: '/images/products/restaurant/web-1280.webp',
-    screenshotH: 875,
     sector: 'Restaurantes y bares',
     short:  'Para restaurantes, cafeterías, bares y food trucks.',
     pitch:  'Mesas con estado en vivo, comandas que llegan a cocina y barra, KDS, división de cuentas, propinas, integración con domicilio, reportes por turno.',
-    features: [
-      { icon: 'fa-table',          name: 'Mesas en vivo',        desc: 'Plano del salón, libre/ocupada/cuenta pedida' },
-      { icon: 'fa-fire',           name: 'Comanda a cocina (KDS)', desc: 'Orden separada por estación: cocina, bar, postre' },
-      { icon: 'fa-users-rectangle', name: 'Dividir cuentas',      desc: 'Por persona, por producto, mixto' },
-      { icon: 'fa-percent',        name: 'Propinas y descuentos', desc: 'Configurables por mesa o ticket' },
-      { icon: 'fa-motorcycle',     name: 'Domicilio',             desc: 'Pedidos por WhatsApp/web → cocina directo' },
-      { icon: 'fa-chart-line',     name: 'Reportes por turno',    desc: 'Cierre de caja, top platos, mesero del día' },
-    ],
   },
   {
     key:    'pet',
@@ -81,20 +49,9 @@ const verticales = [
     key:    'salon',
     name:   'HUB Salon',
     icon:   'fa-scissors',
-    landing: '/verticales/salon',
-    screenshot: '/images/products/salon/dashboard.webp',
-    screenshotH: 718,
     sector: 'Salones de belleza, barberías y spas',
     short:  'Para salones de belleza, barberías, spas y centros estéticos.',
     pitch:  'Reserva online 24/7 con disponibilidad real, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica en el mismo ticket.',
-    features: [
-      { icon: 'fa-calendar-check',   name: 'Reserva online 24/7',     desc: 'La clienta elige servicio, estilista, fecha y hora' },
-      { icon: 'fa-calendar-days',    name: 'Agenda por estilista',    desc: 'Estados, lista de espera y multi-servicio' },
-      { icon: 'fa-percent',          name: 'Comisiones automáticas',  desc: 'Por categoría de servicio y por retail' },
-      { icon: 'fa-comment-dots',     name: 'Recordatorios WhatsApp',  desc: '24 h y 2 h antes, con enlace para reprogramar' },
-      { icon: 'fa-arrow-trend-down', name: 'Horas valle',             desc: 'Descuento solo en franjas de baja demanda' },
-      { icon: 'fa-receipt',          name: 'Factura electrónica',     desc: 'DGI Panamá (CUFE + QR) desde el POS' },
-    ],
   },
   {
     key:    'clinic',
@@ -211,6 +168,22 @@ const verticales = [
     ],
   },
 ];
+
+// Los verticales con página publicada toman de su presentación del panel el enlace, la captura
+// y las 4 primeras funciones; los demás siguen con los datos de esta lista.
+const presentaciones = await getPresentaciones();
+const vista = verticales.map((v: any) => {
+  const p = presentaciones[v.key];
+  if (!p?.publicado || !p.hero) return v;
+  return {
+    ...v,
+    landing: ruta(p.slug, 'es'),
+    screenshot: imagen(p, p.hero.imagen),
+    screenshotW: p.hero.ancho,
+    screenshotH: p.hero.alto,
+    features: bloque(p, 'es').funciones.slice(0, 4).map((x) => ({ icon: x.icono, name: x.titulo, desc: x.texto })),
+  };
+});
 ---
 <BaseLayout title="Verticales · SuiteHub" description="13 verticales especializados de SuiteHub: HUB Taller, Carwash, Restaurant, POS, Pet, Salon, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone y Traffic.">
 
@@ -235,7 +208,7 @@ const verticales = [
   <section class="pb-12">
     <div class="wrap">
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-        {verticales.map(v => (
+        {vista.map(v => (
           <a href={v.landing ?? `#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors relative">
             {v.landing && (
               <span class="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-2 py-0.5">Ver más</span>
@@ -249,7 +222,7 @@ const verticales = [
   </section>
 
   <!-- Cada vertical en detalle -->
-  {verticales.map((v, i) => (
+  {vista.map((v, i) => (
     <section id={v.key} class={`section ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
       <div class="wrap">
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
@@ -288,12 +261,12 @@ const verticales = [
           <div class="lg:col-span-7">
             {v.screenshot && (
               <figure class="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-glow-sm bg-navy-950">
-                <img src={v.screenshot} alt={`Captura de pantalla de ${v.name}`} width="1280" height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
+                <img src={v.screenshot} alt={`Captura de pantalla de ${v.name}`} width={v.screenshotW ?? 1280} height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
               </figure>
             )}
             <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Funciones específicas del vertical</h3>
             <div class="grid sm:grid-cols-2 gap-3">
-              {v.features.map(f => (
+              {(v.features ?? []).map(f => (
                 <div class="card-glass p-5 hover:border-white/15 transition-colors">
                   <div class="flex items-start gap-3">
                     <div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-400 bg-white/5 flex-shrink-0">

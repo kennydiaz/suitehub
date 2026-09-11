@@ -1,64 +1,32 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPresentaciones, bloque, imagen, ruta } from '../../lib/presentaciones';
 
 const verticals = [
   {
     key:    'taller',
     name:   'HUB Workshop',
     icon:   'fa-screwdriver-wrench',
-    landing: '/en/verticals/taller',
-    screenshot: '/images/products/taller/dashboard.webp',
-    screenshotH: 718,
     sector: 'Auto-repair shops',
     short:  'For mechanic shops, quick-service centers and diagnostic centers.',
     pitch:  'Quick vehicle intake, work orders with services and parts, online booking, vehicle + customer linked, direct e-invoicing.',
-    features: [
-      { icon: 'fa-bolt',           name: 'Quick intake',         desc: 'Capture plate, customer and complaint in 30 seconds' },
-      { icon: 'fa-clipboard-list', name: 'Work orders',          desc: 'Services + parts + time + status' },
-      { icon: 'fa-calendar-days',  name: 'Online booking',       desc: 'Customer books on the web, you confirm' },
-      { icon: 'fa-car',            name: 'Vehicle history',      desc: 'Past services, mileage, upcoming reviews' },
-      { icon: 'fa-tools',          name: 'Service catalog',      desc: 'Prices, duration, assignable technicians' },
-      { icon: 'fa-receipt',        name: 'Electronic invoicing', desc: 'DGI Panama (CUFE + QR) and SENIAT Venezuela · ES and CO on roadmap' },
-    ],
     client: 'QS Express — Auto-repair shop in La Chorrera',
   },
   {
     key:    'carwash',
     name:   'HUB Carwash',
-    landing: '/en/verticals/carwash',
     icon:   'fa-spray-can-sparkles',
-    screenshot: '/images/products/carwash/dashboard.webp',
-    screenshotH: 718,
     sector: 'Car washes and detailing',
     short:  'For car washes, express wash, detailing and mobile wash.',
     pitch:  'Intake by plate with vehicle history, bays and washers with a live queue, cash register with daily reconciliation, automatic washer commissions, stamp-card loyalty and DGI e-invoicing from the same order.',
-    features: [
-      { icon: 'fa-bolt',           name: 'Intake by plate',      desc: 'Plate, customer, vehicle and history in seconds' },
-      { icon: 'fa-warehouse',      name: 'Bays and washers',     desc: 'Assign bay and staff, see the live vehicle queue' },
-      { icon: 'fa-cash-register',  name: 'Cash and reconciliation', desc: 'Cash, card, Yappy, 80 mm ticket and closing with variance' },
-      { icon: 'fa-percent',        name: 'Automatic commissions', desc: 'Split per washer when each order closes, settled by period' },
-      { icon: 'fa-medal',          name: 'Stamp-card loyalty',   desc: 'Wash N times and the next one is free; configurable goal' },
-      { icon: 'fa-receipt',        name: 'Electronic invoicing', desc: 'DGI Panama: CUFE + QR, RUC/DV lookup and voiding' },
-    ],
   },
   {
     key:    'restaurant',
     name:   'HUB Restaurant',
-    landing: '/en/verticals/restaurant',
     icon:   'fa-utensils',
-    screenshot: '/images/products/restaurant/web-1280.webp',
-    screenshotH: 875,
     sector: 'Restaurants and bars',
     short:  'For restaurants, cafés, bars and food trucks.',
     pitch:  'Live table state, orders fired to kitchen and bar, KDS, split bills, tips, delivery integration, shift reports.',
-    features: [
-      { icon: 'fa-table',          name: 'Live tables',          desc: 'Floor map, free/occupied/check requested' },
-      { icon: 'fa-fire',           name: 'Kitchen display (KDS)', desc: 'Order separated by station: kitchen, bar, dessert' },
-      { icon: 'fa-users-rectangle', name: 'Split bills',         desc: 'Per person, per item, mixed' },
-      { icon: 'fa-percent',        name: 'Tips and discounts',   desc: 'Configurable per table or ticket' },
-      { icon: 'fa-motorcycle',     name: 'Delivery',             desc: 'Orders via WhatsApp/web → straight to kitchen' },
-      { icon: 'fa-chart-line',     name: 'Shift reports',        desc: 'Cash close, top dishes, server of the day' },
-    ],
   },
   {
     key:    'pet',
@@ -81,20 +49,9 @@ const verticals = [
     key:    'salon',
     name:   'HUB Salon',
     icon:   'fa-scissors',
-    landing: '/en/verticals/salon',
-    screenshot: '/images/products/salon/dashboard.webp',
-    screenshotH: 718,
     sector: 'Beauty salons, barbershops, spas',
     short:  'For beauty salons, barbershops, spas and aesthetic centers.',
     pitch:  'Online booking 24/7 with real availability, schedule per stylist, automatic commissions, WhatsApp reminders, off-peak discounts and the e-invoice on the same ticket.',
-    features: [
-      { icon: 'fa-calendar-check',   name: 'Online booking 24/7',   desc: 'Client picks service, stylist, date and time' },
-      { icon: 'fa-calendar-days',    name: 'Schedule per stylist',  desc: 'Statuses, waitlist and multi-service' },
-      { icon: 'fa-percent',          name: 'Automatic commissions', desc: 'Per service category and retail' },
-      { icon: 'fa-comment-dots',     name: 'WhatsApp reminders',    desc: '24 h and 2 h before, with a reschedule link' },
-      { icon: 'fa-arrow-trend-down', name: 'Off-peak pricing',      desc: 'Discount only in low-demand windows' },
-      { icon: 'fa-receipt',          name: 'E-invoicing',           desc: 'DGI Panama (CUFE + QR) from the POS' },
-    ],
   },
   {
     key:    'clinic',
@@ -211,6 +168,22 @@ const verticals = [
     ],
   },
 ];
+
+// Los verticales con página publicada toman de su presentación del panel el enlace, la captura
+// y las 4 primeras funciones; los demás siguen con los datos de esta lista.
+const presentaciones = await getPresentaciones();
+const vista = verticals.map((v: any) => {
+  const p = presentaciones[v.key];
+  if (!p?.publicado || !p.hero) return v;
+  return {
+    ...v,
+    landing: ruta(p.slug, 'en'),
+    screenshot: imagen(p, p.hero.imagen),
+    screenshotW: p.hero.ancho,
+    screenshotH: p.hero.alto,
+    features: bloque(p, 'en').funciones.slice(0, 4).map((x) => ({ icon: x.icono, name: x.titulo, desc: x.texto })),
+  };
+});
 ---
 <BaseLayout title="Verticals · SuiteHub" description="13 specialized SuiteHub verticals: HUB Workshop, Carwash, Restaurant, POS, Pet, Salon, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
 
@@ -235,7 +208,7 @@ const verticals = [
   <section class="pb-12">
     <div class="wrap">
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-        {verticals.map(v => (
+        {vista.map(v => (
           <a href={v.landing ?? `#${v.key}`} class="group card-glass p-4 text-center hover:border-brand-500/30 transition-colors relative">
             {v.landing && (
               <span class="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-2 py-0.5">View</span>
@@ -249,7 +222,7 @@ const verticals = [
   </section>
 
   <!-- Each vertical in detail -->
-  {verticals.map((v, i) => (
+  {vista.map((v, i) => (
     <section id={v.key} class={`section ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
       <div class="wrap">
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
@@ -286,12 +259,12 @@ const verticals = [
           <div class="lg:col-span-7">
             {v.screenshot && (
               <figure class="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-glow-sm bg-navy-950">
-                <img src={v.screenshot} alt={`${v.name} screenshot`} width="1280" height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
+                <img src={v.screenshot} alt={`${v.name} screenshot`} width={v.screenshotW ?? 1280} height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
               </figure>
             )}
             <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Vertical-specific features</h3>
             <div class="grid sm:grid-cols-2 gap-3">
-              {v.features.map(f => (
+              {(v.features ?? []).map(f => (
                 <div class="card-glass p-5 hover:border-white/15 transition-colors">
                   <div class="flex items-start gap-3">
                     <div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-400 bg-white/5 flex-shrink-0">

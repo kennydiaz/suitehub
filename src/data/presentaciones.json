@@ -1,0 +1,4311 @@
+{
+  "sitio": "https://suitehub.net",
+  "productos": {
+    "boutique": {
+      "slug": "boutique",
+      "nombre": "Hub Boutique",
+      "publicado": false,
+      "acento": "#DB2777",
+      "imagenes_base": "https://suitehub.net/images/products/boutique/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/boutique",
+        "en": "https://suitehub.net/en/verticals/boutique"
+      },
+      "hero": {
+        "imagen": "pos.svg",
+        "ancho": 1000,
+        "alto": 620
+      },
+      "es": {
+        "titulo": "HUB Boutique",
+        "tagline": "La tienda física y online de tu boutique en un solo sistema 👗🛍️",
+        "intro": "POS multi-sucursal con variantes talla × color, tienda online sobre el mismo inventario, factura electrónica con CUFE y QR, devoluciones, apartados y reportes — todo en un solo sistema. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "👕 Variantes talla × color",
+          "🏬 Multi-sucursal",
+          "🛒 POS táctil",
+          "🌐 Tienda online"
+        ],
+        "problema": "😩 ¿Llevas el inventario de tallas y colores en un cuaderno, y tu tienda física no habla con la online?",
+        "solucion": "😎 Vende en tu local y por internet con un solo catálogo, inventario y caja",
+        "solucion_sub": "POS multi-sucursal con variantes talla × color, tienda online sobre el mismo inventario, factura electrónica con CUFE y QR, devoluciones, apartados y reportes — todo en un solo sistema. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "pos.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🛒 POS táctil: elige talla y color, escanea y cobra en segundos",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "tienda.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🌐 Tu tienda online sobre el mismo catálogo e inventario",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "dashboard.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📊 Tu boutique de un vistazo: ventas por sucursal, stock y lo más vendido",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🧾 Factura electrónica con CUFE y QR, lista para ticket 80mm o carta",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "👕",
+            "titulo": "Variantes talla × color",
+            "texto": "Un producto, todas sus combinaciones: cada talla y color con su propio SKU, código de barras y stock."
+          },
+          {
+            "icono": "🏬",
+            "titulo": "Multi-sucursal",
+            "texto": "Stock por tienda, traslados entre sucursales y reportes consolidados o por local."
+          },
+          {
+            "icono": "🛒",
+            "titulo": "POS táctil",
+            "texto": "Vende con lector de código, busca por talla o color y cobra en segundos con el vuelto calculado."
+          },
+          {
+            "icono": "🌐",
+            "titulo": "Tienda online",
+            "texto": "Tu vitrina web con carrito, cuenta de cliente y checkout — sobre el mismo catálogo e inventario del POS."
+          },
+          {
+            "icono": "💳",
+            "titulo": "Pago online",
+            "texto": "El cliente paga por Yappy y su pedido se despacha desde la sucursal que asignes."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Factura electrónica",
+            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact); imprime en ticket térmico 80mm o carta."
+          },
+          {
+            "icono": "🔄",
+            "titulo": "Devoluciones y apartados",
+            "texto": "Cambios de talla, devoluciones con autorización por WhatsApp y apartados (layaway) con abonos."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reportes y caja",
+            "texto": "Caja con apertura, turnos y arqueo; reportes de ventas, stock y lo más vendido por sucursal."
+          }
+        ],
+        "beneficios": [
+          "POS y tienda online sobre un mismo catálogo e inventario",
+          "Variantes talla × color con stock por sucursal",
+          "Incluye factura electrónica DGI (CUFE y QR)",
+          "Pago online con Yappy y despacho por sucursal",
+          "Funciona en celular, tablet y PC · app instalable (PWA)",
+          "Soporte local · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Boutique — La tienda física y online de tu boutique en un solo sistema 👗🛍️",
+          "description": "POS multi-sucursal con variantes talla × color, tienda online sobre el mismo inventario, factura electrónica con CUFE y QR, devoluciones, apartados y reportes — todo en un solo sistema. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub Boutique 👗"
+      },
+      "en": {
+        "titulo": "HUB Boutique",
+        "tagline": "Your boutique's store and online shop in one system 👗🛍️",
+        "intro": "Multi-store POS with size × color variants, an online shop on the same inventory, invoicing with automatic sales tax, returns, layaway and reports — all in one system. Built for the US 🇺🇸",
+        "chips": [
+          "👕 Size × color variants",
+          "🏬 Multi-store",
+          "🛒 Touch POS",
+          "🌐 Online shop"
+        ],
+        "problema": "😩 Tracking sizes and colors in a notebook, and your storefront doesn't talk to your online shop?",
+        "solucion": "😎 Sell in-store and online with one catalog, inventory and register",
+        "solucion_sub": "Multi-store POS with size × color variants, an online shop on the same inventory, invoicing with automatic sales tax, returns, layaway and reports — all in one system. Built for the US 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "pos.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🛒 Touch POS: pick size and color, scan and charge in seconds",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "tienda.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🌐 Your online shop on the same catalog and inventory",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "dashboard.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📊 Your boutique at a glance: sales by store, stock and best sellers",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🧾 Invoice with sales tax, ready for an 80mm ticket or letter",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "👕",
+            "titulo": "Size × color variants",
+            "texto": "One product, every combination: each size and color with its own SKU, barcode and stock."
+          },
+          {
+            "icono": "🏬",
+            "titulo": "Multi-store",
+            "texto": "Stock per store, transfers between locations and reports consolidated or by store."
+          },
+          {
+            "icono": "🛒",
+            "titulo": "Touch POS",
+            "texto": "Sell with a scanner, search by size or color and charge in seconds with change calculated for you."
+          },
+          {
+            "icono": "🌐",
+            "titulo": "Online shop",
+            "texto": "Your web storefront with cart, customer account and checkout — on the same catalog and inventory as the POS."
+          },
+          {
+            "icono": "💳",
+            "titulo": "Online payment",
+            "texto": "Customers pay by card or Apple Pay and each order ships from the store you assign."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Invoicing",
+            "texto": "Issue invoices with automatic sales tax and a receipt; print on an 80mm ticket or letter."
+          },
+          {
+            "icono": "🔄",
+            "titulo": "Returns & layaway",
+            "texto": "Size exchanges, returns with WhatsApp approval and layaway with deposits."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reports & register",
+            "texto": "Register with open, shifts and count; reports on sales, stock and best sellers by store."
+          }
+        ],
+        "beneficios": [
+          "POS and online shop on one catalog and inventory",
+          "Size × color variants with stock per store",
+          "Automatic sales tax & invoicing included",
+          "Online payment and per-store fulfillment",
+          "Works on phone, tablet and PC · installable app (PWA)",
+          "Local support · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Boutique — Your boutique's store and online shop in one system 👗🛍️",
+          "description": "Multi-store POS with size × color variants, an online shop on the same inventory, invoicing with automatic sales tax, returns, layaway and reports — all in one system. Built for the US 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub Boutique 👗"
+      }
+    },
+    "carwash": {
+      "slug": "carwash",
+      "nombre": "Hub Carwash",
+      "publicado": true,
+      "acento": "#0284C7",
+      "imagenes_base": "https://suitehub.net/images/products/carwash/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/carwash",
+        "en": "https://suitehub.net/en/verticals/carwash"
+      },
+      "hero": {
+        "imagen": "dashboard.webp",
+        "ancho": 2852,
+        "alto": 1436
+      },
+      "es": {
+        "titulo": "HUB Carwash",
+        "eyebrow": "Car wash y autolavados",
+        "titular": {
+          "antes": "El sistema para tu car wash, ",
+          "destacado": "de la recepción a la factura.",
+          "despues": ""
+        },
+        "tagline": "El sistema todo-en-uno para tu car wash 🚗💦",
+        "intro": "Registra el vehículo por placa, míralo avanzar por las pistas, cobra en caja, emite la factura electrónica ante la DGI y reparte comisiones sin hojas de cálculo. Todo en un solo panel, desde cualquier dispositivo.",
+        "chips": [
+          "🧾 Factura electrónica DGI",
+          "🚦 5 pistas en vivo",
+          "💸 Comisiones automáticas",
+          "🎁 Fidelidad incluida"
+        ],
+        "url_label": "carwash.suitehub.net",
+        "problema": "😩 ¿Las órdenes en un talonario, las comisiones en Excel y la factura a mano al final del día?",
+        "solucion": {
+          "antes": "De la placa a la factura, todo el car wash en ",
+          "destacado": "un solo panel",
+          "despues": ""
+        },
+        "solucion_sub": "Recepción por placa, pistas en vivo, caja con arqueo, comisiones calculadas al cerrar cada orden y factura electrónica DGI desde la misma pantalla. Hecho en Panamá 🇵🇦",
+        "recorrido_titulo": "Así se ve por dentro",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Tu operación de hoy, de un vistazo",
+            "texto": "Ventas del día y del mes, vehículos atendidos, ticket promedio y comisiones pendientes. Gráfica de ventas por día, mezcla por tipo de vehículo, servicios más vendidos y ranking de lavadores.",
+            "puntos": [
+              "Vehículos atendidos por rango de fechas",
+              "Servicios más vendidos y mezcla por tipo de vehículo",
+              "Ranking de lavadores por comisión"
+            ]
+          },
+          {
+            "imagen": "nueva-orden.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Recepción por placa en segundos",
+            "texto": "Escribes la placa y el sistema trae al cliente, su vehículo y su historial. Eliges el tipo de vehículo, el lavado (sencillo, con cera o hidratación), los adicionales y la pista. El total, el ITBMS y la comisión se calculan solos.",
+            "puntos": [
+              "Cliente y vehículo precargados por placa",
+              "Precios por tipo de vehículo y adicionales editables",
+              "Asignación de pista y lavadores en la misma pantalla"
+            ]
+          },
+          {
+            "imagen": "pistas.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Cinco pistas en vivo",
+            "texto": "Tablero de la cola: en espera, en proceso, terminado y entregado. Filtras por pista o por lavador. Cada lavador ve solo sus vehículos desde su celular y avanza el estado con un toque.",
+            "puntos": [
+              "Filtro por pista y por lavador",
+              "Vista de lavador en el celular, sin instalar nada",
+              "Contador de vehículos del día por estado"
+            ]
+          },
+          {
+            "imagen": "pistas-movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "El lavador, desde su celular",
+            "texto": "Cada lavador entra con su usuario y ve únicamente los vehículos que tiene asignados. Toca para pasar de \"en proceso\" a \"terminado\" y la caja se entera al instante. También consulta su comisión acumulada.",
+            "puntos": [
+              "Solo sus órdenes, nada más",
+              "Avanza el estado con un toque",
+              "Su comisión del período, siempre visible"
+            ]
+          },
+          {
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Caja y cierre diario",
+            "texto": "Cobros en efectivo, tarjeta o Yappy, pagos mixtos y ticket de 80 mm. Al cerrar el día, el sistema compara lo vendido con lo declarado y deja el arqueo registrado con la diferencia.",
+            "puntos": [
+              "Ticket térmico 80 mm con tu logo",
+              "Arqueo con efectivo declarado vs. sistema",
+              "Resumen gerencial por correo al cerrar caja"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Factura electrónica ante la DGI",
+            "texto": "Emites la factura electrónica desde la misma orden: CUFE, QR de verificación y formato carta o ticket. Consulta de RUC y DV en línea para clientes con empresa. Anulación desde el panel.",
+            "puntos": [
+              "CUFE y QR de verificación DGI",
+              "Consulta de RUC/DV para facturar a empresas",
+              "Estado por orden: emitida, pendiente, anulada"
+            ]
+          },
+          {
+            "imagen": "cliente.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Historial del cliente y de cada vehículo",
+            "texto": "Ficha con teléfono, datos fiscales, vehículos registrados y todas las visitas: qué se le hizo, quién lo lavó, cuánto pagó. Varios vehículos por cliente, cada uno con su placa, marca, modelo y color.",
+            "puntos": [
+              "Varios vehículos por cliente",
+              "Historial completo de servicios y pagos",
+              "Datos fiscales guardados para facturar"
+            ]
+          },
+          {
+            "imagen": "fidelidad.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Fidelidad que trae clientes de vuelta",
+            "texto": "Tarjeta de sellos digital: cada lavado suma y al llegar a la meta el siguiente es gratis. Tú defines la meta. Ves quién está cerca del premio y cuántos lavados gratis se han canjeado.",
+            "puntos": [
+              "Meta configurable (ej. 7 lavados, el 8.º gratis)",
+              "Clientes cerca del premio para avisarles",
+              "Canje directo desde la orden"
+            ]
+          },
+          {
+            "imagen": "comisiones.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Comisiones sin discusiones",
+            "texto": "Cada orden reparte la comisión entre los lavadores asignados, con el porcentaje que definas. El lavador ve su acumulado desde su celular y tú liquidas por período con un clic.",
+            "puntos": [
+              "Porcentaje global o reparto por orden",
+              "Vista \"Mi comisión\" para cada lavador",
+              "Liquidación y registro de pagos"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Todo lo que incluye",
+        "funciones_titulo": "Funciones de HUB Carwash",
+        "funciones": [
+          {
+            "icono": "fa-bolt",
+            "titulo": "Recepción por placa",
+            "texto": "Busca por placa o nombre; cliente, vehículo e historial precargados."
+          },
+          {
+            "icono": "fa-warehouse",
+            "titulo": "Gestión de pistas",
+            "texto": "Pistas configurables, cola en vivo por estado, filtro por pista y lavador."
+          },
+          {
+            "icono": "fa-spray-can-sparkles",
+            "titulo": "POS de lavado",
+            "texto": "Tipos de vehículo, tres niveles de lavado, adicionales con precio editable, recargos."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Caja y arqueo",
+            "texto": "Efectivo, tarjeta, Yappy, pagos mixtos, ticket 80 mm, cierre con diferencia."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "Factura electrónica DGI",
+            "texto": "CUFE, QR, consulta RUC/DV, anulación, formato carta y ticket."
+          },
+          {
+            "icono": "fa-car-side",
+            "titulo": "Clientes y vehículos",
+            "texto": "Ficha completa, varios vehículos por cliente, datos fiscales."
+          },
+          {
+            "icono": "fa-medal",
+            "titulo": "Fidelidad",
+            "texto": "Tarjeta de sellos digital con meta configurable y canje desde la orden."
+          },
+          {
+            "icono": "fa-percent",
+            "titulo": "Comisiones",
+            "texto": "Cálculo automático por lavador, vista personal y liquidación por período."
+          },
+          {
+            "icono": "fa-chart-line",
+            "titulo": "Reportes",
+            "texto": "Dashboard gerencial con gráficas y resumen diario por correo."
+          }
+        ],
+        "funciones_nota": "+ Usuarios y roles (admin, cajero, lavador), catálogo de servicios, manual de uso en el sistema y licencia gestionada por SuiteHub.",
+        "adicionales": {
+          "eyebrow": "Llévalo más lejos",
+          "titulo": "Paquete de integraciones",
+          "intro": "HUB Carwash crece con tu negocio. Estas integraciones se cotizan como paquete adicional sobre el sistema base, completo o por módulos.",
+          "etiqueta": "Adicional",
+          "items": [
+            {
+              "icono": "fa-calendar-check",
+              "titulo": "Citas online",
+              "texto": "Enlace público donde el cliente elige servicio, pista y hora. Solo ve horarios reales."
+            },
+            {
+              "icono": "fa-qrcode",
+              "titulo": "Puntos y QR por cliente",
+              "texto": "Cada cliente tiene su QR; al escanearlo en recepción aparece su ficha, puntos y membresía. Puntos por monto, canjeables en servicios."
+            },
+            {
+              "icono": "fa-id-card",
+              "titulo": "Membresías",
+              "texto": "Planes mensuales de N lavados o ilimitados, con vencimiento, cobro recurrente y control de uso en la orden."
+            },
+            {
+              "icono": "fa-comment-dots",
+              "titulo": "Notificaciones por WhatsApp",
+              "texto": "\"Tu vehículo está listo\", recordatorio de cita, puntos acumulados, promociones. API oficial de Meta."
+            },
+            {
+              "icono": "fa-boxes-stacked",
+              "titulo": "Inventario de insumos",
+              "texto": "Shampoo, cera, microfibras: stock, consumo por servicio, alertas de mínimo."
+            },
+            {
+              "icono": "fa-user-clock",
+              "titulo": "Control de empleados",
+              "texto": "Asistencia, turnos y horas por lavador, ligado a comisiones."
+            },
+            {
+              "icono": "fa-gauge-high",
+              "titulo": "Contador por pista",
+              "texto": "Vehículos en vivo por pista y tiempo promedio de servicio."
+            },
+            {
+              "icono": "fa-database",
+              "titulo": "Base de datos MySQL",
+              "texto": "Migración del motor para soportar citas públicas, webhooks y varias cajas simultáneas."
+            }
+          ]
+        },
+        "hardware": {
+          "eyebrow": "Cámaras LPR",
+          "titulo": "Reconocimiento de placas en la entrada",
+          "texto": "Con cámaras de reconocimiento de placas, el vehículo se registra solo: al llegar, HUB Carwash abre la orden con el cliente y su historial, y avisa por WhatsApp cuando está listo. PROOQ instala y configura las cámaras.",
+          "puntos": [
+            "Cámaras Hikvision o Dahua con ANPR en el acceso",
+            "Puente local en tu red que envía cada placa al sistema",
+            "La orden se abre con cliente, vehículo e historial precargados",
+            "Aviso automático al cliente cuando el vehículo está listo"
+          ],
+          "nota": "Requiere red local e instalación en sitio. Se cotiza junto con el hardware.",
+          "pasos": [
+            {
+              "icono": "📷",
+              "titulo": "Cámara LPR",
+              "sub": "en la entrada",
+              "flecha": "placa"
+            },
+            {
+              "icono": "🖥️",
+              "titulo": "Puente local",
+              "sub": "mini PC en tu red",
+              "flecha": "HTTPS"
+            },
+            {
+              "icono": "☁️",
+              "titulo": "HUB Carwash",
+              "sub": "en la nube",
+              "flecha": "orden"
+            },
+            {
+              "icono": "💬",
+              "titulo": "Recepción",
+              "sub": "+ WhatsApp"
+            }
+          ]
+        },
+        "hablemos": {
+          "titulo": "¿Abres un car wash o quieres ordenar el que ya tienes?",
+          "texto": "Te mostramos HUB Carwash funcionando con tus servicios y tus pistas. Configuramos tu cuenta, cargamos tu catálogo y tus lavadores con sus comisiones, y capacitamos a tu equipo."
+        },
+        "beneficios": [
+          "Facturación electrónica DGI incluida",
+          "Los lavadores lo usan desde su celular, sin instalar nada",
+          "Tus datos en tu propia base, respaldados",
+          "Soporte local por WhatsApp",
+          "Todas las actualizaciones incluidas",
+          "Instalación y capacitación por PROOQ en sitio"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "¿Listo para ver tus pistas ",
+            "destacado": "en vivo",
+            "despues": "?"
+          },
+          "texto": "Te hacemos una demo con tus servicios y tus pistas, sin compromiso."
+        },
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Carwash — Sistema para car wash y autolavados en Panamá",
+          "description": "Recepción por placa, pistas en vivo, caja, comisiones automáticas, fidelidad y factura electrónica DGI. El sistema para car wash hecho en Panamá."
+        },
+        "wa_text": "Hola, quiero info de HUB Carwash 🚗",
+        "wa_demo": "Hola, quiero una demo de HUB Carwash para mi car wash"
+      },
+      "en": {
+        "titulo": "HUB Carwash",
+        "eyebrow": "Car washes and detailing",
+        "titular": {
+          "antes": "The system for your car wash, ",
+          "destacado": "from intake to invoice.",
+          "despues": ""
+        },
+        "tagline": "The all-in-one system for your car wash 🚗💦",
+        "intro": "Register the vehicle by plate, watch it move through the bays, charge at the register, issue the electronic invoice with the DGI and split commissions without spreadsheets. All in one panel, from any device.",
+        "chips": [
+          "🧾 DGI e-invoicing",
+          "🚦 5 bays live",
+          "💸 Automatic commissions",
+          "🎁 Loyalty included"
+        ],
+        "url_label": "carwash.suitehub.net",
+        "problema": "😩 Orders in a notepad, commissions in Excel and invoices by hand at the end of the day?",
+        "solucion": {
+          "antes": "From plate to invoice, the whole car wash in ",
+          "destacado": "a single panel",
+          "despues": ""
+        },
+        "solucion_sub": "Intake by plate, live bays, cash register with reconciliation, commissions calculated when each order closes and DGI e-invoicing from the same screen. Made in Panama 🇵🇦",
+        "recorrido_titulo": "What it looks like inside",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Today's operation at a glance",
+            "texto": "Sales for the day and the month, vehicles served, average ticket and pending commissions. Sales-per-day chart, mix by vehicle type, best-selling services and washer ranking.",
+            "puntos": [
+              "Vehicles served by date range",
+              "Best-selling services and mix by vehicle type",
+              "Washer ranking by commission"
+            ]
+          },
+          {
+            "imagen": "nueva-orden.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Intake by plate in seconds",
+            "texto": "Type the plate and the system brings up the customer, their vehicle and their history. Pick the vehicle type, the wash (basic, wax or hydration), the add-ons and the bay. Total, tax and commission are calculated for you.",
+            "puntos": [
+              "Customer and vehicle preloaded by plate",
+              "Prices per vehicle type and editable add-ons",
+              "Bay and washer assignment on the same screen"
+            ]
+          },
+          {
+            "imagen": "pistas.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Five bays, live",
+            "texto": "Queue board: waiting, in progress, done and delivered. Filter by bay or by washer. Each washer sees only their vehicles from their phone and advances the status with one tap.",
+            "puntos": [
+              "Filter by bay and by washer",
+              "Washer view on the phone, nothing to install",
+              "Vehicle counter for the day by status"
+            ]
+          },
+          {
+            "imagen": "pistas-movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "The washer, from their phone",
+            "texto": "Each washer logs in with their own user and sees only the vehicles assigned to them. Tap to move from \"in progress\" to \"done\" and the register knows instantly. They can also check their accumulated commission.",
+            "puntos": [
+              "Only their orders, nothing else",
+              "Advance the status with one tap",
+              "Their commission for the period, always visible"
+            ]
+          },
+          {
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Cash register and daily closing",
+            "texto": "Cash, card or Yappy payments, split payments and 80 mm ticket. At closing, the system compares what was sold with what was declared and records the reconciliation with the variance.",
+            "puntos": [
+              "80 mm thermal ticket with your logo",
+              "Reconciliation: declared cash vs. system",
+              "Management summary by email at closing"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Electronic invoice with the DGI",
+            "texto": "Issue the electronic invoice from the same order: CUFE, verification QR and letter or ticket format. Online RUC/DV lookup for business customers. Voiding from the panel.",
+            "puntos": [
+              "CUFE and DGI verification QR",
+              "RUC/DV lookup to invoice businesses",
+              "Status per order: issued, pending, voided"
+            ]
+          },
+          {
+            "imagen": "cliente.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Customer and vehicle history",
+            "texto": "Profile with phone, tax data, registered vehicles and every visit: what was done, who washed it, how much they paid. Several vehicles per customer, each with its plate, make, model and color.",
+            "puntos": [
+              "Several vehicles per customer",
+              "Full service and payment history",
+              "Tax data saved for invoicing"
+            ]
+          },
+          {
+            "imagen": "fidelidad.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Loyalty that brings customers back",
+            "texto": "Digital stamp card: every wash counts and when the goal is reached the next one is free. You set the goal. See who is close to the reward and how many free washes have been redeemed.",
+            "puntos": [
+              "Configurable goal (e.g. 7 washes, the 8th free)",
+              "Customers close to the reward, to let them know",
+              "Redeem directly from the order"
+            ]
+          },
+          {
+            "imagen": "comisiones.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Commissions without arguments",
+            "texto": "Each order splits the commission among the assigned washers, at the percentage you define. The washer sees their total from their phone and you settle by period with one click.",
+            "puntos": [
+              "Global percentage or split per order",
+              "\"My commission\" view for each washer",
+              "Settlement and payment record"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Everything included",
+        "funciones_titulo": "HUB Carwash features",
+        "funciones": [
+          {
+            "icono": "fa-bolt",
+            "titulo": "Intake by plate",
+            "texto": "Search by plate or name; customer, vehicle and history preloaded."
+          },
+          {
+            "icono": "fa-warehouse",
+            "titulo": "Bay management",
+            "texto": "Configurable bays, live queue by status, filter by bay and washer."
+          },
+          {
+            "icono": "fa-spray-can-sparkles",
+            "titulo": "Wash POS",
+            "texto": "Vehicle types, three wash levels, add-ons with editable price, surcharges."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Cash and reconciliation",
+            "texto": "Cash, card, Yappy, split payments, 80 mm ticket, closing with variance."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "DGI e-invoicing",
+            "texto": "CUFE, QR, RUC/DV lookup, voiding, letter and ticket formats."
+          },
+          {
+            "icono": "fa-car-side",
+            "titulo": "Customers and vehicles",
+            "texto": "Full profile, several vehicles per customer, tax data."
+          },
+          {
+            "icono": "fa-medal",
+            "titulo": "Loyalty",
+            "texto": "Digital stamp card with configurable goal and redemption from the order."
+          },
+          {
+            "icono": "fa-percent",
+            "titulo": "Commissions",
+            "texto": "Automatic calculation per washer, personal view and settlement by period."
+          },
+          {
+            "icono": "fa-chart-line",
+            "titulo": "Reports",
+            "texto": "Management dashboard with charts and daily summary by email."
+          }
+        ],
+        "funciones_nota": "+ Users and roles (admin, cashier, washer), service catalog, in-app user manual and a license managed by SuiteHub.",
+        "adicionales": {
+          "eyebrow": "Take it further",
+          "titulo": "Integrations package",
+          "intro": "HUB Carwash grows with your business. These integrations are quoted as an add-on package on top of the base system, in full or by module.",
+          "etiqueta": "Add-on",
+          "items": [
+            {
+              "icono": "fa-calendar-check",
+              "titulo": "Online booking",
+              "texto": "Public link where the customer picks service, bay and time. Only real slots are shown."
+            },
+            {
+              "icono": "fa-qrcode",
+              "titulo": "Points and QR per customer",
+              "texto": "Every customer gets a QR; scan it at intake to bring up their profile, points and membership. Points per amount, redeemable on services."
+            },
+            {
+              "icono": "fa-id-card",
+              "titulo": "Memberships",
+              "texto": "Monthly plans of N washes or unlimited, with expiry, recurring billing and usage control on the order."
+            },
+            {
+              "icono": "fa-comment-dots",
+              "titulo": "WhatsApp notifications",
+              "texto": "\"Your vehicle is ready\", booking reminder, points earned, promotions. Official Meta API."
+            },
+            {
+              "icono": "fa-boxes-stacked",
+              "titulo": "Supplies inventory",
+              "texto": "Shampoo, wax, microfiber: stock, consumption per service, low-stock alerts."
+            },
+            {
+              "icono": "fa-user-clock",
+              "titulo": "Staff control",
+              "texto": "Attendance, shifts and hours per washer, tied to commissions."
+            },
+            {
+              "icono": "fa-gauge-high",
+              "titulo": "Counter per bay",
+              "texto": "Live vehicles per bay and average service time."
+            },
+            {
+              "icono": "fa-database",
+              "titulo": "MySQL database",
+              "texto": "Engine migration to support public booking, webhooks and several simultaneous registers."
+            }
+          ]
+        },
+        "hardware": {
+          "eyebrow": "LPR cameras",
+          "titulo": "Plate recognition at the entrance",
+          "texto": "With plate-recognition cameras the vehicle registers itself: on arrival, HUB Carwash opens the order with the customer and their history, and sends a WhatsApp when it is ready. PROOQ installs and configures the cameras.",
+          "puntos": [
+            "Hikvision or Dahua ANPR cameras at the entrance",
+            "Local bridge on your network that sends each plate to the system",
+            "The order opens with customer, vehicle and history preloaded",
+            "Automatic notice to the customer when the vehicle is ready"
+          ],
+          "nota": "Requires a local network and on-site installation. Quoted together with the hardware.",
+          "pasos": [
+            {
+              "icono": "📷",
+              "titulo": "LPR camera",
+              "sub": "at the entrance",
+              "flecha": "plate"
+            },
+            {
+              "icono": "🖥️",
+              "titulo": "Local bridge",
+              "sub": "mini PC on your LAN",
+              "flecha": "HTTPS"
+            },
+            {
+              "icono": "☁️",
+              "titulo": "HUB Carwash",
+              "sub": "in the cloud",
+              "flecha": "order"
+            },
+            {
+              "icono": "💬",
+              "titulo": "Intake",
+              "sub": "+ WhatsApp"
+            }
+          ]
+        },
+        "hablemos": {
+          "titulo": "Opening a car wash, or want to get the one you have in order?",
+          "texto": "We show you HUB Carwash running with your services and your bays. We set up your account, load your catalog and your washers with their commissions, and train your team."
+        },
+        "beneficios": [
+          "DGI electronic invoicing included",
+          "Washers use it from their phone, nothing to install",
+          "Your data in your own database, backed up",
+          "Local support via WhatsApp",
+          "All updates included",
+          "On-site installation and training by PROOQ"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "Ready to see your bays ",
+            "destacado": "live",
+            "despues": "?"
+          },
+          "texto": "We'll do a demo with your services and your bays, no strings attached."
+        },
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Carwash — Car wash management system in Panama",
+          "description": "Intake by plate, live bays, cash register, automatic commissions, loyalty and DGI e-invoicing. The car wash system made in Panama."
+        },
+        "wa_text": "Hi, I'd like info about HUB Carwash 🚗",
+        "wa_demo": "Hi, I'd like a demo of HUB Carwash for my car wash"
+      }
+    },
+    "clinic": {
+      "slug": "clinic",
+      "nombre": "Hub Clinic",
+      "publicado": false,
+      "acento": "#2563EB",
+      "imagenes_base": "https://suitehub.net/images/products/clinic/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/clinic",
+        "en": "https://suitehub.net/en/verticals/clinic"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Clinic",
+        "tagline": "Para consultorios médicos, odontológicos y clínicas multi-especialidad.",
+        "intro": "Expediente clínico digital, agenda por médico, recetas electrónicas, historial de pacientes, facturación a aseguradoras.",
+        "chips": [
+          "🩺 Expediente digital",
+          "📅 Agenda multi-médico",
+          "💊 Recetas digitales",
+          "✅ Seguros médicos"
+        ],
+        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
+        "solucion": "😎 Gestiona tu consultorios y clínicas desde el celular o la PC",
+        "solucion_sub": "Expediente clínico digital, agenda por médico, recetas electrónicas, historial de pacientes, facturación a aseguradoras.",
+        "funciones": [
+          {
+            "icono": "🩺",
+            "titulo": "Expediente digital",
+            "texto": "SOAP, antecedentes, signos vitales"
+          },
+          {
+            "icono": "📅",
+            "titulo": "Agenda multi-médico",
+            "texto": "Por especialista, sala, equipo"
+          },
+          {
+            "icono": "💊",
+            "titulo": "Recetas digitales",
+            "texto": "PDF firmado o impreso, control regulado"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Seguros médicos",
+            "texto": "Facturación a aseguradoras con códigos"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Clinic — Para consultorios médicos, odontológicos y clínicas multi-especialidad.",
+          "description": "Expediente clínico digital, agenda por médico, recetas electrónicas, historial de pacientes, facturación a aseguradoras."
+        },
+        "wa_text": "Hola, me interesa Hub Clinic 🩺"
+      },
+      "en": {
+        "titulo": "HUB Clinic",
+        "tagline": "For medical and dental practices and multi-specialty clinics.",
+        "intro": "Digital clinical record, doctor schedule, electronic prescriptions, patient history, billing to insurers.",
+        "chips": [
+          "✅ Digital records",
+          "✅ Multi-doctor schedule",
+          "✅ Digital prescriptions",
+          "✅ Health insurance"
+        ],
+        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
+        "solucion": "Run your practices and clinics from your phone or PC",
+        "solucion_sub": "Digital clinical record, doctor schedule, electronic prescriptions, patient history, billing to insurers.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Digital records",
+            "texto": "SOAP, history, vital signs"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Multi-doctor schedule",
+            "texto": "Per specialist, room, equipment"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Digital prescriptions",
+            "texto": "Signed PDF or printed, regulated control"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Health insurance",
+            "texto": "Billing to insurers with codes"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Clinic — For medical and dental practices and multi-specialty clinics.",
+          "description": "Digital clinical record, doctor schedule, electronic prescriptions, patient history, billing to insurers."
+        },
+        "wa_text": "Hi, I'm interested in Hub Clinic 🩺"
+      }
+    },
+    "core": {
+      "slug": "core",
+      "nombre": "Hub Core",
+      "publicado": false,
+      "acento": "#1F4570",
+      "imagenes_base": "https://suitehub.net/images/products/core/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/core",
+        "en": "https://suitehub.net/en/verticals/core"
+      },
+      "hero": {
+        "imagen": "dashboard.svg",
+        "ancho": 1000,
+        "alto": 620
+      },
+      "es": {
+        "titulo": "HUB Core",
+        "tagline": "El sistema administrativo modular para tu empresa 🧩📈",
+        "intro": "El núcleo administrativo que crece con tu empresa: clientes, cotizaciones, factura electrónica con CUFE y QR, inventario, compras, cuentas por cobrar, caja rápida y reportes. Activas solo los módulos que necesitas. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "🧩 Modular de verdad",
+          "🧾 Factura electrónica",
+          "📄 Cotizaciones a factura",
+          "💵 Caja rápida (POS)"
+        ],
+        "problema": "😩 ¿Cotizas en Excel, facturas a mano, llevas el inventario en otro lado y al final del mes nadie cuadra con la factura electrónica?",
+        "solucion": "😎 Cotiza, factura, controla inventario y compras — y mide tu ganancia, todo en un solo sistema",
+        "solucion_sub": "El núcleo administrativo que crece con tu empresa: clientes, cotizaciones, factura electrónica con CUFE y QR, inventario, compras, cuentas por cobrar, caja rápida y reportes. Activas solo los módulos que necesitas. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "dashboard.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📈 Tu empresa de un vistazo: ventas, gastos, utilidad y módulos",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🧾 Factura electrónica con CUFE y QR y QR, lista para imprimir o WhatsApp",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "caja.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "💵 Caja rápida: cobra, calcula el vuelto y factura en segundos",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reportes.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📊 Reportes en 3 niveles, incluido el ITBMS mensual para la DGI",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🧩",
+            "titulo": "Modular de verdad",
+            "texto": "Empiezas con lo básico y activas módulos (compras, caja, CxC…) a medida que tu empresa crece."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Factura electrónica",
+            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact, HKA o Factura Fácil); imprime en carta u 80mm."
+          },
+          {
+            "icono": "📄",
+            "titulo": "Cotizaciones a factura",
+            "texto": "Arma la cotización con cálculo en vivo y conviértela en factura electrónica en un clic."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Caja rápida (POS)",
+            "texto": "Cobro al mostrador con buscador, denominaciones y vuelto; emite factura electrónica y recibo 80mm al instante."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventario y compras",
+            "texto": "Stock que baja al vender y sube al recibir compras; listas de precio (Lista 1 / Lista 2) y alertas de mínimos."
+          },
+          {
+            "icono": "💰",
+            "titulo": "Cuentas por cobrar",
+            "texto": "Recibos que aplican a varias facturas, antigüedad de saldos y control de quién te debe."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reportes en 3 niveles",
+            "texto": "Pre-armados con filtros, SQL con whitelist (read-only) y plantillas PDF editables. Exporta a Excel."
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Roles, auditoría y PWA",
+            "texto": "Permisos por módulo, bitácora de cada acción, tema claro/oscuro y app instalable (PWA)."
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI (CUFE y QR) con 3 PACs a elegir",
+          "Modular: activa solo lo que tu empresa necesita",
+          "Inventario, compras y cuentas por cobrar integrados",
+          "Reportes en 3 niveles + exportación a Excel/PDF",
+          "Roles, auditoría y app instalable (PWA)",
+          "Soporte local · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Core — El sistema administrativo modular para tu empresa 🧩📈",
+          "description": "El núcleo administrativo que crece con tu empresa: clientes, cotizaciones, factura electrónica con CUFE y QR, inventario, compras, cuentas por cobrar, caja rápida y reportes. Activas solo los módulos que necesitas. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub Core 🧩"
+      },
+      "en": {
+        "titulo": "HUB Core",
+        "tagline": "The modular business management system for your company 🧩📈",
+        "intro": "The administrative core that grows with your company: customers, quotes, invoicing with sales tax, inventory, purchasing, receivables, quick-cash POS and reports. Turn on only the modules you need. Built for the US 🇺🇸",
+        "chips": [
+          "🧩 Truly modular",
+          "🧾 Invoicing",
+          "📄 Quote to invoice",
+          "💵 Quick-cash (POS)"
+        ],
+        "problema": "😩 Quoting in Excel, invoicing by hand, tracking inventory somewhere else — and nothing reconciles at month-end?",
+        "solucion": "😎 Quote, invoice, control inventory and purchasing — and measure your profit, all in one system",
+        "solucion_sub": "The administrative core that grows with your company: customers, quotes, invoicing with sales tax, inventory, purchasing, receivables, quick-cash POS and reports. Turn on only the modules you need. Built for the US 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "dashboard.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📈 Your company at a glance: sales, expenses, profit and modules",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "🧾 Invoice with sales tax and QR, ready to print or WhatsApp",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "caja.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "💵 Quick-cash: charge, calculate change and invoice in seconds",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reportes.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📊 3-level reports, including the monthly tax report",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🧩",
+            "titulo": "Truly modular",
+            "texto": "Start with the basics and switch on modules (purchasing, register, receivables…) as your company grows."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Invoicing",
+            "texto": "Issue invoices with automatic sales tax and a receipt; print on letter or 80mm."
+          },
+          {
+            "icono": "📄",
+            "titulo": "Quote to invoice",
+            "texto": "Build the quote with live totals and turn it into an invoice in one click."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Quick-cash (POS)",
+            "texto": "Counter checkout with search, denominations and change; issues the invoice and an 80mm receipt instantly."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventory & purchasing",
+            "texto": "Stock drops on sale and rises when you receive purchases; price lists and low-stock alerts."
+          },
+          {
+            "icono": "💰",
+            "titulo": "Accounts receivable",
+            "texto": "Receipts applied across multiple invoices, aging of balances and control of who owes you."
+          },
+          {
+            "icono": "📊",
+            "titulo": "3-level reports",
+            "texto": "Prebuilt with filters, SQL with a whitelist (read-only) and editable PDF templates. Export to Excel."
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Roles, audit & PWA",
+            "texto": "Per-module permissions, a log of every action, light/dark theme and an installable app (PWA)."
+          }
+        ],
+        "beneficios": [
+          "Invoicing with automatic sales tax included",
+          "Modular: turn on only what your company needs",
+          "Inventory, purchasing and receivables integrated",
+          "3-level reports + Excel/PDF export",
+          "Roles, audit log and installable app (PWA)",
+          "Local support · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Core — The modular business management system for your company 🧩📈",
+          "description": "The administrative core that grows with your company: customers, quotes, invoicing with sales tax, inventory, purchasing, receivables, quick-cash POS and reports. Turn on only the modules you need. Built for the US 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub Core 🧩"
+      }
+    },
+    "enterprise": {
+      "slug": "enterprise",
+      "nombre": "Hub Enterprise",
+      "publicado": false,
+      "acento": "#0A2540",
+      "imagenes_base": "https://suitehub.net/images/products/enterprise/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/enterprise",
+        "en": "https://suitehub.net/en/verticals/enterprise"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Enterprise",
+        "tagline": "Hub Enterprise — máxima potencia y white-label",
+        "intro": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom.",
+        "chips": [
+          "🏷️ White-label completo",
+          "🧠 Reportes con IA",
+          "♾️ API ilimitada",
+          "📞 SLA + account manager"
+        ],
+        "problema": "😩 ¿Tu operación creció y tu sistema actual se te quedó chico?",
+        "solucion": "😎 Hub Enterprise: el siguiente nivel de SuiteHub",
+        "solucion_sub": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom.",
+        "funciones": [
+          {
+            "icono": "🏷️",
+            "titulo": "White-label completo",
+            "texto": "Revende SuiteHub con tu propia marca."
+          },
+          {
+            "icono": "🧠",
+            "titulo": "Reportes con IA",
+            "texto": "Análisis y resúmenes automáticos."
+          },
+          {
+            "icono": "♾️",
+            "titulo": "API ilimitada",
+            "texto": "Sin límites de llamadas ni webhooks."
+          },
+          {
+            "icono": "📞",
+            "titulo": "SLA + account manager",
+            "texto": "Soporte contractual y un consultor dedicado."
+          }
+        ],
+        "beneficios": [
+          "La sucursal principal incluida y todas las que quieras sumar",
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Enterprise — Hub Enterprise — máxima potencia y white-label",
+          "description": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom."
+        },
+        "wa_text": "Hola, me interesa Hub Enterprise 🏢"
+      },
+      "en": {
+        "titulo": "HUB Enterprise",
+        "tagline": "Hub Enterprise — maximum power and white-label",
+        "intro": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom.",
+        "chips": [
+          "🏷️ Full white-label",
+          "🧠 AI reports",
+          "♾️ Unlimited API",
+          "📞 SLA + account manager"
+        ],
+        "problema": "Outgrew your current system as your operation scaled?",
+        "solucion": "Hub Enterprise: the next level of SuiteHub",
+        "solucion_sub": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom.",
+        "funciones": [
+          {
+            "icono": "🏷️",
+            "titulo": "Full white-label",
+            "texto": "Resell SuiteHub under your own brand."
+          },
+          {
+            "icono": "🧠",
+            "titulo": "AI reports",
+            "texto": "Automatic analysis and summaries."
+          },
+          {
+            "icono": "♾️",
+            "titulo": "Unlimited API",
+            "texto": "No limits on calls or webhooks."
+          },
+          {
+            "icono": "📞",
+            "titulo": "SLA + account manager",
+            "texto": "Contractual support and a dedicated consultant."
+          }
+        ],
+        "beneficios": [
+          "Main branch included, add as many branches as you need",
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Enterprise — Hub Enterprise — maximum power and white-label",
+          "description": "White-label completo (revender), reportes con IA, API ilimitada, SLA, account manager, integraciones custom."
+        },
+        "wa_text": "Hi, I'm interested in Hub Enterprise 🏢"
+      }
+    },
+    "gym": {
+      "slug": "gym",
+      "nombre": "Hub Gym",
+      "publicado": false,
+      "acento": "#DC2626",
+      "imagenes_base": "https://suitehub.net/images/products/gym/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/gym",
+        "en": "https://suitehub.net/en/verticals/gym"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Gym",
+        "tagline": "Para gimnasios, boxes de crossfit, estudios de yoga y centros deportivos.",
+        "intro": "Membresías mensuales/anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables, retención por inasistencia.",
+        "chips": [
+          "🎟️ Membresías",
+          "✅ Control de acceso",
+          "🗓️ Clases con cupo",
+          "✅ Retención"
+        ],
+        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
+        "solucion": "😎 Gestiona tu gimnasios, crossfit, yoga desde el celular o la PC",
+        "solucion_sub": "Membresías mensuales/anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables, retención por inasistencia.",
+        "funciones": [
+          {
+            "icono": "🎟️",
+            "titulo": "Membresías",
+            "texto": "Cobro recurrente, congelar, suspender"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Control de acceso",
+            "texto": "Cliente entra escaneando QR de su app"
+          },
+          {
+            "icono": "🗓️",
+            "titulo": "Clases con cupo",
+            "texto": "Reserva online, lista de espera"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Retención",
+            "texto": "Alerta si un miembro deja de venir 14 días"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Gym — Para gimnasios, boxes de crossfit, estudios de yoga y centros deportivos.",
+          "description": "Membresías mensuales/anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables, retención por inasistencia."
+        },
+        "wa_text": "Hola, me interesa Hub Gym 🏋️"
+      },
+      "en": {
+        "titulo": "HUB Gym",
+        "tagline": "For gyms, crossfit boxes, yoga studios and sports centers.",
+        "intro": "Monthly/annual memberships, QR access control, classes with capacity caps, assignable trainers, churn alerts.",
+        "chips": [
+          "✅ Memberships",
+          "✅ Access control",
+          "✅ Capacity classes",
+          "✅ Retention"
+        ],
+        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
+        "solucion": "Run your gyms, crossfit, yoga from your phone or PC",
+        "solucion_sub": "Monthly/annual memberships, QR access control, classes with capacity caps, assignable trainers, churn alerts.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Memberships",
+            "texto": "Recurring billing, freeze, suspend"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Access control",
+            "texto": "Customer enters by scanning QR from their app"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Capacity classes",
+            "texto": "Online booking, waitlist"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Retention",
+            "texto": "Alert if a member misses 14 days"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Gym — For gyms, crossfit boxes, yoga studios and sports centers.",
+          "description": "Monthly/annual memberships, QR access control, classes with capacity caps, assignable trainers, churn alerts."
+        },
+        "wa_text": "Hi, I'm interested in Hub Gym 🏋️"
+      }
+    },
+    "hotel": {
+      "slug": "hotel",
+      "nombre": "Hub Hotel",
+      "publicado": false,
+      "acento": "#CA8A04",
+      "imagenes_base": "https://suitehub.net/images/products/hotel/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/hotel",
+        "en": "https://suitehub.net/en/verticals/hotel"
+      },
+      "hero": {
+        "imagen": "web-1200.webp",
+        "ancho": 1200,
+        "alto": 864
+      },
+      "es": {
+        "titulo": "HUB Hotel",
+        "tagline": "El sistema todo-en-uno para tu hotel u hostal 🏨🛎️",
+        "intro": "Rack visual de reservas, habitaciones en vivo, folios con cargos a la habitación, POS, caja y factura electrónica con CUFE y QR — todo integrado. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "🗓️ Rack de reservaciones",
+          "🛏️ Habitaciones en vivo",
+          "🛎️ Check-in / check-out",
+          "🧾 Folios con cargo a la habitación"
+        ],
+        "problema": "😩 ¿Llevas el rack de reservas en una pizarra, los consumos en papelitos y al check-out nadie cuadra la cuenta?",
+        "solucion": "😎 Maneja reservas, recepción, consumos y facturación de tu hotel en un solo sistema",
+        "solucion_sub": "Rack visual de reservas, habitaciones en vivo, folios con cargos a la habitación, POS, caja y factura electrónica con CUFE y QR — todo integrado. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "habitaciones.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1250,
+            "titulo": "🛏️ Tablero de habitaciones: estado en vivo, tipos y tarifas por temporada",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reservaciones.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1250,
+            "titulo": "🗓️ Rack visual de 28 días con arrastrar-y-soltar y KPIs del día",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "pos.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1250,
+            "titulo": "🍽️ POS integrado: cobra directo o carga el consumo al folio del huésped",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1597,
+            "titulo": "🧾 Factura electrónica con CUFE y QR, lista para el huésped",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🗓️",
+            "titulo": "Rack de reservaciones",
+            "texto": "Calendario visual de 28 días: arrastra una reserva para moverla, valida choques al instante y cobra la estadía."
+          },
+          {
+            "icono": "🛏️",
+            "titulo": "Habitaciones en vivo",
+            "texto": "Tablero con el estado de cada habitación: disponible, ocupada, en limpieza o mantenimiento. Tarifas por temporada."
+          },
+          {
+            "icono": "🛎️",
+            "titulo": "Check-in / check-out",
+            "texto": "Llegadas, salidas y huéspedes in-house del día en un clic, con walk-in y registro de huésped exprés."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Folios con cargo a la habitación",
+            "texto": "Cada consumo (POS, lavandería, restaurante) se carga al folio del huésped y se salda al check-out."
+          },
+          {
+            "icono": "🍽️",
+            "titulo": "POS integrado",
+            "texto": "Punto de venta retail + mesas: cobra directo o carga al folio. Comparte caja, inventario y factura electrónica."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Factura electrónica",
+            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact); cuenta del huésped o consumo suelto, lista para imprimir o PDF."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Caja con arqueo",
+            "texto": "Apertura con fondo, cobros por efectivo, tarjeta o Yappy y cierre que detecta faltantes."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reportes de ocupación",
+            "texto": "Ocupación por noche, ingresos por habitación y reportes operativos exportables a Excel."
+          }
+        ],
+        "beneficios": [
+          "Rack de reservas con arrastrar-y-soltar",
+          "Folios con cargo a la habitación y check-out en un clic",
+          "POS y caja integrados al hotel",
+          "Incluye factura electrónica DGI (CUFE y QR)",
+          "Reportes de ocupación e ingresos",
+          "Soporte local · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Hotel — El sistema todo-en-uno para tu hotel u hostal 🏨🛎️",
+          "description": "Rack visual de reservas, habitaciones en vivo, folios con cargos a la habitación, POS, caja y factura electrónica con CUFE y QR — todo integrado. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub Hotel 🏨"
+      },
+      "en": {
+        "titulo": "HUB Hotel",
+        "tagline": "The all-in-one system for your hotel or B&B 🏨🛎️",
+        "intro": "Visual booking rack, live room board, folios with room charges, POS, cash and invoicing with automatic sales tax — all integrated. Built for the US 🇺🇸",
+        "chips": [
+          "🗓️ Booking rack",
+          "🛏️ Live room board",
+          "🛎️ Check-in / check-out",
+          "🧾 Folios with room charges"
+        ],
+        "problema": "😩 Tracking your booking rack on a whiteboard, guest charges on scraps of paper, and nothing reconciles at check-out?",
+        "solucion": "😎 Run bookings, front desk, guest charges and invoicing for your hotel in one system",
+        "solucion_sub": "Visual booking rack, live room board, folios with room charges, POS, cash and invoicing with automatic sales tax — all integrated. Built for the US 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "habitaciones.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1250,
+            "titulo": "🛏️ Room board: live status, types and seasonal rates",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reservaciones.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1250,
+            "titulo": "🗓️ 28-day visual rack with drag-and-drop and daily KPIs",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "pos.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1250,
+            "titulo": "🍽️ Built-in POS: charge directly or post the charge to the guest folio",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2000,
+            "alto": 1597,
+            "titulo": "🧾 Invoice with sales tax, ready for the guest",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🗓️",
+            "titulo": "Booking rack",
+            "texto": "A 28-day visual calendar: drag a reservation to move it, validate clashes instantly and charge the stay."
+          },
+          {
+            "icono": "🛏️",
+            "titulo": "Live room board",
+            "texto": "See every room at a glance: available, occupied, cleaning or maintenance. Seasonal rates."
+          },
+          {
+            "icono": "🛎️",
+            "titulo": "Check-in / check-out",
+            "texto": "The day's arrivals, departures and in-house guests in one click, with walk-in and express guest registration."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Folios with room charges",
+            "texto": "Every charge (POS, laundry, restaurant) posts to the guest folio and settles at check-out."
+          },
+          {
+            "icono": "🍽️",
+            "titulo": "Built-in POS",
+            "texto": "Retail + tables point of sale: charge directly or post to the folio. Shared register, inventory and invoices."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Invoicing",
+            "texto": "Issue invoices with automatic sales tax and a receipt; guest bill or single sale, ready to print or PDF."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Cash with reconciliation",
+            "texto": "Open with a float, take cash, card or Apple Pay and close with a count that flags shortages."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Occupancy reports",
+            "texto": "Occupancy per night, revenue per room and operational reports exportable to Excel."
+          }
+        ],
+        "beneficios": [
+          "Drag-and-drop booking rack",
+          "Folios with room charges and one-click check-out",
+          "Built-in POS and cash register",
+          "Invoicing with automatic sales tax included",
+          "Occupancy and revenue reports",
+          "Local support · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Hotel — The all-in-one system for your hotel or B&B 🏨🛎️",
+          "description": "Visual booking rack, live room board, folios with room charges, POS, cash and invoicing with automatic sales tax — all integrated. Built for the US 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub Hotel 🏨"
+      }
+    },
+    "inmobiliaria": {
+      "slug": "inmobiliaria",
+      "nombre": "Hub Inmobiliaria",
+      "publicado": false,
+      "acento": "#57534E",
+      "imagenes_base": "https://suitehub.net/images/products/inmobiliaria/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/inmobiliaria",
+        "en": "https://suitehub.net/en/verticals/inmobiliaria"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Inmobiliaria",
+        "tagline": "Para corredoras inmobiliarias y desarrolladoras pequeñas.",
+        "intro": "Cartera de propiedades, leads con etapa del pipeline, contratos de alquiler con cobro recurrente, agentes con comisiones.",
+        "chips": [
+          "🗂️ Catálogo de propiedades",
+          "✅ Pipeline de leads",
+          "📄 Contratos de alquiler",
+          "💸 Comisiones agentes"
+        ],
+        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
+        "solucion": "😎 Gestiona tu bienes raíces desde el celular o la PC",
+        "solucion_sub": "Cartera de propiedades, leads con etapa del pipeline, contratos de alquiler con cobro recurrente, agentes con comisiones.",
+        "funciones": [
+          {
+            "icono": "🗂️",
+            "titulo": "Catálogo de propiedades",
+            "texto": "Fotos, video, precio, estado"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Pipeline de leads",
+            "texto": "Interesado → visita → oferta → cierre"
+          },
+          {
+            "icono": "📄",
+            "titulo": "Contratos de alquiler",
+            "texto": "Cobro mensual auto, garantías"
+          },
+          {
+            "icono": "💸",
+            "titulo": "Comisiones agentes",
+            "texto": "Por venta cerrada o renta gestionada"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Inmobiliaria — Para corredoras inmobiliarias y desarrolladoras pequeñas.",
+          "description": "Cartera de propiedades, leads con etapa del pipeline, contratos de alquiler con cobro recurrente, agentes con comisiones."
+        },
+        "wa_text": "Hola, me interesa Hub Inmobiliaria 🏠"
+      },
+      "en": {
+        "titulo": "HUB Inmobiliaria",
+        "tagline": "For real estate agencies and small developers.",
+        "intro": "Property portfolio, leads with pipeline stages, rental contracts with recurring billing, agents with commissions.",
+        "chips": [
+          "🗂️ Property catalog",
+          "✅ Lead pipeline",
+          "✅ Rental contracts",
+          "✅ Agent commissions"
+        ],
+        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
+        "solucion": "Run your real estate from your phone or PC",
+        "solucion_sub": "Property portfolio, leads with pipeline stages, rental contracts with recurring billing, agents with commissions.",
+        "funciones": [
+          {
+            "icono": "🗂️",
+            "titulo": "Property catalog",
+            "texto": "Photos, video, price, status"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Lead pipeline",
+            "texto": "Interested → visit → offer → close"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Rental contracts",
+            "texto": "Auto-monthly billing, deposits"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Agent commissions",
+            "texto": "Per closed sale or managed rental"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Inmobiliaria — For real estate agencies and small developers.",
+          "description": "Property portfolio, leads with pipeline stages, rental contracts with recurring billing, agents with commissions."
+        },
+        "wa_text": "Hi, I'm interested in Hub Inmobiliaria 🏠"
+      }
+    },
+    "lavanderia": {
+      "slug": "lavanderia",
+      "nombre": "Hub Lavandería",
+      "publicado": false,
+      "acento": "#06B6D4",
+      "imagenes_base": "https://suitehub.net/images/products/lavanderia/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/lavanderia",
+        "en": "https://suitehub.net/en/verticals/lavanderia"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Lavandería",
+        "tagline": "Para lavanderías, tintorerías y servicios de planchado.",
+        "intro": "Boleta con código de retiro, etapa del proceso (lavado/secado/planchado), precio por kilo o por prenda, recordatorio cuando está listo.",
+        "chips": [
+          "✅ Boleta con código",
+          "✅ Etapas del proceso",
+          "✅ Precio por kilo o prenda",
+          "✅ Aviso WhatsApp"
+        ],
+        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
+        "solucion": "😎 Gestiona tu lavanderías profesionales desde el celular o la PC",
+        "solucion_sub": "Boleta con código de retiro, etapa del proceso (lavado/secado/planchado), precio por kilo o por prenda, recordatorio cuando está listo.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Boleta con código",
+            "texto": "Cliente retira con su código único"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Etapas del proceso",
+            "texto": "Recibido → lavado → secado → listo"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Precio por kilo o prenda",
+            "texto": "Configurable por servicio"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Aviso WhatsApp",
+            "texto": "Auto-mensaje cuando está listo"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Lavandería — Para lavanderías, tintorerías y servicios de planchado.",
+          "description": "Boleta con código de retiro, etapa del proceso (lavado/secado/planchado), precio por kilo o por prenda, recordatorio cuando está listo."
+        },
+        "wa_text": "Hola, me interesa Hub Lavandería 🧺"
+      },
+      "en": {
+        "titulo": "HUB Lavandería",
+        "tagline": "For laundries, dry cleaners and ironing services.",
+        "intro": "Receipt with pickup code, process stage (wash/dry/iron), price by kilo or by item, ready-when-done reminder.",
+        "chips": [
+          "✅ Receipt with code",
+          "✅ Process stages",
+          "✅ Per kilo or per item",
+          "✅ WhatsApp notice"
+        ],
+        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
+        "solucion": "Run your professional laundries from your phone or PC",
+        "solucion_sub": "Receipt with pickup code, process stage (wash/dry/iron), price by kilo or by item, ready-when-done reminder.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Receipt with code",
+            "texto": "Customer picks up with their unique code"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Process stages",
+            "texto": "Received → washed → dried → ready"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Per kilo or per item",
+            "texto": "Configurable per service"
+          },
+          {
+            "icono": "✅",
+            "titulo": "WhatsApp notice",
+            "texto": "Auto-message when ready"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Lavandería — For laundries, dry cleaners and ironing services.",
+          "description": "Receipt with pickup code, process stage (wash/dry/iron), price by kilo or by item, ready-when-done reminder."
+        },
+        "wa_text": "Hi, I'm interested in Hub Lavandería 🧺"
+      }
+    },
+    "lite": {
+      "slug": "lite",
+      "nombre": "Hub Lite",
+      "publicado": false,
+      "acento": "#64748B",
+      "imagenes_base": "https://suitehub.net/images/products/lite/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/lite",
+        "en": "https://suitehub.net/en/verticals/lite"
+      },
+      "hero": {
+        "imagen": "dashboard.svg",
+        "ancho": 1000,
+        "alto": 620
+      },
+      "es": {
+        "titulo": "HUB Lite",
+        "tagline": "Cotiza y factura desde el celular 📱🧾",
+        "intro": "Clientes, inventario, servicios, cotizaciones y factura electrónica con CUFE y QR — todo en una sola app liviana, en el celular o la PC. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "🧾 Factura electrónica",
+          "📄 Cotizaciones",
+          "🧑‍🤝‍🧑 Clientes",
+          "📦 Inventario"
+        ],
+        "problema": "😩 ¿Cotizas en Word, facturas a mano y pierdes el control de quién te debe?",
+        "solucion": "😎 Cotiza, emite factura electrónica y controla tu negocio desde el celular",
+        "solucion_sub": "Clientes, inventario, servicios, cotizaciones y factura electrónica con CUFE y QR — todo en una sola app liviana, en el celular o la PC. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "dashboard.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📊 Tu negocio de un vistazo: clientes, cobros, folios e inventario",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.svg",
+            "tipo": "desktop",
+            "ancho": 680,
+            "alto": 720,
+            "titulo": "🧾 Factura electrónica con CUFE y QR, lista para imprimir o PDF",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "movil.svg",
+            "tipo": "movil",
+            "ancho": 420,
+            "alto": 760,
+            "titulo": "📱 Cotiza y factura desde el celular — editor optimizado para móvil",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🧾",
+            "titulo": "Factura electrónica",
+            "texto": "Emite con CUFE y QR vía PAC (Digifact); imprime o guarda en PDF."
+          },
+          {
+            "icono": "📄",
+            "titulo": "Cotizaciones",
+            "texto": "Ármalas con cálculo en vivo y conviértelas en factura en un clic."
+          },
+          {
+            "icono": "🧑‍🤝‍🧑",
+            "titulo": "Clientes",
+            "texto": "Catálogo con RUC, tipos de receptor de la DGI y datos fiscales listos."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventario",
+            "texto": "Productos con control de stock, alerta de mínimo y movimientos auditados."
+          },
+          {
+            "icono": "🛠️",
+            "titulo": "Servicios",
+            "texto": "Catálogo de servicios facturables con unidad e ITBMS."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reportes",
+            "texto": "Reportes listos para usar y exportables a Excel (CSV)."
+          },
+          {
+            "icono": "📱",
+            "titulo": "Desde el celular",
+            "texto": "Optimizado para móvil: cotiza y factura donde estés. App instalable (PWA)."
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Roles y auditoría",
+            "texto": "Usuarios con permisos y bitácora de cada acción del equipo."
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI (CUFE y QR)",
+          "Funciona en celular y PC · app instalable (PWA)",
+          "Actualizaciones y soporte local incluidos",
+          "Usuarios con roles y bitácora de auditoría",
+          "Sin contratos eternos · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Lite — Cotiza y factura desde el celular 📱🧾",
+          "description": "Clientes, inventario, servicios, cotizaciones y factura electrónica con CUFE y QR — todo en una sola app liviana, en el celular o la PC. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub Lite 💼"
+      },
+      "en": {
+        "titulo": "HUB Lite",
+        "tagline": "Quote and invoice from your phone 📱🧾",
+        "intro": "Customers, inventory, services, quotes and invoicing with automatic sales tax — all in one lightweight app, on your phone or PC. Built for the US 🇺🇸",
+        "chips": [
+          "🧾 Invoicing",
+          "📄 Quotes",
+          "🧑‍🤝‍🧑 Customers",
+          "📦 Inventory"
+        ],
+        "problema": "😩 Quoting in Word, invoicing by hand and losing track of who owes you?",
+        "solucion": "😎 Quote, invoice with automatic sales tax and run your business from your phone",
+        "solucion_sub": "Customers, inventory, services, quotes and invoicing with automatic sales tax — all in one lightweight app, on your phone or PC. Built for the US 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "dashboard.svg",
+            "tipo": "desktop",
+            "ancho": 1000,
+            "alto": 620,
+            "titulo": "📊 Your business at a glance: customers, payments and inventory",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "factura.svg",
+            "tipo": "desktop",
+            "ancho": 680,
+            "alto": 720,
+            "titulo": "🧾 Invoice with sales tax and receipt, ready to print or PDF",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "movil.svg",
+            "tipo": "movil",
+            "ancho": 420,
+            "alto": 760,
+            "titulo": "📱 Quote and invoice from your phone — mobile-optimized editor",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🧾",
+            "titulo": "Invoicing",
+            "texto": "Issue invoices with automatic sales tax and a receipt; print or save to PDF."
+          },
+          {
+            "icono": "📄",
+            "titulo": "Quotes",
+            "texto": "Build them with live totals and turn them into an invoice in one click."
+          },
+          {
+            "icono": "🧑‍🤝‍🧑",
+            "titulo": "Customers",
+            "texto": "Directory with tax ID, billing details and contact info ready to go."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventory",
+            "texto": "Products with stock control, low-stock alerts and audited movements."
+          },
+          {
+            "icono": "🛠️",
+            "titulo": "Services",
+            "texto": "Catalog of billable services with unit and tax rate."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reports",
+            "texto": "Ready-to-use reports, exportable to Excel (CSV)."
+          },
+          {
+            "icono": "📱",
+            "titulo": "From your phone",
+            "texto": "Mobile-first: quote and invoice wherever you are. Installable app (PWA)."
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Roles & audit",
+            "texto": "Users with permissions and a log of every team action."
+          }
+        ],
+        "beneficios": [
+          "Automatic sales tax on every invoice",
+          "Works on phone and PC · installable app (PWA)",
+          "Updates and local support included",
+          "Users with roles and an audit log",
+          "No long contracts · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Lite — Quote and invoice from your phone 📱🧾",
+          "description": "Customers, inventory, services, quotes and invoicing with automatic sales tax — all in one lightweight app, on your phone or PC. Built for the US 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub Lite 💼"
+      }
+    },
+    "market": {
+      "slug": "market",
+      "nombre": "Hub Market",
+      "publicado": false,
+      "acento": "#65A30D",
+      "imagenes_base": "https://suitehub.net/images/products/market/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/market",
+        "en": "https://suitehub.net/en/verticals/market"
+      },
+      "hero": {
+        "imagen": "web-1280.webp",
+        "ancho": 1280,
+        "alto": 594
+      },
+      "es": {
+        "titulo": "HUB Market",
+        "tagline": "El punto de venta para tu minimarket o supermercado 🛒⚡",
+        "intro": "POS táctil, inventario con alertas de stock y caducidad, caja con arqueo, compras y reportes — en un solo sistema. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "🛒 Venta rápida",
+          "⚖️ Venta por peso",
+          "📦 Inventario y caducidad",
+          "💵 Caja y arqueo"
+        ],
+        "problema": "😩 ¿Cuaderno para el fiado, precios de memoria y sin saber qué te queda en bodega?",
+        "solucion": "😎 Vende con lector y balanza, y controla tu inventario al instante",
+        "solucion_sub": "POS táctil, inventario con alertas de stock y caducidad, caja con arqueo, compras y reportes — en un solo sistema. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "pos.webp",
+            "tipo": "desktop",
+            "ancho": 2732,
+            "alto": 1536,
+            "titulo": "🛒 Pantalla táctil: escanea, cobra y entrega el vuelto al instante",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "📊 Tu día de un vistazo: ventas, ganancia y alertas",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "inventario.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "📦 Inventario con alertas de stock bajo y de caducidad",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "📈 Reportes de ventas, ganancias y productos más vendidos",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "💵 Caja con apertura, movimientos y arqueo de cierre",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🛒",
+            "titulo": "Venta rápida",
+            "texto": "Escanea el código o toca el producto: cobras en segundos con el vuelto calculado."
+          },
+          {
+            "icono": "⚖️",
+            "titulo": "Venta por peso",
+            "texto": "Lee la etiqueta de la balanza y vende frutas, verduras o granel por kilo."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventario y caducidad",
+            "texto": "El stock baja solo al vender, con alertas de mínimos y de productos por vencer."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Caja y arqueo",
+            "texto": "Apertura con fondo, movimientos de efectivo y cierre que detecta faltantes."
+          },
+          {
+            "icono": "🚚",
+            "titulo": "Compras y proveedores",
+            "texto": "Registra la mercancía que entra: sube el stock y actualiza el costo solo."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Factura electrónica",
+            "texto": "Emite factura electrónica con RUC ante la DGI cuando el cliente la pide."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reportes y ganancias",
+            "texto": "Ventas del día, productos más vendidos y tu margen real."
+          },
+          {
+            "icono": "🔄",
+            "titulo": "Devoluciones seguras",
+            "texto": "Devuelve con autorización por PIN o aprobación por WhatsApp."
+          }
+        ],
+        "beneficios": [
+          "Lector de código de barras y balanza",
+          "Inventario con alertas de stock y caducidad",
+          "Incluye factura electrónica DGI",
+          "Varias cajas en tu red local",
+          "Funciona sin internet · tus datos son tuyos",
+          "Soporte local · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Market — El punto de venta para tu minimarket o supermercado 🛒⚡",
+          "description": "POS táctil, inventario con alertas de stock y caducidad, caja con arqueo, compras y reportes — en un solo sistema. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub Market 🛒"
+      },
+      "en": {
+        "titulo": "HUB Market",
+        "tagline": "The point of sale for your grocery or convenience store 🛒⚡",
+        "intro": "Touch POS, inventory with low-stock and expiry alerts, cash management, purchasing and reports — all in one system. Built for US small business 🇺🇸",
+        "chips": [
+          "🛒 Fast checkout",
+          "⚖️ Sell by weight",
+          "📦 Inventory & expiry",
+          "💵 Cash drawer"
+        ],
+        "problema": "😩 Still tracking credit in a notebook, prices from memory, and never sure what's in the back room?",
+        "solucion": "😎 Sell with a scanner and a scale, and control your inventory in real time",
+        "solucion_sub": "Touch POS, inventory with low-stock and expiry alerts, cash management, purchasing and reports — all in one system. Built for US small business 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "pos.webp",
+            "tipo": "desktop",
+            "ancho": 2732,
+            "alto": 1536,
+            "titulo": "🛒 Touch screen: scan, charge and hand back change instantly",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "📊 Your day at a glance: sales, profit and alerts",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "inventario.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "📦 Inventory with low-stock and expiration alerts",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "📈 Reports on sales, profit and best sellers",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1600,
+            "titulo": "💵 Cash drawer with open, movements and end-of-day count",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🛒",
+            "titulo": "Fast checkout",
+            "texto": "Scan the barcode or tap the item: charge in seconds with change calculated for you."
+          },
+          {
+            "icono": "⚖️",
+            "titulo": "Sell by weight",
+            "texto": "Read the scale label and sell produce or bulk goods by the pound."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventory & expiry",
+            "texto": "Stock drops automatically on each sale, with low-stock and expiration alerts."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Cash drawer",
+            "texto": "Open with a float, track cash movements and close with a count that flags shortages."
+          },
+          {
+            "icono": "🚚",
+            "titulo": "Purchasing & suppliers",
+            "texto": "Log incoming goods: stock goes up and cost updates on its own."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Automatic sales tax",
+            "texto": "Applies the right sales-tax rate and prints the receipt your customer needs."
+          },
+          {
+            "icono": "📊",
+            "titulo": "Reports & profit",
+            "texto": "Daily sales, best sellers and your real margin."
+          },
+          {
+            "icono": "🔄",
+            "titulo": "Secure returns",
+            "texto": "Refund with PIN authorization or WhatsApp approval."
+          }
+        ],
+        "beneficios": [
+          "Barcode scanner and scale ready",
+          "Inventory with low-stock & expiry alerts",
+          "Automatic sales tax & receipts",
+          "Multiple registers on your local network",
+          "Works offline · your data is yours",
+          "Local support · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Market — The point of sale for your grocery or convenience store 🛒⚡",
+          "description": "Touch POS, inventory with low-stock and expiry alerts, cash management, purchasing and reports — all in one system. Built for US small business 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub Market 🛒"
+      }
+    },
+    "pet": {
+      "slug": "pet",
+      "nombre": "Hub Pet",
+      "publicado": false,
+      "acento": "#0D9488",
+      "imagenes_base": "https://suitehub.net/images/products/pet/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/pet",
+        "en": "https://suitehub.net/en/verticals/pet"
+      },
+      "hero": {
+        "imagen": "web-1280.webp",
+        "ancho": 1280,
+        "alto": 994
+      },
+      "es": {
+        "titulo": "HUB Pet",
+        "tagline": "El sistema para tu veterinaria o pet shop 🐾🩺",
+        "intro": "Ficha médica digital por mascota, recordatorios automáticos de vacunas y desparasitación, agenda con dueño + mascota, recetas que descuentan del inventario, caja del pet shop y factura electrónica con CUFE y QR — todo integrado. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "🩺 Ficha médica digital",
+          "🔔 Recordatorios automáticos",
+          "📅 Agenda dueño + mascota",
+          "💊 Recetas con stock"
+        ],
+        "problema": "😩 ¿Llevas las fichas de cada mascota en papel, se pierden los carnets de vacunas y nadie recuerda cuándo toca el próximo control?",
+        "solucion": "😎 Lleva la ficha médica de cada mascota, agenda las citas y avisa la próxima vacuna — todo en un sistema",
+        "solucion_sub": "Ficha médica digital por mascota, recordatorios automáticos de vacunas y desparasitación, agenda con dueño + mascota, recetas que descuentan del inventario, caja del pet shop y factura electrónica con CUFE y QR — todo integrado. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "ficha.webp",
+            "tipo": "desktop",
+            "ancho": 1280,
+            "alto": 994,
+            "titulo": "🩺 Ficha médica por mascota: vacunas, peso, alergias y galería en un solo lugar",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🩺",
+            "titulo": "Ficha médica digital",
+            "texto": "Historial por mascota: vacunas, alergias, peso, tratamientos y notas de cada visita."
+          },
+          {
+            "icono": "🔔",
+            "titulo": "Recordatorios automáticos",
+            "texto": "Avisa por WhatsApp la próxima vacuna, desparasitación o control — y tus clientes vuelven."
+          },
+          {
+            "icono": "📅",
+            "titulo": "Agenda dueño + mascota",
+            "texto": "Citas de veterinaria, peluquería canina y hospitalización en un solo calendario."
+          },
+          {
+            "icono": "💊",
+            "titulo": "Recetas con stock",
+            "texto": "Receta el medicamento y descuéntalo del inventario; control de venta regulada."
+          },
+          {
+            "icono": "📸",
+            "titulo": "Galería por mascota",
+            "texto": "Fotos antes/después, radiografías y documentos adjuntos a cada ficha."
+          },
+          {
+            "icono": "🛒",
+            "titulo": "Pet shop y servicios",
+            "texto": "Vende alimentos, accesorios y baños en la misma caja, con el vuelto calculado."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Factura electrónica",
+            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact); imprime en ticket 80mm o carta."
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Roles, auditoría y PWA",
+            "texto": "Permisos por módulo, bitácora de cada acción y app instalable (PWA)."
+          }
+        ],
+        "beneficios": [
+          "Ficha médica y galería por mascota",
+          "Recordatorios automáticos de vacunas y desparasitación por WhatsApp",
+          "Pet shop, servicios y caja en un solo sistema",
+          "Incluye factura electrónica DGI (CUFE y QR)",
+          "Funciona en celular, tablet y PC · app instalable (PWA)",
+          "Soporte local · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Pet — El sistema para tu veterinaria o pet shop 🐾🩺",
+          "description": "Ficha médica digital por mascota, recordatorios automáticos de vacunas y desparasitación, agenda con dueño + mascota, recetas que descuentan del inventario, caja del pet shop y factura electrónica con CUFE y QR — todo integrado. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub Pet 🐾"
+      },
+      "en": {
+        "titulo": "HUB Pet",
+        "tagline": "The system for your vet clinic or pet shop 🐾🩺",
+        "intro": "Digital medical chart per pet, automatic vaccine and deworming reminders, owner + pet scheduling, prescriptions that draw down inventory, pet-shop checkout and invoicing with automatic sales tax — all integrated. Built for the US 🇺🇸",
+        "chips": [
+          "🩺 Digital medical chart",
+          "🔔 Automatic reminders",
+          "📅 Owner + pet scheduling",
+          "💊 Prescriptions with stock"
+        ],
+        "problema": "😩 Keeping each pet's chart on paper, losing vaccine records, and no one remembers when the next check-up is due?",
+        "solucion": "😎 Keep every pet's medical chart, book appointments and remind owners of the next vaccine — all in one system",
+        "solucion_sub": "Digital medical chart per pet, automatic vaccine and deworming reminders, owner + pet scheduling, prescriptions that draw down inventory, pet-shop checkout and invoicing with automatic sales tax — all integrated. Built for the US 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "ficha.webp",
+            "tipo": "desktop",
+            "ancho": 1280,
+            "alto": 994,
+            "titulo": "🩺 Medical chart per pet: vaccines, weight, allergies and gallery in one place",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🩺",
+            "titulo": "Digital medical chart",
+            "texto": "History per pet: vaccines, allergies, weight, treatments and notes from every visit."
+          },
+          {
+            "icono": "🔔",
+            "titulo": "Automatic reminders",
+            "texto": "Texts the next vaccine, deworming or check-up by WhatsApp — and brings clients back."
+          },
+          {
+            "icono": "📅",
+            "titulo": "Owner + pet scheduling",
+            "texto": "Vet, grooming and boarding appointments in a single calendar."
+          },
+          {
+            "icono": "💊",
+            "titulo": "Prescriptions with stock",
+            "texto": "Prescribe the medication and draw it down from inventory; controlled-sale tracking."
+          },
+          {
+            "icono": "📸",
+            "titulo": "Gallery per pet",
+            "texto": "Before/after photos, X-rays and documents attached to each chart."
+          },
+          {
+            "icono": "🛒",
+            "titulo": "Pet shop & services",
+            "texto": "Sell food, accessories and grooming at the same register, with change calculated for you."
+          },
+          {
+            "icono": "🧾",
+            "titulo": "Invoicing",
+            "texto": "Issue invoices with automatic sales tax and a receipt; print on an 80mm ticket or letter."
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Roles, audit & PWA",
+            "texto": "Per-module permissions, a log of every action and an installable app (PWA)."
+          }
+        ],
+        "beneficios": [
+          "Medical chart and gallery per pet",
+          "Automatic vaccine and deworming reminders by WhatsApp",
+          "Pet shop, services and register in one system",
+          "Invoicing with automatic sales tax included",
+          "Works on phone, tablet and PC · installable app (PWA)",
+          "Local support · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Pet — The system for your vet clinic or pet shop 🐾🩺",
+          "description": "Digital medical chart per pet, automatic vaccine and deworming reminders, owner + pet scheduling, prescriptions that draw down inventory, pet-shop checkout and invoicing with automatic sales tax — all integrated. Built for the US 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub Pet 🐾"
+      }
+    },
+    "phone": {
+      "slug": "phone",
+      "nombre": "Hub Phone",
+      "publicado": false,
+      "acento": "#4F46E5",
+      "imagenes_base": "https://suitehub.net/images/products/phone/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/phone",
+        "en": "https://suitehub.net/en/verticals/phone"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Phone",
+        "tagline": "Para tiendas de reparación de celulares, tablets y laptops.",
+        "intro": "Recepción del equipo con diagnóstico, cotización por daño, repuestos vinculados a la orden, garantía digital, ticket con código.",
+        "chips": [
+          "✅ Diagnóstico inicial",
+          "🧑‍🤝‍🧑 Cotización al cliente",
+          "✅ Repuestos vinculados",
+          "🛡️ Garantía digital"
+        ],
+        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
+        "solucion": "😎 Gestiona tu reparación de celulares desde el celular o la PC",
+        "solucion_sub": "Recepción del equipo con diagnóstico, cotización por daño, repuestos vinculados a la orden, garantía digital, ticket con código.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Diagnóstico inicial",
+            "texto": "Modelo, daño visible, contraseña, accesorios"
+          },
+          {
+            "icono": "🧑‍🤝‍🧑",
+            "titulo": "Cotización al cliente",
+            "texto": "Apruebas y avanzamos / no apruebas y devolvemos"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Repuestos vinculados",
+            "texto": "Stock que descuenta al instalar"
+          },
+          {
+            "icono": "🛡️",
+            "titulo": "Garantía digital",
+            "texto": "PDF con QR para reclamo posterior"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Phone — Para tiendas de reparación de celulares, tablets y laptops.",
+          "description": "Recepción del equipo con diagnóstico, cotización por daño, repuestos vinculados a la orden, garantía digital, ticket con código."
+        },
+        "wa_text": "Hola, me interesa Hub Phone 📱"
+      },
+      "en": {
+        "titulo": "HUB Phone",
+        "tagline": "For phone, tablet and laptop repair shops.",
+        "intro": "Device intake with diagnosis, quote per damage, parts linked to the order, digital warranty, ticket with code.",
+        "chips": [
+          "✅ Initial diagnosis",
+          "✅ Customer quote",
+          "✅ Linked parts",
+          "✅ Digital warranty"
+        ],
+        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
+        "solucion": "Run your phone repair shops from your phone or PC",
+        "solucion_sub": "Device intake with diagnosis, quote per damage, parts linked to the order, digital warranty, ticket with code.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Initial diagnosis",
+            "texto": "Model, visible damage, password, accessories"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Customer quote",
+            "texto": "Approve and proceed / decline and return"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Linked parts",
+            "texto": "Stock decrements when installed"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Digital warranty",
+            "texto": "PDF with QR for later claims"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Phone — For phone, tablet and laptop repair shops.",
+          "description": "Device intake with diagnosis, quote per damage, parts linked to the order, digital warranty, ticket with code."
+        },
+        "wa_text": "Hi, I'm interested in Hub Phone 📱"
+      }
+    },
+    "pos": {
+      "slug": "pos",
+      "nombre": "Hub POS",
+      "publicado": false,
+      "acento": "#16A34A",
+      "imagenes_base": "https://suitehub.net/images/products/pos/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/pos",
+        "en": "https://suitehub.net/en/verticals/pos"
+      },
+      "hero": {
+        "imagen": "web-1280.webp",
+        "ancho": 1280,
+        "alto": 996
+      },
+      "es": {
+        "titulo": "HUB POS",
+        "tagline": "El POS para tu restaurante o food truck 🍔⚡",
+        "intro": "Mesas, kiosko, caja e inventario en un solo sistema — sin comisiones, sin contratos eternos y funcionando aunque se caiga el internet. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "🪑 Gestión de mesas",
+          "⚡ Toma de pedido táctil",
+          "💵 Cobro flexible",
+          "👨‍🍳 Cocina e impresión"
+        ],
+        "problema": "😩 ¿Tu POS te cobra por cada caja, comisión por cada venta y se cae sin internet?",
+        "solucion": "😎 Toma pedidos, cobra y controla tu cocina desde tu propia red",
+        "solucion_sub": "Mesas, kiosko, caja e inventario en un solo sistema — sin comisiones, sin contratos eternos y funcionando aunque se caiga el internet. Hecho para Panamá 🇵🇦",
+        "recorrido": [
+          {
+            "imagen": "tomar-pedido.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "⚡ Toma el pedido por categorías, con modificadores y notas — y cobra en un toque",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "mesas.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "🪑 Controla tu salón en vivo: mesas ocupadas, libres y para llevar de un vistazo",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "cobro.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "💵 Cobra en segundos: efectivo, tarjeta, Yappy o mixto, con propina y vuelto al instante",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "cocina.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "👨‍🍳 Las comandas llegan solas a cocina por estación — tu equipo solo marca «listo»",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "📊 Mide tu negocio: ventas, ITBMS, ticket promedio y lo más vendido, exportable a Excel",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "kiosko.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1800,
+            "titulo": "🤖 Kiosko de auto-servicio en español e inglés: el cliente ordena y paga en caja",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🪑",
+            "titulo": "Gestión de mesas",
+            "texto": "Une, divide, mueve ítems y asigna comensales por nombre. 16 acciones, todo auditado."
+          },
+          {
+            "icono": "⚡",
+            "titulo": "Toma de pedido táctil",
+            "texto": "Categorías y productos grandes con modificadores inteligentes; de pedido a cobro en segundos."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Cobro flexible",
+            "texto": "Efectivo, tarjeta, Yappy o mixto, con propina y vuelto calculado al instante."
+          },
+          {
+            "icono": "👨‍🍳",
+            "titulo": "Cocina e impresión",
+            "texto": "Comanda automática por estación a 3 tipos de impresora (red/USB) y pantalla de cocina (KDS)."
+          },
+          {
+            "icono": "🤖",
+            "titulo": "Kiosko de auto-servicio",
+            "texto": "El cliente arma su orden en tablet (español/inglés), ve su número y paga en caja."
+          },
+          {
+            "icono": "🧮",
+            "titulo": "Control de caja",
+            "texto": "Apertura con fondo, corte X parcial y cierre Z con arqueo que detecta faltantes."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventario y clientes",
+            "texto": "Stock que baja solo al vender, carga masiva por Excel y datos fiscales listos para factura electrónica."
+          },
+          {
+            "icono": "📶",
+            "titulo": "Funciona sin internet",
+            "texto": "Todo corre en tu red local: se cae la señal y sigues vendiendo igual. App instalable (PWA)."
+          }
+        ],
+        "beneficios": [
+          "Sin comisión por cada venta (0%)",
+          "Estaciones y cajas ilimitadas en tu red",
+          "Funciona sin internet (PWA instalable)",
+          "Actualizaciones y soporte local incluidos",
+          "Tus datos son tuyos, en tu propio equipo",
+          "Sin contratos eternos · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB POS — El POS para tu restaurante o food truck 🍔⚡",
+          "description": "Mesas, kiosko, caja e inventario en un solo sistema — sin comisiones, sin contratos eternos y funcionando aunque se caiga el internet. Hecho para Panamá 🇵🇦"
+        },
+        "wa_text": "Hola, me interesa Hub POS 🍔"
+      },
+      "en": {
+        "titulo": "HUB POS",
+        "tagline": "The POS for your restaurant or food truck 🍔⚡",
+        "intro": "Tables, kiosk, register and inventory in one system — no per-sale fees, no long contracts, and it keeps working even if the internet drops. Built for the US 🇺🇸",
+        "chips": [
+          "🪑 Table management",
+          "⚡ Touch ordering",
+          "💵 Flexible payment",
+          "👨‍🍳 Kitchen & printing"
+        ],
+        "problema": "😩 Is your POS charging you per register, a fee on every sale, and going down without internet?",
+        "solucion": "😎 Take orders, charge and run your kitchen from your own network",
+        "solucion_sub": "Tables, kiosk, register and inventory in one system — no per-sale fees, no long contracts, and it keeps working even if the internet drops. Built for the US 🇺🇸",
+        "recorrido": [
+          {
+            "imagen": "tomar-pedido.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "⚡ Take the order by category, with modifiers and notes — and charge in one tap",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "mesas.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "🪑 Control your floor live: occupied, free and to-go tables at a glance",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "cobro.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "💵 Charge in seconds: cash, card, Apple Pay or split, with tip and change instantly",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "cocina.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "👨‍🍳 Tickets reach the kitchen by station automatically — your team just marks “ready”",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2880,
+            "alto": 1800,
+            "titulo": "📊 Measure your business: sales, tax, average ticket and best sellers, exportable to Excel",
+            "texto": "",
+            "puntos": []
+          },
+          {
+            "imagen": "kiosko.webp",
+            "tipo": "desktop",
+            "ancho": 2560,
+            "alto": 1800,
+            "titulo": "🤖 Self-service kiosk in English and Spanish: guests order and pay at the register",
+            "texto": "",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "🪑",
+            "titulo": "Table management",
+            "texto": "Merge, split, move items and assign guests by name. 16 actions, all audited."
+          },
+          {
+            "icono": "⚡",
+            "titulo": "Touch ordering",
+            "texto": "Large categories and products with smart modifiers; from order to payment in seconds."
+          },
+          {
+            "icono": "💵",
+            "titulo": "Flexible payment",
+            "texto": "Cash, card, Apple Pay or split, with tip and change calculated instantly."
+          },
+          {
+            "icono": "👨‍🍳",
+            "titulo": "Kitchen & printing",
+            "texto": "Automatic tickets by station to 3 printer types (network/USB) and a kitchen display (KDS)."
+          },
+          {
+            "icono": "🤖",
+            "titulo": "Self-service kiosk",
+            "texto": "Guests build their order on a tablet (English/Spanish), see their number and pay at the register."
+          },
+          {
+            "icono": "🧮",
+            "titulo": "Register control",
+            "texto": "Open with a float, partial X read and Z close with a count that flags shortages."
+          },
+          {
+            "icono": "📦",
+            "titulo": "Inventory & customers",
+            "texto": "Stock that drops on each sale, bulk import via Excel and billing details ready for invoicing."
+          },
+          {
+            "icono": "📶",
+            "titulo": "Works offline",
+            "texto": "Everything runs on your local network: signal drops and you keep selling. Installable app (PWA)."
+          }
+        ],
+        "beneficios": [
+          "No fee on every sale (0%)",
+          "Unlimited stations and registers on your network",
+          "Works offline (installable PWA)",
+          "Updates and local support included",
+          "Your data is yours, on your own hardware",
+          "No long contracts · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB POS — The POS for your restaurant or food truck 🍔⚡",
+          "description": "Tables, kiosk, register and inventory in one system — no per-sale fees, no long contracts, and it keeps working even if the internet drops. Built for the US 🇺🇸"
+        },
+        "wa_text": "Hi, I'm interested in Hub POS 🍔"
+      }
+    },
+    "pro": {
+      "slug": "pro",
+      "nombre": "Hub Pro",
+      "publicado": false,
+      "acento": "#7C3AED",
+      "imagenes_base": "https://suitehub.net/images/products/pro/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/pro",
+        "en": "https://suitehub.net/en/verticals/pro"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Pro",
+        "tagline": "Hub Pro — la edición para crecer",
+        "intro": "Multi-sucursal real, automatizaciones, API REST (100 000 solicitudes al mes), webhooks, WhatsApp Business, branding propio.",
+        "chips": [
+          "🏢 Multi-sucursal",
+          "🤖 Automatizaciones",
+          "🔌 API REST + Webhooks",
+          "💬 WhatsApp Business"
+        ],
+        "problema": "😩 ¿Tu operación creció y tu sistema actual se te quedó chico?",
+        "solucion": "😎 Hub Pro: el siguiente nivel de SuiteHub",
+        "solucion_sub": "Multi-sucursal real, automatizaciones, API REST (100 000 solicitudes al mes), webhooks, WhatsApp Business, branding propio.",
+        "funciones": [
+          {
+            "icono": "🏢",
+            "titulo": "Multi-sucursal",
+            "texto": "Stock, ventas y usuarios por sucursal, con transferencias."
+          },
+          {
+            "icono": "🤖",
+            "titulo": "Automatizaciones",
+            "texto": "Tareas programadas, recordatorios y flujos."
+          },
+          {
+            "icono": "🔌",
+            "titulo": "API REST + Webhooks",
+            "texto": "Integra SuiteHub con tus otras herramientas (100 000 solicitudes al mes)."
+          },
+          {
+            "icono": "💬",
+            "titulo": "WhatsApp Business",
+            "texto": "Notificaciones y confirmaciones a tus clientes."
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Pro — Hub Pro — la edición para crecer",
+          "description": "Multi-sucursal real, automatizaciones, API REST (100 000 solicitudes al mes), webhooks, WhatsApp Business, branding propio."
+        },
+        "wa_text": "Hola, me interesa Hub Pro ⭐"
+      },
+      "en": {
+        "titulo": "HUB Pro",
+        "tagline": "Hub Pro — the edition to grow",
+        "intro": "Multi-sucursal real, automatizaciones, API REST (100 000 solicitudes al mes), webhooks, WhatsApp Business, branding propio.",
+        "chips": [
+          "🏢 Multi-branch",
+          "🤖 Automations",
+          "🔌 REST API + Webhooks",
+          "💬 WhatsApp Business"
+        ],
+        "problema": "Outgrew your current system as your operation scaled?",
+        "solucion": "Hub Pro: the next level of SuiteHub",
+        "solucion_sub": "Multi-sucursal real, automatizaciones, API REST (100 000 solicitudes al mes), webhooks, WhatsApp Business, branding propio.",
+        "funciones": [
+          {
+            "icono": "🏢",
+            "titulo": "Multi-branch",
+            "texto": "Stock, sales and users per branch, with transfers."
+          },
+          {
+            "icono": "🤖",
+            "titulo": "Automations",
+            "texto": "Scheduled tasks, reminders and flows."
+          },
+          {
+            "icono": "🔌",
+            "titulo": "REST API + Webhooks",
+            "texto": "Integrate SuiteHub with your other tools (100,000 requests a month)."
+          },
+          {
+            "icono": "💬",
+            "titulo": "WhatsApp Business",
+            "texto": "Notifications and confirmations to your customers."
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Pro — Hub Pro — the edition to grow",
+          "description": "Multi-sucursal real, automatizaciones, API REST (100 000 solicitudes al mes), webhooks, WhatsApp Business, branding propio."
+        },
+        "wa_text": "Hi, I'm interested in Hub Pro ⭐"
+      }
+    },
+    "restaurant": {
+      "slug": "restaurant",
+      "nombre": "Hub Restaurant",
+      "publicado": true,
+      "acento": "#EA580C",
+      "imagenes_base": "https://suitehub.net/images/products/restaurant/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/restaurant",
+        "en": "https://suitehub.net/en/verticals/restaurant"
+      },
+      "hero": {
+        "imagen": "web-1280.webp",
+        "ancho": 1280,
+        "alto": 875,
+        "portada": false
+      },
+      "es": {
+        "titulo": "HUB Restaurant",
+        "eyebrow": "Restaurantes y bares",
+        "titular": {
+          "antes": "HUB ",
+          "destacado": "Restaurant",
+          "despues": ""
+        },
+        "tagline": "Para restaurantes, cafeterías, bares y food trucks.",
+        "intro": "El sistema que toma pedidos, controla tus mesas y cobra —aunque se caiga el internet. Pensado para restaurantes, cafeterías, bares y food trucks.",
+        "chips": [
+          "🪑 Mesas en vivo",
+          "👨‍🍳 Comanda a cocina",
+          "💵 Cobro en segundos",
+          "📶 Funciona sin internet"
+        ],
+        "url_label": "suitehub.net/restaurant",
+        "problema": "😩 ¿Comandas en papel, meseros gritando a cocina y una caja que nunca cuadra?",
+        "solucion": {
+          "antes": "Lleva tu salón, tu cocina y tu caja desde ",
+          "destacado": "un solo sistema",
+          "despues": ""
+        },
+        "solucion_sub": "Mesas, comandas, cobro e inventario en una sola app —sin comisiones por venta y funcionando aunque se vaya la red. Hecho en Panamá 🇵🇦",
+        "recorrido_titulo": "Así se ve por dentro",
+        "recorrido": [
+          {
+            "imagen": "shot-pedido.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Toma el pedido en un toque",
+            "texto": "Productos grandes por categoría, con modificadores (tamaños, extras con precio, quitar ingredientes) y notas. De la orden al cobro en segundos.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-mesas.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Controla tu salón en vivo",
+            "texto": "Un plano que emula tu distribución real: mesas libres, ocupadas y con cuenta pedida de un vistazo. Órdenes por mesa con rondas, unir y dividir.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-cobro.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Cobra como tu cliente quiera",
+            "texto": "Efectivo, tarjeta, Yappy o pago mixto, con propina y vuelto calculados al instante. Divide la cuenta por persona o por producto sin dramas.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-cocina.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Las comandas llegan solas a cocina",
+            "texto": "Pantalla de cocina (KDS) con cada orden y su tiempo en vivo: nuevo, preparando y listo en un toque. Y si prefieres papel, cada ítem se rutea por estación a su impresora de red o USB.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-reportes.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Mide tu negocio de verdad",
+            "texto": "Ventas por método, propinas y efectivo esperado del turno en vivo, con cada movimiento de caja registrado. Cierre con arqueo y reporte Z imprimible, exportable a Excel.",
+            "puntos": []
+          }
+        ],
+        "funciones_eyebrow": "Todo lo que incluye",
+        "funciones_titulo": "Funciones de HUB Restaurant",
+        "funciones": [
+          {
+            "icono": "fa-table-cells-large",
+            "titulo": "Gestión de mesas",
+            "texto": "Une, divide y mueve ítems; asigna comensales y divide la cuenta por persona o producto."
+          },
+          {
+            "icono": "fa-bolt",
+            "titulo": "Toma de pedido táctil",
+            "texto": "Categorías y productos grandes con modificadores inteligentes; de pedido a cobro en segundos."
+          },
+          {
+            "icono": "fa-money-bill-wave",
+            "titulo": "Cobro flexible",
+            "texto": "Efectivo, tarjeta, Yappy o mixto, con propina y vuelto calculado al instante."
+          },
+          {
+            "icono": "fa-fire-burner",
+            "titulo": "Comanda a cocina",
+            "texto": "Comanda automática por estación a impresora de red o USB, ruteada por categoría."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Caja con arqueo",
+            "texto": "Apertura con fondo, movimientos de efectivo y cierre Z con arqueo que detecta faltantes."
+          },
+          {
+            "icono": "fa-box-open",
+            "titulo": "Inventario por receta",
+            "texto": "Cada plato descuenta sus ingredientes del stock al venderse: sabes tu costo real y cuándo reponer."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "Facturación electrónica DGI",
+            "texto": "Ticket con CUFE y QR de la DGI, conectado a tu PAC. Listo para Panamá."
+          },
+          {
+            "icono": "fa-wifi",
+            "titulo": "Funciona sin internet",
+            "texto": "Todo corre en tu red local: se cae la señal y sigues vendiendo. App instalable (PWA)."
+          },
+          {
+            "icono": "fa-tablet-screen-button",
+            "titulo": "Terminales por dispositivo",
+            "texto": "Configura cada tablet o caja: cuál cobra, cuál solo toma pedidos, cuál imprime y dónde."
+          }
+        ],
+        "funciones_nota": "+ Todas las funciones del núcleo SuiteHub según la edición que elijas.",
+        "hablemos": {
+          "titulo": "Hecho para tu restaurante. Te lo montamos a tu medida.",
+          "texto": "Cada negocio es distinto. Cuéntanos cómo trabajas y armamos HUB Restaurant con tu menú, tus mesas y tu forma de cobrar. Sin contratos eternos."
+        },
+        "beneficios": [
+          "Sin comisión por cada venta (0%)",
+          "Mesas, cajas y estaciones ilimitadas en tu red",
+          "Funciona sin internet (PWA instalable)",
+          "Facturación electrónica DGI incluida",
+          "Tus datos son tuyos, en tu propio equipo",
+          "Soporte local · sin contratos eternos"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "¿Listo para ",
+            "destacado": "ordenar",
+            "despues": "?"
+          },
+          "texto": "Te hacemos una demo con tu propio menú, sin compromiso. Ves HUB Restaurant funcionando antes de decidir."
+        },
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Restaurant — Sistema de gestión para restaurantes y bares",
+          "description": "El sistema que toma pedidos, controla tus mesas y cobra aunque se caiga el internet. Mesas, comanda a cocina, caja con arqueo, inventario por receta y facturación electrónica DGI. Para restaurantes, cafeterías, bares y food trucks de Panamá."
+        },
+        "wa_text": "Hola, quiero info de HUB Restaurant 🍽️",
+        "wa_demo": "Hola, quiero una demo de HUB Restaurant para mi restaurante"
+      },
+      "en": {
+        "titulo": "HUB Restaurant",
+        "eyebrow": "Restaurants and bars",
+        "titular": {
+          "antes": "HUB ",
+          "destacado": "Restaurant",
+          "despues": ""
+        },
+        "tagline": "For restaurants, cafés, bars and food trucks.",
+        "intro": "The system that takes orders, controls your tables and charges —even if the internet drops. Built for restaurants, cafés, bars and food trucks.",
+        "chips": [
+          "🪑 Live tables",
+          "👨‍🍳 Tickets to kitchen",
+          "💵 Charge in seconds",
+          "📶 Works offline"
+        ],
+        "url_label": "suitehub.net/restaurant",
+        "problema": "😩 Orders on paper, servers shouting at the kitchen, and a register that never balances?",
+        "solucion": {
+          "antes": "Run your floor, your kitchen and your register from ",
+          "destacado": "one system",
+          "despues": ""
+        },
+        "solucion_sub": "Tables, tickets, payment and inventory in a single app —no per-sale fees and working even when the network goes down. Built in Panama 🇵🇦",
+        "recorrido_titulo": "Here's how it looks inside",
+        "recorrido": [
+          {
+            "imagen": "shot-pedido.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Take the order in one tap",
+            "texto": "Large products by category, with modifiers (sizes, paid extras, removed ingredients) and notes. From order to payment in seconds.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-mesas.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Control your floor live",
+            "texto": "A layout that mirrors your real dining room: free, occupied and check-requested tables at a glance. Per-table orders with rounds, merge and split.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-cobro.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Charge however your guest wants",
+            "texto": "Cash, card, Yappy or split payment, with tip and change calculated instantly. Split the bill by person or by item, painlessly.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-cocina.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Tickets reach the kitchen on their own",
+            "texto": "A kitchen display (KDS) with every order and its live timer: new, cooking and ready in one tap. And if you prefer paper, each item is routed by station to its network or USB printer.",
+            "puntos": []
+          },
+          {
+            "imagen": "shot-reportes.webp",
+            "tipo": "desktop",
+            "ancho": 1440,
+            "alto": 900,
+            "titulo": "Truly measure your business",
+            "texto": "Live sales by payment method, tips and expected cash for the shift, with every cash movement logged. Close with reconciliation and a printable Z report, exportable to Excel.",
+            "puntos": []
+          }
+        ],
+        "funciones": [
+          {
+            "icono": "fa-table-cells-large",
+            "titulo": "Table management",
+            "texto": "Merge, split and move items; assign guests and split the bill by person or item."
+          },
+          {
+            "icono": "fa-bolt",
+            "titulo": "Touch ordering",
+            "texto": "Large categories and products with smart modifiers; from order to payment in seconds."
+          },
+          {
+            "icono": "fa-money-bill-wave",
+            "titulo": "Flexible payment",
+            "texto": "Cash, card, Yappy or split, with tip and change calculated instantly."
+          },
+          {
+            "icono": "fa-fire-burner",
+            "titulo": "Tickets to kitchen",
+            "texto": "Automatic tickets by station to a network or USB printer, routed by category."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Cash close & reconciliation",
+            "texto": "Open with a float, cash movements and a Z close with a count that flags shortages."
+          },
+          {
+            "icono": "fa-box-open",
+            "titulo": "Recipe-based inventory",
+            "texto": "Each dish subtracts its ingredients from stock on sale: know your real cost and when to restock."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "DGI electronic invoicing",
+            "texto": "Receipt with CUFE and DGI QR, connected to your PAC. Ready for Panama."
+          },
+          {
+            "icono": "fa-wifi",
+            "titulo": "Works offline",
+            "texto": "Everything runs on your local network: signal drops and you keep selling. Installable app (PWA)."
+          },
+          {
+            "icono": "fa-tablet-screen-button",
+            "titulo": "Per-device terminals",
+            "texto": "Configure each tablet or register: which one charges, which only takes orders, which prints and where."
+          }
+        ],
+        "funciones_eyebrow": "Everything it includes",
+        "funciones_titulo": "HUB Restaurant features",
+        "funciones_nota": "+ All SuiteHub core features, according to the edition you choose.",
+        "hablemos": {
+          "titulo": "Built for your restaurant. We set it up to fit you.",
+          "texto": "Every business is different. Tell us how you work and we'll set up HUB Restaurant with your menu, your tables and the way you charge. No long contracts."
+        },
+        "beneficios": [
+          "No fee on every sale (0%)",
+          "Unlimited tables, registers and stations on your network",
+          "Works offline (installable PWA)",
+          "DGI electronic invoicing included",
+          "Your data is yours, on your own hardware",
+          "Local support · no long contracts"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "Ready to ",
+            "destacado": "order",
+            "despues": "?"
+          },
+          "texto": "We'll give you a demo with your own menu, no strings attached. See HUB Restaurant working before you decide."
+        },
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Restaurant — Management system for restaurants and bars",
+          "description": "The system that takes orders, controls your tables and charges even if the internet drops. Tables, kitchen tickets, cash reconciliation, recipe-based inventory and DGI electronic invoicing. For restaurants, cafés, bars and food trucks in Panama."
+        },
+        "wa_text": "Hi, I'd like info about HUB Restaurant 🍽️",
+        "wa_demo": "Hi, I'd like a demo of HUB Restaurant for my restaurant"
+      }
+    },
+    "salon": {
+      "slug": "salon",
+      "nombre": "Hub Salon",
+      "publicado": true,
+      "acento": "#DB2777",
+      "imagenes_base": "https://suitehub.net/images/products/salon/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/salon",
+        "en": "https://suitehub.net/en/verticals/salon"
+      },
+      "hero": {
+        "imagen": "dashboard.webp",
+        "ancho": 1426,
+        "alto": 718
+      },
+      "es": {
+        "titulo": "HUB Salon",
+        "eyebrow": "Salones de belleza y barberías",
+        "titular": {
+          "antes": "HUB ",
+          "destacado": "Salon",
+          "despues": ""
+        },
+        "tagline": "El sistema de tu salón o barbería: reserva online, agenda por estilista, comisiones y factura electrónica ✂️💅",
+        "intro": "De la reserva al cobro, todo el salón en una sola pantalla. Tu clienta reserva sola desde el celular, la agenda se llena por estilista, el recordatorio sale por WhatsApp y la comisión queda calculada al cobrar.",
+        "chips": [
+          "📅 Reserva online 24/7",
+          "🗓️ Agenda por estilista",
+          "💸 Comisiones automáticas",
+          "🧾 Factura electrónica DGI"
+        ],
+        "url_label": "suitehub.net/salon",
+        "problema": "😩 ¿Las citas en un cuaderno, las comisiones en Excel y clientas que no llegan sin avisar?",
+        "solucion": {
+          "antes": "De la reserva al cobro, todo el salón en ",
+          "destacado": "una sola pantalla",
+          "despues": ""
+        },
+        "solucion_sub": "Reserva online con disponibilidad real, agenda por estilista, recordatorios por WhatsApp, comisiones calculadas al cobrar y factura electrónica en el mismo ticket. Hecho en Panamá 🇵🇦",
+        "recorrido_titulo": "Así se ve por dentro",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Hoy en tu salón, de un vistazo",
+            "texto": "Citas del día, ingresos, ocupación de la jornada y ticket promedio. Abajo, las próximas citas con su estado y el ranking de estilistas por comisión del mes.",
+            "puntos": [
+              "Citas activas e ingresos del día",
+              "Ocupación: horas agendadas sobre disponibles",
+              "Top estilistas · comisiones del mes"
+            ]
+          },
+          {
+            "imagen": "agenda.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Agenda por estilista",
+            "texto": "Una columna por estilista con las citas en su hora. Cada tarjeta muestra el servicio y su estado: reservada, confirmada, en curso, completada o no show. Navegas por día y ves cuántas citas tiene cada quien.",
+            "puntos": [
+              "Estados con color: en curso, completada, no show",
+              "Servicios combinados en una sola cita",
+              "Lista de espera cuando se llena el día"
+            ]
+          },
+          {
+            "imagen": "reserva.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Reserva online para la clienta",
+            "texto": "Un enlace público con el nombre de tu salón. La clienta elige sucursal, servicio (uno o varios), estilista o \"cualquiera disponible\", fecha y hora. Solo ve horarios reales.",
+            "puntos": [
+              "Cuatro pasos: servicio · estilista · fecha · datos",
+              "Duración y precio visibles",
+              "Multi-sucursal desde el mismo enlace"
+            ]
+          },
+          {
+            "imagen": "movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Horas valle desde el celular",
+            "texto": "La misma reserva en el teléfono de la clienta. Los horarios en verde llevan el descuento de hora valle que tú definiste; si no hay cupo, deja su WhatsApp y se le avisa cuando se libere uno.",
+            "puntos": [
+              "Descuento visible solo en franjas valle",
+              "Aviso automático de cupo liberado",
+              "Sin app ni cuenta: solo el enlace"
+            ]
+          },
+          {
+            "imagen": "cobrar.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Cobrar y facturar en un ticket",
+            "texto": "Cobras la cita o una venta de mostrador. Servicios y productos en el mismo ticket, propina sobre servicios, método de pago y factura electrónica. Lector de código de barras y atajos F2 buscar · F9 cobrar.",
+            "puntos": [
+              "Propina 5 / 10 / 15 % sobre servicios",
+              "Vuelto calculado en efectivo",
+              "Comisión de la estilista resuelta al cobrar"
+            ]
+          },
+          {
+            "imagen": "estilistas.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Tu equipo y sus comisiones",
+            "texto": "Cada estilista con sus categorías, estado en vivo (disponible / ocupada), citas y generado hoy, y su comisión acumulada del mes. Tasas por categoría de servicio y tasa de retail, editables por persona.",
+            "puntos": [
+              "Estado en vivo derivado de agenda y horario",
+              "Comisión por categoría + retail",
+              "Liquidación de comisiones por quincena en Reportes"
+            ]
+          },
+          {
+            "imagen": "clientes.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Cartera de clientas",
+            "texto": "Total, VIP, frecuentes y nuevas. Cada ficha con teléfono, visitas, gasto acumulado y su próxima cita. Las que llevan tiempo sin venir reciben el aviso de recompra según el ciclo del servicio.",
+            "puntos": [
+              "Niveles VIP y Frecuente automáticos",
+              "Agendar desde la ficha",
+              "Recompra automática por ciclo de servicio"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Todo lo que incluye",
+        "funciones_titulo": "Funciones de HUB Salon",
+        "funciones": [
+          {
+            "icono": "fa-calendar-check",
+            "titulo": "Reserva online 24/7",
+            "texto": "Servicio, estilista, fecha y hora desde un enlace. Disponibilidad real: jornada, citas y bloqueos. Varios servicios en una cita."
+          },
+          {
+            "icono": "fa-calendar-days",
+            "titulo": "Agenda por estilista",
+            "texto": "Columna por estilista con estados: reservada, confirmada, en curso, completada, no show. Lista de espera cuando no hay cupo."
+          },
+          {
+            "icono": "fa-percent",
+            "titulo": "Comisiones automáticas",
+            "texto": "Tasa por categoría de servicio y tasa de retail por estilista. Se calculan al cobrar y quedan congeladas en cada venta."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "Factura electrónica DGI",
+            "texto": "Servicios y productos en un ticket: propina, vuelto, lector de código de barras y CUFE con QR ante la DGI."
+          },
+          {
+            "icono": "fa-comment-dots",
+            "titulo": "Recordatorios por WhatsApp",
+            "texto": "Confirmación al reservar, recordatorio 24 h y 2 h antes, y enlace para cancelar o reprogramar sin llamar."
+          },
+          {
+            "icono": "fa-arrow-trend-down",
+            "titulo": "Horas valle con descuento",
+            "texto": "Defines franjas de baja demanda y el descuento aparece solo en esos horarios. Llena las horas muertas."
+          },
+          {
+            "icono": "fa-heart",
+            "titulo": "Cartera de clientas",
+            "texto": "Niveles VIP y frecuente, historial, gasto acumulado y aviso automático cuando toca volver por su ciclo."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Caja por turno",
+            "texto": "Apertura, arqueo con conteo por denominación, Corte X y Cierre Z, en hoja o ticket térmico."
+          },
+          {
+            "icono": "fa-store",
+            "titulo": "Multi-sucursal",
+            "texto": "Varias sucursales con selector en el panel y en la reserva online. Inventario de productos por sucursal."
+          }
+        ],
+        "funciones_nota": "+ Todas las funciones del núcleo SuiteHub: clientes, servicios, productos, promociones, facturas, caja y reportes.",
+        "hablemos": {
+          "titulo": "Te lo montamos con tus servicios, tus estilistas y tus horarios.",
+          "texto": "Configuramos tu cuenta, cargamos tu carta de servicios y productos, tus estilistas con sus comisiones, y capacitamos a tu equipo. Ves HUB Salon con tus datos antes de decidir."
+        },
+        "beneficios": [
+          "Facturación electrónica DGI incluida",
+          "Funciona sin internet en la red del salón",
+          "Datos del salón en tu propia base, respaldados",
+          "Soporte local por WhatsApp",
+          "Todas las actualizaciones incluidas",
+          "Sin contratos eternos"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "¿Lista para que tus clientas ",
+            "destacado": "reserven solas",
+            "despues": "?"
+          },
+          "texto": "Te hacemos una demo con tu carta de servicios, sin compromiso."
+        },
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Salon — Sistema para salones de belleza y barberías en Panamá",
+          "description": "Reserva online 24/7, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica DGI. Hecho en Panamá."
+        },
+        "wa_text": "Hola, quiero info de HUB Salon ✂️",
+        "wa_demo": "Hola, quiero una demo de HUB Salon para mi salón"
+      },
+      "en": {
+        "titulo": "HUB Salon",
+        "eyebrow": "Auto-repair shops",
+        "titular": {
+          "antes": "HUB ",
+          "destacado": "Salon",
+          "despues": ""
+        },
+        "tagline": "Your salon or barbershop system: online booking, stylist schedule, commissions and e-invoicing ✂️💅",
+        "intro": "From booking to checkout, the whole salon on one screen. Clients book themselves from their phone, the schedule fills per stylist, reminders go out on WhatsApp and commissions are calculated at checkout.",
+        "chips": [
+          "📅 Online booking 24/7",
+          "🗓️ Schedule per stylist",
+          "💸 Automatic commissions",
+          "🧾 E-invoicing"
+        ],
+        "url_label": "suitehub.net/salon",
+        "problema": "😩 Appointments in a notebook, commissions in Excel and clients who no-show without notice?",
+        "solucion": {
+          "antes": "From booking to checkout, the whole salon on ",
+          "destacado": "one screen",
+          "despues": ""
+        },
+        "solucion_sub": "Online booking with real availability, schedule per stylist, WhatsApp reminders, commissions calculated at checkout and the e-invoice on the same ticket. Made in Panama 🇵🇦",
+        "recorrido_titulo": "What it looks like inside",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Your salon today, at a glance",
+            "texto": "Today’s appointments, revenue, occupancy and average ticket. Below, upcoming appointments with status and the stylist ranking by monthly commission.",
+            "puntos": [
+              "Active appointments and revenue today",
+              "Occupancy: booked hours over available",
+              "Top stylists · monthly commissions"
+            ]
+          },
+          {
+            "imagen": "agenda.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Schedule per stylist",
+            "texto": "One column per stylist with appointments at their time. Each card shows the service and status: booked, confirmed, in progress, completed or no-show. Navigate by day and see how many appointments each one has.",
+            "puntos": [
+              "Color-coded statuses",
+              "Combined services in one appointment",
+              "Waitlist when the day is full"
+            ]
+          },
+          {
+            "imagen": "reserva.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Online booking for clients",
+            "texto": "A public link with your salon’s name. Clients pick branch, service(s), stylist or \"anyone available\", date and time. They only see real openings.",
+            "puntos": [
+              "Four steps: service · stylist · date · details",
+              "Duration and price visible",
+              "Multi-branch from the same link"
+            ]
+          },
+          {
+            "imagen": "movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Off-peak pricing on the phone",
+            "texto": "The same booking on the client’s phone. Green slots carry the off-peak discount you defined; if there is no slot, they leave their WhatsApp and get notified when one opens.",
+            "puntos": [
+              "Discount shown only in off-peak windows",
+              "Automatic freed-slot alert",
+              "No app, no account: just the link"
+            ]
+          },
+          {
+            "imagen": "cobrar.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Checkout and invoice on one ticket",
+            "texto": "Charge the appointment or a walk-in sale. Services and products on the same ticket, tip on services, payment method and e-invoice. Barcode scanner and shortcuts F2 search · F9 charge.",
+            "puntos": [
+              "Tip 5 / 10 / 15 % on services",
+              "Change calculated for cash",
+              "Stylist commission resolved at checkout"
+            ]
+          },
+          {
+            "imagen": "estilistas.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Your team and their commissions",
+            "texto": "Each stylist with categories, live status (available / busy), today’s appointments and revenue, and the month’s commission. Rates per service category and a retail rate, editable per person.",
+            "puntos": [
+              "Live status from schedule and hours",
+              "Commission per category + retail",
+              "Biweekly commission settlement in Reports"
+            ]
+          },
+          {
+            "imagen": "clientes.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Client base",
+            "texto": "Total, VIP, frequent and new. Each profile with phone, visits, total spend and next appointment. Lapsed clients get a rebooking reminder based on the service cycle.",
+            "puntos": [
+              "Automatic VIP and Frequent tiers",
+              "Book from the profile",
+              "Automatic rebooking by service cycle"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Everything included",
+        "funciones_titulo": "HUB Salon features",
+        "funciones": [
+          {
+            "icono": "fa-calendar-check",
+            "titulo": "Online booking 24/7",
+            "texto": "Service, stylist, date and time from a link. Real availability: hours, appointments and blocks. Several services in one booking."
+          },
+          {
+            "icono": "fa-calendar-days",
+            "titulo": "Schedule per stylist",
+            "texto": "One column per stylist with statuses: booked, confirmed, in progress, completed, no-show. Waitlist when there is no slot."
+          },
+          {
+            "icono": "fa-percent",
+            "titulo": "Automatic commissions",
+            "texto": "Rate per service category plus a retail rate per stylist. Calculated at checkout and frozen on each sale."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "E-invoicing",
+            "texto": "Services and products on one ticket: tip, change, barcode scanner and electronic invoice with the tax authority."
+          },
+          {
+            "icono": "fa-comment-dots",
+            "titulo": "WhatsApp reminders",
+            "texto": "Confirmation on booking, reminders 24 h and 2 h before, and a link to cancel or reschedule without calling."
+          },
+          {
+            "icono": "fa-arrow-trend-down",
+            "titulo": "Off-peak discounts",
+            "texto": "Define low-demand windows and the discount shows only at those times. Fill the dead hours."
+          },
+          {
+            "icono": "fa-heart",
+            "titulo": "Client base",
+            "texto": "VIP and frequent tiers, history, total spend and an automatic reminder when it is time to come back."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Shift cash register",
+            "texto": "Open, count by denomination, X report and Z closing, on paper or thermal ticket."
+          },
+          {
+            "icono": "fa-store",
+            "titulo": "Multi-branch",
+            "texto": "Several branches with a selector in the panel and the booking page. Product inventory per branch."
+          }
+        ],
+        "funciones_nota": "+ Every SuiteHub core function: customers, services, products, promotions, invoices, cash register and reports.",
+        "hablemos": {
+          "titulo": "We set it up with your services, your stylists and your hours.",
+          "texto": "We configure your account, load your service menu and products, your stylists with their commission rates, and train your team. You see HUB Salon with your data before you decide."
+        },
+        "beneficios": [
+          "E-invoicing included",
+          "Works offline on the salon’s network",
+          "Your salon’s data in your own database, backed up",
+          "Local WhatsApp support",
+          "All updates included",
+          "No long-term contracts"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "Ready to let your clients ",
+            "destacado": "book themselves",
+            "despues": "?"
+          },
+          "texto": "We run a demo with your own service menu, no strings attached."
+        },
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Salon — Salon and barbershop management system in Panama",
+          "description": "Online booking 24/7, schedule per stylist, automatic commissions, WhatsApp reminders, off-peak discounts and e-invoicing. Made in Panama."
+        },
+        "wa_text": "Hi, I'd like info about HUB Salon ✂️",
+        "wa_demo": "Hi, I'd like a demo of HUB Salon for my salon"
+      }
+    },
+    "taller": {
+      "slug": "taller",
+      "nombre": "Hub Taller",
+      "publicado": true,
+      "acento": "#F59E0B",
+      "imagenes_base": "https://suitehub.net/images/products/taller/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/taller",
+        "en": "https://suitehub.net/en/verticals/taller"
+      },
+      "hero": {
+        "imagen": "dashboard.webp",
+        "ancho": 2852,
+        "alto": 1436,
+        "fondo": "hero.webp"
+      },
+      "es": {
+        "titulo": "HUB Taller",
+        "eyebrow": "Talleres mecánicos",
+        "titular": {
+          "antes": "HUB ",
+          "destacado": "Taller",
+          "despues": ""
+        },
+        "tagline": "El sistema de tu taller mecánico: recepción por placa, órdenes de trabajo y factura electrónica 🔧🚗",
+        "intro": "Del ingreso a la factura, cada carro en una sola orden. Recepción por placa, cotización que el cliente aprueba desde su teléfono, agenda por bahía y el mecánico trabajando desde su celular.",
+        "chips": [
+          "⚡ Recepción por placa",
+          "📋 Órdenes de trabajo",
+          "📲 Cotización aprobada por el cliente",
+          "🧾 Factura electrónica DGI"
+        ],
+        "url_label": "suitehub.net/taller",
+        "problema": "😩 ¿Recibes carros en un cuaderno, cotizas por WhatsApp y al final nadie sabe qué se aprobó?",
+        "solucion": {
+          "antes": "Del ingreso a la factura, cada carro en ",
+          "destacado": "una sola orden",
+          "despues": ""
+        },
+        "solucion_sub": "Recepción por placa con comprobante, tablero de órdenes por estado, cotización que el cliente aprueba desde su teléfono, factura electrónica al cobrar y el mecánico desde su celular. Hecho en Panamá 🇵🇦",
+        "recorrido_titulo": "Así se ve por dentro",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Tu taller de un vistazo",
+            "texto": "Al abrir el sistema ves cuántos carros hay en taller, cuáles están listos para entregar, las citas de hoy y lo facturado del mes. Nada de preguntar por el taller: está en pantalla.",
+            "puntos": [
+              "Vehículos en taller y órdenes por estado",
+              "Ingresos del mes y por cobrar",
+              "Citas de hoy y qué hay en cada bahía"
+            ]
+          },
+          {
+            "imagen": "recepcion.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Recepción en dos pasos",
+            "texto": "Escribes la placa y aparece la ficha del vehículo con su dueño y su último servicio. Registras kilometraje, combustible, motivo de ingreso, inventario de entrada y fotos, y sale el comprobante de 80 mm para el cliente.",
+            "puntos": [
+              "Si la placa no existe, creas cliente y vehículo sin salir de la pantalla",
+              "Comprobante impreso con los datos de entrada",
+              "La orden nace numerada (OT-0001) y con mecánico asignado"
+            ]
+          },
+          {
+            "imagen": "tablero.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Tablero de órdenes por estado",
+            "texto": "Cada columna es un estado del carro: recibido, diagnóstico, por aprobar, en proceso, listo. Asignas mecánico y ves cuánto tiempo lleva cada uno. Filtra por placa, cliente o mecánico.",
+            "puntos": [
+              "Tiempo en taller visible en cada tarjeta",
+              "Cotización enviada y aprobada marcadas",
+              "Lista o tablero, como prefieras trabajar"
+            ]
+          },
+          {
+            "imagen": "orden.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La orden: ítems, aprobación y bitácora",
+            "texto": "Servicios, repuestos y mano de obra con su precio, ITBMS y quién lo aprobó. La bitácora registra cada paso con hora. Desde aquí cotizas lo pendiente y facturas lo aprobado.",
+            "puntos": [
+              "Nunca se factura un ítem dos veces",
+              "Fotos de entrada y del diagnóstico adjuntas",
+              "WhatsApp al cliente con un toque"
+            ]
+          },
+          {
+            "imagen": "cotizacion-cliente.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "El cliente aprueba desde su teléfono",
+            "texto": "Le mandas el enlace por WhatsApp y ve la cotización con el detalle: \"¿Autoriza el trabajo por B/. 167.99?\". Aprueba o rechaza con un toque, sin cuenta ni app, y la orden pasa sola a \"en proceso\".",
+            "puntos": [
+              "Enlace público con vencimiento, sin registro",
+              "Aprobar, rechazar o consultar por WhatsApp",
+              "Queda registrado quién aprobó y cuándo"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Factura electrónica desde la orden lista",
+            "texto": "Cobras lo aprobado y sale la factura electrónica autorizada por la DGI con CUFE y QR, ticket de 80 mm o PDF carta, y el enlace para que el cliente la vea en su teléfono. Pagos parciales y crédito con vencimiento.",
+            "puntos": [
+              "CUFE, QR y correlativo fiscal en el documento",
+              "Ticket 80 mm, PDF y WhatsApp con un clic",
+              "Efectivo, tarjeta, Yappy, transferencia o crédito"
+            ]
+          },
+          {
+            "imagen": "vehiculo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Ficha e histórico de cada vehículo",
+            "texto": "Visitas, kilometraje actual, gasto acumulado y última visita. El histórico completo de órdenes y los mantenimientos programados por kilometraje o fecha, con barra de avance y recordatorio al cliente.",
+            "puntos": [
+              "Próximo cambio de aceite, rotación, frenos, correa",
+              "Informe PDF del vehículo para el dueño",
+              "Programar recordatorio por WhatsApp"
+            ]
+          },
+          {
+            "imagen": "agenda.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Agenda por mecánico y por bahía",
+            "texto": "Vista de semana o de día con colores por mecánico. Clic en una hora libre y creas la cita por placa, aunque el cliente todavía no exista. Choques de bahía o de mecánico quedan bloqueados.",
+            "puntos": [
+              "Cita → \"Llegó\" → recepción con todo cargado",
+              "Recordatorios de mañana listos para WhatsApp",
+              "Estados: programada, confirmada, llegó, no vino"
+            ]
+          },
+          {
+            "imagen": "movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "El mecánico trabaja desde su celular",
+            "texto": "Sus órdenes de hoy con el botón grande del siguiente paso: iniciar, marcar listo. Foto directa desde la cámara, nota rápida y agenda del día. Sin sidebar ni PC.",
+            "puntos": [
+              "Mis órdenes, esta semana y listas",
+              "Foto de evidencia en un toque",
+              "Su producción en el perfil"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Todo lo que incluye",
+        "funciones_titulo": "Funciones de HUB Taller",
+        "funciones": [
+          {
+            "icono": "fa-bolt",
+            "titulo": "Recepción por placa",
+            "texto": "Placa → ficha. Kilometraje, combustible, motivo, inventario de entrada y fotos. Comprobante de 80 mm al instante."
+          },
+          {
+            "icono": "fa-clipboard-list",
+            "titulo": "Órdenes de trabajo",
+            "texto": "Servicios, repuestos y mano de obra en una orden numerada, con estados de recibido a entregado."
+          },
+          {
+            "icono": "fa-mobile-screen-button",
+            "titulo": "Cotización aprobada por el cliente",
+            "texto": "Se arma desde la orden; el cliente aprueba o rechaza desde un enlace en su teléfono, sin cuenta ni app."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "Factura electrónica DGI",
+            "texto": "Cobras desde la orden lista: CUFE y QR con tu PAC, ticket 80 mm o PDF carta, pagos parciales y crédito."
+          },
+          {
+            "icono": "fa-calendar-days",
+            "titulo": "Agenda que se convierte en orden",
+            "texto": "Citas por placa, mecánico y bahía. \"Llegó\" abre la recepción con todo cargado."
+          },
+          {
+            "icono": "fa-mobile-screen",
+            "titulo": "El mecánico en su celular",
+            "texto": "Sus órdenes del día, el botón del siguiente paso, foto desde la cámara y nota rápida."
+          },
+          {
+            "icono": "fa-car",
+            "titulo": "Histórico por vehículo",
+            "texto": "Visitas, kilometraje, gasto acumulado y mantenimientos programados por km o fecha."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Caja y cuentas por cobrar",
+            "texto": "Turnos con arqueo, quién debe y desde cuándo, recordatorio de cobro por WhatsApp."
+          },
+          {
+            "icono": "fa-chart-column",
+            "titulo": "Reportes descargables",
+            "texto": "Taller, dinero, mecánicos, inventario y clientes, por período y a Excel."
+          }
+        ],
+        "funciones_nota": "+ Todas las funciones del núcleo SuiteHub: clientes, servicios, repuestos, cotizaciones, facturas, caja y cuentas por cobrar.",
+        "hablemos": {
+          "titulo": "Te lo montamos con tus servicios, tus mecánicos y tus bahías.",
+          "texto": "Configuramos tu cuenta, cargamos tu catálogo de servicios y repuestos y capacitamos a tu equipo. Ves HUB Taller con tus datos antes de decidir."
+        },
+        "beneficios": [
+          "Facturación electrónica DGI incluida",
+          "Funciona en la PC del mostrador y en el celular del mecánico",
+          "Datos del taller en tu propia base, respaldados",
+          "Soporte local por WhatsApp",
+          "Todas las actualizaciones incluidas",
+          "Sin contratos eternos"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "¿Listo para ",
+            "destacado": "recibir el próximo carro",
+            "despues": " sin cuaderno?"
+          },
+          "texto": "Te hacemos una demo con tus propios servicios, sin compromiso."
+        },
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Taller — Sistema para talleres mecánicos en Panamá",
+          "description": "Recepción por placa, órdenes de trabajo, cotización que el cliente aprueba desde su teléfono, agenda por mecánico y bahía, factura electrónica DGI y el mecánico trabajando desde su celular. Hecho en Panamá."
+        },
+        "wa_text": "Hola, quiero info de HUB Taller 🔧",
+        "wa_demo": "Hola, quiero una demo de HUB Taller para mi taller"
+      },
+      "en": {
+        "titulo": "HUB Taller",
+        "eyebrow": "Auto-repair shops",
+        "titular": {
+          "antes": "HUB ",
+          "destacado": "Taller",
+          "despues": ""
+        },
+        "tagline": "Your auto shop system: plate-based intake, work orders and e-invoicing 🔧🚗",
+        "intro": "From intake to invoice, every car on a single work order. Plate-based intake, quotes the customer approves from their phone, scheduling by bay and mechanics working from their phones.",
+        "chips": [
+          "⚡ Plate-based intake",
+          "📋 Work orders",
+          "📲 Customer-approved quotes",
+          "🧾 DGI e-invoicing"
+        ],
+        "url_label": "suitehub.net/taller",
+        "problema": "😩 Taking cars in on a notebook, quoting on WhatsApp and nobody knows what was approved?",
+        "solucion": {
+          "antes": "From intake to invoice, every car on ",
+          "destacado": "a single order",
+          "despues": ""
+        },
+        "solucion_sub": "Plate-based intake with a printed receipt, status board, quotes the customer approves from their phone, e-invoice on checkout and mechanics on their phones. Made in Panama 🇵🇦",
+        "recorrido_titulo": "What it looks like inside",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Your shop at a glance",
+            "texto": "Open the system and see how many cars are in the shop, which are ready for pickup, today’s appointments and the month’s billing. No need to walk the floor: it is on screen.",
+            "puntos": [
+              "Vehicles in shop and orders by status",
+              "Monthly revenue and receivables",
+              "Today’s appointments and what is in each bay"
+            ]
+          },
+          {
+            "imagen": "recepcion.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Two-step intake",
+            "texto": "Type the plate and the vehicle record appears with its owner and last service. Log mileage, fuel, reason, walk-around checklist and photos, and print the 80 mm receipt for the customer.",
+            "puntos": [
+              "If the plate does not exist, create customer and vehicle without leaving the screen",
+              "Printed receipt with the intake data",
+              "The order is numbered (OT-0001) and assigned on creation"
+            ]
+          },
+          {
+            "imagen": "tablero.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Status board",
+            "texto": "Each column is a status: received, diagnosis, pending approval, in progress, ready. Assign mechanics and see how long each car has been in. Filter by plate, customer or mechanic.",
+            "puntos": [
+              "Time in shop on every card",
+              "Quote sent and approved flags",
+              "Board or list, whichever you prefer"
+            ]
+          },
+          {
+            "imagen": "orden.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The order: items, approval and log",
+            "texto": "Services, parts and labor with price, tax and who approved. The log records every step with a timestamp. Quote pending items and invoice approved ones from here.",
+            "puntos": [
+              "An item is never invoiced twice",
+              "Intake and diagnosis photos attached",
+              "WhatsApp the customer in one tap"
+            ]
+          },
+          {
+            "imagen": "cotizacion-cliente.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "The customer approves from their phone",
+            "texto": "Send the link on WhatsApp and they see the itemized quote: \"Do you authorize the work for B/. 167.99?\". Approve or decline with one tap, no account or app, and the order moves to \"in progress\" on its own.",
+            "puntos": [
+              "Public link with expiry, no sign-up",
+              "Approve, decline or ask on WhatsApp",
+              "Who approved and when is recorded"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Electronic invoice from the finished order",
+            "texto": "Charge what was approved and out comes the DGI-authorized electronic invoice with CUFE and QR, 80 mm ticket or letter PDF, and a link so the customer sees it on their phone. Partial payments and credit with due date.",
+            "puntos": [
+              "CUFE, QR and fiscal number on the document",
+              "80 mm ticket, PDF and WhatsApp in one click",
+              "Cash, card, Yappy, transfer or credit"
+            ]
+          },
+          {
+            "imagen": "vehiculo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Vehicle record and history",
+            "texto": "Visits, current mileage, total spend and last visit. Full order history and scheduled maintenance by mileage or date, with progress bars and customer reminders.",
+            "puntos": [
+              "Next oil change, rotation, brakes, belt",
+              "Vehicle PDF report for the owner",
+              "Schedule a WhatsApp reminder"
+            ]
+          },
+          {
+            "imagen": "agenda.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Schedule by mechanic and bay",
+            "texto": "Week or day view, color per mechanic. Click a free slot and book by plate even if the customer does not exist yet. Bay and mechanic conflicts are blocked.",
+            "puntos": [
+              "Appointment → \"Arrived\" → intake pre-filled",
+              "Tomorrow’s reminders ready for WhatsApp",
+              "Scheduled, confirmed, arrived, no-show"
+            ]
+          },
+          {
+            "imagen": "movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Mechanics work from their phones",
+            "texto": "Today’s orders with a big next-step button: start, mark ready. Camera photo, quick note and the day’s schedule. No sidebar, no desk.",
+            "puntos": [
+              "My orders, this week and ready",
+              "Evidence photo in one tap",
+              "Their production on the profile"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Everything included",
+        "funciones_titulo": "HUB Taller features",
+        "funciones": [
+          {
+            "icono": "fa-bolt",
+            "titulo": "Plate-based intake",
+            "texto": "Plate → record. Mileage, fuel, reason, walk-around checklist and photos. 80 mm receipt on the spot."
+          },
+          {
+            "icono": "fa-clipboard-list",
+            "titulo": "Work orders",
+            "texto": "Services, parts and labor on one numbered order, with statuses from received to delivered."
+          },
+          {
+            "icono": "fa-mobile-screen-button",
+            "titulo": "Customer-approved quotes",
+            "texto": "Built from the order; the customer approves or declines from a link on their phone, no account or app."
+          },
+          {
+            "icono": "fa-receipt",
+            "titulo": "DGI e-invoicing",
+            "texto": "Charge from the ready order: CUFE and QR through your PAC, 80 mm ticket or letter PDF, partial payments and credit."
+          },
+          {
+            "icono": "fa-calendar-days",
+            "titulo": "Appointments that become orders",
+            "texto": "Book by plate, mechanic and bay. \"Arrived\" opens intake with everything loaded."
+          },
+          {
+            "icono": "fa-mobile-screen",
+            "titulo": "Mechanics on their phones",
+            "texto": "Their orders for the day, the next-step button, camera photo and quick note."
+          },
+          {
+            "icono": "fa-car",
+            "titulo": "Vehicle history",
+            "texto": "Visits, mileage, total spend and scheduled maintenance by mileage or date."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Cash and receivables",
+            "texto": "Shifts with cash count, who owes and since when, WhatsApp payment reminders."
+          },
+          {
+            "icono": "fa-chart-column",
+            "titulo": "Downloadable reports",
+            "texto": "Shop, money, mechanics, inventory and customers, by period and to Excel."
+          }
+        ],
+        "funciones_nota": "+ Every SuiteHub core function: customers, services, parts, quotes, invoices, cash and receivables.",
+        "hablemos": {
+          "titulo": "We set it up with your services, your mechanics and your bays.",
+          "texto": "We configure your account, load your services and parts catalog and train your team. You see HUB Taller with your data before you decide."
+        },
+        "beneficios": [
+          "DGI e-invoicing included",
+          "Works on the front-desk PC and the mechanic’s phone",
+          "Your shop’s data in your own database, backed up",
+          "Local WhatsApp support",
+          "All updates included",
+          "No long-term contracts"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "Ready to ",
+            "destacado": "take in the next car",
+            "despues": " without a notebook?"
+          },
+          "texto": "We run a demo with your own services, no strings attached."
+        },
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Taller — Auto shop management system in Panama",
+          "description": "Plate-based intake, work orders, quotes the customer approves from their phone, scheduling by mechanic and bay, DGI e-invoicing and mechanics working from their phones. Made in Panama."
+        },
+        "wa_text": "Hi, I'd like info about HUB Taller 🔧",
+        "wa_demo": "Hi, I'd like a demo of HUB Taller for my auto shop"
+      }
+    },
+    "traffic": {
+      "slug": "traffic",
+      "nombre": "Hub Traffic",
+      "publicado": false,
+      "acento": "#A21CAF",
+      "imagenes_base": "https://suitehub.net/images/products/traffic/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/traffic",
+        "en": "https://suitehub.net/en/verticals/traffic"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Traffic",
+        "tagline": "Para tiendas, centros comerciales, locales retail y espacios de alto tráfico.",
+        "intro": "Conteo automático de personas, mapas de calor por zona, tiempo de permanencia, conversión visita-venta cruzada con tu POS, comparativas por hora/día y alertas de aforo en tiempo real.",
+        "chips": [
+          "✅ Conteo de afluencia",
+          "✅ Mapas de calor",
+          "✅ Dwell time",
+          "💰 Conversión visita→venta"
+        ],
+        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
+        "solucion": "😎 Gestiona tu analítica de afluencia y conducta en tienda desde el celular o la PC",
+        "solucion_sub": "Conteo automático de personas, mapas de calor por zona, tiempo de permanencia, conversión visita-venta cruzada con tu POS, comparativas por hora/día y alertas de aforo en tiempo real.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Conteo de afluencia",
+            "texto": "Entradas y salidas en tiempo real con sensor o cámara"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Mapas de calor",
+            "texto": "Zonas calientes y frías por hora, día, semana"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Dwell time",
+            "texto": "Tiempo promedio que la gente pasa en cada zona"
+          },
+          {
+            "icono": "💰",
+            "titulo": "Conversión visita→venta",
+            "texto": "Cruce con HUB POS para medir tasa de cierre real"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Comparativas",
+            "texto": "Hora pico, día más fuerte, picos vs. promedio"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Alertas de aforo",
+            "texto": "Aviso cuando se supera el límite de personas"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Traffic — Para tiendas, centros comerciales, locales retail y espacios de alto tráfico.",
+          "description": "Conteo automático de personas, mapas de calor por zona, tiempo de permanencia, conversión visita-venta cruzada con tu POS, comparativas por hora/día y alertas de aforo en tiempo real."
+        },
+        "wa_text": "Hola, me interesa Hub Traffic 🚦"
+      },
+      "en": {
+        "titulo": "HUB Traffic",
+        "tagline": "For retail stores, malls, brick-and-mortar locations and high-traffic venues.",
+        "intro": "Automatic people counting, zone heatmaps, dwell time, visit-to-sale conversion cross-referenced with your POS, hour/day comparisons and real-time capacity alerts.",
+        "chips": [
+          "✅ People counting",
+          "✅ Heatmaps",
+          "✅ Dwell time",
+          "✅ Visit→sale conversion"
+        ],
+        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
+        "solucion": "Run your footfall analytics and shopper behavior from your phone or PC",
+        "solucion_sub": "Automatic people counting, zone heatmaps, dwell time, visit-to-sale conversion cross-referenced with your POS, hour/day comparisons and real-time capacity alerts.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "People counting",
+            "texto": "Real-time ins and outs via sensor or camera"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Heatmaps",
+            "texto": "Hot and cold zones by hour, day, week"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Dwell time",
+            "texto": "Average time people spend in each zone"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Visit→sale conversion",
+            "texto": "Cross-reference with HUB POS to measure real close rate"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Comparisons",
+            "texto": "Peak hour, busiest day, peaks vs. average"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Capacity alerts",
+            "texto": "Alert when the people limit is exceeded"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Traffic — For retail stores, malls, brick-and-mortar locations and high-traffic venues.",
+          "description": "Automatic people counting, zone heatmaps, dwell time, visit-to-sale conversion cross-referenced with your POS, hour/day comparisons and real-time capacity alerts."
+        },
+        "wa_text": "Hi, I'm interested in Hub Traffic 🚦"
+      }
+    }
+  }
+}

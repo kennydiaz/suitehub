@@ -1,0 +1,14 @@
+---
+/** Página de cada vertical publicado, generada desde su presentación del panel (una sola plantilla). */
+import VerticalPage from '../../components/verticales/VerticalPage.astro';
+import { getPublicadas } from '../../lib/presentaciones';
+import type { Producto } from '../../lib/presentaciones';
+
+export async function getStaticPaths() {
+  const publicadas = await getPublicadas();
+  return publicadas.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props as { p: Producto };
+---
+<VerticalPage p={p} lang="es" />

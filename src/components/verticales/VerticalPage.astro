@@ -1,0 +1,370 @@
+---
+/**
+ * VerticalPage — la página de un vertical, generada desde su presentación del panel
+ * (src/lib/presentaciones.ts). Una sola plantilla para todos: ningún vertical tiene su
+ * propio .astro. Sin precios: el cierre es la cotización por proyecto.
+ *
+ * Secciones: hero (+ portada) · problema → solución · recorrido (desktop en marco de
+ * navegador, móvil en marco de teléfono) · funciones · adicionales · hardware · hablemos · CTA.
+ * Las opcionales (adicionales, hardware, cta) solo salen si el JSON las trae.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { bloque, imagen, partes, ruta } from '../../lib/presentaciones';
+import type { Idioma, Producto } from '../../lib/presentaciones';
+
+interface Props {
+  p: Producto;
+  lang: Idioma;
+}
+
+const { p, lang } = Astro.props;
+const b = bloque(p, lang);
+const hero = p.hero!;
+
+const UI = {
+  es: {
+    todas: 'Todas las verticales', familia: 'Familia SuiteHub', pregunta: 'Pregunta por', demo: 'Agenda una demo',
+    incluye: 'Todo lo que incluye', funcionesDe: 'Funciones de', recorrido: 'Así se ve por dentro',
+    hablemos: 'Hablemos', escribenos: 'Escríbenos por WhatsApp', agenda: 'Agenda tu demo',
+    inicio: 'Inicio', verticales: 'Verticales', asunto: 'Quiero info de', portada: 'Dashboard de',
+    listado: '/verticales', home: '/',
+  },
+  en: {
+    todas: 'All verticals', familia: 'SuiteHub family', pregunta: 'Ask about', demo: 'Book a demo',
+    incluye: 'Everything included', funcionesDe: 'Features of', recorrido: "Here's how it looks inside",
+    hablemos: "Let's talk", escribenos: 'Message us on WhatsApp', agenda: 'Book your demo',
+    inicio: 'Home', verticales: 'Verticals', asunto: 'Info about', portada: 'Dashboard of',
+    listado: '/en/verticals', home: '/en/',
+  },
+}[lang];
+
+const wa = (text: string) => `https://wa.me/50766326006?text=${encodeURIComponent(text)}`;
+const waInfo = wa(b.wa_text || `${UI.pregunta} ${b.titulo}`);
+const waDemo = wa(b.wa_demo || b.wa_text || `${UI.demo}: ${b.titulo}`);
+const mailto = `mailto:info@suitehub.net?subject=${encodeURIComponent(`${UI.asunto} ${b.titulo}`)}`;
+
+const urlLabel = b.url_label || `suitehub.net/${p.slug}`;
+const conPortada = hero.portada !== false;
+const titular = b.titular ? partes(b.titular) : { antes: b.titulo, destacado: '', despues: '' };
+const solucion = partes(b.solucion);
+const ctaTitular = b.cta ? partes(b.cta.titular) : null;
+const hablemosTexto = [b.hablemos?.texto, b.cierre].filter(Boolean).join(' ');
+
+// El hero: foto de fondo si el producto la trae; si no, el degradado con su acento.
+const heroFondo = hero.fondo
+  ? `background-image: linear-gradient(180deg, rgba(7,10,18,.55), #06192E 92%), url('${imagen(p, hero.fondo)}'); background-size: cover; background-position: center 30%;`
+  : 'background-image: radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--acento) 32%, transparent), transparent 70%), linear-gradient(180deg, #071A2B, #06192E 92%);';
+
+// Diagrama del hardware: cajas repartidas en 640 px de ancho, flechas entre ellas.
+const pasos = b.hardware?.pasos ?? [];
+const CAJA = 125;
+const hueco = pasos.length > 1 ? (620 - pasos.length * CAJA) / (pasos.length - 1) : 0;
+const xPaso = (i: number) => 10 + i * (CAJA + hueco);
+
+const origen = 'https://suitehub.net';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: UI.inicio, item: origen + UI.home },
+    { '@type': 'ListItem', position: 2, name: UI.verticales, item: origen + UI.listado },
+    { '@type': 'ListItem', position: 3, name: b.titulo, item: origen + ruta(p.slug, lang) },
+  ],
+};
+---
+<BaseLayout
+  title={b.seo.title || `${b.titulo} — ${b.tagline}`}
+  description={b.seo.description || b.intro || b.tagline}
+  ogImage={imagen(p, hero.imagen)}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <div class="vertical" style={`--acento: ${p.acento};`}>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="relative overflow-hidden" style={heroFondo}>
+      <div class="absolute inset-x-0 top-0 h-[460px] bg-radial-brand pointer-events-none"></div>
+      <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+      <div class={`wrap relative pt-10 sm:pt-14 text-center ${conPortada ? 'pb-10' : 'pb-16'}`}>
+        <a href={UI.listado} class="inline-flex items-center gap-2 text-xs text-ink-400 hover:text-white transition-colors mb-8">
+          <i class="fa-solid fa-arrow-left"></i> {UI.todas}
+        </a>
+
+        <div class="reveal max-w-3xl mx-auto">
+          <img src={imagen(p, 'badge.svg')} alt={b.titulo} width="80" height="80" class="h-20 w-20 mx-auto mb-6" />
+          <span class="eyebrow">{b.eyebrow ? `${b.eyebrow} · ${UI.familia}` : UI.familia}</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
+            {titular.antes}{titular.destacado && <span class="acento">{titular.destacado}</span>}{titular.despues}
+          </h1>
+          {b.intro && <p class="mt-6 text-lg text-ink-300 leading-relaxed max-w-2xl mx-auto">{b.intro}</p>}
+
+          <div class="mt-8 flex flex-wrap gap-3 justify-center">
+            <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+              <i class="fa-brands fa-whatsapp text-lg"></i> {UI.pregunta} {b.titulo}
+            </a>
+            <a href={waDemo} target="_blank" rel="noopener" class="btn-secondary">
+              <i class="fa-solid fa-play"></i> {UI.demo}
+            </a>
+          </div>
+
+          {b.chips.length > 0 && (
+            <div class="mt-9 flex flex-wrap gap-2.5 justify-center">
+              {b.chips.map((c) => <span class="text-sm font-medium card-glass px-4 py-2.5">{c}</span>)}
+            </div>
+          )}
+        </div>
+
+        {conPortada && (
+          <div class="reveal show-glow max-w-4xl mx-auto mt-14">
+            <figure class="browser">
+              <div class="browser-bar">
+                <span class="browser-dot bg-[#ff5f57]"></span>
+                <span class="browser-dot bg-[#febc2e]"></span>
+                <span class="browser-dot bg-[#28c840]"></span>
+                <span class="browser-url">{urlLabel}</span>
+              </div>
+              <img src={imagen(p, hero.imagen)} alt={`${UI.portada} ${b.titulo}`} width={hero.ancho} height={hero.alto} decoding="async" fetchpriority="high" class="w-full h-auto" />
+            </figure>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- ░░ PROBLEMA → SOLUCIÓN ░░ -->
+    {(b.problema || solucion.antes || solucion.destacado) && (
+      <section class={conPortada ? 'pt-10 pb-4' : 'pb-4'}>
+        <div class="wrap">
+          <div class="reveal max-w-2xl mx-auto text-center">
+            {b.problema && <p class="text-ink-400">{b.problema}</p>}
+            <p class="text-2xl sm:text-3xl font-display font-bold my-4 leading-tight">
+              {solucion.antes}{solucion.destacado && <span class="acento">{solucion.destacado}</span>}{solucion.despues}
+            </p>
+            {b.solucion_sub && <p class="text-ink-300">{b.solucion_sub}</p>}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ░░ RECORRIDO ░░ -->
+    <section class="section" id="recorrido">
+      <div class="wrap">
+        <h2 class="acento text-center text-sm uppercase tracking-[0.2em] font-semibold mb-16">
+          {b.recorrido_titulo || UI.recorrido}
+        </h2>
+
+        <div class="space-y-20 lg:space-y-28">
+          {b.recorrido.map((s, i) => {
+            const movil = s.tipo === 'movil';
+            return (
+              <div class={`reveal grid gap-8 lg:gap-14 items-center ${movil ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'}`}>
+                <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+                  <div class="acento flex items-center gap-3 font-display font-bold text-sm tracking-widest mb-4">
+                    {String(i + 1).padStart(2, '0')}
+                    <span class="linea h-px w-12"></span>
+                  </div>
+                  <h3 class="text-2xl lg:text-3xl font-display font-bold mb-3">{s.titulo}</h3>
+                  {s.texto && <p class="text-ink-300 leading-relaxed">{s.texto}</p>}
+                  {s.puntos.length > 0 && (
+                    <ul class="mt-5 space-y-2">
+                      {s.puntos.map((pt) => (
+                        <li class="flex items-start gap-2.5 text-sm text-ink-200">
+                          <i class="acento fa-solid fa-check mt-1"></i><span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <div class={`show-glow ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  {movil ? (
+                    <figure class="phone mx-auto">
+                      <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
+                    </figure>
+                  ) : (
+                    <figure class="browser">
+                      <div class="browser-bar">
+                        <span class="browser-dot bg-[#ff5f57]"></span>
+                        <span class="browser-dot bg-[#febc2e]"></span>
+                        <span class="browser-dot bg-[#28c840]"></span>
+                        <span class="browser-url">{urlLabel}</span>
+                      </div>
+                      <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
+                    </figure>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ FUNCIONES ░░ -->
+    <section class="section bg-navy-900/30">
+      <div class="wrap">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="eyebrow">{b.funciones_eyebrow || UI.incluye}</span>
+          <h2 class="text-3xl lg:text-4xl font-display font-bold">{b.funciones_titulo || `${UI.funcionesDe} ${b.titulo}`}</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {b.funciones.map((f) => (
+            <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
+              <div class="acento w-11 h-11 rounded-xl flex items-center justify-center bg-white/5 mb-4">
+                <i class={`fa-solid ${f.icono} text-lg`}></i>
+              </div>
+              <div class="font-display font-semibold mb-1.5">{f.titulo}</div>
+              <div class="text-sm text-ink-400 leading-relaxed">{f.texto}</div>
+            </div>
+          ))}
+        </div>
+        {b.funciones_nota && <p class="mt-7 text-xs text-ink-500 text-center">{b.funciones_nota}</p>}
+      </div>
+    </section>
+
+    <!-- ░░ ADICIONALES ░░ -->
+    {b.adicionales && (
+      <section class="section">
+        <div class="wrap">
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            {b.adicionales.eyebrow && <span class="eyebrow">{b.adicionales.eyebrow}</span>}
+            <h2 class="text-3xl lg:text-4xl font-display font-bold">{b.adicionales.titulo}</h2>
+            {b.adicionales.intro && <p class="text-ink-400 mt-3">{b.adicionales.intro}</p>}
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {b.adicionales.items.map((f) => (
+              <div class="adicional reveal card-glass p-6 border-dashed transition-colors">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="acento icono-adicional w-11 h-11 rounded-xl flex items-center justify-center">
+                    <i class={`fa-solid ${f.icono} text-lg`}></i>
+                  </div>
+                  {b.adicionales!.etiqueta && (
+                    <span class="etiqueta text-[10px] uppercase tracking-wider font-semibold rounded-full px-2 py-0.5">{b.adicionales!.etiqueta}</span>
+                  )}
+                </div>
+                <div class="font-display font-semibold mb-1.5">{f.titulo}</div>
+                <div class="text-sm text-ink-400 leading-relaxed">{f.texto}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ░░ HARDWARE ░░ -->
+    {b.hardware && (
+      <section class="section bg-navy-900/30">
+        <div class="wrap">
+          <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div class="reveal">
+              {b.hardware.eyebrow && <span class="eyebrow">{b.hardware.eyebrow}</span>}
+              <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{b.hardware.titulo}</h2>
+              {b.hardware.texto && <p class="text-ink-300 leading-relaxed">{b.hardware.texto}</p>}
+              {b.hardware.puntos.length > 0 && (
+                <ul class="mt-5 space-y-2">
+                  {b.hardware.puntos.map((pt) => (
+                    <li class="flex items-start gap-2.5 text-sm text-ink-200">
+                      <i class="acento fa-solid fa-check mt-1"></i><span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {b.hardware.nota && <p class="mt-6 text-xs text-ink-500">{b.hardware.nota}</p>}
+            </div>
+
+            {pasos.length > 0 && (
+              <div class="reveal card-glass p-6 lg:p-8">
+                <svg viewBox="0 0 640 200" class="w-full h-auto" role="img" aria-label={pasos.map((s) => `${s.titulo} ${s.sub}`.trim()).join(' → ')}>
+                  <defs>
+                    <marker id={`flecha-${p.slug}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0L10 5 0 10z" fill={p.acento} />
+                    </marker>
+                  </defs>
+                  {pasos.map((s, i) => (
+                    <g>
+                      <rect x={xPaso(i)} y="40" width={CAJA} height="120" rx="16" fill="rgba(255,255,255,.04)" stroke={p.acento} stroke-opacity=".45" />
+                      <text x={xPaso(i) + CAJA / 2} y="86" text-anchor="middle" font-size="30">{s.icono}</text>
+                      <text x={xPaso(i) + CAJA / 2} y="118" text-anchor="middle" font-size="13" font-weight="700" fill="#F8FAFC" font-family="Sora, Inter, sans-serif">{s.titulo}</text>
+                      <text x={xPaso(i) + CAJA / 2} y="138" text-anchor="middle" font-size="11" fill="#94A3B8" font-family="Inter, sans-serif">{s.sub}</text>
+                      {i < pasos.length - 1 && (
+                        <>
+                          <path d={`M${xPaso(i) + CAJA} 100 H${xPaso(i + 1) - 2}`} stroke={p.acento} stroke-width="2" marker-end={`url(#flecha-${p.slug})`} />
+                          {s.flecha && (
+                            <text x={xPaso(i) + CAJA + hueco / 2} y="90" text-anchor="middle" font-size="9" fill="#64748B" font-family="Inter, sans-serif">{s.flecha}</text>
+                          )}
+                        </>
+                      )}
+                    </g>
+                  ))}
+                </svg>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ░░ HABLEMOS ░░ -->
+    <section class="section">
+      <div class="wrap">
+        <div class="reveal card-glass gradient-border max-w-3xl mx-auto p-8 lg:p-12 text-center">
+          <span class="eyebrow">{UI.hablemos}</span>
+          {b.hablemos && <h2 class="text-2xl lg:text-3xl font-display font-bold mb-3">{b.hablemos.titulo}</h2>}
+          {hablemosTexto && <p class="text-ink-300 mb-8 max-w-xl mx-auto">{hablemosTexto}</p>}
+          {b.beneficios.length > 0 && (
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-xl mx-auto text-left mb-8">
+              {b.beneficios.map((x) => (
+                <li class="flex items-start gap-2.5 text-sm text-ink-200">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span>{x}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
+              <i class="fa-brands fa-whatsapp text-lg"></i> {UI.escribenos}
+            </a>
+            <a href={mailto} class="btn-secondary">
+              <i class="fa-solid fa-envelope"></i> info@suitehub.net
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CTA FINAL ░░ -->
+    {b.cta && ctaTitular && (
+      <section class="relative overflow-hidden border-t border-white/5">
+        <div class="absolute inset-x-0 bottom-0 h-[300px] bg-radial-brand pointer-events-none rotate-180"></div>
+        <div class="wrap relative py-20 text-center">
+          <h2 class="reveal text-3xl lg:text-4xl font-display font-bold mb-4">
+            {ctaTitular.antes}{ctaTitular.destacado && <span class="acento">{ctaTitular.destacado}</span>}{ctaTitular.despues}
+          </h2>
+          {b.cta.texto && <p class="reveal text-ink-300 mb-8 max-w-xl mx-auto">{b.cta.texto}</p>}
+          <a href={waDemo} target="_blank" rel="noopener" class="reveal btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow text-base px-8 py-4">
+            <i class="fa-brands fa-whatsapp text-xl"></i> {UI.agenda}
+          </a>
+        </div>
+      </section>
+    )}
+
+  </div>
+</BaseLayout>
+
+<style>
+  /* El acento del producto (brand kit) es un tono -600: sobre fondo oscuro se aclara para leerse. */
+  .vertical { --acento-claro: color-mix(in srgb, var(--acento), white 35%); }
+  .acento { color: var(--acento-claro); }
+  .linea { background-image: linear-gradient(to right, var(--acento), transparent); }
+  .adicional:hover { border-color: color-mix(in srgb, var(--acento) 40%, transparent); }
+  .icono-adicional { background: color-mix(in srgb, var(--acento) 12%, transparent); }
+  .etiqueta { color: var(--acento-claro); border: 1px solid color-mix(in srgb, var(--acento) 35%, transparent); }
+
+  .browser { border: 1px solid rgba(255,255,255,.1); border-radius: 14px; overflow: hidden; background: #0B0F1A; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+  .browser-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: #06192E; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .browser-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+  .browser-url { margin-left: 10px; font-size: 11px; color: #647088; background: #020617; border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 5px 12px; font-family: ui-monospace, monospace; }
+  .phone { width: min(300px, 80%); border-radius: 34px; border: 8px solid #141a26; background: #000; overflow: hidden; box-shadow: 0 38px 84px -30px rgba(0,0,0,.85); }
+  .show-glow { position: relative; }
+  .show-glow::before { content: ''; position: absolute; inset: -2px; z-index: -1; border-radius: 16px; background: radial-gradient(60% 80% at 50% 0%, color-mix(in srgb, var(--acento) 32%, transparent), transparent 70%); filter: blur(22px); }
+  @media (max-width: 640px) { .browser-url { display: none; } }
+</style>
