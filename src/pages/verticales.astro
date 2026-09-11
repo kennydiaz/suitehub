@@ -9,8 +9,8 @@ const verticales = [
     icon:   'fa-screwdriver-wrench',
     sector: 'Talleres mecánicos',
     short:  'Para talleres mecánicos, autoservicios y centros de diagnóstico.',
-    pitch:  'Recepción rápida del vehículo, órdenes de trabajo con servicios y repuestos, agenda online para citas, vehículo + cliente vinculados, facturación electrónica directa.',
-    cliente: 'QS Express — Taller mecánico en La Chorrera',
+    pitch:  'Recepción rápida del vehículo, órdenes de trabajo con servicios y repuestos, citas en línea y factura electrónica desde la misma orden. Cada vehículo queda ligado a su dueño.',
+    cliente: 'QS Express, taller mecánico en La Chorrera',
   },
   {
     key:    'carwash',
@@ -18,7 +18,7 @@ const verticales = [
     icon:   'fa-spray-can-sparkles',
     sector: 'Autolavados y car wash',
     short:  'Para autolavados, car wash express, detailing y lavado a domicilio.',
-    pitch:  'Recepción por placa con historial del vehículo, pistas y lavadores con cola en vivo, caja con arqueo diario, comisiones automáticas por lavador, fidelidad por sellos y facturación electrónica DGI desde la misma orden.',
+    pitch:  'Recibes el carro por la placa y ves su historial, manejas pistas y lavadores con la cola en vivo, cierras caja con arqueo diario y las comisiones de cada lavador salen solas. También trae tarjeta de sellos y factura electrónica DGI desde la misma orden.',
   },
   {
     key:    'pos',
@@ -26,7 +26,7 @@ const verticales = [
     icon:   'fa-cash-register',
     sector: 'Restaurantes, bares y food trucks',
     short:  'El POS para restaurantes, cafeterías, bares y food trucks, en tu propia red.',
-    pitch:  'Mesas y pedidos, monitor de cocina, cobro mixto con propina, factura electrónica DGI en ticket con QR, kiosko de autoservicio, menú digital y cierre de caja por correo. Sigue vendiendo aunque se caiga el internet.',
+    pitch:  'Mesas y pedidos, monitor de cocina, cobro mixto con propina, factura electrónica DGI en ticket con QR, kiosko de autoservicio, menú digital y cierre de caja por correo. Si se cae el internet, sigues vendiendo.',
   },
   // HUB Restaurant es, por ahora, la versión PRO de HUB POS: dos modelos en el catálogo.
   {
@@ -35,7 +35,7 @@ const verticales = [
     icon:   'fa-utensils',
     sector: 'Restaurantes y bares · versión PRO de HUB POS',
     short:  'La versión PRO de HUB POS, para restaurantes, cafeterías y bares.',
-    pitch:  'Todo HUB POS en su edición PRO: mesas con estado en vivo, comandas a cocina y barra, KDS, división de cuentas, propinas, integración con domicilio y reportes por turno.',
+    pitch:  'Es HUB POS en su edición PRO: estado de las mesas en tiempo real, comandas a cocina y barra, KDS, cuentas divididas, propinas, integración con delivery y reportes por turno.',
   },
   {
     key:    'pet',
@@ -45,13 +45,13 @@ const verticales = [
     screenshotH: 994,
     sector: 'Veterinarias y pet shops',
     short:  'Para clínicas veterinarias, peluquerías caninas y pet shops.',
-    pitch:  'Ficha médica digital por mascota, recordatorios automáticos de vacunas y desparasitación, agenda con dueño + mascota, productos veterinarios con receta.',
+    pitch:  'Cada mascota tiene su ficha médica digital. Los recordatorios de vacunas y desparasitación salen solos, la agenda guarda dueño y mascota juntos y los productos veterinarios se venden con receta.',
     features: [
-      { icon: 'fa-file-medical',   name: 'Ficha médica digital', desc: 'Historial completo, vacunas, alergias, peso' },
-      { icon: 'fa-bell',           name: 'Recordatorios automáticos', desc: 'Vacuna próxima, desparasitación, control' },
-      { icon: 'fa-calendar-check', name: 'Agenda dueño + mascota', desc: 'Veterinaria, peluquería, hospitalización' },
-      { icon: 'fa-prescription',   name: 'Recetas con stock',    desc: 'Medicamento + control de venta regulada' },
-      { icon: 'fa-camera',         name: 'Galería por mascota',  desc: 'Fotos antes/después, radiografías' },
+      { icon: 'fa-file-medical',   name: 'Ficha médica digital', desc: 'Historial completo, vacunas, alergias y peso' },
+      { icon: 'fa-bell',           name: 'Recordatorios automáticos', desc: 'Próxima vacuna, desparasitación y controles' },
+      { icon: 'fa-calendar-check', name: 'Agenda por dueño y mascota', desc: 'Consultas, peluquería y hospitalización' },
+      { icon: 'fa-prescription',   name: 'Recetas con stock',    desc: 'Descuenta el medicamento y controla la venta regulada' },
+      { icon: 'fa-camera',         name: 'Galería por mascota',  desc: 'Fotos de antes y después, radiografías' },
     ],
   },
   {
@@ -60,7 +60,7 @@ const verticales = [
     icon:   'fa-scissors',
     sector: 'Salones de belleza, barberías y spas',
     short:  'Para salones de belleza, barberías, spas y centros estéticos.',
-    pitch:  'Reserva online 24/7 con disponibilidad real, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica en el mismo ticket.',
+    pitch:  'Tus clientes reservan en línea a cualquier hora y solo ven los espacios libres. Agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, descuentos en las horas de poco movimiento y factura electrónica en el mismo ticket.',
   },
   {
     key:    'clinic',
@@ -70,12 +70,12 @@ const verticales = [
     screenshotH: 940,
     sector: 'Consultorios y clínicas',
     short:  'Para consultorios médicos, odontológicos y clínicas multi-especialidad.',
-    pitch:  'Expediente clínico digital, agenda por médico, recetas electrónicas, historial de pacientes, facturación a aseguradoras.',
+    pitch:  'Expediente clínico digital, agenda por médico, recetas electrónicas, historial de cada paciente y facturación a las aseguradoras.',
     features: [
-      { icon: 'fa-notes-medical',  name: 'Expediente digital',   desc: 'SOAP, antecedentes, signos vitales' },
-      { icon: 'fa-calendar-days',  name: 'Agenda multi-médico',  desc: 'Por especialista, sala, equipo' },
-      { icon: 'fa-prescription-bottle-medical', name: 'Recetas digitales', desc: 'PDF firmado o impreso, control regulado' },
-      { icon: 'fa-shield-heart',   name: 'Seguros médicos',      desc: 'Facturación a aseguradoras con códigos' },
+      { icon: 'fa-notes-medical',  name: 'Expediente digital',   desc: 'SOAP, antecedentes y signos vitales' },
+      { icon: 'fa-calendar-days',  name: 'Agenda de varios médicos', desc: 'Por especialista, sala o equipo' },
+      { icon: 'fa-prescription-bottle-medical', name: 'Recetas digitales', desc: 'En PDF firmado o impresas, con control de medicamentos regulados' },
+      { icon: 'fa-shield-heart',   name: 'Seguros médicos',      desc: 'Facturas a las aseguradoras con sus códigos' },
     ],
   },
   {
@@ -84,14 +84,14 @@ const verticales = [
     icon:   'fa-dumbbell',
     screenshot: '/images/products/gym/hub-gym-dashboard.webp',
     screenshotH: 940,
-    sector: 'Gimnasios, crossfit, yoga',
+    sector: 'Gimnasios, crossfit y yoga',
     short:  'Para gimnasios, boxes de crossfit, estudios de yoga y centros deportivos.',
-    pitch:  'Membresías mensuales/anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables, retención por inasistencia.',
+    pitch:  'Membresías mensuales o anuales, entrada con QR, clases con cupo limitado y entrenadores asignados. Si un miembro deja de venir, el sistema te avisa.',
     features: [
-      { icon: 'fa-id-card',        name: 'Membresías',           desc: 'Cobro recurrente, congelar, suspender' },
-      { icon: 'fa-qrcode',         name: 'Control de acceso',    desc: 'Cliente entra escaneando QR de su app' },
-      { icon: 'fa-people-group',   name: 'Clases con cupo',      desc: 'Reserva online, lista de espera' },
-      { icon: 'fa-chart-line',     name: 'Retención',            desc: 'Alerta si un miembro deja de venir 14 días' },
+      { icon: 'fa-id-card',        name: 'Membresías',           desc: 'Cobro recurrente, congelación y suspensión' },
+      { icon: 'fa-qrcode',         name: 'Control de acceso',    desc: 'El cliente entra escaneando el QR de su app' },
+      { icon: 'fa-people-group',   name: 'Clases con cupo',      desc: 'Reserva en línea y lista de espera' },
+      { icon: 'fa-chart-line',     name: 'Retención',            desc: 'Te avisa si un miembro lleva 14 días sin venir' },
     ],
   },
   {
@@ -102,12 +102,12 @@ const verticales = [
     screenshotH: 940,
     sector: 'Lavanderías profesionales',
     short:  'Para lavanderías, tintorerías y servicios de planchado.',
-    pitch:  'Boleta con código de retiro, etapa del proceso (lavado/secado/planchado), precio por kilo o por prenda, recordatorio cuando está listo.',
+    pitch:  'Boleta con código de retiro, seguimiento de cada etapa (lavado, secado, planchado), precio por kilo o por prenda y aviso al cliente cuando su ropa está lista.',
     features: [
-      { icon: 'fa-receipt',        name: 'Boleta con código',    desc: 'Cliente retira con su código único' },
+      { icon: 'fa-receipt',        name: 'Boleta con código',    desc: 'El cliente retira con su propio código' },
       { icon: 'fa-spinner',        name: 'Etapas del proceso',   desc: 'Recibido → lavado → secado → listo' },
-      { icon: 'fa-weight-hanging', name: 'Precio por kilo o prenda', desc: 'Configurable por servicio' },
-      { icon: 'fa-mobile-screen',  name: 'Aviso WhatsApp',       desc: 'Auto-mensaje cuando está listo' },
+      { icon: 'fa-weight-hanging', name: 'Precio por kilo o prenda', desc: 'Lo defines para cada servicio' },
+      { icon: 'fa-mobile-screen',  name: 'Aviso por WhatsApp',   desc: 'Mensaje automático cuando está listo' },
     ],
   },
   {
@@ -118,12 +118,12 @@ const verticales = [
     screenshotH: 940,
     sector: 'Bienes raíces',
     short:  'Para corredoras inmobiliarias y desarrolladoras pequeñas.',
-    pitch:  'Cartera de propiedades, leads con etapa del pipeline, contratos de alquiler con cobro recurrente, agentes con comisiones.',
+    pitch:  'Cartera de propiedades, leads ordenados por etapa, contratos de alquiler con cobro mensual y comisiones por agente.',
     features: [
-      { icon: 'fa-house',          name: 'Catálogo de propiedades', desc: 'Fotos, video, precio, estado' },
+      { icon: 'fa-house',          name: 'Catálogo de propiedades', desc: 'Fotos, video, precio y estado' },
       { icon: 'fa-funnel-dollar',  name: 'Pipeline de leads',    desc: 'Interesado → visita → oferta → cierre' },
-      { icon: 'fa-file-contract',  name: 'Contratos de alquiler', desc: 'Cobro mensual auto, garantías' },
-      { icon: 'fa-handshake',      name: 'Comisiones agentes',   desc: 'Por venta cerrada o renta gestionada' },
+      { icon: 'fa-file-contract',  name: 'Contratos de alquiler', desc: 'Cobro mensual automático y depósitos de garantía' },
+      { icon: 'fa-handshake',      name: 'Comisiones de agentes', desc: 'Por venta cerrada o alquiler gestionado' },
     ],
   },
   {
@@ -134,12 +134,12 @@ const verticales = [
     screenshotH: 922,
     sector: 'Hoteles boutique y hostales',
     short:  'Para hoteles boutique, hostales, glampings y B&B.',
-    pitch:  'Calendario de habitaciones, reservas por canal (Booking/Airbnb/directo), check-in/out con factura, consumo de minibar, housekeeping.',
+    pitch:  'Calendario de habitaciones, reservas por canal (Booking, Airbnb o directas), check-in y check-out con factura, consumos de minibar y control de limpieza.',
     features: [
-      { icon: 'fa-calendar',       name: 'Tape chart',           desc: 'Vista calendario de ocupación por habitación' },
-      { icon: 'fa-bell-concierge', name: 'Check-in / out',       desc: 'Pasaporte, firma digital, factura inmediata' },
-      { icon: 'fa-bed',            name: 'Housekeeping',         desc: 'Estado de habitación: limpia/sucia/inspección' },
-      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Sync con Booking, Airbnb, Expedia (Pro+)' },
+      { icon: 'fa-calendar',       name: 'Tape chart',           desc: 'Calendario de ocupación por habitación' },
+      { icon: 'fa-bell-concierge', name: 'Check-in / out',       desc: 'Pasaporte, firma digital y factura al momento' },
+      { icon: 'fa-bed',            name: 'Housekeeping',         desc: 'Estado de cada habitación: limpia, sucia o en inspección' },
+      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Se sincroniza con Booking, Airbnb y Expedia (Pro+)' },
     ],
   },
   {
@@ -150,12 +150,12 @@ const verticales = [
     screenshotH: 940,
     sector: 'Reparación de celulares',
     short:  'Para tiendas de reparación de celulares, tablets y laptops.',
-    pitch:  'Recepción del equipo con diagnóstico, cotización por daño, repuestos vinculados a la orden, garantía digital, ticket con código.',
+    pitch:  'Recibes el equipo con su diagnóstico, cotizas según el daño, ligas los repuestos a la orden y entregas garantía digital y ticket con código.',
     features: [
-      { icon: 'fa-magnifying-glass', name: 'Diagnóstico inicial', desc: 'Modelo, daño visible, contraseña, accesorios' },
-      { icon: 'fa-money-bill-trend-up', name: 'Cotización al cliente', desc: 'Apruebas y avanzamos / no apruebas y devolvemos' },
-      { icon: 'fa-microchip',      name: 'Repuestos vinculados',  desc: 'Stock que descuenta al instalar' },
-      { icon: 'fa-shield',         name: 'Garantía digital',      desc: 'PDF con QR para reclamo posterior' },
+      { icon: 'fa-magnifying-glass', name: 'Diagnóstico inicial', desc: 'Modelo, daño visible, contraseña y accesorios' },
+      { icon: 'fa-money-bill-trend-up', name: 'Cotización al cliente', desc: 'Si la aprueba, se repara. Si no, se le devuelve el equipo' },
+      { icon: 'fa-microchip',      name: 'Repuestos vinculados',  desc: 'El inventario se descuenta al instalar' },
+      { icon: 'fa-shield',         name: 'Garantía digital',      desc: 'PDF con QR por si hay un reclamo' },
     ],
   },
   {
@@ -166,13 +166,13 @@ const verticales = [
     screenshotH: 940,
     sector: 'Analítica de afluencia y conducta en tienda',
     short:  'Para tiendas, centros comerciales, locales retail y espacios de alto tráfico.',
-    pitch:  'Conteo automático de personas, mapas de calor por zona, tiempo de permanencia, conversión visita-venta cruzada con tu POS, comparativas por hora/día y alertas de aforo en tiempo real.',
+    pitch:  'Cuenta cuántas personas entran, muestra mapas de calor por zona y cuánto tiempo pasa la gente en cada una, cruza las visitas con las ventas de tu POS, compara horas y días, y te avisa en tiempo real si se supera el aforo.',
     features: [
       { icon: 'fa-people-line',     name: 'Conteo de afluencia',  desc: 'Entradas y salidas en tiempo real con sensor o cámara' },
-      { icon: 'fa-fire',            name: 'Mapas de calor',        desc: 'Zonas calientes y frías por hora, día, semana' },
-      { icon: 'fa-stopwatch',       name: 'Dwell time',            desc: 'Tiempo promedio que la gente pasa en cada zona' },
-      { icon: 'fa-arrow-trend-up',  name: 'Conversión visita→venta', desc: 'Cruce con HUB POS para medir tasa de cierre real' },
-      { icon: 'fa-chart-column',    name: 'Comparativas',          desc: 'Hora pico, día más fuerte, picos vs. promedio' },
+      { icon: 'fa-fire',            name: 'Mapas de calor',        desc: 'Zonas con más y menos movimiento por hora, día o semana' },
+      { icon: 'fa-stopwatch',       name: 'Tiempo de permanencia', desc: 'Tiempo promedio que la gente pasa en cada zona' },
+      { icon: 'fa-arrow-trend-up',  name: 'Conversión visita→venta', desc: 'Cruza los datos con HUB POS para ver cuántas visitas terminan en compra' },
+      { icon: 'fa-chart-column',    name: 'Comparativas',          desc: 'Hora pico, día más fuerte y picos frente al promedio' },
       { icon: 'fa-bell',            name: 'Alertas de aforo',      desc: 'Aviso cuando se supera el límite de personas' },
     ],
   },
@@ -203,11 +203,11 @@ const vista = verticales.map((v: any) => {
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">13 verticales especializados</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          SuiteHub <span class="text-gradient">para tu industria</span>, no genérico.
+          SuiteHub <span class="text-gradient">adaptado a tu industria</span>.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Cada vertical hereda el núcleo SuiteHub y le sumamos los flujos, la jerga y las pantallas
-          que tu industria necesita. Sin pagar por funciones de otra industria que no usas.
+          Cada vertical parte del núcleo de SuiteHub y le agregamos los procesos, los términos y las pantallas
+          propias de tu negocio. No pagas por funciones pensadas para otro rubro.
         </p>
       </div>
     </div>
@@ -273,7 +273,7 @@ const vista = verticales.map((v: any) => {
                 <img src={v.screenshot} alt={`Captura de pantalla de ${v.name}`} width={v.screenshotW ?? 1280} height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
               </figure>
             )}
-            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Funciones específicas del vertical</h3>
+            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Funciones propias de este vertical</h3>
             <div class="grid sm:grid-cols-2 gap-3">
               {(v.features ?? []).map(f => (
                 <div class="card-glass p-5 hover:border-white/15 transition-colors">
@@ -290,7 +290,7 @@ const vista = verticales.map((v: any) => {
               ))}
             </div>
             <p class="mt-6 text-xs text-ink-500">
-              + Todas las funciones del núcleo SuiteHub según la edición que elijas.
+              + Las funciones del núcleo de SuiteHub que incluya la edición que elijas.
             </p>
           </div>
         </div>
@@ -306,8 +306,8 @@ const vista = verticales.map((v: any) => {
           ¿Tu industria <span class="text-gradient">no está en la lista</span>?
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
-          Si tu industria tiene 50+ negocios potenciales en cualquiera de nuestros mercados (Panamá, USA, Venezuela, España, Colombia), podemos crear un vertical específico para ti.
-          Cuéntanos por WhatsApp y evaluamos.
+          Si en alguno de nuestros mercados (Panamá, USA, Venezuela, España o Colombia) hay 50 o más negocios de tu rubro, podemos armar un vertical para ti.
+          Escríbenos por WhatsApp y lo evaluamos.
         </p>
         <a href="https://wa.me/50766326006?text=Mi%20industria%20es%20...%20%C2%BFpueden%20crear%20un%20vertical%3F" target="_blank" rel="noopener" class="btn-primary">
           <i class="fa-brands fa-whatsapp"></i> Cuéntanos tu industria

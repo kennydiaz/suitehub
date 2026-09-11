@@ -45,16 +45,16 @@ const comparison = [
     title: 'Multi-country electronic invoicing',
     rows: [
       { label: 'Basic invoices (no e-invoicing)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Digifact — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC The Factory HKA — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Ebi — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Factura Fácil — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC eFacturapty — DGI Panama', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'The Factory HKA Venezuela — SENIAT', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Digifact (DGI Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC The Factory HKA (DGI Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Ebi (DGI Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Factura Fácil (DGI Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC eFacturapty (DGI Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'The Factory HKA Venezuela (SENIAT)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'CUFE + official DGI QR (Panama)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'SENIAT Control Number (Venezuela)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'Invoice cancellation', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'Credit notes', lite: '—', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Invoice cancellation', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'Credit notes', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
     ],
   },
   {
@@ -70,9 +70,9 @@ const comparison = [
   {
     title: 'Reports',
     rows: [
-      { label: 'Level 1 — Pre-built reports',        lite: '6 reports',   core: '15+ reports',  pro: 'All',    enterprise: 'All' },
-      { label: 'Level 2 — Saved SQL (whitelist)',    lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
-      { label: 'Level 3 — Editable PDF templates',   lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
+      { label: 'Level 1: Pre-built reports',        lite: '6 reports',   core: '15+ reports',  pro: 'All',    enterprise: 'All' },
+      { label: 'Level 2: Saved SQL (whitelist)',    lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
+      { label: 'Level 3: Editable PDF templates',   lite: '—',           core: '✓',            pro: '✓',      enterprise: '✓' },
       { label: 'CSV / PDF export',                   lite: '✓',           core: '✓',            pro: '✓',      enterprise: '✓' },
     ],
   },
@@ -111,7 +111,7 @@ const comparison = [
       { label: 'Spanish',                       lite: '✓',     core: '✓',     pro: '✓',         enterprise: '✓' },
       { label: 'English',                       lite: '✓',     core: '✓',     pro: '✓',         enterprise: '✓' },
       { label: 'Panama compliance (DGI live)',  lite: '✓',     core: '✓',     pro: '✓',         enterprise: '✓' },
-      { label: 'USA · Venezuela · Spain · Colombia (2026)', lite: '—',    core: '—',     pro: 'Roadmap',    enterprise: 'Roadmap' },
+      { label: 'Other countries (LATAM)', lite: '—',    core: '—',     pro: 'On request', enterprise: 'On request' },
     ],
   },
 ];
@@ -125,11 +125,11 @@ const colorMap = {
 
 // FAQ → FAQPage schema (Google rich result).
 const faqs = [
-  { q: 'Do I have to sign an annual contract?', a: "No. You pay month to month and cancel whenever you want. If you pay a year up front you get 16% off, but it's not required." },
-  { q: 'What happens if I exceed my edition limits?', a: 'The system warns you at 80% of the limit. You can move up to the next edition from inside the platform without migrating data or losing your configuration.' },
-  { q: 'Is implementation billed separately?', a: 'Yes: $99 one time, covering initial configuration, loading your catalog and kickoff training. It is free if you pay the annual plan. In Enterprise we assign a dedicated consultant.' },
-  { q: 'How do I pay? Do you accept ACH, Yappy, credit card?', a: 'We accept ACH, Yappy, credit card and bank deposit. Enterprise accounts can pay against invoice on net-30 terms.' },
-  { q: 'What does the e-invoicing PAC cost cover?', a: 'The PAC cost (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.' },
+  { q: 'Do I have to sign an annual contract?', a: "No. You pay monthly and can cancel anytime. If you'd rather pay for the year up front, you get 16% off, but that's up to you." },
+  { q: "What happens if I go over my edition's limits?", a: "You'll get a heads-up when you hit 80% of a limit. From there you can move up to the next edition right inside the platform, with no data migration and without losing your settings." },
+  { q: 'Is implementation billed separately?', a: "Yes, it's a one-time $99 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Enterprise customers get a dedicated consultant." },
+  { q: 'How do I pay? Do you take ACH, Yappy, credit cards?', a: 'You can pay by ACH, Yappy, credit card or bank deposit. Enterprise accounts can also pay by invoice on net-30 terms.' },
+  { q: 'Is the e-invoicing PAC fee included?', a: "No. You pay the PAC (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) directly. SuiteHub connects to it at no extra charge, and we'll help you sign up with one during onboarding." },
 ];
 const faqLd = {
   '@context': 'https://schema.org',
@@ -141,7 +141,7 @@ const faqLd = {
   })),
 };
 ---
-<BaseLayout title="Pricing and comparison · SuiteHub" description="Full comparison table of the 4 SuiteHub editions. From $24/month with 16% off when paying annually.">
+<BaseLayout title="Pricing and comparison · SuiteHub" description="Compare the 4 SuiteHub editions side by side. Plans start at $24/month, and you save 16% when you pay annually.">
 
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
@@ -154,12 +154,12 @@ const faqLd = {
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">Pricing and comparison</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          <span class="text-gradient">Transparent</span> pricing.<br/>
-          No surprises.
+          <span class="text-gradient">Clear</span> pricing,<br/>
+          no surprises.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Everything that's included is right here. No "*conditions apply" or "ask a sales rep for your custom quote".
-          Move up an edition whenever you need to — no penalties.
+          Everything each edition includes is listed right here. You won't find "*conditions apply" or "talk to a sales rep for a custom quote."
+          If you outgrow your edition, you can move up anytime without paying a penalty.
         </p>
       </div>
     </div>
@@ -196,7 +196,7 @@ const faqLd = {
   <section class="section">
     <div class="wrap">
       <h2 class="text-2xl font-display font-bold mb-2">Full comparison</h2>
-      <p class="text-sm text-ink-400 mb-8">What's included in each edition, no fine print.</p>
+      <p class="text-sm text-ink-400 mb-8">What each edition includes, row by row.</p>
 
       <div class="card-glass overflow-x-auto">
         <table class="w-full text-sm min-w-[760px]">
@@ -235,7 +235,7 @@ const faqLd = {
       </div>
 
       <p class="text-xs text-ink-500 mt-6 text-center">
-        Notice anything missing? <a href="https://wa.me/50766326006?text=I%20have%20a%20question%20about%20pricing" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300">Ask us on WhatsApp</a>
+        Don't see something you need? <a href="https://wa.me/50766326006?text=I%20have%20a%20question%20about%20pricing" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300">Ask us on WhatsApp</a>
       </p>
     </div>
   </section>
@@ -254,16 +254,16 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            No. You pay month to month and cancel whenever you want. If you pay a year up front you get 16% off, but it's not required.
+            No. You pay monthly and can cancel anytime. If you'd rather pay for the year up front, you get 16% off, but that's up to you.
           </div>
         </details>
         <details class="card-glass group">
           <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
-            What happens if I exceed my edition limits?
+            What happens if I go over my edition's limits?
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            The system warns you at 80% of the limit. You can move up to the next edition from inside the platform without migrating data or losing your configuration.
+            You'll get a heads-up when you hit 80% of a limit. From there you can move up to the next edition right inside the platform, with no data migration and without losing your settings.
           </div>
         </details>
         <details class="card-glass group">
@@ -272,25 +272,25 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Yes: $99 one time, covering initial configuration, loading your catalog and kickoff training. It is free if you pay the annual plan. In Enterprise we assign a dedicated consultant.
+            Yes, it's a one-time $99 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Enterprise customers get a dedicated consultant.
           </div>
         </details>
         <details class="card-glass group">
           <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
-            How do I pay? Do you accept ACH, Yappy, credit card?
+            How do I pay? Do you take ACH, Yappy, credit cards?
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            We accept ACH, Yappy, credit card and bank deposit. Enterprise accounts can pay against invoice on net-30 terms.
+            You can pay by ACH, Yappy, credit card or bank deposit. Enterprise accounts can also pay by invoice on net-30 terms.
           </div>
         </details>
         <details class="card-glass group">
           <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
-            What does the e-invoicing PAC cost cover?
+            Is the e-invoicing PAC fee included?
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            The PAC cost (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) is paid by the client directly to their PAC. SuiteHub connects with no extra fee. We help you contract the PAC during onboarding.
+            No. You pay the PAC (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) directly. SuiteHub connects to it at no extra charge, and we'll help you sign up with one during onboarding.
           </div>
         </details>
       </div>
@@ -304,7 +304,7 @@ const faqLd = {
         <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
           Still have questions?
         </h2>
-        <p class="text-ink-300 mb-8">Chat with us on WhatsApp and we'll recommend the right fit for your operation.</p>
+        <p class="text-ink-300 mb-8">Message us on WhatsApp, tell us a bit about how you work, and we'll point you to the right edition.</p>
         <a href="https://wa.me/50766326006?text=I%20have%20questions%20about%20SuiteHub%20pricing" target="_blank" rel="noopener" class="btn-primary">
           <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
         </a>

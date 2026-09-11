@@ -6,18 +6,18 @@ const editions = [
   {
     key:        'lite',
     name:       'Lite Edition',
-    tagline:    'Get started',
+    tagline:    'Starter',
     price:      24,
     priceYearly: 240,
     color:      'sky',
     icon:       'fa-rocket',
-    ideal:      'Small business taking its first steps into digital — an independent practice, a small distributor, a freelancer with a steady client list.',
-    description:'The basics done right. Customers, products and services organized; quotes that look professional; DGI electronic invoicing included. No bloated features you will never use.',
+    ideal:      'Small businesses just starting to go digital, like an independent practice, a small distributor or a freelancer with regular clients.',
+    description:'What you need to get organized. Your customers, products and services live in one place, your quotes look professional, and DGI electronic invoicing is already included. We don\'t pile on features you won\'t use.',
     limits: {
       branches: 1, users: 3, records: 500, storage: '2 GB',
     },
     modules: [
-      { icon: 'fa-users',         name: 'Customers',      desc: 'Basic CRUD, search, filters' },
+      { icon: 'fa-users',         name: 'Customers',      desc: 'Add, edit, search and filter' },
       { icon: 'fa-screwdriver-wrench', name: 'Services', desc: 'Catalog of billable services' },
       { icon: 'fa-boxes-stacked', name: 'Inventory',      desc: 'Products with manual stock' },
       { icon: 'fa-file-invoice',  name: 'Quotes',         desc: 'Up to 50 quotes/month' },
@@ -35,17 +35,17 @@ const editions = [
     color:      'cyan',
     featured:   true,
     icon:       'fa-bolt',
-    ideal:      'Established SME with 5-10 employees and one location — the neighborhood restaurant, the clinic with its practice, the regional distributor.',
-    description:'The edition that turns on electronic invoicing with any of the 5 DGI Panama certified PACs (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) or with The Factory HKA Venezuela for the SENIAT regime. Accounts receivable with multi-invoice receipts. Saved SQL reports for analytics. Everything for one location; when you open more, Enterprise.',
+    ideal:      'Established small businesses with 5 to 10 employees and a single location. Think the neighborhood restaurant, a clinic with its own practice, or a regional distributor.',
+    description:'Core is where you turn on electronic invoicing through any of the 5 PACs certified by Panama\'s DGI (Digifact, HKA, Ebi, Factura Fácil, eFacturapty), or through The Factory HKA Venezuela if you invoice under the SENIAT regime. You also get accounts receivable with receipts that cover several invoices, and saved SQL reports for anyone who wants to dig into the numbers. It\'s built for one location. Once you open a second, you\'ll want Enterprise.',
     limits: {
       branches: 1, users: 8, records: 5000, storage: '10 GB',
     },
     modules: [
       { icon: 'fa-receipt',           name: 'DGI electronic invoicing', desc: '32 DGI rules verified, 0 production rejections' },
       { icon: 'fa-hand-holding-dollar', name: 'AR with multi-invoice receipts', desc: 'One payment applied across several invoices' },
-      { icon: 'fa-file-invoice',      name: 'Quotes with conversion',   desc: 'Accepted quote → invoice in 1 click' },
-      { icon: 'fa-arrow-right-arrow-left', name: 'Inventory movements', desc: 'In, out, adjustments with audit trail' },
-      { icon: 'fa-chart-column',      name: 'Level 2 reports (SQL)',    desc: 'Admin writes saved SELECTs with whitelist' },
+      { icon: 'fa-file-invoice',      name: 'Quotes with conversion',   desc: 'Turn an accepted quote into an invoice in 1 click' },
+      { icon: 'fa-arrow-right-arrow-left', name: 'Inventory movements', desc: 'Stock in, stock out and adjustments, all audited' },
+      { icon: 'fa-chart-column',      name: 'Level 2 reports (SQL)',    desc: 'Admins save SELECT queries against a whitelist' },
       { icon: 'fa-file-pdf',          name: 'Editable PDF templates',   desc: 'Customize invoice, quote and receipt' },
     ],
     extras: ['Email + WhatsApp support', 'Installable PWA', 'Guided setup'],
@@ -58,17 +58,17 @@ const editions = [
     priceYearly: 640,
     color: 'brand',
     icon:       'fa-crown',
-    ideal:      'SME with 10-20 employees that wants the system its own way — its brand on every invoice, automations, and a connection to its accounting or e-commerce.',
-    description:'The leap to customizable. Your logo, colors and domain on invoices, emails and portal; scheduled automations (collection reminders, follow-ups); REST API to integrate with your accounting or e-commerce; WhatsApp Business to talk to customers from inside the system.',
+    ideal:      'Businesses with 10 to 20 employees that want the system set up their way, with their brand on every invoice, automations, and a link to their accounting or online store.',
+    description:'This is where the system starts to carry your brand. Your logo, colors and domain show up on invoices, emails and the portal. You can schedule automations like payment reminders and follow-ups, connect your accounting or e-commerce through the REST API, and message customers on WhatsApp Business without leaving the system.',
     limits: {
       branches: 1, users: 20, records: 50000, storage: '50 GB',
     },
     modules: [
       { icon: 'fa-palette',      name: 'Your own branding',       desc: 'Your logo, colors and domain on invoices, emails and portal' },
-      { icon: 'fa-robot',        name: 'Automations',             desc: 'Collection reminders, follow-ups, stock alerts' },
+      { icon: 'fa-robot',        name: 'Automations',             desc: 'Payment reminders, follow-ups, stock alerts' },
       { icon: 'fa-code',         name: 'REST API',                desc: '100,000 calls/month with OpenAPI 3.0' },
-      { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Meta-approved templates + automatic dispatch' },
-      { icon: 'fa-bolt',         name: 'Webhooks',                desc: 'Notify your systems in real time when something happens' },
+      { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Meta-approved templates and automatic sending' },
+      { icon: 'fa-bolt',         name: 'Webhooks',                desc: 'Let your other systems know the moment something happens' },
       { icon: 'fa-chart-pie',    name: 'Level 3 reports (PDF)',   desc: 'Dynamic templates with editable placeholders' },
     ],
     extras: ['Priority support', 'Assisted onboarding (4h)', 'Initial training'],
@@ -81,18 +81,18 @@ const editions = [
     priceYearly: 1960,
     color:      'amber',
     icon:       'fa-trophy',
-    ideal:      'Business with several locations — the workshop chain, the restaurant with 3 locations, the medical group with several practices. Main location included; each additional +$64/mo.',
-    description:'The multi-branch edition. Inventory, sales and reports per branch or consolidated, transfers between locations, and any vertical included. Full white-label (sell SuiteHub under your brand), unlimited API, SLA, dedicated onboarding and custom integrations.',
+    ideal:      'Businesses with several locations, like a chain of repair shops, a restaurant with 3 locations or a medical group with several practices. Your main location is included, and each additional one is $64/mo.',
+    description:'Built for running several branches. You see inventory, sales and reports per branch or all together, transfer stock between locations, and get any vertical included. It also comes with full white-label so you can sell SuiteHub under your own brand, plus unlimited API, an SLA, dedicated onboarding and custom integrations.',
     limits: {
       branches: '1 + $64/mo each additional', users: 50, records: 'Unlimited', storage: '200 GB',
     },
     modules: [
       { icon: 'fa-building',        name: 'Multi-branch',             desc: 'Inventory, sales and reports per branch or consolidated' },
-      { icon: 'fa-palette',         name: 'Full white-label',         desc: 'Sell SuiteHub under your brand, domain and branding' },
+      { icon: 'fa-palette',         name: 'Full white-label',         desc: 'Sell SuiteHub under your own brand and domain' },
       { icon: 'fa-code-branch',     name: 'Unlimited API',            desc: 'No call cap, bidirectional webhooks' },
-      { icon: 'fa-arrows-up-down-left-right', name: 'Inter-branch transfers', desc: 'Atomic double movement, audited' },
-      { icon: 'fa-graduation-cap',  name: 'Dedicated onboarding',     desc: 'Assigned SuiteHub consultant, migration plan' },
-      { icon: 'fa-plug',            name: 'Custom integrations',      desc: 'Connection with the company’s legacy systems' },
+      { icon: 'fa-arrows-up-down-left-right', name: 'Inter-branch transfers', desc: 'Out and in recorded as one audited step' },
+      { icon: 'fa-graduation-cap',  name: 'Dedicated onboarding',     desc: 'A SuiteHub consultant assigned to you, plus a migration plan' },
+      { icon: 'fa-plug',            name: 'Custom integrations',      desc: 'Hook into the systems your company already uses' },
     ],
     extras: ['Contractual SLA', 'Dedicated account manager', 'Geographic backup (Tier 3)'],
   },
@@ -115,7 +115,7 @@ const colorMap = {
   amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
 };
 ---
-<BaseLayout title="Editions · SuiteHub" description="Four editions of SuiteHub: Lite ($24), Core ($48), Pro ($64), Enterprise ($196). Grow without migrating.">
+<BaseLayout title="Editions · SuiteHub" description="SuiteHub comes in four editions: Lite ($24), Core ($48), Pro ($64) and Enterprise ($196). As you grow, you switch editions without migrating.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -124,10 +124,10 @@ const colorMap = {
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">The 4 editions</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          One platform. <span class="text-gradient">You choose</span> how much horsepower you need.
+          It's one platform, and <span class="text-gradient">you decide</span> how much of it you need.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Same core, same flow, same data. Changing edition is moving a slider — not migrating to another system.
+          Every edition runs on the same foundation, and your data stays where it is. Switching editions is just a change to your account, so you never have to move to another system.
         </p>
       </div>
     </div>
@@ -139,7 +139,7 @@ const colorMap = {
       <figure class="max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-glow bg-navy-950">
         <img src="/images/products/suite/web-1280.webp" alt="SuiteHub platform interface" width="1280" height="762" loading="eager" decoding="async" class="w-full h-auto" />
       </figure>
-      <p class="text-center text-xs text-ink-500 mt-4">One platform for all 4 editions — change edition without migrating systems.</p>
+      <p class="text-center text-xs text-ink-500 mt-4">All 4 editions run on this same platform, so moving between them doesn't require a migration.</p>
     </div>
   </section>
 
@@ -233,7 +233,7 @@ const colorMap = {
           Not sure <span class="text-gradient">which one to pick</span>?
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
-          Check the <a href="/en/pricing" class="text-brand-400 hover:text-brand-300">full comparison table</a> or chat with us for 10 minutes on WhatsApp and we'll recommend the right fit for your business.
+          Check the <a href="/en/pricing" class="text-brand-400 hover:text-brand-300">full comparison table</a> or message us on WhatsApp. A 10-minute chat is usually enough for us to tell you which edition fits your business.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="/en/pricing" class="btn-secondary"><i class="fa-solid fa-table-list"></i> See comparison table</a>

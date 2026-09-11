@@ -33,7 +33,7 @@ const editions = [
       'Everything in Lite +',
       'DGI electronic invoicing',
       'AR with multi-invoice receipts',
-      'Inventory + movements',
+      'Inventory and stock movements',
       'Pre-built reports',
     ],
   },
@@ -51,8 +51,8 @@ const editions = [
       'Your brand: logo, colors and domain',
       'REST API + 100K calls/month',
       'Scheduled automations',
-      'WhatsApp Business integrated',
-      'SQL reports + PDF templates',
+      'Built-in WhatsApp Business',
+      'SQL reports and PDF templates',
     ],
   },
   {
@@ -63,7 +63,7 @@ const editions = [
     color:  'from-amber-500/20 to-amber-500/5',
     border: 'border-amber-500/30',
     accent: 'text-amber-400',
-    ideal:  'Multi-branch: main location included, +$64/mo per additional',
+    ideal:  'Multi-branch: main location included, +$64/mo per extra branch',
     features: [
       'Everything in Pro +',
       'Multi-branch with consolidation',
@@ -93,12 +93,12 @@ const verticals = [
   { key: 'pet',        name: 'HUB Pet',         desc: 'Vets and pet shops',        icon: 'fa-paw' },
   { key: 'lavanderia', name: 'HUB Laundry',     desc: 'Professional laundries',    icon: 'fa-soap' },
   { key: 'salon',      name: 'HUB Salon',       desc: 'Beauty salons, barbershops', icon: 'fa-scissors' },
-  { key: 'clinic',     name: 'HUB Clinic',      desc: 'Practices and clinics',     icon: 'fa-stethoscope' },
-  { key: 'gym',        name: 'HUB Gym',         desc: 'Gyms and crossfits',        icon: 'fa-dumbbell' },
+  { key: 'clinic',     name: 'HUB Clinic',      desc: 'Medical practices and clinics', icon: 'fa-stethoscope' },
+  { key: 'gym',        name: 'HUB Gym',         desc: 'Gyms and CrossFit boxes',   icon: 'fa-dumbbell' },
   { key: 'inmobiliaria', name: 'HUB Real Estate', desc: 'Real estate agencies',    icon: 'fa-building' },
   { key: 'hotel',      name: 'HUB Hotel',       desc: 'Boutique hotels',           icon: 'fa-hotel' },
   { key: 'phone',      name: 'HUB Phone',       desc: 'Phone repair shops',        icon: 'fa-mobile-screen' },
-  { key: 'traffic',    name: 'HUB Traffic',     desc: 'Footfall and heatmaps',     icon: 'fa-people-arrows' },
+  { key: 'traffic',    name: 'HUB Traffic',     desc: 'In-store foot traffic and heatmaps', icon: 'fa-people-arrows' },
 ];
 
 const pacs = [
@@ -122,7 +122,7 @@ const pacs = [
   },
   {
     name: 'Factura Fácil',
-    desc: 'Panamanian PAC focused on simplicity',
+    desc: 'Panamanian PAC that keeps things simple',
     icon: 'fa-receipt',
     color: 'text-emerald-400',
   },
@@ -134,7 +134,7 @@ const pacs = [
   },
   {
     name: 'The Factory HKA Venezuela',
-    desc: 'SENIAT Imprenta Digital — Venezuela',
+    desc: 'SENIAT Imprenta Digital for Venezuela',
     icon: 'fa-globe-americas',
     color: 'text-fuchsia-400',
   },
@@ -144,30 +144,30 @@ const testimonials = [
   {
     quote: 'We switched from a legacy system to the Pro Edition and within a week we were issuing electronic invoices with zero DGI rejections. The difference is huge.',
     author: 'Raúl Romero',
-    role:   'Lead Technician — QS Express',
+    role:   'Lead Technician · QS Express',
     initial: 'R',
     logo:    '/images/tallerqsexpress.png',
   },
 ];
 
 const stats = [
-  { num: '24',   label: 'Active SMBs (Panama)' },
+  { num: '+50',  label: 'Active SMBs (Panama)' },
   { num: '5',    label: 'Target countries (PA · US · VE · ES · CO)' },
   { num: '13',   label: 'Specialized verticals' },
   { num: '<24h', label: 'Support response time' },
 ];
 
 const tour = [
-  { label: 'Tables',   icon: 'fa-chair',         img: '/images/products/restaurant/shot-mesas.webp',    alt: 'SuiteHub — real-time dining room table map' },
-  { label: 'Order',    icon: 'fa-utensils',      img: '/images/products/restaurant/shot-pedido.webp',   alt: 'SuiteHub — order taking by table' },
-  { label: 'Kitchen',  icon: 'fa-fire-burner',   img: '/images/products/restaurant/shot-cocina.webp',   alt: 'SuiteHub — kitchen display screen (KDS)' },
-  { label: 'Checkout', icon: 'fa-cash-register', img: '/images/products/restaurant/shot-cobro.webp',    alt: 'SuiteHub — checkout and electronic invoicing' },
-  { label: 'Reports',  icon: 'fa-chart-line',    img: '/images/products/restaurant/shot-reportes.webp', alt: 'SuiteHub — sales and operations reports' },
+  { label: 'Tables',   icon: 'fa-chair',         img: '/images/products/restaurant/shot-mesas.webp',    alt: 'Real-time dining room table map in SuiteHub' },
+  { label: 'Order',    icon: 'fa-utensils',      img: '/images/products/restaurant/shot-pedido.webp',   alt: 'Taking a table order in SuiteHub' },
+  { label: 'Kitchen',  icon: 'fa-fire-burner',   img: '/images/products/restaurant/shot-cocina.webp',   alt: 'SuiteHub kitchen display screen (KDS)' },
+  { label: 'Checkout', icon: 'fa-cash-register', img: '/images/products/restaurant/shot-cobro.webp',    alt: 'Checkout with an electronic invoice in SuiteHub' },
+  { label: 'Reports',  icon: 'fa-chart-line',    img: '/images/products/restaurant/shot-reportes.webp', alt: 'Sales and operations reports in SuiteHub' },
 ];
 ---
 <BaseLayout
-  title="SuiteHub — The multi-country business suite that actually scales"
-  description="A PROOQ LLC (USA) product. Multi-jurisdiction electronic invoicing (DGI Panama and SENIAT Venezuela live; Facturae Spain, DIAN Colombia and US state-level on 2026 roadmap), multi-branch, automations, API. Available in Spanish and English. From $24/month.">
+  title="SuiteHub: business management and e-invoicing for SMBs"
+  description="Business management software for small businesses, made by PROOQ LLC (USA). Electronic invoicing is live with DGI in Panama and SENIAT in Venezuela, with Facturae (Spain), DIAN (Colombia) and US state-level compliance planned for 2026. Multi-branch, automations and API. Available in English and Spanish, from $24/month.">
 
   <!-- HERO -->
   <section class="relative overflow-hidden">
@@ -179,16 +179,16 @@ const tour = [
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="animate-fade-up">
           <span class="eyebrow">
-            <i class="fa-solid fa-bolt mr-1"></i> Multi-country business suite · PA · US · VE · ES · CO
+            <i class="fa-solid fa-bolt mr-1"></i> Software for SMBs · PA · US · VE · ES · CO
           </span>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05] tracking-tight">
-            A business suite<br/>
-            <span class="text-gradient">that actually scales</span><br/>
-            with you.
+            The system<br/>
+            <span class="text-gradient">that grows</span><br/>
+            with your business.
           </h1>
           <p class="mt-6 text-lg text-ink-300 max-w-xl leading-relaxed">
-            Management platform for SMBs across <strong class="text-white">Panama, USA, Venezuela, Spain, and Colombia</strong>.
-            Multi-jurisdiction electronic invoicing, multi-branch, automations and REST API.
+            Business management software for small businesses in <strong class="text-white">Panama, USA, Venezuela, Spain, and Colombia</strong>.
+            E-invoicing for your country, multiple branches, automated tasks, and a REST API.
             <span class="text-brand-300">From $24/month.</span>
           </p>
 
@@ -201,7 +201,7 @@ const tour = [
             <a href="https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20a%20demo"
                target="_blank" rel="noopener" class="btn-primary text-base">
               <i class="fa-brands fa-whatsapp text-xl"></i>
-              Talk to sales now
+              Talk to our team
             </a>
             <a href="#tiers" class="btn-secondary text-base">
               See editions and pricing
@@ -212,11 +212,11 @@ const tour = [
           <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-ink-400">
             <div class="flex items-center gap-2">
               <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-              Multi-jurisdiction e-invoicing
+              Electronic invoicing
             </div>
             <div class="flex items-center gap-2">
               <i class="fa-solid fa-clock text-brand-400"></i>
-              Setup in 24h
+              Ready in 24 hours
             </div>
             <div class="flex items-center gap-2">
               <i class="fa-solid fa-headset text-brand-400"></i>
@@ -225,20 +225,14 @@ const tour = [
           </div>
         </div>
 
-        <!-- Visual: real product in a browser mockup -->
+        <!-- Visual: illustration of the SuiteHub office -->
         <div class="relative animate-fade-in" style="perspective:1200px;">
           <!-- Glow orb -->
           <div class="absolute -inset-10 bg-brand-600/20 rounded-full blur-3xl" aria-hidden="true"></div>
 
           <div id="hero-tilt" class="tilt relative browser-mock">
-            <div class="browser-bar">
-              <span class="bg-rose-400/70"></span>
-              <span class="bg-amber-400/70"></span>
-              <span class="bg-emerald-400/70"></span>
-              <span class="ml-3 text-[10px] text-ink-500 truncate">app.suitehub.net · Dashboard</span>
-            </div>
-            <img src="/images/hubcore2.webp" alt="SuiteHub dashboard — business management panel"
-                 width="1885" height="931" fetchpriority="high"
+            <img src="/images/suitehub-hero.webp" alt="Illustration of the SuiteHub office with the team at work"
+                 width="1200" height="896" fetchpriority="high"
                  class="w-full block" />
           </div>
 
@@ -254,7 +248,7 @@ const tour = [
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span class="text-xs font-medium">24 businesses invoicing today</span>
+            <span class="text-xs font-medium">+50 businesses invoicing today</span>
           </div>
         </div>
       </div>
@@ -276,11 +270,11 @@ const tour = [
       <div class="text-center mb-12 max-w-2xl mx-auto">
         <span class="eyebrow">A look inside</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          This is <span class="text-gradient">SuiteHub in action.</span>
+          Here's <span class="text-gradient">SuiteHub on a normal day.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          From the dining room to the kitchen, from checkout to reports — walk through a real HUB Restaurant flow.
-          Every vertical looks and feels built for your business.
+          Click through HUB Restaurant screen by screen, from the tables and the kitchen to checkout and reports.
+          Each vertical is set up for its own kind of business.
         </p>
       </div>
 
@@ -320,12 +314,12 @@ const tour = [
   <section class="py-16 sm:py-20 bg-navy-900/30 border-y border-white/5">
     <div class="wrap">
       <div class="text-center mb-10">
-        <span class="eyebrow">Multi-jurisdiction electronic invoicing</span>
+        <span class="eyebrow">Electronic invoicing by country</span>
         <h2 class="text-2xl sm:text-3xl font-display font-bold">
-          Today <span class="text-gradient">6 integrated PACs</span> — 5 DGI Panama + SENIAT Venezuela · Roadmap: Facturae ES, DIAN CO, US compliance
+          We already work with <span class="text-gradient">6 PACs</span>, 5 with Panama's DGI and 1 with Venezuela's SENIAT · Coming next: Facturae ES, DIAN CO, US compliance
         </h2>
         <p class="mt-3 text-sm text-ink-400 max-w-xl mx-auto">
-          You pick the PAC you want to work with. SuiteHub connects directly and handles the whole flow — XML, CUFE and QR in Panama; JSON and Control Number in Venezuela — so you never have to think about regulation. Adapter layer designed to abstract any jurisdiction.
+          You pick the PAC. SuiteHub connects directly and takes care of the whole process (XML, CUFE and QR in Panama; JSON and Control Number in Venezuela), so you don't have to keep up with the rules yourself. It's also built to add new countries without changing the way you work.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
@@ -351,8 +345,8 @@ const tour = [
           Four editions. <span class="text-gradient">Grow without migrating.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          Start with the basics today and upgrade your edition when you need to — no data migration,
-          no relearning, no downtime. Same core, more horsepower.
+          Start with the basics and move up to another edition when you need it. Your data stays
+          where it is, and your team keeps working in the same system they already know.
         </p>
       </div>
 
@@ -401,11 +395,11 @@ const tour = [
       <div class="text-center mb-16 max-w-2xl mx-auto">
         <span class="eyebrow">Specialized verticals</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          SuiteHub spoken <span class="text-gradient">in your language.</span>
+          A version <span class="text-gradient">for every business.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          Every industry has its own jargon, flow and needs.
-          We take SuiteHub and tune it for your specific business — ready to use from day one.
+          A repair shop doesn't run like a restaurant or a clinic.
+          Each vertical is SuiteHub adjusted to one type of business, with its own terms and steps, and you can start using it on day one.
         </p>
       </div>
 
@@ -437,12 +431,12 @@ const tour = [
             <i class="fa-solid fa-star mr-1"></i> Case study
           </span>
           <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-            QS Express tripled their <span class="text-gradient">operational capacity</span>
+            QS Express now handles <span class="text-gradient">three times the orders</span>
           </h2>
           <p class="text-ink-300 leading-relaxed mb-8">
-            An auto-repair shop in La Chorrera with 20+ years of experience migrated from
-            Excel and notebooks. In 4 weeks they were already issuing electronic invoices,
-            booking appointments online and tracking every work order in real time.
+            This auto repair shop in La Chorrera has more than 20 years in business and used to run
+            everything on Excel and paper notebooks. Within 4 weeks they were issuing electronic invoices,
+            taking appointments online and keeping track of every work order.
           </p>
 
           <div class="grid grid-cols-3 gap-6 mb-8">
@@ -456,7 +450,7 @@ const tour = [
             </div>
             <div>
               <div class="text-3xl font-display font-bold text-brand-400">4 wks</div>
-              <div class="text-xs text-ink-400 mt-1">To full speed</div>
+              <div class="text-xs text-ink-400 mt-1">To go fully live</div>
             </div>
           </div>
 
@@ -479,7 +473,7 @@ const tour = [
               <img src="/images/products/taller/badge.svg" alt="HUB Workshop" class="w-12 h-12" />
               <span class="font-display font-bold text-xl">HUB Workshop</span>
             </div>
-            <div class="text-sm text-ink-400">Auto-repair shop — La Chorrera</div>
+            <div class="text-sm text-ink-400">Auto repair shop in La Chorrera</div>
             <div class="mt-4 inline-flex items-center gap-2 text-xs text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full">
               <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
               Active since 2026
@@ -496,7 +490,7 @@ const tour = [
       <div class="text-center mb-16 max-w-2xl mx-auto">
         <span class="eyebrow">What clients say</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          Built <span class="text-gradient">alongside the people who use it.</span>
+          Built <span class="text-gradient">with the people who use it.</span>
         </h2>
       </div>
 
@@ -535,11 +529,11 @@ const tour = [
     <div class="wrap relative">
       <div class="card-glass gradient-border text-center p-12 lg:p-16 max-w-3xl mx-auto">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-5">
-          Let us help you <span class="text-gradient">start today.</span>
+          We'll help you <span class="text-gradient">get started today.</span>
         </h2>
         <p class="text-ink-300 max-w-xl mx-auto leading-relaxed mb-10">
-          Chat with us on WhatsApp and we'll show you SuiteHub live in less than 15 minutes.
-          No commitment, no endless forms.
+          Send us a message on WhatsApp and we'll show you SuiteHub live in under 15 minutes.
+          You don't have to fill out any forms or commit to anything.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20to%20book%20a%20demo"

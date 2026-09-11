@@ -7,10 +7,10 @@ const verticals = [
     key:    'taller',
     name:   'HUB Workshop',
     icon:   'fa-screwdriver-wrench',
-    sector: 'Auto-repair shops',
+    sector: 'Auto repair shops',
     short:  'For mechanic shops, quick-service centers and diagnostic centers.',
-    pitch:  'Quick vehicle intake, work orders with services and parts, online booking, vehicle + customer linked, direct e-invoicing.',
-    client: 'QS Express — Auto-repair shop in La Chorrera',
+    pitch:  'Fast vehicle check-in, work orders with labor and parts, online appointments and e-invoicing right from the order. Every vehicle stays linked to its owner.',
+    client: 'QS Express, an auto repair shop in La Chorrera',
   },
   {
     key:    'carwash',
@@ -18,7 +18,7 @@ const verticals = [
     icon:   'fa-spray-can-sparkles',
     sector: 'Car washes and detailing',
     short:  'For car washes, express wash, detailing and mobile wash.',
-    pitch:  'Intake by plate with vehicle history, bays and washers with a live queue, cash register with daily reconciliation, automatic washer commissions, stamp-card loyalty and DGI e-invoicing from the same order.',
+    pitch:  'Look up each car by its plate and see its history, run bays and washers from a live queue, reconcile the register every day and let washer commissions add up on their own. It also has stamp cards for regulars and DGI e-invoicing from the same order.',
   },
   {
     key:    'pos',
@@ -26,7 +26,7 @@ const verticals = [
     icon:   'fa-cash-register',
     sector: 'Restaurants, bars and food trucks',
     short:  'The POS for restaurants, cafés, bars and food trucks, on your own network.',
-    pitch:  'Tables and orders, kitchen display, split payments with tips, DGI e-invoicing on a receipt with QR, self-service kiosk, digital menu and cash closing by email. Keeps selling even if the internet goes down.',
+    pitch:  'Tables and orders, kitchen display, split payments with tips, DGI e-invoices printed on the receipt with a QR code, self-service kiosk, digital menu and end-of-day cash reports by email. If the internet goes down, you keep selling.',
   },
   // HUB Restaurant is, for now, the PRO version of HUB POS: two models in the catalog.
   {
@@ -35,7 +35,7 @@ const verticals = [
     icon:   'fa-utensils',
     sector: 'Restaurants and bars · PRO version of HUB POS',
     short:  'The PRO version of HUB POS, for restaurants, cafés and bars.',
-    pitch:  'All of HUB POS in its PRO edition: live table state, orders fired to kitchen and bar, KDS, split bills, tips, delivery integration and shift reports.',
+    pitch:  'HUB POS in its PRO edition: live table status, orders sent to the kitchen and bar, KDS, split checks, tips, delivery integration and shift reports.',
   },
   {
     key:    'pet',
@@ -45,13 +45,13 @@ const verticals = [
     screenshotH: 994,
     sector: 'Veterinarians and pet shops',
     short:  'For vet clinics, dog grooming and pet shops.',
-    pitch:  'Digital medical record per pet, automatic vaccine and deworming reminders, owner + pet booking, regulated veterinary products.',
+    pitch:  'Every pet gets a digital medical record. Vaccine and deworming reminders go out automatically, appointments keep owner and pet together, and vet products are sold with a prescription.',
     features: [
-      { icon: 'fa-file-medical',   name: 'Digital medical record', desc: 'Full history, vaccines, allergies, weight' },
-      { icon: 'fa-bell',           name: 'Automatic reminders',  desc: 'Upcoming vaccine, deworming, checkup' },
-      { icon: 'fa-calendar-check', name: 'Owner + pet booking',  desc: 'Vet, grooming, hospitalization' },
-      { icon: 'fa-prescription',   name: 'Prescriptions with stock', desc: 'Drug + regulated-sales control' },
-      { icon: 'fa-camera',         name: 'Pet gallery',          desc: 'Before/after photos, X-rays' },
+      { icon: 'fa-file-medical',   name: 'Digital medical record', desc: 'Full history, vaccines, allergies and weight' },
+      { icon: 'fa-bell',           name: 'Automatic reminders',  desc: 'Upcoming vaccines, deworming and checkups' },
+      { icon: 'fa-calendar-check', name: 'Owner and pet booking', desc: 'Vet visits, grooming and hospital stays' },
+      { icon: 'fa-prescription',   name: 'Prescriptions with stock', desc: 'Tracks stock and controlled drug sales' },
+      { icon: 'fa-camera',         name: 'Pet gallery',          desc: 'Before and after photos, X-rays' },
     ],
   },
   {
@@ -60,7 +60,7 @@ const verticals = [
     icon:   'fa-scissors',
     sector: 'Beauty salons, barbershops, spas',
     short:  'For beauty salons, barbershops, spas and aesthetic centers.',
-    pitch:  'Online booking 24/7 with real availability, schedule per stylist, automatic commissions, WhatsApp reminders, off-peak discounts and the e-invoice on the same ticket.',
+    pitch:  'Clients book online any time and only see open slots. Schedules for each stylist, automatic commissions, WhatsApp reminders, off-peak discounts and the e-invoice on the same receipt.',
   },
   {
     key:    'clinic',
@@ -70,12 +70,12 @@ const verticals = [
     screenshotH: 940,
     sector: 'Practices and clinics',
     short:  'For medical and dental practices and multi-specialty clinics.',
-    pitch:  'Digital clinical record, doctor schedule, electronic prescriptions, patient history, billing to insurers.',
+    pitch:  'Digital patient charts, a schedule for each doctor, e-prescriptions, patient history and insurance billing.',
     features: [
-      { icon: 'fa-notes-medical',  name: 'Digital records',      desc: 'SOAP, history, vital signs' },
-      { icon: 'fa-calendar-days',  name: 'Multi-doctor schedule', desc: 'Per specialist, room, equipment' },
-      { icon: 'fa-prescription-bottle-medical', name: 'Digital prescriptions', desc: 'Signed PDF or printed, regulated control' },
-      { icon: 'fa-shield-heart',   name: 'Health insurance',     desc: 'Billing to insurers with codes' },
+      { icon: 'fa-notes-medical',  name: 'Digital records',      desc: 'SOAP notes, medical history and vital signs' },
+      { icon: 'fa-calendar-days',  name: 'Multi-doctor schedule', desc: 'By specialist, room or equipment' },
+      { icon: 'fa-prescription-bottle-medical', name: 'Digital prescriptions', desc: 'Signed PDF or printed, with controlled drug tracking' },
+      { icon: 'fa-shield-heart',   name: 'Health insurance',     desc: 'Bill insurers with the right codes' },
     ],
   },
   {
@@ -86,12 +86,12 @@ const verticals = [
     screenshotH: 940,
     sector: 'Gyms, crossfit, yoga',
     short:  'For gyms, crossfit boxes, yoga studios and sports centers.',
-    pitch:  'Monthly/annual memberships, QR access control, classes with capacity caps, assignable trainers, churn alerts.',
+    pitch:  'Monthly or annual memberships, QR check-in, classes with limited spots and assigned trainers. You get an alert when a member stops showing up.',
     features: [
-      { icon: 'fa-id-card',        name: 'Memberships',          desc: 'Recurring billing, freeze, suspend' },
-      { icon: 'fa-qrcode',         name: 'Access control',       desc: 'Customer enters by scanning QR from their app' },
-      { icon: 'fa-people-group',   name: 'Capacity classes',     desc: 'Online booking, waitlist' },
-      { icon: 'fa-chart-line',     name: 'Retention',            desc: 'Alert if a member misses 14 days' },
+      { icon: 'fa-id-card',        name: 'Memberships',          desc: 'Recurring billing, freezes and holds' },
+      { icon: 'fa-qrcode',         name: 'Access control',       desc: 'Members check in by scanning a QR code in their app' },
+      { icon: 'fa-people-group',   name: 'Class capacity',       desc: 'Online booking and waitlist' },
+      { icon: 'fa-chart-line',     name: 'Retention',            desc: "Alerts you when a member hasn't come in for 14 days" },
     ],
   },
   {
@@ -102,12 +102,12 @@ const verticals = [
     screenshotH: 940,
     sector: 'Professional laundries',
     short:  'For laundries, dry cleaners and ironing services.',
-    pitch:  'Receipt with pickup code, process stage (wash/dry/iron), price by kilo or by item, ready-when-done reminder.',
+    pitch:  'Tickets with a pickup code, tracking for each stage (wash, dry, iron), pricing by the kilo or by the item, and a message to the customer when the order is ready.',
     features: [
-      { icon: 'fa-receipt',        name: 'Receipt with code',    desc: 'Customer picks up with their unique code' },
+      { icon: 'fa-receipt',        name: 'Receipt with code',    desc: 'Customers pick up with their own code' },
       { icon: 'fa-spinner',        name: 'Process stages',       desc: 'Received → washed → dried → ready' },
-      { icon: 'fa-weight-hanging', name: 'Per kilo or per item', desc: 'Configurable per service' },
-      { icon: 'fa-mobile-screen',  name: 'WhatsApp notice',      desc: 'Auto-message when ready' },
+      { icon: 'fa-weight-hanging', name: 'Per kilo or per item', desc: 'Set it for each service' },
+      { icon: 'fa-mobile-screen',  name: 'WhatsApp alert',       desc: "Automatic message when it's ready" },
     ],
   },
   {
@@ -118,11 +118,11 @@ const verticals = [
     screenshotH: 940,
     sector: 'Real estate',
     short:  'For real estate agencies and small developers.',
-    pitch:  'Property portfolio, leads with pipeline stages, rental contracts with recurring billing, agents with commissions.',
+    pitch:  'Property listings, leads sorted by pipeline stage, rental contracts with monthly billing and commissions for each agent.',
     features: [
-      { icon: 'fa-house',          name: 'Property catalog',     desc: 'Photos, video, price, status' },
+      { icon: 'fa-house',          name: 'Property catalog',     desc: 'Photos, video, price and status' },
       { icon: 'fa-funnel-dollar',  name: 'Lead pipeline',        desc: 'Interested → visit → offer → close' },
-      { icon: 'fa-file-contract',  name: 'Rental contracts',     desc: 'Auto-monthly billing, deposits' },
+      { icon: 'fa-file-contract',  name: 'Rental contracts',     desc: 'Automatic monthly billing and deposits' },
       { icon: 'fa-handshake',      name: 'Agent commissions',    desc: 'Per closed sale or managed rental' },
     ],
   },
@@ -134,12 +134,12 @@ const verticals = [
     screenshotH: 922,
     sector: 'Boutique hotels and hostels',
     short:  'For boutique hotels, hostels, glampings and B&Bs.',
-    pitch:  'Room calendar, reservations per channel (Booking/Airbnb/direct), check-in/out with invoice, minibar consumption, housekeeping.',
+    pitch:  'Room calendar, bookings by channel (Booking, Airbnb or direct), check-in and check-out with an invoice, minibar charges and housekeeping.',
     features: [
-      { icon: 'fa-calendar',       name: 'Tape chart',           desc: 'Calendar view of occupancy per room' },
-      { icon: 'fa-bell-concierge', name: 'Check-in / out',       desc: 'Passport, digital signature, instant invoice' },
-      { icon: 'fa-bed',            name: 'Housekeeping',         desc: 'Room status: clean/dirty/inspection' },
-      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Sync with Booking, Airbnb, Expedia (Pro+)' },
+      { icon: 'fa-calendar',       name: 'Tape chart',           desc: 'Occupancy calendar for every room' },
+      { icon: 'fa-bell-concierge', name: 'Check-in / out',       desc: 'Passport, digital signature and instant invoice' },
+      { icon: 'fa-bed',            name: 'Housekeeping',         desc: 'Room status: clean, dirty or being inspected' },
+      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Syncs with Booking, Airbnb and Expedia (Pro+)' },
     ],
   },
   {
@@ -150,12 +150,12 @@ const verticals = [
     screenshotH: 940,
     sector: 'Phone repair shops',
     short:  'For phone, tablet and laptop repair shops.',
-    pitch:  'Device intake with diagnosis, quote per damage, parts linked to the order, digital warranty, ticket with code.',
+    pitch:  'Check in each device with a diagnosis, quote based on the damage, link parts to the order, and hand over a digital warranty and a ticket with a code.',
     features: [
-      { icon: 'fa-magnifying-glass', name: 'Initial diagnosis',  desc: 'Model, visible damage, password, accessories' },
-      { icon: 'fa-money-bill-trend-up', name: 'Customer quote',  desc: 'Approve and proceed / decline and return' },
-      { icon: 'fa-microchip',      name: 'Linked parts',         desc: 'Stock decrements when installed' },
-      { icon: 'fa-shield',         name: 'Digital warranty',     desc: 'PDF with QR for later claims' },
+      { icon: 'fa-magnifying-glass', name: 'Initial diagnosis',  desc: 'Model, visible damage, passcode and accessories' },
+      { icon: 'fa-money-bill-trend-up', name: 'Customer quote',  desc: 'If they approve, you fix it. If not, it goes back' },
+      { icon: 'fa-microchip',      name: 'Linked parts',         desc: 'Inventory updates when a part is installed' },
+      { icon: 'fa-shield',         name: 'Digital warranty',     desc: 'PDF with a QR code for future claims' },
     ],
   },
   {
@@ -166,14 +166,14 @@ const verticals = [
     screenshotH: 940,
     sector: 'Footfall analytics and shopper behavior',
     short:  'For retail stores, malls, brick-and-mortar locations and high-traffic venues.',
-    pitch:  'Automatic people counting, zone heatmaps, dwell time, visit-to-sale conversion cross-referenced with your POS, hour/day comparisons and real-time capacity alerts.',
+    pitch:  'Counts the people who walk in, shows heatmaps by zone and how long people stay in each one, matches visits with sales from your POS, compares hours and days, and alerts you in real time when you hit capacity.',
     features: [
       { icon: 'fa-people-line',     name: 'People counting',      desc: 'Real-time ins and outs via sensor or camera' },
-      { icon: 'fa-fire',            name: 'Heatmaps',             desc: 'Hot and cold zones by hour, day, week' },
+      { icon: 'fa-fire',            name: 'Heatmaps',             desc: 'Busy and quiet zones by hour, day or week' },
       { icon: 'fa-stopwatch',       name: 'Dwell time',           desc: 'Average time people spend in each zone' },
-      { icon: 'fa-arrow-trend-up',  name: 'Visit→sale conversion', desc: 'Cross-reference with HUB POS to measure real close rate' },
-      { icon: 'fa-chart-column',    name: 'Comparisons',          desc: 'Peak hour, busiest day, peaks vs. average' },
-      { icon: 'fa-bell',            name: 'Capacity alerts',      desc: 'Alert when the people limit is exceeded' },
+      { icon: 'fa-arrow-trend-up',  name: 'Visit→sale conversion', desc: 'Matches data with HUB POS to see how many visits turn into sales' },
+      { icon: 'fa-chart-column',    name: 'Comparisons',          desc: 'Peak hour, busiest day and peaks vs. average' },
+      { icon: 'fa-bell',            name: 'Capacity alerts',      desc: 'Lets you know when a space goes over capacity' },
     ],
   },
 ];
@@ -203,11 +203,11 @@ const vista = verticals.map((v: any) => {
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">13 specialized verticals</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          SuiteHub <span class="text-gradient">for your industry</span>, not generic.
+          SuiteHub <span class="text-gradient">built for your industry</span>.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Each vertical inherits the SuiteHub core and adds the flows, jargon and screens
-          your industry needs. No paying for features from another industry you'll never use.
+          Each vertical starts from the SuiteHub core, and we add the workflows, terms and screens
+          your kind of business uses. You don't pay for features meant for another industry.
         </p>
       </div>
     </div>
@@ -254,7 +254,7 @@ const vista = verticals.map((v: any) => {
               {v.landing && (
                 <a href={v.landing} class="btn-primary">
                   <i class="fa-solid fa-arrow-right"></i>
-                  See everything about {v.name}
+                  Learn more about {v.name}
                 </a>
               )}
               <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(v.name)}`}
@@ -271,7 +271,7 @@ const vista = verticals.map((v: any) => {
                 <img src={v.screenshot} alt={`${v.name} screenshot`} width={v.screenshotW ?? 1280} height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
               </figure>
             )}
-            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Vertical-specific features</h3>
+            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Features for this vertical</h3>
             <div class="grid sm:grid-cols-2 gap-3">
               {(v.features ?? []).map(f => (
                 <div class="card-glass p-5 hover:border-white/15 transition-colors">
@@ -288,7 +288,7 @@ const vista = verticals.map((v: any) => {
               ))}
             </div>
             <p class="mt-6 text-xs text-ink-500">
-              + All SuiteHub core features depending on the edition you pick.
+              + The SuiteHub core features included in the edition you choose.
             </p>
           </div>
         </div>
@@ -304,8 +304,8 @@ const vista = verticals.map((v: any) => {
           Is your industry <span class="text-gradient">not on the list</span>?
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
-          If your industry has 50+ potential businesses in any of our markets (Panama, USA, Venezuela, Spain, Colombia), we can build a specific vertical for you.
-          Tell us on WhatsApp and we'll evaluate.
+          If there are 50 or more businesses like yours in any of our markets (Panama, USA, Venezuela, Spain or Colombia), we can build a vertical for you.
+          Message us on WhatsApp and we'll take a look.
         </p>
         <a href="https://wa.me/50766326006?text=My%20industry%20is%20...%20can%20you%20build%20a%20vertical%3F" target="_blank" rel="noopener" class="btn-primary">
           <i class="fa-brands fa-whatsapp"></i> Tell us about your industry

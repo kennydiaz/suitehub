@@ -6,25 +6,25 @@ const ediciones = [
   {
     key:        'lite',
     name:       'Edición Lite',
-    tagline:    'Empieza ya',
+    tagline:    'Para empezar',
     price:      24,
     priceYearly: 240,
     color:      'sky',
     icon:       'fa-rocket',
-    ideal:      'Negocio chico que está empezando a digitalizarse — un consultorio independiente, una distribuidora pequeña, un freelancer con cartera fija.',
-    description:'Lo básico bien hecho. Clientes, productos y servicios organizados, cotizaciones que se ven profesionales y facturación electrónica DGI incluida. Sin sobreasignación de funciones que no vas a usar.',
+    ideal:      'Negocios pequeños que apenas se están digitalizando, como un consultorio independiente, una distribuidora chica o un freelancer con clientes fijos.',
+    description:'Lo necesario para poner orden. Tienes clientes, productos y servicios en un solo lugar, haces cotizaciones con buena presentación y la facturación electrónica DGI ya viene incluida. No te llenamos la pantalla de funciones que no vas a usar.',
     limits: {
       sucursales: 1, usuarios: 3, registros: 500, almacenamiento: '2 GB',
     },
     modulos: [
-      { icon: 'fa-users',         name: 'Clientes',       desc: 'CRUD básico, búsqueda, filtros' },
+      { icon: 'fa-users',         name: 'Clientes',       desc: 'Registro, edición, búsqueda y filtros' },
       { icon: 'fa-screwdriver-wrench', name: 'Servicios', desc: 'Catálogo de servicios facturables' },
       { icon: 'fa-boxes-stacked', name: 'Inventario',     desc: 'Productos con stock manual' },
       { icon: 'fa-file-invoice',  name: 'Cotizaciones',   desc: 'Hasta 50 cotizaciones/mes' },
       { icon: 'fa-receipt',       name: 'Facturas electrónicas', desc: 'Hasta 100 facturas/mes con FE DGI' },
       { icon: 'fa-chart-line',    name: 'Reportes',       desc: '6 reportes pre-armados con filtros' },
     ],
-    extras: ['Soporte por email', 'Updates automáticos', 'Backup diario'],
+    extras: ['Soporte por email', 'Actualizaciones automáticas', 'Backup diario'],
   },
   {
     key:        'core',
@@ -35,20 +35,20 @@ const ediciones = [
     color:      'cyan',
     featured:   true,
     icon:       'fa-bolt',
-    ideal:      'PYME consolidada de 5-10 empleados con una sucursal — el restaurante de barrio, la clínica con su consultorio, la distribuidora regional.',
-    description:'La edición que activa la facturación electrónica con cualquiera de los 5 PACs certificados de la DGI Panamá (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) o con The Factory HKA Venezuela para el régimen SENIAT. Cuentas por cobrar con recibos multi-factura. Reportes con SQL guardado para los analíticos. Todo para una sucursal; cuando abras más, Enterprise.',
+    ideal:      'Pymes ya establecidas, de 5 a 10 empleados y una sola sucursal. Piensa en el restaurante del barrio, la clínica con su consultorio o la distribuidora regional.',
+    description:'Con Core activas la facturación electrónica con cualquiera de los 5 PACs certificados por la DGI de Panamá (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) o con The Factory HKA Venezuela si facturas bajo el régimen SENIAT. Suma cuentas por cobrar con recibos que abarcan varias facturas y reportes con SQL guardado para quien quiera analizar más a fondo. Está pensada para una sucursal. Si abres otra, lo tuyo es Enterprise.',
     limits: {
       sucursales: 1, usuarios: 8, registros: 5000, almacenamiento: '10 GB',
     },
     modulos: [
       { icon: 'fa-receipt',           name: 'Facturación electrónica DGI', desc: '32 reglas DGI verificadas, 0 rechazos en producción' },
       { icon: 'fa-hand-holding-dollar', name: 'CxC con recibos multi-factura', desc: 'Un pago aplicado a varias facturas a la vez' },
-      { icon: 'fa-file-invoice',      name: 'Cotizaciones con conversión', desc: 'Cotización aceptada → factura en 1 click' },
-      { icon: 'fa-arrow-right-arrow-left', name: 'Movimientos de inventario', desc: 'Entradas, salidas, ajustes con auditoría' },
-      { icon: 'fa-chart-column',      name: 'Reportes Nivel 2 (SQL)',     desc: 'Admin escribe SELECTs guardados con whitelist' },
+      { icon: 'fa-file-invoice',      name: 'Cotizaciones con conversión', desc: 'La cotización aceptada pasa a factura en 1 clic' },
+      { icon: 'fa-arrow-right-arrow-left', name: 'Movimientos de inventario', desc: 'Entradas, salidas y ajustes, todo auditado' },
+      { icon: 'fa-chart-column',      name: 'Reportes Nivel 2 (SQL)',     desc: 'El admin guarda consultas SELECT con whitelist' },
       { icon: 'fa-file-pdf',          name: 'Plantillas PDF editables',   desc: 'Personaliza factura, cotización y recibo' },
     ],
-    extras: ['Soporte por email + WhatsApp', 'PWA instalable', 'Setup guiado'],
+    extras: ['Soporte por email + WhatsApp', 'PWA instalable', 'Configuración guiada'],
   },
   {
     key:        'pro',
@@ -58,8 +58,8 @@ const ediciones = [
     priceYearly: 640,
     color: 'brand',
     icon:       'fa-crown',
-    ideal:      'PYME de 10-20 empleados que quiere el sistema a su medida — su marca en cada factura, automatizaciones y conexión con su contabilidad o e-commerce.',
-    description:'El salto a personalizable. Tu logo, colores y dominio en facturas, correos y portal; automatizaciones programadas (recordatorios de cobro, seguimientos); API REST para integrar con tu contabilidad o e-commerce; WhatsApp Business para comunicarte con clientes desde el sistema.',
+    ideal:      'Pymes de 10 a 20 empleados que quieren el sistema a su medida, con su marca en cada factura, automatizaciones y conexión con su contabilidad o tienda en línea.',
+    description:'Aquí el sistema empieza a llevar tu marca. Tu logo, tus colores y tu dominio aparecen en facturas, correos y portal. Puedes programar automatizaciones, como recordatorios de cobro o seguimientos, conectar tu contabilidad o tu e-commerce por API REST y hablar con tus clientes por WhatsApp Business sin salir del sistema.',
     limits: {
       sucursales: 1, usuarios: 20, registros: 50000, almacenamiento: '50 GB',
     },
@@ -67,9 +67,9 @@ const ediciones = [
       { icon: 'fa-palette',      name: 'Branding propio',         desc: 'Tu logo, colores y dominio en facturas, correos y portal' },
       { icon: 'fa-robot',        name: 'Automatizaciones',        desc: 'Recordatorios de cobro, seguimientos, alertas de stock' },
       { icon: 'fa-code',         name: 'API REST',                desc: '100,000 llamadas/mes con OpenAPI 3.0' },
-      { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Plantillas Meta-aprobadas + envío automático' },
-      { icon: 'fa-bolt',         name: 'Webhooks',                desc: 'Avisa a tus sistemas en tiempo real cuando pasa algo' },
-      { icon: 'fa-chart-pie',    name: 'Reportes Nivel 3 (PDF)',  desc: 'Plantillas dinámicas con placeholders editables' },
+      { icon: 'fa-comments',     name: 'WhatsApp Business',       desc: 'Plantillas aprobadas por Meta y envío automático' },
+      { icon: 'fa-bolt',         name: 'Webhooks',                desc: 'Avisa a tus otros sistemas apenas pasa algo' },
+      { icon: 'fa-chart-pie',    name: 'Reportes Nivel 3 (PDF)',  desc: 'Plantillas dinámicas con campos variables editables' },
     ],
     extras: ['Soporte prioritario', 'Onboarding asistido (4h)', 'Capacitación inicial'],
   },
@@ -81,18 +81,18 @@ const ediciones = [
     priceYearly: 1960,
     color:      'amber',
     icon:       'fa-trophy',
-    ideal:      'Negocio con varias sucursales — la cadena de talleres, el restaurante con 3 locales, el grupo médico con varios consultorios. Sucursal principal incluida; cada adicional +$64/mes.',
-    description:'La edición multi-sucursal. Inventario, ventas y reportes por sucursal o consolidados, transferencias entre locales y cualquier vertical incluido. White-label completo (vende SuiteHub con tu marca), API ilimitada, SLA, onboarding dedicado e integraciones custom.',
+    ideal:      'Negocios con varias sedes, como una cadena de talleres, un restaurante con 3 locales o un grupo médico con varios consultorios. La sucursal principal está incluida y cada sucursal adicional suma $64/mes.',
+    description:'Es la edición para operar con varias sucursales. Ves inventario, ventas y reportes por sede o consolidados, haces transferencias entre locales y tienes incluido cualquier vertical. También trae white-label completo para vender SuiteHub con tu marca, API ilimitada, SLA, onboarding dedicado e integraciones a la medida.',
     limits: {
       sucursales: '1 + $64/mes c/adicional', usuarios: 50, registros: 'Ilimitados', almacenamiento: '200 GB',
     },
     modulos: [
       { icon: 'fa-building',        name: 'Multi-sucursal',          desc: 'Inventario, ventas y reportes por sucursal o consolidados' },
-      { icon: 'fa-palette',         name: 'White-label completo',    desc: 'Vende SuiteHub con tu marca, dominio y branding' },
+      { icon: 'fa-palette',         name: 'White-label completo',    desc: 'Vende SuiteHub con tu propia marca y dominio' },
       { icon: 'fa-code-branch',     name: 'API ilimitada',           desc: 'Sin tope de llamadas, webhooks bidireccionales' },
-      { icon: 'fa-arrows-up-down-left-right', name: 'Transferencias inter-sucursal', desc: 'Movimiento doble atómico, auditado' },
-      { icon: 'fa-graduation-cap',  name: 'Onboarding dedicado',     desc: 'Consultor SuiteHub asignado, plan de migración' },
-      { icon: 'fa-plug',            name: 'Integraciones custom',    desc: 'Conexión con sistemas legacy de la empresa' },
+      { icon: 'fa-arrows-up-down-left-right', name: 'Transferencias inter-sucursal', desc: 'Salida y entrada en un solo movimiento auditado' },
+      { icon: 'fa-graduation-cap',  name: 'Onboarding dedicado',     desc: 'Un consultor de SuiteHub asignado y plan de migración' },
+      { icon: 'fa-plug',            name: 'Integraciones custom',    desc: 'Conexión con los sistemas que ya usa tu empresa' },
     ],
     extras: ['SLA contractual', 'Account manager dedicado', 'Backup geográfico (Tier 3)'],
   },
@@ -115,7 +115,7 @@ const colorMap = {
   amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
 };
 ---
-<BaseLayout title="Ediciones · SuiteHub" description="Cuatro ediciones de SuiteHub: Lite ($24), Core ($48), Pro ($64), Enterprise ($196). Crece sin migrar.">
+<BaseLayout title="Ediciones · SuiteHub" description="SuiteHub viene en cuatro ediciones: Lite ($24), Core ($48), Pro ($64) y Enterprise ($196). Cuando creces, cambias de edición sin migrar.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -124,10 +124,10 @@ const colorMap = {
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">Las 4 ediciones</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          Una plataforma. <span class="text-gradient">Tú eliges</span> cuánta fuerza necesitas.
+          Es una sola plataforma y <span class="text-gradient">tú eliges</span> cuánto de ella necesitas.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Mismo núcleo, mismo flujo, mismos datos. Cambiar de edición es subir un slider — no migrar a otro sistema.
+          Todas las ediciones funcionan sobre la misma base y tus datos se quedan donde están. Cambiar de edición es un ajuste en tu cuenta, así que nunca tienes que migrar a otro sistema.
         </p>
       </div>
     </div>
@@ -139,7 +139,7 @@ const colorMap = {
       <figure class="max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-glow bg-navy-950">
         <img src="/images/products/suite/web-1280.webp" alt="Interfaz de la plataforma SuiteHub" width="1280" height="762" loading="eager" decoding="async" class="w-full h-auto" />
       </figure>
-      <p class="text-center text-xs text-ink-500 mt-4">Una misma plataforma para las 4 ediciones — cambias de edición sin migrar de sistema.</p>
+      <p class="text-center text-xs text-ink-500 mt-4">Las 4 ediciones usan esta misma plataforma, por eso pasar de una a otra no requiere migrar.</p>
     </div>
   </section>
 
@@ -230,10 +230,10 @@ const colorMap = {
     <div class="wrap">
       <div class="card-glass gradient-border p-10 lg:p-14 text-center max-w-3xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
-          ¿No estás seguro <span class="text-gradient">cuál escoger</span>?
+          ¿No sabes <span class="text-gradient">cuál escoger</span>?
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
-          Mira la <a href="/precios" class="text-brand-400 hover:text-brand-300">tabla comparativa completa</a> o conversemos 10 minutos por WhatsApp y te recomendamos según tu negocio.
+          Revisa la <a href="/precios" class="text-brand-400 hover:text-brand-300">tabla comparativa completa</a> o escríbenos por WhatsApp. Con 10 minutos de conversación te decimos cuál le conviene a tu negocio.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="/precios" class="btn-secondary"><i class="fa-solid fa-table-list"></i> Ver tabla comparativa</a>

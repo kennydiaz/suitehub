@@ -5,65 +5,64 @@ const valores = [
   {
     icon: 'fa-bullseye',
     title: 'Pragmáticos',
-    desc: 'No vendemos tecnología por moda. Cada función existe porque resuelve un dolor real medido en un cliente real.',
+    desc: 'No vendemos tecnología porque esté de moda. Si una función está en SuiteHub, es porque le resolvió un problema concreto a algún cliente.',
   },
   {
     icon: 'fa-handshake',
     title: 'Cercanos',
-    desc: 'Un WhatsApp y respondemos. Sin tickets, sin niveles de soporte. La PYME no necesita protocolos corporativos.',
+    desc: 'Nos escribes por WhatsApp y te respondemos. No hay tickets ni niveles de soporte, porque una PYME no necesita protocolos de empresa grande.',
   },
   {
     icon: 'fa-shield-halved',
     title: 'Rigurosos',
-    desc: 'Facturación electrónica certificada, código con tests automatizados, backups diarios. Tu operación no es un experimento.',
+    desc: 'La facturación electrónica está certificada, el código pasa pruebas automatizadas y hacemos respaldos todos los días. Tu negocio depende de que esto funcione.',
   },
   {
     icon: 'fa-rocket',
     title: 'Veloces',
-    desc: 'Setup en 24 horas. Cambios pequeños el mismo día. La PYME no puede esperar 6 meses de implementación corporativa.',
+    desc: 'Dejamos el sistema listo en 24 horas y los cambios pequeños salen el mismo día. Una PYME no puede pasarse 6 meses esperando una implementación.',
   },
 ];
 
-// TODO: confirmar año exacto de fundación de SuiteHub para reemplazar el placeholder.
 const hitos = [
   {
     year: '2020',
     title: 'Nace SuiteHub',
-    desc:  'Fundamos SuiteHub con una premisa clara: software empresarial hecho para la PYME hispanohablante, no traducido de otro mercado.',
+    desc:  'Fundamos SuiteHub en Panamá con una idea sencilla: hacer software de gestión pensado desde el principio para la PYME hispanohablante, en vez de traducir uno hecho para otro mercado.',
   },
   {
     year: '2026 Q1',
     title: 'Primera factura electrónica DGI Panamá',
-    desc:  'QS Express emite la primera FE con SuiteHub. 0 rechazos en producción desde el día uno.',
+    desc:  'QS Express emite la primera factura electrónica con SuiteHub. Desde ese día lleva 0 rechazos en producción.',
   },
   {
     year: '2026 Q2',
     title: 'Lanzamiento de la familia HUB',
-    desc:  'Cuatro ediciones (Lite/Core/Pro/Enterprise) + 13 verticales especializados.',
+    desc:  'Salen cuatro ediciones (Lite, Core, Pro y Enterprise) y 13 verticales especializados.',
   },
   {
     year: '2026 Q2',
     title: 'Primera emisión SENIAT Venezuela',
-    desc:  'Integración con The Factory HKA Venezuela (Imprenta Digital) validada end-to-end: primer país fuera de Panamá con facturación electrónica en vivo.',
+    desc:  'Validamos de punta a punta la integración con The Factory HKA Venezuela (Imprenta Digital). Venezuela se convierte en el primer país fuera de Panamá con facturación electrónica en vivo.',
   },
   {
     year: '2026',
-    title: 'Reposicionamiento multi-país',
-    desc:  'SuiteHub pasa a ser producto de PROOQ LLC (USA) con operación local en Panamá vía PROOQ S.A. Soft launch en USA, Venezuela, España y Colombia.',
+    title: 'Expansión a varios países',
+    desc:  'SuiteHub pasa a ser un producto de PROOQ LLC (USA), con operación local en Panamá a través de PROOQ S.A. Llegamos a España y empezamos en Venezuela y Colombia.',
   },
   {
     year: 'Hoy',
-    title: '24 PYMEs activas en Panamá',
-    desc:  'Talleres, restaurantes, retail, clínicas, veterinarias y más facturando con SuiteHub en Panamá. USA/Venezuela/España/Colombia en evaluación.',
+    title: '+50 PYMEs activas en Panamá',
+    desc:  'Talleres, restaurantes, tiendas, clínicas, veterinarias y otros negocios ya facturan con SuiteHub en Panamá. También atendemos clientes en USA y España, y estamos empezando en Venezuela y Colombia.',
   },
   {
     year: 'Roadmap',
-    title: 'Facturación electrónica multi-jurisdicción',
-    desc:  'Adaptadores de FE más allá de Panamá vía proveedores tecnológicos autorizados: DIAN Colombia (CUFE + documento equivalente POS), Facturae España y compliance USA. En roadmap 2026–2027. SENIAT Venezuela ya está en vivo.',
+    title: 'Facturación electrónica en más países',
+    desc:  'Estamos preparando la facturación electrónica fuera de Panamá con proveedores tecnológicos autorizados. En Colombia será con la DIAN (CUFE y documento equivalente POS), en España con Facturae y en USA con el cumplimiento normativo que corresponda. Está planificado entre 2026 y 2027. SENIAT Venezuela ya está en vivo.',
   },
 ];
 ---
-<BaseLayout title="Sobre nosotros · SuiteHub" description="SuiteHub es la suite empresarial multi-jurisdicción para PYMEs en Panamá, USA, Venezuela, España y Colombia. Producto de PROOQ LLC (USA).">
+<BaseLayout title="Sobre nosotros · SuiteHub" description="SuiteHub es un sistema de gestión para PYMEs de Panamá, USA, Venezuela, España y Colombia, adaptado a las reglas de cada país. Es un producto de PROOQ LLC (USA).">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -76,8 +75,8 @@ const hitos = [
           para PYMEs en cinco países.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          SuiteHub es el resultado de más de una década entendiendo cómo opera el negocio hispanohablante.
-          Hoy producto de <strong class="text-white">PROOQ LLC</strong> (USA), con operación local en Panamá vía PROOQ S.A., y expansión activa a USA, Venezuela, España y Colombia.
+          SuiteHub nació en Panamá en 2020, pero detrás hay más de dos décadas de trabajo en Estados Unidos, muy cerca de los negocios hispanohablantes y de cómo operan en el día a día.
+          Hoy es un producto de <strong class="text-white">PROOQ LLC</strong> (USA), con operación local en Panamá a través de PROOQ S.A. Hoy atendemos clientes en USA, Panamá y España, y estamos empezando en Venezuela y Colombia.
         </p>
       </div>
     </div>
@@ -90,17 +89,17 @@ const hitos = [
         <div class="lg:col-span-7">
           <span class="eyebrow">Quiénes somos</span>
           <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-            <span class="text-gradient">SuiteHub</span>, suite empresarial multi-país.
+            <span class="text-gradient">SuiteHub</span>, un sistema de gestión para varios países.
           </h2>
           <div class="space-y-4 text-ink-300 leading-relaxed">
             <p>
-              <strong class="text-white">SuiteHub</strong> es una plataforma de gestión empresarial multi-jurisdicción
-              para PYMEs en <strong class="text-white">Panamá, USA, Venezuela, España y Colombia</strong>, con facturación electrónica adaptable
-              a cada jurisdicción, multi-sucursal y crecimiento sin migraciones.
+              <strong class="text-white">SuiteHub</strong> es una plataforma de gestión
+              para PYMEs en <strong class="text-white">Panamá, USA, Venezuela, España y Colombia</strong>. La facturación electrónica se adapta
+              a las reglas de cada país, maneja varias sucursales y te permite crecer sin cambiarte de sistema.
             </p>
             <p>
-              No somos un revendedor de software gringo. Cada línea de código de SuiteHub se escribe pensando en
-              cómo factura un taller en La Chorrera, cómo opera un restaurante hispano en Chicago, cómo agenda una
+              No revendemos software gringo. Cuando programamos SuiteHub pensamos en cómo factura un taller en
+              La Chorrera, en cómo se mueve un restaurante hispano en Chicago o en cómo lleva su agenda una
               clínica en Bella Vista.
             </p>
             <p class="text-sm text-ink-500 pt-2">
@@ -116,7 +115,7 @@ const hitos = [
                 <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Fundación SuiteHub</div>
               </div>
               <div>
-                <div class="text-3xl font-display font-bold text-brand-400">+30</div>
+                <div class="text-3xl font-display font-bold text-brand-400">+50</div>
                 <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">PYMEs activas (PA)</div>
               </div>
               <div>
@@ -124,7 +123,7 @@ const hitos = [
                 <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Verticales</div>
               </div>
               <div>
-                <div class="text-3xl font-display font-bold text-brand-400">4</div>
+                <div class="text-3xl font-display font-bold text-brand-400">5</div>
                 <div class="text-xs text-ink-400 uppercase tracking-wider mt-1">Países objetivo</div>
               </div>
             </div>
@@ -210,11 +209,11 @@ const hitos = [
     <div class="wrap max-w-3xl text-center">
       <span class="eyebrow">El equipo</span>
       <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-        Pequeños, <span class="text-gradient">enfocados</span>, accesibles.
+        Un equipo <span class="text-gradient">pequeño</span> y fácil de ubicar.
       </h2>
       <p class="text-ink-300 leading-relaxed mb-10">
-        Somos un equipo compacto: desarrollo, soporte y ventas. Cuando contratas SuiteHub, hablas con quien escribe el código,
-        no con un agente de un call center. La proximidad es nuestra ventaja.
+        Somos pocos y entre todos cubrimos desarrollo, soporte y ventas. Si contratas SuiteHub, hablas directamente con la gente
+        que escribe el código y no con un call center. Para nosotros eso vale mucho.
       </p>
       <div class="card-glass p-8 lg:p-10 inline-block">
         <div class="text-sm text-ink-400 mb-3">¿Quieres conocer al equipo?</div>
@@ -230,11 +229,11 @@ const hitos = [
     <div class="wrap">
       <div class="card-glass gradient-border text-center p-10 lg:p-14 max-w-3xl mx-auto">
         <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
-          Construyamos algo <span class="text-gradient">juntos.</span>
+          Hablemos de <span class="text-gradient">tu negocio.</span>
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
-          Si tu PYME está lista para dar el salto digital, conversemos.
-          Te enseñamos SuiteHub en vivo y te ayudamos a decidir si encaja con tu operación.
+          Si estás pensando en ordenar tu PYME con un sistema, conversemos.
+          Te mostramos SuiteHub en vivo y te ayudamos a ver si le sirve a tu operación.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="https://wa.me/50766326006?text=Quiero%20conversar%20con%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">

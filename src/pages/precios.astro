@@ -46,12 +46,12 @@ const comparativa = [
     title: 'Facturación electrónica multi-país',
     rows: [
       { label: 'Facturas básicas (sin FE)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Digifact — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC The Factory HKA — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Ebi — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC Factura Fácil — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'PAC eFacturapty — DGI Panamá', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
-      { label: 'The Factory HKA Venezuela — SENIAT', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Digifact (DGI Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC The Factory HKA (DGI Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Ebi (DGI Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC Factura Fácil (DGI Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'PAC eFacturapty (DGI Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
+      { label: 'The Factory HKA Venezuela (SENIAT)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'CUFE + QR oficial DGI (Panamá)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Número de Control SENIAT (Venezuela)', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Anulación de facturas', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
@@ -71,9 +71,9 @@ const comparativa = [
   {
     title: 'Reportes',
     rows: [
-      { label: 'Nivel 1 — Reportes pre-armados',   lite: '6 reportes',   core: '15+ reportes', pro: 'Todos',  enterprise: 'Todos' },
-      { label: 'Nivel 2 — SQL guardado (whitelist)', lite: '—',          core: '✓',            pro: '✓',      enterprise: '✓' },
-      { label: 'Nivel 3 — Plantillas PDF editables', lite: '—',          core: '✓',            pro: '✓',      enterprise: '✓' },
+      { label: 'Nivel 1: reportes pre-armados',   lite: '6 reportes',   core: '15+ reportes', pro: 'Todos',  enterprise: 'Todos' },
+      { label: 'Nivel 2: SQL guardado (whitelist)', lite: '—',          core: '✓',            pro: '✓',      enterprise: '✓' },
+      { label: 'Nivel 3: plantillas PDF editables', lite: '—',          core: '✓',            pro: '✓',      enterprise: '✓' },
       { label: 'Export CSV / PDF',                  lite: '✓',           core: '✓',            pro: '✓',      enterprise: '✓' },
     ],
   },
@@ -126,11 +126,11 @@ const colorMap = {
 
 // Preguntas frecuentes → schema FAQPage (rich result en Google).
 const faqs = [
-  { q: '¿Tengo que firmar contrato anual?', a: 'No. Pagas mes a mes y cancelas cuando quieras. Si pagas un año adelantado obtienes 16% de descuento, pero no es obligatorio.' },
-  { q: '¿Qué pasa si supero los límites de mi edición?', a: 'El sistema te avisa al 80% del límite. Puedes subir a la siguiente edición desde la misma plataforma sin migrar datos ni perder configuración.' },
-  { q: '¿La implementación se cobra aparte?', a: 'Sí: $99 una sola vez, que cubre la configuración inicial, la carga de tu catálogo y la capacitación de arranque. Es gratis si pagas el plan anual. En Enterprise asignamos un consultor dedicado.' },
-  { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Aceptamos transferencia ACH, Yappy, tarjeta de crédito y depósito bancario. Cuentas Enterprise pueden pagar contra factura a 30 días.' },
-  { q: '¿Qué incluye el costo del PAC para FE?', a: 'El costo del PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.' },
+  { q: '¿Tengo que firmar contrato anual?', a: 'No. Pagas mes a mes y puedes cancelar cuando quieras. Si prefieres pagar el año por adelantado te llevas 16% de descuento, pero es opcional.' },
+  { q: '¿Qué pasa si supero los límites de mi edición?', a: 'Cuando llegas al 80% del límite, el sistema te avisa. Desde la misma plataforma puedes pasarte a la siguiente edición sin migrar datos y sin perder lo que ya configuraste.' },
+  { q: '¿La implementación se cobra aparte?', a: 'Sí, son $99 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Enterprise te asignamos un consultor dedicado.' },
+  { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Enterprise también pueden pagar contra factura a 30 días.' },
+  { q: '¿El costo del PAC para FE va incluido?', a: 'No. Al PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) le pagas tú directamente. SuiteHub se conecta con él sin cobro adicional, y durante el onboarding te ayudamos a contratarlo.' },
 ];
 const faqLd = {
   '@context': 'https://schema.org',
@@ -142,7 +142,7 @@ const faqLd = {
   })),
 };
 ---
-<BaseLayout title="Precios y comparativa · SuiteHub" description="Tabla comparativa completa de las 4 ediciones de SuiteHub. Desde $24/mes con 16% off pagando anual.">
+<BaseLayout title="Precios y comparativa · SuiteHub" description="Compara punto por punto las 4 ediciones de SuiteHub. Desde $24/mes, con 16% de descuento si pagas el año.">
 
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
@@ -155,12 +155,12 @@ const faqLd = {
       <div class="text-center max-w-3xl mx-auto">
         <span class="eyebrow">Precios y comparativa</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
-          Precios <span class="text-gradient">transparentes.</span><br/>
-          Sin sorpresas.
+          Precios <span class="text-gradient">a la vista</span><br/>
+          y sin sorpresas.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Todo lo que está incluido lo ves aquí. Sin "*aplican condiciones" ni "consulta a un asesor para tu cotización personalizada".
-          Subes de edición cuando lo necesites — sin penalidades.
+          Aquí está todo lo que incluye cada edición. No hay "*aplican condiciones" ni "consulta a un asesor para tu cotización personalizada".
+          Si más adelante necesitas otra edición, subes cuando quieras y no pagas penalidad.
         </p>
       </div>
     </div>
@@ -183,7 +183,7 @@ const faqLd = {
               <span class="text-4xl font-display font-bold">${e.price}</span>
               <span class="text-sm text-ink-400">/mes</span>
             </div>
-            <div class="text-xs text-ink-500 mb-5">o ${e.yearly} anual</div>
+            <div class="text-xs text-ink-500 mb-5">o ${e.yearly} al año</div>
             <a href={`/productos#${e.key}`} class={`block text-center text-sm py-2 rounded-lg transition-colors ${e.featured ? 'bg-brand-600 hover:bg-brand-500 text-white' : 'bg-white/5 hover:bg-white/10 text-white'}`}>
               Ver detalles
             </a>
@@ -197,7 +197,7 @@ const faqLd = {
   <section class="section">
     <div class="wrap">
       <h2 class="text-2xl font-display font-bold mb-2">Comparativa completa</h2>
-      <p class="text-sm text-ink-400 mb-8">Lo incluido en cada edición, sin letra chica.</p>
+      <p class="text-sm text-ink-400 mb-8">Lo que trae cada edición, fila por fila.</p>
 
       <div class="card-glass overflow-x-auto">
         <table class="w-full text-sm min-w-[760px]">
@@ -236,7 +236,7 @@ const faqLd = {
       </div>
 
       <p class="text-xs text-ink-500 mt-6 text-center">
-        ¿Notas algo que falta? <a href="https://wa.me/50766326006?text=Tengo%20una%20pregunta%20sobre%20la%20tabla%20de%20precios" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300">Pregúntanos por WhatsApp</a>
+        ¿No ves algo que necesitas? <a href="https://wa.me/50766326006?text=Tengo%20una%20pregunta%20sobre%20la%20tabla%20de%20precios" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300">Pregúntanos por WhatsApp</a>
       </p>
     </div>
   </section>
@@ -255,7 +255,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            No. Pagas mes a mes y cancelas cuando quieras. Si pagas un año adelantado obtienes 16% de descuento, pero no es obligatorio.
+            No. Pagas mes a mes y puedes cancelar cuando quieras. Si prefieres pagar el año por adelantado te llevas 16% de descuento, pero es opcional.
           </div>
         </details>
         <details class="card-glass group">
@@ -264,7 +264,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            El sistema te avisa al 80% del límite. Puedes subir a la siguiente edición desde la misma plataforma sin migrar datos ni perder configuración.
+            Cuando llegas al 80% del límite, el sistema te avisa. Desde la misma plataforma puedes pasarte a la siguiente edición sin migrar datos y sin perder lo que ya configuraste.
           </div>
         </details>
         <details class="card-glass group">
@@ -273,7 +273,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Sí: $99 una sola vez, que cubre la configuración inicial, la carga de tu catálogo y la capacitación de arranque. Es gratis si pagas el plan anual. En Enterprise asignamos un consultor dedicado.
+            Sí, son $99 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Enterprise te asignamos un consultor dedicado.
           </div>
         </details>
         <details class="card-glass group">
@@ -282,16 +282,16 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Aceptamos transferencia ACH, Yappy, tarjeta de crédito y depósito bancario. Cuentas Enterprise pueden pagar contra factura a 30 días.
+            Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Enterprise también pueden pagar contra factura a 30 días.
           </div>
         </details>
         <details class="card-glass group">
           <summary class="px-6 py-4 cursor-pointer font-medium text-ink-100 flex items-center justify-between">
-            ¿Qué incluye el costo del PAC para FE?
+            ¿El costo del PAC para FE va incluido?
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            El costo del PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) lo paga el cliente directo a su PAC. SuiteHub se conecta sin cobro adicional. Te ayudamos a contratar el PAC durante el onboarding.
+            No. Al PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) le pagas tú directamente. SuiteHub se conecta con él sin cobro adicional, y durante el onboarding te ayudamos a contratarlo.
           </div>
         </details>
       </div>
@@ -305,9 +305,9 @@ const faqLd = {
         <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">
           ¿Sigues con dudas?
         </h2>
-        <p class="text-ink-300 mb-8">Conversemos por WhatsApp y te recomendamos según tu operación.</p>
+        <p class="text-ink-300 mb-8">Escríbenos por WhatsApp, cuéntanos cómo trabajas y te decimos qué edición te conviene.</p>
         <a href="https://wa.me/50766326006?text=Tengo%20preguntas%20sobre%20precios%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp
+          <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
         </a>
       </div>
     </div>

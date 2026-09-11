@@ -24,7 +24,7 @@ const hero = p.hero!;
 
 const UI = {
   es: {
-    todas: 'Todas las verticales', familia: 'Familia SuiteHub', pregunta: 'Pregunta por', demo: 'Agenda una demo',
+    todas: 'Todos los verticales', familia: 'Familia SuiteHub', pregunta: 'Pregunta por', demo: 'Agenda una demo',
     incluye: 'Todo lo que incluye', funcionesDe: 'Funciones de', recorrido: 'Así se ve por dentro',
     hablemos: 'Hablemos', escribenos: 'Escríbenos por WhatsApp', agenda: 'Agenda tu demo',
     inicio: 'Inicio', verticales: 'Verticales', asunto: 'Quiero info de', portada: 'Dashboard de',
@@ -32,9 +32,9 @@ const UI = {
   },
   en: {
     todas: 'All verticals', familia: 'SuiteHub family', pregunta: 'Ask about', demo: 'Book a demo',
-    incluye: 'Everything included', funcionesDe: 'Features of', recorrido: "Here's how it looks inside",
+    incluye: "What's included", funcionesDe: 'Features of', recorrido: 'A look inside',
     hablemos: "Let's talk", escribenos: 'Message us on WhatsApp', agenda: 'Book your demo',
-    inicio: 'Home', verticales: 'Verticals', asunto: 'Info about', portada: 'Dashboard of',
+    inicio: 'Home', verticales: 'Verticals', asunto: 'Info about', portada: 'Dashboard for',
     listado: '/en/verticals', home: '/en/',
   },
 }[lang];
@@ -74,7 +74,7 @@ const breadcrumb = {
 };
 ---
 <BaseLayout
-  title={b.seo.title || `${b.titulo} — ${b.tagline}`}
+  title={b.seo.title || `${b.titulo}: ${b.tagline}`}
   description={b.seo.description || b.intro || b.tagline}
   ogImage={imagen(p, hero.imagen)}
 >

@@ -74,6 +74,6 @@ Nos lo preguntan bastante. Por ahora HUB Restaurant es la versión PRO de HUB PO
 
 ## Para terminar
 
-Un restaurante no necesita más pantallas. Necesita que las que ya tiene trabajen juntas. Eso es lo que buscamos con HUB POS, que el pedido, la cocina, la caja y la factura hablen el mismo idioma.
+Al final, lo que le sirve a un restaurante es que las pantallas que ya tiene trabajen juntas. Eso buscamos con HUB POS: que el pedido, la cocina, la caja y la factura hablen el mismo idioma.
 
 Si quieres ver todas las pantallas, están en la [página de HUB POS](/verticales/pos). Y si prefieres verlo con tu propio menú, [escríbenos por WhatsApp](https://wa.me/50766326006?text=Hola%2C%20quiero%20una%20demo%20de%20HUB%20POS%20para%20mi%20restaurante) y te hacemos una demo.
