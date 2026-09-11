@@ -18,8 +18,6 @@ El día arranca en la caja. La cajera abre el turno con el fondo de siempre y ya
 
 La dueña, cuando entra al sistema, ve el dashboard: lo que se ha vendido hoy, cuántas órdenes hay abiertas, el ticket promedio y el producto que más sale. Si entró un pedido por el menú digital, aparece arriba con su aviso para que alguien lo acepte.
 
-![Dashboard de HUB POS con las ventas del día y un pedido esperando]
-
 ## Mediodía. El salón se llena
 
 A la hora del almuerzo es cuando se nota si un sistema ayuda o estorba. En HUB POS cada mesa tiene un color según cómo va: libre, ocupada, pidió la cuenta o lista para cobrar. Tocas la mesa y se abre su orden.
@@ -32,8 +30,6 @@ Si llegan seis personas y hay que unir dos mesas, se unen. Si un plato se anotó
 
 Lo que se pide llega solo a la pantalla de la estación que le toca: cocina caliente, cocina fría o barra. El equipo marca cuando empieza y cuando está listo, y cada tarjeta muestra cuántos minutos lleva esperando. Si un plato se pasa del tiempo que tú definiste, la tarjeta se pinta en ámbar para que se vea.
 
-![Monitor de cocina con las comandas por mesa y sus tiempos]
-
 Hay cocinas que prefieren el papel, y está bien. La comanda también sale en la impresora térmica de cada estación, con la mesa, el mesonero, los modificadores y la hora. Pantalla y papel pueden convivir sin problema.
 
 ## La cuenta, como la quiera el cliente
@@ -45,8 +41,6 @@ Llega la hora de cobrar. Efectivo, tarjeta, Yappy o transferencia, o una mezcla:
 ## La factura electrónica sale en el mismo ticket
 
 Esto es lo que más nos preguntan en Panamá. Cuando se cobra, la factura se envía a la DGI, se autoriza y sale impresa en el ticket de 80 mm con su CUFE y su código QR. El cliente escanea el QR y ve su factura en la consulta de la DGI. Si te pide factura a nombre de una empresa, buscas el RUC y el sistema trae la razón social.
-
-![Ticket de factura electrónica autorizada con su QR y su CUFE]
 
 Al final del día no hay que pasar las ventas a otro programa. Ya quedó todo facturado.
 
