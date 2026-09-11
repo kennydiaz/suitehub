@@ -6,7 +6,7 @@ slug: "un-dia-con-hub-pos-restaurante"
 pubDate: 2026-09-11
 author: "Kenny Diaz"
 tags: ["HUB POS", "restaurantes", "POS", "factura electrónica", "Panamá"]
-heroImage: "C:\\Users\\ralci\\Downloads\\tmperq3zme5.jpeg"
+heroImage: "/images/blog/un-dia-con-hub-pos-restaurante.webp"
 draft: false
 ---
 
