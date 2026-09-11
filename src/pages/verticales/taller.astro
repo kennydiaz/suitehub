@@ -24,43 +24,55 @@ const chips = [
 // Recorrido: cada pantalla con qué resuelve. Capturas en /public/images/products/taller.
 const shots = [
   {
-    img: '/images/products/taller/dashboard.webp', w: 1440, h: 1000,
+    img: '/images/products/taller/dashboard.webp', w: 1426, h: 718,
     title: 'Tu taller de un vistazo',
     desc: 'Al abrir el sistema ves cuántos carros hay en taller, cuáles están listos para entregar, las citas de hoy y lo facturado del mes. Nada de preguntar por el taller: está en pantalla.',
     pts: ['Vehículos en taller y órdenes por estado', 'Ingresos del mes y por cobrar', 'Citas de hoy y qué hay en cada bahía'],
   },
   {
-    img: '/images/products/taller/recepcion.webp', w: 1440, h: 1180,
+    img: '/images/products/taller/recepcion.webp', w: 1426, h: 718,
     title: 'Recepción en dos pasos',
     desc: 'Escribes la placa y aparece la ficha del vehículo con su dueño y su último servicio. Registras kilometraje, combustible, motivo de ingreso, inventario de entrada y fotos, y sale el comprobante de 80 mm para el cliente.',
     pts: ['Si la placa no existe, creas cliente y vehículo sin salir de la pantalla', 'Comprobante impreso con los datos de entrada', 'La orden nace numerada (OT-0001) y con mecánico asignado'],
   },
   {
-    img: '/images/products/taller/tablero.webp', w: 1440, h: 900,
+    img: '/images/products/taller/tablero.webp', w: 1426, h: 718,
     title: 'Tablero de órdenes por estado',
     desc: 'Cada columna es un estado del carro: recibido, diagnóstico, por aprobar, en proceso, listo. Asignas mecánico y ves cuánto tiempo lleva cada uno. Filtra por placa, cliente o mecánico.',
     pts: ['Tiempo en taller visible en cada tarjeta', 'Cotización enviada y aprobada marcadas', 'Lista o tablero, como prefieras trabajar'],
   },
   {
-    img: '/images/products/taller/orden.webp', w: 1440, h: 1120,
+    img: '/images/products/taller/orden.webp', w: 1426, h: 718,
     title: 'La orden: ítems, aprobación y bitácora',
     desc: 'Servicios, repuestos y mano de obra con su precio, ITBMS y quién lo aprobó. La bitácora registra cada paso con hora. Desde aquí cotizas lo pendiente y facturas lo aprobado.',
     pts: ['Nunca se factura un ítem dos veces', 'Fotos de entrada y del diagnóstico adjuntas', 'WhatsApp al cliente con un toque'],
   },
   {
-    img: '/images/products/taller/vehiculo.webp', w: 1440, h: 1000,
+    img: '/images/products/taller/cotizacion-cliente.webp', w: 488, h: 718, phone: true,
+    title: 'El cliente aprueba desde su teléfono',
+    desc: 'Le mandas el enlace por WhatsApp y ve la cotización con el detalle: "¿Autoriza el trabajo por B/. 167.99?". Aprueba o rechaza con un toque, sin cuenta ni app, y la orden pasa sola a "en proceso".',
+    pts: ['Enlace público con vencimiento, sin registro', 'Aprobar, rechazar o consultar por WhatsApp', 'Queda registrado quién aprobó y cuándo'],
+  },
+  {
+    img: '/images/products/taller/factura.webp', w: 1426, h: 718,
+    title: 'Factura electrónica desde la orden lista',
+    desc: 'Cobras lo aprobado y sale la factura electrónica autorizada por la DGI con CUFE y QR, ticket de 80 mm o PDF carta, y el enlace para que el cliente la vea en su teléfono. Pagos parciales y crédito con vencimiento.',
+    pts: ['CUFE, QR y correlativo fiscal en el documento', 'Ticket 80 mm, PDF y WhatsApp con un clic', 'Efectivo, tarjeta, Yappy, transferencia o crédito'],
+  },
+  {
+    img: '/images/products/taller/vehiculo.webp', w: 1426, h: 718,
     title: 'Ficha e histórico de cada vehículo',
     desc: 'Visitas, kilometraje actual, gasto acumulado y última visita. El histórico completo de órdenes y los mantenimientos programados por kilometraje o fecha, con barra de avance y recordatorio al cliente.',
     pts: ['Próximo cambio de aceite, rotación, frenos, correa', 'Informe PDF del vehículo para el dueño', 'Programar recordatorio por WhatsApp'],
   },
   {
-    img: '/images/products/taller/agenda.webp', w: 1440, h: 980,
+    img: '/images/products/taller/agenda.webp', w: 1426, h: 718,
     title: 'Agenda por mecánico y por bahía',
     desc: 'Vista de semana o de día con colores por mecánico. Clic en una hora libre y creas la cita por placa, aunque el cliente todavía no exista. Choques de bahía o de mecánico quedan bloqueados.',
     pts: ['Cita → "Llegó" → recepción con todo cargado', 'Recordatorios de mañana listos para WhatsApp', 'Estados: programada, confirmada, llegó, no vino'],
   },
   {
-    img: '/images/products/taller/movil.webp', w: 780, h: 1688, phone: true,
+    img: '/images/products/taller/movil.webp', w: 488, h: 718, phone: true,
     title: 'El mecánico trabaja desde su celular',
     desc: 'Sus órdenes de hoy con el botón grande del siguiente paso: iniciar, marcar listo. Foto directa desde la cámara, nota rápida y agenda del día. Sin sidebar ni PC.',
     pts: ['Mis órdenes, esta semana y listas', 'Foto de evidencia en un toque', 'Su producción en el perfil'],
@@ -148,7 +160,7 @@ const description = 'Recepción por placa, órdenes de trabajo, cotización que 
             <span class="browser-dot bg-[#28c840]"></span>
             <span class="browser-url">suitehub.net/taller</span>
           </div>
-          <img src="/images/products/taller/dashboard.webp" alt="Dashboard de HUB Taller" width="1440" height="1000" decoding="async" class="w-full h-auto" />
+          <img src="/images/products/taller/dashboard.webp" alt="Dashboard de HUB Taller" width="1426" height="718" decoding="async" class="w-full h-auto" />
         </figure>
       </div>
     </div>

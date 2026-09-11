@@ -24,43 +24,55 @@ const chips = [
 // Recorrido: cada pantalla con qué resuelve. Capturas en /public/images/products/taller.
 const shots = [
   {
-    img: '/images/products/taller/dashboard.webp', w: 1440, h: 1000,
+    img: '/images/products/taller/dashboard.webp', w: 1426, h: 718,
     title: 'Your shop at a glance',
     desc: 'Open the system and see how many cars are in the shop, which are ready for pickup, today’s appointments and the month’s billing. No need to walk the floor: it is on screen.',
     pts: ['Vehicles in shop and orders by status', 'Monthly revenue and receivables', 'Today’s appointments and what is in each bay'],
   },
   {
-    img: '/images/products/taller/recepcion.webp', w: 1440, h: 1180,
+    img: '/images/products/taller/recepcion.webp', w: 1426, h: 718,
     title: 'Two-step intake',
     desc: 'Type the plate and the vehicle record appears with its owner and last service. Log mileage, fuel, reason, walk-around checklist and photos, and print the 80 mm receipt for the customer.',
     pts: ['If the plate does not exist, create customer and vehicle without leaving the screen', 'Printed receipt with the intake data', 'The order is numbered (OT-0001) and assigned on creation'],
   },
   {
-    img: '/images/products/taller/tablero.webp', w: 1440, h: 900,
+    img: '/images/products/taller/tablero.webp', w: 1426, h: 718,
     title: 'Status board',
     desc: 'Each column is a status: received, diagnosis, pending approval, in progress, ready. Assign mechanics and see how long each car has been in. Filter by plate, customer or mechanic.',
     pts: ['Time in shop on every card', 'Quote sent and approved flags', 'Board or list, whichever you prefer'],
   },
   {
-    img: '/images/products/taller/orden.webp', w: 1440, h: 1120,
+    img: '/images/products/taller/orden.webp', w: 1426, h: 718,
     title: 'The order: items, approval and log',
     desc: 'Services, parts and labor with price, tax and who approved. The log records every step with a timestamp. Quote pending items and invoice approved ones from here.',
     pts: ['An item is never invoiced twice', 'Intake and diagnosis photos attached', 'WhatsApp the customer in one tap'],
   },
   {
-    img: '/images/products/taller/vehiculo.webp', w: 1440, h: 1000,
+    img: '/images/products/taller/cotizacion-cliente.webp', w: 488, h: 718, phone: true,
+    title: 'The customer approves from their phone',
+    desc: 'Send the link on WhatsApp and they see the itemized quote: "Do you authorize the work for B/. 167.99?". Approve or decline with one tap, no account or app, and the order moves to "in progress" on its own.',
+    pts: ['Public link with expiry, no sign-up', 'Approve, decline or ask on WhatsApp', 'Who approved and when is recorded'],
+  },
+  {
+    img: '/images/products/taller/factura.webp', w: 1426, h: 718,
+    title: 'Electronic invoice from the finished order',
+    desc: 'Charge what was approved and out comes the DGI-authorized electronic invoice with CUFE and QR, 80 mm ticket or letter PDF, and a link so the customer sees it on their phone. Partial payments and credit with due date.',
+    pts: ['CUFE, QR and fiscal number on the document', '80 mm ticket, PDF and WhatsApp in one click', 'Cash, card, Yappy, transfer or credit'],
+  },
+  {
+    img: '/images/products/taller/vehiculo.webp', w: 1426, h: 718,
     title: 'Vehicle record and history',
     desc: 'Visits, current mileage, total spend and last visit. Full order history and scheduled maintenance by mileage or date, with progress bars and customer reminders.',
     pts: ['Next oil change, rotation, brakes, belt', 'Vehicle PDF report for the owner', 'Schedule a WhatsApp reminder'],
   },
   {
-    img: '/images/products/taller/agenda.webp', w: 1440, h: 980,
+    img: '/images/products/taller/agenda.webp', w: 1426, h: 718,
     title: 'Schedule by mechanic and bay',
     desc: 'Week or day view, color per mechanic. Click a free slot and book by plate even if the customer does not exist yet. Bay and mechanic conflicts are blocked.',
     pts: ['Appointment → "Arrived" → intake pre-filled', 'Tomorrow’s reminders ready for WhatsApp', 'Scheduled, confirmed, arrived, no-show'],
   },
   {
-    img: '/images/products/taller/movil.webp', w: 780, h: 1688, phone: true,
+    img: '/images/products/taller/movil.webp', w: 488, h: 718, phone: true,
     title: 'Mechanics work from their phones',
     desc: 'Today’s orders with a big next-step button: start, mark ready. Camera photo, quick note and the day’s schedule. No sidebar, no desk.',
     pts: ['My orders, this week and ready', 'Evidence photo in one tap', 'Their production on the profile'],
@@ -148,7 +160,7 @@ const description = 'Plate-based intake, work orders, quotes the customer approv
             <span class="browser-dot bg-[#28c840]"></span>
             <span class="browser-url">suitehub.net/taller</span>
           </div>
-          <img src="/images/products/taller/dashboard.webp" alt="HUB Taller dashboard" width="1440" height="1000" decoding="async" class="w-full h-auto" />
+          <img src="/images/products/taller/dashboard.webp" alt="HUB Taller dashboard" width="1426" height="718" decoding="async" class="w-full h-auto" />
         </figure>
       </div>
     </div>
