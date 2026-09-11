@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="760" viewBox="0 0 420 760" font-family="Arial, Helvetica, sans-serif">
+  <rect width="420" height="760" fill="#eef2f6"/>
+  <!-- phone frame -->
+  <rect x="70" y="20" width="280" height="720" rx="36" fill="#0f172a"/>
+  <rect x="80" y="30" width="260" height="700" rx="28" fill="#f1f5f9"/>
+  <rect x="170" y="38" width="80" height="14" rx="7" fill="#0f172a"/>
+
+  <!-- app bar -->
+  <rect x="80" y="52" width="260" height="44" fill="#16263D"/>
+  <text x="98" y="80" font-size="14" font-weight="bold" fill="#fff">☰  Hub Lite</text>
+  <circle cx="322" cy="74" r="9" fill="#1582F5"/><text x="318" y="78" font-size="9" fill="#fff">AP</text>
+
+  <!-- title -->
+  <text x="98" y="120" font-size="15" font-weight="bold" fill="#0f172a">← Nueva factura</text>
+
+  <!-- cliente field -->
+  <text x="98" y="146" font-size="9" fill="#64748b">CLIENTE *</text>
+  <rect x="98" y="152" width="224" height="30" rx="7" fill="#fff" stroke="#cbd5e1"/>
+  <text x="108" y="172" font-size="10.5" fill="#0f172a">🔍 Comercializadora El Sol, S.A.</text>
+
+  <!-- item card 1 -->
+  <rect x="98" y="194" width="224" height="150" rx="10" fill="#fff" stroke="#e2e8f0"/>
+  <text x="110" y="212" font-size="8.5" fill="#64748b" font-weight="bold">LÍNEA 1</text>
+  <text x="288" y="212" font-size="9" fill="#e11d48">🗑 Quitar</text>
+  <text x="110" y="228" font-size="8" fill="#64748b" font-weight="bold">DESCRIPCIÓN</text>
+  <rect x="110" y="232" width="200" height="30" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="118" y="251" font-size="10" fill="#0f172a">Campaña redes sociales</text>
+  <text x="110" y="282" font-size="8" fill="#64748b" font-weight="bold">CANTIDAD</text>
+  <rect x="110" y="286" width="92" height="26" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/><text x="118" y="303" font-size="10" fill="#0f172a">1</text>
+  <text x="214" y="282" font-size="8" fill="#64748b" font-weight="bold">PRECIO</text>
+  <rect x="214" y="286" width="96" height="26" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/><text x="222" y="303" font-size="10" fill="#0f172a">650.00</text>
+  <text x="110" y="333" font-size="9" fill="#64748b">TOTAL</text>
+  <text x="310" y="333" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="end">$695.50</text>
+
+  <!-- item card 2 -->
+  <rect x="98" y="356" width="224" height="150" rx="10" fill="#fff" stroke="#e2e8f0"/>
+  <text x="110" y="374" font-size="8.5" fill="#64748b" font-weight="bold">LÍNEA 2</text>
+  <text x="288" y="374" font-size="9" fill="#e11d48">🗑 Quitar</text>
+  <text x="110" y="390" font-size="8" fill="#64748b" font-weight="bold">DESCRIPCIÓN</text>
+  <rect x="110" y="394" width="200" height="30" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="118" y="413" font-size="10" fill="#0f172a">Diseño de logotipo</text>
+  <text x="110" y="444" font-size="8" fill="#64748b" font-weight="bold">CANTIDAD</text>
+  <rect x="110" y="448" width="92" height="26" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/><text x="118" y="465" font-size="10" fill="#0f172a">1</text>
+  <text x="214" y="444" font-size="8" fill="#64748b" font-weight="bold">PRECIO</text>
+  <rect x="214" y="448" width="96" height="26" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/><text x="222" y="465" font-size="10" fill="#0f172a">420.00</text>
+  <text x="110" y="495" font-size="9" fill="#64748b">TOTAL</text>
+  <text x="310" y="495" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="end">$449.40</text>
+
+  <!-- add line -->
+  <rect x="98" y="518" width="224" height="32" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-dasharray="4 3"/>
+  <text x="210" y="538" font-size="10.5" font-weight="bold" fill="#1582F5" text-anchor="middle">＋ Agregar línea</text>
+
+  <!-- totals -->
+  <rect x="98" y="562" width="224" height="76" rx="10" fill="#fff" stroke="#e2e8f0"/>
+  <text x="110" y="582" font-size="10" fill="#64748b">Subtotal</text><text x="310" y="582" font-size="10" fill="#0f172a" text-anchor="end">$1,070.00</text>
+  <text x="110" y="600" font-size="10" fill="#64748b">ITBMS</text><text x="310" y="600" font-size="10" fill="#0f172a" text-anchor="end">$74.90</text>
+  <line x1="110" y1="610" x2="310" y2="610" stroke="#1582F5" stroke-width="1.5"/>
+  <text x="110" y="628" font-size="12" font-weight="bold" fill="#0A2540">Total</text><text x="310" y="628" font-size="12" font-weight="bold" fill="#0A2540" text-anchor="end">$1,144.90</text>
+
+  <!-- save button -->
+  <rect x="98" y="650" width="224" height="40" rx="10" fill="#1582F5"/>
+  <text x="210" y="675" font-size="12.5" font-weight="bold" fill="#fff" text-anchor="middle">💾  Guardar factura</text>
+</svg>

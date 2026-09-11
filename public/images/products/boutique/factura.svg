@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="hex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC4899"/><stop offset="1" stop-color="#9D174D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="620" rx="14" fill="#e2e8f0"/>
+
+  <!-- browser chrome -->
+  <rect x="0" y="0" width="1000" height="34" rx="14" fill="#cbd5e1"/>
+  <rect x="0" y="20" width="1000" height="14" fill="#cbd5e1"/>
+  <circle cx="20" cy="17" r="5" fill="#f87171"/><circle cx="38" cy="17" r="5" fill="#fbbf24"/><circle cx="56" cy="17" r="5" fill="#34d399"/>
+  <rect x="80" y="9" width="400" height="16" rx="8" fill="#e2e8f0"/>
+  <text x="92" y="21" font-size="10" fill="#64748b">app.hubboutique.pa/admin/facturas/00012845</text>
+
+  <rect x="0" y="34" width="1000" height="586" fill="#f1f5f9"/>
+
+  <!-- A4 invoice sheet -->
+  <rect x="120" y="64" width="540" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+
+  <!-- header -->
+  <polygon points="160,92 178,92 187,108 178,124 160,124 151,108" fill="url(#hex)"/>
+  <path d="M167 100 a2.4 2.4 0 1 1 2.4 2.4 c-2.4 0 -2.4 1.7 -2.4 3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M167 106 L160 111 H174 Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+  <text x="200" y="104" font-size="16" font-weight="800" fill="#831843">Mi Boutique</text>
+  <text x="200" y="120" font-size="9.5" fill="#94a3b8">PROOQ S.A. · RUC 155712345-2-2024 DV 33</text>
+  <text x="640" y="100" font-size="13" font-weight="800" fill="#0f172a" text-anchor="end">FACTURA ELECTRÓNICA</text>
+  <text x="640" y="116" font-size="10" fill="#64748b" text-anchor="end">N° 00012845 · 31 May 2026</text>
+
+  <line x1="151" y1="138" x2="629" y2="138" stroke="#f1f5f9"/>
+
+  <!-- client + cufe -->
+  <text x="151" y="160" font-size="9" letter-spacing="1" fill="#94a3b8">CLIENTE</text>
+  <text x="151" y="178" font-size="11.5" font-weight="bold" fill="#0f172a">Ana Gómez</text>
+  <text x="151" y="194" font-size="10" fill="#64748b">Cédula 8-888-8888 · Sucursal Vía España</text>
+  <text x="629" y="160" font-size="9" letter-spacing="1" fill="#94a3b8" text-anchor="end">CUFE</text>
+  <text x="629" y="176" font-size="8" fill="#64748b" text-anchor="end">FE0120000155712345220240531...</text>
+  <text x="629" y="190" font-size="8" fill="#64748b" text-anchor="end">...A1B2C3D4E5F6 · Digifact ✓</text>
+
+  <!-- table head -->
+  <rect x="151" y="208" width="478" height="24" rx="6" fill="#FDF2F8"/>
+  <text x="162" y="224" font-size="9.5" font-weight="bold" fill="#831843">DESCRIPCIÓN</text>
+  <text x="470" y="224" font-size="9.5" font-weight="bold" fill="#831843" text-anchor="end">CANT</text>
+  <text x="540" y="224" font-size="9.5" font-weight="bold" fill="#831843" text-anchor="end">PRECIO</text>
+  <text x="620" y="224" font-size="9.5" font-weight="bold" fill="#831843" text-anchor="end">TOTAL</text>
+
+  <g font-size="10.5" fill="#334155">
+    <text x="162" y="252">Camisa polo M/C · Rosa · S</text>
+    <text x="162" y="266" font-size="8.5" fill="#94a3b8">SKU POL-RS-S</text>
+    <text x="470" y="252" text-anchor="end">2</text><text x="540" y="252" text-anchor="end">$24.90</text><text x="620" y="252" text-anchor="end">$49.80</text>
+    <line x1="151" y1="278" x2="629" y2="278" stroke="#f1f5f9"/>
+    <text x="162" y="298">Jeans slim fit · Azul · 32</text>
+    <text x="162" y="312" font-size="8.5" fill="#94a3b8">SKU JNS-AZ-32</text>
+    <text x="470" y="298" text-anchor="end">1</text><text x="540" y="298" text-anchor="end">$28.50</text><text x="620" y="298" text-anchor="end">$28.50</text>
+    <line x1="151" y1="324" x2="629" y2="324" stroke="#f1f5f9"/>
+    <text x="162" y="344">Vestido floral · Rosa · M</text>
+    <text x="162" y="358" font-size="8.5" fill="#94a3b8">SKU VST-RS-M</text>
+    <text x="470" y="344" text-anchor="end">1</text><text x="540" y="344" text-anchor="end">$32.00</text><text x="620" y="344" text-anchor="end">$32.00</text>
+  </g>
+
+  <!-- totals -->
+  <g font-size="11" fill="#475569">
+    <text x="500" y="392" text-anchor="end">Subtotal</text><text x="620" y="392" text-anchor="end">$110.30</text>
+    <text x="500" y="414" text-anchor="end">ITBMS 7%</text><text x="620" y="414" text-anchor="end">$7.72</text>
+  </g>
+  <rect x="380" y="428" width="249" height="34" rx="8" fill="#831843"/>
+  <text x="398" y="450" font-size="13" font-weight="800" fill="#fff">TOTAL</text>
+  <text x="620" y="450" font-size="15" font-weight="800" fill="#fff" text-anchor="end">$118.02</text>
+
+  <!-- QR -->
+  <rect x="151" y="486" width="72" height="72" rx="6" fill="#0f172a"/>
+  <g fill="#fff">
+    <rect x="159" y="494" width="18" height="18"/><rect x="197" y="494" width="18" height="18"/><rect x="159" y="532" width="18" height="18"/>
+    <rect x="183" y="494" width="6" height="6"/><rect x="183" y="506" width="6" height="6"/><rect x="197" y="520" width="6" height="6"/>
+    <rect x="183" y="532" width="6" height="6"/><rect x="197" y="544" width="6" height="6"/><rect x="209" y="532" width="6" height="6"/>
+    <rect x="171" y="544" width="6" height="6"/>
+  </g>
+  <text x="235" y="502" font-size="9.5" fill="#94a3b8">Verifica esta factura</text>
+  <text x="235" y="518" font-size="11" font-weight="bold" fill="#0f172a">Escanea el QR ante la DGI</text>
+  <text x="235" y="540" font-size="9" fill="#16a34a">✓ Autorizada · CUFE válido · Digifact</text>
+
+  <!-- side action panel -->
+  <rect x="688" y="64" width="200" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="708" y="96" font-size="12" font-weight="800" fill="#0f172a">Acciones</text>
+  <rect x="708" y="112" width="160" height="38" rx="9" fill="#EC4899"/><text x="788" y="136" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">🖨️  Ticket 80mm</text>
+  <rect x="708" y="158" width="160" height="38" rx="9" fill="#FDF2F8"/><text x="788" y="182" font-size="11" font-weight="bold" fill="#831843" text-anchor="middle">📄  PDF carta</text>
+  <rect x="708" y="204" width="160" height="38" rx="9" fill="#FDF2F8"/><text x="788" y="228" font-size="11" font-weight="bold" fill="#831843" text-anchor="middle">💬  Enviar WhatsApp</text>
+  <rect x="708" y="250" width="160" height="38" rx="9" fill="#FDF2F8"/><text x="788" y="274" font-size="11" font-weight="bold" fill="#831843" text-anchor="middle">✉️  Enviar correo</text>
+  <line x1="708" y1="306" x2="868" y2="306" stroke="#f1f5f9"/>
+  <text x="708" y="332" font-size="9" letter-spacing="1" fill="#94a3b8">ESTADO FE</text>
+  <rect x="708" y="342" width="160" height="48" rx="9" fill="#dcfce7"/>
+  <text x="788" y="362" font-size="12" font-weight="800" fill="#16a34a" text-anchor="middle">✓ Autorizada</text>
+  <text x="788" y="380" font-size="9" fill="#15803d" text-anchor="middle">Digifact · 31 May 14:08</text>
+  <text x="708" y="416" font-size="9" letter-spacing="1" fill="#94a3b8">CANAL</text>
+  <rect x="708" y="426" width="78" height="22" rx="11" fill="#FCE7F3"/><text x="747" y="441" font-size="9.5" font-weight="bold" fill="#BE185D" text-anchor="middle">🛒 POS</text>
+</svg>

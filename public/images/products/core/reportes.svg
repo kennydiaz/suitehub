@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="hex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1582F5"/><stop offset="1" stop-color="#16263D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="620" rx="14" fill="#e2e8f0"/>
+
+  <!-- browser chrome -->
+  <rect x="0" y="0" width="1000" height="34" rx="14" fill="#cbd5e1"/>
+  <rect x="0" y="20" width="1000" height="14" fill="#cbd5e1"/>
+  <circle cx="20" cy="17" r="5" fill="#f87171"/><circle cx="38" cy="17" r="5" fill="#fbbf24"/><circle cx="56" cy="17" r="5" fill="#34d399"/>
+  <rect x="80" y="9" width="400" height="16" rx="8" fill="#e2e8f0"/>
+  <text x="92" y="21" font-size="10" fill="#64748b">app.hubcore.pa/modules/reportes/index.php</text>
+
+  <!-- sidebar -->
+  <rect x="0" y="34" width="196" height="586" fill="#16263D"/>
+  <polygon points="26,52 40,52 47,64 40,76 26,76 19,64" fill="url(#hex)"/>
+  <polygon points="33,58 40,62 33,66 26,62" fill="#fff"/>
+  <text x="56" y="62" font-size="14" font-weight="800" fill="#fff">Hub Core</text>
+  <text x="56" y="74" font-size="8.5" letter-spacing="1.5" fill="#5BA4FF">PANAMÁ</text>
+  <line x1="14" y1="90" x2="182" y2="90" stroke="#22344f"/>
+  <g font-size="11.5">
+    <text x="28" y="118" fill="#cbd5e1">📈  Dashboard</text>
+    <text x="28" y="150" font-size="9" letter-spacing="1.5" fill="#5b7290">VENTAS</text>
+    <text x="28" y="172" fill="#cbd5e1">🧾  Facturas</text>
+    <text x="28" y="196" fill="#cbd5e1">📄  Cotizaciones</text>
+    <text x="28" y="220" fill="#cbd5e1">👥  Clientes</text>
+    <text x="28" y="246" font-size="9" letter-spacing="1.5" fill="#5b7290">OPERACIONES</text>
+    <text x="28" y="268" fill="#cbd5e1">📦  Inventario</text>
+    <text x="28" y="292" fill="#cbd5e1">🛒  Compras</text>
+    <text x="28" y="318" font-size="9" letter-spacing="1.5" fill="#5b7290">POS</text>
+    <text x="28" y="340" fill="#cbd5e1">💵  Caja rápida</text>
+    <text x="28" y="366" font-size="9" letter-spacing="1.5" fill="#5b7290">EMPRESA</text>
+    <rect x="12" y="374" width="172" height="28" rx="8" fill="#1582F5"/>
+    <text x="28" y="392" fill="#fff" font-weight="bold">📊  Reportes</text>
+  </g>
+
+  <!-- header -->
+  <text x="216" y="64" font-size="18" font-weight="800" fill="#0f172a">📊 Reportes</text>
+  <text x="216" y="82" font-size="11" fill="#64748b">Pre-armados, SQL con whitelist y plantillas PDF — en 3 niveles</text>
+
+  <!-- left: report list -->
+  <rect x="216" y="96" width="278" height="482" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="234" y="124" font-size="9" letter-spacing="1" fill="#94a3b8">NIVEL 1 · PRE-ARMADOS</text>
+  <g font-size="11">
+    <rect x="226" y="132" width="258" height="30" rx="8" fill="#fb923c" opacity="0.12"/>
+    <rect x="226" y="132" width="3" height="30" fill="#fb923c"/>
+    <text x="242" y="151" fill="#0f172a" font-weight="bold">🧾  Facturas del período</text>
+    <text x="242" y="180" fill="#475569">📐  ITBMS DGI mensual</text>
+    <text x="242" y="206" fill="#475569">💰  CxC — antigüedad de saldos</text>
+    <text x="242" y="232" fill="#475569">📦  Inventario con stock bajo</text>
+    <text x="242" y="258" fill="#475569">📄  Cotizaciones por período</text>
+  </g>
+  <line x1="226" y1="276" x2="484" y2="276" stroke="#eef2f6"/>
+  <text x="234" y="298" font-size="9" letter-spacing="1" fill="#94a3b8">NIVEL 2 · SQL (READ-ONLY)</text>
+  <g font-size="11" fill="#475569">
+    <text x="242" y="322">🧠  Consulta SQL personalizada</text>
+    <text x="242" y="348">🔒  Whitelist de tablas permitidas</text>
+  </g>
+  <line x1="226" y1="366" x2="484" y2="366" stroke="#eef2f6"/>
+  <text x="234" y="388" font-size="9" letter-spacing="1" fill="#94a3b8">NIVEL 3 · PLANTILLAS PDF</text>
+  <g font-size="11" fill="#475569">
+    <text x="242" y="412">📃  Factura (carta / 80mm)</text>
+    <text x="242" y="438">📃  Estado de cuenta</text>
+    <text x="242" y="464">{ }  Placeholders y {{#each}}</text>
+  </g>
+  <rect x="226" y="486" width="258" height="78" rx="10" fill="#fb923c" opacity="0.08"/>
+  <text x="242" y="512" font-size="10.5" font-weight="bold" fill="#c2410c">Exporta a Excel (CSV) y PDF</text>
+  <text x="242" y="532" font-size="9.5" fill="#9a3412">Filtros tipados · resultados al instante</text>
+  <text x="242" y="548" font-size="9.5" fill="#9a3412">Plantillas editables por el admin</text>
+
+  <!-- right: preview -->
+  <rect x="506" y="96" width="478" height="482" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="526" y="124" font-size="14" font-weight="800" fill="#0f172a">Facturas del período</text>
+  <rect x="526" y="136" width="150" height="24" rx="8" fill="#f1f5f9"/>
+  <text x="538" y="152" font-size="9.5" fill="#64748b">📅 Mayo 2026</text>
+  <rect x="828" y="108" width="68" height="26" rx="8" fill="#16a34a" opacity="0.12"/>
+  <text x="862" y="125" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="middle">CSV</text>
+  <rect x="904" y="108" width="68" height="26" rx="8" fill="#dc2626" opacity="0.12"/>
+  <text x="938" y="125" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">PDF</text>
+
+  <!-- table head -->
+  <rect x="526" y="176" width="438" height="26" rx="6" fill="#f1f5f9"/>
+  <text x="538" y="193" font-size="9.5" font-weight="bold" fill="#475569">N.º</text>
+  <text x="590" y="193" font-size="9.5" font-weight="bold" fill="#475569">Cliente</text>
+  <text x="800" y="193" font-size="9.5" font-weight="bold" fill="#475569" text-anchor="end">ITBMS</text>
+  <text x="952" y="193" font-size="9.5" font-weight="bold" fill="#475569" text-anchor="end">Total</text>
+
+  <g font-size="10.5" fill="#0f172a">
+    <text x="538" y="222" font-family="monospace" fill="#1582f5">0001042</text>
+    <text x="590" y="222">Distribuidora La Económica</text>
+    <text x="800" y="222" text-anchor="end" fill="#64748b">$193.20</text>
+    <text x="952" y="222" text-anchor="end" font-weight="bold">$2,952.20</text>
+    <line x1="526" y1="234" x2="964" y2="234" stroke="#eef2f6"/>
+
+    <text x="538" y="258" font-family="monospace" fill="#1582f5">0001041</text>
+    <text x="590" y="258">Ferretería El Tornillo</text>
+    <text x="800" y="258" text-anchor="end" fill="#64748b">$31.80</text>
+    <text x="952" y="258" text-anchor="end" font-weight="bold">$486.10</text>
+    <line x1="526" y1="270" x2="964" y2="270" stroke="#eef2f6"/>
+
+    <text x="538" y="294" font-family="monospace" fill="#1582f5">0001040</text>
+    <text x="590" y="294">Constructora Vega</text>
+    <text x="800" y="294" text-anchor="end" fill="#64748b">$478.36</text>
+    <text x="952" y="294" text-anchor="end" font-weight="bold">$7,310.00</text>
+    <line x1="526" y1="306" x2="964" y2="306" stroke="#eef2f6"/>
+
+    <text x="538" y="330" font-family="monospace" fill="#1582f5">0001039</text>
+    <text x="590" y="330">Minisúper Don Beto</text>
+    <text x="800" y="330" text-anchor="end" fill="#64748b">$8.40</text>
+    <text x="952" y="330" text-anchor="end" font-weight="bold">$128.40</text>
+    <line x1="526" y1="342" x2="964" y2="342" stroke="#eef2f6"/>
+
+    <text x="538" y="366" font-family="monospace" fill="#1582f5">0001038</text>
+    <text x="590" y="366">Taller Mecánico RJ</text>
+    <text x="800" y="366" text-anchor="end" fill="#64748b">$22.29</text>
+    <text x="952" y="366" text-anchor="end" font-weight="bold">$340.75</text>
+    <line x1="526" y1="378" x2="964" y2="378" stroke="#eef2f6"/>
+
+    <text x="538" y="402" font-family="monospace" fill="#1582f5">0001037</text>
+    <text x="590" y="402">Comercial San Miguel</text>
+    <text x="800" y="402" text-anchor="end" fill="#64748b">$140.07</text>
+    <text x="952" y="402" text-anchor="end" font-weight="bold">$2,141.07</text>
+  </g>
+
+  <!-- totals bar -->
+  <rect x="526" y="430" width="438" height="60" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="546" y="454" font-size="9.5" fill="#94a3b8">FACTURAS</text>
+  <text x="546" y="476" font-size="18" font-weight="800" fill="#0f172a">63</text>
+  <text x="710" y="454" font-size="9.5" fill="#94a3b8" text-anchor="end">ITBMS TOTAL</text>
+  <text x="710" y="476" font-size="16" font-weight="800" fill="#0f172a" text-anchor="end">$2,668.40</text>
+  <text x="948" y="454" font-size="9.5" fill="#94a3b8" text-anchor="end">VENTAS DEL MES</text>
+  <text x="948" y="476" font-size="16" font-weight="800" fill="#00c664" text-anchor="end">$38,120.00</text>
+
+  <text x="526" y="520" font-size="10" fill="#94a3b8">📐 Reporte ITBMS listo para la declaración mensual ante la DGI.</text>
+  <text x="526" y="540" font-size="10" fill="#94a3b8">Cada nivel respeta los permisos del usuario y queda en la bitácora de auditoría.</text>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="hex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC4899"/><stop offset="1" stop-color="#9D174D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="620" rx="14" fill="#e2e8f0"/>
+
+  <!-- browser chrome -->
+  <rect x="0" y="0" width="1000" height="34" rx="14" fill="#cbd5e1"/>
+  <rect x="0" y="20" width="1000" height="14" fill="#cbd5e1"/>
+  <circle cx="20" cy="17" r="5" fill="#f87171"/><circle cx="38" cy="17" r="5" fill="#fbbf24"/><circle cx="56" cy="17" r="5" fill="#34d399"/>
+  <rect x="80" y="9" width="400" height="16" rx="8" fill="#e2e8f0"/>
+  <text x="92" y="21" font-size="10" fill="#64748b">app.hubboutique.pa/pos</text>
+
+  <!-- POS topbar -->
+  <rect x="0" y="34" width="1000" height="50" fill="#831843"/>
+  <polygon points="22,46 36,46 43,58 36,70 22,70 15,58" fill="url(#hex)"/>
+  <path d="M29 53 a2 2 0 1 1 2 2 c-2 0 -2 1.4 -2 2.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M29 58 L23 62 H35 Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+  <text x="52" y="58" font-size="14" font-weight="800" fill="#fff">Hub Boutique</text>
+  <text x="52" y="71" font-size="8.5" letter-spacing="1.5" fill="#F9A8D4">POS · SUCURSAL VÍA ESPAÑA</text>
+  <rect x="360" y="48" width="300" height="24" rx="12" fill="#9D174D"/>
+  <text x="378" y="64" font-size="11" fill="#FBCFE8">🔍  Buscar por nombre, SKU o código…</text>
+  <circle cx="940" cy="59" r="13" fill="#fff" opacity="0.15"/><text x="940" y="63" font-size="11" text-anchor="middle" fill="#fff">🛒</text>
+  <text x="966" y="63" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
+
+  <!-- LEFT: product + variant matrix -->
+  <text x="24" y="112" font-size="14" font-weight="800" fill="#0f172a">Camisa polo manga corta</text>
+  <text x="24" y="130" font-size="11" fill="#64748b">$24.90 · Marca Lacoste · 12 variantes</text>
+
+  <!-- color chips -->
+  <text x="24" y="158" font-size="9.5" letter-spacing="1" fill="#94a3b8">COLOR</text>
+  <g>
+    <circle cx="34" cy="178" r="11" fill="#EC4899" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="66" cy="178" r="11" fill="#0ea5e9"/>
+    <circle cx="98" cy="178" r="11" fill="#1e293b"/>
+    <circle cx="130" cy="178" r="11" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="162" cy="178" r="11" fill="#22c55e"/>
+  </g>
+
+  <!-- size × stock matrix (selected color: rosa) -->
+  <text x="24" y="214" font-size="9.5" letter-spacing="1" fill="#94a3b8">TALLA · ROSA · STOCK EN ESTA SUCURSAL</text>
+  <g font-size="13" font-weight="bold" text-anchor="middle">
+    <rect x="24" y="226" width="74" height="64" rx="12" fill="#fff" stroke="#EC4899" stroke-width="2"/>
+    <text x="61" y="254" fill="#0f172a">S</text><text x="61" y="276" font-size="9" font-weight="normal" fill="#16a34a">8 disp.</text>
+    <rect x="106" y="226" width="74" height="64" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <text x="143" y="254" fill="#0f172a">M</text><text x="143" y="276" font-size="9" font-weight="normal" fill="#16a34a">14 disp.</text>
+    <rect x="188" y="226" width="74" height="64" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <text x="225" y="254" fill="#0f172a">L</text><text x="225" y="276" font-size="9" font-weight="normal" fill="#16a34a">5 disp.</text>
+    <rect x="270" y="226" width="74" height="64" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="307" y="254" fill="#94a3b8">XL</text><text x="307" y="276" font-size="9" font-weight="normal" fill="#ef4444">agotado</text>
+  </g>
+
+  <!-- product grid below -->
+  <text x="24" y="324" font-size="9.5" letter-spacing="1" fill="#94a3b8">CATÁLOGO</text>
+  <g>
+    <rect x="24" y="336" width="100" height="120" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="36" y="348" width="76" height="64" rx="8" fill="#FCE7F3"/><text x="74" y="388" font-size="26" text-anchor="middle">👗</text>
+    <text x="36" y="430" font-size="9.5" font-weight="bold" fill="#0f172a">Vestido floral</text><text x="36" y="446" font-size="9.5" fill="#EC4899" font-weight="bold">$32.00</text>
+    <rect x="134" y="336" width="100" height="120" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="146" y="348" width="76" height="64" rx="8" fill="#E0F2FE"/><text x="184" y="388" font-size="26" text-anchor="middle">👖</text>
+    <text x="146" y="430" font-size="9.5" font-weight="bold" fill="#0f172a">Jeans slim</text><text x="146" y="446" font-size="9.5" fill="#EC4899" font-weight="bold">$28.50</text>
+    <rect x="244" y="336" width="100" height="120" rx="12" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="256" y="348" width="76" height="64" rx="8" fill="#FEF9C3"/><text x="294" y="388" font-size="26" text-anchor="middle">👟</text>
+    <text x="256" y="430" font-size="9.5" font-weight="bold" fill="#0f172a">Tenis urbano</text><text x="256" y="446" font-size="9.5" fill="#EC4899" font-weight="bold">$45.00</text>
+  </g>
+
+  <!-- RIGHT: cart / ticket -->
+  <rect x="372" y="100" width="608" height="500" rx="14" fill="#fff" stroke="#e2e8f0"/>
+  <text x="394" y="130" font-size="14" font-weight="800" fill="#0f172a">🧾 Venta actual</text>
+  <text x="958" y="130" font-size="11" fill="#64748b" text-anchor="end">Cajero: María</text>
+  <line x1="394" y1="144" x2="958" y2="144" stroke="#f1f5f9"/>
+
+  <g font-size="12">
+    <text x="394" y="172" font-weight="bold" fill="#0f172a">Camisa polo · Rosa · S</text>
+    <text x="394" y="190" font-size="10" fill="#94a3b8">SKU POL-RS-S · x2</text>
+    <text x="958" y="180" font-weight="bold" fill="#0f172a" text-anchor="end">$49.80</text>
+    <line x1="394" y1="206" x2="958" y2="206" stroke="#f1f5f9"/>
+    <text x="394" y="234" font-weight="bold" fill="#0f172a">Jeans slim · Azul · 32</text>
+    <text x="394" y="252" font-size="10" fill="#94a3b8">SKU JNS-AZ-32 · x1</text>
+    <text x="958" y="242" font-weight="bold" fill="#0f172a" text-anchor="end">$28.50</text>
+    <line x1="394" y1="268" x2="958" y2="268" stroke="#f1f5f9"/>
+    <text x="394" y="296" font-weight="bold" fill="#0f172a">Vestido floral · Rosa · M</text>
+    <text x="394" y="314" font-size="10" fill="#94a3b8">SKU VST-RS-M · x1</text>
+    <text x="958" y="304" font-weight="bold" fill="#0f172a" text-anchor="end">$32.00</text>
+  </g>
+
+  <!-- totals -->
+  <rect x="394" y="392" width="564" height="120" rx="12" fill="#FDF2F8"/>
+  <g font-size="12" fill="#831843">
+    <text x="414" y="420">Subtotal</text><text x="938" y="420" text-anchor="end">$110.30</text>
+    <text x="414" y="444">ITBMS 7%</text><text x="938" y="444" text-anchor="end">$7.72</text>
+  </g>
+  <line x1="414" y1="460" x2="938" y2="460" stroke="#FBCFE8"/>
+  <text x="414" y="492" font-size="16" font-weight="800" fill="#831843">TOTAL</text>
+  <text x="938" y="494" font-size="24" font-weight="800" fill="#BE185D" text-anchor="end">$118.02</text>
+
+  <!-- pay button -->
+  <rect x="394" y="528" width="564" height="50" rx="12" fill="#EC4899"/>
+  <text x="676" y="559" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">💳  Cobrar  ·  $118.02</text>
+</svg>

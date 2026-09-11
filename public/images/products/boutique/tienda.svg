@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="hex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC4899"/><stop offset="1" stop-color="#9D174D"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC4899"/><stop offset="1" stop-color="#9D174D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="620" rx="14" fill="#f8fafc"/>
+
+  <!-- browser chrome -->
+  <rect x="0" y="0" width="1000" height="34" rx="14" fill="#cbd5e1"/>
+  <rect x="0" y="20" width="1000" height="14" fill="#cbd5e1"/>
+  <circle cx="20" cy="17" r="5" fill="#f87171"/><circle cx="38" cy="17" r="5" fill="#fbbf24"/><circle cx="56" cy="17" r="5" fill="#34d399"/>
+  <rect x="80" y="9" width="400" height="16" rx="8" fill="#e2e8f0"/>
+  <text x="92" y="21" font-size="10" fill="#64748b">🔒  www.miboutique.com</text>
+
+  <!-- store navbar -->
+  <rect x="0" y="34" width="1000" height="48" fill="#ffffff"/>
+  <line x1="0" y1="82" x2="1000" y2="82" stroke="#f1f5f9"/>
+  <polygon points="26,46 40,46 47,58 40,70 26,70 19,58" fill="url(#hex)"/>
+  <path d="M33 53 a2 2 0 1 1 2 2 c-2 0 -2 1.4 -2 2.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M33 58 L27 62 H39 Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+  <text x="56" y="63" font-size="15" font-weight="800" fill="#831843">Mi Boutique</text>
+  <g font-size="11.5" fill="#475569">
+    <text x="360" y="62">Mujer</text><text x="430" y="62">Hombre</text><text x="510" y="62">Calzado</text><text x="590" y="62">Accesorios</text>
+  </g>
+  <text x="900" y="62" font-size="11" fill="#475569">👤  Mi cuenta</text>
+  <circle cx="966" cy="58" r="13" fill="#FCE7F3"/><text x="966" y="62" font-size="11" text-anchor="middle">🛍️</text>
+
+  <!-- hero -->
+  <rect x="20" y="98" width="960" height="120" rx="14" fill="url(#hero)"/>
+  <text x="48" y="146" font-size="24" font-weight="800" fill="#fff">Nueva colección de temporada 👗</text>
+  <text x="48" y="174" font-size="13" fill="#FBCFE8">Envío a toda la ciudad · retira en cualquiera de nuestras sucursales</text>
+  <rect x="48" y="186" width="150" height="34" rx="10" fill="#fff"/>
+  <text x="123" y="208" font-size="12" font-weight="800" fill="#BE185D" text-anchor="middle">Ver novedades</text>
+
+  <!-- section title -->
+  <text x="24" y="252" font-size="15" font-weight="800" fill="#0f172a">Lo más vendido</text>
+  <text x="976" y="252" font-size="11" fill="#EC4899" font-weight="bold" text-anchor="end">Ver todo →</text>
+
+  <!-- product grid 4 cols x 1 + 4 cols -->
+  <g>
+    <!-- card 1 -->
+    <rect x="24" y="266" width="226" height="320" rx="14" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="24" y="266" width="226" height="200" rx="14" fill="#FCE7F3"/>
+    <text x="137" y="380" font-size="56" text-anchor="middle">👗</text>
+    <rect x="40" y="282" width="70" height="22" rx="11" fill="#EC4899"/><text x="75" y="297" font-size="9.5" font-weight="bold" fill="#fff" text-anchor="middle">-20%</text>
+    <text x="42" y="500" font-size="13" font-weight="bold" fill="#0f172a">Vestido floral</text>
+    <text x="42" y="520" font-size="10.5" fill="#94a3b8">Rosa · Azul · Verde</text>
+    <text x="42" y="552" font-size="16" font-weight="800" fill="#BE185D">$32.00</text>
+    <text x="120" y="552" font-size="11" fill="#94a3b8" text-decoration="line-through">$40</text>
+    <rect x="170" y="536" width="64" height="30" rx="9" fill="#FDF2F8"/><text x="202" y="556" font-size="13" text-anchor="middle">🛍️</text>
+
+    <!-- card 2 -->
+    <rect x="262" y="266" width="226" height="320" rx="14" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="262" y="266" width="226" height="200" rx="14" fill="#E0F2FE"/>
+    <text x="375" y="380" font-size="56" text-anchor="middle">👖</text>
+    <text x="280" y="500" font-size="13" font-weight="bold" fill="#0f172a">Jeans slim fit</text>
+    <text x="280" y="520" font-size="10.5" fill="#94a3b8">Tallas 28 – 36</text>
+    <text x="280" y="552" font-size="16" font-weight="800" fill="#BE185D">$28.50</text>
+    <rect x="408" y="536" width="64" height="30" rx="9" fill="#FDF2F8"/><text x="440" y="556" font-size="13" text-anchor="middle">🛍️</text>
+
+    <!-- card 3 -->
+    <rect x="500" y="266" width="226" height="320" rx="14" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="500" y="266" width="226" height="200" rx="14" fill="#FEF9C3"/>
+    <text x="613" y="380" font-size="56" text-anchor="middle">👟</text>
+    <text x="518" y="500" font-size="13" font-weight="bold" fill="#0f172a">Tenis urbano</text>
+    <text x="518" y="520" font-size="10.5" fill="#94a3b8">Blanco · Negro</text>
+    <text x="518" y="552" font-size="16" font-weight="800" fill="#BE185D">$45.00</text>
+    <rect x="646" y="536" width="64" height="30" rx="9" fill="#FDF2F8"/><text x="678" y="556" font-size="13" text-anchor="middle">🛍️</text>
+
+    <!-- card 4 -->
+    <rect x="738" y="266" width="238" height="320" rx="14" fill="#fff" stroke="#e2e8f0"/>
+    <rect x="738" y="266" width="238" height="200" rx="14" fill="#F3E8FF"/>
+    <text x="857" y="380" font-size="56" text-anchor="middle">👜</text>
+    <rect x="754" y="282" width="78" height="22" rx="11" fill="#16a34a"/><text x="793" y="297" font-size="9.5" font-weight="bold" fill="#fff" text-anchor="middle">NUEVO</text>
+    <text x="756" y="500" font-size="13" font-weight="bold" fill="#0f172a">Bolso de mano</text>
+    <text x="756" y="520" font-size="10.5" fill="#94a3b8">Cuero sintético</text>
+    <text x="756" y="552" font-size="16" font-weight="800" fill="#BE185D">$38.00</text>
+    <rect x="896" y="536" width="64" height="30" rx="9" fill="#FDF2F8"/><text x="928" y="556" font-size="13" text-anchor="middle">🛍️</text>
+  </g>
+</svg>

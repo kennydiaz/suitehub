@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="720" viewBox="0 0 680 720" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1582F5"/><stop offset="1" stop-color="#27AAE1"/></linearGradient>
+  </defs>
+  <rect width="680" height="720" fill="#eef2f6"/>
+  <rect x="40" y="28" width="600" height="664" rx="10" fill="#fff" stroke="#e2e8f0"/>
+  <rect x="40" y="28" width="600" height="6" rx="3" fill="url(#acc)"/>
+
+  <!-- header -->
+  <rect x="64" y="54" width="150" height="40" rx="6" fill="#16263D"/>
+  <text x="78" y="80" font-size="18" font-weight="bold" fill="#fff">Hub Lite</text>
+  <g text-anchor="end" font-size="9.5" fill="#1e293b">
+    <text x="616" y="60" font-weight="bold">DEMO COMERCIAL, S.A.</text>
+    <text x="616" y="73">RUC 155712345-2-2021 DV 18</text>
+    <text x="616" y="86">Vía España, Ciudad de Panamá</text>
+    <text x="616" y="99">Tel. 300-1234 · ventas@demo.com</text>
+  </g>
+
+  <!-- title -->
+  <text x="64" y="128" font-size="15" font-weight="bold" fill="#0A2540">FACTURA ELECTRÓNICA Nro.<tspan fill="#1582F5" font-family="'Courier New',monospace">0000000142</tspan></text>
+  <text x="64" y="144" font-size="11" font-weight="bold" fill="#1582F5">AUTORIZADA DGI</text>
+
+  <!-- banner FE -->
+  <rect x="64" y="156" width="372" height="34" rx="3" fill="#ecfdf5" stroke="#86efac"/>
+  <text x="74" y="171" font-size="8.5" font-weight="bold" fill="#065f46">✓ Documento electrónico autorizado por DGI Panamá.</text>
+  <text x="74" y="183" font-size="8.5" fill="#065f46">CUFE y QR válidos para verificación en el portal de la DGI.</text>
+  <g text-anchor="end" font-size="8.5" fill="#1582F5">
+    <text x="616" y="168" font-weight="bold">Autorizada: 31/05/2026 14:22</text>
+    <text x="616" y="182">Generado: 31/05/2026 14:22</text>
+  </g>
+
+  <!-- cliente / doc -->
+  <g font-size="9.5">
+    <text x="64" y="214" fill="#475569">R.U.C.:</text>     <text x="150" y="214" font-weight="bold" fill="#0f172a">8-845-2210  DV: 55</text>
+    <text x="64" y="230" fill="#475569">Nombre:</text>    <text x="150" y="230" font-weight="bold" fill="#0f172a">Comercializadora El Sol, S.A.</text>
+    <text x="64" y="246" fill="#475569">Dirección:</text> <text x="150" y="246" font-weight="bold" fill="#0f172a">Calle 50, Local 3, Panamá</text>
+    <text x="64" y="262" fill="#475569">Teléfono:</text>  <text x="150" y="262" font-weight="bold" fill="#0f172a">6612-7788</text>
+
+    <text x="400" y="214" fill="#475569">Vendedor:</text>      <text x="486" y="214" font-weight="bold" fill="#0f172a">Ana Pérez</text>
+    <text x="400" y="230" fill="#475569">Fecha Emisión:</text> <text x="486" y="230" font-weight="bold" fill="#0f172a">31/05/2026</text>
+    <text x="400" y="246" fill="#475569">Tiempo de Pago:</text><text x="486" y="246" font-weight="bold" fill="#0f172a">Contado</text>
+    <text x="400" y="262" fill="#475569">Tipo Receptor:</text> <text x="486" y="262" font-weight="bold" fill="#0f172a">Contribuyente</text>
+  </g>
+
+  <!-- strip -->
+  <rect x="64" y="276" width="552" height="22" fill="#E1F3FB" stroke="#bfe3f5"/>
+  <text x="74" y="291" font-size="9.5" font-weight="bold" fill="#1582F5">Punto de Facturación: 002          Sucursal: 0001</text>
+
+  <!-- items header -->
+  <rect x="64" y="306" width="552" height="22" fill="#1582F5"/>
+  <g font-size="9" font-weight="bold" fill="#fff">
+    <text x="72" y="321">Código</text><text x="150" y="321">Descripción</text>
+    <text x="392" y="321" text-anchor="end">Cant.</text><text x="470" y="321" text-anchor="end">Precio</text>
+    <text x="540" y="321" text-anchor="end">Imp.</text><text x="610" y="321" text-anchor="end">Total</text>
+  </g>
+  <!-- rows -->
+  <g font-size="9" fill="#0f172a">
+    <rect x="64" y="328" width="552" height="24" fill="#fff"/>
+    <text x="72" y="344" font-family="'Courier New',monospace" fill="#475569">SRV-01</text>
+    <text x="150" y="344">Campaña redes sociales (mensual)</text>
+    <text x="392" y="344" text-anchor="end">1</text><text x="470" y="344" text-anchor="end">$650.00</text>
+    <text x="540" y="344" text-anchor="end">$45.50</text><text x="610" y="344" text-anchor="end" font-weight="bold">$695.50</text>
+
+    <rect x="64" y="352" width="552" height="24" fill="#f2fafe"/>
+    <text x="72" y="368" font-family="'Courier New',monospace" fill="#475569">SRV-08</text>
+    <text x="150" y="368">Diseño de logotipo + manual de marca</text>
+    <text x="392" y="368" text-anchor="end">1</text><text x="470" y="368" text-anchor="end">$420.00</text>
+    <text x="540" y="368" text-anchor="end">$29.40</text><text x="610" y="368" text-anchor="end" font-weight="bold">$449.40</text>
+
+    <rect x="64" y="376" width="552" height="24" fill="#fff"/>
+    <text x="72" y="392" font-family="'Courier New',monospace" fill="#475569">PRD-21</text>
+    <text x="150" y="392">Banner impreso 2x1 m (lona)</text>
+    <text x="392" y="392" text-anchor="end">3</text><text x="470" y="392" text-anchor="end">$35.00</text>
+    <text x="540" y="392" text-anchor="end">$7.35</text><text x="610" y="392" text-anchor="end" font-weight="bold">$112.35</text>
+  </g>
+  <line x1="64" y1="400" x2="616" y2="400" stroke="#e2e8f0"/>
+
+  <!-- observaciones + totales -->
+  <text x="64" y="430" font-size="9" font-weight="bold" fill="#1582F5">OBSERVACIONES:</text>
+  <rect x="64" y="436" width="300" height="70" fill="#fff" stroke="#bfe3f5"/>
+  <text x="72" y="452" font-size="9" fill="#475569">Gracias por su preferencia.</text>
+  <text x="72" y="466" font-size="9" fill="#475569">Entrega estimada: 5 días hábiles.</text>
+
+  <g font-size="10">
+    <text x="430" y="430" text-anchor="end" fill="#475569">Subtotal:</text><text x="610" y="430" text-anchor="end" font-family="'Courier New',monospace">$1,175.00</text>
+    <text x="430" y="450" text-anchor="end" fill="#475569">Total ITBMS:</text><text x="610" y="450" text-anchor="end" font-family="'Courier New',monospace">$82.25</text>
+    <line x1="430" y1="460" x2="610" y2="460" stroke="#1582F5" stroke-width="2"/>
+    <text x="430" y="482" text-anchor="end" font-size="13" font-weight="bold" fill="#0A2540">Total:</text>
+    <text x="610" y="482" text-anchor="end" font-size="13" font-weight="bold" fill="#0A2540" font-family="'Courier New',monospace">$1,257.25</text>
+  </g>
+
+  <!-- FE block CUFE + QR -->
+  <rect x="64" y="522" width="552" height="92" rx="4" fill="#ecfdf5" stroke="#10b981"/>
+  <!-- fake QR -->
+  <rect x="80" y="538" width="60" height="60" fill="#fff" stroke="#10b981"/>
+  <g fill="#064e3b">
+    <rect x="86" y="544" width="14" height="14"/><rect x="120" y="544" width="14" height="14"/><rect x="86" y="578" width="14" height="14"/>
+    <rect x="106" y="544" width="5" height="5"/><rect x="106" y="556" width="5" height="5"/><rect x="120" y="566" width="5" height="5"/>
+    <rect x="106" y="578" width="5" height="5"/><rect x="120" y="584" width="14" height="8"/><rect x="92" y="566" width="8" height="5"/>
+  </g>
+  <text x="156" y="552" font-size="10" font-weight="bold" fill="#064e3b">✓ Factura electrónica autorizada por DGI Panamá</text>
+  <text x="156" y="570" font-size="9" fill="#064e3b">CUFE: <tspan font-family="'Courier New',monospace" font-size="8">FE0120000001557123452021...8A4C2E1B9D</tspan></text>
+  <text x="156" y="586" font-size="8" fill="#475569">Verifica en: dgi-fep.mef.gob.pa/Consultas/FacturasPorQR</text>
+
+  <text x="340" y="640" text-anchor="middle" font-size="8" fill="#94a3b8">Documento validado por DIGIFACT SERVICIOS, S.A. — Proveedor Autorizado Calificado.</text>
+  <text x="340" y="654" text-anchor="middle" font-size="8" fill="#94a3b8">Generado por Hub Lite · 31/05/2026 14:22</text>
+</svg>
