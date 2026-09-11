@@ -9,7 +9,7 @@
     "regla": "Descuentos por cliente, manuales.",
     "pac": "El PAC de facturación electrónica lo contrata y paga el cliente directo. SuiteHub integra sin cobro.",
     "fuente_canonica": "suitehub-panel/src/Catalog.php",
-    "actualizado": "2026-09-06"
+    "actualizado": "2026-09-08"
   },
   "ediciones": [
     {
@@ -54,7 +54,7 @@
       "tagline": "Personalizable",
       "color": "#7C3AED",
       "featured": false,
-      "precio_mes": 64,
+      "precio_mes": 96,
       "fe_electronica": true,
       "limites": {
         "sucursales": "1",
@@ -64,7 +64,7 @@
         "transacciones_mes": "10,000"
       },
       "salto_clave": "Core + personalización: branding propio, automatizaciones, API REST, webhooks y WhatsApp Business.",
-      "precio_anio": 640
+      "precio_anio": 960
     },
     {
       "key": "enterprise",
@@ -118,29 +118,29 @@
       "sector": "Talleres mecánicos",
       "caso_real": "QS Express — La Chorrera",
       "nota": null,
-      "features": [
-        "Recepción rápida por placa",
-        "Órdenes de trabajo (servicios + repuestos)",
-        "Agenda de citas online",
-        "Histórico de vehículos",
-        "Catálogo de servicios",
-        "Facturación electrónica"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Recepción por placa",
+        "Órdenes de trabajo",
+        "Cotización aprobada por el cliente",
+        "Factura electrónica DGI",
+        "Agenda que se convierte en orden",
+        "El mecánico en su celular"
+      ]
     },
     {
       "key": "carwash",
@@ -149,92 +149,91 @@
       "sector": "Autolavados y car wash",
       "caso_real": null,
       "nota": null,
+      "planes": {
+        "core": {
+          "precio_mes": 48,
+          "precio_anio": 480
+        },
+        "pro": {
+          "precio_mes": 96,
+          "precio_anio": 960
+        }
+      },
+      "edicion_minima": "core",
+      "precio_mes": 48,
+      "precio_anio": 480,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Recepción por placa",
-        "Pistas y lavadores con cola en vivo",
-        "Caja, arqueo y ticket 80 mm",
-        "Comisiones automáticas por lavador",
-        "Fidelidad por sellos",
-        "Facturación electrónica DGI"
-      ],
-      "planes": {
-        "core": {
-          "precio_mes": 48,
-          "precio_anio": 480
-        },
-        "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
-        }
-      },
-      "edicion_minima": "core",
-      "precio_mes": 48,
-      "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
-    },
-    {
-      "key": "restaurant",
-      "name": "HUB Restaurant",
-      "icon": "fa-utensils",
-      "sector": "Restaurantes y bares",
-      "caso_real": null,
-      "nota": null,
-      "features": [
-        "Mesas en vivo",
-        "Comanda a cocina (KDS)",
-        "Dividir cuentas",
-        "Propinas y descuentos",
-        "Domicilio",
-        "Reportes por turno"
-      ],
-      "planes": {
-        "core": {
-          "precio_mes": 48,
-          "precio_anio": 480
-        },
-        "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
-        }
-      },
-      "edicion_minima": "core",
-      "precio_mes": 48,
-      "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+        "Gestión de pistas",
+        "POS de lavado",
+        "Caja y arqueo",
+        "Factura electrónica DGI",
+        "Clientes y vehículos"
+      ]
     },
     {
       "key": "pos",
       "name": "HUB POS",
       "icon": "fa-cash-register",
-      "sector": "Caja y punto de venta · food service ligero",
+      "sector": "Restaurantes, bares y food trucks",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Toma de pedido táctil",
-        "Gestión de mesas",
-        "Cobro mixto con propina y vuelto",
-        "Comanda a cocina e impresión por estación",
-        "Kiosko de auto-servicio",
-        "Control de caja (X/Z)",
-        "Funciona sin internet"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Gestión de mesas",
+        "Toma de pedido táctil",
+        "Monitor de cocina e impresión por estación",
+        "Cobro flexible",
+        "Factura electrónica DGI",
+        "Kiosko de autoservicio"
+      ]
+    },
+    {
+      "key": "restaurant",
+      "name": "HUB Restaurant",
+      "icon": "fa-utensils",
+      "sector": "Restaurantes y bares · versión PRO de HUB POS",
+      "caso_real": null,
+      "nota": "Versión PRO de HUB POS.",
+      "planes": {
+        "core": {
+          "precio_mes": 48,
+          "precio_anio": 480
+        },
+        "pro": {
+          "precio_mes": 96,
+          "precio_anio": 960
+        }
+      },
+      "edicion_minima": "core",
+      "precio_mes": 48,
+      "precio_anio": 480,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Gestión de mesas",
+        "Toma de pedido táctil",
+        "Cobro flexible",
+        "Comanda a cocina",
+        "Caja con arqueo",
+        "Inventario por receta"
+      ]
     },
     {
       "key": "market",
@@ -243,29 +242,29 @@
       "sector": "Minimarkets y supermercados",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Venta rápida por código",
-        "Venta por peso (balanza)",
-        "Inventario con caducidad",
-        "Caja y arqueo",
-        "Compras y proveedores",
-        "Facturación electrónica"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Venta rápida",
+        "Venta por peso",
+        "Inventario y caducidad",
+        "Caja y arqueo",
+        "Compras y proveedores",
+        "Factura electrónica"
+      ]
     },
     {
       "key": "boutique",
@@ -274,29 +273,29 @@
       "sector": "Boutiques de ropa y retail",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Variantes talla × color",
-        "POS táctil",
-        "Tienda online sobre el mismo inventario",
-        "Apartados (layaway)",
-        "Devoluciones con autorización",
-        "Facturación electrónica"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Variantes talla × color",
+        "Multi-sucursal",
+        "POS táctil",
+        "Tienda online",
+        "Pago online",
+        "Factura electrónica"
+      ]
     },
     {
       "key": "pet",
@@ -305,28 +304,29 @@
       "sector": "Veterinarias y pet shops",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Ficha médica digital",
-        "Recordatorios automáticos (vacunas/desparasitación)",
-        "Agenda dueño + mascota",
-        "Recetas con stock",
-        "Galería por mascota"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Ficha médica digital",
+        "Recordatorios automáticos",
+        "Agenda dueño + mascota",
+        "Recetas con stock",
+        "Galería por mascota",
+        "Pet shop y servicios"
+      ]
     },
     {
       "key": "salon",
@@ -335,29 +335,29 @@
       "sector": "Salones de belleza, barberías y spas",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Reserva online 24/7 por servicio y estilista",
-        "Agenda por estilista con lista de espera",
-        "Comisiones automáticas por categoría y retail",
-        "Recordatorios por WhatsApp",
-        "Horas valle con descuento",
-        "Caja por turno y facturación electrónica"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Reserva online 24/7",
+        "Agenda por estilista",
+        "Comisiones automáticas",
+        "Factura electrónica DGI",
+        "Recordatorios por WhatsApp",
+        "Horas valle con descuento"
+      ]
     },
     {
       "key": "clinic",
@@ -366,27 +366,27 @@
       "sector": "Consultorios y clínicas",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Expediente clínico digital",
-        "Agenda multi-médico",
-        "Recetas digitales",
-        "Facturación a aseguradoras"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Expediente digital",
+        "Agenda multi-médico",
+        "Recetas digitales",
+        "Seguros médicos"
+      ]
     },
     {
       "key": "gym",
@@ -395,27 +395,27 @@
       "sector": "Gimnasios, crossfit, yoga",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Membresías con cobro recurrente",
-        "Control de acceso por QR",
-        "Clases con cupo",
-        "Retención por inasistencia"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Membresías",
+        "Control de acceso",
+        "Clases con cupo",
+        "Retención"
+      ]
     },
     {
       "key": "lavanderia",
@@ -424,27 +424,27 @@
       "sector": "Lavanderías profesionales",
       "caso_real": "Clean Factory — Panamá",
       "nota": null,
-      "features": [
-        "Boleta con código de retiro",
-        "Etapas del proceso",
-        "Precio por kilo o prenda",
-        "Aviso WhatsApp cuando está listo"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Boleta con código",
+        "Etapas del proceso",
+        "Precio por kilo o prenda",
+        "Aviso WhatsApp"
+      ]
     },
     {
       "key": "inmobiliaria",
@@ -453,27 +453,27 @@
       "sector": "Bienes raíces",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Catálogo de propiedades",
-        "Pipeline de leads",
-        "Contratos de alquiler con cobro recurrente",
-        "Comisiones de agentes"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Catálogo de propiedades",
+        "Pipeline de leads",
+        "Contratos de alquiler",
+        "Comisiones agentes"
+      ]
     },
     {
       "key": "hotel",
@@ -482,27 +482,29 @@
       "sector": "Hoteles boutique y hostales",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Tape chart de ocupación",
-        "Check-in/out con factura",
-        "Housekeeping",
-        "Channel manager (Booking/Airbnb/Expedia, Pro)"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Rack de reservaciones",
+        "Habitaciones en vivo",
+        "Check-in / check-out",
+        "Folios con cargo a la habitación",
+        "POS integrado",
+        "Factura electrónica"
+      ]
     },
     {
       "key": "phone",
@@ -511,27 +513,27 @@
       "sector": "Reparación de celulares",
       "caso_real": null,
       "nota": null,
-      "features": [
-        "Diagnóstico inicial",
-        "Cotización al cliente",
-        "Repuestos vinculados a la orden",
-        "Garantía digital con QR"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Diagnóstico inicial",
+        "Cotización al cliente",
+        "Repuestos vinculados",
+        "Garantía digital"
+      ]
     },
     {
       "key": "traffic",
@@ -540,29 +542,29 @@
       "sector": "Analítica de afluencia retail",
       "caso_real": null,
       "nota": "El hardware (sensores/cámaras) se cotiza aparte por local.",
-      "features": [
-        "Conteo de afluencia",
-        "Mapas de calor por zona",
-        "Dwell time",
-        "Conversión visita→venta (cruce con HUB POS)",
-        "Comparativas por hora/día",
-        "Alertas de aforo"
-      ],
       "planes": {
         "core": {
           "precio_mes": 48,
           "precio_anio": 480
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640
+          "precio_mes": 96,
+          "precio_anio": 960
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Conteo de afluencia",
+        "Mapas de calor",
+        "Dwell time",
+        "Conversión visita→venta",
+        "Comparativas",
+        "Alertas de aforo"
+      ]
     }
   ],
   "especiales": [],

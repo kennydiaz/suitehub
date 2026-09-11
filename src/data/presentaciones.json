@@ -4432,12 +4432,12 @@
           "destacado": "Taller",
           "despues": ""
         },
-        "tagline": "El sistema de tu taller mecánico: recepción por placa, órdenes de trabajo y factura electrónica 🔧🚗",
-        "intro": "Recibes el carro por la placa, el cliente aprueba la cotización desde su teléfono, la agenda se organiza por bahía y el mecánico trabaja desde su celular.",
+        "tagline": "El sistema de tu taller mecánico: recepción por placa, órdenes de trabajo, avisos al cliente y factura electrónica 🔧🚗",
+        "intro": "Recibes el carro por la placa, el cliente aprueba la cotización y ve en qué va su vehículo desde su teléfono, el mecánico trabaja desde su celular y el taller le recuerda al cliente cuándo le toca volver.",
         "chips": [
           "⚡ Recepción por placa",
           "📋 Órdenes de trabajo",
-          "📲 Cotización aprobada por el cliente",
+          "📲 El cliente sigue su vehículo",
           "🧾 Factura electrónica DGI"
         ],
         "url_label": "suitehub.net/taller",
@@ -4447,23 +4447,25 @@
           "destacado": "una sola orden",
           "despues": ""
         },
-        "solucion_sub": "Recepción por placa con comprobante, tablero de órdenes por estado, cotización que el cliente aprueba desde su teléfono, factura electrónica al cobrar y el mecánico desde su celular. Hecho en Panamá 🇵🇦",
+        "solucion_sub": "Recepción por placa con comprobante, tablero de órdenes por estado, cotización que el cliente aprueba desde su teléfono, avisos listos para mandar por WhatsApp, factura electrónica al cobrar y recordatorios que traen al cliente de vuelta. Hecho en Panamá 🇵🇦",
         "recorrido_titulo": "Así se ve por dentro",
         "recorrido": [
           {
+            "grupo": "El taller por dentro",
             "imagen": "dashboard.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Tu taller de un vistazo",
-            "texto": "Al abrir el sistema ves cuántos carros hay en taller, cuáles están listos para entregar, las citas de hoy y lo facturado del mes. No tienes que salir a preguntar, lo ves en pantalla.",
+            "texto": "Al abrir el sistema ves cuántos vehículos hay en el taller, cuáles están listos para entregar, cuáles esperan la aprobación del cliente y lo facturado del mes. No tienes que salir a preguntar: lo ves en pantalla.",
             "puntos": [
-              "Vehículos en taller y órdenes por estado",
-              "Ingresos del mes y por cobrar",
-              "Citas de hoy y qué hay en cada bahía"
+              "Órdenes abiertas por estado",
+              "Entregas vencidas y trabajo sin facturar",
+              "Efectivo en caja y lo que te deben"
             ]
           },
           {
+            "grupo": "El taller por dentro",
             "imagen": "recepcion.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -4477,92 +4479,197 @@
             ]
           },
           {
+            "grupo": "El taller por dentro",
             "imagen": "tablero.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Tablero de órdenes por estado",
-            "texto": "Cada columna es un estado del carro: recibido, diagnóstico, por aprobar, en proceso, listo. Asignas mecánico y ves cuánto tiempo lleva cada uno. Filtra por placa, cliente o mecánico.",
+            "texto": "Cada columna es un estado del carro: recibido, diagnóstico, por aprobar, en proceso y listo. Asignas mecánico y ves cuánto tiempo lleva cada uno. Filtras por placa, cliente o mecánico.",
             "puntos": [
               "Tiempo en taller visible en cada tarjeta",
-              "Cotización enviada y aprobada marcadas",
+              "Lo pendiente de aprobar y las entregas vencidas marcadas",
               "Lista o tablero, como prefieras trabajar"
             ]
           },
           {
+            "grupo": "El taller por dentro",
             "imagen": "orden.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "La orden: ítems, aprobación y bitácora",
-            "texto": "Servicios, repuestos y mano de obra con su precio, ITBMS y quién lo aprobó. La bitácora registra cada paso con hora. Desde aquí cotizas lo pendiente y facturas lo aprobado.",
+            "texto": "Servicios, repuestos y mano de obra con su ITBMS y quién los aprobó. La bitácora registra cada paso con su hora. Desde aquí cotizas lo pendiente y facturas lo aprobado.",
             "puntos": [
               "Nunca se factura un ítem dos veces",
               "Fotos de entrada y del diagnóstico adjuntas",
-              "WhatsApp al cliente con un toque"
+              "WhatsApp al cliente: el mensaje queda listo y se manda con un toque"
             ]
           },
           {
-            "imagen": "cotizacion-cliente.webp",
-            "tipo": "movil",
-            "ancho": 488,
-            "alto": 718,
-            "titulo": "El cliente aprueba desde su teléfono",
-            "texto": "Le mandas el enlace por WhatsApp y ve la cotización con el detalle: \"¿Autoriza el trabajo por B/. 167.99?\". Aprueba o rechaza con un toque, sin cuenta ni app, y la orden pasa sola a \"en proceso\".",
-            "puntos": [
-              "Enlace público con vencimiento, sin registro",
-              "Aprobar, rechazar o consultar por WhatsApp",
-              "Queda registrado quién aprobó y cuándo"
-            ]
-          },
-          {
-            "imagen": "factura.webp",
-            "tipo": "desktop",
-            "ancho": 2852,
-            "alto": 1436,
-            "titulo": "Factura electrónica desde la orden lista",
-            "texto": "Cobras lo aprobado y sale la factura electrónica autorizada por la DGI, con CUFE y QR, en ticket de 80 mm o PDF carta. El cliente recibe un enlace para verla en su teléfono. También acepta pagos parciales y crédito con vencimiento.",
-            "puntos": [
-              "CUFE, QR y correlativo fiscal en el documento",
-              "Ticket 80 mm, PDF y WhatsApp con un clic",
-              "Efectivo, tarjeta, Yappy, transferencia o crédito"
-            ]
-          },
-          {
+            "grupo": "El taller por dentro",
             "imagen": "vehiculo.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Ficha e histórico de cada vehículo",
-            "texto": "Visitas, kilometraje actual, gasto acumulado y última visita. El histórico completo de órdenes y los mantenimientos programados por kilometraje o fecha, con barra de avance y recordatorio al cliente.",
+            "texto": "Visitas, kilometraje, gasto acumulado y última visita, con el histórico completo de órdenes. Los planes de mantenimiento por kilómetros o por tiempo se ponen al día solos cuando entregas la orden con ese servicio.",
             "puntos": [
-              "Próximo cambio de aceite, rotación, frenos, correa",
-              "Informe PDF del vehículo para el dueño",
-              "Programar recordatorio por WhatsApp"
+              "Avance por kilometraje y por fecha, lo que llegue primero",
+              "El plan se renueva solo al entregar",
+              "Recordatorio por WhatsApp con un toque"
             ]
           },
           {
+            "grupo": "El cliente sabe en qué va",
+            "imagen": "cotizacion-cliente.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "El cliente aprueba desde su teléfono",
+            "texto": "Le mandas el enlace por WhatsApp y ve la cotización con todo el detalle. Aprueba o rechaza con un toque, sin cuenta ni app, y la orden pasa sola a «en proceso».",
+            "puntos": [
+              "Enlace con vencimiento, sin registro",
+              "Aprobar, rechazar o consultar por WhatsApp",
+              "Queda registrado quién aprobó y cuándo"
+            ]
+          },
+          {
+            "grupo": "El cliente sabe en qué va",
+            "imagen": "seguimiento-bandeja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Avisos listos para mandar",
+            "texto": "Cuando recibes un vehículo, cuando está listo o cuando le toca mantenimiento, el mensaje queda escrito en la bandeja «Por avisar». El mensaje queda listo y se manda con un toque; si el cliente tiene correo, el correo sale solo.",
+            "puntos": [
+              "Recibido, listo, recordatorios y vencimientos en un solo lugar",
+              "Plantillas con los datos de la orden y de tu taller",
+              "Queda registrado qué se le mandó a cada cliente"
+            ]
+          },
+          {
+            "grupo": "El cliente sabe en qué va",
+            "imagen": "estado-cliente.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "«¿Cómo va mi carro?»",
+            "texto": "Con el aviso de recibido va un enlace para que el cliente vea en qué paso está su vehículo y la entrega estimada, sin llamar al taller. No muestra precios, notas ni fotos.",
+            "puntos": [
+              "Recibido, en reparación y listo para retirar",
+              "Entrega estimada a la vista",
+              "Botón para escribirle al taller por WhatsApp"
+            ]
+          },
+          {
+            "grupo": "El dinero cuadra",
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Factura electrónica desde la orden lista",
+            "texto": "Cobras lo aprobado y sale la factura electrónica autorizada por la DGI, con su CUFE y su QR, en ticket de 80 mm o en PDF carta. El cliente recibe un enlace para verla en su teléfono. También acepta pagos parciales y crédito con vencimiento.",
+            "puntos": [
+              "CUFE, QR y correlativo fiscal en el documento",
+              "Ticket de 80 mm, PDF y WhatsApp con un toque",
+              "Efectivo, tarjeta, Yappy, transferencia o crédito"
+            ]
+          },
+          {
+            "grupo": "El dinero cuadra",
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Caja por turno y cierre por correo",
+            "texto": "Abres el turno con el fondo, cada cobro queda en la caja y al cerrar cuentas el efectivo. El informe del cierre te llega por correo con las facturas del turno y lo que se vendió, separado por categoría.",
+            "puntos": [
+              "Efectivo, tarjeta, Yappy y transferencia en el mismo turno",
+              "Facturas con saldo y vencidas a la vista",
+              "Diferencia de caja anotada con su nota"
+            ]
+          },
+          {
+            "grupo": "El dinero cuadra",
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Reportes para decidir",
+            "texto": "Taller, mecánicos, ventas, por cobrar, existencias, rotación y clientes, por el período que elijas. Los descargas en PDF con la marca de tu taller o en CSV para abrirlos en Excel.",
+            "puntos": [
+              "Tiempo promedio de la recepción a la entrega",
+              "Lo que produjo cada mecánico",
+              "Qué repuestos rotan y cuáles se quedan en el estante"
+            ]
+          },
+          {
+            "grupo": "El taller que vuelve a llamar",
+            "imagen": "documentos-vehiculo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Placa, revisado y seguro con su fecha",
+            "texto": "Anotas cuándo vence cada documento del vehículo y la ficha lo marca en ámbar cuando se acerca y en rojo cuando ya venció. «Renovar» lo pasa al año siguiente, y el Seguimiento prepara el aviso al cliente a 30 y a 7 días.",
+            "puntos": [
+              "Placa, revisado, seguro y otros documentos",
+              "Renovar a un año con un toque",
+              "Calendario de placas por terminación: el taller lo carga y el sistema sugiere la fecha"
+            ]
+          },
+          {
+            "grupo": "El taller que vuelve a llamar",
+            "imagen": "recordatorios.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Recordatorios que traen al cliente de vuelta",
+            "texto": "Una vez al mes por vehículo, el Seguimiento prepara el recordatorio de lo que le toca: cambio de aceite, alineación o frenos. No molesta si el carro tiene una orden abierta o vino hace poco, y te dice cuántos de los que recordaste volvieron al taller.",
+            "puntos": [
+              "Uno al mes por vehículo, nunca en ráfaga",
+              "Cuántos volvieron en los 45 días siguientes",
+              "Lo enviado hoy, con quién lo mandó"
+            ]
+          },
+          {
+            "grupo": "El taller que vuelve a llamar",
+            "imagen": "cupon-orden.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El cupón de cumpleaños, en la orden",
+            "texto": "Con el permiso del cliente, el Seguimiento le manda un saludo de cumpleaños con un cupón personal. Cuando trae su vehículo, la orden te ofrece el cupón y el descuento se reparte por línea, como lo pide la factura electrónica.",
+            "puntos": [
+              "Permiso de promociones con fecha y origen (Ley 81 de 2019)",
+              "Código personal con vigencia",
+              "Se canjea al facturar y vuelve a la orden si la factura se anula"
+            ]
+          },
+          {
+            "grupo": "Desde el celular y con cita",
             "imagen": "agenda.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Agenda por mecánico y por bahía",
-            "texto": "Vista de semana o de día con colores por mecánico. Clic en una hora libre y creas la cita por placa, aunque el cliente todavía no exista. El sistema no te deja cruzar dos citas en la misma bahía o con el mismo mecánico.",
+            "texto": "Vista de semana o de día con colores por mecánico. Tocas una hora libre y creas la cita por placa, aunque el cliente todavía no exista. El sistema no te deja cruzar dos citas en la misma bahía o con el mismo mecánico.",
             "puntos": [
-              "Cita → \"Llegó\" → recepción con todo cargado",
+              "Cita → «Llegó» → recepción con todo cargado",
               "Recordatorios de mañana listos para WhatsApp",
               "Estados: programada, confirmada, llegó, no vino"
             ]
           },
           {
+            "grupo": "Desde el celular y con cita",
             "imagen": "movil.webp",
             "tipo": "movil",
             "ancho": 488,
             "alto": 718,
             "titulo": "El mecánico trabaja desde su celular",
-            "texto": "Ve sus órdenes de hoy, cada una con un botón grande para el siguiente paso (iniciar o marcar listo). Toma la foto directo con la cámara, deja una nota rápida y revisa la agenda del día sin pasar por la PC.",
+            "texto": "Ve sus órdenes de hoy, cada una con un botón grande para el siguiente paso: iniciar o marcar listo. Toma la foto directo con la cámara, deja una nota rápida y revisa la agenda del día sin pasar por la PC.",
             "puntos": [
-              "Mis órdenes, esta semana y listas",
+              "Mis órdenes, las del taller y las listas",
               "Foto de evidencia en un toque",
               "Su producción en el perfil"
             ]
@@ -4589,12 +4696,12 @@
           {
             "icono": "fa-receipt",
             "titulo": "Factura electrónica DGI",
-            "texto": "Cobras desde la orden lista: CUFE y QR con tu PAC, ticket 80 mm o PDF carta, pagos parciales y crédito."
+            "texto": "Cobras desde la orden lista: CUFE y QR autorizados por la DGI, ticket de 80 mm o PDF carta, pagos parciales y crédito."
           },
           {
             "icono": "fa-calendar-days",
             "titulo": "Agenda que se convierte en orden",
-            "texto": "Citas por placa, mecánico y bahía. \"Llegó\" abre la recepción con todo cargado."
+            "texto": "Citas por placa, mecánico y bahía. «Llegó» abre la recepción con todo cargado."
           },
           {
             "icono": "fa-mobile-screen",
@@ -4604,30 +4711,93 @@
           {
             "icono": "fa-car",
             "titulo": "Histórico por vehículo",
-            "texto": "Visitas, kilometraje, gasto acumulado y mantenimientos programados por km o fecha."
+            "texto": "Visitas, kilometraje, gasto acumulado y todas sus órdenes en una sola ficha."
+          },
+          {
+            "icono": "fa-oil-can",
+            "titulo": "Planes de mantenimiento al día solos",
+            "texto": "Por kilómetros o por tiempo, con su avance. Al entregar la orden con ese servicio, el plan se renueva solo."
+          },
+          {
+            "icono": "fa-id-card",
+            "titulo": "Documentos y vencimientos del vehículo",
+            "texto": "Placa, revisado y seguro con su fecha, en ámbar cuando se acercan y en rojo cuando vencen. Renovar a un año con un toque."
           },
           {
             "icono": "fa-cash-register",
-            "titulo": "Caja y cuentas por cobrar",
-            "texto": "Turnos con arqueo, quién te debe y desde cuándo, y recordatorio de cobro por WhatsApp."
+            "titulo": "Caja, cuentas por cobrar y cierre por correo",
+            "texto": "Turnos con arqueo, quién te debe y desde cuándo, y el cierre por correo con las facturas del turno y lo vendido por categoría."
           },
           {
             "icono": "fa-chart-column",
             "titulo": "Reportes descargables",
-            "texto": "Taller, dinero, mecánicos, inventario y clientes, por período y a Excel."
+            "texto": "Taller, dinero, mecánicos, inventario y clientes, por período, en PDF con tu marca o en CSV."
+          },
+          {
+            "icono": "fa-magnifying-glass",
+            "titulo": "Clientes con RUC del padrón",
+            "texto": "Escribes el RUC y el sistema trae la razón social y el DV del padrón de la DGI, para facturar sin erratas."
           }
         ],
         "funciones_nota": "+ Todas las funciones del núcleo SuiteHub: clientes, servicios, repuestos, cotizaciones, facturas, caja y cuentas por cobrar.",
+        "adicionales": {
+          "eyebrow": "Crece con tu taller",
+          "titulo": "Módulos que enciendes cuando los necesites",
+          "intro": "Se activan en tu instalación y trabajan sobre el mismo sistema, con los mismos datos.",
+          "etiqueta": "Módulo",
+          "items": [
+            {
+              "icono": "fa-comment-dots",
+              "titulo": "Seguimiento y avisos al cliente",
+              "texto": "Recibido, listo y el enlace para ver cómo va. El mensaje queda listo y se manda con un toque; el correo sale solo."
+            },
+            {
+              "icono": "fa-bell",
+              "titulo": "Recordatorios de mantenimiento",
+              "texto": "Uno al mes por vehículo, sin molestar a quien vino hace poco, y la cuenta de cuántos volvieron."
+            },
+            {
+              "icono": "fa-file-signature",
+              "titulo": "Trámites del vehículo",
+              "texto": "Revisado, placa, traspaso, seguro o licencia, con sus requisitos, enlace para el cliente y factura con el reembolso de gastos aparte."
+            },
+            {
+              "icono": "fa-cake-candles",
+              "titulo": "Cupones y cumpleaños",
+              "texto": "Saludo de cumpleaños con cupón personal, solo para quien dio su permiso, y canje en la orden."
+            },
+            {
+              "icono": "fa-robot",
+              "titulo": "Hubi, el asistente",
+              "texto": "El asistente de SuiteHub dentro del sistema, para consultar tus reportes conversando."
+            },
+            {
+              "icono": "fa-boxes-stacked",
+              "titulo": "Compras y rotación de inventario",
+              "texto": "Facturas de proveedor que suben el stock, el costo de cada repuesto y qué rota de verdad."
+            },
+            {
+              "icono": "fa-building-columns",
+              "titulo": "Cuentas por pagar y bancos",
+              "texto": "Lo que debes a tus proveedores, los pagos contra el libro y la conciliación con el estado de cuenta."
+            },
+            {
+              "icono": "fa-file-import",
+              "titulo": "Carga masiva de catálogos",
+              "texto": "Servicios, repuestos y clientes desde una planilla, con vista previa antes de guardar."
+            }
+          ]
+        },
         "hablemos": {
           "titulo": "Te lo montamos con tus servicios, tus mecánicos y tus bahías.",
           "texto": "Configuramos tu cuenta, cargamos tu catálogo de servicios y repuestos y capacitamos a tu equipo. Ves HUB Taller con tus datos antes de decidir."
         },
         "beneficios": [
           "Facturación electrónica DGI incluida",
-          "Funciona en la PC del mostrador y en el celular del mecánico",
+          "En la PC del mostrador y en el celular del mecánico",
+          "El cliente sabe en qué va su vehículo sin llamar",
           "Datos del taller en tu propia base, respaldados",
-          "Soporte local por WhatsApp",
-          "Todas las actualizaciones incluidas",
+          "Soporte local por WhatsApp y actualizaciones incluidas",
           "Sin contratos eternos"
         ],
         "cta": {
@@ -4641,7 +4811,7 @@
         "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
         "seo": {
           "title": "HUB Taller: sistema para talleres mecánicos en Panamá",
-          "description": "Recepción por placa, órdenes de trabajo, cotización que el cliente aprueba desde su teléfono, agenda por mecánico y bahía, factura electrónica DGI y el mecánico trabajando desde su celular. Hecho en Panamá."
+          "description": "Recepción por placa, órdenes de trabajo, cotización que el cliente aprueba desde su teléfono, avisos listos para WhatsApp, documentos y recordatorios de mantenimiento, agenda por mecánico y bahía y factura electrónica DGI. Hecho en Panamá."
         },
         "wa_text": "Hola, quiero info de HUB Taller 🔧",
         "wa_demo": "Hola, quiero una demo de HUB Taller para mi taller"
@@ -4654,12 +4824,12 @@
           "destacado": "Taller",
           "despues": ""
         },
-        "tagline": "Your auto shop system: plate-based intake, work orders and e-invoicing 🔧🚗",
-        "intro": "Check cars in by plate number, get quotes approved right from the customer’s phone, schedule by bay and let your mechanics work from their own phones.",
+        "tagline": "Your auto shop system: plate-based intake, work orders, customer updates and e-invoicing 🔧🚗",
+        "intro": "Check cars in by plate number, let customers approve quotes and follow their car’s progress from their phone, have mechanics work from their own phones, and remind customers when it’s time to come back.",
         "chips": [
           "⚡ Plate-based intake",
           "📋 Work orders",
-          "📲 Customer-approved quotes",
+          "📲 Customers follow their car",
           "🧾 DGI e-invoicing"
         ],
         "url_label": "suitehub.net/taller",
@@ -4669,23 +4839,25 @@
           "destacado": "a single order",
           "despues": ""
         },
-        "solucion_sub": "Plate-based intake with a printed receipt, a status board, quotes the customer approves from their phone, e-invoicing at checkout and mechanics working from their phones. Made in Panama 🇵🇦",
+        "solucion_sub": "Plate-based intake with a printed receipt, a status board, quotes the customer approves from their phone, WhatsApp updates ready to send, e-invoicing at checkout and reminders that bring customers back. Made in Panama 🇵🇦",
         "recorrido_titulo": "What it looks like inside",
         "recorrido": [
           {
+            "grupo": "Inside the shop",
             "imagen": "dashboard.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Your shop at a glance",
-            "texto": "Open the system and you’ll see how many cars are in the shop, which ones are ready for pickup, today’s appointments and what you’ve billed this month. No need to walk the floor to find out.",
+            "texto": "Open the system and you’ll see how many vehicles are in the shop, which ones are ready for pickup, which are waiting for the customer’s approval and what you’ve billed this month. No need to walk the floor to find out.",
             "puntos": [
-              "Vehicles in shop and orders by status",
-              "Monthly revenue and receivables",
-              "Today’s appointments and what is in each bay"
+              "Open orders by status",
+              "Overdue pickups and unbilled work",
+              "Cash in the drawer and what you’re owed"
             ]
           },
           {
+            "grupo": "Inside the shop",
             "imagen": "recepcion.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -4699,45 +4871,91 @@
             ]
           },
           {
+            "grupo": "Inside the shop",
             "imagen": "tablero.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Status board",
-            "texto": "Each column is a status: received, diagnosis, pending approval, in progress, ready. Assign mechanics and see how long each car has been in. Filter by plate, customer or mechanic.",
+            "texto": "Each column is a status: received, diagnosis, pending approval, in progress and ready. Assign mechanics and see how long each car has been in. Filter by plate, customer or mechanic.",
             "puntos": [
               "Time in shop on every card",
-              "Quote sent and approved flags",
+              "Pending approvals and overdue pickups flagged",
               "Board or list, whichever you prefer"
             ]
           },
           {
+            "grupo": "Inside the shop",
             "imagen": "orden.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "The order: items, approval and log",
-            "texto": "Services, parts and labor, each with its price, tax and who approved it. The log records every step with a timestamp. From here you quote what’s pending and invoice what’s approved.",
+            "texto": "Services, parts and labor, each with its tax and who approved it. The log records every step with a timestamp. From here you quote what’s pending and invoice what’s approved.",
             "puntos": [
               "An item is never invoiced twice",
               "Intake and diagnosis photos attached",
-              "WhatsApp the customer in one tap"
+              "WhatsApp the customer: the message is ready and goes out in one tap"
             ]
           },
           {
+            "grupo": "Inside the shop",
+            "imagen": "vehiculo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Vehicle record and history",
+            "texto": "Visits, mileage, total spend and last visit, with the full order history. Maintenance plans by mileage or time update themselves when you deliver an order with that service.",
+            "puntos": [
+              "Progress by mileage and by date, whichever comes first",
+              "The plan renews itself at delivery",
+              "WhatsApp reminder in one tap"
+            ]
+          },
+          {
+            "grupo": "Customers know where things stand",
             "imagen": "cotizacion-cliente.webp",
             "tipo": "movil",
             "ancho": 488,
             "alto": 718,
             "titulo": "The customer approves from their phone",
-            "texto": "Send the link on WhatsApp and they see the itemized quote: \"Do you authorize the work for B/. 167.99?\". They approve or decline with one tap, no account or app needed, and the order moves to \"in progress\" on its own.",
+            "texto": "Send the link on WhatsApp and they see the fully itemized quote. They approve or decline with one tap, no account or app needed, and the order moves to “in progress” on its own.",
             "puntos": [
-              "Public link with expiry, no sign-up",
+              "Link with expiry, no sign-up",
               "Approve, decline or ask on WhatsApp",
               "Who approved and when is recorded"
             ]
           },
           {
+            "grupo": "Customers know where things stand",
+            "imagen": "seguimiento-bandeja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Updates ready to send",
+            "texto": "When you check a car in, when it’s ready or when maintenance is due, the message is already written in the “To notify” inbox. The message is ready and goes out in one tap; if the customer has an email, the email goes out on its own.",
+            "puntos": [
+              "Check-in, ready, reminders and renewals in one place",
+              "Templates filled in with the order and your shop’s details",
+              "A record of what each customer was sent"
+            ]
+          },
+          {
+            "grupo": "Customers know where things stand",
+            "imagen": "estado-cliente.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "“How’s my car doing?”",
+            "texto": "The check-in message includes a link where the customer sees which step their car is on and the estimated pickup time, without calling the shop. It never shows prices, notes or photos.",
+            "puntos": [
+              "Received, in repair and ready for pickup",
+              "Estimated pickup time up front",
+              "A button to message the shop on WhatsApp"
+            ]
+          },
+          {
+            "grupo": "The money adds up",
             "imagen": "factura.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -4746,45 +4964,104 @@
             "texto": "Charge for the approved work and the DGI-authorized electronic invoice comes out with its CUFE and QR, as an 80 mm ticket or a letter-size PDF. The customer gets a link to view it on their phone. Partial payments and credit with a due date are supported too.",
             "puntos": [
               "CUFE, QR and fiscal number on the document",
-              "80 mm ticket, PDF and WhatsApp in one click",
+              "80 mm ticket, PDF and WhatsApp in one tap",
               "Cash, card, Yappy, transfer or credit"
             ]
           },
           {
-            "imagen": "vehiculo.webp",
+            "grupo": "The money adds up",
+            "imagen": "caja.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
-            "titulo": "Vehicle record and history",
-            "texto": "Visits, current mileage, total spend and last visit. Full order history and scheduled maintenance by mileage or date, with progress bars and customer reminders.",
+            "titulo": "Cash shifts and closing report by email",
+            "texto": "Open the shift with the float, every payment lands in the drawer and at closing you count the cash. The closing report arrives by email with the shift’s invoices and what was sold, broken down by category.",
             "puntos": [
-              "Next oil change, rotation, brakes, belt",
-              "Vehicle PDF report for the owner",
-              "Schedule a WhatsApp reminder"
+              "Cash, card, Yappy and transfer in the same shift",
+              "Invoices with a balance and overdue ones in view",
+              "Cash differences recorded with a note"
             ]
           },
           {
+            "grupo": "The money adds up",
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Reports to make decisions",
+            "texto": "Shop, mechanics, sales, receivables, stock, turnover and customers, for any period you choose. Download them as a PDF with your shop’s branding or as CSV to open in Excel.",
+            "puntos": [
+              "Average time from intake to pickup",
+              "What each mechanic produced",
+              "Which parts move and which sit on the shelf"
+            ]
+          },
+          {
+            "grupo": "The shop that calls customers back",
+            "imagen": "documentos-vehiculo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Plates, inspection and insurance with their dates",
+            "texto": "Log when each vehicle document expires and the record turns amber as the date gets close and red once it has passed. “Renew” rolls it over to next year, and Follow-up prepares the customer reminder 30 and 7 days ahead.",
+            "puntos": [
+              "Plate renewal, annual inspection, insurance and other documents",
+              "Renew for a year in one tap",
+              "Plate calendar by last digit: the shop loads it and the system suggests the date"
+            ]
+          },
+          {
+            "grupo": "The shop that calls customers back",
+            "imagen": "recordatorios.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Reminders that bring customers back",
+            "texto": "Once a month per vehicle, Follow-up prepares a reminder of what’s due: oil change, alignment or brakes. It won’t bother customers with an open order or a recent visit, and it tells you how many of the customers you reminded came back.",
+            "puntos": [
+              "One a month per vehicle, never a flood",
+              "How many came back within 45 days",
+              "What went out today and who sent it"
+            ]
+          },
+          {
+            "grupo": "The shop that calls customers back",
+            "imagen": "cupon-orden.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The birthday coupon, right on the order",
+            "texto": "With the customer’s permission, Follow-up sends a birthday greeting with a personal coupon. When they bring their car in, the order offers the coupon and the discount is split across line items, the way the electronic invoice requires.",
+            "puntos": [
+              "Opt-in for promotions, recorded with date and source",
+              "Personal code with an expiry date",
+              "Redeemed at invoicing, and back on the order if the invoice is voided"
+            ]
+          },
+          {
+            "grupo": "On the phone and by appointment",
             "imagen": "agenda.webp",
             "tipo": "desktop",
             "ancho": 2852,
             "alto": 1436,
             "titulo": "Schedule by mechanic and bay",
-            "texto": "Week or day view, color-coded by mechanic. Click an open slot and book by plate, even if the customer isn’t in the system yet. It won’t let you double-book a bay or a mechanic.",
+            "texto": "Week or day view, color-coded by mechanic. Tap an open slot and book by plate, even if the customer isn’t in the system yet. It won’t let you double-book a bay or a mechanic.",
             "puntos": [
-              "Appointment → \"Arrived\" → intake pre-filled",
+              "Appointment → “Arrived” → intake pre-filled",
               "Tomorrow’s reminders ready for WhatsApp",
               "Statuses: scheduled, confirmed, arrived, no-show"
             ]
           },
           {
+            "grupo": "On the phone and by appointment",
             "imagen": "movil.webp",
             "tipo": "movil",
             "ancho": 488,
             "alto": 718,
             "titulo": "Mechanics work from their phones",
-            "texto": "Today’s orders, each with a big button for the next step (start or mark ready). They can snap a photo, add a quick note and check the day’s schedule without going to a computer.",
+            "texto": "Today’s orders, each with a big button for the next step: start or mark ready. They can snap a photo, add a quick note and check the day’s schedule without going to a computer.",
             "puntos": [
-              "My orders, this week and ready",
+              "My orders, the shop’s and the ready ones",
               "Evidence photo in one tap",
               "Their production on the profile"
             ]
@@ -4811,12 +5088,12 @@
           {
             "icono": "fa-receipt",
             "titulo": "DGI e-invoicing",
-            "texto": "Charge from the ready order: CUFE and QR through your PAC, 80 mm ticket or letter PDF, partial payments and credit."
+            "texto": "Charge from the ready order: DGI-authorized CUFE and QR, 80 mm ticket or letter PDF, partial payments and credit."
           },
           {
             "icono": "fa-calendar-days",
             "titulo": "Appointments that become orders",
-            "texto": "Book by plate, mechanic and bay. \"Arrived\" opens intake with everything loaded."
+            "texto": "Book by plate, mechanic and bay. “Arrived” opens intake with everything loaded."
           },
           {
             "icono": "fa-mobile-screen",
@@ -4826,30 +5103,93 @@
           {
             "icono": "fa-car",
             "titulo": "Vehicle history",
-            "texto": "Visits, mileage, total spend and scheduled maintenance by mileage or date."
+            "texto": "Visits, mileage, total spend and every order in a single record."
+          },
+          {
+            "icono": "fa-oil-can",
+            "titulo": "Maintenance plans that update themselves",
+            "texto": "By mileage or time, with progress bars. Deliver an order with that service and the plan renews itself."
+          },
+          {
+            "icono": "fa-id-card",
+            "titulo": "Vehicle documents and expiry dates",
+            "texto": "Plate renewal, inspection and insurance with their dates, amber when close and red when expired. Renew for a year in one tap."
           },
           {
             "icono": "fa-cash-register",
-            "titulo": "Cash and receivables",
-            "texto": "Shifts with cash counts, who owes you and since when, and payment reminders on WhatsApp."
+            "titulo": "Cash, receivables and closing report by email",
+            "texto": "Shifts with cash counts, who owes you and since when, and a closing email with the shift’s invoices and sales by category."
           },
           {
             "icono": "fa-chart-column",
             "titulo": "Downloadable reports",
-            "texto": "Shop, money, mechanics, inventory and customers, by period and to Excel."
+            "texto": "Shop, money, mechanics, inventory and customers, by period, as a branded PDF or CSV."
+          },
+          {
+            "icono": "fa-magnifying-glass",
+            "titulo": "Customers from the tax registry",
+            "texto": "Type the RUC and the system pulls the legal name and check digit from the DGI registry, so invoices go out without typos."
           }
         ],
         "funciones_nota": "+ Every SuiteHub core function: customers, services, parts, quotes, invoices, cash and receivables.",
+        "adicionales": {
+          "eyebrow": "Grows with your shop",
+          "titulo": "Modules you turn on when you need them",
+          "intro": "They’re activated on your installation and run on the same system, with the same data.",
+          "etiqueta": "Module",
+          "items": [
+            {
+              "icono": "fa-comment-dots",
+              "titulo": "Follow-up and customer updates",
+              "texto": "Checked in, ready and a link to follow along. The message is ready and goes out in one tap; the email goes out on its own."
+            },
+            {
+              "icono": "fa-bell",
+              "titulo": "Maintenance reminders",
+              "texto": "One a month per vehicle, without bothering recent visitors, plus a count of how many came back."
+            },
+            {
+              "icono": "fa-file-signature",
+              "titulo": "Vehicle paperwork",
+              "texto": "Inspection, plates, transfer of ownership, insurance or driver’s license, with requirements, a customer link and third-party fees billed separately."
+            },
+            {
+              "icono": "fa-cake-candles",
+              "titulo": "Coupons and birthdays",
+              "texto": "A birthday greeting with a personal coupon, only for customers who opted in, redeemed on the order."
+            },
+            {
+              "icono": "fa-robot",
+              "titulo": "Hubi, the assistant",
+              "texto": "The SuiteHub assistant inside the system, to check your reports by chatting."
+            },
+            {
+              "icono": "fa-boxes-stacked",
+              "titulo": "Purchasing and inventory turnover",
+              "texto": "Supplier invoices that add to stock, the cost of every part and what really moves."
+            },
+            {
+              "icono": "fa-building-columns",
+              "titulo": "Payables and banking",
+              "texto": "What you owe suppliers, payments recorded in the ledger and reconciliation against your bank statement."
+            },
+            {
+              "icono": "fa-file-import",
+              "titulo": "Bulk catalog import",
+              "texto": "Services, parts and customers from a spreadsheet, with a preview before saving."
+            }
+          ]
+        },
         "hablemos": {
           "titulo": "We set it up with your services, your mechanics and your bays.",
           "texto": "We configure your account, load your services and parts catalog and train your team. You see HUB Taller with your data before you decide."
         },
         "beneficios": [
           "DGI e-invoicing included",
-          "Works on the front-desk PC and the mechanic’s phone",
+          "On the front-desk PC and the mechanic’s phone",
+          "Customers know where their car stands without calling",
           "Your shop’s data in your own database, backed up",
-          "Local WhatsApp support",
-          "All updates included",
+          "Local WhatsApp support and all updates included",
           "No long-term contracts"
         ],
         "cta": {
@@ -4863,7 +5203,7 @@
         "cierre": "Quoted per project based on your business and the modules you need.",
         "seo": {
           "title": "HUB Taller: auto shop management system in Panama",
-          "description": "Plate-based intake, work orders, quotes the customer approves from their phone, scheduling by mechanic and bay, DGI e-invoicing and mechanics working from their phones. Made in Panama."
+          "description": "Plate-based intake, work orders, quotes the customer approves from their phone, WhatsApp updates ready to send, vehicle documents and maintenance reminders, scheduling by mechanic and bay, and DGI e-invoicing. Made in Panama."
         },
         "wa_text": "Hi, I'd like info about HUB Taller 🔧",
         "wa_demo": "Hi, I'd like a demo of HUB Taller for my auto shop"
