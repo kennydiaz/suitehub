@@ -22,7 +22,7 @@ La dueña, cuando entra al sistema, ve el dashboard: lo que se ha vendido hoy, c
 
 A la hora del almuerzo es cuando se nota si un sistema ayuda o estorba. En HUB POS cada mesa tiene un color según cómo va: libre, ocupada, pidió la cuenta o lista para cobrar. Tocas la mesa y se abre su orden.
 
-El mesonero puede tomar el pedido desde su propio celular. No hay que bajar nada de una tienda de apps, se instala desde el navegador. Escoge el plato, marca el término de la carne, pone "sin cebolla" y lo manda. Los modificadores salen como botones grandes, porque en plena hora pico nadie quiere pelear con una lista chiquita.
+El salonero puede tomar el pedido desde su propio celular. No hay que bajar nada de una tienda de apps, se instala desde el navegador. Escoge el plato, marca el término de la carne, pone "sin cebolla" y lo manda. Los modificadores salen como botones grandes, porque en plena hora pico nadie quiere pelear con una lista chiquita.
 
 Si llegan seis personas y hay que unir dos mesas, se unen. Si un plato se anotó en la mesa equivocada, se mueve y ya.
 
@@ -30,7 +30,7 @@ Si llegan seis personas y hay que unir dos mesas, se unen. Si un plato se anotó
 
 Lo que se pide llega solo a la pantalla de la estación que le toca: cocina caliente, cocina fría o barra. El equipo marca cuando empieza y cuando está listo, y cada tarjeta muestra cuántos minutos lleva esperando. Si un plato se pasa del tiempo que tú definiste, la tarjeta se pinta en ámbar para que se vea.
 
-Hay cocinas que prefieren el papel, y está bien. La comanda también sale en la impresora térmica de cada estación, con la mesa, el mesonero, los modificadores y la hora. Pantalla y papel pueden convivir sin problema.
+Hay cocinas que prefieren el papel, y está bien. La comanda también sale en la impresora térmica de cada estación, con la mesa, el salonero, los modificadores y la hora. Pantalla y papel pueden convivir sin problema.
 
 ## La cuenta, como la quiera el cliente
 

@@ -18,9 +18,9 @@ Un turno normal mezcla pedidos para llevar, mesas que abren y cierran, modificac
 
 ## Qué debe tener un buen sistema para restaurantes
 
-- **POS rápido y táctil.** Tomar el pedido en segundos, con modificadores (tamaños, extras con precio, quitar ingredientes), descuento, propina y cobro con cambio. Si el mesero pelea con la pantalla, no sirve.
+- **POS rápido y táctil.** Tomar el pedido en segundos, con modificadores (tamaños, extras con precio, quitar ingredientes), descuento, propina y cobro con cambio. Si el salonero pelea con la pantalla, no sirve.
 - **Mesas que reflejen tu salón.** Un plano parecido a tu distribución real, con estados en vivo (libre, ocupada, en cuenta) y órdenes por mesa con rondas. Con una mirada sabes cómo va el servicio.
-- **Comanda directa a cocina.** Que lo que pide el mesero llegue a la estación correcta, sin gritos ni papelitos perdidos.
+- **Comanda directa a cocina.** Que lo que pide el salonero llegue a la estación correcta, sin gritos ni papelitos perdidos.
 - **Dividir la cuenta.** Por persona, por productos o mitad y mitad. Es de lo que más piden los clientes y de lo que peor resuelven muchos sistemas.
 - **Caja con arqueo y cierre de turno (Z).** Apertura con fondo, movimientos de efectivo, esperado vs. contado y un reporte Z imprimible. Sin esto, no sabes si te están cuadrando.
 - **Inventario que se descuenta solo.** Con recetas: cuando vendes un plato, se rebaja del stock lo que lleva. Es la única forma de saber cuánto te cuesta en realidad cada plato y cuándo toca reponer.

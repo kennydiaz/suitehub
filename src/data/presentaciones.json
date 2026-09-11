@@ -2655,7 +2655,7 @@
           "destacado": "un solo sistema",
           "despues": ""
         },
-        "solucion_sub": "Salón, cocina, cobro, factura electrónica ante la DGI y cierre de caja, todo conectado. El mesero lo usa desde su celular, la cocina desde su pantalla y el cliente desde el kiosko.",
+        "solucion_sub": "Salón, cocina, cobro, factura electrónica ante la DGI y cierre de caja, todo conectado. El salonero lo usa desde su celular, la cocina desde su pantalla y el cliente desde el kiosko.",
         "recorrido_titulo": "Así se ve por dentro",
         "recorrido": [
           {
@@ -2720,12 +2720,12 @@
             "tipo": "movil",
             "ancho": 488,
             "alto": 718,
-            "titulo": "El mesero pide desde su celular",
-            "texto": "Es una app instalable (PWA). El mesero toma el pedido en la mesa desde su teléfono y, antes de que se dé la vuelta, la comanda ya está saliendo en cocina.",
+            "titulo": "El salonero pide desde su celular",
+            "texto": "Es una app instalable (PWA). El salonero toma el pedido en la mesa desde su teléfono y, antes de que se dé la vuelta, la comanda ya está saliendo en cocina.",
             "puntos": [
               "Se instala desde el navegador, sin pasar por la tienda de apps",
               "Cada terminal identificada y con cupo",
-              "Un mesero no puede tocar la cuenta de otro"
+              "Un salonero no puede tocar la cuenta de otro"
             ]
           },
           {
@@ -2749,7 +2749,7 @@
             "ancho": 820,
             "alto": 680,
             "titulo": "La comanda también en papel",
-            "texto": "Si prefieres impresora en cocina, la comanda sale en la térmica de la estación con hora, mesa, mesero, modificadores y desde qué terminal se envió.",
+            "texto": "Si prefieres impresora en cocina, la comanda sale en la térmica de la estación con hora, mesa, salonero, modificadores y desde qué terminal se envió.",
             "puntos": [
               "Impresora por estación",
               "Acentos y ñ bien impresos",
@@ -2806,7 +2806,7 @@
             "ancho": 2560,
             "alto": 1600,
             "titulo": "Kiosko de autoservicio",
-            "texto": "Una tablet en la entrada: el cliente elige idioma (español o inglés), si come aquí o para llevar, y arma su pedido. No hace falta mesero ni hacer fila en caja.",
+            "texto": "Una tablet en la entrada: el cliente elige idioma (español o inglés), si come aquí o para llevar, y arma su pedido. No hace falta salonero ni hacer fila en caja.",
             "puntos": [
               "Español o inglés con un toque",
               "Tu nombre en la bienvenida",
@@ -3716,7 +3716,7 @@
           "📶 Funciona sin internet"
         ],
         "url_label": "suitehub.net/restaurant",
-        "problema": "😩 ¿Comandas en papel, meseros gritando a cocina y una caja que nunca cuadra?",
+        "problema": "😩 ¿Comandas en papel, saloneros gritando a cocina y una caja que nunca cuadra?",
         "solucion": {
           "antes": "Lleva tu salón, tu cocina y tu caja desde ",
           "destacado": "un solo sistema",
