@@ -16,6 +16,10 @@ export default defineConfig({
   integrations: [
     tailwind({ applyBaseStyles: false }),
     sitemap({
+      // /socios es el kit de reventa: documento interno para socios comerciales.
+      // Fuera del sitemap y con `noindex` en la propia página — no se enlaza desde
+      // ningún lado del sitio público y no debe aparecer en buscadores.
+      filter: (page) => !page.includes('/socios'),
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),

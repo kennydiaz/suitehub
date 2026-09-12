@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /socios
 
 Sitemap: https://suitehub.net/sitemap-index.xml

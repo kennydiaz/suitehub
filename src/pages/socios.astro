@@ -1,0 +1,519 @@
+---
+/**
+ * /socios — Kit de reventa. Página informativa de uso exclusivo de los vendedores.
+ *
+ * NO se enlaza desde el sitio público: no está en el header, ni en el footer, ni en el
+ * sitemap, y lleva `noindex, nofollow`. Se llega escribiendo la URL o por el enlace que
+ * SuiteHub le pasa a cada socio. Sí enlaza hacia el sitio público, para que el vendedor
+ * pueda mostrarlo delante del cliente.
+ *
+ * Documento autocontenido a propósito: no usa BaseLayout porque ese trae el header y el
+ * footer del sitio, que es justo lo que aquí no debe aparecer.
+ *
+ * Las demos viven en los arrays de abajo. Cuando una quede publicada, se agrega su URL en
+ * `demo` y la tarjeta cambia sola de «Solicita el acceso» a un enlace directo.
+ */
+
+const WA = 'https://wa.me/50766326006?text=Hola%2C%20soy%20socio%20comercial%20y%20necesito%20acceso%20a%20una%20demo';
+
+const ediciones = [
+  {
+    nombre: 'Hub Lite', color: '#64748B', precio: 24, anual: 'o $240 al año', destacada: false,
+    quien: 'Para el emprendedor que solo necesita facturar legal y llevar sus clientes.',
+    puntos: ['3 usuarios · 1 sucursal', 'Clientes, catálogo y cotizaciones', 'Facturación electrónica DGI', '500 registros · 2 GB'],
+    demo: 'https://lite.suitehub.net',
+  },
+  {
+    nombre: 'Hub Core', color: '#1F4570', precio: 48, anual: 'o $480 al año', destacada: true,
+    quien: 'El negocio de una sucursal que ya opera en serio. Es la venta natural.',
+    puntos: ['8 usuarios · 1 sucursal', 'Los 5 PACs autorizados de la DGI', 'Cuentas por cobrar e inventario auditado', 'Reportes y plantillas PDF'],
+    demo: null,
+  },
+  {
+    nombre: 'Hub Pro', color: '#7C3AED', precio: 64, anual: 'o $640 al año', destacada: false,
+    quien: 'El que quiere el sistema con su marca y conectado a otras herramientas.',
+    puntos: ['20 usuarios · 1 sucursal', 'Logo y colores propios', 'API, webhooks y automatizaciones', 'WhatsApp Business integrado'],
+    demo: null,
+  },
+  {
+    nombre: 'Hub Enterprise', color: '#0A2540', precio: 196, anual: 'o $1,960 al año · +$64 por sucursal extra', destacada: false,
+    quien: 'Cadenas y negocios con varias sedes. Única edición multi-sucursal.',
+    puntos: ['50 usuarios · sucursales ilimitadas', 'Reportes consolidados o por sede', 'Cualquier vertical incluido', 'SLA y soporte prioritario'],
+    demo: null,
+  },
+];
+
+const disponibles = [
+  {
+    nombre: 'HUB Taller', color: '#F59E0B', para: 'Talleres mecánicos, autoservicios y centros de diagnóstico',
+    texto: 'Recibes el carro por la placa y ves su historial completo. Las órdenes de trabajo llevan servicios y repuestos juntos, y la factura sale de la misma orden.',
+    chips: ['Recepción por placa', 'Órdenes de trabajo', 'Citas en línea', 'Histórico del vehículo'],
+    pie: 'Caso real: QS Express, La Chorrera', demo: null,
+  },
+  {
+    nombre: 'HUB POS', color: '#16A34A', para: 'Cafeterías, food trucks y comercios de venta rápida',
+    texto: 'La caja completa: pedido táctil, comanda a cocina, cobro mixto con propina y factura DGI en el ticket con QR. Trae kiosko de autoservicio y menú digital.',
+    chips: ['Kiosko de autoservicio', 'Menú digital', 'Comanda por estación', 'Cierre de caja X/Z'],
+    pie: 'Casos reales: Varas Grill & Bar, Jamrock', demo: 'https://pos.suitehub.net',
+  },
+  {
+    nombre: 'HUB Restaurant', color: '#EA580C', para: 'Restaurantes de salón y bares con servicio a la mesa',
+    texto: 'Mapa de mesas en tiempo real, comandas a cocina y barra con monitor por estación, cuentas divididas y cierre por turno. Es el hermano mayor de HUB POS.',
+    chips: ['Mesas en vivo', 'Monitor de cocina (KDS)', 'Dividir cuentas', 'Propinas y domicilio'],
+    pie: null, demo: 'https://restaurant.suitehub.net',
+  },
+  {
+    nombre: 'HUB Carwash', color: '#0284C7', para: 'Autolavados, car wash express, detailing y lavado a domicilio',
+    texto: 'Pistas y lavadores con la cola en vivo, arqueo diario y las comisiones de cada lavador calculadas solas. Trae tarjeta de sellos para clientes frecuentes.',
+    chips: ['Cola de pistas en vivo', 'Comisiones automáticas', 'Fidelidad por sellos', 'Ticket 80 mm'],
+    pie: null, demo: 'https://carwash.suitehub.net',
+  },
+  {
+    nombre: 'HUB Salon', color: '#DB2777', para: 'Salones de belleza, barberías, spas y centros estéticos',
+    texto: 'Los clientes reservan en línea a cualquier hora y solo ven los espacios libres. Agenda por estilista, comisiones automáticas y recordatorios por WhatsApp.',
+    chips: ['Reserva online 24/7', 'Agenda por estilista', 'Comisiones y retail', 'Horas valle con descuento'],
+    pie: null, demo: null,
+  },
+  {
+    nombre: 'HUB Market', color: '#65A30D', para: 'Minimarkets, abarroterías y supermercados de barrio',
+    texto: 'Cobro por código de barras y venta por peso con balanza, inventario con fechas de caducidad, compras a proveedores y arqueo de caja.',
+    chips: ['Venta por peso', 'Control de caducidad', 'Compras y proveedores', 'Caja y arqueo'],
+    pie: null, demo: 'https://hubmarket.suitehub.net',
+  },
+  {
+    nombre: 'HUB Hotel', color: '#CA8A04', para: 'Hoteles boutique, hostales, glampings y B&B',
+    texto: 'Calendario de habitaciones, reservas directas o por canal, check-in y check-out con factura, consumos de minibar y control de limpieza.',
+    chips: ['Tape chart de ocupación', 'Check-in/out con factura', 'Housekeeping', 'Booking y Airbnb (Pro)'],
+    pie: null, demo: 'https://hubhotel.suitehub.net',
+  },
+  {
+    nombre: 'HUB Boutique', color: '#DB2777', para: 'Boutiques de ropa, calzado y accesorios',
+    texto: 'Una prenda con todas sus combinaciones de talla y color, tienda online sobre el mismo inventario que el local, y apartados con abonos.',
+    chips: ['Variantes talla × color', 'Tienda online integrada', 'Apartados (layaway)', 'Devoluciones con autorización'],
+    pie: null, demo: 'https://boutique.suitehub.net',
+  },
+  {
+    nombre: 'HUB Pet', color: '#0D9488', para: 'Clínicas veterinarias, peluquerías caninas y pet shops',
+    texto: 'Cada mascota con su ficha médica digital. Los recordatorios de vacunas salen solos, la agenda guarda dueño y mascota juntos, y los medicamentos se venden con receta.',
+    chips: ['Ficha médica por mascota', 'Recordatorios automáticos', 'Recetas con stock', 'Galería de fotos'],
+    pie: 'Casos reales: Mansión Perruna, Patitas', demo: null,
+  },
+  {
+    nombre: 'HUB Lavandería', color: '#06B6D4', para: 'Lavanderías, tintorerías y servicios de planchado',
+    texto: 'Boleta con código de retiro, seguimiento por etapa (lavado, secado, planchado), precio por kilo o por prenda y aviso al cliente cuando su ropa está lista.',
+    chips: ['Código de retiro', 'Etapas del proceso', 'Precio por kilo o prenda', 'Aviso por WhatsApp'],
+    pie: 'Caso real: Clean Factory, Panamá', demo: null,
+  },
+];
+
+const consulta = [
+  { nombre: 'HUB Clinic', color: '#2563EB', para: 'Consultorios médicos, odontológicos y clínicas',
+    texto: 'Expediente clínico digital, agenda por médico, recetas digitales y facturación a aseguradoras.' },
+  { nombre: 'HUB Gym', color: '#DC2626', para: 'Gimnasios, boxes de crossfit y estudios de yoga',
+    texto: 'Membresías con cobro recurrente, entrada por QR, clases con cupo y aviso cuando un miembro deja de venir.' },
+  { nombre: 'HUB Inmobiliaria', color: '#57534E', para: 'Corredoras y desarrolladoras pequeñas',
+    texto: 'Cartera de propiedades, leads por etapa, contratos de alquiler con cobro mensual y comisiones por agente.' },
+  { nombre: 'HUB Phone', color: '#4F46E5', para: 'Tiendas de reparación de celulares y laptops',
+    texto: 'Diagnóstico de entrada, cotización según el daño, repuestos ligados a la orden y garantía digital con QR.' },
+  { nombre: 'HUB Traffic', color: '#A21CAF', para: 'Tiendas y locales de alto tráfico',
+    texto: 'Conteo de personas, mapas de calor por zona y cruce de visitas con las ventas del POS. El hardware se cotiza aparte.' },
+];
+
+const HEX = 'M 425 147.12 L 393 202.58 Q 386 214.7 372 214.7 L 308 214.7 Q 294 214.7 287 202.58 L 255 147.12 Q 248 135 255 122.88 L 287 67.42 Q 294 55.3 308 55.3 L 372 55.3 Q 386 55.3 393 67.42 L 425 122.88 Q 432 135 425 147.12 Z';
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Kit de reventa · SuiteHub</title>
+<meta name="description" content="Material de uso exclusivo para socios comerciales de SuiteHub.">
+<link rel="icon" href="/favicons/favicon-hex.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap">
+<style is:global>
+:root{
+  --ground:#FBFBFC; --surface:#FFFFFF; --surface-2:#F2F5F9;
+  --ink:#0A2540; --ink-2:#475F79; --ink-3:#8496AB;
+  --line:#E1E7EF; --line-soft:#EDF1F6;
+  --accent:#1582F5; --accent-soft:#EAF4FE; --accent-deep:#1269E0;
+  --ok:#15803D; --ok-soft:#E8F6EC;
+  --warm:#B45309; --warm-soft:#FDF4E5;
+  --cool:#5A6B80; --cool-soft:#F0F3F7;
+  --lift:0 1px 2px rgba(10,37,64,.05), 0 12px 28px -22px rgba(10,37,64,.4);
+  --display:'Sora','Inter',system-ui,sans-serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#070F1A; --surface:#0D1B2C; --surface-2:#12253A;
+    --ink:#EAF0F7; --ink-2:#A3B6CB; --ink-3:#75899F;
+    --line:#1B3049; --line-soft:#15263B;
+    --accent:#52A8FF; --accent-soft:#10293F; --accent-deep:#84C2FF;
+    --ok:#4ADE80; --ok-soft:#0E2A1D;
+    --warm:#FBBF24; --warm-soft:#2A2011;
+    --cool:#94A3B8; --cool-soft:#142436;
+    --lift:0 1px 2px rgba(0,0,0,.5), 0 14px 32px -24px rgba(0,0,0,.95);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--ground); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.62; -webkit-font-smoothing:antialiased}
+img{max-width:100%}
+.wrap{max-width:1040px; margin:0 auto; padding-inline:20px; padding-block:0 80px}
+h1,h2,h3,h4{font-family:var(--display); font-weight:700; text-wrap:balance; margin:0; line-height:1.2}
+p{margin:0}
+a{color:var(--accent-deep)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+
+.barra{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
+  padding-block:14px; border-bottom:1px solid var(--line)}
+.barra .marca{display:flex; align-items:center; gap:9px; font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:-.01em}
+.barra .marca svg{width:22px; height:22px}
+.barra .priv{font-size:11px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--warm);
+  background:var(--warm-soft); padding:4px 11px; border-radius:20px}
+.barra a.sitio{font-size:13px; font-weight:600; text-decoration:none}
+.barra a.sitio:hover{text-decoration:underline}
+
+.head{padding-block:46px 34px}
+.badge-top{display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:5px 12px; border-radius:20px; margin-bottom:18px}
+h1{font-size:clamp(30px,4.8vw,46px); letter-spacing:-.024em}
+.lede{margin-top:16px; font-size:17.5px; line-height:1.58; color:var(--ink-2); max-width:62ch}
+.lede b{color:var(--ink); font-weight:600}
+
+.prueba{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; margin-top:30px;
+  background:var(--line-soft); border:1px solid var(--line-soft); border-radius:14px; overflow:hidden}
+.prueba div{background:var(--surface); padding:16px 18px}
+.prueba .n{font-family:var(--display); font-size:24px; font-weight:700; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.prueba .l{font-size:12.5px; color:var(--ink-2); margin-top:2px; line-height:1.42}
+
+.gancho{margin-top:24px; border-left:3px solid var(--accent); background:var(--surface); border-radius:0 12px 12px 0;
+  padding:18px 22px; box-shadow:var(--lift)}
+.gancho h3{font-size:16px; margin-bottom:6px}
+.gancho p{font-size:14.5px; color:var(--ink-2)}
+
+section{padding-block:44px 0}
+.eyebrow{font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:11px}
+h2{font-size:clamp(21px,2.7vw,28px); letter-spacing:-.02em}
+.sub{margin-top:12px; color:var(--ink-2); max-width:66ch}
+
+.formula{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; margin-top:26px}
+.fpz{flex:1 1 200px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px; box-shadow:var(--lift)}
+.fpz .n{font-size:10.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+.fpz h3{font-size:15.5px; margin:5px 0}
+.fpz p{font-size:13px; color:var(--ink-2)}
+.fop{display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:22px; color:var(--ink-3); flex:none; width:26px}
+
+.eds{display:grid; grid-template-columns:repeat(auto-fit,minmax(212px,1fr)); gap:16px; margin-top:28px}
+.ed{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--lift); position:relative;
+  display:flex; flex-direction:column}
+.ed.star{border-color:var(--accent)}
+.ed .flag{position:absolute; top:-9px; left:18px; font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  background:var(--accent); color:#fff; padding:3px 9px; border-radius:20px}
+.ed .hx{width:22px;height:22px;margin-bottom:10px;display:block}
+.ed h3{font-size:17px}
+.ed .pr{margin-top:10px; font-family:var(--display); font-size:27px; font-weight:700; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.ed .pr small{font-size:13px; font-weight:600; color:var(--ink-3)}
+.ed .pa{font-size:12.5px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.ed .quien{margin-top:12px; padding-top:12px; border-top:1px solid var(--line-soft); font-size:13.5px; color:var(--ink-2)}
+.ed ul{margin:10px 0 0; padding-left:16px; font-size:12.5px; color:var(--ink-2)}
+.ed li{margin-top:4px}
+.ed .demo{margin-top:auto; padding-top:13px}
+
+.demo-link{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600; text-decoration:none;
+  background:var(--accent-soft); color:var(--accent-deep); padding:6px 12px; border-radius:8px}
+.demo-link:hover{text-decoration:underline}
+.demo-pedir{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600; text-decoration:none;
+  background:var(--surface-2); color:var(--ink-2); padding:6px 12px; border-radius:8px; border:1px dashed var(--line)}
+.demo-pedir:hover{color:var(--ink)}
+
+.grupo{margin-top:30px}
+.grupo-h{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 14px; margin-bottom:6px}
+.grupo-h h3{font-size:17px; letter-spacing:-.01em}
+.tag{font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 10px; border-radius:20px; white-space:nowrap}
+.t-ok{background:var(--ok-soft); color:var(--ok)}
+.t-cool{background:var(--cool-soft); color:var(--cool)}
+.grupo-h p{flex-basis:100%; font-size:13.5px; color:var(--ink-2); margin:0; max-width:72ch}
+
+.vs{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-top:18px}
+.v{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px 20px 16px; box-shadow:var(--lift);
+  border-top:3px solid var(--vc); display:flex; flex-direction:column}
+.v-top{display:flex; align-items:center; gap:10px; margin-bottom:3px}
+.v-top svg{width:22px;height:22px;flex:none}
+.v-top h4{font-size:16px; letter-spacing:-.01em}
+.v .para{font-size:12.5px; color:var(--ink-3); margin-bottom:9px}
+.v .qhace{font-size:13.5px; color:var(--ink-2)}
+.v ul{margin:11px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:5px}
+.v li{font-size:11.5px; color:var(--ink-2); background:var(--surface-2); border-radius:20px; padding:3px 9px}
+.v .pie{margin-top:11px; font-size:12.5px; color:var(--ink-3)}
+.v .demo{margin-top:auto; padding-top:13px}
+
+.dos{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px; margin-top:26px}
+.caja{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--lift)}
+.caja h3{font-size:15.5px; margin-bottom:12px}
+.caja ul{margin:0; padding:0; list-style:none; font-size:13.5px; color:var(--ink-2)}
+.caja li{display:flex; gap:9px; align-items:flex-start; margin-top:8px}
+.caja li span.m{flex:none; width:17px; text-align:center; font-weight:700}
+.si span.m{color:var(--ok)}
+.no span.m{color:var(--ink-3)}
+.caja li b{color:var(--ink); font-weight:600}
+
+.obj{border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden; margin-top:24px; box-shadow:var(--lift)}
+.obj .fila{padding:16px 20px; border-bottom:1px solid var(--line-soft)}
+.obj .fila:last-child{border-bottom:0}
+.obj .q{font-weight:600; font-size:14.5px; margin-bottom:4px}
+.obj .q::before{content:"“"; color:var(--ink-3)}
+.obj .q::after{content:"”"; color:var(--ink-3)}
+.obj .a{font-size:13.5px; color:var(--ink-2)}
+
+.pasos{counter-reset:p; margin-top:24px; display:grid; gap:12px}
+.paso{display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:15px 18px; box-shadow:var(--lift)}
+.paso::before{counter-increment:p; content:counter(p); flex:none; width:26px; height:26px; border-radius:8px;
+  background:var(--accent-soft); color:var(--accent-deep); font-family:var(--display); font-weight:700; font-size:13px;
+  display:grid; place-items:center}
+.paso h4{font-size:14.5px; margin-bottom:3px}
+.paso p{font-size:13.5px; color:var(--ink-2)}
+
+.nota{margin-top:22px; background:var(--warm-soft); border:1px solid rgba(180,83,9,.25); border-radius:12px; padding:16px 20px}
+.nota h3{font-size:14.5px; color:var(--warm); margin-bottom:5px}
+.nota p{font-size:13.5px; color:var(--ink-2)}
+
+footer{margin-top:50px; padding-top:22px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3)}
+footer b{color:var(--ink-2); font-weight:600}
+.slug{font-family:var(--mono); font-size:11.5px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  body{background:#fff}
+  .v,.ed,.caja,.obj,.paso,.gancho,.fpz{box-shadow:none; break-inside:avoid}
+  section{padding-block:26px 0}
+}
+@media(max-width:560px){
+  .head{padding-block:32px 24px}
+  .v,.ed,.caja{padding-left:16px; padding-right:16px}
+  .obj .fila{padding-left:16px; padding-right:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="barra">
+    <span class="marca">
+      <svg viewBox="228 23 224 224" aria-hidden="true"><path fill="#1582F5" d={HEX}></path></svg>
+      SuiteHub
+    </span>
+    <span class="priv">Documento interno · socios</span>
+    <a class="sitio" href="https://suitehub.net" target="_blank" rel="noopener">Ver el sitio público →</a>
+  </div>
+
+  <header class="head">
+    <span class="badge-top">Material para socios comerciales</span>
+    <h1>Kit de reventa SuiteHub</h1>
+    <p class="lede">Todo lo que necesitas para ofrecer SuiteHub: qué se vende, a quién, cuánto cuesta y cómo se arma un precio. <b>SuiteHub es una familia de software de gestión para PyMEs</b>, con facturación electrónica de la DGI integrada de fábrica.</p>
+
+    <div class="prueba">
+      <div><div class="n">+50</div><div class="l">Negocios en Panamá trabajando con SuiteHub</div></div>
+      <div><div class="n">5</div><div class="l">PACs de la DGI integrados, no uno solo</div></div>
+      <div><div class="n">15</div><div class="l">Oficios con su propia versión especializada</div></div>
+      <div><div class="n">100%</div><div class="l">Soporte en español, desde Panamá</div></div>
+    </div>
+
+    <div class="gancho">
+      <h3>El argumento que abre la puerta</h3>
+      <p>Desde enero de 2026 el facturador gratuito de la DGI solo sirve para negocios que facturen hasta B/.36,000 al año y 100 documentos al mes. Cualquier negocio activo pasa ese tope. Miles de contribuyentes salieron a contratar un PAC a la carrera y hoy <b>facturan legal pero siguen llevando el inventario en un cuaderno</b>. Ahí entras tú: el PAC valida la factura, SuiteHub además maneja las mesas, el stock, la caja y los reportes.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="eyebrow">Cómo se arma un precio</div>
+    <h2>Dos piezas y un ciclo. Nada más.</h2>
+    <p class="sub">Este es todo el modelo comercial. Si lo entiendes en un minuto, puedes cotizar en el mismo momento en que el cliente te cuenta a qué se dedica.</p>
+
+    <div class="formula">
+      <div class="fpz"><div class="n">Pieza 1</div><h3>La edición</h3><p>Define el tamaño: cuántos usuarios, cuánto inventario, qué funciones avanzadas. Son cuatro y marcan el precio.</p></div>
+      <div class="fop">×</div>
+      <div class="fpz"><div class="n">Pieza 2</div><h3>El vertical</h3><p>Define el oficio: taller, restaurante, boutique, veterinaria. No cuesta extra, solo elige de cuál se trata.</p></div>
+      <div class="fop">×</div>
+      <div class="fpz"><div class="n">Pieza 3</div><h3>El ciclo</h3><p>Mensual o anual. El anual son <b>doce meses al precio de diez</b> y además no paga implementación.</p></div>
+    </div>
+
+    <div class="nota">
+      <h3>La regla de oro para no equivocarte</h3>
+      <p>Cada vertical se vende de dos maneras y nada más: <b>HUB X</b> a $48/mes (línea Core) o <b>HUB X Pro</b> a $64/mes (línea Pro). No existe «HUB X Lite». Y si el negocio tiene más de una sucursal, la respuesta siempre es <b>Hub Enterprise</b>, que incluye cualquier vertical.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Las horizontales</div>
+    <h2>Cuatro ediciones</h2>
+    <p class="sub">La edición es el eje horizontal: el mismo motor para todos los oficios, en cuatro tamaños. Se nombran siempre completas: Hub Lite, Hub Core, Hub Pro, Hub Enterprise.</p>
+
+    <div class="eds">
+      {ediciones.map((e) => (
+        <div class={e.destacada ? 'ed star' : 'ed'}>
+          {e.destacada && <span class="flag">Más vendido</span>}
+          <svg class="hx" viewBox="228 23 224 224" aria-hidden="true"><path fill={e.color} d={HEX}></path></svg>
+          <h3>{e.nombre}</h3>
+          <div class="pr">${e.precio}<small>/mes</small></div>
+          <div class="pa">{e.anual}</div>
+          <div class="quien">{e.quien}</div>
+          <ul>{e.puntos.map((p) => <li>{p}</li>)}</ul>
+          <div class="demo">
+            {e.demo
+              ? <a class="demo-link" href={e.demo} target="_blank" rel="noopener">Abrir demo →</a>
+              : <a class="demo-pedir" href={WA} target="_blank" rel="noopener">Solicita el acceso</a>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Las verticales</div>
+    <h2>Quince oficios, un mismo precio</h2>
+    <p class="sub">Todos los verticales cuestan lo mismo: $48/mes en línea Core o $64/mes en línea Pro, y el anual son diez meses. Lo que cambia entre los dos grupos de abajo no es el precio, <b>es qué puedes enseñarle al cliente hoy</b>.</p>
+
+    <div class="nota">
+      <h3>Cómo funcionan las demos</h3>
+      <p>Cada demo abre con datos de ejemplo cargados. <b>Las credenciales las entrega el personal de SuiteHub</b>: escríbenos y te damos el usuario para la que necesites, antes de tu reunión. No compartas esos accesos con el cliente; la demo se muestra, no se entrega.</p>
+    </div>
+
+    <div class="grupo">
+      <div class="grupo-h">
+        <h3>Disponibles</h3><span class="tag t-ok">Listos para vender</span>
+        <p>Aplicaciones reales, varias con clientes en producción. Las que ya tienen demo publicada se abren desde aquí; para el resto, pide el acceso y te lo preparamos.</p>
+      </div>
+      <div class="vs">
+        {disponibles.map((v) => (
+          <div class="v" style={`--vc:${v.color}`}>
+            <div class="v-top">
+              <svg viewBox="228 23 224 224" aria-hidden="true"><path fill={v.color} d={HEX}></path></svg>
+              <h4>{v.nombre}</h4>
+            </div>
+            <div class="para">{v.para}</div>
+            <p class="qhace">{v.texto}</p>
+            <ul>{v.chips.map((c) => <li>{c}</li>)}</ul>
+            {v.pie && <div class="pie">{v.pie}</div>}
+            <div class="demo">
+              {v.demo
+                ? <a class="demo-link" href={v.demo} target="_blank" rel="noopener">Abrir demo →</a>
+                : <a class="demo-pedir" href={WA} target="_blank" rel="noopener">Solicita el acceso</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="grupo">
+      <div class="grupo-h">
+        <h3>Bajo consulta</h3><span class="tag t-cool">Consulta antes de ofrecer</span>
+        <p>Están en el catálogo y tienen precio, pero <b>no hay aplicación que enseñar todavía</b>. Si te llega un prospecto de uno de estos oficios, habla con SuiteHub antes de comprometer nada: se evalúa caso por caso y se acuerda un tiempo de entrega. Prometer una demo de estos cinco es la forma más rápida de quemar un cliente.</p>
+      </div>
+      <div class="vs">
+        {consulta.map((v) => (
+          <div class="v" style={`--vc:${v.color}`}>
+            <div class="v-top">
+              <svg viewBox="228 23 224 224" aria-hidden="true"><path fill={v.color} d={HEX}></path></svg>
+              <h4>{v.nombre}</h4>
+            </div>
+            <div class="para">{v.para}</div>
+            <p class="qhace">{v.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">La letra clara</div>
+    <h2>Qué entra en el precio y qué no</h2>
+    <p class="sub">Decir esto desde el principio evita el 90% de los problemas al cobrar la segunda factura.</p>
+
+    <div class="dos">
+      <div class="caja si">
+        <h3>Siempre incluido, en todas las ediciones</h3>
+        <ul>
+          <li><span class="m">✓</span><span><b>Facturación electrónica DGI</b>, con los cinco PACs autorizados de Panamá</span></li>
+          <li><span class="m">✓</span><span>Actualizaciones del sistema, sin cobro por versión</span></li>
+          <li><span class="m">✓</span><span>Respaldo y alojamiento de la instancia</span></li>
+          <li><span class="m">✓</span><span>Soporte en español por WhatsApp</span></li>
+          <li><span class="m">✓</span><span>El vertical completo: no hay funciones del oficio que se cobren aparte</span></li>
+          <li><span class="m">✓</span><span>En Venezuela, facturación SENIAT con número de control</span></li>
+        </ul>
+      </div>
+      <div class="caja no">
+        <h3>Fuera del precio de la suscripción</h3>
+        <ul>
+          <li><span class="m">—</span><span><b>El PAC de facturación</b>: lo contrata y lo paga el cliente directo a su proveedor. SuiteHub se integra sin cobrar por eso</span></li>
+          <li><span class="m">—</span><span><b>Implementación: $199 una sola vez</b>, y es gratis si el cliente paga el plan anual. Cubre configuración, carga del catálogo y capacitación</span></li>
+          <li><span class="m">—</span><span><b>Hardware</b>: impresoras térmicas, balanzas, lectores, sensores de conteo</span></li>
+          <li><span class="m">—</span><span>Desarrollos a la medida que no sean parte del vertical</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nota">
+      <h3>No hay add-ons</h3>
+      <p>SuiteHub no vende usuarios sueltos ni módulos por separado. Si el cliente necesita más usuarios, <b>sube de edición</b>; si necesita más de una sucursal, va a Hub Enterprise. Es una lista de precios que cabe en una servilleta, y ese es el punto.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Cómo vender</div>
+    <h2>Tres preguntas para cotizar en la primera visita</h2>
+    <div class="pasos">
+      <div class="paso"><div><h4>¿A qué se dedica el negocio?</h4><p>Te da el vertical. Si el oficio no está en la lista de quince, Hub Core solo también se vende: sirve para facturar, llevar inventario, cobrar y reportar en cualquier rubro.</p></div></div>
+      <div class="paso"><div><h4>¿Cuántas sucursales y cuántas personas van a usarlo?</h4><p>Te da la edición. Más de una sucursal es Hub Enterprise, sin excepción. Hasta 8 usuarios en una sede es Hub Core, que es donde cae la mayoría.</p></div></div>
+      <div class="paso"><div><h4>¿Prefiere pagar mes a mes o el año completo?</h4><p>Te da el ciclo. Empuja el anual: el cliente ahorra dos meses y la implementación, y a ti te asegura el compromiso. Es el argumento más fácil de toda la venta.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Objeciones</div>
+    <h2>Lo que te van a decir, y qué contestar</h2>
+    <div class="obj">
+      <div class="fila">
+        <div class="q">Ya contraté un PAC, con eso cumplo</div>
+        <div class="a">Cierto, y eso es justo lo que hace el PAC: validar y transmitir la factura. No maneja tu inventario, ni tus mesas, ni sabe quién te debe. Estás cumpliendo con la DGI y siguiendo igual de desordenado que antes. SuiteHub hace las dos cosas con una sola herramienta.</div>
+      </div>
+      <div class="fila">
+        <div class="q">Hay sistemas gratis, como Loyverse</div>
+        <div class="a">Son buenos para cobrar, pero no emiten factura electrónica de la DGI. Vas a terminar con el POS en una pantalla y el facturador en otra, pasando datos a mano. Y las multas por no cumplir van de B/.500 a B/.25,000.</div>
+      </div>
+      <div class="fila">
+        <div class="q">Está caro</div>
+        <div class="a">Compáralo con lo que hay: las suites contables regionales cobran entre $43 y $118 al mes por menos oficio. Hub Core son $48 con el vertical completo y el soporte local. Y en plan anual, doce meses al precio de diez.</div>
+      </div>
+      <div class="fila">
+        <div class="q">¿Y si mañana cambia mi PAC?</div>
+        <div class="a">SuiteHub está integrado con los cinco PACs autorizados de la DGI, no con uno solo. Si el cliente cambia de proveedor, se cambia la conexión y sigue facturando. Es una de las pocas herramientas del mercado que no te amarra a un PAC.</div>
+      </div>
+      <div class="fila">
+        <div class="q">¿Quién me atiende cuando tenga un problema?</div>
+        <div class="a">Un equipo en Panamá, en español, por WhatsApp. No hay tickets ni niveles de soporte. Es la ventaja que ninguna plataforma regional puede igualar.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Tu parte</div>
+    <h2>Condiciones para socios</h2>
+    <div class="nota">
+      <h3>Por acordar con SuiteHub</h3>
+      <p>La comisión, el esquema de renovaciones y el nivel de acompañamiento en la venta se acuerdan de forma individual con cada socio, según el mercado y el volumen. Escríbenos y lo cerramos antes de tu primera cotización.</p>
+    </div>
+  </section>
+
+  <footer>
+    <b>SuiteHub</b> · WhatsApp <b>+507 6632-6006</b> · <b>info@suitehub.net</b> · <a href="https://suitehub.net" target="_blank" rel="noopener">suitehub.net</a><br>
+    Vía Argentina, Bella Vista, Ciudad de Panamá.<br>
+    <span style="opacity:.75">Documento de uso interno para socios comerciales. Precios en dólares, vigentes a septiembre de 2026. Confirma la disponibilidad de un vertical del grupo «Bajo consulta» antes de cotizarlo.</span>
+  </footer>
+
+</div>
+</body>
+</html>
