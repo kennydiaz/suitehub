@@ -1516,7 +1516,7 @@
       "icon": "tabler:tools-kitchen-2",
       "status": "production",
       "in_catalog": true,
-      "subdomain": "restaurant.suitehub.net",
+      "subdomain": "hubrest.suitehub.net",
       "repo": "hubrest",
       "color": "#EA580C",
       "fill": {
