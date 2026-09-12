@@ -433,54 +433,6 @@
     }
   },
   "products": {
-    "beauty": {
-      "name": "HUB Beauty",
-      "code_name": "HubBeauty",
-      "wordmark_suffix": "Beauty",
-      "icon": null,
-      "status": "discontinued",
-      "in_catalog": false,
-      "subdomain": null,
-      "repo": null,
-      "replaced_by": "salon",
-      "replaced_on": "2026-09-08",
-      "notes": "Reemplazado por HUB Salon el 2026-09-08. El badge se conserva por trazabilidad; no tiene logo ni presentaciones.",
-      "color": "#DB2777",
-      "fill": {
-        "kind": "solid",
-        "color": "#DB2777"
-      },
-      "on_color": "#FFFFFF",
-      "ramp": "tailwind.pink",
-      "tone": "600",
-      "shades": {
-        "soft": "#FDF2F8",
-        "hover": "#BE185D",
-        "dark": "#9D174D"
-      },
-      "accent": {
-        "lighter": "#FCE7F3",
-        "light": "#F472B6",
-        "base": "#DB2777",
-        "dark": "#BE185D",
-        "darker": "#831843",
-        "rgb": "219, 39, 119"
-      },
-      "assets": {
-        "badge": "badges/svg/hub-beauty-badge.svg",
-        "logo": null,
-        "logo_white": null,
-        "png": {
-          "badge": [
-            256,
-            512,
-            1024
-          ],
-          "logo": [],
-          "logo_white": []
-        }
-      }
-    },
     "boutique": {
       "name": "HUB Boutique",
       "code_name": "HubBoutique",
@@ -2054,11 +2006,10 @@
       {
         "color": "#DB2777",
         "slugs": [
-          "beauty",
           "boutique",
           "salon"
         ],
-        "note": "Salon conserva el rosa porque la app ya esta construida asi; Boutique tomara otro color al desarrollarse. Beauty esta descontinuado."
+        "note": "Salon conserva el rosa porque la app ya esta construida asi; Boutique tomara otro color al desarrollarse."
       }
     ],
     "ramp_sharing": [

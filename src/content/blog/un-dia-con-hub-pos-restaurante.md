@@ -70,7 +70,7 @@ Y al día siguiente, en Reportes, ves las ventas, el margen por producto, las fu
 
 ## ¿HUB POS o HUB Restaurant?
 
-Nos lo preguntan bastante. Por ahora HUB Restaurant es la versión PRO de HUB POS. La base es la misma y los dos conviven en el catálogo, así que puedes empezar con HUB POS y crecer cuando lo necesites. Además hay módulos que se activan según cómo trabajes, como delivery con GPS, departamentos, cuentas por cobrar o promociones por horario.
+Nos lo preguntan bastante. Son dos verticales distintos que comparten la misma base. HUB POS es el formato ligero: caja, pedidos y cocina para cafeterías, food trucks y restaurantes de servicio rápido. HUB Restaurant es la línea full-service: mapa de mesas en vivo, comandas por estación con monitor de cocina, cuentas divididas y cierre por turno. Ambos vienen en línea Core y línea Pro, así que puedes empezar con HUB POS y pasar a HUB Restaurant cuando tu salón lo pida. Además hay módulos que se activan según cómo trabajes, como delivery con GPS, departamentos, cuentas por cobrar o promociones por horario.
 
 ## Para terminar
 

@@ -28,14 +28,43 @@ const verticals = [
     short:  'The POS for restaurants, cafés, bars and food trucks, on your own network.',
     pitch:  'Tables and orders, kitchen display, split payments with tips, DGI e-invoices printed on the receipt with a QR code, self-service kiosk, digital menu and end-of-day cash reports by email. If the internet goes down, you keep selling.',
   },
-  // HUB Restaurant is, for now, the PRO version of HUB POS: two models in the catalog.
   {
     key:    'restaurant',
     name:   'HUB Restaurant',
     icon:   'fa-utensils',
-    sector: 'Restaurants and bars · PRO version of HUB POS',
-    short:  'The PRO version of HUB POS, for restaurants, cafés and bars.',
-    pitch:  'HUB POS in its PRO edition: live table status, orders sent to the kitchen and bar, KDS, split checks, tips, delivery integration and shift reports.',
+    sector: 'Full-service restaurants with dining room and tables',
+    short:  'For sit-down restaurants, bars and cafés with table service.',
+    pitch:  'Live table map, tickets to kitchen and bar with a KDS per station, split checks, tips, delivery and shift-based cash close. If your format is lighter, HUB POS is the starting point.',
+  },
+  {
+    key:    'market',
+    name:   'HUB Market',
+    icon:   'fa-cart-shopping',
+    screenshot: '/images/products/market/web-1280.webp',
+    screenshotH: 940,
+    sector: 'Minimarkets, grocery stores and supermarkets',
+    short:  'For minimarkets, corner groceries and neighborhood supermarkets.',
+    pitch:  'Fast barcode checkout and scale-based sales by weight, inventory with expiration dates, purchasing and suppliers, cash drawer with reconciliation and DGI electronic invoice on the receipt.',
+    features: [
+      { icon: 'fa-barcode',        name: 'Fast barcode checkout', desc: 'Scan and charge, no product lookup' },
+      { icon: 'fa-weight-scale',   name: 'Sales by weight',       desc: 'Scale integration for produce, meat and bulk goods' },
+      { icon: 'fa-calendar-xmark', name: 'Expiration tracking',   desc: 'Expiry alerts and rotation by batch' },
+      { icon: 'fa-truck',          name: 'Purchasing and suppliers', desc: 'Purchase orders, receiving and payables' },
+    ],
+  },
+  {
+    key:    'boutique',
+    name:   'HUB Boutique',
+    icon:   'fa-shirt',
+    sector: 'Clothing boutiques and fashion retail',
+    short:  'For clothing, footwear and accessories boutiques with a physical and online store.',
+    pitch:  'Size and color variants on a single product, touch POS, online store on the same inventory, layaway, authorized returns and DGI electronic invoicing.',
+    features: [
+      { icon: 'fa-table-cells',    name: 'Size × color variants', desc: 'One garment, every combination and its stock' },
+      { icon: 'fa-store',          name: 'Integrated online store', desc: 'Same inventory in-store and on the web' },
+      { icon: 'fa-hand-holding-dollar', name: 'Layaway',          desc: 'Installments with customer reminders' },
+      { icon: 'fa-rotate-left',    name: 'Controlled returns',     desc: 'With authorization and a logged reason' },
+    ],
   },
   {
     key:    'pet',
@@ -139,7 +168,7 @@ const verticals = [
       { icon: 'fa-calendar',       name: 'Tape chart',           desc: 'Occupancy calendar for every room' },
       { icon: 'fa-bell-concierge', name: 'Check-in / out',       desc: 'Passport, digital signature and instant invoice' },
       { icon: 'fa-bed',            name: 'Housekeeping',         desc: 'Room status: clean, dirty or being inspected' },
-      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Syncs with Booking, Airbnb and Expedia (Pro+)' },
+      { icon: 'fa-link',           name: 'Channel manager',      desc: 'Syncs with Booking, Airbnb and Expedia (Hub Pro en adelante)' },
     ],
   },
   {
@@ -194,14 +223,14 @@ const vista = verticals.map((v: any) => {
   };
 });
 ---
-<BaseLayout title="Verticals · SuiteHub" description="13 specialized SuiteHub verticals: HUB Workshop, Carwash, Restaurant, POS, Pet, Salon, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
+<BaseLayout title="Verticals · SuiteHub" description="15 specialized SuiteHub verticals: HUB Workshop, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
     <div class="wrap relative pt-12 pb-16">
       <div class="text-center max-w-3xl mx-auto">
-        <span class="eyebrow">13 specialized verticals</span>
+        <span class="eyebrow">15 specialized verticals</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
           SuiteHub <span class="text-gradient">built for your industry</span>.
         </h1>

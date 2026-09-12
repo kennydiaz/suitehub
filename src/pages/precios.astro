@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEdiciones } from '../lib/catalog';
 
 const ediciones = [
-  { key: 'lite',       name: 'Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
-  { key: 'core',       name: 'Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: true  },
-  { key: 'pro',        name: 'Pro',        price: 64,  yearly: 640,  color: 'brand', featured: false },
-  { key: 'enterprise', name: 'Enterprise', price: 196, yearly: 1960, color: 'amber',  featured: false },
+  { key: 'lite',       name: 'Hub Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
+  { key: 'core',       name: 'Hub Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: true  },
+  { key: 'pro',        name: 'Hub Pro',        price: 64,  yearly: 640,  color: 'brand', featured: false },
+  { key: 'enterprise', name: 'Hub Enterprise', price: 196, yearly: 1960, color: 'amber',  featured: false },
 ];
 
 // Precios desde el catálogo canónico del panel (con respaldo local).
@@ -100,7 +100,7 @@ const comparativa = [
     rows: [
       { label: 'Soporte por email',     lite: '✓',     core: '✓',         pro: '✓',           enterprise: '✓' },
       { label: 'Soporte por WhatsApp',  lite: '—',     core: '✓',         pro: 'Prioritario', enterprise: '24/7' },
-      { label: 'Implementación ($99 una vez · gratis con anual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicada' },
+      { label: 'Implementación ($199 una vez · gratis con anual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicada' },
       { label: 'Capacitación inicial',  lite: '—',     core: '1 sesión',  pro: '3 sesiones',  enterprise: 'Ilimitada' },
       { label: 'SLA contractual',       lite: '—',     core: '—',         pro: '—',           enterprise: '✓' },
       { label: 'Account manager',       lite: '—',     core: '—',         pro: '—',           enterprise: 'Dedicado' },
@@ -128,8 +128,8 @@ const colorMap = {
 const faqs = [
   { q: '¿Tengo que firmar contrato anual?', a: 'No. Pagas mes a mes y puedes cancelar cuando quieras. Si prefieres pagar el año por adelantado te llevas 16% de descuento, pero es opcional.' },
   { q: '¿Qué pasa si supero los límites de mi edición?', a: 'Cuando llegas al 80% del límite, el sistema te avisa. Desde la misma plataforma puedes pasarte a la siguiente edición sin migrar datos y sin perder lo que ya configuraste.' },
-  { q: '¿La implementación se cobra aparte?', a: 'Sí, son $99 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Enterprise te asignamos un consultor dedicado.' },
-  { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Enterprise también pueden pagar contra factura a 30 días.' },
+  { q: '¿La implementación se cobra aparte?', a: 'Sí, son $199 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Hub Enterprise te asignamos un consultor dedicado.' },
+  { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Hub Enterprise también pueden pagar contra factura a 30 días.' },
   { q: '¿El costo del PAC para FE va incluido?', a: 'No. Al PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) le pagas tú directamente. SuiteHub se conecta con él sin cobro adicional, y durante el onboarding te ayudamos a contratarlo.' },
 ];
 const faqLd = {
@@ -273,7 +273,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Sí, son $99 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Enterprise te asignamos un consultor dedicado.
+            Sí, son $199 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Hub Enterprise te asignamos un consultor dedicado.
           </div>
         </details>
         <details class="card-glass group">
@@ -282,7 +282,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Enterprise también pueden pagar contra factura a 30 días.
+            Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Hub Enterprise también pueden pagar contra factura a 30 días.
           </div>
         </details>
         <details class="card-glass group">

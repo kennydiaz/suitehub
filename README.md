@@ -40,7 +40,7 @@ web/
 │   │   ├── index.astro         # Home ES
 │   │   ├── productos.astro
 │   │   ├── precios.astro
-│   │   ├── verticales.astro    # 13 verticales especializados
+│   │   ├── verticales.astro    # 15 verticales especializados (lista del catálogo)
 │   │   ├── casos.astro         # QS Express + Clean Factory (casos reales)
 │   │   ├── sobre.astro
 │   │   ├── contacto.astro
@@ -62,7 +62,7 @@ web/
 │   ├── robots.txt              # Apunta al sitemap
 │   ├── favicons/               # Set único: 16/32/64/128/192/512 + favicon-hex.svg
 │   └── images/
-│       ├── products/{key}/     # 18 productos (logos en svg/png multi-resolución)
+│       ├── products/{key}/     # badges y capturas por producto (sincronizados desde _suitehub-brand)
 │       ├── cleanfactory.png    # Logo cliente real
 │       └── tallerqsexpress.png # Logo cliente real
 │
@@ -91,7 +91,9 @@ npm run preview   # Sirve dist/ localmente
 
 ## Vocabulario
 
-- ❌ "tier" → ✅ **"edición"** (Edición Lite/Core/Pro/Enterprise)
+- ❌ "tier", "plan" → ✅ **"edición"**. Las ediciones se nombran siempre completas: **Hub Lite · Hub Core · Hub Pro · Hub Enterprise** (nunca "Lite" o "Core" a secas).
+- ❌ "producto" para un vertical → ✅ **"vertical"** (HUB Taller, HUB Restaurant…). Cada vertical se vende como **HUB X** (línea Core) o **HUB X Pro** (línea Pro).
+- HUB POS y HUB Restaurant son **dos verticales distintos** (food service ligero vs. full-service con salón), no versiones uno del otro.
 - ❌ "SaaS" → ✅ **"suite empresarial"** o **"plataforma de gestión"**
 
 ---
@@ -160,8 +162,8 @@ SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. El
 
 | Caso | Vertical | Edición | PAC | Logo |
 |------|----------|---------|-----|------|
-| **QS Express** — taller mecánico, La Chorrera | HUB Taller | Pro | Digifact | `tallerqsexpress.png` |
-| **Clean Factory** — lavandería de calzado deportivo, Panamá | HUB Lavandería | Core | The Factory HKA | `cleanfactory.png` |
+| **QS Express** — taller mecánico, La Chorrera | HUB Taller | Hub Pro | Digifact | `tallerqsexpress.png` |
+| **Clean Factory** — lavandería de calzado deportivo, Panamá | HUB Lavandería | Hub Core | The Factory HKA | `cleanfactory.png` |
 
 ---
 
@@ -169,10 +171,12 @@ SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. El
 
 - Banner de consentimiento de cookies para GA4 (Ley 81 PA / GDPR)
 - Open Graph image dedicada por página (hoy todas comparten una)
-- Screenshot real (`web-*.webp`) en verticales que aún solo muestran logo (carwash, taller, beauty, clinic, gym, lavanderia, inmobiliaria, phone, traffic)
+- Screenshot real (`web-*.webp`) en verticales que aún solo muestran logo (boutique, clinic, gym, lavanderia, inmobiliaria, phone, traffic)
 - Reemplazar 2 testimonios placeholder en home (Carmen Aguilar, Luis Fernández) con reales cuando estén disponibles
 - Sitemap: agregar `xhtml:link` a páginas internas (no solo home — los slugs ES/EN difieren, requiere `serialize` callback custom)
-- Fase 4 opcional: blog/MDX con artículos editoriales bilingües
+- Migrar iconografía Font Awesome solid → Tabler outline (regla del brand kit), optimizar imágenes a webp y auto-alojar fuentes
+- Página 404 personalizada
+- Alta en Google Search Console y Google Business Profile (ver SEO.md)
 
 ---
 

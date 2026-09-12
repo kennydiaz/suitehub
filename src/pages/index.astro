@@ -5,7 +5,7 @@ import { getEdiciones } from '../lib/catalog';
 const ediciones = [
   {
     key:    'lite',
-    name:   'Edición Lite',
+    name:   'Hub Lite',
     tagline:'Empieza ya',
     price:  24,
     color:  'from-sky-500/20 to-sky-500/5',
@@ -21,7 +21,7 @@ const ediciones = [
   },
   {
     key:    'core',
-    name:   'Edición Core',
+    name:   'Hub Core',
     tagline:'Más vendido',
     price:  48,
     featured: true,
@@ -30,7 +30,7 @@ const ediciones = [
     accent: 'text-cyan-400',
     ideal:  '1 sucursal, 8 usuarios, FE certificada',
     features: [
-      'Todo de Lite +',
+      'Todo de Hub Lite +',
       'Facturación electrónica DGI',
       'CxC con recibos multi-factura',
       'Inventario y movimientos',
@@ -39,7 +39,7 @@ const ediciones = [
   },
   {
     key:     'pro',
-    name:    'Edición Pro',
+    name:    'Hub Pro',
     tagline: 'Personalizable',
     price:   64,
     color:   'from-brand-600/30 to-brand-600/5',
@@ -47,7 +47,7 @@ const ediciones = [
     accent:  'text-brand-300',
     ideal:   '1 sucursal, 20 usuarios, automatizaciones y API',
     features: [
-      'Todo de Core +',
+      'Todo de Hub Core +',
       'Tu marca: logo, colores y dominio',
       'API REST + 100K calls/mes',
       'Automatizaciones programadas',
@@ -57,7 +57,7 @@ const ediciones = [
   },
   {
     key:    'enterprise',
-    name:   'Edición Enterprise',
+    name:   'Hub Enterprise',
     tagline:'Sucursales',
     price:  196,
     color:  'from-amber-500/20 to-amber-500/5',
@@ -65,7 +65,7 @@ const ediciones = [
     accent: 'text-amber-400',
     ideal:  'Multi-sucursal: principal incluida, +$64/mes por adicional',
     features: [
-      'Todo de Pro +',
+      'Todo de Hub Pro +',
       'Multi-sucursal con consolidación',
       'Cualquier vertical incluido',
       'White-label completo',
@@ -89,7 +89,9 @@ const verticales = [
   { key: 'taller',     name: 'HUB Taller',     desc: 'Talleres mecánicos',         icon: 'fa-screwdriver-wrench' },
   { key: 'carwash',    name: 'HUB Carwash',    desc: 'Autolavados y car wash',     icon: 'fa-spray-can-sparkles' },
   { key: 'pos',        name: 'HUB POS',        desc: 'Restaurantes, bares y food trucks', icon: 'fa-cash-register' },
-  { key: 'restaurant', name: 'HUB Restaurant', desc: 'Versión PRO de HUB POS',     icon: 'fa-utensils' },
+  { key: 'restaurant', name: 'HUB Restaurant', desc: 'Restaurantes con salón y mesas', icon: 'fa-utensils' },
+  { key: 'market',     name: 'HUB Market',     desc: 'Minimarkets y supermercados', icon: 'fa-cart-shopping' },
+  { key: 'boutique',   name: 'HUB Boutique',   desc: 'Boutiques de ropa y retail',  icon: 'fa-shirt' },
   { key: 'pet',        name: 'HUB Pet',        desc: 'Veterinarias y pet shops',   icon: 'fa-paw' },
   { key: 'lavanderia', name: 'HUB Lavandería', desc: 'Lavanderías profesionales',  icon: 'fa-soap' },
   { key: 'salon',      name: 'HUB Salon',      desc: 'Salones de belleza, barberías', icon: 'fa-scissors' },
@@ -142,7 +144,7 @@ const pacs = [
 
 const testimonios = [
   {
-    quote: 'Cambiamos de un sistema viejo a Edición Pro y en una semana ya facturábamos electrónicamente sin un solo rechazo de DGI. La diferencia es brutal.',
+    quote: 'Cambiamos de un sistema viejo a Hub Pro y en una semana ya facturábamos electrónicamente sin un solo rechazo de DGI. La diferencia es brutal.',
     author: 'Raúl Romero',
     role:   'Técnico Principal · QS Express',
     initial: 'R',
@@ -153,7 +155,7 @@ const testimonios = [
 const stats = [
   { num: '+50',  label: 'Pymes activas (Panamá)' },
   { num: '5',    label: 'Países objetivo (PA · US · VE · ES · CO)' },
-  { num: '13',   label: 'Verticales especializados' },
+  { num: '15',   label: 'Verticales especializados' },
   { num: '<24h', label: 'Respuesta de soporte' },
 ];
 
@@ -206,7 +208,7 @@ const tour = [
               <i class="fa-brands fa-whatsapp text-xl"></i>
               Habla con un asesor
             </a>
-            <a href="#tiers" class="btn-secondary text-base">
+            <a href="#ediciones" class="btn-secondary text-base">
               Ver ediciones y precios
               <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
             </a>
@@ -347,7 +349,7 @@ const tour = [
   <!-- ════════════════════════════════════════════════════════════
        EDICIONES
        ════════════════════════════════════════════════════════════ -->
-  <section id="tiers" class="section relative">
+  <section id="ediciones" class="section relative">
     <div class="wrap">
       <div class="text-center mb-16 max-w-2xl mx-auto">
         <span class="eyebrow">La familia SuiteHub</span>

@@ -5,7 +5,7 @@ import { getEdiciones } from '../../lib/catalog';
 const editions = [
   {
     key:    'lite',
-    name:   'Lite Edition',
+    name:   'Hub Lite',
     tagline:'Get started',
     price:  24,
     color:  'from-sky-500/20 to-sky-500/5',
@@ -21,7 +21,7 @@ const editions = [
   },
   {
     key:    'core',
-    name:   'Core Edition',
+    name:   'Hub Core',
     tagline:'Best seller',
     price:  48,
     featured: true,
@@ -30,7 +30,7 @@ const editions = [
     accent: 'text-cyan-400',
     ideal:  '1 location, 8 users, certified e-invoicing',
     features: [
-      'Everything in Lite +',
+      'Everything in Hub Lite +',
       'DGI electronic invoicing',
       'AR with multi-invoice receipts',
       'Inventory and stock movements',
@@ -39,7 +39,7 @@ const editions = [
   },
   {
     key:     'pro',
-    name:    'Pro Edition',
+    name:    'Hub Pro',
     tagline: 'Customizable',
     price:   64,
     color:   'from-brand-600/30 to-brand-600/5',
@@ -47,7 +47,7 @@ const editions = [
     accent:  'text-brand-300',
     ideal:   '1 location, 20 users, automations and API',
     features: [
-      'Everything in Core +',
+      'Everything in Hub Core +',
       'Your brand: logo, colors and domain',
       'REST API + 100K calls/month',
       'Scheduled automations',
@@ -57,7 +57,7 @@ const editions = [
   },
   {
     key:    'enterprise',
-    name:   'Enterprise Edition',
+    name:   'Hub Enterprise',
     tagline:'Branches',
     price:  196,
     color:  'from-amber-500/20 to-amber-500/5',
@@ -65,7 +65,7 @@ const editions = [
     accent: 'text-amber-400',
     ideal:  'Multi-branch: main location included, +$64/mo per extra branch',
     features: [
-      'Everything in Pro +',
+      'Everything in Hub Pro +',
       'Multi-branch with consolidation',
       'Any vertical included',
       'Full white-label',
@@ -89,7 +89,9 @@ const verticals = [
   { key: 'taller',     name: 'HUB Workshop',    desc: 'Auto repair shops',         icon: 'fa-screwdriver-wrench' },
   { key: 'carwash',    name: 'HUB Carwash',     desc: 'Car washes and detailing',  icon: 'fa-spray-can-sparkles' },
   { key: 'pos',        name: 'HUB POS',         desc: 'Restaurants, bars and food trucks', icon: 'fa-cash-register' },
-  { key: 'restaurant', name: 'HUB Restaurant',  desc: 'PRO version of HUB POS',    icon: 'fa-utensils' },
+  { key: 'restaurant', name: 'HUB Restaurant',  desc: 'Sit-down restaurants',      icon: 'fa-utensils' },
+  { key: 'market',     name: 'HUB Market',       desc: 'Minimarkets and groceries', icon: 'fa-cart-shopping' },
+  { key: 'boutique',   name: 'HUB Boutique',     desc: 'Clothing boutiques and retail', icon: 'fa-shirt' },
   { key: 'pet',        name: 'HUB Pet',         desc: 'Vets and pet shops',        icon: 'fa-paw' },
   { key: 'lavanderia', name: 'HUB Laundry',     desc: 'Professional laundries',    icon: 'fa-soap' },
   { key: 'salon',      name: 'HUB Salon',       desc: 'Beauty salons, barbershops', icon: 'fa-scissors' },
@@ -142,7 +144,7 @@ const pacs = [
 
 const testimonials = [
   {
-    quote: 'We switched from a legacy system to the Pro Edition and within a week we were issuing electronic invoices with zero DGI rejections. The difference is huge.',
+    quote: 'We switched from a legacy system to the Hub Pro and within a week we were issuing electronic invoices with zero DGI rejections. The difference is huge.',
     author: 'Raúl Romero',
     role:   'Lead Technician · QS Express',
     initial: 'R',
@@ -153,7 +155,7 @@ const testimonials = [
 const stats = [
   { num: '+50',  label: 'Active SMBs (Panama)' },
   { num: '5',    label: 'Target countries (PA · US · VE · ES · CO)' },
-  { num: '13',   label: 'Specialized verticals' },
+  { num: '15',   label: 'Specialized verticals' },
   { num: '<24h', label: 'Support response time' },
 ];
 
@@ -203,7 +205,7 @@ const tour = [
               <i class="fa-brands fa-whatsapp text-xl"></i>
               Talk to our team
             </a>
-            <a href="#tiers" class="btn-secondary text-base">
+            <a href="#ediciones" class="btn-secondary text-base">
               See editions and pricing
               <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
             </a>
@@ -337,7 +339,7 @@ const tour = [
   </section>
 
   <!-- EDITIONS -->
-  <section id="tiers" class="section relative">
+  <section id="ediciones" class="section relative">
     <div class="wrap">
       <div class="text-center mb-16 max-w-2xl mx-auto">
         <span class="eyebrow">The SuiteHub family</span>

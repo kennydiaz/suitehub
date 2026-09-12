@@ -5,7 +5,7 @@ import { getEdiciones } from '../lib/catalog';
 const ediciones = [
   {
     key:        'lite',
-    name:       'Edición Lite',
+    name:       'Hub Lite',
     tagline:    'Para empezar',
     price:      24,
     priceYearly: 240,
@@ -28,7 +28,7 @@ const ediciones = [
   },
   {
     key:        'core',
-    name:       'Edición Core',
+    name:       'Hub Core',
     tagline:    'Más vendido',
     price:      48,
     priceYearly: 480,
@@ -36,7 +36,7 @@ const ediciones = [
     featured:   true,
     icon:       'fa-bolt',
     ideal:      'Pymes ya establecidas, de 5 a 10 empleados y una sola sucursal. Piensa en el restaurante del barrio, la clínica con su consultorio o la distribuidora regional.',
-    description:'Con Core activas la facturación electrónica con cualquiera de los 5 PACs certificados por la DGI de Panamá (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) o con The Factory HKA Venezuela si facturas bajo el régimen SENIAT. Suma cuentas por cobrar con recibos que abarcan varias facturas y reportes con SQL guardado para quien quiera analizar más a fondo. Está pensada para una sucursal. Si abres otra, lo tuyo es Enterprise.',
+    description:'Con Hub Core activas la facturación electrónica con cualquiera de los 5 PACs certificados por la DGI de Panamá (Digifact, HKA, Ebi, Factura Fácil, eFacturapty) o con The Factory HKA Venezuela si facturas bajo el régimen SENIAT. Suma cuentas por cobrar con recibos que abarcan varias facturas y reportes con SQL guardado para quien quiera analizar más a fondo. Está pensada para una sucursal. Si abres otra, lo tuyo es Hub Enterprise.',
     limits: {
       sucursales: 1, usuarios: 8, registros: 5000, almacenamiento: '10 GB',
     },
@@ -52,7 +52,7 @@ const ediciones = [
   },
   {
     key:        'pro',
-    name:       'Edición Pro',
+    name:       'Hub Pro',
     tagline:    'Personalizable',
     price:      64,
     priceYearly: 640,
@@ -75,7 +75,7 @@ const ediciones = [
   },
   {
     key:        'enterprise',
-    name:       'Edición Enterprise',
+    name:       'Hub Enterprise',
     tagline:    'Sucursales',
     price:      196,
     priceYearly: 1960,
@@ -115,7 +115,7 @@ const colorMap = {
   amber:  { bg: 'from-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', dot: 'bg-amber-400' },
 };
 ---
-<BaseLayout title="Ediciones · SuiteHub" description="SuiteHub viene en cuatro ediciones: Lite ($24), Core ($48), Pro ($64) y Enterprise ($196). Cuando creces, cambias de edición sin migrar.">
+<BaseLayout title="Ediciones · SuiteHub" description="SuiteHub viene en cuatro ediciones: Hub Lite ($24), Hub Core ($48), Hub Pro ($64) y Hub Enterprise ($196). Cuando creces, cambias de edición sin migrar.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

@@ -3,10 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEdiciones } from '../../lib/catalog';
 
 const editions = [
-  { key: 'lite',       name: 'Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
-  { key: 'core',       name: 'Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: true  },
-  { key: 'pro',        name: 'Pro',        price: 64,  yearly: 640,  color: 'brand', featured: false },
-  { key: 'enterprise', name: 'Enterprise', price: 196, yearly: 1960, color: 'amber',  featured: false },
+  { key: 'lite',       name: 'Hub Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
+  { key: 'core',       name: 'Hub Core',       price: 48,  yearly: 480,  color: 'cyan',   featured: true  },
+  { key: 'pro',        name: 'Hub Pro',        price: 64,  yearly: 640,  color: 'brand', featured: false },
+  { key: 'enterprise', name: 'Hub Enterprise', price: 196, yearly: 1960, color: 'amber',  featured: false },
 ];
 
 // Prices from the panel's canonical catalog (with local fallback).
@@ -31,7 +31,7 @@ const comparison = [
     ],
   },
   {
-    title: 'Core and operations',
+    title: 'Basic operations',
     rows: [
       { label: 'Customer CRUD', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
       { label: 'Products and services catalog', lite: '✓', core: '✓', pro: '✓', enterprise: '✓' },
@@ -99,7 +99,7 @@ const comparison = [
     rows: [
       { label: 'Email support',     lite: '✓',     core: '✓',         pro: '✓',           enterprise: '✓' },
       { label: 'WhatsApp support',  lite: '—',     core: '✓',         pro: 'Priority',     enterprise: '24/7' },
-      { label: 'Implementation ($99 once · free with annual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicated' },
+      { label: 'Implementation ($199 once · free with annual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicated' },
       { label: 'Initial training',  lite: '—',     core: '1 session', pro: '3 sessions',  enterprise: 'Unlimited' },
       { label: 'Contractual SLA',   lite: '—',     core: '—',         pro: '—',           enterprise: '✓' },
       { label: 'Account manager',   lite: '—',     core: '—',         pro: '—',           enterprise: 'Dedicated' },
@@ -127,8 +127,8 @@ const colorMap = {
 const faqs = [
   { q: 'Do I have to sign an annual contract?', a: "No. You pay monthly and can cancel anytime. If you'd rather pay for the year up front, you get 16% off, but that's up to you." },
   { q: "What happens if I go over my edition's limits?", a: "You'll get a heads-up when you hit 80% of a limit. From there you can move up to the next edition right inside the platform, with no data migration and without losing your settings." },
-  { q: 'Is implementation billed separately?', a: "Yes, it's a one-time $99 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Enterprise customers get a dedicated consultant." },
-  { q: 'How do I pay? Do you take ACH, Yappy, credit cards?', a: 'You can pay by ACH, Yappy, credit card or bank deposit. Enterprise accounts can also pay by invoice on net-30 terms.' },
+  { q: 'Is implementation billed separately?', a: "Yes, it's a one-time $199 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Hub Enterprise customers get a dedicated consultant." },
+  { q: 'How do I pay? Do you take ACH, Yappy, credit cards?', a: 'You can pay by ACH, Yappy, credit card or bank deposit. Hub Enterprise accounts can also pay by invoice on net-30 terms.' },
   { q: 'Is the e-invoicing PAC fee included?', a: "No. You pay the PAC (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) directly. SuiteHub connects to it at no extra charge, and we'll help you sign up with one during onboarding." },
 ];
 const faqLd = {
@@ -272,7 +272,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Yes, it's a one-time $99 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Enterprise customers get a dedicated consultant.
+            Yes, it's a one-time $199 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Hub Enterprise customers get a dedicated consultant.
           </div>
         </details>
         <details class="card-glass group">
@@ -281,7 +281,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            You can pay by ACH, Yappy, credit card or bank deposit. Enterprise accounts can also pay by invoice on net-30 terms.
+            You can pay by ACH, Yappy, credit card or bank deposit. Hub Enterprise accounts can also pay by invoice on net-30 terms.
           </div>
         </details>
         <details class="card-glass group">
