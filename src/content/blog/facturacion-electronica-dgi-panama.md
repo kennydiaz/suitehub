@@ -49,7 +49,7 @@ El costo del PAC se lo pagas directamente a ese proveedor, según tu volumen de 
 
 ## Cómo te lo simplifica SuiteHub
 
-SuiteHub ya trae **facturación electrónica DGI integrada** desde la Edición Core. Te conectas a tu PAC (Digifact, HKA, Factura Fácil o eFacturapty) sin cargo adicional de nuestra parte, y durante el onboarding te ayudamos a contratar y configurar el PAC.
+SuiteHub ya trae **facturación electrónica DGI integrada** desde Hub Core. Te conectas a tu PAC (Digifact, HKA, Factura Fácil o eFacturapty) sin cargo adicional de nuestra parte, y durante el onboarding te ayudamos a contratar y configurar el PAC.
 
 En la práctica, pasas de "necesito facturar electrónico" a emitir comprobantes válidos en cuestión de días (no de meses). Y lo haces desde la misma plataforma donde ya llevas clientes, inventario y reportes.
 

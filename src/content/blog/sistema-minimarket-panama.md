@@ -54,6 +54,6 @@ En SuiteHub hicimos **HUB Market** con esta lista en mente. Es nuestro vertical 
 - Devoluciones con autorización y permisos detallados por rol para cajeros.
 - Facturación electrónica DGI: el ticket se imprime como CAFE con CUFE y QR, en térmica de 80 o 58 mm.
 
-Se instala en la tienda o en la nube, según te convenga, y está disponible desde la Edición Core. Los detalles están en [nuestros precios](/precios).
+Se instala en la tienda o en la nube, según te convenga, y está disponible desde Hub Core. Los detalles están en [nuestros precios](/precios).
 
 ¿Quieres verlo con tu propio inventario? [Agenda una demo por WhatsApp](https://wa.me/50766326006?text=Hola%2C%20quiero%20una%20demo%20de%20HUB%20Market%20para%20mi%20minimarket) y te mostramos HUB Market funcionando, sin compromiso.

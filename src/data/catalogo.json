@@ -5,16 +5,16 @@
     "moneda": "USD",
     "ciclo_anual_factor": 10,
     "descuento_anual_pct": 16,
-    "modelo_precio_vertical": "Cada vertical tiene dos precios: la línea Core (\"HUB X\") y la línea Pro (\"HUB X Pro\"). Sin recargo. Multi-sucursal = Enterprise, que incluye cualquier vertical.",
+    "modelo_precio_vertical": "Cada vertical tiene dos precios: la línea Core (\"HUB X\") y la línea Pro (\"HUB X Pro\"). Sin recargo. Multi-sucursal = Hub Enterprise, que incluye cualquier vertical.",
     "regla": "Descuentos por cliente, manuales.",
     "pac": "El PAC de facturación electrónica lo contrata y paga el cliente directo. SuiteHub integra sin cobro.",
-    "fuente_canonica": "suitehub-panel/src/Catalog.php",
+    "fuente_canonica": "panel.suitehub.net/src/Catalog.php",
     "actualizado": "2026-09-08"
   },
   "ediciones": [
     {
       "key": "lite",
-      "name": "Lite",
+      "name": "Hub Lite",
       "tagline": "Básico",
       "color": "#64748B",
       "featured": false,
@@ -32,7 +32,7 @@
     },
     {
       "key": "core",
-      "name": "Core",
+      "name": "Hub Core",
       "tagline": "Más vendido",
       "color": "#1F4570",
       "featured": true,
@@ -50,7 +50,7 @@
     },
     {
       "key": "pro",
-      "name": "Pro",
+      "name": "Hub Pro",
       "tagline": "Personalizable",
       "color": "#7C3AED",
       "featured": false,
@@ -63,12 +63,12 @@
         "almacenamiento": "50 GB",
         "transacciones_mes": "10,000"
       },
-      "salto_clave": "Core + personalización: branding propio, automatizaciones, API REST, webhooks y WhatsApp Business.",
+      "salto_clave": "Hub Core + personalización: branding propio, automatizaciones, API REST, webhooks y WhatsApp Business.",
       "precio_anio": 960
     },
     {
       "key": "enterprise",
-      "name": "Enterprise",
+      "name": "Hub Enterprise",
       "tagline": "Sucursales",
       "color": "#0A2540",
       "featured": false,
@@ -85,29 +85,6 @@
       "sucursal_adicional_mes": 64,
       "precio_anio": 1960,
       "sucursal_adicional_anio": 640
-    }
-  ],
-  "addons": [
-    {
-      "key": "usuario_extra",
-      "name": "Usuario adicional",
-      "unidad": "mes",
-      "detalle": "Lite $5 · Core $4 · Pro $3 · Enterprise $2",
-      "estado": "confirmado"
-    },
-    {
-      "key": "sucursal_extra",
-      "name": "Sucursal adicional",
-      "unidad": "mes",
-      "detalle": "+$64/mes por sucursal, solo en Enterprise (incluye la principal)",
-      "estado": "confirmado"
-    },
-    {
-      "key": "implementacion",
-      "name": "Implementación",
-      "unidad": "una vez",
-      "detalle": "$99 una sola vez · gratis con plan anual",
-      "estado": "propuesta"
     }
   ],
   "verticales": [
@@ -177,7 +154,7 @@
       "key": "pos",
       "name": "HUB POS",
       "icon": "fa-cash-register",
-      "sector": "Restaurantes, bares y food trucks",
+      "sector": "Caja y punto de venta · food service ligero",
       "caso_real": null,
       "nota": null,
       "planes": {
@@ -208,9 +185,9 @@
       "key": "restaurant",
       "name": "HUB Restaurant",
       "icon": "fa-utensils",
-      "sector": "Restaurantes y bares · versión PRO de HUB POS",
+      "sector": "Restaurantes full-service con salón y mesas",
       "caso_real": null,
-      "nota": "Versión PRO de HUB POS.",
+      "nota": null,
       "planes": {
         "core": {
           "precio_mes": 48,

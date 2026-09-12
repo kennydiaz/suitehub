@@ -101,10 +101,10 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
       "url": "https://suitehub.net",
       "description": description,
       "offers": [
-        { "@type": "Offer", "name": isEn ? "Lite Edition"       : "Edición Lite",       "price": String(_ed.lite?.precio_mes ?? 24),        "priceCurrency": "USD" },
-        { "@type": "Offer", "name": isEn ? "Core Edition"       : "Edición Core",       "price": String(_ed.core?.precio_mes ?? 48),        "priceCurrency": "USD" },
-        { "@type": "Offer", "name": isEn ? "Pro Edition"        : "Edición Pro",        "price": String(_ed.pro?.precio_mes ?? 64),         "priceCurrency": "USD" },
-        { "@type": "Offer", "name": isEn ? "Enterprise Edition" : "Edición Enterprise", "price": String(_ed.enterprise?.precio_mes ?? 196), "priceCurrency": "USD" }
+        { "@type": "Offer", "name": "Hub Lite",       "price": String(_ed.lite?.precio_mes ?? 24),        "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Hub Core",       "price": String(_ed.core?.precio_mes ?? 48),        "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Hub Pro",        "price": String(_ed.pro?.precio_mes ?? 64),         "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Hub Enterprise", "price": String(_ed.enterprise?.precio_mes ?? 196), "priceCurrency": "USD" }
       ],
       "inLanguage": ["es", "en"],
       "publisher": {

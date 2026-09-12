@@ -49,7 +49,7 @@ You pay the PAC directly, based on how many documents you issue. Your management
 
 ## How SuiteHub makes this easier
 
-SuiteHub comes with **integrated DGI electronic invoicing** starting with the Core Edition. You connect to your PAC (Digifact, HKA, Factura Fácil, or eFacturapty) at no extra charge from us, and during onboarding we help you sign up with the PAC and set it up.
+SuiteHub comes with **integrated DGI electronic invoicing** starting with Hub Core. You connect to your PAC (Digifact, HKA, Factura Fácil, or eFacturapty) at no extra charge from us, and during onboarding we help you sign up with the PAC and set it up.
 
 In practice, you go from "I need electronic invoicing" to issuing valid documents in a matter of days instead of months. And you do it from the same platform where you already manage clients, inventory, and reports.
 
