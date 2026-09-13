@@ -32,6 +32,59 @@ const LOGO = { ancho: 512, calidad: 0.92 };
 const TIPOS = { '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp' };
 const todo = process.argv.includes('--todo');
 
+// La seccion "En sitio" promete fotos reales, asi que una imagen generada por un
+// modelo no puede entrar aunque se vea bien. El manifiesto C2PA lo dice: los
+// generadores firman con digitalSourceType = trainedAlgorithmicMedia.
+//
+// Este es el unico punto donde se puede revisar. Despues de convertir a WebP,
+// "npm run strip-c2pa" borra ese manifiesto para no servir 5 KB de sobra por
+// archivo, y con el se va la prueba.
+function buscaC2PA(b) {
+  if (b.readUInt32BE(0) === 0x89504e47) {
+    let p = 8;
+    while (p + 8 <= b.length) {
+      const l = b.readUInt32BE(p);
+      const t = b.toString('ascii', p + 4, p + 8);
+      if (t === 'caBX') return b.subarray(p + 8, p + 8 + l);
+      if (t === 'IEND') break;
+      p += 12 + l;
+    }
+    return null;
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    const trozos = [];
+    let p = 2;
+    while (p + 4 <= b.length) {
+      if (b[p] !== 0xff) { p++; continue; }
+      const marca = b[p + 1];
+      if (marca === 0xd9 || marca === 0xda) break;
+      const l = b.readUInt16BE(p + 2);
+      if (marca === 0xeb) trozos.push(b.subarray(p + 4, p + 2 + l));
+      p += 2 + l;
+    }
+    return trozos.length ? Buffer.concat(trozos) : null;
+  }
+  if (b.toString('ascii', 0, 4) === 'RIFF') {
+    let p = 12;
+    while (p + 8 <= b.length) {
+      const t = b.toString('ascii', p, p + 4);
+      const l = b.readUInt32LE(p + 4);
+      if (t === 'C2PA') return b.subarray(p + 8, p + 8 + l);
+      p += 8 + l + (l % 2);
+    }
+  }
+  return null;
+}
+
+function generadaPorIA(bytes) {
+  const cab = buscaC2PA(bytes);
+  if (!cab) return null;
+  const s = cab.toString('latin1');
+  if (!/trainedAlgorithmicMedia|compositeWithTrainedAlgorithmicMedia/.test(s)) return null;
+  const agente = s.match(/dname([A-Za-z0-9.\-]{3,30})gversion/);
+  return agente ? agente[1].replace(/^i/, '') : 'un generador de imagenes';
+}
+
 const instalaciones = JSON.parse(readFileSync(FICHA, 'utf8'));
 const pendientes = [];
 const avisos = [];
@@ -71,6 +124,13 @@ if (!pendientes.length) {
 
   for (const { sitio, campo, origen, destino, ajustes } of pendientes) {
     const bytes = readFileSync(origen);
+
+    const generador = generadaPorIA(bytes);
+    if (generador) {
+      avisos.push(`${sitio.slug}: ${sitio.origen[campo]} la genero ${generador}, no una camara. No entra en "En sitio".`);
+      continue;
+    }
+
     const [ancho, alto, base64] = await pagina.evaluate(
       async ([datos, tipo, calidad, anchoMax]) => {
         const img = new Image();
