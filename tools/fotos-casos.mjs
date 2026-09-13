@@ -27,6 +27,11 @@ const FICHA = join(RAIZ, 'src', 'data', 'instalaciones.json');
 
 // Las fotos se sirven a 1400 px de ancho: la tarjeta nunca pasa de ~470 px
 // y con eso alcanza para pantallas de densidad doble.
+//
+// Una entrada puede pedir menos con "anchoFoto". Sirve cuando la pantalla que
+// sale en la foto tiene letra chica que no conviene publicar legible, como una
+// columna de precios de compra: a 1000 px la tarjeta se ve igual de bien y esa
+// letra deja de leerse. Es recortar resolucion, no retocar la imagen.
 const FOTO = { ancho: 1400, calidad: 0.82 };
 const LOGO = { ancho: 512, calidad: 0.92 };
 
@@ -42,7 +47,8 @@ for (const sitio of instalaciones) {
     avisos.push(`${sitio.slug}: sin bloque "origen", no se puede regenerar`);
     continue;
   }
-  for (const [campo, ajustes] of [['foto', FOTO], ['logo', LOGO]]) {
+  const deFoto = sitio.anchoFoto ? { ...FOTO, ancho: sitio.anchoFoto } : FOTO;
+  for (const [campo, ajustes] of [['foto', deFoto], ['logo', LOGO]]) {
     const origen = join(ORIGENES, sitio.origen[campo]);
     const destino = join(PUBLICO, sitio[campo]);
     if (!existsSync(origen)) {

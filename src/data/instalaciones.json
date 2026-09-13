@@ -103,5 +103,27 @@
       "foto": "VIENIQUA/sistema.png",
       "logo": "VIENIQUA/logo.webp"
     }
+  },
+  {
+    "slug": "digital-phones",
+    "nombre": "Digital Phones",
+    "sector": { "es": "Tienda de tecnología", "en": "Consumer electronics store" },
+    "foto": "/images/casos/digitalphones-inventario.webp",
+    "logo": "/images/casos/digitalphones-logo.webp",
+    "logoW": 447,
+    "logoH": 447,
+    "anchoFoto": 1000,
+    "alt": {
+      "es": "Pantalla de Hub Enterprise con el inventario de Digital Phones filtrado por modelo de celular",
+      "en": "Hub Enterprise on screen at Digital Phones, with the inventory filtered down to one phone model"
+    },
+    "texto": {
+      "es": "Seis variantes del mismo modelo, cada una con su existencia y su almacén. Se escribe el modelo en el buscador y aparece qué color queda, sin bajar a la bodega a contar.",
+      "en": "Six variants of the same model, each with its own stock and warehouse. Type the model into the search box and you see which color is left, without walking down to the stockroom to count."
+    },
+    "origen": {
+      "foto": "DIGITAL PHONES/vlcsnap-2026-09-13-12h32m20s529.png",
+      "logo": "DIGITAL PHONES/logo.jpg"
+    }
   }
 ]
