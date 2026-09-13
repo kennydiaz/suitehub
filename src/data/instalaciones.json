@@ -50,16 +50,58 @@
     "logoW": 384,
     "logoH": 384,
     "alt": {
-      "es": "Kiosco de autoservicio montado en la pared del local de il Nonno",
-      "en": "Self-service kiosk mounted on the wall at il Nonno"
+      "es": "Kiosco de autoservicio de il Nonno con las categorías del menú en pantalla",
+      "en": "Self-service kiosk at il Nonno showing the menu categories on screen"
     },
     "texto": {
       "es": "Un kiosco en la pared para que el cliente arme su pedido sin hacer fila. El mostrador queda libre para quien prefiere pedir de frente.",
       "en": "A wall kiosk so customers can build their own order instead of queuing. The counter stays free for whoever would rather order in person."
     },
     "origen": {
-      "foto": "ILNONNO/sistema (1).jpg",
+      "foto": "ILNONNO/sistema.png",
       "logo": "ILNONNO/logo_ilnonno.png"
+    }
+  },
+  {
+    "slug": "los-tacos-de-villa",
+    "nombre": "Los Tacos de Villa",
+    "sector": { "es": "Taquería mexicana", "en": "Mexican taqueria" },
+    "foto": "/images/casos/tacosdevilla-pos.webp",
+    "logo": "/images/casos/tacosdevilla-logo.webp",
+    "logoW": 512,
+    "logoH": 391,
+    "alt": {
+      "es": "Dos personas del equipo de Los Tacos de Villa frente al tablero de inicio de HubPOS en el mostrador",
+      "en": "Two of the Los Tacos de Villa team at the counter, looking at the HubPOS home dashboard"
+    },
+    "texto": {
+      "es": "Todo el negocio como botones grandes en la pantalla de inicio: mesas, caja, delivery, menú, facturación y reportes. Nadie tiene que buscar dónde queda cada cosa.",
+      "en": "The whole business as big buttons on the home screen: tables, register, delivery, menu, invoicing and reports. Nobody has to hunt for where anything lives."
+    },
+    "origen": {
+      "foto": "TACOS DE VILLA/sistema.png",
+      "logo": "TACOS DE VILLA/logo (1).png"
+    }
+  },
+  {
+    "slug": "vieni-qua",
+    "nombre": "Vieni Quá",
+    "sector": { "es": "Restaurante italiano", "en": "Italian restaurant" },
+    "foto": "/images/casos/vieniqua-pos.webp",
+    "logo": "/images/casos/vieniqua-logo.webp",
+    "logoW": 512,
+    "logoH": 235,
+    "alt": {
+      "es": "Colaboradora de Vieni Quá Albrook con una tablet que muestra el tablero de HubPOS, junto al monitor con el plano del salón",
+      "en": "A Vieni Quá Albrook team member holding a tablet with the HubPOS dashboard, next to the monitor showing the floor plan"
+    },
+    "texto": {
+      "es": "El salón de veintisiete mesas en el monitor y el resumen del día en la tablet. Quien está en caja y quien está en el piso miran lo mismo, al mismo tiempo.",
+      "en": "A twenty-seven table floor on the monitor and the day's numbers on the tablet. Whoever is at the register and whoever is working the floor see the same thing, at the same time."
+    },
+    "origen": {
+      "foto": "VIENIQUA/sistema.png",
+      "logo": "VIENIQUA/logo.webp"
     }
   }
 ]

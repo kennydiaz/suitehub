@@ -35,9 +35,10 @@ import instalaciones from '../data/instalaciones.json';
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Flex en vez de rejilla: con 4, 5 o 7 tarjetas la ultima fila queda centrada. -->
+      <div class="flex flex-wrap justify-center gap-6">
         {instalaciones.map((sitio, i) => (
-          <figure class={`card-glass overflow-hidden reveal reveal-delay-${(i % 3) + 1}`}>
+          <figure class={`card-glass overflow-hidden reveal reveal-delay-${(i % 3) + 1} basis-full sm:basis-[calc(50%-0.75rem)] lg:basis-[calc(33.333%-1rem)]`}>
             <img src={sitio.foto} alt={sitio.alt.es} width="1400" height="1050" loading="lazy" decoding="async"
                  class="w-full aspect-[4/3] object-cover" />
             <figcaption class="p-6">
