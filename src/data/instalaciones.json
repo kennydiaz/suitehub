@@ -156,8 +156,8 @@
     "logoW": 225,
     "logoH": 225,
     "alt": {
-      "es": "Terminal con HubPOS en la caja de Global Mart, con las góndolas de licores y perfumería al fondo",
-      "en": "A HubPOS terminal at the Global Mart register, with the liquor and perfume aisles behind it"
+      "es": "Terminal con HUB Market en la caja de Global Mart, con las góndolas de licores y perfumería al fondo",
+      "en": "A HUB Market terminal at the Global Mart register, with the liquor and perfume aisles behind it"
     },
     "texto": {
       "es": "Licores, perfumes y abarrotes se cobran por la misma caja, y cada venta descuenta del inventario. Un solo mostrador para categorías que antes se llevaban aparte.",
@@ -185,8 +185,12 @@
       "en": "Orders get built by category on the screen and the receipt prints with its QR code, without a second system to invoice from."
     },
     "origen": {
-      "foto": "CASI CIELO/vlcsnap-2026-09-13-13h02m55s212.png"
-    }
+      "foto": "CASI CIELO/vlcsnap-2026-09-13-13h02m55s212.png",
+      "logo": "CASI CIELO/logo.webp"
+    },
+    "logo": "/images/casos/casicielo-logo.webp",
+    "logoW": 512,
+    "logoH": 512
   },
   {
     "slug": "la-areperia",
