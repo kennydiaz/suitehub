@@ -288,29 +288,5 @@
       "foto": "OJUEEE/_DSC1829.JPG",
       "logo": "OJUEEE/logo (1).webp"
     }
-  },
-  {
-    "slug": "play-makers",
-    "nombre": "Play Makers",
-    "sector": {
-      "es": "Sport bar y lounge",
-      "en": "Sports bar and lounge"
-    },
-    "foto": "/images/casos/playmakers-barra.webp",
-    "logo": "/images/casos/playmakers-logo.webp",
-    "logoW": 512,
-    "logoH": 512,
-    "alt": {
-      "es": "Tablet sobre la barra de Play Makers con HubPOS abierto en la carta de bebidas, con las botellas del bar al fondo",
-      "en": "A tablet on the bar at Play Makers with HubPOS open on the drinks menu, the bottles behind it"
-    },
-    "texto": {
-      "es": "La tablet vive en la barra y muestra la carta en fotos, con el precio de cada trago a la vista. El pedido entra ahí mismo, entre una ronda y la siguiente, sin comanda de papel.",
-      "en": "The tablet lives on the bar and shows the menu in pictures, each drink with its price. Orders go in right there, between one round and the next, with no paper tickets."
-    },
-    "origen": {
-      "foto": "PLAY MAKERS/Screenshot_20260913_144038_Photos.jpg",
-      "logo": "PLAY MAKERS/logo.jpg"
-    }
   }
 ]
