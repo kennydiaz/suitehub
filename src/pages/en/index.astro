@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import instalaciones from '../../data/instalaciones.json';
 
 const verticals = [
   { key: 'taller',     name: 'HUB Workshop',    desc: 'Auto repair shops',         icon: 'fa-screwdriver-wrench' },
@@ -74,9 +75,8 @@ const clients = [
   { name: 'KM Seguridad',        sector: 'Security',                logo: '/images/kmslogo.webp' },
   { name: 'CVE Panamá',          sector: 'Technology distribution', logo: '/images/cvepanama_web.webp' },
   { name: 'Inversiones Fortune', sector: 'International consulting', logo: '/images/fortune.webp' },
-  { name: 'Alessia Express',     sector: 'Italian pizzeria',        logo: '/images/casos/alessia-logo.webp' },
-  { name: 'Candela',             sector: 'Coffee shop',             logo: '/images/casos/candela-logo.webp' },
-  { name: 'il Nonno',            sector: 'Coffee shop and bakery',  logo: '/images/casos/ilnonno-logo.webp' },
+  // The ones below come straight from instalaciones.json, the same file behind /casos.
+  ...instalaciones.map((s) => ({ name: s.nombre, sector: s.sector.en, logo: s.logo })),
 ];
 
 const stats = [
@@ -285,8 +285,8 @@ const stats = [
           Businesses already <span class="text-gradient">running on SuiteHub.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          A repair shop, a shoe cleaning service, a security company, a distributor, a consultancy,
-          a pizzeria and two coffee shops. Different trades, the same system underneath.
+          Food, auto repair, cleaning, distribution, security and consulting.
+          Trades with nothing in common, and the same system underneath.
         </p>
       </div>
 

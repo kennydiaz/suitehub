@@ -1,38 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const instalaciones = [
-  {
-    nombre: 'Alessia Express',
-    sector: 'Pizzería italiana',
-    foto: '/images/casos/alessia-pos.webp',
-    alt: 'Terminal táctil con HubPOS mostrando el plano de mesas del salón de Alessia Express',
-    logo: '/images/casos/alessia-logo.webp',
-    logoW: 384,
-    logoH: 384,
-    texto: 'El salón entero en una pantalla: qué mesa está ocupada, quién la atiende y cuánto lleva esperando. El pedido se toma desde el celular, ahí mismo en el patio.',
-  },
-  {
-    nombre: 'Candela',
-    sector: 'Cafetería',
-    foto: '/images/casos/candela-pos.webp',
-    alt: 'Monitor con HubPOS mostrando el menú de bebidas calientes de Candela con foto de cada producto',
-    logo: '/images/casos/candela-logo.webp',
-    logoW: 512,
-    logoH: 187,
-    texto: 'Cada bebida con su foto y sus opciones de leche, tamaño y azúcar. Un barista nuevo cobra bien desde el primer turno, sin memorizar la carta.',
-  },
-  {
-    nombre: 'il Nonno',
-    sector: 'Cafetería y pastelería',
-    foto: '/images/casos/ilnonno-kiosco.webp',
-    alt: 'Kiosco de autoservicio montado en la pared del local de il Nonno',
-    logo: '/images/casos/ilnonno-logo.webp',
-    logoW: 384,
-    logoH: 384,
-    texto: 'Un kiosco en la pared para que el cliente arme su pedido sin hacer fila. El mostrador queda libre para quien prefiere pedir de frente.',
-  },
-];
+import instalaciones from '../data/instalaciones.json';
 ---
 <BaseLayout title="Casos de éxito · SuiteHub" description="QS Express, Clean Factory, KM Seguridad, CVE Panamá e Inversiones Fortune: PYMEs de Panamá y Venezuela que ampliaron su capacidad operativa con SuiteHub. La mayoría de los clientes en producción están en Panamá. En USA llevamos muchos años, en 2026 llegamos a España y con Inversiones Fortune arranca el lanzamiento en Venezuela.">
 
@@ -49,6 +18,46 @@ const instalaciones = [
           Aquí están los números que vieron estos negocios después de implementar SuiteHub. La mayoría de nuestros clientes en producción están en <strong class="text-white">Panamá</strong>. En USA llevamos muchos años, en 2026 llegamos a España y con <strong class="text-white">Inversiones Fortune</strong> empieza el <strong class="text-white">lanzamiento en Venezuela</strong>.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Instalaciones con foto real -->
+  <section id="en-sitio" class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="eyebrow">En sitio</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mt-3">
+          Así se ve SuiteHub <span class="text-gradient">cuando ya está trabajando.</span>
+        </h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">
+          Fotos que nos mandan los propios negocios desde su mostrador. Sin montajes ni pantallas de demostración:
+          es el sistema corriendo un día cualquiera, en el local de siempre.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {instalaciones.map((sitio, i) => (
+          <figure class={`card-glass overflow-hidden reveal reveal-delay-${(i % 3) + 1}`}>
+            <img src={sitio.foto} alt={sitio.alt.es} width="1400" height="1050" loading="lazy" decoding="async"
+                 class="w-full aspect-[4/3] object-cover" />
+            <figcaption class="p-6">
+              <div class="flex items-center gap-3">
+                <img src={sitio.logo} alt={sitio.nombre} width={sitio.logoW} height={sitio.logoH} loading="lazy"
+                     class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
+                <div>
+                  <div class="text-sm font-display font-semibold text-white">{sitio.nombre}</div>
+                  <div class="text-xs text-ink-400">{sitio.sector.es}</div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-ink-300 leading-relaxed">{sitio.texto.es}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <p class="text-center mt-10 text-sm text-ink-400">
+        Cada negocio usa la versión de su oficio. <a href="/verticales" class="text-brand-400 hover:text-brand-300">Mira los verticales</a>.
+      </p>
     </div>
   </section>
 
@@ -617,46 +626,6 @@ const instalaciones = [
           </div>
         </div>
       </article>
-    </div>
-  </section>
-
-  <!-- Instalaciones con foto real -->
-  <section id="en-sitio" class="section bg-navy-900/30">
-    <div class="wrap">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="eyebrow">En sitio</span>
-        <h2 class="text-3xl lg:text-4xl font-display font-bold mt-3">
-          Tres negocios de comida, <span class="text-gradient">tres formas de usar el mismo POS.</span>
-        </h2>
-        <p class="mt-5 text-ink-300 leading-relaxed">
-          No son montajes. Son fotos del día a día en locales de Panamá: una pizzería que atiende el salón desde el celular,
-          una cafetería que cobra con el menú en foto y un local que puso un kiosco para que el cliente pida solo.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        {instalaciones.map((sitio) => (
-          <figure class="card-glass overflow-hidden reveal">
-            <img src={sitio.foto} alt={sitio.alt} width="1400" height="1050" loading="lazy" decoding="async"
-                 class="w-full aspect-[4/3] object-cover" />
-            <figcaption class="p-6">
-              <div class="flex items-center gap-3">
-                <img src={sitio.logo} alt={sitio.nombre} width={sitio.logoW} height={sitio.logoH} loading="lazy"
-                     class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
-                <div>
-                  <div class="text-sm font-display font-semibold text-white">{sitio.nombre}</div>
-                  <div class="text-xs text-ink-400">{sitio.sector}</div>
-                </div>
-              </div>
-              <p class="mt-4 text-sm text-ink-300 leading-relaxed">{sitio.texto}</p>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <p class="text-center mt-10 text-sm text-ink-400">
-        Los tres corren <a href="/verticales/restaurant" class="text-brand-400 hover:text-brand-300">HUB Restaurant</a> sobre la misma base de SuiteHub.
-      </p>
     </div>
   </section>
 

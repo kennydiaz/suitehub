@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "alessia-express",
+    "nombre": "Alessia Express",
+    "sector": { "es": "Pizzería italiana", "en": "Italian pizzeria" },
+    "foto": "/images/casos/alessia-pos.webp",
+    "logo": "/images/casos/alessia-logo.webp",
+    "logoW": 384,
+    "logoH": 384,
+    "alt": {
+      "es": "Terminal táctil con HubPOS mostrando el plano de mesas del salón de Alessia Express",
+      "en": "Touch terminal running HubPOS with the table map of the Alessia Express dining room"
+    },
+    "texto": {
+      "es": "El salón entero en una pantalla: qué mesa está ocupada, quién la atiende y cuánto lleva esperando. El pedido se toma desde el celular, ahí mismo en el patio.",
+      "en": "The whole floor on one screen: which table is busy, who is serving it and how long it has been waiting. Orders go in from a phone, right there in the patio."
+    },
+    "origen": {
+      "foto": "BELLA ALESSIA/sistema1.jpg",
+      "logo": "BELLA ALESSIA/logo_bella_alessia.png"
+    }
+  },
+  {
+    "slug": "candela",
+    "nombre": "Candela",
+    "sector": { "es": "Cafetería", "en": "Coffee shop" },
+    "foto": "/images/casos/candela-pos.webp",
+    "logo": "/images/casos/candela-logo.webp",
+    "logoW": 512,
+    "logoH": 187,
+    "alt": {
+      "es": "Monitor con HubPOS mostrando el menú de bebidas calientes de Candela con foto de cada producto",
+      "en": "Monitor running HubPOS with the Candela hot drinks menu, each item with its own photo"
+    },
+    "texto": {
+      "es": "Cada bebida con su foto y sus opciones de leche, tamaño y azúcar. Un barista nuevo cobra bien desde el primer turno, sin memorizar la carta.",
+      "en": "Every drink with its photo and its milk, size and sugar options. A new barista rings it up correctly on day one, without memorizing the menu."
+    },
+    "origen": {
+      "foto": "CANDELA/sistema2.png",
+      "logo": "CANDELA/logo_candela.png"
+    }
+  },
+  {
+    "slug": "il-nonno",
+    "nombre": "il Nonno",
+    "sector": { "es": "Cafetería y pastelería", "en": "Coffee shop and bakery" },
+    "foto": "/images/casos/ilnonno-kiosco.webp",
+    "logo": "/images/casos/ilnonno-logo.webp",
+    "logoW": 384,
+    "logoH": 384,
+    "alt": {
+      "es": "Kiosco de autoservicio montado en la pared del local de il Nonno",
+      "en": "Self-service kiosk mounted on the wall at il Nonno"
+    },
+    "texto": {
+      "es": "Un kiosco en la pared para que el cliente arme su pedido sin hacer fila. El mostrador queda libre para quien prefiere pedir de frente.",
+      "en": "A wall kiosk so customers can build their own order instead of queuing. The counter stays free for whoever would rather order in person."
+    },
+    "origen": {
+      "foto": "ILNONNO/sistema (1).jpg",
+      "logo": "ILNONNO/logo_ilnonno.png"
+    }
+  }
+]

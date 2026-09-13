@@ -1,38 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const sites = [
-  {
-    name: 'Alessia Express',
-    sector: 'Italian pizzeria',
-    photo: '/images/casos/alessia-pos.webp',
-    alt: 'Touch terminal running HubPOS with the table map of the Alessia Express dining room',
-    logo: '/images/casos/alessia-logo.webp',
-    logoW: 384,
-    logoH: 384,
-    text: 'The whole floor on one screen: which table is busy, who is serving it and how long it has been waiting. Orders go in from a phone, right there in the patio.',
-  },
-  {
-    name: 'Candela',
-    sector: 'Coffee shop',
-    photo: '/images/casos/candela-pos.webp',
-    alt: 'Monitor running HubPOS with the Candela hot drinks menu, each item with its own photo',
-    logo: '/images/casos/candela-logo.webp',
-    logoW: 512,
-    logoH: 187,
-    text: 'Every drink with its photo and its milk, size and sugar options. A new barista rings it up correctly on day one, without memorizing the menu.',
-  },
-  {
-    name: 'il Nonno',
-    sector: 'Coffee shop and bakery',
-    photo: '/images/casos/ilnonno-kiosco.webp',
-    alt: 'Self-service kiosk mounted on the wall at il Nonno',
-    logo: '/images/casos/ilnonno-logo.webp',
-    logoW: 384,
-    logoH: 384,
-    text: 'A wall kiosk so customers can build their own order instead of queuing. The counter stays free for whoever would rather order in person.',
-  },
-];
+import sites from '../../data/instalaciones.json';
 ---
 <BaseLayout title="Case studies · SuiteHub" description="QS Express, Clean Factory, KM Seguridad, CVE Panamá and Inversiones Fortune: small businesses in Panama and Venezuela that grew their operating capacity with SuiteHub. Most live clients are in Panama. We've been in the USA for many years, we launched in Spain in 2026, and Inversiones Fortune kicks off our early launch in Venezuela.">
 
@@ -49,6 +18,46 @@ const sites = [
           Here are the numbers these businesses saw after rolling out SuiteHub. Most of our live clients are in <strong class="text-white">Panama</strong>. We've been in the USA for many years, we launched in Spain in 2026, and <strong class="text-white">Inversiones Fortune</strong> kicks off our <strong class="text-white">early launch in Venezuela</strong>.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Real installations -->
+  <section id="on-site" class="section bg-navy-900/30">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="eyebrow">On site</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mt-3">
+          This is SuiteHub <span class="text-gradient">once it is on the job.</span>
+        </h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">
+          Photos the businesses themselves send us from their counter. No mockups, no demo screens:
+          it is the system running on an ordinary day, in the venue it lives in.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sites.map((site, i) => (
+          <figure class={`card-glass overflow-hidden reveal reveal-delay-${(i % 3) + 1}`}>
+            <img src={site.foto} alt={site.alt.en} width="1400" height="1050" loading="lazy" decoding="async"
+                 class="w-full aspect-[4/3] object-cover" />
+            <figcaption class="p-6">
+              <div class="flex items-center gap-3">
+                <img src={site.logo} alt={site.nombre} width={site.logoW} height={site.logoH} loading="lazy"
+                     class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
+                <div>
+                  <div class="text-sm font-display font-semibold text-white">{site.nombre}</div>
+                  <div class="text-xs text-ink-400">{site.sector.en}</div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-ink-300 leading-relaxed">{site.texto.en}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <p class="text-center mt-10 text-sm text-ink-400">
+        Each business runs the edition built for its trade. <a href="/en/verticals" class="text-brand-400 hover:text-brand-300">See the verticals</a>.
+      </p>
     </div>
   </section>
 
@@ -612,46 +621,6 @@ const sites = [
           </div>
         </div>
       </article>
-    </div>
-  </section>
-
-  <!-- Real installations -->
-  <section id="on-site" class="section bg-navy-900/30">
-    <div class="wrap">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="eyebrow">On site</span>
-        <h2 class="text-3xl lg:text-4xl font-display font-bold mt-3">
-          Three food businesses, <span class="text-gradient">three ways to run the same POS.</span>
-        </h2>
-        <p class="mt-5 text-ink-300 leading-relaxed">
-          No mockups here. These are everyday photos from real venues in Panama: a pizzeria working the floor from a phone,
-          a coffee shop ringing up from a picture menu and a place that put in a kiosk so customers can order on their own.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        {sites.map((site) => (
-          <figure class="card-glass overflow-hidden reveal">
-            <img src={site.photo} alt={site.alt} width="1400" height="1050" loading="lazy" decoding="async"
-                 class="w-full aspect-[4/3] object-cover" />
-            <figcaption class="p-6">
-              <div class="flex items-center gap-3">
-                <img src={site.logo} alt={site.name} width={site.logoW} height={site.logoH} loading="lazy"
-                     class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
-                <div>
-                  <div class="text-sm font-display font-semibold text-white">{site.name}</div>
-                  <div class="text-xs text-ink-400">{site.sector}</div>
-                </div>
-              </div>
-              <p class="mt-4 text-sm text-ink-300 leading-relaxed">{site.text}</p>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <p class="text-center mt-10 text-sm text-ink-400">
-        All three run <a href="/en/verticals/restaurant" class="text-brand-400 hover:text-brand-300">HUB Restaurant</a> on the same SuiteHub core.
-      </p>
     </div>
   </section>
 

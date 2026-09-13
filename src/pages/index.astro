@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import instalaciones from '../data/instalaciones.json';
 
 const verticales = [
   { key: 'taller',     name: 'HUB Taller',     desc: 'Talleres mecánicos',         icon: 'fa-screwdriver-wrench' },
@@ -74,9 +75,8 @@ const clientes = [
   { name: 'KM Seguridad',        sector: 'Seguridad',                 logo: '/images/kmslogo.webp' },
   { name: 'CVE Panamá',          sector: 'Distribución tecnológica',  logo: '/images/cvepanama_web.webp' },
   { name: 'Inversiones Fortune', sector: 'Consultoría internacional', logo: '/images/fortune.webp' },
-  { name: 'Alessia Express',     sector: 'Pizzería italiana',         logo: '/images/casos/alessia-logo.webp' },
-  { name: 'Candela',             sector: 'Cafetería',                 logo: '/images/casos/candela-logo.webp' },
-  { name: 'il Nonno',            sector: 'Cafetería y pastelería',    logo: '/images/casos/ilnonno-logo.webp' },
+  // Los de abajo salen solos de instalaciones.json, el mismo archivo que alimenta /casos.
+  ...instalaciones.map((s) => ({ name: s.nombre, sector: s.sector.es, logo: s.logo })),
 ];
 
 const stats = [
@@ -297,8 +297,8 @@ const stats = [
           Negocios que <span class="text-gradient">ya trabajan con SuiteHub.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          Un taller, una limpieza de zapatos, una empresa de seguridad, una distribuidora, una consultora,
-          una pizzería y dos cafeterías. Oficios distintos, el mismo sistema por dentro.
+          Comida, taller, limpieza, distribución, seguridad y consultoría.
+          Oficios que no se parecen en nada, y por dentro el mismo sistema.
         </p>
       </div>
 
