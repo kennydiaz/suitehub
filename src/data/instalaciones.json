@@ -240,5 +240,53 @@
       "foto": "TORTILLAS MAYA/vlcsnap-2026-09-13-13h05m23s540.png",
       "logo": "TORTILLAS MAYA/logo_tortillas_maya.jpg"
     }
+  },
+  {
+    "slug": "el-green-room",
+    "nombre": "El Green Room",
+    "sector": {
+      "es": "Bar y restaurante",
+      "en": "Bar and restaurant"
+    },
+    "foto": "/images/casos/greenroom-salones.webp",
+    "logo": "/images/casos/greenroom-logo.webp",
+    "logoW": 512,
+    "logoH": 103,
+    "alt": {
+      "es": "Pantalla de HubPOS en la barra de El Green Room, con las pestañas del bistro y los tres salones",
+      "en": "HubPOS on screen behind the bar at El Green Room, with tabs for the bistro and the three dining rooms"
+    },
+    "texto": {
+      "es": "Cuatro ambientes en la misma pantalla: el bistro y tres salones, cada uno con su propio plano. Quien está en caja cambia de zona con un toque, sin cerrar nada.",
+      "en": "Four rooms on one screen: the bistro and three dining areas, each with its own floor plan. Whoever is at the register switches zones with one tap, closing nothing."
+    },
+    "origen": {
+      "foto": "GREEN ROOM/vlcsnap-2026-09-13-13h53m53s283.png",
+      "logo": "GREEN ROOM/logo.png"
+    }
+  },
+  {
+    "slug": "ojueee",
+    "nombre": "Ojueee",
+    "sector": {
+      "es": "Comida panameña",
+      "en": "Panamanian home cooking"
+    },
+    "foto": "/images/casos/ojueee-mesas.webp",
+    "logo": "/images/casos/ojueee-logo.webp",
+    "logoW": 445,
+    "logoH": 286,
+    "alt": {
+      "es": "Tablet con HubPOS mostrando las mesas activas del salón de Ojueee, con el comedor de fondo",
+      "en": "A tablet running HubPOS with the active tables at Ojueee, the dining room behind it"
+    },
+    "texto": {
+      "es": "Diecinueve mesas, nueve ocupadas, y el tiempo que lleva cada una a la vista. El encargado recorre el salón con la tablet en la mano en vez de volver a la caja a preguntar.",
+      "en": "Nineteen tables, nine of them busy, and how long each one has been sitting there. The manager walks the floor with the tablet instead of going back to the register to ask."
+    },
+    "origen": {
+      "foto": "OJUEEE/_DSC1829.JPG",
+      "logo": "OJUEEE/logo (1).webp"
+    }
   }
 ]
