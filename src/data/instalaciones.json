@@ -308,5 +308,25 @@
       "es": "En la barra, alguien toma el pedido desde una tableta con el catálogo de bebidas en imágenes: cada botella tiene su foto para ubicarla rápido. Así el pedido llega completo a caja sin tener que memorizar el menú.",
       "en": "At the bar, someone takes an order from a tablet showing the drink catalog with photos, so each bottle is easy to spot. The order goes to the register complete without having to memorize the menu."
     }
+  },
+  {
+    "slug": "morada",
+    "nombre": "Morada",
+    "sector": {
+      "es": "Negocio de servicios",
+      "en": "Service business"
+    },
+    "foto": "/images/casos/morada.webp",
+    "logo": "/images/casos/morada-logo.webp",
+    "logoW": 512,
+    "logoH": 512,
+    "alt": {
+      "es": "Una mujer de camisa morada escribe en el teclado de una laptop apoyada en un atril, con un cuadro emergente de pedido abierto en la pantalla.",
+      "en": "A woman in a purple shirt types on a laptop keyboard propped on a stand, with an order pop up window open on the screen."
+    },
+    "texto": {
+      "es": "Una persona toma un pedido desde una laptop, con un cuadro emergente para registrar los datos del cliente y el método de pago. Así el negocio queda con el registro completo antes de cerrar la venta.",
+      "en": "Someone takes an order from a laptop, with a pop up window to record the customer's details and payment method. That way the business keeps a full record before closing the sale."
+    }
   }
 ]
