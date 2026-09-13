@@ -1,89 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getEdiciones } from '../lib/catalog';
-
-const ediciones = [
-  {
-    key:    'lite',
-    name:   'Hub Lite',
-    tagline:'Empieza ya',
-    price:  24,
-    color:  'from-sky-500/20 to-sky-500/5',
-    border: 'border-sky-500/30',
-    accent: 'text-sky-400',
-    ideal:  'Negocio pequeño, 1 sucursal, hasta 3 usuarios',
-    features: [
-      'Clientes, productos, servicios',
-      'Cotizaciones y facturas electrónicas',
-      'Hasta 500 registros',
-      'Soporte por email',
-    ],
-  },
-  {
-    key:    'core',
-    name:   'Hub Core',
-    tagline:'Más vendido',
-    price:  48,
-    featured: true,
-    color:  'from-cyan-500/20 to-cyan-500/5',
-    border: 'border-cyan-500/30',
-    accent: 'text-cyan-400',
-    ideal:  '1 sucursal, 8 usuarios, FE certificada',
-    features: [
-      'Todo de Hub Lite +',
-      'Facturación electrónica DGI',
-      'CxC con recibos multi-factura',
-      'Inventario y movimientos',
-      'Reportes listos para usar',
-    ],
-  },
-  {
-    key:     'pro',
-    name:    'Hub Pro',
-    tagline: 'Personalizable',
-    price:   64,
-    color:   'from-brand-600/30 to-brand-600/5',
-    border:  'border-brand-500/50',
-    accent:  'text-brand-300',
-    ideal:   '1 sucursal, 20 usuarios, automatizaciones y API',
-    features: [
-      'Todo de Hub Core +',
-      'Tu marca: logo, colores y dominio',
-      'API REST + 100K calls/mes',
-      'Automatizaciones programadas',
-      'WhatsApp Business integrado',
-      'Reportes SQL y plantillas PDF',
-    ],
-  },
-  {
-    key:    'enterprise',
-    name:   'Hub Enterprise',
-    tagline:'Sucursales',
-    price:  196,
-    color:  'from-amber-500/20 to-amber-500/5',
-    border: 'border-amber-500/30',
-    accent: 'text-amber-400',
-    ideal:  'Multi-sucursal: principal incluida, +$64/mes por adicional',
-    features: [
-      'Todo de Hub Pro +',
-      'Multi-sucursal con consolidación',
-      'Cualquier vertical incluido',
-      'White-label completo',
-      'API ilimitada',
-      'Onboarding dedicado',
-    ],
-  },
-];
-
-// Precios desde el catálogo canónico del panel (con respaldo local).
-const _ed = await getEdiciones();
-for (const e of ediciones) {
-  const c = _ed[e.key];
-  if (!c) continue;
-  e.price = c.precio_mes;
-  if ('yearly' in e) e.yearly = c.precio_anio;
-  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
-}
 
 const verticales = [
   { key: 'taller',     name: 'HUB Taller',     desc: 'Talleres mecánicos',         icon: 'fa-screwdriver-wrench' },
@@ -159,13 +75,6 @@ const stats = [
   { num: '<24h', label: 'Respuesta de soporte' },
 ];
 
-const tour = [
-  { label: 'Mesas',    icon: 'fa-chair',         img: '/images/products/restaurant/shot-mesas.webp',    alt: 'Mapa de mesas del salón en tiempo real en SuiteHub' },
-  { label: 'Pedido',   icon: 'fa-utensils',      img: '/images/products/restaurant/shot-pedido.webp',   alt: 'Toma de pedido por mesa en SuiteHub' },
-  { label: 'Cocina',   icon: 'fa-fire-burner',   img: '/images/products/restaurant/shot-cocina.webp',   alt: 'Pantalla de cocina (KDS) de SuiteHub' },
-  { label: 'Cobro',    icon: 'fa-cash-register', img: '/images/products/restaurant/shot-cobro.webp',    alt: 'Cobro con factura electrónica en SuiteHub' },
-  { label: 'Reportes', icon: 'fa-chart-line',    img: '/images/products/restaurant/shot-reportes.webp', alt: 'Reportes de ventas y operación en SuiteHub' },
-];
 ---
 <BaseLayout
   title="SuiteHub: gestión y facturación electrónica para pymes"
@@ -208,9 +117,9 @@ const tour = [
               <i class="fa-brands fa-whatsapp text-xl"></i>
               Habla con un asesor
             </a>
-            <a href="#ediciones" class="btn-secondary text-base">
+            <a href="/precios" class="btn-secondary text-base">
               Ver ediciones y precios
-              <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
+              <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
             </a>
           </div>
 
@@ -271,50 +180,33 @@ const tour = [
   </section>
 
   <!-- ════════════════════════════════════════════════════════════
-       TOUR DE PRODUCTO (tabs)
+       UNA PLATAFORMA, MUCHOS NEGOCIOS
        ════════════════════════════════════════════════════════════ -->
   <section class="section">
     <div class="wrap">
       <div class="text-center mb-12 max-w-2xl mx-auto">
-        <span class="eyebrow">Un vistazo por dentro</span>
+        <span class="eyebrow">Una sola plataforma</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          Así se ve <span class="text-gradient">SuiteHub en el día a día.</span>
+          Tu negocio y el de al lado, <span class="text-gradient">en el mismo sistema.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          Recorre HUB Restaurant pantalla por pantalla, desde las mesas y la cocina hasta el cobro y los reportes.
-          Cada vertical está armado para su tipo de negocio.
+          Un restaurante, un taller, un salón, una tienda, una clínica y un hotel trabajan distinto,
+          y cada uno usa su propia versión de SuiteHub. Por dentro es el mismo motor: ventas,
+          inventario, facturación electrónica y reportes en un solo lugar.
         </p>
       </div>
 
-      <div class="reveal max-w-5xl mx-auto" data-tour>
-        <!-- Tabs -->
-        <div class="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="Recorrido por SuiteHub">
-          {tour.map((t, i) => (
-            <button type="button" role="tab" data-tour-tab={i} aria-selected={i === 0 ? 'true' : 'false'} class="tour-tab">
-              <i class={`fa-solid ${t.icon}`}></i> {t.label}
-            </button>
-          ))}
-        </div>
+      <figure class="reveal max-w-5xl mx-auto">
+        <img src="/images/suitehub-ecosistema.webp"
+             alt="Ilustración de una manzana de negocios (restaurante, tienda, taller, salón, clínica, gimnasio y hotel) conectados al sistema SuiteHub"
+             width="1200" height="670" loading="lazy" decoding="async"
+             class="w-full block rounded-2xl border border-white/10 shadow-2xl" />
+      </figure>
 
-        <!-- Panels -->
-        <div class="browser-mock relative">
-          <div class="browser-bar">
-            <span class="bg-rose-400/70"></span>
-            <span class="bg-amber-400/70"></span>
-            <span class="bg-emerald-400/70"></span>
-            <span class="ml-3 text-[10px] text-ink-500 truncate">app.suitehub.net · HUB Restaurant</span>
-          </div>
-          {tour.map((t, i) => (
-            <img src={t.img} alt={t.alt} width="1440" height="900" loading="lazy"
-                 data-tour-panel={i} class={`w-full block ${i === 0 ? '' : 'hidden'}`} />
-          ))}
-        </div>
-
-        <p class="text-center mt-6 text-sm text-ink-400">
-          ¿Quieres verlo con los datos de tu negocio?
-          <a href="https://wa.me/50766326006?text=Hola%2C%20quiero%20una%20demo%20de%20SuiteHub" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300 font-medium">Pide una demo en vivo</a>.
-        </p>
-      </div>
+      <p class="text-center mt-8 text-sm text-ink-400">
+        Hay una versión para cada oficio.
+        <a href="/verticales" class="text-brand-400 hover:text-brand-300 font-medium">Mira los verticales</a>.
+      </p>
     </div>
   </section>
 
@@ -343,59 +235,6 @@ const tour = [
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════
-       EDICIONES
-       ════════════════════════════════════════════════════════════ -->
-  <section id="ediciones" class="section relative">
-    <div class="wrap">
-      <div class="text-center mb-16 max-w-2xl mx-auto">
-        <span class="eyebrow">La familia SuiteHub</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          Cuatro ediciones. <span class="text-gradient">Crece sin migrar.</span>
-        </h2>
-        <p class="mt-5 text-ink-300 leading-relaxed">
-          Empieza con lo básico y sube de edición cuando lo necesites. Tus datos se quedan
-          donde están y tu equipo sigue trabajando en el mismo sistema que ya conoce.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {ediciones.map((t, i) => (
-          <div class={`reveal reveal-delay-${i + 1} relative rounded-2xl border ${t.border} bg-gradient-to-b ${t.color} p-6 ${t.featured ? 'lg:scale-105 lg:-mt-2 shadow-glow' : 'lift'}`}>
-            {t.featured && (
-              <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-[10px] font-semibold uppercase tracking-wider rounded-full">
-                Más popular
-              </span>
-            )}
-            <div class={`text-xs uppercase tracking-wider ${t.accent} font-semibold mb-2`}>{t.tagline}</div>
-            <h3 class="text-2xl font-display font-bold mb-1">{t.name}</h3>
-            <p class="text-xs text-ink-400 mb-5 min-h-[36px]">{t.ideal}</p>
-            <div class="mb-6">
-              <span class="text-4xl font-display font-bold">${t.price}</span>
-              <span class="text-sm text-ink-400">/mes</span>
-            </div>
-            <ul class="space-y-2.5 mb-7 text-sm">
-              {t.features.map(f => (
-                <li class="flex items-start gap-2">
-                  <i class={`fa-solid fa-check ${t.accent} mt-1 text-xs`}></i>
-                  <span class="text-ink-200">{f}</span>
-                </li>
-              ))}
-            </ul>
-            <a href={`/productos#${t.key}`}
-               class={`block w-full text-center py-2.5 rounded-xl text-sm font-medium transition-colors ${t.featured ? 'bg-brand-600 hover:bg-brand-500 text-white' : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'}`}>
-              Ver detalles
-            </a>
-          </div>
-        ))}
-      </div>
-
-      <p class="text-center mt-10 text-sm text-ink-400">
-        16% de descuento en el pago anual · Puesta en marcha gratis · Sin contratos largos
-      </p>
     </div>
   </section>
 
@@ -432,71 +271,6 @@ const tour = [
         <a href="/verticales" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 text-sm font-medium">
           Conoce todos los verticales <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════
-       CASO DE ÉXITO QS EXPRESS
-       ════════════════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="card-glass overflow-hidden grid lg:grid-cols-5 gap-0">
-        <div class="lg:col-span-3 p-10 lg:p-14 flex flex-col justify-center">
-          <span class="eyebrow">
-            <i class="fa-solid fa-star mr-1"></i> Caso de éxito
-          </span>
-          <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-            QS Express ahora atiende <span class="text-gradient">el triple de órdenes</span>
-          </h2>
-          <p class="text-ink-300 leading-relaxed mb-8">
-            Es un taller mecánico de La Chorrera con más de 20 años de experiencia, que llevaba
-            todo en Excel y libretas. A las 4 semanas ya emitían facturas electrónicas,
-            recibían citas por internet y sabían en qué iba cada orden de trabajo.
-          </p>
-
-          <div class="grid grid-cols-3 gap-6 mb-8">
-            <div>
-              <div class="text-3xl font-display font-bold text-brand-400">3×</div>
-              <div class="text-xs text-ink-400 mt-1">Más órdenes/día</div>
-            </div>
-            <div>
-              <div class="text-3xl font-display font-bold text-brand-400">0</div>
-              <div class="text-xs text-ink-400 mt-1">Rechazos DGI</div>
-            </div>
-            <div>
-              <div class="text-3xl font-display font-bold text-brand-400">4 sem</div>
-              <div class="text-xs text-ink-400 mt-1">Para estar 100%</div>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-3">
-            <a href="/casos#qs-express" class="btn-secondary">
-              Leer el caso completo <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
-            <a href="https://tallerqsexpress.com" target="_blank" rel="noopener"
-               class="btn-ghost text-sm">
-              Ver tallerqsexpress.com <i class="fa-solid fa-external-link text-xs"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Visual del caso -->
-        <div class="lg:col-span-2 bg-gradient-to-br from-navy-800 to-navy-900 p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-white/5">
-          <div class="text-center">
-            <img src="/images/tallerqsexpress.png" alt="QS Express" width="300" height="271"
-                 class="w-32 mx-auto mb-4 rounded-xl bg-white/5 p-3" />
-            <div class="flex items-center justify-center gap-2.5 mb-4">
-              <img src="/images/products/taller/badge.svg" alt="HUB Taller" class="w-12 h-12" />
-              <span class="font-display font-bold text-xl">HUB Taller</span>
-            </div>
-            <div class="text-sm text-ink-400">Taller mecánico en La Chorrera</div>
-            <div class="mt-4 inline-flex items-center gap-2 text-xs text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full">
-              <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-              Activo desde 2026
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -577,7 +351,7 @@ const tour = [
   </section>
 
   <!-- ════════════════════════════════════════════════════════════
-       Micro-interacciones: count-up · tabs del tour · tilt del héroe
+       Micro-interacciones: count-up · tilt del héroe
        ════════════════════════════════════════════════════════════ -->
   <script is:inline>
     (function () {
@@ -610,19 +384,6 @@ const tour = [
         }, { threshold: 0.4 });
         counters.forEach((el) => obs.observe(el));
       }
-
-      /* Tabs del tour de producto */
-      document.querySelectorAll('[data-tour]').forEach((tour) => {
-        const tabs = tour.querySelectorAll('[data-tour-tab]');
-        const panels = tour.querySelectorAll('[data-tour-panel]');
-        tabs.forEach((tab) => {
-          tab.addEventListener('click', () => {
-            const idx = tab.getAttribute('data-tour-tab');
-            tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
-            panels.forEach((p) => p.classList.toggle('hidden', p.getAttribute('data-tour-panel') !== idx));
-          });
-        });
-      });
 
       /* Tilt 3D del héroe (solo puntero fino, sin reduced-motion) */
       const tilt = document.getElementById('hero-tilt');

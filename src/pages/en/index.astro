@@ -1,89 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEdiciones } from '../../lib/catalog';
-
-const editions = [
-  {
-    key:    'lite',
-    name:   'Hub Lite',
-    tagline:'Get started',
-    price:  24,
-    color:  'from-sky-500/20 to-sky-500/5',
-    border: 'border-sky-500/30',
-    accent: 'text-sky-400',
-    ideal:  'Small business, 1 location, up to 3 users',
-    features: [
-      'Customers, products, services',
-      'Quotes and electronic invoices',
-      'Up to 500 records',
-      'Email support',
-    ],
-  },
-  {
-    key:    'core',
-    name:   'Hub Core',
-    tagline:'Best seller',
-    price:  48,
-    featured: true,
-    color:  'from-cyan-500/20 to-cyan-500/5',
-    border: 'border-cyan-500/30',
-    accent: 'text-cyan-400',
-    ideal:  '1 location, 8 users, certified e-invoicing',
-    features: [
-      'Everything in Hub Lite +',
-      'DGI electronic invoicing',
-      'AR with multi-invoice receipts',
-      'Inventory and stock movements',
-      'Pre-built reports',
-    ],
-  },
-  {
-    key:     'pro',
-    name:    'Hub Pro',
-    tagline: 'Customizable',
-    price:   64,
-    color:   'from-brand-600/30 to-brand-600/5',
-    border:  'border-brand-500/50',
-    accent:  'text-brand-300',
-    ideal:   '1 location, 20 users, automations and API',
-    features: [
-      'Everything in Hub Core +',
-      'Your brand: logo, colors and domain',
-      'REST API + 100K calls/month',
-      'Scheduled automations',
-      'Built-in WhatsApp Business',
-      'SQL reports and PDF templates',
-    ],
-  },
-  {
-    key:    'enterprise',
-    name:   'Hub Enterprise',
-    tagline:'Branches',
-    price:  196,
-    color:  'from-amber-500/20 to-amber-500/5',
-    border: 'border-amber-500/30',
-    accent: 'text-amber-400',
-    ideal:  'Multi-branch: main location included, +$64/mo per extra branch',
-    features: [
-      'Everything in Hub Pro +',
-      'Multi-branch with consolidation',
-      'Any vertical included',
-      'Full white-label',
-      'Unlimited API',
-      'Dedicated onboarding',
-    ],
-  },
-];
-
-// Prices from the panel's canonical catalog (with local fallback).
-const _ed = await getEdiciones();
-for (const e of editions) {
-  const c = _ed[e.key];
-  if (!c) continue;
-  e.price = c.precio_mes;
-  if ('yearly' in e) e.yearly = c.precio_anio;
-  if ('priceYearly' in e) e.priceYearly = c.precio_anio;
-}
 
 const verticals = [
   { key: 'taller',     name: 'HUB Workshop',    desc: 'Auto repair shops',         icon: 'fa-screwdriver-wrench' },
@@ -159,13 +75,6 @@ const stats = [
   { num: '<24h', label: 'Support response time' },
 ];
 
-const tour = [
-  { label: 'Tables',   icon: 'fa-chair',         img: '/images/products/restaurant/shot-mesas.webp',    alt: 'Real-time dining room table map in SuiteHub' },
-  { label: 'Order',    icon: 'fa-utensils',      img: '/images/products/restaurant/shot-pedido.webp',   alt: 'Taking a table order in SuiteHub' },
-  { label: 'Kitchen',  icon: 'fa-fire-burner',   img: '/images/products/restaurant/shot-cocina.webp',   alt: 'SuiteHub kitchen display screen (KDS)' },
-  { label: 'Checkout', icon: 'fa-cash-register', img: '/images/products/restaurant/shot-cobro.webp',    alt: 'Checkout with an electronic invoice in SuiteHub' },
-  { label: 'Reports',  icon: 'fa-chart-line',    img: '/images/products/restaurant/shot-reportes.webp', alt: 'Sales and operations reports in SuiteHub' },
-];
 ---
 <BaseLayout
   title="SuiteHub: business management and e-invoicing for SMBs"
@@ -205,9 +114,9 @@ const tour = [
               <i class="fa-brands fa-whatsapp text-xl"></i>
               Talk to our team
             </a>
-            <a href="#ediciones" class="btn-secondary text-base">
+            <a href="/en/pricing" class="btn-secondary text-base">
               See editions and pricing
-              <i class="fa-solid fa-arrow-down text-xs ml-1"></i>
+              <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
             </a>
           </div>
 
@@ -266,49 +175,32 @@ const tour = [
     </div>
   </section>
 
-  <!-- PRODUCT TOUR (tabs) -->
+  <!-- ONE PLATFORM, MANY BUSINESSES -->
   <section class="section">
     <div class="wrap">
       <div class="text-center mb-12 max-w-2xl mx-auto">
-        <span class="eyebrow">A look inside</span>
+        <span class="eyebrow">One platform</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          Here's <span class="text-gradient">SuiteHub on a normal day.</span>
+          Your business and the one next door, <span class="text-gradient">on the same system.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          Click through HUB Restaurant screen by screen, from the tables and the kitchen to checkout and reports.
-          Each vertical is set up for its own kind of business.
+          A restaurant, a repair shop, a salon, a store, a clinic and a hotel all work differently,
+          and each one runs its own version of SuiteHub. Underneath, it is the same engine: sales,
+          inventory, electronic invoicing and reports in one place.
         </p>
       </div>
 
-      <div class="reveal max-w-5xl mx-auto" data-tour>
-        <!-- Tabs -->
-        <div class="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="SuiteHub tour">
-          {tour.map((t, i) => (
-            <button type="button" role="tab" data-tour-tab={i} aria-selected={i === 0 ? 'true' : 'false'} class="tour-tab">
-              <i class={`fa-solid ${t.icon}`}></i> {t.label}
-            </button>
-          ))}
-        </div>
+      <figure class="reveal max-w-5xl mx-auto">
+        <img src="/images/suitehub-ecosistema.webp"
+             alt="Illustration of a block of businesses (restaurant, store, repair shop, salon, clinic, gym and hotel) connected to the SuiteHub system"
+             width="1200" height="670" loading="lazy" decoding="async"
+             class="w-full block rounded-2xl border border-white/10 shadow-2xl" />
+      </figure>
 
-        <!-- Panels -->
-        <div class="browser-mock relative">
-          <div class="browser-bar">
-            <span class="bg-rose-400/70"></span>
-            <span class="bg-amber-400/70"></span>
-            <span class="bg-emerald-400/70"></span>
-            <span class="ml-3 text-[10px] text-ink-500 truncate">app.suitehub.net · HUB Restaurant</span>
-          </div>
-          {tour.map((t, i) => (
-            <img src={t.img} alt={t.alt} width="1440" height="900" loading="lazy"
-                 data-tour-panel={i} class={`w-full block ${i === 0 ? '' : 'hidden'}`} />
-          ))}
-        </div>
-
-        <p class="text-center mt-6 text-sm text-ink-400">
-          Want to see it with your own data?
-          <a href="https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20a%20SuiteHub%20demo" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300 font-medium">Book a live demo</a>.
-        </p>
-      </div>
+      <p class="text-center mt-8 text-sm text-ink-400">
+        There is a version for every trade.
+        <a href="/en/verticals" class="text-brand-400 hover:text-brand-300 font-medium">See the verticals</a>.
+      </p>
     </div>
   </section>
 
@@ -335,57 +227,6 @@ const tour = [
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- EDITIONS -->
-  <section id="ediciones" class="section relative">
-    <div class="wrap">
-      <div class="text-center mb-16 max-w-2xl mx-auto">
-        <span class="eyebrow">The SuiteHub family</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          Four editions. <span class="text-gradient">Grow without migrating.</span>
-        </h2>
-        <p class="mt-5 text-ink-300 leading-relaxed">
-          Start with the basics and move up to another edition when you need it. Your data stays
-          where it is, and your team keeps working in the same system they already know.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {editions.map((t, i) => (
-          <div class={`reveal reveal-delay-${i + 1} relative rounded-2xl border ${t.border} bg-gradient-to-b ${t.color} p-6 ${t.featured ? 'lg:scale-105 lg:-mt-2 shadow-glow' : 'lift'}`}>
-            {t.featured && (
-              <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-600 text-white text-[10px] font-semibold uppercase tracking-wider rounded-full">
-                Most popular
-              </span>
-            )}
-            <div class={`text-xs uppercase tracking-wider ${t.accent} font-semibold mb-2`}>{t.tagline}</div>
-            <h3 class="text-2xl font-display font-bold mb-1">{t.name}</h3>
-            <p class="text-xs text-ink-400 mb-5 min-h-[36px]">{t.ideal}</p>
-            <div class="mb-6">
-              <span class="text-4xl font-display font-bold">${t.price}</span>
-              <span class="text-sm text-ink-400">/mo</span>
-            </div>
-            <ul class="space-y-2.5 mb-7 text-sm">
-              {t.features.map(f => (
-                <li class="flex items-start gap-2">
-                  <i class={`fa-solid fa-check ${t.accent} mt-1 text-xs`}></i>
-                  <span class="text-ink-200">{f}</span>
-                </li>
-              ))}
-            </ul>
-            <a href={`/en/products#${t.key}`}
-               class={`block w-full text-center py-2.5 rounded-xl text-sm font-medium transition-colors ${t.featured ? 'bg-brand-600 hover:bg-brand-500 text-white' : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'}`}>
-              See details
-            </a>
-          </div>
-        ))}
-      </div>
-
-      <p class="text-center mt-10 text-sm text-ink-400">
-        16% off when paid annually · Free setup · No long-term contracts
-      </p>
     </div>
   </section>
 
@@ -420,68 +261,6 @@ const tour = [
         <a href="/en/verticals" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 text-sm font-medium">
           Explore all verticals <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDY -->
-  <section class="section">
-    <div class="wrap">
-      <div class="card-glass overflow-hidden grid lg:grid-cols-5 gap-0">
-        <div class="lg:col-span-3 p-10 lg:p-14 flex flex-col justify-center">
-          <span class="eyebrow">
-            <i class="fa-solid fa-star mr-1"></i> Case study
-          </span>
-          <h2 class="text-3xl lg:text-4xl font-display font-bold mb-5">
-            QS Express now handles <span class="text-gradient">three times the orders</span>
-          </h2>
-          <p class="text-ink-300 leading-relaxed mb-8">
-            This auto repair shop in La Chorrera has more than 20 years in business and used to run
-            everything on Excel and paper notebooks. Within 4 weeks they were issuing electronic invoices,
-            taking appointments online and keeping track of every work order.
-          </p>
-
-          <div class="grid grid-cols-3 gap-6 mb-8">
-            <div>
-              <div class="text-3xl font-display font-bold text-brand-400">3×</div>
-              <div class="text-xs text-ink-400 mt-1">More orders/day</div>
-            </div>
-            <div>
-              <div class="text-3xl font-display font-bold text-brand-400">0</div>
-              <div class="text-xs text-ink-400 mt-1">DGI rejections</div>
-            </div>
-            <div>
-              <div class="text-3xl font-display font-bold text-brand-400">4 wks</div>
-              <div class="text-xs text-ink-400 mt-1">To go fully live</div>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-3">
-            <a href="/en/cases#qs-express" class="btn-secondary">
-              Read the full case <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
-            <a href="https://tallerqsexpress.com" target="_blank" rel="noopener"
-               class="btn-ghost text-sm">
-              Visit tallerqsexpress.com <i class="fa-solid fa-external-link text-xs"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-2 bg-gradient-to-br from-navy-800 to-navy-900 p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-white/5">
-          <div class="text-center">
-            <img src="/images/tallerqsexpress.png" alt="QS Express" width="300" height="271"
-                 class="w-32 mx-auto mb-4 rounded-xl bg-white/5 p-3" />
-            <div class="flex items-center justify-center gap-2.5 mb-4">
-              <img src="/images/products/taller/badge.svg" alt="HUB Workshop" class="w-12 h-12" />
-              <span class="font-display font-bold text-xl">HUB Workshop</span>
-            </div>
-            <div class="text-sm text-ink-400">Auto repair shop in La Chorrera</div>
-            <div class="mt-4 inline-flex items-center gap-2 text-xs text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full">
-              <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-              Active since 2026
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -557,7 +336,7 @@ const tour = [
     </div>
   </section>
 
-  <!-- Micro-interactions: count-up · product tour tabs · hero tilt -->
+  <!-- Micro-interactions: count-up · hero tilt -->
   <script is:inline>
     (function () {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -589,19 +368,6 @@ const tour = [
         }, { threshold: 0.4 });
         counters.forEach((el) => obs.observe(el));
       }
-
-      /* Product tour tabs */
-      document.querySelectorAll('[data-tour]').forEach((tour) => {
-        const tabs = tour.querySelectorAll('[data-tour-tab]');
-        const panels = tour.querySelectorAll('[data-tour-panel]');
-        tabs.forEach((tab) => {
-          tab.addEventListener('click', () => {
-            const idx = tab.getAttribute('data-tour-tab');
-            tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
-            panels.forEach((p) => p.classList.toggle('hidden', p.getAttribute('data-tour-panel') !== idx));
-          });
-        });
-      });
 
       /* Hero 3D tilt (fine pointer only, no reduced-motion) */
       const tilt = document.getElementById('hero-tilt');
