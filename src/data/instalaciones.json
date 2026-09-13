@@ -176,6 +176,9 @@
       "en": "Brunch and coffee"
     },
     "foto": "/images/casos/casicielo-caja.webp",
+    "logo": "/images/casos/casicielo-logo.webp",
+    "logoW": 512,
+    "logoH": 512,
     "alt": {
       "es": "Pantalla de HubPOS en la caja de Casi Cielo mientras se entrega el recibo recién impreso con su código QR",
       "en": "HubPOS on screen at the Casi Cielo register while the freshly printed receipt with its QR code is handed over"
@@ -187,10 +190,7 @@
     "origen": {
       "foto": "CASI CIELO/vlcsnap-2026-09-13-13h02m55s212.png",
       "logo": "CASI CIELO/logo.webp"
-    },
-    "logo": "/images/casos/casicielo-logo.webp",
-    "logoW": 512,
-    "logoH": 512
+    }
   },
   {
     "slug": "la-areperia",
