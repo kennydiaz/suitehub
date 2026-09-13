@@ -68,6 +68,14 @@ const testimonials = [
   },
 ];
 
+const clients = [
+  { name: 'QS Express',          sector: 'Auto repair shop',        logo: '/images/tallerqsexpress.png' },
+  { name: 'Clean Factory',       sector: 'Shoe cleaning',           logo: '/images/cleanfactory.webp' },
+  { name: 'KM Seguridad',        sector: 'Security',                logo: '/images/kmslogo.webp' },
+  { name: 'CVE Panamá',          sector: 'Technology distribution', logo: '/images/cvepanama_web.webp' },
+  { name: 'Inversiones Fortune', sector: 'International consulting', logo: '/images/fortune.webp' },
+];
+
 const stats = [
   { num: '+50',  label: 'Active SMBs (Panama)' },
   { num: '5',    label: 'Target countries (PA · US · VE · ES · CO)' },
@@ -265,17 +273,33 @@ const stats = [
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- CLIENTS -->
   <section class="section bg-navy-900/30">
     <div class="wrap">
-      <div class="text-center mb-16 max-w-2xl mx-auto">
-        <span class="eyebrow">What clients say</span>
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="eyebrow">Who already uses it</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-          Built <span class="text-gradient">with the people who use it.</span>
+          Businesses already <span class="text-gradient">running on SuiteHub.</span>
         </h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">
+          A repair shop, a shoe cleaning service, a security company, a distributor and a consultancy.
+          Different trades, the same system underneath.
+        </p>
       </div>
 
-      <div class="max-w-2xl mx-auto">
+      <ul class="flex flex-wrap justify-center gap-5 sm:gap-6">
+        {clients.map((c, i) => (
+          <li class={`reveal reveal-delay-${(i % 4) + 1} text-center`}>
+            <div class="w-32 h-20 sm:w-36 sm:h-24 rounded-2xl bg-white p-3.5 flex items-center justify-center">
+              <img src={c.logo} alt={c.name} width="144" height="96" loading="lazy" class="max-h-full max-w-full object-contain" />
+            </div>
+            <div class="mt-2.5 text-xs font-medium text-ink-200">{c.name}</div>
+            <div class="text-[11px] text-ink-500">{c.sector}</div>
+          </li>
+        ))}
+      </ul>
+
+      <div class="max-w-2xl mx-auto mt-14">
         {testimonials.map((t, i) => (
           <figure class={`reveal reveal-delay-${i + 1} card-glass p-7 flex flex-col`}>
             <div class="text-brand-400 text-2xl mb-4">
@@ -299,6 +323,12 @@ const stats = [
             </figcaption>
           </figure>
         ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/en/cases" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 text-sm font-medium">
+          Read the full case studies <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
       </div>
     </div>
   </section>
