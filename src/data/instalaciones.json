@@ -288,5 +288,25 @@
       "foto": "OJUEEE/_DSC1829.JPG",
       "logo": "OJUEEE/logo (1).webp"
     }
+  },
+  {
+    "slug": "play-makers",
+    "nombre": "Play Makers",
+    "sector": {
+      "es": "SportBar y licorería",
+      "en": "SportBar and liquor store"
+    },
+    "foto": "/images/casos/play-makers.webp",
+    "logo": "/images/casos/play-makers-logo.webp",
+    "logoW": 512,
+    "logoH": 512,
+    "alt": {
+      "es": "Una persona sostiene una tableta con el catálogo de bebidas en imágenes de un sistema de punto de venta, sobre una barra de mármol.",
+      "en": "A person holds a tablet showing an image-based drinks catalog from a point-of-sale system, over a marble bar counter."
+    },
+    "texto": {
+      "es": "En la barra, alguien toma el pedido desde una tableta con el catálogo de bebidas en imágenes: cada botella tiene su foto para ubicarla rápido. Así el pedido llega completo a caja sin tener que memorizar el menú.",
+      "en": "At the bar, someone takes an order from a tablet showing the drink catalog with photos, so each bottle is easy to spot. The order goes to the register complete without having to memorize the menu."
+    }
   }
 ]
