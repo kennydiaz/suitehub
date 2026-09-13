@@ -48,7 +48,9 @@ for (const sitio of instalaciones) {
     continue;
   }
   const deFoto = sitio.anchoFoto ? { ...FOTO, ancho: sitio.anchoFoto } : FOTO;
-  for (const [campo, ajustes] of [['foto', deFoto], ['logo', LOGO]]) {
+  // El logo es opcional: hay negocios que todavia no nos han pasado el suyo.
+  const campos = sitio.logo ? [['foto', deFoto], ['logo', LOGO]] : [['foto', deFoto]];
+  for (const [campo, ajustes] of campos) {
     const origen = join(ORIGENES, sitio.origen[campo]);
     const destino = join(PUBLICO, sitio[campo]);
     if (!existsSync(origen)) {

@@ -2,7 +2,10 @@
   {
     "slug": "alessia-express",
     "nombre": "Alessia Express",
-    "sector": { "es": "Pizzería italiana", "en": "Italian pizzeria" },
+    "sector": {
+      "es": "Pizzería italiana",
+      "en": "Italian pizzeria"
+    },
     "foto": "/images/casos/alessia-pos.webp",
     "logo": "/images/casos/alessia-logo.webp",
     "logoW": 384,
@@ -23,7 +26,10 @@
   {
     "slug": "candela",
     "nombre": "Candela",
-    "sector": { "es": "Cafetería", "en": "Coffee shop" },
+    "sector": {
+      "es": "Cafetería",
+      "en": "Coffee shop"
+    },
     "foto": "/images/casos/candela-pos.webp",
     "logo": "/images/casos/candela-logo.webp",
     "logoW": 512,
@@ -44,7 +50,10 @@
   {
     "slug": "il-nonno",
     "nombre": "il Nonno",
-    "sector": { "es": "Cafetería y pastelería", "en": "Coffee shop and bakery" },
+    "sector": {
+      "es": "Cafetería y pastelería",
+      "en": "Coffee shop and bakery"
+    },
     "foto": "/images/casos/ilnonno-kiosco.webp",
     "logo": "/images/casos/ilnonno-logo.webp",
     "logoW": 384,
@@ -65,7 +74,10 @@
   {
     "slug": "los-tacos-de-villa",
     "nombre": "Los Tacos de Villa",
-    "sector": { "es": "Taquería mexicana", "en": "Mexican taqueria" },
+    "sector": {
+      "es": "Taquería mexicana",
+      "en": "Mexican taqueria"
+    },
     "foto": "/images/casos/tacosdevilla-pos.webp",
     "logo": "/images/casos/tacosdevilla-logo.webp",
     "logoW": 512,
@@ -86,7 +98,10 @@
   {
     "slug": "vieni-qua",
     "nombre": "Vieni Quá",
-    "sector": { "es": "Restaurante italiano", "en": "Italian restaurant" },
+    "sector": {
+      "es": "Restaurante italiano",
+      "en": "Italian restaurant"
+    },
     "foto": "/images/casos/vieniqua-pos.webp",
     "logo": "/images/casos/vieniqua-logo.webp",
     "logoW": 512,
@@ -107,7 +122,10 @@
   {
     "slug": "digital-phones",
     "nombre": "Digital Phones",
-    "sector": { "es": "Tienda de tecnología", "en": "Consumer electronics store" },
+    "sector": {
+      "es": "Tienda de tecnología",
+      "en": "Consumer electronics store"
+    },
     "foto": "/images/casos/digitalphones-inventario.webp",
     "logo": "/images/casos/digitalphones-logo.webp",
     "logoW": 447,
@@ -124,6 +142,99 @@
     "origen": {
       "foto": "DIGITAL PHONES/vlcsnap-2026-09-13-12h32m20s529.png",
       "logo": "DIGITAL PHONES/logo.jpg"
+    }
+  },
+  {
+    "slug": "global-mart",
+    "nombre": "Global Mart",
+    "sector": {
+      "es": "Minimarket y licorería",
+      "en": "Minimarket and liquor store"
+    },
+    "foto": "/images/casos/globalmart-caja.webp",
+    "logo": "/images/casos/globalmart-logo.webp",
+    "logoW": 225,
+    "logoH": 225,
+    "alt": {
+      "es": "Terminal con HubPOS en la caja de Global Mart, con las góndolas de licores y perfumería al fondo",
+      "en": "A HubPOS terminal at the Global Mart register, with the liquor and perfume aisles behind it"
+    },
+    "texto": {
+      "es": "Licores, perfumes y abarrotes se cobran por la misma caja, y cada venta descuenta del inventario. Un solo mostrador para categorías que antes se llevaban aparte.",
+      "en": "Liquor, perfume and groceries all ring up at the same register, and every sale comes off inventory. One counter for categories that used to be tracked separately."
+    },
+    "origen": {
+      "foto": "GLOBAL MART/vlcsnap-2026-09-13-12h56m41s690.png",
+      "logo": "GLOBAL MART/logo.jpg"
+    }
+  },
+  {
+    "slug": "casi-cielo",
+    "nombre": "Casi Cielo",
+    "sector": {
+      "es": "Brunch y cafetería",
+      "en": "Brunch and coffee"
+    },
+    "foto": "/images/casos/casicielo-caja.webp",
+    "alt": {
+      "es": "Pantalla de HubPOS en la caja de Casi Cielo mientras se entrega el recibo recién impreso con su código QR",
+      "en": "HubPOS on screen at the Casi Cielo register while the freshly printed receipt with its QR code is handed over"
+    },
+    "texto": {
+      "es": "El pedido se arma por categorías en la pantalla y el recibo sale impreso con su código QR, sin pasar por un segundo sistema para facturar.",
+      "en": "Orders get built by category on the screen and the receipt prints with its QR code, without a second system to invoice from."
+    },
+    "origen": {
+      "foto": "CASI CIELO/vlcsnap-2026-09-13-13h02m55s212.png"
+    }
+  },
+  {
+    "slug": "la-areperia",
+    "nombre": "La Arepería Panamá",
+    "sector": {
+      "es": "Arepas venezolanas",
+      "en": "Venezuelan arepas"
+    },
+    "foto": "/images/casos/areperia-local.webp",
+    "logo": "/images/casos/areperia-logo.webp",
+    "logoW": 236,
+    "logoH": 191,
+    "alt": {
+      "es": "El local de La Arepería Panamá con el kiosco de autoservicio afuera, junto a la ventanilla de despacho",
+      "en": "The La Arepería Panamá stand with the self-service kiosk outside, next to the pickup window"
+    },
+    "texto": {
+      "es": "El kiosco vive afuera, en su propia base, al lado de la ventanilla. Se puede pedir en la pantalla o de frente, y los dos caminos entran al mismo sistema.",
+      "en": "The kiosk lives outdoors on its own stand, right next to the window. You can order on the screen or in person, and both paths land in the same system."
+    },
+    "origen": {
+      "foto": "LA AREPERIA/vlcsnap-2026-09-13-13h24m45s124.png",
+      "logo": "LA AREPERIA/logo.png"
+    }
+  },
+  {
+    "slug": "tortillas-maya",
+    "nombre": "Tortillas Maya",
+    "sector": {
+      "es": "Producción de tortillas",
+      "en": "Tortilla maker"
+    },
+    "foto": "/images/casos/tortillasmaya-factura.webp",
+    "logo": "/images/casos/tortillasmaya-logo.webp",
+    "logoW": 447,
+    "logoH": 447,
+    "anchoFoto": 1000,
+    "alt": {
+      "es": "Pantalla de Hub Core en el mostrador de Tortillas Maya con una factura nueva a medio llenar",
+      "en": "Hub Core on screen at the Tortillas Maya counter, with a new invoice half filled in"
+    },
+    "texto": {
+      "es": "La factura se arma en el mostrador: se elige el cliente, su lista de precios y la orden de compra, y el total sale con el ITBMS ya calculado.",
+      "en": "Invoices get built right at the counter: pick the customer, their price list and the purchase order, and the total comes out with tax already worked in."
+    },
+    "origen": {
+      "foto": "TORTILLAS MAYA/vlcsnap-2026-09-13-13h05m23s540.png",
+      "logo": "TORTILLAS MAYA/logo_tortillas_maya.jpg"
     }
   }
 ]

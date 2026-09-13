@@ -76,7 +76,7 @@ const clients = [
   { name: 'CVE Panamá',          sector: 'Technology distribution', logo: '/images/cvepanama_web.webp' },
   { name: 'Inversiones Fortune', sector: 'International consulting', logo: '/images/fortune.webp' },
   // The ones below come straight from instalaciones.json, the same file behind /casos.
-  ...instalaciones.map((s) => ({ name: s.nombre, sector: s.sector.en, logo: s.logo })),
+  ...instalaciones.filter((s) => s.logo).map((s) => ({ name: s.nombre, sector: s.sector.en, logo: s.logo })),
 ];
 
 const stats = [

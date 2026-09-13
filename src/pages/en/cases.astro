@@ -43,8 +43,10 @@ import sites from '../../data/instalaciones.json';
                  class="w-full aspect-[4/3] object-cover" />
             <figcaption class="p-6">
               <div class="flex items-center gap-3">
-                <img src={site.logo} alt={site.nombre} width={site.logoW} height={site.logoH} loading="lazy"
-                     class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
+                {site.logo && (
+                  <img src={site.logo} alt={site.nombre} width={site.logoW} height={site.logoH} loading="lazy"
+                       class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
+                )}
                 <div>
                   <div class="text-sm font-display font-semibold text-white">{site.nombre}</div>
                   <div class="text-xs text-ink-400">{site.sector.en}</div>
