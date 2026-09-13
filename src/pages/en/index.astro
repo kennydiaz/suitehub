@@ -74,6 +74,9 @@ const clients = [
   { name: 'KM Seguridad',        sector: 'Security',                logo: '/images/kmslogo.webp' },
   { name: 'CVE Panamá',          sector: 'Technology distribution', logo: '/images/cvepanama_web.webp' },
   { name: 'Inversiones Fortune', sector: 'International consulting', logo: '/images/fortune.webp' },
+  { name: 'Alessia Express',     sector: 'Italian pizzeria',        logo: '/images/casos/alessia-logo.webp' },
+  { name: 'Candela',             sector: 'Coffee shop',             logo: '/images/casos/candela-logo.webp' },
+  { name: 'il Nonno',            sector: 'Coffee shop and bakery',  logo: '/images/casos/ilnonno-logo.webp' },
 ];
 
 const stats = [
@@ -282,12 +285,12 @@ const stats = [
           Businesses already <span class="text-gradient">running on SuiteHub.</span>
         </h2>
         <p class="mt-5 text-ink-300 leading-relaxed">
-          A repair shop, a shoe cleaning service, a security company, a distributor and a consultancy.
-          Different trades, the same system underneath.
+          A repair shop, a shoe cleaning service, a security company, a distributor, a consultancy,
+          a pizzeria and two coffee shops. Different trades, the same system underneath.
         </p>
       </div>
 
-      <ul class="flex flex-wrap justify-center gap-5 sm:gap-6">
+      <ul class="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 justify-items-center max-w-3xl mx-auto">
         {clients.map((c, i) => (
           <li class={`reveal reveal-delay-${(i % 4) + 1} text-center`}>
             <div class="w-32 h-20 sm:w-36 sm:h-24 rounded-2xl bg-white p-3.5 flex items-center justify-center">
