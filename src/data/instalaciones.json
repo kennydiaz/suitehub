@@ -328,5 +328,25 @@
       "es": "Una persona toma un pedido desde una laptop, con un cuadro emergente para registrar los datos del cliente y el método de pago. Así el negocio queda con el registro completo antes de cerrar la venta.",
       "en": "Someone takes an order from a laptop, with a pop up window to record the customer's details and payment method. That way the business keeps a full record before closing the sale."
     }
+  },
+  {
+    "slug": "mio-y-tuyo",
+    "nombre": "Mio y Tuyo",
+    "sector": {
+      "es": "Restaurante y bar",
+      "en": "Restaurant and bar"
+    },
+    "foto": "/images/casos/mio-y-tuyo.webp",
+    "logo": "/images/casos/mio-y-tuyo-logo.webp",
+    "logoW": 512,
+    "logoH": 512,
+    "alt": {
+      "es": "Monitor táctil sobre la barra de un restaurante mostrando el mapa de mesas de SuiteHub, con el salón de mesas altas al fondo.",
+      "en": "Touchscreen monitor on a restaurant counter showing the SuiteHub table map, with the high-top dining area in the background."
+    },
+    "texto": {
+      "es": "El mapa del salón completo en el monitor de caja: dos zonas, cada mesa con su número y su estado. Quien está en la barra ve de una sola mirada qué mesa está libre y cuál ya tiene pedido abierto.",
+      "en": "The full floor map on the counter monitor: two zones, every table with its number and status. Whoever is at the bar can see at a glance which tables are free and which already have an open order."
+    }
   }
 ]
