@@ -2084,7 +2084,7 @@
     "market": {
       "slug": "market",
       "nombre": "Hub Market",
-      "publicado": false,
+      "publicado": true,
       "acento": "#65A30D",
       "imagenes_base": "https://suitehub.net/images/products/market/",
       "sitio": {
@@ -2092,13 +2092,19 @@
         "en": "https://suitehub.net/en/verticals/market"
       },
       "hero": {
-        "imagen": "web-1280.webp",
-        "ancho": 1280,
-        "alto": 594
+        "imagen": "pos.webp",
+        "ancho": 2852,
+        "alto": 1436
       },
       "es": {
         "titulo": "HUB Market",
-        "tagline": "El punto de venta para tu minimarket o supermercado 🛒⚡",
+        "eyebrow": "Minimarkets y supermercados pequeños",
+        "titular": {
+          "antes": "El minimarket deja de vivir en ",
+          "destacado": "la cabeza del dueño",
+          "despues": ""
+        },
+        "tagline": "El punto de venta para tu minimarket o supermercado",
         "intro": "Un solo sistema con POS táctil, inventario con alertas de stock y caducidad, caja con arqueo, compras y reportes. Hecho para Panamá 🇵🇦",
         "chips": [
           "🛒 Venta rápida",
@@ -2109,95 +2115,295 @@
         "problema": "😩 ¿Cuaderno para el fiado, precios de memoria y sin saber qué te queda en bodega?",
         "solucion": "😎 Vende con lector y balanza, y controla tu inventario al instante",
         "solucion_sub": "Cobras en la pantalla táctil, el inventario te avisa cuando algo se acaba o está por vencer y al final del día cuadras la caja. Además registras las compras y sacas tus reportes. Hecho para Panamá 🇵🇦",
+        "recorrido_titulo": "Un día de tienda, pantalla por pantalla",
         "recorrido": [
           {
             "imagen": "pos.webp",
             "tipo": "desktop",
-            "ancho": 2732,
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La caja, que es donde se gana o se pierde el día",
+            "texto": "Pantalla táctil pensada para cobrar rápido: se escanea, se toca la categoría o se busca por nombre. El carrito calcula el impuesto, el descuento y el vuelto mientras el cliente espera.",
+            "puntos": [
+              "Escaneo continuo: el lector escribe como un teclado, sin configurar nada",
+              "Pago mixto en la misma venta: efectivo, tarjeta, Yappy o crédito",
+              "Ventas en espera, para atender al de atrás sin perder el carrito"
+            ]
+          },
+          {
+            "imagen": "pos-peso.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Vender por peso sin sacar la calculadora",
+            "texto": "La balanza imprime su etiqueta y el lector la lee. El sistema saca del mismo código el producto y el peso, y lo cobra al precio por kilo que tenga cargado.",
+            "puntos": [
+              "Lee el código de barras con el peso embebido que graba tu balanza",
+              "El formato se configura una vez, con un probador en vivo",
+              "Sirve igual para las balanzas que embeben el precio en vez del peso"
+            ]
+          },
+          {
+            "imagen": "pantalla.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Lo que ve el cliente desde el otro lado",
+            "texto": "Un segundo monitor en el mostrador. El cliente ve cada cosa que se le pasa, con su precio, y al final el total en grande. Se acabó la discusión de «eso no cuesta eso».",
+            "puntos": [
+              "Cada producto aparece al escanearlo, con su precio unitario",
+              "Total y cantidad de artículos, legibles desde el otro lado del mostrador",
+              "Entre venta y venta puede pasar tus propias imágenes"
+            ]
+          },
+          {
+            "imagen": "pos-tablet.webp",
+            "tipo": "tablet",
+            "ancho": 2048,
             "alto": 1536,
-            "titulo": "🛒 Pantalla táctil: escanea, cobra y entrega el vuelto al instante",
-            "texto": "",
-            "puntos": []
+            "titulo": "La misma caja en una tableta",
+            "texto": "No hace falta una computadora de escritorio. La pantalla está pensada para el dedo, así que una tableta con un lector es una caja completa.",
+            "puntos": [
+              "Botones grandes, pensados para tocar y no para apuntar",
+              "Sirve de caja auxiliar en hora pico o de inventario que camina",
+              "Todas las cajas ven el mismo stock y el mismo catálogo"
+            ]
           },
           {
             "imagen": "dashboard.webp",
             "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "📊 Tu día de un vistazo: ventas, ganancia y alertas",
-            "texto": "",
-            "puntos": []
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Tu día, sin abrir un reporte",
+            "texto": "Ventas de hoy, ganancia, qué se está vendiendo y qué se está por acabar. Cada cifra lleva a la pantalla donde se resuelve.",
+            "puntos": [
+              "Ventas y margen del día, no solo el total facturado",
+              "Productos bajo mínimo y lotes por vencer, arriba de todo",
+              "Lo que te deben, con lo vencido aparte"
+            ]
           },
           {
             "imagen": "inventario.webp",
             "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "📦 Inventario con alertas de stock bajo y de caducidad",
-            "texto": "",
-            "puntos": []
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Inventario que no hay que cuadrar a mano",
+            "texto": "Existencias en vivo, con el mínimo de cada producto y los lotes por caducar. El stock baja en la venta y sube en la compra; nadie teclea el ajuste.",
+            "puntos": [
+              "Alerta al bajar del mínimo que tú pusiste, producto por producto",
+              "Caducidad por lote con salida FEFO: primero lo que vence antes",
+              "Conteo, carga y descarga masiva para el inventario físico"
+            ]
+          },
+          {
+            "imagen": "kardex.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Dónde se fue cada unidad",
+            "texto": "El kárdex de un producto: cada entrada, cada salida, cada ajuste, con su fecha, su documento y quién lo hizo. Es la respuesta a «aquí decía que había diez».",
+            "puntos": [
+              "Compras, ventas, devoluciones y ajustes en una sola línea de tiempo",
+              "Cada movimiento deja el saldo que quedó después",
+              "No se edita ni se borra"
+            ]
+          },
+          {
+            "imagen": "arqueo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Cerrar la caja y que cuadre",
+            "texto": "El arqueo se hace contando billetes y monedas por denominación, no escribiendo un total. El sistema dice cuánto debería haber, tú dices cuánto hay, y la diferencia queda con nombre y hora.",
+            "puntos": [
+              "El esperado sale desglosado: fondo, efectivo, tarjeta, Yappy y crédito",
+              "Contando por denominación, el total lo calcula la suma",
+              "El resumen del cierre se va por correo al dueño, sin que nadie lo mande"
+            ]
+          },
+          {
+            "imagen": "compras.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La mercancía que entra",
+            "texto": "Se le pide al proveedor desde el sistema, con PDF y correo, y al recibir la mercancía el stock sube y el costo se actualiza solo.",
+            "puntos": [
+              "Orden de compra con PDF listo para mandar",
+              "Al recibir: sube el stock, entra el lote y se recalcula el costo",
+              "Sugerencia de reposición a partir de lo que se está vendiendo"
+            ]
+          },
+          {
+            "imagen": "cxc.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El fiado, con nombre y con fecha",
+            "texto": "El crédito es un método de pago más, con su límite por cliente. Lo fiado queda como saldo, no como una raya en un cuaderno.",
+            "puntos": [
+              "Límite de crédito por cliente y saldo al día",
+              "Antigüedad: qué está por vencer y qué ya venció",
+              "Abonos parciales y estado de cuenta imprimible"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La factura que pide la DGI",
+            "texto": "Se emite la factura electrónica de la venta y el ticket sale como CAFE, con su CUFE, su QR y la leyenda que exige la norma. Se puede facturar toda venta, incluida la de consumidor final.",
+            "puntos": [
+              "CUFE autorizado, con el QR generado en tu propio servidor",
+              "Consumidor final, cliente con RUC, pago mixto, crédito, exento y venta por peso",
+              "Queda el registro de lo emitido, lo rechazado y lo anulado"
+            ]
           },
           {
             "imagen": "reportes.webp",
             "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "📈 Reportes de ventas, ganancias y productos más vendidos",
-            "texto": "",
-            "puntos": []
-          },
-          {
-            "imagen": "caja.webp",
-            "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "💵 Caja con apertura, movimientos y arqueo de cierre",
-            "texto": "",
-            "puntos": []
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Los números que decide el dueño",
+            "texto": "Nueve reportes sobre lo mismo: qué se vendió, con qué margen, por qué método, por cajero y en qué día. Todos exportan a CSV.",
+            "puntos": [
+              "Margen real por producto, no solo la venta",
+              "Por método de pago y por cajero, para cuadrar el turno",
+              "Rango de fechas libre y exportación para el contador"
+            ]
           }
         ],
+        "funciones_eyebrow": "Lo que trae",
+        "funciones_titulo": "De la puerta del proveedor a la bolsa del cliente",
         "funciones": [
           {
             "icono": "🛒",
-            "titulo": "Venta rápida",
-            "texto": "Escanea el código o toca el producto: cobras en segundos con el vuelto calculado."
+            "titulo": "Punto de venta táctil",
+            "texto": "Escaneo continuo, búsqueda por nombre o código y carrito que calcula solo"
           },
           {
             "icono": "⚖️",
             "titulo": "Venta por peso",
-            "texto": "Lee la etiqueta de la balanza y vende frutas, verduras o granel por kilo."
+            "texto": "Lee la etiqueta de la balanza y cobra al precio por kilo"
+          },
+          {
+            "icono": "💳",
+            "titulo": "Pago mixto",
+            "texto": "Efectivo, tarjeta, Yappy y crédito en la misma venta, con su vuelto"
           },
           {
             "icono": "📦",
-            "titulo": "Inventario y caducidad",
-            "texto": "El stock baja solo al vender, con alertas de mínimos y de productos por vencer."
+            "titulo": "Inventario con mínimos",
+            "texto": "Stock en vivo, alerta de mínimo y kárdex por producto"
           },
           {
-            "icono": "💵",
-            "titulo": "Caja y arqueo",
-            "texto": "Abres con un fondo, registras entradas y salidas de efectivo y al cerrar ves si falta dinero."
+            "icono": "📅",
+            "titulo": "Lotes y caducidad",
+            "texto": "Control por lote con salida FEFO: primero lo que vence antes"
           },
           {
             "icono": "🚚",
             "titulo": "Compras y proveedores",
-            "texto": "Al registrar la mercancía que entra, el stock sube y el costo se actualiza solo."
+            "texto": "Órdenes de compra con PDF, entrada de mercancía y costo al día"
+          },
+          {
+            "icono": "💵",
+            "titulo": "Caja con arqueo",
+            "texto": "Apertura con fondo, movimientos y cierre contando por denominación"
           },
           {
             "icono": "🧾",
             "titulo": "Factura electrónica",
-            "texto": "Emite factura electrónica con RUC ante la DGI cuando el cliente la pide."
+            "texto": "Emite factura electrónica ante la DGI, con su código y su QR"
           },
           {
-            "icono": "📊",
-            "titulo": "Reportes y ganancias",
-            "texto": "Ventas del día, productos más vendidos y tu margen real."
+            "icono": "🤝",
+            "titulo": "Cuentas por cobrar",
+            "texto": "Fiado con límite, antigüedad, abonos y estado de cuenta"
           },
           {
             "icono": "🔄",
             "titulo": "Devoluciones seguras",
-            "texto": "Las devoluciones se autorizan con PIN o se aprueban por WhatsApp."
+            "texto": "Con PIN de administrador o aprobación remota por enlace"
+          },
+          {
+            "icono": "📊",
+            "titulo": "Nueve reportes",
+            "texto": "Ventas, margen, por método, por cajero y por día, con export a CSV"
+          },
+          {
+            "icono": "🖥️",
+            "titulo": "Pantalla al cliente",
+            "texto": "Un segundo monitor que muestra lo que se cobra y el total"
+          },
+          {
+            "icono": "👥",
+            "titulo": "Roles y permisos",
+            "texto": "Matriz editable por permiso, y bitácora de todo lo que pasa"
+          },
+          {
+            "icono": "📥",
+            "titulo": "Importación del catálogo",
+            "texto": "Carga masiva desde archivo, con vista previa antes de aplicar"
           }
         ],
+        "adicionales": {
+          "eyebrow": "Se suman cuando los necesitas",
+          "titulo": "Dos módulos que se activan aparte",
+          "intro": "El sistema opera completo sin ellos. Se encienden el día que hagan falta, sin tocar lo que ya está grabado.",
+          "etiqueta": "Módulo adicional",
+          "items": [
+            {
+              "icono": "🧾",
+              "titulo": "Factura electrónica",
+              "texto": "La venta sale como factura electrónica con su código de autorización y su QR. Se conecta con el proveedor autorizado que ya uses; si todavía no facturas electrónicamente, el sistema funciona igual y se activa después."
+            },
+            {
+              "icono": "🖨️",
+              "titulo": "Puente de impresión en la nube",
+              "texto": "Si el sistema vive en un servidor y no en la tienda, un agente por caja recibe el ticket e imprime en la térmica local. La conexión sale de la tienda hacia afuera: no hay que abrir puertos."
+            }
+          ]
+        },
+        "hardware": {
+          "eyebrow": "El mostrador",
+          "titulo": "Lo que hace falta en la caja",
+          "texto": "Nada exótico y nada atado a una marca: lo que ya se consigue en cualquier tienda de equipos.",
+          "puntos": [
+            "El lector funciona como un teclado: se conecta y ya",
+            "La balanza no se conecta al sistema, imprime su etiqueta y el lector la lee",
+            "La térmica imprime en 80 mm o en 58 mm"
+          ],
+          "nota": "Por eso sirve la balanza que ya tengas: el sistema lee su etiqueta, no le habla al aparato.",
+          "pasos": [
+            {
+              "icono": "🔊",
+              "titulo": "Lector de código",
+              "sub": "USB, en modo teclado"
+            },
+            {
+              "icono": "⚖️",
+              "titulo": "Balanza con etiquetadora",
+              "sub": "Se calibra una vez"
+            },
+            {
+              "icono": "🖥️",
+              "titulo": "La caja",
+              "sub": "Cualquier PC o tableta con navegador"
+            },
+            {
+              "icono": "🖨️",
+              "titulo": "Impresora térmica",
+              "sub": "Ticket, factura con QR y cierre"
+            },
+            {
+              "icono": "📺",
+              "titulo": "Pantalla al cliente",
+              "sub": "Un segundo monitor · opcional"
+            }
+          ]
+        },
         "beneficios": [
           "Lector de código de barras y balanza",
           "Inventario con alertas de stock y caducidad",
@@ -2208,14 +2414,20 @@
         ],
         "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
         "seo": {
-          "title": "HUB Market: el punto de venta para tu minimarket o supermercado 🛒⚡",
+          "title": "HUB Market: el punto de venta para tu minimarket o supermercado",
           "description": "Un solo sistema con POS táctil, inventario con alertas de stock y caducidad, caja con arqueo, compras y reportes. Hecho para Panamá 🇵🇦"
         },
         "wa_text": "Hola, me interesa Hub Market 🛒"
       },
       "en": {
         "titulo": "HUB Market",
-        "tagline": "The point of sale for your grocery or convenience store 🛒⚡",
+        "eyebrow": "Grocery and convenience stores",
+        "titular": {
+          "antes": "The store stops living in ",
+          "destacado": "the owner's head",
+          "despues": ""
+        },
+        "tagline": "The point of sale for your grocery or convenience store",
         "intro": "One system with a touch POS, inventory with low-stock and expiry alerts, cash management, purchasing and reports. Built for US small business 🇺🇸",
         "chips": [
           "🛒 Fast checkout",
@@ -2226,95 +2438,295 @@
         "problema": "😩 Still keeping store credit in a notebook, pricing from memory and guessing what's left in the back room?",
         "solucion": "😎 Sell with a scanner and a scale, and control your inventory in real time",
         "solucion_sub": "Ring up sales on the touch screen, get a heads-up when something runs low or is about to expire, and balance the drawer at the end of the day. You can also log purchases and pull reports. Built for US small business 🇺🇸",
+        "recorrido_titulo": "A day at the store, screen by screen",
         "recorrido": [
           {
             "imagen": "pos.webp",
             "tipo": "desktop",
-            "ancho": 2732,
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The register, where the day is won or lost",
+            "texto": "A touch screen built to charge fast: scan, tap a category or search by name. The cart works out tax, discount and change while the customer waits.",
+            "puntos": [
+              "Continuous scanning: the reader types like a keyboard, nothing to configure",
+              "Split payment on one sale: cash, card, wallet or store credit",
+              "Park a sale to serve the next person without losing the cart"
+            ]
+          },
+          {
+            "imagen": "pos-peso.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Sell by weight without reaching for a calculator",
+            "texto": "The scale prints its label and the reader reads it. The system pulls both the item and the weight out of that one barcode and charges it at the unit price on file.",
+            "puntos": [
+              "Reads the embedded-weight barcode your scale prints",
+              "The format is set once, with a live tester",
+              "Works the same for scales that embed the price instead of the weight"
+            ]
+          },
+          {
+            "imagen": "pantalla.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "What the customer sees from the other side",
+            "texto": "A second monitor on the counter. The customer sees every item as it is rung up, with its price, and the total in large type at the end.",
+            "puntos": [
+              "Each item appears as it is scanned, with its unit price",
+              "Total and item count, readable across the counter",
+              "Between sales it can run your own images"
+            ]
+          },
+          {
+            "imagen": "pos-tablet.webp",
+            "tipo": "tablet",
+            "ancho": 2048,
             "alto": 1536,
-            "titulo": "🛒 Touch screen: scan, take payment and give change right away",
-            "texto": "",
-            "puntos": []
+            "titulo": "The same register on a tablet",
+            "texto": "No desktop computer required. The screen is built for fingers, so a tablet with a reader is a complete register.",
+            "puntos": [
+              "Large targets, made to tap rather than to aim at",
+              "Works as an extra register at rush hour, or as inventory on the move",
+              "Every register sees the same stock and the same catalog"
+            ]
           },
           {
             "imagen": "dashboard.webp",
             "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "📊 Your day at a glance: sales, profit and alerts",
-            "texto": "",
-            "puntos": []
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Your day, without opening a report",
+            "texto": "Today's sales, profit, what is selling and what is about to run out. Every figure links to the screen where it gets solved.",
+            "puntos": [
+              "Sales and margin for the day, not just the gross",
+              "Items below minimum and lots about to expire, right at the top",
+              "What customers owe you, with the overdue part separated"
+            ]
           },
           {
             "imagen": "inventario.webp",
             "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "📦 Inventory with low-stock and expiration alerts",
-            "texto": "",
-            "puntos": []
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Inventory you don't reconcile by hand",
+            "texto": "Live stock with each item's minimum and its expiring lots. Stock goes down on a sale and up on a purchase; nobody types the adjustment.",
+            "puntos": [
+              "An alert when an item drops below the minimum you set",
+              "Expiry by lot with FEFO picking: what expires first goes out first",
+              "Bulk count, upload and download for the physical inventory"
+            ]
+          },
+          {
+            "imagen": "kardex.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Where every unit went",
+            "texto": "An item's ledger: every receipt, every issue, every adjustment, with its date, its document and who did it. It is the answer to «it said there were ten».",
+            "puntos": [
+              "Purchases, sales, returns and adjustments on one timeline",
+              "Every movement records the balance it left behind",
+              "It cannot be edited or deleted"
+            ]
+          },
+          {
+            "imagen": "arqueo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Close the drawer and have it balance",
+            "texto": "The count is done note by note and coin by coin, not by typing a total. The system says what should be there, you say what is there, and the difference is recorded with a name and a time.",
+            "puntos": [
+              "The expected figure breaks down: float, cash, card, wallet and credit",
+              "Counting by denomination, the total comes from the sum",
+              "The shift summary emails itself to the owner"
+            ]
+          },
+          {
+            "imagen": "compras.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The goods coming in",
+            "texto": "You order from the supplier inside the system, with a PDF and an email, and when the goods arrive stock goes up and cost updates on its own.",
+            "puntos": [
+              "A purchase order with a PDF ready to send",
+              "On receipt: stock rises, the lot is recorded and cost is recalculated",
+              "Reorder suggestions based on what is actually selling"
+            ]
+          },
+          {
+            "imagen": "cxc.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Store credit, with a name and a date",
+            "texto": "Credit is just another payment method, with a limit per customer. What is owed becomes a balance, not a line in a notebook.",
+            "puntos": [
+              "A credit limit per customer and a balance kept current",
+              "Aging: what is coming due and what is already past due",
+              "Partial payments and a printable statement"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The invoice the tax authority asks for",
+            "texto": "The sale is issued as an electronic invoice and the receipt prints with its authorization code, its QR and the required wording. Any sale can be invoiced, walk-in customers included.",
+            "puntos": [
+              "An authorized code, with the QR generated on your own server",
+              "Walk-in, registered customer, split payment, credit, exempt and sales by weight",
+              "A record of what was issued, rejected and voided"
+            ]
           },
           {
             "imagen": "reportes.webp",
             "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "📈 Reports on sales, profit and best sellers",
-            "texto": "",
-            "puntos": []
-          },
-          {
-            "imagen": "caja.webp",
-            "tipo": "desktop",
-            "ancho": 2560,
-            "alto": 1600,
-            "titulo": "💵 Cash drawer: opening, cash movements and end-of-day count",
-            "texto": "",
-            "puntos": []
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The numbers the owner decides on",
+            "texto": "Nine reports on the same thing: what sold, at what margin, by which method, by which cashier and on which day. All of them export to CSV.",
+            "puntos": [
+              "Real margin per item, not just the sale",
+              "By payment method and by cashier, to balance the shift",
+              "Any date range, and an export for the accountant"
+            ]
           }
         ],
+        "funciones_eyebrow": "What you get",
+        "funciones_titulo": "From the supplier's door to the customer's bag",
         "funciones": [
           {
-            "icono": "🛒",
-            "titulo": "Fast checkout",
-            "texto": "Scan the barcode or tap the item: charge in seconds with change calculated for you."
+            "icono": "✅",
+            "titulo": "Touch point of sale",
+            "texto": "Continuous scanning, search by name or code, and a cart that does the math"
           },
           {
-            "icono": "⚖️",
+            "icono": "✅",
             "titulo": "Sell by weight",
-            "texto": "Read the scale label and sell produce or bulk goods by the pound."
+            "texto": "Reads the scale label and charges by the unit price"
           },
           {
-            "icono": "📦",
-            "titulo": "Inventory & expiry",
-            "texto": "Stock drops automatically on each sale, with low-stock and expiration alerts."
+            "icono": "✅",
+            "titulo": "Split payment",
+            "texto": "Cash, card, wallet and credit on one sale, with change"
           },
           {
-            "icono": "💵",
-            "titulo": "Cash drawer",
-            "texto": "Start with a cash float, record cash in and out, and the closing count shows if anything's missing."
+            "icono": "✅",
+            "titulo": "Inventory with minimums",
+            "texto": "Live stock, low-stock alerts and a ledger per item"
           },
           {
-            "icono": "🚚",
-            "titulo": "Purchasing & suppliers",
-            "texto": "Log incoming goods: stock goes up and cost updates on its own."
+            "icono": "✅",
+            "titulo": "Lots and expiry",
+            "texto": "Lot tracking with FEFO picking: what expires first goes out first"
           },
           {
-            "icono": "🧾",
-            "titulo": "Automatic sales tax",
-            "texto": "Applies the right sales-tax rate and prints the receipt your customer needs."
+            "icono": "✅",
+            "titulo": "Purchasing and suppliers",
+            "texto": "Purchase orders with a PDF, goods receipt and cost kept current"
           },
           {
-            "icono": "📊",
-            "titulo": "Reports & profit",
-            "texto": "Daily sales, best sellers and your real margin."
+            "icono": "✅",
+            "titulo": "Cash drawer with a count",
+            "texto": "Opening float, cash movements and a close counted by denomination"
           },
           {
-            "icono": "🔄",
-            "titulo": "Secure returns",
-            "texto": "Refunds need a PIN or an OK over WhatsApp."
+            "icono": "✅",
+            "titulo": "Invoicing",
+            "texto": "Issues invoicing with its authorization code and QR"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Accounts receivable",
+            "texto": "Store credit with a limit, aging, payments and statements"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Safe returns",
+            "texto": "With a manager PIN or a remote approval link"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Nine reports",
+            "texto": "Sales, margin, by method, by cashier and by day, exporting to CSV"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Customer display",
+            "texto": "A second monitor showing what is being rung up, and the total"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Roles and permissions",
+            "texto": "An editable matrix by permission, and an audit log of everything"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Catalog import",
+            "texto": "Bulk upload from a file, with a preview before it applies"
           }
         ],
+        "adicionales": {
+          "eyebrow": "Added when you need them",
+          "titulo": "Two modules you can switch on separately",
+          "intro": "The system runs complete without them. Turn them on the day you need them, without touching what is already recorded.",
+          "etiqueta": "Add-on module",
+          "items": [
+            {
+              "icono": "✅",
+              "titulo": "Invoicing",
+              "texto": "The sale is issued as invoicing with its authorization code and QR. It connects to the authorized provider you already use; if you are not invoicing electronically yet, the system works the same and this switches on later."
+            },
+            {
+              "icono": "✅",
+              "titulo": "Cloud print bridge",
+              "texto": "If the system runs on a server instead of in the store, an agent at each register receives the receipt and prints it on the local thermal printer. The connection goes out from the store: no ports to open."
+            }
+          ]
+        },
+        "hardware": {
+          "eyebrow": "The counter",
+          "titulo": "What the register needs",
+          "texto": "Nothing exotic and nothing tied to a brand: what any equipment shop already carries.",
+          "puntos": [
+            "The reader behaves like a keyboard: plug it in and go",
+            "The scale never talks to the system — it prints a label and the reader reads it",
+            "The thermal printer works at 80 mm or 58 mm"
+          ],
+          "nota": "That is why the scale you already own works: the system reads its label, it does not talk to the device.",
+          "pasos": [
+            {
+              "icono": "✅",
+              "titulo": "Barcode reader",
+              "sub": "USB, keyboard mode"
+            },
+            {
+              "icono": "✅",
+              "titulo": "Scale with a label printer",
+              "sub": "Calibrated once"
+            },
+            {
+              "icono": "✅",
+              "titulo": "The register",
+              "sub": "Any PC or tablet with a browser"
+            },
+            {
+              "icono": "✅",
+              "titulo": "Thermal printer",
+              "sub": "Receipt, invoice with QR and close"
+            },
+            {
+              "icono": "✅",
+              "titulo": "Customer display",
+              "sub": "A second monitor · optional"
+            }
+          ]
+        },
         "beneficios": [
           "Barcode scanner and scale ready",
           "Inventory with low-stock & expiry alerts",
@@ -2325,7 +2737,7 @@
         ],
         "cierre": "Quoted per project based on your business and the modules you need.",
         "seo": {
-          "title": "HUB Market: the point of sale for your grocery or convenience store 🛒⚡",
+          "title": "HUB Market: the point of sale for your grocery or convenience store",
           "description": "One system with a touch POS, inventory with low-stock and expiry alerts, cash management, purchasing and reports. Built for US small business 🇺🇸"
         },
         "wa_text": "Hi, I'm interested in Hub Market 🛒"
@@ -2628,7 +3040,7 @@
         "en": "https://suitehub.net/en/verticals/pos"
       },
       "hero": {
-        "imagen": "dashboard.webp",
+        "imagen": "modulos.webp",
         "ancho": 2852,
         "alto": 1436
       },
@@ -2658,6 +3070,20 @@
         "solucion_sub": "Salón, cocina, cobro, factura electrónica ante la DGI y cierre de caja, todo conectado. El salonero lo usa desde su celular, la cocina desde su pantalla y el cliente desde el kiosko.",
         "recorrido_titulo": "Así se ve por dentro",
         "recorrido": [
+          {
+            "grupo": "Salón y pedidos",
+            "imagen": "modulos.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Todo el restaurante en un solo sistema",
+            "texto": "Mesas, cocina, caja, facturación, inventario, clientes y reportes viven en el mismo lugar, con los módulos que tu operación necesite encendidos y el resto fuera del camino.",
+            "puntos": [
+              "Cada módulo con su color y su lugar",
+              "Enciendes solo lo que usas",
+              "El mismo sistema en la caja, la cocina y el celular"
+            ]
+          },
           {
             "grupo": "Salón y pedidos",
             "imagen": "dashboard.webp",
@@ -3129,6 +3555,20 @@
         "solucion_sub": "Floor, kitchen, checkout, DGI e-invoicing and cash closing, all connected. Servers use it on their phones, the kitchen on its screen and guests at the kiosk.",
         "recorrido_titulo": "What it looks like inside",
         "recorrido": [
+          {
+            "grupo": "Floor and orders",
+            "imagen": "modulos.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Your whole restaurant in one system",
+            "texto": "Tables, kitchen, register, invoicing, inventory, customers and reports live in one place, with the modules your operation needs turned on and the rest out of the way.",
+            "puntos": [
+              "Every module with its own color and place",
+              "Turn on only what you use",
+              "The same system at the register, in the kitchen and on the phone"
+            ]
+          },
           {
             "grupo": "Floor and orders",
             "imagen": "dashboard.webp",
@@ -4910,32 +5350,32 @@
         "funciones_titulo": "From the hub door to the recipient's door",
         "funciones": [
           {
-            "icono": "✅",
+            "icono": "📋",
             "titulo": "Manifests",
             "texto": "The client list pasted or by CSV, scanned in with a gun, with shortages and overages the same day"
           },
           {
-            "icono": "✅",
+            "icono": "📱",
             "titulo": "Driver app",
             "texto": "The day's stops, scanning and photo delivery from the phone, even without signal"
           },
           {
-            "icono": "✅",
+            "icono": "🚚",
             "titulo": "Dispatch by zone",
             "texto": "Runs per driver with a printable, signable route sheet"
           },
           {
-            "icono": "✅",
+            "icono": "🔒",
             "titulo": "Chain of custody",
             "texto": "Who held each parcel and since when, with no way to edit or delete it"
           },
           {
-            "icono": "✅",
+            "icono": "📸",
             "titulo": "Proof of delivery",
             "texto": "Photo and the name of whoever received it, with the real timestamp and location"
           },
           {
-            "icono": "✅",
+            "icono": "📈",
             "titulo": "Service level",
             "texto": "On-time and first-attempt rates, per client and per driver"
           }

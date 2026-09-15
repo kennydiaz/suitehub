@@ -235,12 +235,12 @@
       "precio_pro_mes": 96,
       "precio_pro_anio": 960,
       "features": [
-        "Venta rápida",
+        "Punto de venta táctil",
         "Venta por peso",
-        "Inventario y caducidad",
-        "Caja y arqueo",
-        "Compras y proveedores",
-        "Factura electrónica"
+        "Pago mixto",
+        "Inventario con mínimos",
+        "Lotes y caducidad",
+        "Compras y proveedores"
       ]
     },
     {
