@@ -4432,11 +4432,12 @@
           "despues": " de quién lo tuvo"
         },
         "tagline": "Para empresas que reparten paquetería desde un hub hasta el destinatario final.",
-        "intro": "Recibes la carga del contratante contra su manifiesto, escaneas la entrada, despachas por zona con repartidores propios y entregas con foto y nombre de quien recibió. Cada paquete lleva su cadena de custodia.",
+        "intro": "Recibes la carga del contratante contra su manifiesto, escaneas la entrada, despachas por zona con repartidores propios y el repartidor registra la entrega desde su teléfono, con foto y nombre de quien recibió, aunque no tenga señal. Cada paquete lleva su cadena de custodia.",
         "chips": [
           "📋 Manifiestos",
           "📦 Cadena de custodia",
           "🚚 Despacho por zona",
+          "📱 App del repartidor",
           "📸 Prueba de entrega"
         ],
         "problema": "😩 ¿Se pierde un paquete y nadie sabe en qué punto de la cadena fue?",
@@ -4541,11 +4542,50 @@
             "ancho": 2852,
             "alto": 1436,
             "titulo": "La hoja de ruta que se firma",
-            "texto": "La hoja imprimible con casilla de resultado y dos firmas: la del repartidor que recibe y la del hub que entrega. Hoy es lo que el repartidor se lleva en la mano.",
+            "texto": "La hoja imprimible con casilla de resultado y dos firmas: la del repartidor que recibe y la del hub que entrega. Queda constancia en papel de lo que se llevó, tenga o no la app en el teléfono.",
             "puntos": [
               "Sale lista para imprimir, sin configurar nada",
               "Queda constancia en papel de la entrega al repartidor",
               "Una línea por paquete, con dirección y monto a cobrar"
+            ]
+          },
+          {
+            "imagen": "ruta-dia.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "La ruta del día, en el teléfono del repartidor",
+            "texto": "El repartidor entra con el código o el QR de su ficha, sin usuario ni contraseña. Ve sus paradas agrupadas por zona, cuántas lleva, cuántas le faltan y lo que le toca cobrar.",
+            "puntos": [
+              "Se instala desde el navegador, sin tienda de aplicaciones",
+              "Llamar, WhatsApp, Waze o Google Maps en un toque desde cada parada",
+              "Si renuevas su código desde la ficha, un teléfono perdido queda fuera en ese momento"
+            ]
+          },
+          {
+            "imagen": "ruta-escanear.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Escanear en la puerta",
+            "texto": "La cámara del teléfono lee la etiqueta y deja la parada abajo, con los botones de resultado. No se cierra entre lecturas: sirve también cuando el contratante exige escanear en su propia app.",
+            "puntos": [
+              "Confirma con vibración y color, sin diálogos que tocar",
+              "Un código que no es de su lote se lo dice claro",
+              "Si la etiqueta no se lee, se teclea el código"
+            ]
+          },
+          {
+            "imagen": "ruta-entregar.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "La entrega se registra donde pasa",
+            "texto": "Foto, nombre de quien recibió y lo que cobró, en la puerta. Con la hora real y la ubicación de ese momento, aunque no haya señal: el teléfono lo guarda y lo manda solo cuando vuelve.",
+            "puntos": [
+              "Sin señal se registra igual, y llega una sola vez al hub",
+              "La ubicación se toma al entregar; al repartidor no se le rastrea",
+              "Si el hub movió el paquete mientras tanto, el repartidor ve por qué no se anotó"
             ]
           },
           {
@@ -4607,12 +4647,12 @@
           {
             "icono": "📋",
             "titulo": "Manifiestos",
-            "texto": "La lista del contratante pegada o por CSV, con faltantes y sobrantes el mismo día"
+            "texto": "La lista del contratante pegada o por CSV, escaneada con pistola, con faltantes y sobrantes el mismo día"
           },
           {
-            "icono": "📦",
-            "titulo": "Escaneo de entrada",
-            "texto": "Lectura con pistola y respuesta al instante, sin recargar la pantalla"
+            "icono": "📱",
+            "titulo": "App del repartidor",
+            "texto": "Paradas del día, escaneo y entrega con foto desde el teléfono, también sin señal"
           },
           {
             "icono": "🚚",
@@ -4627,7 +4667,7 @@
           {
             "icono": "📸",
             "titulo": "Prueba de entrega",
-            "texto": "Foto y nombre de quien recibió, con la hora real del hecho"
+            "texto": "Foto y nombre de quien recibió, con la hora real del hecho y la ubicación"
           },
           {
             "icono": "📈",
@@ -4644,7 +4684,7 @@
         "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
         "seo": {
           "title": "HUB Ship: sistema para empresas de reparto de paquetería y última milla",
-          "description": "Manifiestos con faltantes y sobrantes, escaneo de entrada, despacho por zona, cadena de custodia por paquete y entrega con foto y nombre de quien recibió."
+          "description": "Manifiestos con faltantes y sobrantes, despacho por zona, app del repartidor que funciona sin señal, cadena de custodia por paquete y entrega con foto y nombre de quien recibió."
         },
         "wa_text": "Hola, me interesa Hub Ship 📦"
       },
@@ -4657,11 +4697,12 @@
           "despues": " held it"
         },
         "tagline": "For companies delivering parcels from a hub to the final recipient.",
-        "intro": "Receive the client load against their manifest, scan it in, dispatch by zone with your own drivers and deliver with a photo and the name of whoever signed. Every parcel carries its chain of custody.",
+        "intro": "Receive the client load against their manifest, scan it in, dispatch by zone with your own drivers, and the driver records the delivery from their phone with a photo and the name of whoever signed, even without signal. Every parcel carries its chain of custody.",
         "chips": [
           "✅ Manifests",
           "✅ Chain of custody",
           "✅ Dispatch by zone",
+          "✅ Driver app",
           "✅ Proof of delivery"
         ],
         "problema": "A parcel goes missing and nobody knows where in the chain it happened?",
@@ -4766,11 +4807,50 @@
             "ancho": 2852,
             "alto": 1436,
             "titulo": "A route sheet that gets signed",
-            "texto": "The printable sheet with a result box and two signatures: the driver receiving and the hub handing over. Today it is what the driver carries in hand.",
+            "texto": "The printable sheet with a result box and two signatures: the driver receiving and the hub handing over. A paper record of what they took, with or without the app on their phone.",
             "puntos": [
               "Prints as is, nothing to configure",
               "A paper record of the handover to the driver",
               "One line per parcel, with address and amount to collect"
+            ]
+          },
+          {
+            "imagen": "ruta-dia.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "The day's route, on the driver's phone",
+            "texto": "The driver signs in with the code or QR from their profile, no username or password. They see their stops grouped by zone, how many are done, how many are left and what they have to collect.",
+            "puntos": [
+              "Installs from the browser, no app store",
+              "Call, WhatsApp, Waze or Google Maps in one tap from each stop",
+              "Renew their code from the profile and a lost phone is locked out at once"
+            ]
+          },
+          {
+            "imagen": "ruta-escanear.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Scanning at the door",
+            "texto": "The phone camera reads the label and shows the stop below, with the result buttons. It stays open between reads, so it also works when the client requires scanning in their own app.",
+            "puntos": [
+              "Confirms with a vibration and a color, no dialogs to tap",
+              "A code that is not in their run says so clearly",
+              "If the label will not read, the code can be typed"
+            ]
+          },
+          {
+            "imagen": "ruta-entregar.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Delivery recorded where it happens",
+            "texto": "Photo, the name of whoever received it and what was collected, at the door. With the real time and the location of that moment, even without signal: the phone keeps it and sends it when the signal comes back.",
+            "puntos": [
+              "Works offline and reaches the hub exactly once",
+              "Location is taken at delivery; the driver is never tracked",
+              "If the hub moved the parcel meanwhile, the driver sees why it was not recorded"
             ]
           },
           {
@@ -4832,12 +4912,12 @@
           {
             "icono": "✅",
             "titulo": "Manifests",
-            "texto": "The client list pasted or by CSV, with shortages and overages the same day"
+            "texto": "The client list pasted or by CSV, scanned in with a gun, with shortages and overages the same day"
           },
           {
             "icono": "✅",
-            "titulo": "Scan-in",
-            "texto": "Scanner gun reads with an instant answer, no page reload"
+            "titulo": "Driver app",
+            "texto": "The day's stops, scanning and photo delivery from the phone, even without signal"
           },
           {
             "icono": "✅",
@@ -4852,7 +4932,7 @@
           {
             "icono": "✅",
             "titulo": "Proof of delivery",
-            "texto": "Photo and the name of whoever received it, with the real timestamp"
+            "texto": "Photo and the name of whoever received it, with the real timestamp and location"
           },
           {
             "icono": "✅",
@@ -4869,7 +4949,7 @@
         "cierre": "Quoted per project based on your business and the modules you need.",
         "seo": {
           "title": "HUB Ship: software for parcel delivery and last-mile companies",
-          "description": "Manifests with shortages and overages, scan-in, dispatch by zone, per-parcel chain of custody and delivery with a photo and the name of whoever signed."
+          "description": "Manifests with shortages and overages, dispatch by zone, a driver app that works offline, per-parcel chain of custody and delivery with a photo and the name of whoever signed."
         },
         "wa_text": "Hi, I'm interested in Hub Ship 📦"
       }
