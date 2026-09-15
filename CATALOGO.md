@@ -30,7 +30,7 @@ Se nombran siempre completas: **Hub Lite · Hub Core · Hub Pro · Hub Enterpris
 | **HUB X** | **$48/mes · $480/año** (línea Core) | El vertical sobre la edición Hub Core |
 | **HUB X Pro** | **$64/mes · $640/año** (línea Pro) | El vertical sobre la edición Hub Pro |
 
-Verticales en catálogo (15): Taller · Carwash · POS · Restaurant · Market · Boutique · Pet · Salon · Clinic · Gym · Lavandería · Inmobiliaria · Hotel · Phone · Traffic (el hardware se cotiza aparte).
+Verticales en catálogo (16): Taller · Carwash · POS · Restaurant · Market · Boutique · Pet · Salon · Clinic · Gym · Lavandería · Inmobiliaria · Hotel · Phone · Ship · Traffic (el hardware se cotiza aparte).
 
 - Sin precio propio, sin grupos, sin deltas, sin módulos especiales. Nunca "HUB X Lite".
 - HUB POS (food service ligero) y HUB Restaurant (full-service con salón y mesas) son dos verticales distintos que comparten base.

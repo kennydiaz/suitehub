@@ -188,6 +188,24 @@ const verticales = [
     ],
   },
   {
+    key:    'ship',
+    name:   'HUB Ship',
+    icon:   'fa-truck-fast',
+    screenshot: '/images/products/ship/hub-ship-dashboard.webp',
+    screenshotH: 940,
+    sector: 'Reparto de paquetería y última milla',
+    short:  'Para empresas que entregan paquetería desde un hub hasta el destinatario final.',
+    pitch:  'Recibes la carga del contratante contra su manifiesto, escaneas la entrada, despachas por zona y entregas con foto y nombre de quien recibió. Cada paquete lleva su cadena de custodia: cuando algo se pierde, el sistema dice quién lo tenía y desde cuándo.',
+    features: [
+      { icon: 'fa-clipboard-check', name: 'Manifiestos',        desc: 'La lista del contratante pegada o por CSV, con faltantes y sobrantes el mismo día' },
+      { icon: 'fa-barcode',         name: 'Escaneo de entrada', desc: 'Lectura con pistola y respuesta al instante' },
+      { icon: 'fa-route',           name: 'Despacho por zona',  desc: 'Lotes por repartidor con hoja de ruta imprimible' },
+      { icon: 'fa-shield-halved',   name: 'Cadena de custodia', desc: 'Quién tuvo cada paquete y desde cuándo, sin poder editarse' },
+      { icon: 'fa-camera',          name: 'Prueba de entrega',  desc: 'Foto y nombre de quien recibió, con la hora real' },
+      { icon: 'fa-chart-line',      name: 'Nivel de servicio',  desc: 'Entregas a tiempo y a la primera, por contratante y por repartidor' },
+    ],
+  },
+  {
     key:    'traffic',
     name:   'HUB Traffic',
     icon:   'fa-people-arrows',
@@ -223,14 +241,14 @@ const vista = verticales.map((v: any) => {
   };
 });
 ---
-<BaseLayout title="Verticales · SuiteHub" description="15 verticales especializados de SuiteHub: HUB Taller, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone y Traffic.">
+<BaseLayout title="Verticales · SuiteHub" description="16 verticales especializados de SuiteHub: HUB Taller, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone, Ship y Traffic.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
     <div class="wrap relative pt-12 pb-16">
       <div class="text-center max-w-3xl mx-auto">
-        <span class="eyebrow">15 verticales especializados</span>
+        <span class="eyebrow">16 verticales especializados</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
           SuiteHub <span class="text-gradient">adaptado a tu industria</span>.
         </h1>

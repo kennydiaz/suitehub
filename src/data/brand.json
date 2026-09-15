@@ -1644,6 +1644,70 @@
       },
       "png_white_strategy": "ink-only"
     },
+    "ship": {
+      "name": "HUB Ship",
+      "code_name": "HubShip",
+      "wordmark_suffix": "Ship",
+      "icon": "tabler:package",
+      "status": "development",
+      "in_catalog": true,
+      "subdomain": "hubship.suitehub.net",
+      "repo": "hubship",
+      "notes": "Reparto de paqueteria y ultima milla. Teal 700, un tono mas oscuro que el teal 600 de HUB Pet: son vecinos de rampa y a 24 px se leen como familia. Se acepto asi al crear el producto el 15 sep 2026; si algun dia comparten material comercial, hay que mover uno de los dos.",
+      "color": "#0F766E",
+      "fill": {
+        "kind": "solid",
+        "color": "#0F766E"
+      },
+      "on_color": "#FFFFFF",
+      "ramp": "tailwind.teal",
+      "tone": "700",
+      "shades": {
+        "soft": "#F0FDFA",
+        "hover": "#115E59",
+        "dark": "#134E4A"
+      },
+      "accent": {
+        "lighter": "#99F6E4",
+        "light": "#14B8A6",
+        "base": "#0F766E",
+        "dark": "#115E59",
+        "darker": "#042F2E",
+        "rgb": "15, 118, 110"
+      },
+      "assets": {
+        "badge": "badges/svg/hub-ship-badge.svg",
+        "logo": "logos/svg/hub-ship-logo.svg",
+        "logo_white": "logos/svg/hub-ship-logo-white.svg",
+        "png": {
+          "badge": [
+            256,
+            512,
+            1024
+          ],
+          "logo": [
+            600,
+            1200,
+            2400
+          ],
+          "logo_white": []
+        }
+      },
+      "logo": {
+        "width": 264.4,
+        "wordmark_transform": {
+          "hub": [
+            133.5,
+            73.765
+          ],
+          "suffix": [
+            135.06,
+            102.195
+          ]
+        }
+      },
+      "png_white_strategy": "ink-only"
+    },
     "suitehub": {
       "name": "SuiteHub",
       "code_name": "SuiteHub",
@@ -2036,6 +2100,17 @@
         ]
       },
       {
+        "ramp": "tailwind.teal",
+        "slugs": [
+          "pet",
+          "ship"
+        ],
+        "tones": [
+          "600",
+          "700"
+        ]
+      },
+      {
         "ramp": "tailwind.violet",
         "slugs": [
           "pro",
@@ -2048,16 +2123,6 @@
       }
     ],
     "asset_hygiene": [
-      {
-        "issue": "c2pa-metadata",
-        "files": [
-          "badges/svg/hub-boutique-badge.svg",
-          "badges/svg/hub-kiosko-badge.svg",
-          "badges/svg/hub-market-badge.svg",
-          "badges/svg/hub-salon-badge.svg"
-        ],
-        "note": "Manifiesto base64 de ~8 KB que make-logo.py propaga al logo generado. sync-brand.php lo limpia al copiar."
-      },
       {
         "issue": "white-literal",
         "files": [
