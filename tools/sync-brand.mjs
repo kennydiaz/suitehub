@@ -9,7 +9,9 @@
  *
  * Copia dos cosas:
  *   1. el badge de cada producto  -> public/images/products/<slug>/badge.svg
- *      Solo para las carpetas que YA existen: no inventa productos.
+ *      Para toda carpeta que YA existe y cuyo producto está en el kit, tenga o no badge
+ *      todavía: no inventa carpetas, pero un vertical nuevo recibe el suyo en el primer sync.
+ *      --check falla si una carpeta de un producto del kit se quedó sin badge.
  *   2. dist/brand.json            -> src/data/brand.json
  *
  * Todo lo copiado es COPIA: la fuente de verdad es el brand kit. Al copiar un
@@ -64,12 +66,21 @@ function poner(dest, contenido) {
   return previo === null ? '+' : '~';
 }
 
-/** Carpetas de producto del sitio que tienen badge, con su slug en el kit. */
+/**
+ * Carpetas de producto del sitio, con su slug en el kit, TENGAN O NO badge todavía.
+ *
+ * Antes solo se miraban las que ya tenían badge.svg, así que la carpeta de un vertical
+ * nuevo nunca recibía el suyo: pasó con ship (sep 2026), que salió en la portada y en
+ * /verticales con la imagen rota mientras --check decía que todo estaba al día.
+ */
 function productosDelSitio() {
   return readdirSync(PRODUCTS)
     .filter((d) => statSync(join(PRODUCTS, d)).isDirectory())
-    .filter((d) => existsSync(join(PRODUCTS, d, 'badge.svg')))
-    .map((carpeta) => ({ carpeta, slug: SLUG_KIT[carpeta] ?? carpeta }));
+    .map((carpeta) => ({
+      carpeta,
+      slug: SLUG_KIT[carpeta] ?? carpeta,
+      tieneBadge: existsSync(join(PRODUCTS, carpeta, 'badge.svg')),
+    }));
 }
 
 const colorDe = (svg) => (svg.match(/fill="(#[0-9A-Fa-f]{6})"/) ?? [])[1]?.toUpperCase() ?? null;
@@ -83,10 +94,17 @@ if (soloCheck) {
   const { products } = JSON.parse(readFileSync(TOKENS_LOCAL, 'utf8'));
   const problemas = [];
 
-  for (const { carpeta, slug } of productosDelSitio()) {
-    const ruta = join(PRODUCTS, carpeta, 'badge.svg');
-    const svg = readFileSync(ruta, 'utf8');
+  for (const { carpeta, slug, tieneBadge } of productosDelSitio()) {
     const esperado = products[slug]?.color?.toUpperCase();
+
+    if (!tieneBadge) {
+      // Una carpeta de un producto del kit sin badge es una imagen rota en las páginas,
+      // que lo piden por /images/products/<slug>/badge.svg. Una carpeta que no es de un
+      // producto del kit (solo capturas, por ejemplo) no necesita badge.
+      if (esperado) problemas.push(`${carpeta}: falta badge.svg (las páginas lo piden y saldría roto)`);
+      continue;
+    }
+    const svg = readFileSync(join(PRODUCTS, carpeta, 'badge.svg'), 'utf8');
 
     if (!esperado) {
       problemas.push(`${carpeta}: no existe el slug "${slug}" en los tokens`);
@@ -127,11 +145,13 @@ const informar = (marca, etiqueta, contenido) => {
   total++;
 };
 
-// 1. El badge de cada producto que ya existe en el sitio.
-for (const { carpeta, slug } of productosDelSitio()) {
+// 1. El badge de cada producto que tiene carpeta en el sitio, aunque todavía no tenga
+//    badge: basta con crear la carpeta del vertical para que el sync le traiga el suyo.
+for (const { carpeta, slug, tieneBadge } of productosDelSitio()) {
   const src = join(kit, 'badges/svg', `hub-${slug}-badge.svg`);
   if (!existsSync(src)) {
-    console.log(`  ! products/${carpeta}/badge.svg: no hay hub-${slug}-badge.svg en el kit`);
+    // Sin badge ni en el sitio ni en el kit, la carpeta no es de un producto: nada que avisar.
+    if (tieneBadge) console.log(`  ! products/${carpeta}/badge.svg: no hay hub-${slug}-badge.svg en el kit`);
     continue;
   }
   const limpio = limpiarSvg(readFileSync(src, 'utf8'));
