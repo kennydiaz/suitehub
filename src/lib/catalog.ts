@@ -39,3 +39,33 @@ export async function getEdiciones(): Promise<Record<string, any>> {
   const cat = await getCatalog();
   return Object.fromEntries((cat.ediciones || []).map((e: any) => [e.key, e]));
 }
+
+/**
+ * Implementación: { precio, gratis_con_anual, incluye }.
+ * Entró al catálogo el 2026-09-15. Si el panel que responde todavía no la publica,
+ * se toma la del respaldo local en vez de romper el build o escribirla a mano.
+ */
+export async function getImplementacion(): Promise<{ precio: number; gratis_con_anual: boolean; incluye?: string }> {
+  const cat = await getCatalog();
+  return cat.implementacion ?? (fallback as any).implementacion;
+}
+
+/**
+ * Verticales en el orden del catálogo. Cada uno trae `planes.core` y `planes.pro` con
+ * `precio_mes`, `precio_anio` y `propio` (true = precio propio, no el de la edición).
+ */
+export async function getVerticales(): Promise<any[]> {
+  const cat = await getCatalog();
+  return cat.verticales || [];
+}
+
+/**
+ * Productos que no siguen las ediciones, por key: { time, web }.
+ * HUB Time: `planes[]` con `precio_mes` y `hasta` (empleados). HUB Web: `precio_desde` y
+ * `mantenimiento_mes`, null = a cotizar. Mismo respaldo que la implementación.
+ */
+export async function getIndependientes(): Promise<Record<string, any>> {
+  const cat = await getCatalog();
+  const lista = cat.independientes ?? (fallback as any).independientes ?? [];
+  return Object.fromEntries(lista.map((p: any) => [p.key, p]));
+}

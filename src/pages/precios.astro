@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getEdiciones } from '../lib/catalog';
+import { getEdiciones, getImplementacion, getIndependientes, getVerticales } from '../lib/catalog';
 
 const ediciones = [
   { key: 'lite',       name: 'Hub Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
@@ -18,6 +18,13 @@ for (const e of ediciones) {
   if ('yearly' in e) e.yearly = c.precio_anio;
   if ('priceYearly' in e) e.priceYearly = c.precio_anio;
 }
+
+// Implementación, verticales y productos independientes: del mismo catálogo, nunca a mano.
+const impl = await getImplementacion();
+const implCorto = `$${impl.precio} una vez${impl.gratis_con_anual ? ' · gratis con anual' : ''}`;
+const implFaq = `Sí, son $${impl.precio} una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar.${impl.gratis_con_anual ? ' Si pagas el plan anual, no se cobra.' : ''} En Hub Enterprise te asignamos un consultor dedicado.`;
+const verticales = await getVerticales();
+const { time: hubTime, web: hubWeb } = await getIndependientes();
 
 // Estructura comparativa: cada categoría con sus filas. ✓ = incluido, valor = numérico, — = no incluido.
 const comparativa = [
@@ -100,7 +107,7 @@ const comparativa = [
     rows: [
       { label: 'Soporte por email',     lite: '✓',     core: '✓',         pro: '✓',           enterprise: '✓' },
       { label: 'Soporte por WhatsApp',  lite: '—',     core: '✓',         pro: 'Prioritario', enterprise: '24/7' },
-      { label: 'Implementación ($199 una vez · gratis con anual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicada' },
+      { label: `Implementación (${implCorto})`, lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicada' },
       { label: 'Capacitación inicial',  lite: '—',     core: '1 sesión',  pro: '3 sesiones',  enterprise: 'Ilimitada' },
       { label: 'SLA contractual',       lite: '—',     core: '—',         pro: '—',           enterprise: '✓' },
       { label: 'Account manager',       lite: '—',     core: '—',         pro: '—',           enterprise: 'Dedicado' },
@@ -128,7 +135,7 @@ const colorMap = {
 const faqs = [
   { q: '¿Tengo que firmar contrato anual?', a: 'No. Pagas mes a mes y puedes cancelar cuando quieras. Si prefieres pagar el año por adelantado te llevas 16% de descuento, pero es opcional.' },
   { q: '¿Qué pasa si supero los límites de mi edición?', a: 'Cuando llegas al 80% del límite, el sistema te avisa. Desde la misma plataforma puedes pasarte a la siguiente edición sin migrar datos y sin perder lo que ya configuraste.' },
-  { q: '¿La implementación se cobra aparte?', a: 'Sí, son $199 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Hub Enterprise te asignamos un consultor dedicado.' },
+  { q: '¿La implementación se cobra aparte?', a: implFaq },
   { q: '¿Cómo se paga? ¿Aceptan ACH, Yappy, tarjeta?', a: 'Puedes pagar por transferencia ACH, Yappy, tarjeta de crédito o depósito bancario. Las cuentas Hub Enterprise también pueden pagar contra factura a 30 días.' },
   { q: '¿El costo del PAC para FE va incluido?', a: 'No. Al PAC (Digifact, The Factory HKA, Ebi, Factura Fácil o eFacturapty en Panamá; The Factory HKA Venezuela en Venezuela) le pagas tú directamente. SuiteHub se conecta con él sin cobro adicional, y durante el onboarding te ayudamos a contratarlo.' },
 ];
@@ -189,6 +196,82 @@ const faqLd = {
             </a>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Precio por vertical + productos independientes (HUB Time, HUB Web) -->
+  <section class="pb-12">
+    <div class="wrap">
+      <h2 class="text-2xl font-display font-bold mb-2">Precio por vertical</h2>
+      <p class="text-sm text-ink-400 mb-8">Cada vertical viene en dos versiones: «HUB X» sobre Hub Core y «HUB X Pro» sobre Hub Pro. El anual equivale a 10 meses.</p>
+
+      <div class="card-glass overflow-x-auto">
+        <table class="w-full text-sm min-w-[560px]">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left p-4 px-5 font-display font-semibold text-ink-200">Vertical</th>
+              <th class="p-4 text-center font-display font-semibold text-ink-200">HUB X</th>
+              <th class="p-4 text-center font-display font-semibold text-ink-200">HUB X Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            {verticales.map((v, idx) => (
+              <tr class={`border-b border-white/5 ${idx % 2 === 0 ? '' : 'bg-white/[0.015]'}`}>
+                <td class="p-4 px-5">
+                  <div class="text-ink-100 font-medium">{v.name}</div>
+                  <div class="text-xs text-ink-500">{v.sector}</div>
+                </td>
+                {['core', 'pro'].map((ed) => (
+                  <td class="p-4 text-center text-ink-200 whitespace-nowrap">
+                    <span class="font-semibold">${v.planes?.[ed]?.precio_mes}</span><span class="text-xs text-ink-500">/mes</span>
+                    <div class="text-xs text-ink-500">${v.planes?.[ed]?.precio_anio} al año</div>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-4 mt-8">
+        {hubTime && (
+          <div class="card-glass p-6">
+            <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-brand-300">Control de asistencia</div>
+            <h3 class="text-2xl font-display font-bold mb-1">{hubTime.name}</h3>
+            <p class="text-sm text-ink-400 mb-5">Marcación y asistencia de tu personal. Se cobra por empleados activos, no por usuarios del sistema.</p>
+            <div class="grid grid-cols-3 gap-3">
+              {hubTime.planes.map((p) => (
+                <div class="rounded-xl border border-white/10 p-4 text-center">
+                  <div class="text-xs text-ink-400 mb-1">{p.name}</div>
+                  <div class="text-2xl font-display font-bold">${p.precio_mes}<span class="text-xs text-ink-400 font-normal">/mes</span></div>
+                  <div class="text-xs text-ink-500 mt-1">hasta {p.hasta} empleados</div>
+                </div>
+              ))}
+            </div>
+            <p class="text-xs text-ink-500 mt-4">
+              En plan anual pagas 10 meses.{hubTime.implementacion ? ` Implementación: $${impl.precio} una sola vez${impl.gratis_con_anual ? ', gratis con plan anual' : ''}.` : ''}
+            </p>
+          </div>
+        )}
+        {hubWeb && (
+          <div class="card-glass p-6 flex flex-col">
+            <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-brand-300">Sitios web a medida</div>
+            <h3 class="text-2xl font-display font-bold mb-1">{hubWeb.name}</h3>
+            <p class="text-sm text-ink-400 mb-5">Diseño y desarrollo de tu sitio web a medida. Cada proyecto se cotiza según lo que necesita tu negocio.</p>
+            <div class="mb-2">
+              {hubWeb.precio_desde != null
+                ? <Fragment><span class="text-xs uppercase tracking-wider text-ink-400 mr-1">Desde</span><span class="text-4xl font-display font-bold">${hubWeb.precio_desde}</span><span class="text-sm text-ink-400"> por proyecto</span></Fragment>
+                : <span class="text-2xl font-display font-bold">Cotización por proyecto</span>}
+            </div>
+            {hubWeb.mantenimiento_mes != null && (
+              <div class="text-xs text-ink-500">Mantenimiento opcional: ${hubWeb.mantenimiento_mes}/mes</div>
+            )}
+            <a href="https://wa.me/50766326006?text=Quiero%20cotizar%20un%20sitio%20web%20con%20HUB%20Web" target="_blank" rel="noopener" class="mt-auto pt-5 block text-center text-sm py-2 rounded-lg transition-colors bg-white/5 hover:bg-white/10 text-white">
+              Cotizar por WhatsApp
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </section>
@@ -273,7 +356,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Sí, son $199 una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar. Si pagas el plan anual, no se cobra. En Hub Enterprise te asignamos un consultor dedicado.
+            {implFaq}
           </div>
         </details>
         <details class="card-glass group">

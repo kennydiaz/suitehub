@@ -14,29 +14,43 @@
  * `demo` y la tarjeta cambia sola de «Solicita el acceso» a un enlace directo.
  */
 
+import { getEdiciones, getImplementacion, getVerticales } from '../lib/catalog';
+
 const WA = 'https://wa.me/50766326006?text=Hola%2C%20soy%20socio%20comercial%20y%20necesito%20acceso%20a%20una%20demo';
+
+// Precios del catálogo del panel (con respaldo local): aquí no se escribe ningún monto.
+const _ed = await getEdiciones();
+const impl = await getImplementacion();
+const _verts = await getVerticales();
+const usd = (n: number) => `$${Number(n).toLocaleString('en-US')}`;
+const lineaCore = _ed.core?.precio_mes ?? 48;
+const lineaPro = _ed.pro?.precio_mes ?? 64;
+// Verticales con precio propio en alguna de las dos líneas: se nombran para no prometer «el mismo precio».
+const conPropio = _verts
+  .filter((v: any) => v.planes?.core?.propio || v.planes?.pro?.propio)
+  .map((v: any) => `${v.name} (${usd(v.planes.core.precio_mes)} o ${usd(v.planes.pro.precio_mes)} en Pro)`);
 
 const ediciones = [
   {
-    nombre: 'Hub Lite', color: '#64748B', precio: 24, anual: 'o $240 al año', destacada: false,
+    nombre: 'Hub Lite', color: '#64748B', precio: _ed.lite?.precio_mes ?? 24, anual: `o ${usd(_ed.lite?.precio_anio ?? 240)} al año`, destacada: false,
     quien: 'Para el emprendedor que solo necesita facturar legal y llevar sus clientes.',
     puntos: ['3 usuarios · 1 sucursal', 'Clientes, catálogo y cotizaciones', 'Facturación electrónica DGI', '500 registros · 2 GB'],
     demo: 'https://lite.suitehub.net',
   },
   {
-    nombre: 'Hub Core', color: '#1F4570', precio: 48, anual: 'o $480 al año', destacada: true,
+    nombre: 'Hub Core', color: '#1F4570', precio: lineaCore, anual: `o ${usd(_ed.core?.precio_anio ?? 480)} al año`, destacada: true,
     quien: 'El negocio de una sucursal que ya opera en serio. Es la venta natural.',
     puntos: ['8 usuarios · 1 sucursal', 'Los 5 PACs autorizados de la DGI', 'Cuentas por cobrar e inventario auditado', 'Reportes y plantillas PDF'],
     demo: null,
   },
   {
-    nombre: 'Hub Pro', color: '#7C3AED', precio: 64, anual: 'o $640 al año', destacada: false,
+    nombre: 'Hub Pro', color: '#7C3AED', precio: lineaPro, anual: `o ${usd(_ed.pro?.precio_anio ?? 640)} al año`, destacada: false,
     quien: 'El que quiere el sistema con su marca y conectado a otras herramientas.',
     puntos: ['20 usuarios · 1 sucursal', 'Logo y colores propios', 'API, webhooks y automatizaciones', 'WhatsApp Business integrado'],
     demo: null,
   },
   {
-    nombre: 'Hub Enterprise', color: '#0A2540', precio: 196, anual: 'o $1,960 al año · +$64 por sucursal extra', destacada: false,
+    nombre: 'Hub Enterprise', color: '#0A2540', precio: _ed.enterprise?.precio_mes ?? 196, anual: `o ${usd(_ed.enterprise?.precio_anio ?? 1960)} al año · +${usd(_ed.enterprise?.sucursal_adicional_mes ?? 64)} por sucursal extra`, destacada: false,
     quien: 'Cadenas y negocios con varias sedes. Única edición multi-sucursal.',
     puntos: ['50 usuarios · sucursales ilimitadas', 'Reportes consolidados o por sede', 'Cualquier vertical incluido', 'SLA y soporte prioritario'],
     demo: null,
@@ -345,7 +359,7 @@ footer b{color:var(--ink-2); font-weight:600}
 
     <div class="nota">
       <h3>La regla de oro para no equivocarte</h3>
-      <p>Cada vertical se vende de dos maneras y nada más: <b>HUB X</b> a $48/mes (línea Core) o <b>HUB X Pro</b> a $64/mes (línea Pro). No existe «HUB X Lite». Y si el negocio tiene más de una sucursal, la respuesta siempre es <b>Hub Enterprise</b>, que incluye cualquier vertical.</p>
+      <p>Cada vertical se vende de dos maneras y nada más: <b>HUB X</b> a {usd(lineaCore)}/mes (línea Core) o <b>HUB X Pro</b> a {usd(lineaPro)}/mes (línea Pro){conPropio.length > 0 && <Fragment>, salvo los que tienen precio propio: {conPropio.join(', ')}</Fragment>}. No existe «HUB X Lite». Y si el negocio tiene más de una sucursal, la respuesta siempre es <b>Hub Enterprise</b>, que incluye cualquier vertical.</p>
     </div>
   </section>
 
@@ -378,7 +392,9 @@ footer b{color:var(--ink-2); font-weight:600}
   <section>
     <div class="eyebrow">Las verticales</div>
     <h2>Quince oficios, un mismo precio</h2>
-    <p class="sub">Todos los verticales cuestan lo mismo: $48/mes en línea Core o $64/mes en línea Pro, y el anual son diez meses. Lo que cambia entre los dos grupos de abajo no es el precio, <b>es qué puedes enseñarle al cliente hoy</b>.</p>
+    <p class="sub">{conPropio.length === 0
+      ? <Fragment>Todos los verticales cuestan lo mismo: {usd(lineaCore)}/mes en línea Core o {usd(lineaPro)}/mes en línea Pro, y el anual son diez meses.</Fragment>
+      : <Fragment>Los verticales cuestan {usd(lineaCore)}/mes en línea Core o {usd(lineaPro)}/mes en línea Pro, salvo {conPropio.join(', ')}. El anual son diez meses.</Fragment>} Lo que cambia entre los dos grupos de abajo no es el precio, <b>es qué puedes enseñarle al cliente hoy</b>.</p>
 
     <div class="nota">
       <h3>Cómo funcionan las demos</h3>
@@ -452,7 +468,7 @@ footer b{color:var(--ink-2); font-weight:600}
         <h3>Fuera del precio de la suscripción</h3>
         <ul>
           <li><span class="m">—</span><span><b>El PAC de facturación</b>: lo contrata y lo paga el cliente directo a su proveedor. SuiteHub se integra sin cobrar por eso</span></li>
-          <li><span class="m">—</span><span><b>Implementación: $199 una sola vez</b>, y es gratis si el cliente paga el plan anual. Cubre configuración, carga del catálogo y capacitación</span></li>
+          <li><span class="m">—</span><span><b>Implementación: {usd(impl.precio)} una sola vez</b>{impl.gratis_con_anual ? ', y es gratis si el cliente paga el plan anual' : ''}. Cubre configuración, carga del catálogo y capacitación</span></li>
           <li><span class="m">—</span><span><b>Hardware</b>: impresoras térmicas, balanzas, lectores, sensores de conteo</span></li>
           <li><span class="m">—</span><span>Desarrollos a la medida que no sean parte del vertical</span></li>
         </ul>
@@ -489,7 +505,7 @@ footer b{color:var(--ink-2); font-weight:600}
       </div>
       <div class="fila">
         <div class="q">Está caro</div>
-        <div class="a">Compáralo con lo que hay: las suites contables regionales cobran entre $43 y $118 al mes por menos oficio. Hub Core son $48 con el vertical completo y el soporte local. Y en plan anual, doce meses al precio de diez.</div>
+        <div class="a">Compáralo con lo que hay: las suites contables regionales cobran entre $43 y $118 al mes por menos oficio. Hub Core son {usd(lineaCore)} con el vertical completo y el soporte local. Y en plan anual, doce meses al precio de diez.</div>
       </div>
       <div class="fila">
         <div class="q">¿Y si mañana cambia mi PAC?</div>

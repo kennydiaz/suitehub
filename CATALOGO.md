@@ -23,22 +23,32 @@ Se nombran siempre completas: **Hub Lite · Hub Core · Hub Pro · Hub Enterpris
 
 **Multi-sucursal vive solo en Hub Enterprise.** Hub Lite, Hub Core y Hub Pro son de una sucursal.
 
-## 2. Verticales (eje vertical): dos precios, sin recargo
+## 2. Verticales (eje vertical): dos precios por vertical
 
-| Presentación | Precio | Qué es |
+| Presentación | Precio por defecto | Qué es |
 |---|---|---|
 | **HUB X** | **$48/mes · $480/año** (línea Core) | El vertical sobre la edición Hub Core |
 | **HUB X Pro** | **$64/mes · $640/año** (línea Pro) | El vertical sobre la edición Hub Pro |
 
 Verticales en catálogo (16): Taller · Carwash · POS · Restaurant · Market · Boutique · Pet · Salon · Clinic · Gym · Lavandería · Inmobiliaria · Hotel · Phone · Ship · Traffic (el hardware se cotiza aparte).
 
-- Sin precio propio, sin grupos, sin deltas, sin módulos especiales. Nunca "HUB X Lite".
+- **Precio propio opcional (desde 2026-09-15)**: en el panel cada vertical puede tener su precio en la línea Core, en la Pro o en las dos. Vacío = sigue la edición. El JSON lo marca con `planes.core.propio` / `planes.pro.propio`.
+- Sin grupos, sin deltas, sin módulos especiales. Nunca "HUB X Lite".
 - HUB POS (food service ligero) y HUB Restaurant (full-service con salón y mesas) son dos verticales distintos que comparten base.
 - Un vertical con varias sucursales → **Hub Enterprise ($196)**, que incluye cualquier vertical.
 - Casos reales publicados: HUB Taller (QS Express, La Chorrera) y HUB Lavandería (Clean Factory, Panamá).
-- Fuera del catálogo: HUB Time (en desarrollo, sin definición comercial), HUB Web (línea de servicio), HUB Kiosko (módulo de HUB POS).
+- Fuera del catálogo: HUB Kiosko (módulo de HUB POS).
 
-Los precios de los verticales **no se editan**: siguen la línea Core/Pro. Cambiar Hub Core o Hub Pro en el panel mueve todos los verticales a la vez.
+Cambiar Hub Core o Hub Pro en el panel mueve a la vez todos los verticales que **no** tienen precio propio en esa línea.
+
+## 2b. Productos independientes: no siguen las ediciones
+
+| Producto | Cómo se cobra | Precio (anual = 10 meses) |
+|---|---|---|
+| **HUB Time** (control de asistencia y marcación) | Por empleados activos | Básico **$29/mes** hasta 15 · Pro **$59/mes** hasta 40 · Empresarial **$119/mes** hasta 100 |
+| **HUB Web** (diseño y desarrollo web a medida) | Por proyecto | «Desde» y mantenimiento mensual opcionales; vacíos = a cotizar |
+
+Los planes de HUB Time son los de `hubtime/config/plans.php`. Si cambian allá, se cambian en el panel. Cada producto decide si lleva implementación.
 
 ## 3. Sin add-ons
 
@@ -49,7 +59,7 @@ Dos cosas que antes figuraban como add-on y **no** lo son:
 | Concepto | Dónde vive |
 |---|---|
 | **Sucursal adicional** (+$64/mes) | Es el precio por sede de **Hub Enterprise**, dentro de la edición (`sucursal_adicional_mes`). Hub Lite, Hub Core y Hub Pro son de una sucursal. |
-| **Implementación** ($199 una sola vez · gratis con plan anual) | Condición comercial **fuera del catálogo**: se cotiza aparte al cerrar la venta. No está en `Catalog.php` ni en el JSON; se publica en la página de precios y en las FAQ del sitio. |
+| **Implementación** ($196 una sola vez · gratis con plan anual) | Desde 2026-09-15 vive **en el catálogo** (bloque `implementacion`: `precio`, `gratis_con_anual`, `incluye`) y se edita en el panel. Precios, casos y socios la leen de ahí con `getImplementacion()`: no se escribe a mano. |
 
 El PAC de facturación electrónica lo contrata y paga el cliente directo a su PAC; SuiteHub integra sin cobro.
 
@@ -63,5 +73,6 @@ El PAC de facturación electrónica lo contrata y paga el cliente directo a su P
 
 ## 5. Pendientes
 
-- [ ] Definir HUB Time (existe en brand kit, no en catálogo).
+- [ ] HUB Web: fijar el precio «desde» y el mantenimiento en el panel.
+- [ ] HUB Time y HUB Web: presentación propia (página en `/verticales/`) con copy y capturas.
 - [ ] Actualizar `Catalog.php` del panel con los nombres completos de las ediciones (Hub Lite, Hub Core, Hub Pro, Hub Enterprise). Hasta entonces, el build del sitio recibe los nombres cortos del endpoint.

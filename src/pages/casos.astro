@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getImplementacion } from '../lib/catalog';
 
 import instalaciones from '../data/instalaciones.json';
+
+// La implementación sale del catálogo del panel, no se escribe a mano.
+const impl = await getImplementacion();
 ---
 <BaseLayout title="Casos de éxito · SuiteHub" description="QS Express, Clean Factory, KM Seguridad, CVE Panamá e Inversiones Fortune: PYMEs de Panamá y Venezuela que ampliaron su capacidad operativa con SuiteHub. La mayoría de los clientes en producción están en Panamá. En USA llevamos muchos años, en 2026 llegamos a España y con Inversiones Fortune arranca el lanzamiento en Venezuela.">
 
@@ -641,7 +645,7 @@ import instalaciones from '../data/instalaciones.json';
         </h2>
         <p class="text-ink-300 mb-8 max-w-xl mx-auto">
           Escríbenos por WhatsApp y vemos juntos si SuiteHub le sirve a tu negocio.
-          La implementación cuesta $199 una sola vez y es gratis con plan anual.
+          La implementación cuesta ${impl.precio} una sola vez{impl.gratis_con_anual ? ' y es gratis con plan anual' : ''}.
         </p>
         <a href="https://wa.me/50766326006?text=Quiero%20saber%20si%20SuiteHub%20funciona%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn-primary">
           <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp

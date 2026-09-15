@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEdiciones } from '../../lib/catalog';
+import { getEdiciones, getImplementacion, getIndependientes, getVerticales } from '../../lib/catalog';
 
 const editions = [
   { key: 'lite',       name: 'Hub Lite',       price: 24,  yearly: 240,  color: 'sky',    featured: false },
@@ -18,6 +18,13 @@ for (const e of editions) {
   if ('yearly' in e) e.yearly = c.precio_anio;
   if ('priceYearly' in e) e.priceYearly = c.precio_anio;
 }
+
+// Implementation, verticals and standalone products: same catalog, never typed by hand.
+const impl = await getImplementacion();
+const implShort = `$${impl.precio} once${impl.gratis_con_anual ? ' · free with annual' : ''}`;
+const implFaq = `Yes, it's a one-time $${impl.precio} fee. That covers the initial setup, loading your catalog and the training to get you started.${impl.gratis_con_anual ? " It's free if you pay annually," : ''} and Hub Enterprise customers get a dedicated consultant.`;
+const verticals = await getVerticales();
+const { time: hubTime, web: hubWeb } = await getIndependientes();
 
 const comparison = [
   {
@@ -99,7 +106,7 @@ const comparison = [
     rows: [
       { label: 'Email support',     lite: '✓',     core: '✓',         pro: '✓',           enterprise: '✓' },
       { label: 'WhatsApp support',  lite: '—',     core: '✓',         pro: 'Priority',     enterprise: '24/7' },
-      { label: 'Implementation ($199 once · free with annual)', lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicated' },
+      { label: `Implementation (${implShort})`, lite: '✓', core: '✓', pro: '✓', enterprise: 'Dedicated' },
       { label: 'Initial training',  lite: '—',     core: '1 session', pro: '3 sessions',  enterprise: 'Unlimited' },
       { label: 'Contractual SLA',   lite: '—',     core: '—',         pro: '—',           enterprise: '✓' },
       { label: 'Account manager',   lite: '—',     core: '—',         pro: '—',           enterprise: 'Dedicated' },
@@ -127,7 +134,7 @@ const colorMap = {
 const faqs = [
   { q: 'Do I have to sign an annual contract?', a: "No. You pay monthly and can cancel anytime. If you'd rather pay for the year up front, you get 16% off, but that's up to you." },
   { q: "What happens if I go over my edition's limits?", a: "You'll get a heads-up when you hit 80% of a limit. From there you can move up to the next edition right inside the platform, with no data migration and without losing your settings." },
-  { q: 'Is implementation billed separately?', a: "Yes, it's a one-time $199 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Hub Enterprise customers get a dedicated consultant." },
+  { q: 'Is implementation billed separately?', a: implFaq },
   { q: 'How do I pay? Do you take ACH, Yappy, credit cards?', a: 'You can pay by ACH, Yappy, credit card or bank deposit. Hub Enterprise accounts can also pay by invoice on net-30 terms.' },
   { q: 'Is the e-invoicing PAC fee included?', a: "No. You pay the PAC (Digifact, The Factory HKA, Ebi, Factura Fácil or eFacturapty in Panama; The Factory HKA Venezuela in Venezuela) directly. SuiteHub connects to it at no extra charge, and we'll help you sign up with one during onboarding." },
 ];
@@ -188,6 +195,79 @@ const faqLd = {
             </a>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Price per vertical + standalone products (HUB Time, HUB Web) -->
+  <section class="pb-12">
+    <div class="wrap">
+      <h2 class="text-2xl font-display font-bold mb-2">Price per vertical</h2>
+      <p class="text-sm text-ink-400 mb-8">Every vertical comes in two versions: "HUB X" on Hub Core and "HUB X Pro" on Hub Pro. Paying annually costs 10 months.</p>
+
+      <div class="card-glass overflow-x-auto">
+        <table class="w-full text-sm min-w-[560px]">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left p-4 px-5 font-display font-semibold text-ink-200">Vertical</th>
+              <th class="p-4 text-center font-display font-semibold text-ink-200">HUB X</th>
+              <th class="p-4 text-center font-display font-semibold text-ink-200">HUB X Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            {verticals.map((v, idx) => (
+              <tr class={`border-b border-white/5 ${idx % 2 === 0 ? '' : 'bg-white/[0.015]'}`}>
+                <td class="p-4 px-5 text-ink-100 font-medium">{v.name}</td>
+                {['core', 'pro'].map((ed) => (
+                  <td class="p-4 text-center text-ink-200 whitespace-nowrap">
+                    <span class="font-semibold">${v.planes?.[ed]?.precio_mes}</span><span class="text-xs text-ink-500">/mo</span>
+                    <div class="text-xs text-ink-500">${v.planes?.[ed]?.precio_anio}/year</div>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-4 mt-8">
+        {hubTime && (
+          <div class="card-glass p-6">
+            <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-brand-300">Time and attendance</div>
+            <h3 class="text-2xl font-display font-bold mb-1">{hubTime.name}</h3>
+            <p class="text-sm text-ink-400 mb-5">Clock-in and attendance for your staff. Priced by active employees, not by system users.</p>
+            <div class="grid grid-cols-3 gap-3">
+              {hubTime.planes.map((p) => (
+                <div class="rounded-xl border border-white/10 p-4 text-center">
+                  <div class="text-xs text-ink-400 mb-1">{p.key === 'basico' ? 'Basic' : p.key === 'empresarial' ? 'Business' : p.name}</div>
+                  <div class="text-2xl font-display font-bold">${p.precio_mes}<span class="text-xs text-ink-400 font-normal">/mo</span></div>
+                  <div class="text-xs text-ink-500 mt-1">up to {p.hasta} employees</div>
+                </div>
+              ))}
+            </div>
+            <p class="text-xs text-ink-500 mt-4">
+              Pay annually and you pay for 10 months.{hubTime.implementacion ? ` Implementation: one-time $${impl.precio}${impl.gratis_con_anual ? ', free with an annual plan' : ''}.` : ''}
+            </p>
+          </div>
+        )}
+        {hubWeb && (
+          <div class="card-glass p-6 flex flex-col">
+            <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-brand-300">Custom websites</div>
+            <h3 class="text-2xl font-display font-bold mb-1">{hubWeb.name}</h3>
+            <p class="text-sm text-ink-400 mb-5">Custom website design and development. Every project is quoted based on what your business needs.</p>
+            <div class="mb-2">
+              {hubWeb.precio_desde != null
+                ? <Fragment><span class="text-xs uppercase tracking-wider text-ink-400 mr-1">From</span><span class="text-4xl font-display font-bold">${hubWeb.precio_desde}</span><span class="text-sm text-ink-400"> per project</span></Fragment>
+                : <span class="text-2xl font-display font-bold">Quoted per project</span>}
+            </div>
+            {hubWeb.mantenimiento_mes != null && (
+              <div class="text-xs text-ink-500">Optional maintenance: ${hubWeb.mantenimiento_mes}/mo</div>
+            )}
+            <a href="https://wa.me/50766326006?text=I%20want%20a%20quote%20for%20a%20website%20with%20HUB%20Web" target="_blank" rel="noopener" class="mt-auto pt-5 block text-center text-sm py-2 rounded-lg transition-colors bg-white/5 hover:bg-white/10 text-white">
+              Get a quote on WhatsApp
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </section>
@@ -272,7 +352,7 @@ const faqLd = {
             <i class="fa-solid fa-plus text-brand-400 group-open:rotate-45 transition-transform"></i>
           </summary>
           <div class="px-6 pb-5 text-sm text-ink-300 leading-relaxed">
-            Yes, it's a one-time $199 fee. That covers the initial setup, loading your catalog and the training to get you started. It's free if you pay annually, and Hub Enterprise customers get a dedicated consultant.
+            {implFaq}
           </div>
         </details>
         <details class="card-glass group">
