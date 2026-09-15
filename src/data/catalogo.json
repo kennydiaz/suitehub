@@ -513,6 +513,37 @@
       ]
     },
     {
+      "key": "ship",
+      "name": "HUB Ship",
+      "icon": "fa-truck-fast",
+      "sector": "Reparto de paquetería y última milla",
+      "caso_real": null,
+      "nota": null,
+      "planes": {
+        "core": {
+          "precio_mes": 48,
+          "precio_anio": 480
+        },
+        "pro": {
+          "precio_mes": 96,
+          "precio_anio": 960
+        }
+      },
+      "edicion_minima": "core",
+      "precio_mes": 48,
+      "precio_anio": 480,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Manifiestos",
+        "Escaneo de entrada",
+        "Despacho por zona",
+        "Cadena de custodia",
+        "Prueba de entrega",
+        "Nivel de servicio"
+      ]
+    },
+    {
       "key": "traffic",
       "name": "HUB Traffic",
       "icon": "fa-people-arrows",

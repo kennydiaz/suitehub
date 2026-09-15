@@ -96,7 +96,7 @@
           {
             "icono": "🧾",
             "titulo": "Factura electrónica",
-            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact); imprime en ticket térmico 80mm o carta."
+            "texto": "Emite con CUFE y QR ante la DGI; imprime en ticket térmico 80mm o carta."
           },
           {
             "icono": "🔄",
@@ -493,7 +493,7 @@
         "hardware": {
           "eyebrow": "Cámaras LPR",
           "titulo": "Reconocimiento de placas en la entrada",
-          "texto": "Con cámaras de reconocimiento de placas, el vehículo se registra solo: al llegar, HUB Carwash abre la orden con el cliente y su historial, y avisa por WhatsApp cuando está listo. PROOQ instala y configura las cámaras.",
+          "texto": "Con cámaras de reconocimiento de placas, el vehículo se registra solo: al llegar, HUB Carwash abre la orden con el cliente y su historial, y avisa por WhatsApp cuando está listo. El equipo de SuiteHub instala y configura las cámaras.",
           "puntos": [
             "Cámaras Hikvision o Dahua con ANPR en el acceso",
             "Puente local en tu red que envía cada placa al sistema",
@@ -537,7 +537,7 @@
           "Tus datos en tu propia base, respaldados",
           "Soporte local por WhatsApp",
           "Todas las actualizaciones incluidas",
-          "Instalación y capacitación por PROOQ en sitio"
+          "Instalación y capacitación en sitio por el equipo de SuiteHub"
         ],
         "cta": {
           "titular": {
@@ -800,7 +800,7 @@
         "hardware": {
           "eyebrow": "LPR cameras",
           "titulo": "Plate recognition at the entrance",
-          "texto": "With plate-recognition cameras the vehicle registers itself: on arrival, HUB Carwash opens the order with the customer and their history, and sends a WhatsApp when it is ready. PROOQ installs and configures the cameras.",
+          "texto": "With plate-recognition cameras the vehicle registers itself: on arrival, HUB Carwash opens the order with the customer and their history, and sends a WhatsApp when it is ready. The SuiteHub team installs and configures the cameras.",
           "puntos": [
             "Hikvision or Dahua ANPR cameras at the entrance",
             "Local bridge on your network that sends each plate to the system",
@@ -844,7 +844,7 @@
           "Your data in your own database, backed up",
           "Local support via WhatsApp",
           "All updates included",
-          "On-site installation and training by PROOQ"
+          "On-site installation and training by the SuiteHub team"
         ],
         "cta": {
           "titular": {
@@ -1046,7 +1046,7 @@
           {
             "icono": "🧾",
             "titulo": "Factura electrónica",
-            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact, HKA o Factura Fácil); imprime en carta u 80mm."
+            "texto": "Emite con CUFE y QR ante la DGI con tu PAC autorizado; imprime en carta u 80mm."
           },
           {
             "icono": "📄",
@@ -1516,7 +1516,7 @@
           {
             "icono": "🧾",
             "titulo": "Factura electrónica",
-            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact); cuenta del huésped o consumo suelto, lista para imprimir o PDF."
+            "texto": "Emite con CUFE y QR ante la DGI; cuenta del huésped o consumo suelto, lista para imprimir o PDF."
           },
           {
             "icono": "💵",
@@ -1930,7 +1930,7 @@
           {
             "icono": "🧾",
             "titulo": "Factura electrónica",
-            "texto": "Emítela con CUFE y QR vía PAC (Digifact) y luego imprímela o guárdala en PDF."
+            "texto": "Emítela con CUFE y QR y luego imprímela o guárdala en PDF."
           },
           {
             "icono": "📄",
@@ -2404,7 +2404,7 @@
           {
             "icono": "🧾",
             "titulo": "Factura electrónica",
-            "texto": "Emite con CUFE y QR ante la DGI vía PAC (Digifact) e imprime en ticket de 80mm o en tamaño carta."
+            "texto": "Emite con CUFE y QR ante la DGI e imprime en ticket de 80mm o en tamaño carta."
           },
           {
             "icono": "🔒",
@@ -3701,13 +3701,13 @@
       },
       "es": {
         "titulo": "HUB Restaurant",
-        "eyebrow": "Versión PRO de HUB POS · restaurantes y bares",
+        "eyebrow": "Restaurantes y bares con salón",
         "titular": {
           "antes": "HUB ",
           "destacado": "Restaurant",
           "despues": ""
         },
-        "tagline": "La versión PRO de HUB POS para restaurantes, cafeterías y bares.",
+        "tagline": "Para restaurantes, cafeterías y bares con salón: mesas, cocina y caja conectadas.",
         "intro": "Toma pedidos, controla tus mesas y cobra, aunque se caiga el internet. Está pensado para restaurantes, cafeterías, bares y food trucks.",
         "chips": [
           "🪑 Mesas en vivo",
@@ -3851,13 +3851,13 @@
       },
       "en": {
         "titulo": "HUB Restaurant",
-        "eyebrow": "PRO version of HUB POS · restaurants and bars",
+        "eyebrow": "Full-service restaurants and bars",
         "titular": {
           "antes": "HUB ",
           "destacado": "Restaurant",
           "despues": ""
         },
-        "tagline": "The PRO version of HUB POS for restaurants, cafés and bars.",
+        "tagline": "For restaurants, cafés and bars with a dining room: tables, kitchen and checkout connected.",
         "intro": "Take orders, manage your tables and get paid, even when the internet goes down. Built for restaurants, cafés, bars and food trucks.",
         "chips": [
           "🪑 Live tables",
@@ -4406,6 +4406,472 @@
         },
         "wa_text": "Hi, I'd like info about HUB Salon ✂️",
         "wa_demo": "Hi, I'd like a demo of HUB Salon for my salon"
+      }
+    },
+    "ship": {
+      "slug": "ship",
+      "nombre": "Hub Ship",
+      "publicado": true,
+      "acento": "#0F766E",
+      "imagenes_base": "https://suitehub.net/images/products/ship/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/ship",
+        "en": "https://suitehub.net/en/verticals/ship"
+      },
+      "hero": {
+        "imagen": "dashboard.webp",
+        "ancho": 2852,
+        "alto": 1436
+      },
+      "es": {
+        "titulo": "HUB Ship",
+        "eyebrow": "Reparto de paquetería y última milla",
+        "titular": {
+          "antes": "Cada paquete, con ",
+          "destacado": "nombre y apellido",
+          "despues": " de quién lo tuvo"
+        },
+        "tagline": "Para empresas que reparten paquetería desde un hub hasta el destinatario final.",
+        "intro": "Recibes la carga del contratante contra su manifiesto, escaneas la entrada, despachas por zona con repartidores propios y entregas con foto y nombre de quien recibió. Cada paquete lleva su cadena de custodia.",
+        "chips": [
+          "📋 Manifiestos",
+          "📦 Cadena de custodia",
+          "🚚 Despacho por zona",
+          "📸 Prueba de entrega"
+        ],
+        "problema": "😩 ¿Se pierde un paquete y nadie sabe en qué punto de la cadena fue?",
+        "solucion": "😎 Controla la paquetería desde que entra al hub hasta que la firma el destinatario",
+        "solucion_sub": "Concilia la carga contra el manifiesto el mismo día, arma los lotes por zona, entrega con evidencia y responde cualquier reclamo con la hora, la foto y el nombre de quien recibió.",
+        "recorrido_titulo": "Un día en el hub, pantalla por pantalla",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El día del hub, de un vistazo",
+            "texto": "Lo que hay en el hub, lo que va en la calle, lo entregado y lo fallido de hoy. Cada cifra es un enlace a la pantalla donde se resuelve, no un número para mirar.",
+            "puntos": [
+              "Cuántos paquetes esperan repartidor y cuántos están con alguien",
+              "Los lotes despachados sin cerrar, con lo entregado y lo pendiente de cada uno",
+              "Lo atascado: lo que pasó el compromiso de entrega del contratante"
+            ]
+          },
+          {
+            "imagen": "dashboard-movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "El mismo tablero en el teléfono",
+            "texto": "Se instala en el teléfono como aplicación y abre en la pantalla de inicio. El supervisor ve el día desde el hub, desde la casa o desde la calle, sin abrir la computadora.",
+            "puntos": [
+              "Las mismas cifras, ordenadas para una mano",
+              "Se instala desde el navegador, sin tienda de aplicaciones",
+              "Cada perfil ve solo lo suyo"
+            ]
+          },
+          {
+            "imagen": "recepcion.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La carga que llega hoy",
+            "texto": "El manifiesto es la lista que manda el contratante. Se pega desde Excel o se sube el CSV, y con eso quedan creados los paquetes del día antes de abrir la puerta.",
+            "puntos": [
+              "Una línea por paquete: tracking, destinatario, teléfono, dirección, monto a cobrar",
+              "Los trackings repetidos se detectan al cargar, no después",
+              "La zona de reparto se adivina por la dirección y se corrige a mano"
+            ]
+          },
+          {
+            "imagen": "escanear.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Escanear la entrada",
+            "texto": "La pantalla de la pistola. Cada lectura contesta al instante y con color: verde recibido, ámbar algo que mirar, rojo no se pudo.",
+            "puntos": [
+              "Un código que ya estaba no se registra dos veces",
+              "Un código que no está en ninguna lista entra como sobrante, no se queda fuera",
+              "Un paquete que venía en otro manifiesto se recibe igual y lo avisa"
+            ]
+          },
+          {
+            "imagen": "manifiesto.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Cerrar el manifiesto es cuadrar el día",
+            "texto": "Cerrar es decir «esto fue todo lo que llegó». Lo que quedó sin escanear es un faltante y se reporta ese mismo día, no cuando el contratante reclama tres semanas después.",
+            "puntos": [
+              "Venían, recibidos, faltan y sobrantes, en cuatro cifras",
+              "Cada faltante con su tracking y su destinatario",
+              "Exportación a CSV para responderle al contratante en su formato"
+            ]
+          },
+          {
+            "imagen": "despacho.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Despachar por zona",
+            "texto": "Lo que está en el hub, agrupado por zona, y los lotes del día. Un lote es lo que un repartidor se lleva en una salida.",
+            "puntos": [
+              "Se arma escaneando, o se agrega una zona completa de un golpe",
+              "Un repartidor, un lote abierto: no hay dos listas para la misma persona",
+              "Al despachar, la custodia de esos paquetes pasa a él"
+            ]
+          },
+          {
+            "imagen": "lote.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El lote, mientras está afuera",
+            "texto": "Todo lo que lleva el repartidor en esa salida, y cómo le va sin llamarlo por teléfono.",
+            "puntos": [
+              "Cuántos lleva, cuánto cobra contra entrega y de qué zonas",
+              "Entregados, fallidos y pendientes en vivo",
+              "El cierre del lote cuadra lo que salió contra lo que volvió"
+            ]
+          },
+          {
+            "imagen": "hoja-ruta.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La hoja de ruta que se firma",
+            "texto": "La hoja imprimible con casilla de resultado y dos firmas: la del repartidor que recibe y la del hub que entrega. Hoy es lo que el repartidor se lleva en la mano.",
+            "puntos": [
+              "Sale lista para imprimir, sin configurar nada",
+              "Queda constancia en papel de la entrega al repartidor",
+              "Una línea por paquete, con dirección y monto a cobrar"
+            ]
+          },
+          {
+            "imagen": "paquete.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La ficha del paquete",
+            "texto": "La cadena de custodia completa: cada cambio de estado, la hora, quién lo hizo y quién tenía el paquete en ese momento. Con la foto de la entrega y el nombre de quien recibió.",
+            "puntos": [
+              "Una frase arriba dice dónde está y desde cuándo, sin leer la tabla",
+              "La entrega no se registra sin evidencia si la empresa lo exige",
+              "Nada de esta historia se edita ni se borra"
+            ]
+          },
+          {
+            "imagen": "paquete-movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "La prueba de entrega, donde esté quien pregunta",
+            "texto": "Llama el contratante por un paquete y la respuesta está en el teléfono: la hora, el nombre de quien recibió y la foto. La discusión se cierra en el momento.",
+            "puntos": [
+              "La foto se sirve solo con sesión, nunca por un enlace público",
+              "La historia completa del paquete en una sola pantalla",
+              "Se guarda lo necesario y por el tiempo necesario (Ley 81)"
+            ]
+          },
+          {
+            "imagen": "retorno.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Lo que vuelve al hub",
+            "texto": "El repartidor regresa y se escanea lo que no pudo entregar. La custodia vuelve al hub en el mismo acto.",
+            "puntos": [
+              "Un intento fallido lleva motivo de una lista cerrada, no texto libre",
+              "Al agotar los intentos el paquete queda por devolver, no se pierde en el limbo",
+              "Quién tiene qué en la calle, en la misma pantalla"
+            ]
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Los números que se le enseñan al dueño",
+            "texto": "El periodo completo: recibidos, entregados, fallidos y devueltos; el nivel de servicio contra el compromiso de cada contratante; y el detalle por repartidor y por contratante.",
+            "puntos": [
+              "Porcentaje entregado a tiempo y a la primera",
+              "Por repartidor: cuántos entregó, su efectividad y cuánto se le paga",
+              "Por contratante: cuánto se le factura, y por qué no se entrega lo que no se entrega"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Lo que trae",
+        "funciones_titulo": "De la puerta del hub a la puerta del destinatario",
+        "funciones": [
+          {
+            "icono": "📋",
+            "titulo": "Manifiestos",
+            "texto": "La lista del contratante pegada o por CSV, con faltantes y sobrantes el mismo día"
+          },
+          {
+            "icono": "📦",
+            "titulo": "Escaneo de entrada",
+            "texto": "Lectura con pistola y respuesta al instante, sin recargar la pantalla"
+          },
+          {
+            "icono": "🚚",
+            "titulo": "Despacho por zona",
+            "texto": "Lotes por repartidor con hoja de ruta imprimible y firma"
+          },
+          {
+            "icono": "🔒",
+            "titulo": "Cadena de custodia",
+            "texto": "Quién tuvo cada paquete y desde cuándo, sin poder editarse ni borrarse"
+          },
+          {
+            "icono": "📸",
+            "titulo": "Prueba de entrega",
+            "texto": "Foto y nombre de quien recibió, con la hora real del hecho"
+          },
+          {
+            "icono": "📈",
+            "titulo": "Nivel de servicio",
+            "texto": "Entregas a tiempo y a la primera, por contratante y por repartidor"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Ship: sistema para empresas de reparto de paquetería y última milla",
+          "description": "Manifiestos con faltantes y sobrantes, escaneo de entrada, despacho por zona, cadena de custodia por paquete y entrega con foto y nombre de quien recibió."
+        },
+        "wa_text": "Hola, me interesa Hub Ship 📦"
+      },
+      "en": {
+        "titulo": "HUB Ship",
+        "eyebrow": "Parcel delivery and last mile",
+        "titular": {
+          "antes": "Every parcel, with the ",
+          "destacado": "name of whoever",
+          "despues": " held it"
+        },
+        "tagline": "For companies delivering parcels from a hub to the final recipient.",
+        "intro": "Receive the client load against their manifest, scan it in, dispatch by zone with your own drivers and deliver with a photo and the name of whoever signed. Every parcel carries its chain of custody.",
+        "chips": [
+          "✅ Manifests",
+          "✅ Chain of custody",
+          "✅ Dispatch by zone",
+          "✅ Proof of delivery"
+        ],
+        "problema": "A parcel goes missing and nobody knows where in the chain it happened?",
+        "solucion": "Control every parcel from the moment it enters the hub until the recipient signs",
+        "solucion_sub": "Reconcile the load against the manifest the same day, build runs by zone, deliver with evidence and answer any claim with the time, the photo and the name of whoever received it.",
+        "recorrido_titulo": "A day at the hub, screen by screen",
+        "recorrido": [
+          {
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Today at the hub, at a glance",
+            "texto": "What is in the hub, what is on the street, what was delivered and what failed today. Every figure links to the screen where it gets solved, not a number to stare at.",
+            "puntos": [
+              "How many parcels are waiting for a driver and how many are with someone",
+              "Dispatched runs still open, with delivered and pending counts",
+              "Stuck parcels: the ones past the client's delivery commitment"
+            ]
+          },
+          {
+            "imagen": "dashboard-movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "The same board on a phone",
+            "texto": "It installs on the phone as an app and opens from the home screen. The supervisor sees the day from the hub, from home or from the street, without opening a computer.",
+            "puntos": [
+              "The same figures, laid out for one hand",
+              "Installs from the browser, no app store",
+              "Each role sees only what it should"
+            ]
+          },
+          {
+            "imagen": "recepcion.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The load arriving today",
+            "texto": "The manifest is the list the client sends. Paste it from Excel or upload the CSV, and the day's parcels exist before the door opens.",
+            "puntos": [
+              "One line per parcel: tracking, recipient, phone, address, amount to collect",
+              "Duplicate trackings are caught on load, not later",
+              "The delivery zone is guessed from the address and corrected by hand"
+            ]
+          },
+          {
+            "imagen": "escanear.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Scanning the load in",
+            "texto": "The scanner-gun screen. Every read answers instantly and in color: green received, amber something to look at, red could not.",
+            "puntos": [
+              "A code already scanned is not recorded twice",
+              "A code on no list comes in as an overage instead of being left out",
+              "A parcel from another manifest is received all the same, with a warning"
+            ]
+          },
+          {
+            "imagen": "manifiesto.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Closing the manifest is balancing the day",
+            "texto": "Closing means «that was everything that arrived». Whatever went unscanned is a shortage and gets reported the same day, not when the client complains three weeks later.",
+            "puntos": [
+              "Expected, received, missing and overages, in four figures",
+              "Every shortage with its tracking and its recipient",
+              "CSV export to answer the client in their own format"
+            ]
+          },
+          {
+            "imagen": "despacho.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Dispatching by zone",
+            "texto": "What is in the hub, grouped by zone, and the day's runs. A run is what one driver takes out on one trip.",
+            "puntos": [
+              "Build it by scanning, or add a whole zone at once",
+              "One driver, one open run: never two lists for the same person",
+              "On dispatch, custody of those parcels passes to the driver"
+            ]
+          },
+          {
+            "imagen": "lote.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The run, while it is out",
+            "texto": "Everything the driver took on that trip, and how it is going without calling them.",
+            "puntos": [
+              "How many they carry, how much they collect on delivery and from which zones",
+              "Delivered, failed and pending, live",
+              "Closing the run balances what left against what came back"
+            ]
+          },
+          {
+            "imagen": "hoja-ruta.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "A route sheet that gets signed",
+            "texto": "The printable sheet with a result box and two signatures: the driver receiving and the hub handing over. Today it is what the driver carries in hand.",
+            "puntos": [
+              "Prints as is, nothing to configure",
+              "A paper record of the handover to the driver",
+              "One line per parcel, with address and amount to collect"
+            ]
+          },
+          {
+            "imagen": "paquete.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The parcel record",
+            "texto": "The full chain of custody: every state change, the time, who did it and who held the parcel at that moment. With the delivery photo and the name of whoever received it.",
+            "puntos": [
+              "A line at the top says where it is and since when, without reading the table",
+              "Delivery is not recorded without evidence if the company requires it",
+              "None of this history can be edited or deleted"
+            ]
+          },
+          {
+            "imagen": "paquete-movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Proof of delivery, wherever the question comes from",
+            "texto": "The client calls about a parcel and the answer is on the phone: the time, the name of whoever received it and the photo. The argument ends right there.",
+            "puntos": [
+              "The photo is served only with a session, never from a public link",
+              "The parcel's whole history on one screen",
+              "Only what is needed is kept, for only as long as it is needed"
+            ]
+          },
+          {
+            "imagen": "retorno.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "What comes back to the hub",
+            "texto": "The driver returns and whatever could not be delivered is scanned back in. Custody returns to the hub in the same act.",
+            "puntos": [
+              "A failed attempt carries a reason from a closed list, not free text",
+              "Once attempts run out the parcel is marked for return, not lost in limbo",
+              "Who holds what on the street, on the same screen"
+            ]
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The numbers you show the owner",
+            "texto": "The whole period: received, delivered, failed and returned; service level against each client's commitment; and the breakdown by driver and by client.",
+            "puntos": [
+              "On-time and first-attempt delivery rates",
+              "Per driver: how many delivered, their hit rate and what they get paid",
+              "Per client: what gets invoiced, and why what is not delivered is not delivered"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "What you get",
+        "funciones_titulo": "From the hub door to the recipient's door",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Manifests",
+            "texto": "The client list pasted or by CSV, with shortages and overages the same day"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Scan-in",
+            "texto": "Scanner gun reads with an instant answer, no page reload"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Dispatch by zone",
+            "texto": "Runs per driver with a printable, signable route sheet"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Chain of custody",
+            "texto": "Who held each parcel and since when, with no way to edit or delete it"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Proof of delivery",
+            "texto": "Photo and the name of whoever received it, with the real timestamp"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Service level",
+            "texto": "On-time and first-attempt rates, per client and per driver"
+          }
+        ],
+        "beneficios": [
+          "Invoicing included",
+          "Technical support included",
+          "All updates included",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Ship: software for parcel delivery and last-mile companies",
+          "description": "Manifests with shortages and overages, scan-in, dispatch by zone, per-parcel chain of custody and delivery with a photo and the name of whoever signed."
+        },
+        "wa_text": "Hi, I'm interested in Hub Ship 📦"
       }
     },
     "taller": {
