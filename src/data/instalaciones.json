@@ -348,5 +348,25 @@
       "es": "El mapa del salón completo en el monitor de caja: dos zonas, cada mesa con su número y su estado. Quien está en la barra ve de una sola mirada qué mesa está libre y cuál ya tiene pedido abierto.",
       "en": "The full floor map on the counter monitor: two zones, every table with its number and status. Whoever is at the bar can see at a glance which tables are free and which already have an open order."
     }
+  },
+  {
+    "slug": "palermo",
+    "nombre": "Palermo",
+    "sector": {
+      "es": "Restaurante y cafetería",
+      "en": "Restaurant and café"
+    },
+    "foto": "/images/casos/palermo.webp",
+    "logo": "/images/casos/palermo-logo.webp",
+    "logoW": 512,
+    "logoH": 511,
+    "alt": {
+      "es": "Monitor en el mostrador de un restaurante mostrando el mapa de mesas del salón principal, junto a una impresora y un teléfono.",
+      "en": "Monitor on a restaurant counter showing the main dining room table map, next to a printer and a desk phone."
+    },
+    "texto": {
+      "es": "En la caja, la pantalla muestra el salón principal con cada mesa como un botón y, al lado, las acciones del turno: cobrar, dividir cuenta, cambiar mesa, cerrar cuenta. Quien está en caja ve de una sola vista qué mesa está abierta y qué falta cobrar.",
+      "en": "At the register, the screen shows the main dining room with every table as a button, and next to it the shift actions: take payment, split the bill, move a table, close it out. Whoever works the register sees at a glance which tables are open and what is still unpaid."
+    }
   }
 ]
