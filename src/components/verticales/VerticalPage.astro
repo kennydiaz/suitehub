@@ -51,6 +51,11 @@ const solucion = partes(b.solucion);
 const ctaTitular = b.cta ? partes(b.cta.titular) : null;
 const hablemosTexto = [b.hablemos?.texto, b.cierre].filter(Boolean).join(' ');
 
+// `icono` de funciones y adicionales: el panel admite una clase de Font Awesome (fa-bolt)
+// o un emoji (📋). Antes se pintaba siempre como `fa-solid <icono>`, y un emoji salía como
+// un cuadro vacío (pasó con HUB Ship, sep 2026).
+const esFa = (icono: string) => /^fa-[a-z0-9-]+$/.test(icono.trim());
+
 // El hero: foto de fondo si el producto la trae; si no, el degradado con su acento.
 const heroFondo = hero.fondo
   ? `background-image: linear-gradient(180deg, rgba(7,10,18,.55), #06192E 92%), url('${imagen(p, hero.fondo)}'); background-size: cover; background-position: center 30%;`
@@ -226,7 +231,9 @@ const breadcrumb = {
           {b.funciones.map((f) => (
             <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
               <div class="acento w-11 h-11 rounded-xl flex items-center justify-center bg-white/5 mb-4">
-                <i class={`fa-solid ${f.icono} text-lg`}></i>
+                {esFa(f.icono)
+                  ? <i class={`fa-solid ${f.icono} text-lg`}></i>
+                  : <span class="text-2xl leading-none" aria-hidden="true">{f.icono}</span>}
               </div>
               <div class="font-display font-semibold mb-1.5">{f.titulo}</div>
               <div class="text-sm text-ink-400 leading-relaxed">{f.texto}</div>
@@ -251,7 +258,9 @@ const breadcrumb = {
               <div class="adicional reveal card-glass p-6 border-dashed transition-colors">
                 <div class="flex items-center justify-between mb-4">
                   <div class="acento icono-adicional w-11 h-11 rounded-xl flex items-center justify-center">
-                    <i class={`fa-solid ${f.icono} text-lg`}></i>
+                    {esFa(f.icono)
+                      ? <i class={`fa-solid ${f.icono} text-lg`}></i>
+                      : <span class="text-2xl leading-none" aria-hidden="true">{f.icono}</span>}
                   </div>
                   {b.adicionales!.etiqueta && (
                     <span class="etiqueta text-[10px] uppercase tracking-wider font-semibold rounded-full px-2 py-0.5">{b.adicionales!.etiqueta}</span>
