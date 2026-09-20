@@ -223,6 +223,14 @@ const verticals = [
       { icon: 'fa-bell',            name: 'Capacity alerts',      desc: 'Lets you know when a space goes over capacity' },
     ],
   },
+  {
+    key:    'time',
+    name:   'HUB Time',
+    icon:   'fa-clock',
+    sector: 'Time and attendance tracking',
+    short:  'For companies whose people work on site, across branches or on the road, away from an office.',
+    pitch:  'Everyone clocks in from their own phone through a personal link: a selfie taken on the spot, their location checked against the site geofence, and the time taken from the server. The office sees the whole week, fixes things leaving a trail, approves and exports.',
+  },
 ];
 
 // Los verticales con página publicada toman de su presentación del panel el enlace, la captura
@@ -241,20 +249,21 @@ const vista = verticals.map((v: any) => {
   };
 });
 ---
-<BaseLayout title="Verticals · SuiteHub" description="15 specialized SuiteHub verticals: HUB Workshop, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Laundry, Real Estate, Hotel, Phone and Traffic.">
+<BaseLayout title="Verticals · SuiteHub" description="17 specialized SuiteHub verticals: HUB Workshop, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Laundry, Real Estate, Hotel, Phone, Ship, Traffic and Time.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
     <div class="wrap relative pt-12 pb-16">
       <div class="text-center max-w-3xl mx-auto">
-        <span class="eyebrow">15 specialized verticals</span>
+        <span class="eyebrow">17 specialized verticals</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
           SuiteHub <span class="text-gradient">built for your industry</span>.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Each vertical starts from the SuiteHub core, and we add the workflows, terms and screens
-          your kind of business uses. You don't pay for features meant for another industry.
+          Most of them start from the SuiteHub core, and we add the workflows, terms and screens your kind
+          of business uses; a few, like HUB Time, solve a process of their own end to end. You don't pay for
+          features meant for another industry.
         </p>
       </div>
     </div>

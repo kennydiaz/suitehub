@@ -4547,6 +4547,45 @@
             ]
           },
           {
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Caja por turno, cuadrada en minutos",
+            "texto": "Apertura con fondo, ventas del turno por método de pago, ingresos y egresos con su motivo, Corte X sin cerrar y Cierre Z con conteo por denominación. En hoja o en el ticket térmico del salón.",
+            "puntos": [
+              "Corte X para revisar sin cerrar",
+              "Cierre Z con arqueo y diferencia",
+              "Sale en hoja o en la térmica del salón"
+            ]
+          },
+          {
+            "imagen": "facturacion.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Facturación bajo control",
+            "texto": "Histórico de ventas con su estado ante la DGI: emitidas, por confirmar, con error o anuladas. Reimprimes el comprobante, reintentas la emisión o anulas desde la misma lista.",
+            "puntos": [
+              "Filtro por fecha, estado y cliente",
+              "Comprobante con QR de verificación",
+              "Anular no borra: queda el rastro"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "La factura que se lleva la clienta",
+            "texto": "El comprobante con el desglose de lo que pagó —hora valle, membresía, ITBMS y la propina aparte— y el bloque fiscal con su CUFE, el protocolo de autorización y el código QR para verificarla ante la DGI. Sale en hoja o en el ticket de 80 mm del salón.",
+            "puntos": [
+              "CUFE y protocolo de autorización de la DGI",
+              "QR para verificar la factura desde el celular",
+              "En hoja o en ticket térmico de 80 mm"
+            ]
+          },
+          {
             "imagen": "estilistas.webp",
             "tipo": "desktop",
             "ancho": 1426,
@@ -4556,7 +4595,8 @@
             "puntos": [
               "Estado en vivo derivado de agenda y horario",
               "Comisión por categoría + retail",
-              "Liquidación de comisiones por quincena en Reportes"
+              "Liquidación de comisiones por quincena en Reportes",
+              "Matriz de comisiones por categoría"
             ]
           },
           {
@@ -4569,7 +4609,21 @@
             "puntos": [
               "Niveles VIP y Frecuente automáticos",
               "Agendar desde la ficha",
-              "Recompra automática por ciclo de servicio"
+              "Recompra automática por ciclo de servicio",
+              "Membresía con descuento que el salón absorbe"
+            ]
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Reportes que sí se usan",
+            "texto": "Liquidación de comisiones por quincena, cierre de caja, rendimiento (embudo, no show, top servicios), inventario, servicios y productos vendidos por grupo, y resumen fiscal.",
+            "puntos": [
+              "Comisiones listas para pagar la quincena",
+              "No show y ocupación por estilista",
+              "Resumen fiscal por tasa de ITBMS"
             ]
           }
         ],
@@ -4620,6 +4674,11 @@
             "icono": "fa-store",
             "titulo": "Multi-sucursal",
             "texto": "Varias sucursales con selector en el panel y en la reserva online. Inventario de productos por sucursal."
+          },
+          {
+            "icono": "fa-envelope",
+            "titulo": "Promociones por correo",
+            "texto": "Campañas por segmento: VIP, frecuentes, nuevas, inactivas o por categoría de servicio. Con enlace de baja y conteo de entregas."
           }
         ],
         "funciones_nota": "+ Todas las funciones del núcleo SuiteHub: clientes, servicios, productos, promociones, facturas, caja y reportes.",
@@ -4649,7 +4708,30 @@
           "description": "Reserva online 24/7, agenda por estilista, comisiones automáticas, recordatorios por WhatsApp, horas valle con descuento y factura electrónica DGI. Hecho en Panamá."
         },
         "wa_text": "Hola, quiero info de HUB Salon ✂️",
-        "wa_demo": "Hola, quiero una demo de HUB Salon para mi salón"
+        "wa_demo": "Hola, quiero una demo de HUB Salon para mi salón",
+        "adicionales": {
+          "eyebrow": "Crece con tu salón",
+          "titulo": "Módulos que enciendes cuando los necesites",
+          "intro": "Se activan en tu instalación y trabajan sobre el mismo sistema, con los mismos datos.",
+          "etiqueta": "Módulo",
+          "items": [
+            {
+              "icono": "fa-print",
+              "titulo": "Agente de impresión térmica",
+              "texto": "El recibo y el cierre salen solos en la impresora del salón, sin diálogo del navegador, por USB o por red."
+            },
+            {
+              "icono": "fa-comment-dots",
+              "titulo": "WhatsApp con plantillas oficiales",
+              "texto": "Conexión con WhatsApp Cloud API y plantillas aprobadas por Meta. Hoy los recordatorios salen por el canal que tengas configurado."
+            },
+            {
+              "icono": "fa-store",
+              "titulo": "Segunda sucursal en adelante",
+              "texto": "Cada local con su agenda, su inventario y su caja, y el selector de sucursal en el panel y en la reserva online."
+            }
+          ]
+        }
       },
       "en": {
         "titulo": "HUB Salon",
@@ -4743,6 +4825,45 @@
             ]
           },
           {
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Cash drawer per shift, balanced in minutes",
+            "texto": "Open with a float, see the shift’s sales by payment method, cash in and out with a reason, an X report without closing and a Z close with a count by denomination. On paper or on the salon’s thermal printer.",
+            "puntos": [
+              "X report to review without closing",
+              "Z close with count and variance",
+              "Prints on paper or on the thermal printer"
+            ]
+          },
+          {
+            "imagen": "facturacion.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Invoicing under control",
+            "texto": "Sales history with their status at the tax authority: issued, pending, failed or voided. Reprint the receipt, retry the submission or void it from the same list.",
+            "puntos": [
+              "Filter by date, status and customer",
+              "Receipt with a verification QR code",
+              "Voiding does not delete: the trail stays"
+            ]
+          },
+          {
+            "imagen": "factura.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "The invoice your client takes home",
+            "texto": "The receipt with everything they paid broken down —off-peak, membership, VAT and the tip kept separate— plus the tax block with its CUFE, the authorization protocol and a QR code to verify it with the tax authority. On paper or on the salon’s 80 mm ticket.",
+            "puntos": [
+              "CUFE and tax authority authorization protocol",
+              "QR code to verify the invoice from a phone",
+              "On paper or on an 80 mm thermal ticket"
+            ]
+          },
+          {
             "imagen": "estilistas.webp",
             "tipo": "desktop",
             "ancho": 1426,
@@ -4752,7 +4873,8 @@
             "puntos": [
               "Live status from schedule and hours",
               "Commission per category + retail",
-              "Biweekly commission settlement in Reports"
+              "Biweekly commission settlement in Reports",
+              "Commission matrix by service category"
             ]
           },
           {
@@ -4765,7 +4887,21 @@
             "puntos": [
               "Automatic VIP and Frequent tiers",
               "Book from the profile",
-              "Automatic rebooking by service cycle"
+              "Automatic rebooking by service cycle",
+              "Membership discount absorbed by the salon"
+            ]
+          },
+          {
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 1426,
+            "alto": 718,
+            "titulo": "Reports people actually use",
+            "texto": "Commission settlement per pay period, cash close, performance (funnel, no-shows, top services), inventory, services and products sold by group, and a tax summary.",
+            "puntos": [
+              "Commissions ready to pay the pay period",
+              "No-shows and utilization per stylist",
+              "Tax summary by VAT rate"
             ]
           }
         ],
@@ -4816,6 +4952,11 @@
             "icono": "fa-store",
             "titulo": "Multi-branch",
             "texto": "Several branches with a selector in the panel and the booking page. Product inventory per branch."
+          },
+          {
+            "icono": "fa-envelope",
+            "titulo": "Email promotions",
+            "texto": "Campaigns by segment: VIP, frequent, new, lapsed or by service category. Unsubscribe link and delivery counts."
           }
         ],
         "funciones_nota": "+ Every SuiteHub core function: customers, services, products, promotions, invoices, cash register and reports.",
@@ -4845,7 +4986,30 @@
           "description": "Online booking 24/7, schedule per stylist, automatic commissions, WhatsApp reminders, off-peak discounts and e-invoicing. Made in Panama."
         },
         "wa_text": "Hi, I'd like info about HUB Salon ✂️",
-        "wa_demo": "Hi, I'd like a demo of HUB Salon for my salon"
+        "wa_demo": "Hi, I'd like a demo of HUB Salon for my salon",
+        "adicionales": {
+          "eyebrow": "Grows with your salon",
+          "titulo": "Modules you turn on when you need them",
+          "intro": "They’re activated on your installation and run on the same system, with the same data.",
+          "etiqueta": "Module",
+          "items": [
+            {
+              "icono": "fa-print",
+              "titulo": "Thermal printing agent",
+              "texto": "Receipts and cash closes print straight to the salon’s printer, with no browser dialog, over USB or the network."
+            },
+            {
+              "icono": "fa-comment-dots",
+              "titulo": "WhatsApp with official templates",
+              "texto": "WhatsApp Cloud API with Meta-approved templates. Today reminders go out through whichever channel you have set up."
+            },
+            {
+              "icono": "fa-store",
+              "titulo": "Second branch and beyond",
+              "texto": "Each location with its own schedule, inventory and cash drawer, plus a branch switcher in the panel and in online booking."
+            }
+          ]
+        }
       }
     },
     "ship": {
@@ -6193,6 +6357,392 @@
         },
         "wa_text": "Hi, I'd like info about HUB Taller 🔧",
         "wa_demo": "Hi, I'd like a demo of HUB Taller for my auto shop"
+      }
+    },
+    "time": {
+      "slug": "time",
+      "nombre": "Hub Time",
+      "publicado": true,
+      "acento": "#1E40AF",
+      "imagenes_base": "https://suitehub.net/images/products/time/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/time",
+        "en": "https://suitehub.net/en/verticals/time"
+      },
+      "hero": {
+        "imagen": "semana.webp",
+        "ancho": 2852,
+        "alto": 1436
+      },
+      "es": {
+        "titulo": "HUB Time",
+        "eyebrow": "Control de asistencia y marcación",
+        "titular": {
+          "antes": "Las horas de tu gente, ",
+          "destacado": "sin hojas de firma",
+          "despues": "."
+        },
+        "tagline": "Control de asistencia para equipos que no están sentados en una oficina",
+        "intro": "Cada persona marca desde su propio teléfono con un enlace personal: selfie del momento, ubicación contra la geocerca de su sede y la hora del servidor. La oficina ve la semana completa, corrige lo que haga falta dejando rastro y aprueba. Hecho para Panamá 🇵🇦",
+        "chips": [
+          "Marca desde el teléfono",
+          "Selfie y geocerca",
+          "Semana y aprobación",
+          "Reportes y API"
+        ],
+        "url_label": "hubtime.suitehub.net",
+        "problema": "😩 ¿Hojas de firma, capturas del reloj del teléfono y horas que nadie puede comprobar al cerrar la quincena?",
+        "solucion": {
+          "antes": "Cada hora queda registrada ",
+          "destacado": "donde y cuando pasó",
+          "despues": ""
+        },
+        "solucion_sub": "El empleado marca en su teléfono y el sistema guarda la selfie del momento, la distancia a la sede y la hora del servidor. Lo que no cuadra sale señalado en vez de convertirse en horas pagadas.",
+        "recorrido_titulo": "Así se ve por dentro",
+        "recorrido": [
+          {
+            "grupo": "El empleado marca",
+            "correo": true,
+            "imagen": "marcar.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Marca en segundos, desde su propio enlace",
+            "texto": "Cada persona recibe un enlace personal. Lo abre, elige dónde está, se toma la selfie y marca. No hay aplicación que instalar ni contraseña que recordar.",
+            "puntos": [
+              "Un enlace por persona, sin cuentas ni contraseñas",
+              "La selfie se toma en el momento: no se sube de la galería",
+              "La sede se reconoce sola cuando está dentro de la geocerca"
+            ]
+          },
+          {
+            "grupo": "La oficina mira",
+            "imagen": "panel.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Quién está trabajando ahora mismo",
+            "texto": "Al abrir el sistema ves cuánta gente está marcada, las horas que lleva la semana frente a la anterior, quién llegó tarde hoy y qué jornadas quedaron rotas.",
+            "puntos": [
+              "Horas de la semana comparadas con la pasada",
+              "Gente en obra, hora a hora",
+              "Las jornadas rotas se avisan, no se rellenan"
+            ]
+          },
+          {
+            "grupo": "La oficina mira",
+            "correo": true,
+            "imagen": "semana.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La semana completa en una sola pantalla",
+            "texto": "Una fila por persona y una columna por día, con las horas de cada jornada, las extra y las tardanzas. Los turnos que cruzan la medianoche se cuentan donde corresponde.",
+            "puntos": [
+              "Totales por persona y por día",
+              "Una jornada sin salida se marca, no se inventa",
+              "Al aprobar la semana, queda bloqueada"
+            ]
+          },
+          {
+            "grupo": "Cómo se configura",
+            "imagen": "sedes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Una geocerca por cada lugar de trabajo",
+            "texto": "Cada sede tiene su punto, su radio y su zona horaria. Puedes avisar cuando alguien marca fuera del radio, o directamente no dejarlo marcar.",
+            "puntos": [
+              "Radio en metros por sede",
+              "Avisar o bloquear, según el lugar",
+              "Zona horaria propia para cada sede"
+            ]
+          },
+          {
+            "grupo": "Cómo se configura",
+            "imagen": "empleados.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Las credenciales se entregan y se controlan",
+            "texto": "Das de alta a la persona, le asignas su sede y le entregas su credencial de marcación. Si alguien sale de la empresa, se retira sin perder sus marcas.",
+            "puntos": [
+              "Se ve quién tiene su credencial y desde cuándo",
+              "Se puede volver a emitir en cualquier momento",
+              "Retirar a alguien conserva su historial"
+            ]
+          },
+          {
+            "grupo": "Control",
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Reportes que cuadran con lo que se paga",
+            "texto": "Horas ordinarias y extra por persona, tardanzas, marcas para revisar y jornadas sin contar. Los mismos números de la pantalla de la semana, exportables.",
+            "puntos": [
+              "Filtros por fecha, sede y persona",
+              "Exportación a CSV",
+              "API y avisos automáticos para conectarlo con lo demás"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Todo lo que incluye",
+        "funciones_titulo": "Funciones de HUB Time",
+        "funciones": [
+          {
+            "icono": "fa-camera",
+            "titulo": "Marcación con selfie",
+            "texto": "La foto se toma en el momento de marcar; no se puede subir una de la galería."
+          },
+          {
+            "icono": "fa-location-crosshairs",
+            "titulo": "Geocerca por sede",
+            "texto": "La ubicación se compara con el radio del lugar de trabajo, que avisa o bloquea."
+          },
+          {
+            "icono": "fa-clock",
+            "titulo": "La hora la pone el servidor",
+            "texto": "Cambiar la hora del teléfono no cambia la marca."
+          },
+          {
+            "icono": "fa-table-list",
+            "titulo": "Semana, turnos y políticas",
+            "texto": "Un solo motor cuenta las horas, el almuerzo, las extra y los turnos que cruzan la medianoche."
+          },
+          {
+            "icono": "fa-pen-to-square",
+            "titulo": "Correcciones con bitácora",
+            "texto": "Toda corrección guarda quién la hizo, cuándo y qué decía antes."
+          },
+          {
+            "icono": "fa-lock",
+            "titulo": "Aprobación y cierre",
+            "texto": "Aprobar la semana la bloquea, y de ahí sale el parte para firmar."
+          },
+          {
+            "icono": "fa-chart-column",
+            "titulo": "Reportes y CSV",
+            "texto": "Horas, extras, tardanzas y jornadas sin contar, listos para exportar."
+          },
+          {
+            "icono": "fa-plug",
+            "titulo": "API y avisos",
+            "texto": "Acceso por API y avisos firmados para conectar la asistencia con tus otros sistemas."
+          }
+        ],
+        "funciones_nota": "+ Varias empresas en la misma instalación, roles de oficina, manual dentro del sistema y bilingüe español / inglés.",
+        "hablemos": {
+          "titulo": "¿Tu gente trabaja fuera de la oficina?",
+          "texto": "Te mostramos HUB Time con tus sedes y tu horario. Cargamos a tu equipo, dibujamos las geocercas y dejamos las credenciales entregadas."
+        },
+        "beneficios": [
+          "Sin relojes ni lectores que comprar e instalar",
+          "Funciona con los teléfonos que tu gente ya tiene",
+          "Cada corrección deja rastro de quién y cuándo",
+          "Varias sedes, cada una con su zona horaria",
+          "Bilingüe español / inglés"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "¿Listo para cerrar la quincena ",
+            "destacado": "sin discutir horas",
+            "despues": "?"
+          },
+          "texto": "Te hacemos una demo con tus sedes y tu gente, sin compromiso."
+        },
+        "cierre": "Se contrata por cantidad de empleados activos, en planes con su tope. Los detalles están en la página de planes.",
+        "seo": {
+          "title": "HUB Time: control de asistencia con selfie, GPS y geocerca",
+          "description": "Marcación desde el teléfono con selfie y geocerca por sede, semana con correcciones auditadas, aprobación, reportes y API. Control de asistencia para empresas con gente fuera de la oficina, hecho en Panamá."
+        },
+        "wa_text": "Hola, me interesa HUB Time ⏱️",
+        "wa_demo": "Hola, quiero una demo de HUB Time para mi empresa"
+      },
+      "en": {
+        "titulo": "HUB Time",
+        "eyebrow": "Time and attendance tracking",
+        "titular": {
+          "antes": "Your team hours, ",
+          "destacado": "without sign-in sheets",
+          "despues": "."
+        },
+        "tagline": "Attendance tracking for teams that don't sit in an office",
+        "intro": "Everyone clocks in from their own phone through a personal link: a selfie taken on the spot, their location checked against the site geofence, and the time taken from the server. The office sees the whole week, fixes what needs fixing leaving a trail, and approves it. Made in Panama 🇵🇦",
+        "chips": [
+          "Clock in from the phone",
+          "Selfie and geofence",
+          "Week and approval",
+          "Reports and API"
+        ],
+        "url_label": "hubtime.suitehub.net",
+        "problema": "😩 Sign-in sheets, screenshots of a phone clock and hours nobody can verify at the end of the pay period?",
+        "solucion": {
+          "antes": "Every hour is recorded ",
+          "destacado": "where and when it happened",
+          "despues": ""
+        },
+        "solucion_sub": "The employee clocks in on their phone and the system stores the selfie taken at that moment, the distance to the site and the server time. Whatever doesn't add up is flagged instead of quietly becoming paid hours.",
+        "recorrido_titulo": "What it looks like inside",
+        "recorrido": [
+          {
+            "grupo": "Clocking in",
+            "correo": true,
+            "imagen": "marcar.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "Clocking in takes seconds, from a personal link",
+            "texto": "Each person gets their own link. They open it, pick where they are, take a selfie and clock in. No app to install and no password to remember.",
+            "puntos": [
+              "One link per person, no accounts or passwords",
+              "The selfie is taken live, not picked from the gallery",
+              "The site is recognized on its own inside the geofence"
+            ]
+          },
+          {
+            "grupo": "What the office sees",
+            "imagen": "panel.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Who is working right now",
+            "texto": "When you open the system you see how many people are clocked in, this week's hours against last week's, who was late today and which shifts were left broken.",
+            "puntos": [
+              "This week's hours compared with last week's",
+              "People on site, hour by hour",
+              "Broken shifts are flagged, never filled in"
+            ]
+          },
+          {
+            "grupo": "What the office sees",
+            "correo": true,
+            "imagen": "semana.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The whole week on a single screen",
+            "texto": "One row per person and one column per day, with the hours of each shift, overtime and late arrivals. Shifts that cross midnight are counted where they belong.",
+            "puntos": [
+              "Totals per person and per day",
+              "A shift with no clock-out is flagged, not invented",
+              "Approving the week locks it"
+            ]
+          },
+          {
+            "grupo": "Setting it up",
+            "imagen": "sedes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "A geofence for every work site",
+            "texto": "Each site has its point, its radius and its time zone. You can warn when someone clocks in outside the radius, or stop them from clocking in at all.",
+            "puntos": [
+              "Radius in meters per site",
+              "Warn or block, site by site",
+              "Each site with its own time zone"
+            ]
+          },
+          {
+            "grupo": "Setting it up",
+            "imagen": "empleados.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Credentials you hand out and keep track of",
+            "texto": "You add the person, assign their site and hand them their clock-in credential. If someone leaves the company, you retire them without losing their record.",
+            "puntos": [
+              "You can see who has their credential and since when",
+              "It can be reissued at any time",
+              "Retiring someone keeps their history"
+            ]
+          },
+          {
+            "grupo": "Staying in control",
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Reports that match what you pay",
+            "texto": "Regular and overtime hours per person, late arrivals, punches to review and shifts that are not counted. The same numbers as the week screen, ready to export.",
+            "puntos": [
+              "Filters by date, site and person",
+              "CSV export",
+              "API and signed webhooks to connect it with the rest"
+            ]
+          }
+        ],
+        "funciones_eyebrow": "Everything included",
+        "funciones_titulo": "HUB Time features",
+        "funciones": [
+          {
+            "icono": "fa-camera",
+            "titulo": "Selfie on every punch",
+            "texto": "The photo is taken as they clock in; a gallery picture will not do."
+          },
+          {
+            "icono": "fa-location-crosshairs",
+            "titulo": "Geofence per site",
+            "texto": "Location is checked against the radius of the work site, which warns or blocks."
+          },
+          {
+            "icono": "fa-clock",
+            "titulo": "The server sets the time",
+            "texto": "Changing the clock on the phone does not change the punch."
+          },
+          {
+            "icono": "fa-table-list",
+            "titulo": "Week, shifts and policies",
+            "texto": "One engine counts hours, lunch, overtime and shifts that cross midnight."
+          },
+          {
+            "icono": "fa-pen-to-square",
+            "titulo": "Audited corrections",
+            "texto": "Every fix records who made it, when, and what it said before."
+          },
+          {
+            "icono": "fa-lock",
+            "titulo": "Approval and lock",
+            "texto": "Approving the week locks it, and the weekly sheet to sign comes from there."
+          },
+          {
+            "icono": "fa-chart-column",
+            "titulo": "Reports and CSV",
+            "texto": "Hours, overtime, late arrivals and uncounted shifts, ready to export."
+          },
+          {
+            "icono": "fa-plug",
+            "titulo": "API and webhooks",
+            "texto": "API access and signed webhooks to connect attendance with your other systems."
+          }
+        ],
+        "funciones_nota": "+ Several companies in one installation, office roles, an in-app manual and bilingual Spanish / English.",
+        "hablemos": {
+          "titulo": "Does your team work away from the office?",
+          "texto": "We show you HUB Time with your sites and your schedule. We load your team, draw the geofences and leave the credentials handed out."
+        },
+        "beneficios": [
+          "No clocks or readers to buy and wire",
+          "Works with the phones your team already has",
+          "Every correction leaves a trail of who and when",
+          "Several sites, each with its own time zone",
+          "Bilingual Spanish / English"
+        ],
+        "cta": {
+          "titular": {
+            "antes": "Ready to close the pay period ",
+            "destacado": "without arguing about hours",
+            "despues": "?"
+          },
+          "texto": "We'll do a demo with your sites and your team, no strings attached."
+        },
+        "cierre": "Contracted by number of active employees, in plans with their own cap. The details are on the plans page.",
+        "seo": {
+          "title": "HUB Time: attendance tracking with selfie, GPS and geofence",
+          "description": "Clock in from the phone with a selfie and a geofence per site, a week view with audited corrections, approval, reports and an API. Attendance tracking for companies whose people work away from the office, made in Panama."
+        },
+        "wa_text": "Hi, I'm interested in HUB Time ⏱️",
+        "wa_demo": "Hi, I'd like a demo of HUB Time for my company"
       }
     },
     "traffic": {

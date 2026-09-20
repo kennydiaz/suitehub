@@ -30,7 +30,7 @@ Se nombran siempre completas: **Hub Lite · Hub Core · Hub Pro · Hub Enterpris
 | **HUB X** | **$48/mes · $480/año** (línea Core) | El vertical sobre la edición Hub Core |
 | **HUB X Pro** | **$64/mes · $640/año** (línea Pro) | El vertical sobre la edición Hub Pro |
 
-Verticales en catálogo (16): Taller · Carwash · POS · Restaurant · Market · Boutique · Pet · Salon · Clinic · Gym · Lavandería · Inmobiliaria · Hotel · Phone · Ship · Traffic (el hardware se cotiza aparte).
+Verticales en catálogo (17): Taller · Carwash · POS · Restaurant · Market · Boutique · Pet · Salon · Clinic · Gym · Lavandería · Inmobiliaria · Hotel · Phone · Ship · Traffic · Time (el hardware se cotiza aparte). Time es el único que no sigue las ediciones: se cobra por empleados activos.
 
 - **Precio propio opcional (desde 2026-09-15)**: en el panel cada vertical puede tener su precio en la línea Core, en la Pro o en las dos. Vacío = sigue la edición. El JSON lo marca con `planes.core.propio` / `planes.pro.propio`.
 - Sin grupos, sin deltas, sin módulos especiales. Nunca "HUB X Lite".
@@ -74,5 +74,6 @@ El PAC de facturación electrónica lo contrata y paga el cliente directo a su P
 ## 5. Pendientes
 
 - [ ] HUB Web: fijar el precio «desde» y el mantenimiento en el panel.
-- [ ] HUB Time y HUB Web: presentación propia (página en `/verticales/`) con copy y capturas.
+- [x] HUB Time: presentación propia con copy y capturas (`/verticales/time`, sep 2026).
+- [ ] HUB Web: presentación propia (página en `/verticales/`) con copy y capturas.
 - [ ] Actualizar `Catalog.php` del panel con los nombres completos de las ediciones (Hub Lite, Hub Core, Hub Pro, Hub Enterprise). Hasta entonces, el build del sitio recibe los nombres cortos del endpoint.

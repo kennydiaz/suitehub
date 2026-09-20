@@ -1227,6 +1227,69 @@
       },
       "png_white_strategy": "ink-only"
     },
+    "pedidos": {
+      "name": "HUB Pedidos",
+      "code_name": "HubPedidos",
+      "wordmark_suffix": "Pedidos",
+      "icon": "tabler:moped",
+      "status": "development",
+      "in_catalog": true,
+      "subdomain": "pedidos.suitehub.net",
+      "repo": "hubpedidos",
+      "color": "#BE123C",
+      "fill": {
+        "kind": "solid",
+        "color": "#BE123C"
+      },
+      "on_color": "#FFFFFF",
+      "ramp": null,
+      "tone": null,
+      "shades": {
+        "soft": "#BE123C",
+        "hover": "#BE123C",
+        "dark": "#BE123C"
+      },
+      "accent": {
+        "lighter": "#BE123C",
+        "light": "#BE123C",
+        "base": "#BE123C",
+        "dark": "#BE123C",
+        "darker": "#BE123C",
+        "rgb": "190, 18, 60"
+      },
+      "assets": {
+        "badge": "badges/svg/hub-pedidos-badge.svg",
+        "logo": "logos/svg/hub-pedidos-logo.svg",
+        "logo_white": "logos/svg/hub-pedidos-logo-white.svg",
+        "png": {
+          "badge": [
+            256,
+            512,
+            1024
+          ],
+          "logo": [
+            600,
+            1200,
+            2400
+          ],
+          "logo_white": []
+        }
+      },
+      "logo": {
+        "width": 288.4,
+        "wordmark_transform": {
+          "hub": [
+            133.5,
+            73.765
+          ],
+          "suffix": [
+            135.06,
+            102.195
+          ]
+        }
+      },
+      "png_white_strategy": "ink-only"
+    },
     "pet": {
       "name": "HUB Pet",
       "code_name": "HubPet",
@@ -1853,11 +1916,12 @@
       "name": "HUB Time",
       "code_name": "HubTime",
       "wordmark_suffix": "Time",
-      "icon": "tabler:clock-check",
-      "status": "development",
-      "in_catalog": false,
-      "subdomain": null,
+      "icon": "tabler:clock-filled",
+      "status": "production",
+      "in_catalog": true,
+      "subdomain": "hubtime.suitehub.net",
       "repo": "hubtime",
+      "notes": "Control de asistencia y marcacion. Blue 800, dos tonos mas oscuro que el blue 600 de HUB Clinic: son vecinos de rampa y se distinguen bien lado a lado, pero si algun dia comparten material comercial hay que mover uno de los dos. La app usa este mismo azul como acento desde el 20 sep 2026.",
       "color": "#1E40AF",
       "fill": {
         "kind": "solid",
@@ -2122,9 +2186,17 @@
     ],
     "asset_hygiene": [
       {
+        "issue": "c2pa-metadata",
+        "files": [
+          "badges/svg/hub-pedidos-badge.svg"
+        ],
+        "note": "Manifiesto base64 de ~8 KB que make-logo.py propaga al logo generado. sync-brand.php lo limpia al copiar."
+      },
+      {
         "issue": "white-literal",
         "files": [
           "badges/svg/hub-carwash-badge.svg",
+          "badges/svg/hub-pedidos-badge.svg",
           "badges/svg/hub-pos-badge.svg"
         ],
         "note": "Usan \"#ffffff\" donde el resto usa \"#fff\"."

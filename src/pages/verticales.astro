@@ -223,6 +223,14 @@ const verticales = [
       { icon: 'fa-bell',            name: 'Alertas de aforo',      desc: 'Aviso cuando se supera el límite de personas' },
     ],
   },
+  {
+    key:    'time',
+    name:   'HUB Time',
+    icon:   'fa-clock',
+    sector: 'Control de asistencia y marcación',
+    short:  'Para empresas con gente en obra, en sucursales o en ruta, lejos de una oficina.',
+    pitch:  'Cada persona marca desde su propio teléfono con un enlace personal: selfie del momento, ubicación contra la geocerca de su sede y la hora del servidor. La oficina ve la semana completa, corrige dejando rastro, aprueba y exporta.',
+  },
 ];
 
 // Los verticales con página publicada toman de su presentación del panel el enlace, la captura
@@ -241,20 +249,21 @@ const vista = verticales.map((v: any) => {
   };
 });
 ---
-<BaseLayout title="Verticales · SuiteHub" description="16 verticales especializados de SuiteHub: HUB Taller, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone, Ship y Traffic.">
+<BaseLayout title="Verticales · SuiteHub" description="17 verticales especializados de SuiteHub: HUB Taller, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone, Ship, Traffic y Time.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-[400px] bg-radial-brand pointer-events-none"></div>
     <div class="wrap relative pt-12 pb-16">
       <div class="text-center max-w-3xl mx-auto">
-        <span class="eyebrow">16 verticales especializados</span>
+        <span class="eyebrow">17 verticales especializados</span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
           SuiteHub <span class="text-gradient">adaptado a tu industria</span>.
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
-          Cada vertical parte del núcleo de SuiteHub y le agregamos los procesos, los términos y las pantallas
-          propias de tu negocio. No pagas por funciones pensadas para otro rubro.
+          Casi todos parten del núcleo de SuiteHub, al que le agregamos los procesos, los términos y las
+          pantallas propias de tu negocio; alguno, como HUB Time, resuelve un proceso suyo de punta a punta.
+          No pagas por funciones pensadas para otro rubro.
         </p>
       </div>
     </div>
