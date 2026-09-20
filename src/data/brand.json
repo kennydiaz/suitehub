@@ -2188,7 +2188,8 @@
       {
         "issue": "c2pa-metadata",
         "files": [
-          "badges/svg/hub-pedidos-badge.svg"
+          "badges/svg/hub-pedidos-badge.svg",
+          "badges/svg/hub-time-badge.svg"
         ],
         "note": "Manifiesto base64 de ~8 KB que make-logo.py propaga al logo generado. sync-brand.php lo limpia al copiar."
       },
