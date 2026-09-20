@@ -163,7 +163,7 @@ SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. El
 | Caso | Vertical | Edición | PAC | Logo |
 |------|----------|---------|-----|------|
 | **QS Express** — taller mecánico, La Chorrera | HUB Taller | Hub Pro | Digifact | `tallerqsexpress.png` |
-| **Clean Factory** — lavandería de calzado deportivo, Panamá | HUB Lavandería | Hub Core | The Factory HKA | `cleanfactory.png` |
+| **Clean Factory** — lavandería de calzado deportivo, Panamá | HUB Clean | Hub Core | The Factory HKA | `cleanfactory.png` |
 
 ---
 
@@ -171,7 +171,7 @@ SuiteHub no factura — el cliente contrata su PAC y nosotros nos integramos. El
 
 - Banner de consentimiento de cookies para GA4 (Ley 81 PA / GDPR)
 - Open Graph image dedicada por página (hoy todas comparten una)
-- Screenshot real (`web-*.webp`) en verticales que aún solo muestran logo (boutique, clinic, gym, lavanderia, inmobiliaria, phone, traffic)
+- Screenshot real (`web-*.webp`) en verticales que aún solo muestran logo (boutique, clinic, gym, clean, inmobiliaria, phone, traffic)
 - Reemplazar 2 testimonios placeholder en home (Carmen Aguilar, Luis Fernández) con reales cuando estén disponibles
 - Sitemap: agregar `xhtml:link` a páginas internas (no solo home — los slugs ES/EN difieren, requiere `serialize` callback custom)
 - Migrar iconografía Font Awesome solid → Tabler outline (regla del brand kit), optimizar imágenes a webp y auto-alojar fuentes

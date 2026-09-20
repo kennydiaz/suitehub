@@ -124,19 +124,19 @@ const verticals = [
     ],
   },
   {
-    key:    'lavanderia',
-    name:   'HUB Laundry',
+    key:    'clean',
+    name:   'HUB Clean',
     icon:   'fa-soap',
-    screenshot: '/images/products/lavanderia/hub-lavanderia-dashboard.webp',
+    screenshot: '/images/products/clean/hub-clean-dashboard.webp',
     screenshotH: 940,
-    sector: 'Professional laundries',
-    short:  'For laundries, dry cleaners and ironing services.',
-    pitch:  'Tickets with a pickup code, tracking for each stage (wash, dry, iron), pricing by the kilo or by the item, and a message to the customer when the order is ready.',
+    sector: 'Laundries and sneaker cleaning',
+    short:  'For laundries and sneaker cleaning, with pickup and delivery.',
+    pitch:  'One order can carry pounds of laundry, single items and pairs of sneakers at once, and each line moves at its own pace: its service, its promised date and its status. One ticket.',
     features: [
-      { icon: 'fa-receipt',        name: 'Receipt with code',    desc: 'Customers pick up with their own code' },
-      { icon: 'fa-spinner',        name: 'Process stages',       desc: 'Received → washed → dried → ready' },
-      { icon: 'fa-weight-hanging', name: 'Per kilo or per item', desc: 'Set it for each service' },
-      { icon: 'fa-mobile-screen',  name: 'WhatsApp alert',       desc: "Automatic message when it's ready" },
+      { icon: 'fa-receipt',        name: 'Mixed order',          desc: 'Pounds, items and pairs on one ticket' },
+      { icon: 'fa-shoe-prints',    name: 'Sneaker intake',       desc: 'Declared value and signed consent' },
+      { icon: 'fa-camera',         name: 'Photos by area',       desc: 'The condition it came in and left with' },
+      { icon: 'fa-truck',          name: 'Pickup and delivery',  desc: 'Slots with capacity and payment at the door' },
     ],
   },
   {
@@ -249,7 +249,7 @@ const vista = verticals.map((v: any) => {
   };
 });
 ---
-<BaseLayout title="Verticals · SuiteHub" description="17 specialized SuiteHub verticals: HUB Workshop, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Laundry, Real Estate, Hotel, Phone, Ship, Traffic and Time.">
+<BaseLayout title="Verticals · SuiteHub" description="17 specialized SuiteHub verticals: HUB Workshop, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Clean, Real Estate, Hotel, Phone, Ship, Traffic and Time.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">

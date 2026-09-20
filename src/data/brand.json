@@ -556,6 +556,74 @@
       },
       "png_white_strategy": "ink-only"
     },
+    "clean": {
+      "name": "HUB Clean",
+      "code_name": "HubClean",
+      "wordmark_suffix": "Clean",
+      "icon": "tabler:wash-machine",
+      "status": "production",
+      "in_catalog": true,
+      "subdomain": "clean.suitehub.net",
+      "repo": "hubclean",
+      "notes": "Lavanderia de ropa y lavado de tenis, con servicio a domicilio. Es el mismo producto que hasta el 20 sep 2026 se llamo HUB Lavanderia: se renombro antes de que la ficha se publicara, asi que no hay URL vieja que redirigir. Se queda con el cyan, que le va por semantica (agua); desde 2026-09-08 es exclusivo suyo, porque Hub Core se movio a navy. El badge es el tambor visto de frente: el simbolo anterior era la lavadora entera y a 16 px se volvia una mancha.",
+      "color": "#06B6D4",
+      "fill": {
+        "kind": "solid",
+        "color": "#06B6D4"
+      },
+      "on_color": "#FFFFFF",
+      "ramp": "tailwind.cyan",
+      "tone": "500",
+      "shades": {
+        "soft": "#ECFEFF",
+        "hover": "#0891B2",
+        "dark": "#0E7490"
+      },
+      "accent": {
+        "lighter": "#ECFEFF",
+        "light": "#67E8F9",
+        "base": "#06B6D4",
+        "dark": "#0891B2",
+        "darker": "#155E75",
+        "rgb": "6, 182, 212"
+      },
+      "assets": {
+        "badge": "badges/svg/hub-clean-badge.svg",
+        "logo": "logos/svg/hub-clean-logo.svg",
+        "logo_white": null,
+        "png": {
+          "badge": [
+            256,
+            512,
+            1024
+          ],
+          "logo": [
+            600,
+            1200,
+            2400
+          ],
+          "logo_white": [
+            600,
+            1200,
+            2400
+          ]
+        }
+      },
+      "logo": {
+        "width": 264.4,
+        "wordmark_transform": {
+          "hub": [
+            133.5,
+            73.765
+          ],
+          "suffix": [
+            135.06,
+            102.195
+          ]
+        }
+      },
+      "png_white_strategy": "ink-only"
+    },
     "clinic": {
       "name": "HUB Clinic",
       "code_name": "HubClinic",
@@ -1020,74 +1088,6 @@
           "suffix": [
             135.06,
             102.195
-          ]
-        }
-      },
-      "png_white_strategy": "ink-only"
-    },
-    "lavanderia": {
-      "name": "HUB Lavandería",
-      "code_name": "HubLavanderia",
-      "wordmark_suffix": "Lavandería",
-      "icon": "tabler:wash-dry",
-      "status": "production",
-      "in_catalog": true,
-      "subdomain": null,
-      "repo": null,
-      "notes": "Se queda con el cyan, que le va por semantica (agua). Desde 2026-09-08 es exclusivo suyo: Hub Core se movio a navy.",
-      "color": "#06B6D4",
-      "fill": {
-        "kind": "solid",
-        "color": "#06B6D4"
-      },
-      "on_color": "#FFFFFF",
-      "ramp": "tailwind.cyan",
-      "tone": "500",
-      "shades": {
-        "soft": "#ECFEFF",
-        "hover": "#0891B2",
-        "dark": "#0E7490"
-      },
-      "accent": {
-        "lighter": "#ECFEFF",
-        "light": "#67E8F9",
-        "base": "#06B6D4",
-        "dark": "#0891B2",
-        "darker": "#155E75",
-        "rgb": "6, 182, 212"
-      },
-      "assets": {
-        "badge": "badges/svg/hub-lavanderia-badge.svg",
-        "logo": "logos/svg/hub-lavanderia-logo.svg",
-        "logo_white": null,
-        "png": {
-          "badge": [
-            256,
-            512,
-            1024
-          ],
-          "logo": [
-            600,
-            1200,
-            2400
-          ],
-          "logo_white": [
-            600,
-            1200,
-            2400
-          ]
-        }
-      },
-      "logo": {
-        "width": 328.6,
-        "wordmark_transform": {
-          "hub": [
-            133.5,
-            72.82
-          ],
-          "suffix": [
-            135.06,
-            103.14
           ]
         }
       },
@@ -2185,14 +2185,6 @@
       }
     ],
     "asset_hygiene": [
-      {
-        "issue": "c2pa-metadata",
-        "files": [
-          "badges/svg/hub-pedidos-badge.svg",
-          "badges/svg/hub-time-badge.svg"
-        ],
-        "note": "Manifiesto base64 de ~8 KB que make-logo.py propaga al logo generado. sync-brand.php lo limpia al copiar."
-      },
       {
         "issue": "white-literal",
         "files": [

@@ -124,19 +124,19 @@ const verticales = [
     ],
   },
   {
-    key:    'lavanderia',
-    name:   'HUB Lavandería',
+    key:    'clean',
+    name:   'HUB Clean',
     icon:   'fa-soap',
-    screenshot: '/images/products/lavanderia/hub-lavanderia-dashboard.webp',
+    screenshot: '/images/products/clean/hub-clean-dashboard.webp',
     screenshotH: 940,
-    sector: 'Lavanderías profesionales',
-    short:  'Para lavanderías, tintorerías y servicios de planchado.',
-    pitch:  'Boleta con código de retiro, seguimiento de cada etapa (lavado, secado, planchado), precio por kilo o por prenda y aviso al cliente cuando su ropa está lista.',
+    sector: 'Lavanderías y lavado de tenis',
+    short:  'Para lavanderías de ropa y lavado de tenis, con servicio a domicilio.',
+    pitch:  'Una orden puede llevar libras de ropa, piezas sueltas y pares de tenis a la vez, y cada línea va a su ritmo: su servicio, su fecha prometida y su estado. Un solo ticket.',
     features: [
-      { icon: 'fa-receipt',        name: 'Boleta con código',    desc: 'El cliente retira con su propio código' },
-      { icon: 'fa-spinner',        name: 'Etapas del proceso',   desc: 'Recibido → lavado → secado → listo' },
-      { icon: 'fa-weight-hanging', name: 'Precio por kilo o prenda', desc: 'Lo defines para cada servicio' },
-      { icon: 'fa-mobile-screen',  name: 'Aviso por WhatsApp',   desc: 'Mensaje automático cuando está listo' },
+      { icon: 'fa-receipt',        name: 'Orden mixta',          desc: 'Libras, piezas y pares en un mismo ticket' },
+      { icon: 'fa-shoe-prints',    name: 'Recepción de tenis',   desc: 'Valor declarado y consentimiento firmado' },
+      { icon: 'fa-camera',         name: 'Fotos por zona',       desc: 'Con qué estado entró y con cuál salió' },
+      { icon: 'fa-truck',          name: 'Recolección y entrega', desc: 'Ventanas con cupo y cobro en la puerta' },
     ],
   },
   {
@@ -249,7 +249,7 @@ const vista = verticales.map((v: any) => {
   };
 });
 ---
-<BaseLayout title="Verticales · SuiteHub" description="17 verticales especializados de SuiteHub: HUB Taller, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Lavandería, Inmobiliaria, Hotel, Phone, Ship, Traffic y Time.">
+<BaseLayout title="Verticales · SuiteHub" description="17 verticales especializados de SuiteHub: HUB Taller, Carwash, POS, Restaurant, Market, Boutique, Pet, Salon, Clinic, Gym, Clean, Inmobiliaria, Hotel, Phone, Ship, Traffic y Time.">
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
