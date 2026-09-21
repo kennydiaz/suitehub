@@ -863,6 +863,134 @@
         "wa_demo": "Hi, I'd like a demo of HUB Carwash for my car wash"
       }
     },
+    "clean": {
+      "slug": "clean",
+      "nombre": "Hub Clean",
+      "publicado": false,
+      "acento": "#06B6D4",
+      "imagenes_base": "https://suitehub.net/images/products/clean/",
+      "sitio": {
+        "es": "https://suitehub.net/verticales/clean",
+        "en": "https://suitehub.net/en/verticals/clean"
+      },
+      "hero": null,
+      "es": {
+        "titulo": "HUB Clean",
+        "tagline": "Para lavanderías de ropa y lavado de tenis, con servicio a domicilio.",
+        "intro": "Una orden puede llevar libras de ropa, piezas sueltas y pares de tenis a la vez, y cada línea va a su ritmo: su servicio, su fecha prometida y su estado. Un solo ticket, una sola factura electrónica DGI.",
+        "chips": [
+          "✅ Una orden, varias líneas",
+          "✅ Ropa y tenis",
+          "✅ Recolección y entrega",
+          "✅ Notificación en tiempo real"
+        ],
+        "problema": "😩 ¿La ropa de un cliente ya está lista y sus tenis siguen en secado?",
+        "solucion": "😎 Cada línea con su fecha y su estado, en un solo ticket",
+        "solucion_sub": "La unidad del negocio es la línea, no la orden. Ves cuántas están en el taller, cuáles salen hoy en ruta y cuáles ya se entregaron, sin tener que abrir orden por orden.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Orden mixta",
+            "texto": "Libras, piezas y pares en un mismo ticket"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Recepción de tenis",
+            "texto": "Valor declarado y consentimiento firmado antes de recibir"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Fotos por zona",
+            "texto": "El estado con el que entró y con el que salió"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Ventanas con cupo",
+            "texto": "La agenda no acepta más recogidas de las que aguanta la ruta"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Ruta y entrega",
+            "texto": "Recogidas y entregas del día, con el cobro en la puerta"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Caja y factura electrónica DGI",
+            "texto": "Cierre con arqueo y documento fiscal desde el mismo ticket"
+          }
+        ],
+        "beneficios": [
+          "Incluye factura electrónica DGI",
+          "Soporte técnico incluido",
+          "Todas las actualizaciones",
+          "Sin costo de instalación · cancela cuando quieras"
+        ],
+        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
+        "seo": {
+          "title": "HUB Clean: para lavanderías de ropa y lavado de tenis",
+          "description": "Una orden con libras, piezas y pares, cada línea con su fecha prometida y su estado. Recolección y entrega a domicilio, fotos de recepción y cierre de caja."
+        },
+        "wa_text": "Hola, me interesa Hub Clean 🧺"
+      },
+      "en": {
+        "titulo": "HUB Clean",
+        "tagline": "For laundries and sneaker cleaning, with pickup and delivery.",
+        "intro": "One order can carry pounds of laundry, single items and pairs of sneakers at once, and each line moves at its own pace: its service, its promised date and its status. One ticket, one invoicing with automatic sales tax.",
+        "chips": [
+          "✅ One order, many lines",
+          "✅ Laundry and sneakers",
+          "✅ Pickup and delivery",
+          "✅ Real-time notification"
+        ],
+        "problema": "😩 A customer's laundry is ready and their sneakers are still drying?",
+        "solucion": "😎 Every line with its own date and status, on one ticket",
+        "solucion_sub": "The unit of the business is the line, not the order. You see how many are in the shop, which ones go out on today's route and which ones were delivered, without opening order by order.",
+        "funciones": [
+          {
+            "icono": "✅",
+            "titulo": "Mixed order",
+            "texto": "Pounds, items and pairs on the same ticket"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Sneaker intake",
+            "texto": "Declared value and signed consent before taking them in"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Photos by area",
+            "texto": "The condition it came in with, and the one it left with"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Slots with capacity",
+            "texto": "The schedule stops taking more pickups than the route can hold"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Route and delivery",
+            "texto": "The day's pickups and drop-offs, with payment at the door"
+          },
+          {
+            "icono": "✅",
+            "titulo": "Register and invoicing with automatic sales tax",
+            "texto": "Close-out with cash count and a tax document from the ticket"
+          }
+        ],
+        "beneficios": [
+          "Includes invoicing with automatic sales tax",
+          "Technical support included",
+          "All updates",
+          "No setup fee · cancel anytime"
+        ],
+        "cierre": "Quoted per project, based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Clean: for laundries and sneaker cleaning",
+          "description": "One order with pounds, items and pairs, each line with its promised date and status. Pickup and delivery, intake photos and register close-out."
+        },
+        "wa_text": "Hi, I'm interested in Hub Clean 🧺"
+      }
+    },
     "clinic": {
       "slug": "clinic",
       "nombre": "Hub Clinic",
@@ -1759,114 +1887,6 @@
           "description": "Your property listings, leads by pipeline stage, rental contracts with recurring billing and commissions for your agents."
         },
         "wa_text": "Hi, I'm interested in Hub Inmobiliaria 🏠"
-      }
-    },
-    "lavanderia": {
-      "slug": "lavanderia",
-      "nombre": "Hub Lavandería",
-      "publicado": false,
-      "acento": "#06B6D4",
-      "imagenes_base": "https://suitehub.net/images/products/lavanderia/",
-      "sitio": {
-        "es": "https://suitehub.net/verticales/lavanderia",
-        "en": "https://suitehub.net/en/verticals/lavanderia"
-      },
-      "hero": null,
-      "es": {
-        "titulo": "HUB Lavandería",
-        "tagline": "Para lavanderías, tintorerías y servicios de planchado.",
-        "intro": "Boleta con código de retiro, seguimiento de cada etapa (lavado, secado, planchado), precio por kilo o por prenda y aviso al cliente cuando su ropa está lista.",
-        "chips": [
-          "✅ Boleta con código",
-          "✅ Etapas del proceso",
-          "✅ Precio por kilo o prenda",
-          "✅ Aviso WhatsApp"
-        ],
-        "problema": "😩 ¿Controlas tu negocio con cuadernos, WhatsApp y hojas de cálculo?",
-        "solucion": "😎 Gestiona tu lavandería desde el celular o la PC",
-        "solucion_sub": "Cada orden sale con su boleta y su código de retiro. Ves en qué etapa va, cobras por kilo o por prenda, y cuando está lista el cliente recibe un aviso para pasar a buscarla.",
-        "funciones": [
-          {
-            "icono": "✅",
-            "titulo": "Boleta con código",
-            "texto": "El cliente retira con su código único"
-          },
-          {
-            "icono": "✅",
-            "titulo": "Etapas del proceso",
-            "texto": "Recibido → lavado → secado → listo"
-          },
-          {
-            "icono": "✅",
-            "titulo": "Precio por kilo o prenda",
-            "texto": "Lo configuras por servicio"
-          },
-          {
-            "icono": "✅",
-            "titulo": "Aviso WhatsApp",
-            "texto": "Mensaje automático cuando la orden está lista"
-          }
-        ],
-        "beneficios": [
-          "Incluye factura electrónica DGI",
-          "Soporte técnico incluido",
-          "Todas las actualizaciones",
-          "Sin costo de instalación · cancela cuando quieras"
-        ],
-        "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
-        "seo": {
-          "title": "HUB Lavandería: para lavanderías, tintorerías y servicios de planchado",
-          "description": "Boleta con código de retiro, seguimiento de cada etapa (lavado, secado, planchado), precio por kilo o por prenda y aviso al cliente cuando su ropa está lista."
-        },
-        "wa_text": "Hola, me interesa Hub Lavandería 🧺"
-      },
-      "en": {
-        "titulo": "HUB Lavandería",
-        "tagline": "For laundries, dry cleaners and ironing services.",
-        "intro": "Tickets with a pickup code, tracking for each stage (wash, dry, iron), pricing by the kilo or by the item, and a message to the customer when the order is ready.",
-        "chips": [
-          "✅ Receipt with code",
-          "✅ Process stages",
-          "✅ Per kilo or per item",
-          "✅ WhatsApp notice"
-        ],
-        "problema": "Running your business on notebooks, WhatsApp and spreadsheets?",
-        "solucion": "Run your laundry business from your phone or PC",
-        "solucion_sub": "Every order gets a ticket with a pickup code. You can see what stage it's in, charge by the kilo or by the item, and the customer gets a message as soon as it's ready.",
-        "funciones": [
-          {
-            "icono": "✅",
-            "titulo": "Receipt with code",
-            "texto": "Customers pick up with their unique code"
-          },
-          {
-            "icono": "✅",
-            "titulo": "Process stages",
-            "texto": "Received → washed → dried → ready"
-          },
-          {
-            "icono": "✅",
-            "titulo": "Per kilo or per item",
-            "texto": "Set it up for each service"
-          },
-          {
-            "icono": "✅",
-            "titulo": "WhatsApp notice",
-            "texto": "Automatic message when the order is ready"
-          }
-        ],
-        "beneficios": [
-          "Invoicing included",
-          "Technical support included",
-          "All updates included",
-          "No setup fee · cancel anytime"
-        ],
-        "cierre": "Quoted per project based on your business and the modules you need.",
-        "seo": {
-          "title": "HUB Lavandería: for laundries, dry cleaners and ironing services",
-          "description": "Tickets with a pickup code, tracking for each stage (wash, dry, iron), pricing by the kilo or by the item, and a message to the customer when the order is ready."
-        },
-        "wa_text": "Hi, I'm interested in Hub Lavandería 🧺"
       }
     },
     "lite": {

@@ -1,7 +1,7 @@
 {
   "meta": {
     "marca": "SuiteHub",
-    "empresa": "PROOQ LLC (EE.UU.) · operado en Panamá por PROOQ S.A.",
+    "empresa": "PROOQ S.A. (Panamá) · PROOQ LLC (EE.UU.)",
     "moneda": "USD",
     "ciclo_anual_factor": 10,
     "descuento_anual_pct": 16,
@@ -9,7 +9,7 @@
     "regla": "Descuentos por cliente, manuales.",
     "pac": "El PAC de facturación electrónica lo contrata y paga el cliente directo. SuiteHub integra sin cobro.",
     "fuente_canonica": "panel.suitehub.net/src/Catalog.php",
-    "actualizado": "2026-09-15"
+    "actualizado": "2026-09-08"
   },
   "implementacion": {
     "precio": 196,
@@ -59,7 +59,7 @@
       "tagline": "Personalizable",
       "color": "#7C3AED",
       "featured": false,
-      "precio_mes": 64,
+      "precio_mes": 96,
       "fe_electronica": true,
       "limites": {
         "sucursales": "1",
@@ -69,7 +69,7 @@
         "transacciones_mes": "10,000"
       },
       "salto_clave": "Hub Core + personalización: branding propio, automatizaciones, API REST, webhooks y WhatsApp Business.",
-      "precio_anio": 640
+      "precio_anio": 960
     },
     {
       "key": "enterprise",
@@ -109,16 +109,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Recepción por placa",
         "Órdenes de trabajo",
@@ -144,16 +144,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Recepción por placa",
         "Gestión de pistas",
@@ -179,16 +179,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Gestión de mesas",
         "Toma de pedido táctil",
@@ -214,16 +214,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Gestión de mesas",
         "Toma de pedido táctil",
@@ -249,16 +249,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Punto de venta táctil",
         "Venta por peso",
@@ -284,16 +284,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Variantes talla × color",
         "Multi-sucursal",
@@ -319,16 +319,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Ficha médica digital",
         "Recordatorios automáticos",
@@ -354,16 +354,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Reserva online 24/7",
         "Agenda por estilista",
@@ -389,16 +389,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Expediente digital",
         "Agenda multi-médico",
@@ -422,16 +422,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Membresías",
         "Control de acceso",
@@ -440,10 +440,10 @@
       ]
     },
     {
-      "key": "lavanderia",
-      "name": "HUB Lavandería",
+      "key": "clean",
+      "name": "HUB Clean",
       "icon": "fa-soap",
-      "sector": "Lavanderías profesionales",
+      "sector": "Lavanderías y lavado de tenis",
       "caso_real": "Clean Factory — Panamá",
       "nota": null,
       "propio_core_mes": null,
@@ -455,21 +455,23 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
-        "Boleta con código",
-        "Etapas del proceso",
-        "Precio por kilo o prenda",
-        "Aviso WhatsApp"
+        "Orden mixta",
+        "Recepción de tenis",
+        "Fotos por zona",
+        "Ventanas con cupo",
+        "Ruta y entrega",
+        "Caja y factura electrónica DGI"
       ]
     },
     {
@@ -488,16 +490,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Catálogo de propiedades",
         "Pipeline de leads",
@@ -521,16 +523,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Rack de reservaciones",
         "Habitaciones en vivo",
@@ -556,16 +558,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Diagnóstico inicial",
         "Cotización al cliente",
@@ -589,16 +591,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Manifiestos",
         "App del repartidor",
@@ -624,16 +626,16 @@
           "propio": false
         },
         "pro": {
-          "precio_mes": 64,
-          "precio_anio": 640,
+          "precio_mes": 96,
+          "precio_anio": 960,
           "propio": false
         }
       },
       "edicion_minima": "core",
       "precio_mes": 48,
       "precio_anio": 480,
-      "precio_pro_mes": 64,
-      "precio_pro_anio": 640,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
       "features": [
         "Conteo de afluencia",
         "Mapas de calor",
@@ -695,6 +697,8 @@
   ],
   "especiales": [],
   "pendientes": [
-    "HUB Web: fijar el precio «desde» del proyecto y la mensualidad de mantenimiento."
+    "Confirmar implementación: $99 una vez, gratis con plan anual (propuesta).",
+    "HUB Salon reemplazó a HUB Beauty (2026-09-08): conserva el rosa #DB2777 del app; HUB Boutique cambiará de color cuando se desarrolle.",
+    "HUB Time y HUB Web quedan fuera del catálogo hasta tener definición."
   ]
 }
