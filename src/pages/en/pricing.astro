@@ -23,8 +23,18 @@ for (const e of editions) {
 const impl = await getImplementacion();
 const implShort = `$${impl.precio} once${impl.gratis_con_anual ? ' · free with annual' : ''}`;
 const implFaq = `Yes, it's a one-time $${impl.precio} fee. That covers the initial setup, loading your catalog and the training to get you started.${impl.gratis_con_anual ? " It's free if you pay annually," : ''} and Hub Enterprise customers get a dedicated consultant.`;
-const verticals = await getVerticales();
-const { time: hubTime, web: hubWeb } = await getIndependientes();
+const verticalsAll = await getVerticales();
+// A vertical can be priced by its own plans instead of the Core/Pro line (`modelo: planes`,
+// today HUB Time). It has neither of those two columns, so it drops out of the comparison
+// table and gets its own card further down.
+const verticals = verticalsAll.filter((v) => v.modelo !== 'planes');
+const byPlans = verticalsAll.filter((v) => v.modelo === 'planes');
+const independents = await getIndependientes();
+const hubWeb = independents.web;
+// HUB Time moved from `independientes` into the verticals on 21 Sep 2026. It is looked up in
+// both places on purpose, so the page renders the same against the old catalog and the new
+// one, and the panel and the site can be deployed in either order.
+const hubTime = byPlans.find((v) => v.key === 'time') ?? independents.time ?? null;
 
 const comparison = [
   {

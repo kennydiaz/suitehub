@@ -23,8 +23,18 @@ for (const e of ediciones) {
 const impl = await getImplementacion();
 const implCorto = `$${impl.precio} una vez${impl.gratis_con_anual ? ' · gratis con anual' : ''}`;
 const implFaq = `Sí, son $${impl.precio} una sola vez. Eso cubre la configuración inicial, la carga de tu catálogo y la capacitación para arrancar.${impl.gratis_con_anual ? ' Si pagas el plan anual, no se cobra.' : ''} En Hub Enterprise te asignamos un consultor dedicado.`;
-const verticales = await getVerticales();
-const { time: hubTime, web: hubWeb } = await getIndependientes();
+const verticalesTodos = await getVerticales();
+// Un vertical puede cobrarse por sus propios planes en vez de por la linea Core/Pro
+// (`modelo: planes`, hoy HUB Time). No tiene esas dos columnas, asi que sale de la tabla
+// comparativa y se pinta en su propia tarjeta, mas abajo.
+const verticales = verticalesTodos.filter((v) => v.modelo !== 'planes');
+const porPlanes = verticalesTodos.filter((v) => v.modelo === 'planes');
+const independientes = await getIndependientes();
+const hubWeb = independientes.web;
+// HUB Time se mudo de `independientes` a los verticales el 21 sep 2026. Se busca en los dos
+// sitios a proposito: asi la pagina se ve igual con el catalogo de antes y con el de ahora,
+// y desplegar el panel y el sitio en cualquier orden no deja un hueco.
+const hubTime = porPlanes.find((v) => v.key === 'time') ?? independientes.time ?? null;
 
 // Estructura comparativa: cada categoría con sus filas. ✓ = incluido, valor = numérico, — = no incluido.
 const comparativa = [
