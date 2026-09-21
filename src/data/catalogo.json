@@ -646,9 +646,7 @@
         "Comparativas",
         "Alertas de aforo"
       ]
-    }
-  ],
-  "independientes": [
+    },
     {
       "key": "time",
       "name": "HUB Time",
@@ -657,6 +655,7 @@
       "modelo": "planes",
       "unidad": "empleados",
       "implementacion": false,
+      "caso_real": null,
       "planes": [
         {
           "key": "basico",
@@ -682,8 +681,21 @@
       ],
       "nota": "Cada plan cuenta empleados activos, no usuarios del sistema.",
       "precio_mes": 29,
-      "precio_anio": 290
-    },
+      "precio_anio": 290,
+      "edicion_minima": null,
+      "precio_pro_mes": null,
+      "precio_pro_anio": null,
+      "features": [
+        "Marcación con selfie",
+        "Geocerca por sede",
+        "La hora la pone el servidor",
+        "Semana, turnos y políticas",
+        "Correcciones con bitácora",
+        "Aprobación y cierre"
+      ]
+    }
+  ],
+  "independientes": [
     {
       "key": "web",
       "name": "HUB Web",
