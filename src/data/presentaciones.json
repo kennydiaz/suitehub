@@ -1444,109 +1444,539 @@
     "gym": {
       "slug": "gym",
       "nombre": "Hub Gym",
-      "publicado": false,
+      "publicado": true,
       "acento": "#DC2626",
       "imagenes_base": "https://suitehub.net/images/products/gym/",
       "sitio": {
         "es": "https://suitehub.net/verticales/gym",
         "en": "https://suitehub.net/en/verticals/gym"
       },
-      "hero": null,
+      "hero": {
+        "imagen": "dashboard.webp",
+        "ancho": 2852,
+        "alto": 1436
+      },
       "es": {
         "titulo": "HUB Gym",
-        "tagline": "Para gimnasios, boxes de crossfit, estudios de yoga y centros deportivos.",
-        "intro": "Membresías mensuales o anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables y alertas cuando alguien deja de venir.",
+        "eyebrow": "Vertical de SuiteHub",
+        "titular": "El socio que deja de venir no avisa",
+        "tagline": "Para gimnasios, boxes de crossfit, estudios y centros deportivos.",
+        "intro": "Membresías, control de entrada, clases con cupo y caja, en un solo sistema hecho para Panamá. Y una lista, todos los días, de los socios que están pagando y ya dejaron de venir.",
         "chips": [
-          "🎟️ Membresías",
-          "✅ Control de acceso",
-          "🗓️ Clases con cupo",
-          "✅ Retención"
+          "✅ Check in en segundos",
+          "✅ Kiosko en la entrada",
+          "✅ Clases con cupo",
+          "✅ A quién llamar hoy"
         ],
-        "problema": "😩 ¿Los pagos de membresía en una libreta y sin saber quién dejó de venir?",
-        "solucion": "😎 Gestiona tu gimnasio, box o estudio desde el celular o la PC",
-        "solucion_sub": "Cobra membresías mensuales o anuales, controla el acceso con QR, abre clases con cupo, asigna entrenadores y recibe un aviso cuando un miembro deja de venir.",
-        "funciones": [
+        "url_label": "suitehub.net/verticales/gym",
+        "problema": "😩 ¿Te enteras de que un socio se fue el día que no renueva?",
+        "solucion": "😎 Sabes quién está adentro, quién dejó de venir y quién no puede entrar",
+        "solucion_sub": "La puerta decide sola con la regla del gimnasio, las clases se llenan con lista de espera, la caja se cuadra a ciegas y cada mañana tienes la lista de a quién llamar antes de que se dé de baja.",
+        "recorrido_titulo": "Un día en el gimnasio, pantalla por pantalla",
+        "recorrido": [
           {
-            "icono": "🎟️",
-            "titulo": "Membresías",
-            "texto": "Cobro recurrente, con opción de congelarlas o suspenderlas"
+            "grupo": "El día, de un vistazo",
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Al abrir, la sala de hoy",
+            "texto": "Cuánta gente está adentro ahora mismo, cuántos entraron hoy, a quiénes se les vence la membresía esta semana y quiénes llevan días sin aparecer. Todo en la primera pantalla, sin buscar nada.",
+            "puntos": [
+              "Adentro ahora mismo, no «socios activos»",
+              "Asistencia de las últimas dos semanas, día por día",
+              "La lista de a quién llamar, al lado del número"
+            ]
           },
           {
-            "icono": "✅",
-            "titulo": "Control de acceso",
-            "texto": "El cliente entra escaneando el QR de su app"
+            "grupo": "La puerta",
+            "imagen": "checkin.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Quién puede entrar, y por qué no",
+            "texto": "Recepción escribe el nombre o escanea el código y el sistema contesta una sola cosa: si pasa o no, y el motivo en palabras que se pueden leer en voz alta en la puerta.",
+            "puntos": [
+              "Comprueba membresía, pagos, horario del plan y certificado médico",
+              "La membresía vencida ayer entra igual si el gimnasio da días de gracia",
+              "Los rechazos del día quedan contados, con su motivo"
+            ]
           },
           {
-            "icono": "🗓️",
-            "titulo": "Clases con cupo",
-            "texto": "Reserva online y lista de espera"
+            "grupo": "La puerta",
+            "correo": true,
+            "imagen": "kiosko.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El socio entra solo",
+            "texto": "La misma decisión, en una tablet en la entrada. El socio pone su código y la pantalla le contesta con su nombre, su plan y hasta cuándo lo tiene pagado.",
+            "puntos": [
+              "Una sola regla para el mostrador y el kiosko: no son dos copias",
+              "La pantalla vuelve sola para el siguiente",
+              "Queda registrado por qué medio entró"
+            ]
           },
           {
-            "icono": "✅",
-            "titulo": "Retención",
-            "texto": "Te avisa si un miembro pasa 14 días sin venir"
+            "grupo": "La puerta",
+            "imagen": "dentro.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Quién está adentro",
+            "texto": "La lista de los que entraron y todavía no han salido. Sirve para el aforo, para una evacuación y para saber si el de la clase de las seis ya llegó.",
+            "puntos": [
+              "Se actualiza con cada entrada y cada salida",
+              "Con la hora en que entró cada uno",
+              "Marcar la salida es un clic desde la misma lista"
+            ]
+          },
+          {
+            "grupo": "Cada socio",
+            "imagen": "socio.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Todo lo del socio en una página",
+            "texto": "Su membresía y hasta cuándo va, los créditos que le quedan del periodo, sus últimas entradas y si debe algo. Con los botones de llamar y escribirle al lado.",
+            "puntos": [
+              "Historial de entradas, con el medio por el que entró",
+              "Estado de cuenta: qué pagó y qué quedó vencido",
+              "Notas de lo que el staff debe saber, con quién la escribió"
+            ]
+          },
+          {
+            "grupo": "Cada socio",
+            "correo": true,
+            "imagen": "riesgo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "A quién llamar hoy",
+            "texto": "Los socios que están pagando y no están viniendo, ordenados por urgencia y con el motivo escrito. Un socio activo que lleva dos semanas sin aparecer casi siempre ya decidió irse: esta lista es para llamar, no para mirar.",
+            "puntos": [
+              "El motivo de cada uno: nunca entró, veinte días sin venir, pago vencido",
+              "Las visitas de los últimos treinta días, para no llamar a quien sí está viniendo",
+              "Llamar y escribir por WhatsApp, desde la misma fila"
+            ]
+          },
+          {
+            "grupo": "Planes y clases",
+            "imagen": "planes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Los planes del gimnasio, como son de verdad",
+            "texto": "El de mañana más barato, el de tres veces por semana, el pase de día y el anual. Cada uno con su horario, su tope de accesos y los días que se puede congelar.",
+            "puntos": [
+              "Ventana horaria por plan: es lo que hace vendible el plan de mañana",
+              "Tope de accesos por periodo, o libre",
+              "Días de congelación permitidos, por plan"
+            ]
+          },
+          {
+            "grupo": "Planes y clases",
+            "imagen": "clases.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "La agenda del día",
+            "texto": "Las clases de hoy con su cupo a la vista: cuántos lugares van, cuántos quedan y cuál ya está llena.",
+            "puntos": [
+              "El cupo se ve antes de abrir la clase",
+              "Quién la da y en qué salón",
+              "Se navega día por día, sin salir de la pantalla"
+            ]
+          },
+          {
+            "grupo": "Planes y clases",
+            "imagen": "sesion.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Cupo lleno no es «no»",
+            "texto": "Cuando la clase se llena, el siguiente entra en lista de espera con su número. Si alguien cancela, sube solo: nadie tiene que acordarse de avisarle.",
+            "puntos": [
+              "Lista de espera con el orden en que llegaron",
+              "Entran solos en cuanto alguien cancela",
+              "Se marca quién asistió y quién no"
+            ]
+          },
+          {
+            "grupo": "El dinero",
+            "correo": true,
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El turno se cuadra a ciegas",
+            "texto": "Al cerrar, el sistema no dice cuánto debería haber: se cuenta la gaveta primero y la diferencia sale después. Es la única forma de que el arqueo signifique algo.",
+            "puntos": [
+              "Cobros del turno separados por efectivo, tarjeta y Yappy",
+              "Quien cierra escribe lo que contó, no lo que esperaba",
+              "Si falta o sobra, hay que explicar por qué"
+            ]
+          },
+          {
+            "grupo": "El dinero",
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "El periodo, en números",
+            "texto": "Lo cobrado de verdad en el rango que elijas, cuántos socios vinieron, cuántas visitas hizo cada uno y qué planes se vendieron.",
+            "puntos": [
+              "Ingresos por medio de pago",
+              "Membresías vendidas, altas y renovaciones",
+              "Visitas por socio: la señal que avisa antes de que se caiga la renovación"
+            ]
+          },
+          {
+            "grupo": "En la mano",
+            "imagen": "movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "El mismo sistema, en el teléfono",
+            "texto": "Recepción marca entradas desde el celular cuando hay fila, y el dueño ve la sala desde donde esté. No es otra aplicación: es la misma, adaptada.",
+            "puntos": [
+              "Se instala desde el navegador, sin tienda de aplicaciones",
+              "Mismos permisos: cada quien ve lo suyo",
+              "Pensada para usarse con una mano"
+            ]
           }
         ],
+        "funciones_eyebrow": "Lo que hace",
+        "funciones_titulo": "Lo que resuelve, sin adornos",
+        "funciones": [
+          {
+            "icono": "fa-door-open",
+            "titulo": "Check in que decide",
+            "texto": "Membresía, pagos, horario del plan y certificado médico, en una sola respuesta y con el motivo escrito."
+          },
+          {
+            "icono": "fa-qrcode",
+            "titulo": "Kiosko en la entrada",
+            "texto": "El socio pone su código y la pantalla contesta. La misma regla que usa el mostrador."
+          },
+          {
+            "icono": "fa-phone",
+            "titulo": "A quién llamar hoy",
+            "texto": "Los que pagan y no vienen, con el motivo y el teléfono. Una lista para llamar, no un tablero."
+          },
+          {
+            "icono": "fa-id-card",
+            "titulo": "Planes a la medida",
+            "texto": "Por horario, por cantidad de accesos o libre, cada uno con sus días de congelación."
+          },
+          {
+            "icono": "fa-calendar-check",
+            "titulo": "Clases con cupo",
+            "texto": "Y lista de espera que entra sola en cuanto alguien cancela."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Cierre de caja a ciegas",
+            "texto": "Se cuenta la gaveta primero; la diferencia sale después."
+          },
+          {
+            "icono": "fa-snowflake",
+            "titulo": "Membresías que se congelan",
+            "texto": "Con el tope de días que permita cada plan, y el vencimiento se corre solo."
+          },
+          {
+            "icono": "fa-chart-line",
+            "titulo": "Reportes del periodo",
+            "texto": "Ingresos por medio de pago, membresías vendidas y visitas por socio."
+          }
+        ],
+        "funciones_nota": "Todo lo de arriba está funcionando hoy. Lo que no está, no se promete.",
+        "hablemos": {
+          "titulo": "¿Cuántos de tus socios llevan un mes sin venir?",
+          "texto": "Te montamos HUB Gym con tus planes, tus horarios y tus clases, y te enseñamos la lista de riesgo con tus propios datos."
+        },
         "beneficios": [
           "Incluye factura electrónica DGI",
           "Soporte técnico incluido",
           "Todas las actualizaciones",
           "Sin costo de instalación · cancela cuando quieras"
         ],
+        "cta": {
+          "titular": {
+            "antes": "¿Listo para dejar de perder socios ",
+            "destacado": "en silencio",
+            "despues": "?"
+          },
+          "texto": "Te hacemos una demo con tus planes y tus clases, sin compromiso."
+        },
         "cierre": "Cotización por proyecto según tu negocio y los módulos que necesites.",
         "seo": {
-          "title": "HUB Gym: sistema para gimnasios, boxes de crossfit, estudios de yoga y centros deportivos",
-          "description": "Membresías mensuales o anuales, control de acceso por QR, clases con cupo limitado, entrenadores asignables y alertas cuando alguien deja de venir."
+          "title": "HUB Gym: sistema para gimnasios, boxes de crossfit y estudios en Panamá",
+          "description": "Membresías, check in con kiosko, clases con cupo y lista de espera, caja que se cuadra a ciegas y la lista diaria de socios que dejaron de venir."
         },
-        "wa_text": "Hola, me interesa Hub Gym 🏋️"
+        "wa_text": "Hola, me interesa Hub Gym 🏋️",
+        "wa_demo": "Hola, quiero ver una demo de Hub Gym 🏋️"
       },
       "en": {
         "titulo": "HUB Gym",
-        "tagline": "For gyms, crossfit boxes, yoga studios and sports centers.",
-        "intro": "Monthly or annual memberships, QR access control, classes with limited spots, assignable trainers and alerts when members stop showing up.",
+        "eyebrow": "A SuiteHub vertical",
+        "titular": "The member who stops coming never tells you",
+        "tagline": "For gyms, crossfit boxes, studios and sports centers.",
+        "intro": "Memberships, door control, classes with capacity and a cash drawer, in one system. Plus a list, every morning, of the members who are paying and have already stopped coming.",
         "chips": [
-          "✅ Memberships",
-          "✅ Access control",
-          "✅ Class capacity",
-          "✅ Retention"
+          "✅ Check in seconds",
+          "✅ Kiosk at the door",
+          "✅ Classes with capacity",
+          "✅ Who to call today"
         ],
-        "problema": "Membership payments in a notebook, and no idea who stopped coming?",
-        "solucion": "Run your gym, box or studio from your phone or PC",
-        "solucion_sub": "Bill monthly or annual memberships, check people in with QR, open classes with limited spots, assign trainers and get an alert when a member stops coming.",
-        "funciones": [
+        "url_label": "suitehub.net/en/verticals/gym",
+        "problema": "😩 Do you find out a member left the day they fail to renew?",
+        "solucion": "😎 You know who is inside, who stopped coming and who cannot get in",
+        "solucion_sub": "The door decides on its own with the gym’s own rule, classes fill up with a waiting list, the drawer is counted blind, and every morning you get the list of who to call before they cancel.",
+        "recorrido_titulo": "A day at the gym, screen by screen",
+        "recorrido": [
           {
-            "icono": "✅",
-            "titulo": "Memberships",
-            "texto": "Recurring billing, plus freeze or suspend"
+            "grupo": "Today, at a glance",
+            "imagen": "dashboard.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The floor, the moment you open it",
+            "texto": "How many people are inside right now, how many came in today, whose membership expires this week and who has not shown up in days. All on the first screen, with nothing to look up.",
+            "puntos": [
+              "Inside right now, not \"active members\"",
+              "Attendance for the last two weeks, day by day",
+              "The call list, right next to the number"
+            ]
           },
           {
-            "icono": "✅",
-            "titulo": "Access control",
-            "texto": "Members check in by scanning the QR in their app"
+            "grupo": "The door",
+            "imagen": "checkin.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Who gets in, and why not",
+            "texto": "The front desk types a name or scans a code and the system answers one thing: in or out, and the reason in words you can read out loud at the door.",
+            "puntos": [
+              "Checks membership, payments, plan hours and medical clearance",
+              "A membership that expired yesterday still gets in if the gym allows grace days",
+              "Every refusal is counted, with its reason"
+            ]
           },
           {
-            "icono": "✅",
-            "titulo": "Class capacity",
-            "texto": "Online booking and a waitlist"
+            "grupo": "The door",
+            "correo": true,
+            "imagen": "kiosko.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Members check themselves in",
+            "texto": "The same decision, on a tablet at the entrance. The member enters their code and the screen answers with their name, their plan and how long it is paid for.",
+            "puntos": [
+              "One rule for the desk and the kiosk: not two copies",
+              "The screen resets itself for the next person",
+              "How they came in is recorded"
+            ]
           },
           {
-            "icono": "✅",
-            "titulo": "Retention",
-            "texto": "Get an alert when a member goes 14 days without coming in"
+            "grupo": "The door",
+            "imagen": "dentro.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Who's inside",
+            "texto": "The list of everyone who came in and has not left. It covers capacity, an evacuation, and knowing whether the six o’clock class regular has arrived.",
+            "puntos": [
+              "Updated with every entry and every exit",
+              "With the time each one came in",
+              "Checking someone out is one click from the same list"
+            ]
+          },
+          {
+            "grupo": "Every member",
+            "imagen": "socio.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Everything about a member on one page",
+            "texto": "Their membership and how far it runs, the credits left in the period, their last visits and whether they owe anything. With call and message buttons right there.",
+            "puntos": [
+              "Visit history, with how they came in",
+              "Account status: what was paid and what went overdue",
+              "Notes the staff should know, with who wrote them"
+            ]
+          },
+          {
+            "grupo": "Every member",
+            "correo": true,
+            "imagen": "riesgo.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Who to call today",
+            "texto": "Members who are paying and not showing up, sorted by urgency and with the reason spelled out. An active member two weeks absent has usually already decided to leave: this list is for calling, not for looking at.",
+            "puntos": [
+              "The reason for each one: never came in, twenty days absent, payment overdue",
+              "Visits in the last thirty days, so you do not call someone who is coming",
+              "Call and message from the same row"
+            ]
+          },
+          {
+            "grupo": "Plans and classes",
+            "imagen": "planes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The gym’s plans, the way they really are",
+            "texto": "The cheaper morning plan, three times a week, the day pass and the annual one. Each with its hours, its visit cap and the days it can be frozen.",
+            "puntos": [
+              "Time window per plan: it is what makes the morning plan sellable",
+              "Visit cap per period, or unlimited",
+              "Freeze days allowed, per plan"
+            ]
+          },
+          {
+            "grupo": "Plans and classes",
+            "imagen": "clases.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The day’s schedule",
+            "texto": "Today's classes with their capacity in plain sight: how many spots are taken, how many are left and which one is already full.",
+            "puntos": [
+              "Capacity is visible before you open the class",
+              "Who teaches it and in which room",
+              "Move day by day without leaving the screen"
+            ]
+          },
+          {
+            "grupo": "Plans and classes",
+            "imagen": "sesion.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "Full does not mean no",
+            "texto": "When a class fills up, the next one in goes on the waiting list with their number. If someone cancels, they move up on their own: nobody has to remember to call them.",
+            "puntos": [
+              "Waiting list in the order people arrived",
+              "They move up on their own when someone cancels",
+              "Attendance is marked, no-shows too"
+            ]
+          },
+          {
+            "grupo": "The money",
+            "correo": true,
+            "imagen": "caja.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The shift closes blind",
+            "texto": "At closing, the system does not say how much should be there: you count the drawer first and the difference comes after. It is the only way the count means anything.",
+            "puntos": [
+              "Shift takings split by cash, card and Yappy",
+              "Whoever closes writes what they counted, not what they expected",
+              "If it is short or over, they have to say why"
+            ]
+          },
+          {
+            "grupo": "The money",
+            "imagen": "reportes.webp",
+            "tipo": "desktop",
+            "ancho": 2852,
+            "alto": 1436,
+            "titulo": "The period, in numbers",
+            "texto": "What was actually collected in the range you pick, how many members came, how many visits each one made and which plans sold.",
+            "puntos": [
+              "Income by payment method",
+              "Memberships sold, new and renewed",
+              "Visits per member: the signal that shows up before a renewal falls through"
+            ]
+          },
+          {
+            "grupo": "In hand",
+            "imagen": "movil.webp",
+            "tipo": "movil",
+            "ancho": 488,
+            "alto": 718,
+            "titulo": "The same system, on the phone",
+            "texto": "The front desk checks people in from a phone when there is a line, and the owner sees the floor from wherever they are. Not another app: the same one, fitted to the screen.",
+            "puntos": [
+              "Installs from the browser, no app store",
+              "Same permissions: everyone sees their own",
+              "Built to be used with one hand"
+            ]
           }
         ],
+        "funciones_eyebrow": "What it does",
+        "funciones_titulo": "What it solves, plainly",
+        "funciones": [
+          {
+            "icono": "fa-door-open",
+            "titulo": "A check-in that decides",
+            "texto": "Membership, payments, plan hours and medical clearance, in one answer with the reason written out."
+          },
+          {
+            "icono": "fa-qrcode",
+            "titulo": "Kiosk at the entrance",
+            "texto": "The member enters their code and the screen answers. The same rule the front desk uses."
+          },
+          {
+            "icono": "fa-phone",
+            "titulo": "Who to call today",
+            "texto": "The ones paying and not coming, with the reason and the phone number. A list to call, not a dashboard."
+          },
+          {
+            "icono": "fa-id-card",
+            "titulo": "Plans that fit",
+            "texto": "By hours, by visit count or unlimited, each with its own freeze days."
+          },
+          {
+            "icono": "fa-calendar-check",
+            "titulo": "Classes with capacity",
+            "texto": "And a waiting list that moves up on its own when someone cancels."
+          },
+          {
+            "icono": "fa-cash-register",
+            "titulo": "Blind cash close",
+            "texto": "Count the drawer first; the difference comes after."
+          },
+          {
+            "icono": "fa-snowflake",
+            "titulo": "Memberships you can freeze",
+            "texto": "Up to the days each plan allows, and the expiry date moves on its own."
+          },
+          {
+            "icono": "fa-chart-line",
+            "titulo": "Reports for the period",
+            "texto": "Income by payment method, memberships sold and visits per member."
+          }
+        ],
+        "funciones_nota": "Everything above works today. What does not, we do not promise.",
+        "hablemos": {
+          "titulo": "How many of your members have not shown up in a month?",
+          "texto": "We set up HUB Gym with your plans, your hours and your classes, and show you the risk list with your own data."
+        },
         "beneficios": [
-          "Invoicing included",
+          "Includes invoicing with automatic sales tax",
           "Technical support included",
-          "All updates included",
+          "All updates",
           "No setup fee · cancel anytime"
         ],
-        "cierre": "Quoted per project based on your business and the modules you need.",
-        "seo": {
-          "title": "HUB Gym: software for gyms, CrossFit boxes, yoga studios and sports centers",
-          "description": "Monthly or annual memberships, QR access control, classes with limited spots, assignable trainers and alerts when members stop showing up."
+        "cta": {
+          "titular": {
+            "antes": "Ready to stop losing members ",
+            "destacado": "quietly",
+            "despues": "?"
+          },
+          "texto": "We run a demo with your plans and your classes, no strings attached."
         },
-        "wa_text": "Hi, I'm interested in Hub Gym 🏋️"
+        "cierre": "Quoted per project, based on your business and the modules you need.",
+        "seo": {
+          "title": "HUB Gym: software for gyms, crossfit boxes and studios in Panama",
+          "description": "Memberships, kiosk check-in, classes with capacity and a waiting list, a blind cash close and a daily list of members who stopped coming."
+        },
+        "wa_text": "Hi, I'm interested in Hub Gym 🏋️",
+        "wa_demo": "Hi, I'd like a demo of Hub Gym 🏋️"
       }
     },
     "hotel": {

@@ -433,10 +433,12 @@
       "precio_pro_mes": 96,
       "precio_pro_anio": 960,
       "features": [
-        "Membresías",
-        "Control de acceso",
+        "Check in que decide",
+        "Kiosko en la entrada",
+        "A quién llamar hoy",
+        "Planes a la medida",
         "Clases con cupo",
-        "Retención"
+        "Cierre de caja a ciegas"
       ]
     },
     {
