@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../config/razon-social';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 
@@ -6,7 +7,7 @@ const offices = [
   {
     flag: '🇺🇸',
     country: 'USA',
-    role: 'Sede legal: PROOQ LLC',
+    role: MOSTRAR_RAZON_SOCIAL ? 'Sede legal: PROOQ LLC' : 'Sede legal',
     address: ['Elmwood Park', 'Chicago, IL 60707-2003'],
     phones: [
       { label: '+1 708 540 0888', tel: '+17085400888' },
@@ -18,7 +19,7 @@ const offices = [
   {
     flag: '🇵🇦',
     country: 'Panamá',
-    role: 'Operación local: PROOQ S.A.',
+    role: MOSTRAR_RAZON_SOCIAL ? 'Operación local: PROOQ S.A.' : 'Operación local',
     address: ['Vía Argentina', 'Bella Vista, Ciudad de Panamá'],
     phones: [
       { label: '+507 6632-6006', tel: '+50766326006' },
@@ -61,7 +62,7 @@ const offices = [
   },
 ];
 ---
-<BaseLayout title="Contacto · SuiteHub" description="Contacta a SuiteHub en USA (PROOQ LLC), Panamá (PROOQ S.A.) y España. En Venezuela y Colombia estamos en lanzamiento inicial.">
+<BaseLayout title="Contacto · SuiteHub" description={`Contacta a SuiteHub en USA${rs(' (PROOQ LLC)')}, Panamá${rs(' (PROOQ S.A.)')} y España. En Venezuela y Colombia estamos en lanzamiento inicial.`}>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -71,7 +72,7 @@ const offices = [
         <span class="eyebrow">Hablemos</span>
         <h1 class="text-4xl sm:text-5xl font-display font-bold">¿Listo para conocer <span class="text-gradient">SuiteHub</span>?</h1>
         <p class="text-ink-300 mt-5">
-          SuiteHub es un producto de <strong class="text-white">PROOQ LLC</strong> (USA) y opera en Panamá a través de PROOQ S.A.
+          {MOSTRAR_RAZON_SOCIAL && <Fragment>SuiteHub es un producto de <strong class="text-white">PROOQ LLC</strong> (USA) y opera en Panamá a través de PROOQ S.A.{' '}</Fragment>}
           En USA llevamos muchos años, desde 2026 estamos en España y ahora empezamos en Venezuela y Colombia. Lo más rápido es escribirnos por WhatsApp. En horario laboral solemos contestar en minutos.
         </p>
       </div>

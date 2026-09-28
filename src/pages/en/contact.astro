@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../../config/razon-social';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
 
@@ -6,7 +7,7 @@ const offices = [
   {
     flag: '🇺🇸',
     country: 'USA',
-    role: 'Legal entity: PROOQ LLC',
+    role: MOSTRAR_RAZON_SOCIAL ? 'Legal entity: PROOQ LLC' : 'Legal entity',
     address: ['Elmwood Park', 'Chicago, IL 60707-2003'],
     phones: [
       { label: '+1 708 540 0888', tel: '+17085400888' },
@@ -18,7 +19,7 @@ const offices = [
   {
     flag: '🇵🇦',
     country: 'Panama',
-    role: 'Local operations: PROOQ S.A.',
+    role: MOSTRAR_RAZON_SOCIAL ? 'Local operations: PROOQ S.A.' : 'Local operations',
     address: ['Vía Argentina', 'Bella Vista, Panama City'],
     phones: [
       { label: '+507 6632-6006', tel: '+50766326006' },
@@ -61,7 +62,7 @@ const offices = [
   },
 ];
 ---
-<BaseLayout title="Contact · SuiteHub" description="Get in touch with SuiteHub in the USA (PROOQ LLC), Panama (PROOQ S.A.), and Spain. We're in early launch in Venezuela and Colombia.">
+<BaseLayout title="Contact · SuiteHub" description={`Get in touch with SuiteHub in the USA${rs(' (PROOQ LLC)')}, Panama${rs(' (PROOQ S.A.)')}, and Spain. We're in early launch in Venezuela and Colombia.`}>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -71,7 +72,7 @@ const offices = [
         <span class="eyebrow">Let's talk</span>
         <h1 class="text-4xl sm:text-5xl font-display font-bold">Ready to meet <span class="text-gradient">SuiteHub</span>?</h1>
         <p class="text-ink-300 mt-5">
-          SuiteHub is a <strong class="text-white">PROOQ LLC</strong> (USA) product, with local operations in Panama through PROOQ S.A.
+          {MOSTRAR_RAZON_SOCIAL && <Fragment>SuiteHub is a <strong class="text-white">PROOQ LLC</strong> (USA) product, with local operations in Panama through PROOQ S.A.{' '}</Fragment>}
           We've been in the USA for many years, we've been in Spain since 2026, and we're just getting started in Venezuela and Colombia. WhatsApp is the fastest way to reach us, and during business hours we usually reply within minutes.
         </p>
       </div>

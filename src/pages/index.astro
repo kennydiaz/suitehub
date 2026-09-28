@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../config/razon-social';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import instalaciones from '../data/instalaciones.json';
 
@@ -91,7 +92,7 @@ const stats = [
 ---
 <BaseLayout
   title="SuiteHub: gestión y facturación electrónica para pymes"
-  description="Software de gestión para pymes, de PROOQ LLC (USA). Facturación electrónica activa con la DGI de Panamá y el SENIAT de Venezuela, y en planes para 2026 Facturae España, DIAN Colombia y la normativa fiscal de USA. Multi-sucursal, automatizaciones y API. En español e inglés, desde $24/mes.">
+  description={`Software de gestión para pymes.${rs(' De PROOQ LLC (USA).')} Facturación electrónica activa con la DGI de Panamá y el SENIAT de Venezuela, y en planes para 2026 Facturae España, DIAN Colombia y la normativa fiscal de USA. Multi-sucursal, automatizaciones y API. En español e inglés, desde $24/mes.`}>
 
   <!-- ════════════════════════════════════════════════════════════
        HERO

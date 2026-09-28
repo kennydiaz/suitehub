@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../../config/razon-social';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const values = [
@@ -48,7 +49,9 @@ const milestones = [
   {
     year: '2026',
     title: 'Expanding to more countries',
-    desc:  'SuiteHub becomes a PROOQ LLC (USA) product, with local operations in Panama through PROOQ S.A. We open in Spain and get started in Venezuela and Colombia.',
+    desc:  MOSTRAR_RAZON_SOCIAL
+      ? 'SuiteHub becomes a PROOQ LLC (USA) product, with local operations in Panama through PROOQ S.A. We open in Spain and get started in Venezuela and Colombia.'
+      : 'SuiteHub consolidates, headquartered in the USA with local operations in Panama. We open in Spain and get started in Venezuela and Colombia.',
   },
   {
     year: 'Today',
@@ -62,7 +65,7 @@ const milestones = [
   },
 ];
 ---
-<BaseLayout title="About us · SuiteHub" description="SuiteHub is business management software for SMBs in Panama, the USA, Venezuela, Spain, and Colombia, adapted to each country's rules. A PROOQ LLC (USA) product.">
+<BaseLayout title="About us · SuiteHub" description={`SuiteHub is business management software for SMBs in Panama, the USA, Venezuela, Spain, and Colombia, adapted to each country's rules.${rs(' A PROOQ LLC (USA) product.')}`}>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -76,7 +79,9 @@ const milestones = [
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
           SuiteHub was founded in Panama in 2020, but it builds on more than two decades of work in the United States, close to Spanish-speaking businesses and how they really run.
-          Today it's a <strong class="text-white">PROOQ LLC</strong> (USA) product, with local operations in Panama through PROOQ S.A. Today we serve clients in the USA, Panama, and Spain, and we're just getting started in Venezuela and Colombia.
+          {MOSTRAR_RAZON_SOCIAL
+            ? <Fragment>Today it's a <strong class="text-white">PROOQ LLC</strong> (USA) product, with local operations in Panama through PROOQ S.A. Today we serve clients in the USA, Panama, and Spain, and we're just getting started in Venezuela and Colombia.</Fragment>
+            : <Fragment>Today it is headquartered in the United States with local operations in Panama. We serve clients in the USA, Panama, and Spain, and we're just getting started in Venezuela and Colombia.</Fragment>}
         </p>
       </div>
     </div>
@@ -103,7 +108,9 @@ const milestones = [
               Bella Vista books appointments.
             </p>
             <p class="text-sm text-ink-500 pt-2">
-              A <strong class="text-ink-300">PROOQ LLC</strong> (USA) product. Local operations in Panama through PROOQ S.A.
+              {MOSTRAR_RAZON_SOCIAL
+                ? <Fragment>A <strong class="text-ink-300">PROOQ LLC</strong> (USA) product. Local operations in Panama through PROOQ S.A.</Fragment>
+                : <Fragment>Headquartered in the United States. Local operations in Panama.</Fragment>}
             </p>
           </div>
         </div>
@@ -130,7 +137,7 @@ const milestones = [
             <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 space-y-1.5">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
-                Elmwood Park, Chicago IL · USA (PROOQ LLC)
+                Elmwood Park, Chicago IL · USA{rs(' (PROOQ LLC)')}
               </div>
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>

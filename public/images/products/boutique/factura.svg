@@ -23,7 +23,7 @@
   <path d="M167 100 a2.4 2.4 0 1 1 2.4 2.4 c-2.4 0 -2.4 1.7 -2.4 3" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
   <path d="M167 106 L160 111 H174 Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
   <text x="200" y="104" font-size="16" font-weight="800" fill="#831843">Mi Boutique</text>
-  <text x="200" y="120" font-size="9.5" fill="#94a3b8">PROOQ S.A. · RUC 155712345-2-2024 DV 33</text>
+  <text x="200" y="120" font-size="9.5" fill="#94a3b8">Mi Boutique, S.A. · RUC 155712345-2-2024 DV 33</text>
   <text x="640" y="100" font-size="13" font-weight="800" fill="#0f172a" text-anchor="end">FACTURA ELECTRÓNICA</text>
   <text x="640" y="116" font-size="10" fill="#64748b" text-anchor="end">N° 00012845 · 31 May 2026</text>
 

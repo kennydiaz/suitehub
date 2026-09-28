@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../config/razon-social';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const valores = [
@@ -48,7 +49,9 @@ const hitos = [
   {
     year: '2026',
     title: 'Expansión a varios países',
-    desc:  'SuiteHub pasa a ser un producto de PROOQ LLC (USA), con operación local en Panamá a través de PROOQ S.A. Llegamos a España y empezamos en Venezuela y Colombia.',
+    desc:  MOSTRAR_RAZON_SOCIAL
+      ? 'SuiteHub pasa a ser un producto de PROOQ LLC (USA), con operación local en Panamá a través de PROOQ S.A. Llegamos a España y empezamos en Venezuela y Colombia.'
+      : 'SuiteHub se consolida con sede en USA y operación local en Panamá. Llegamos a España y empezamos en Venezuela y Colombia.',
   },
   {
     year: 'Hoy',
@@ -62,7 +65,7 @@ const hitos = [
   },
 ];
 ---
-<BaseLayout title="Sobre nosotros · SuiteHub" description="SuiteHub es un sistema de gestión para PYMEs de Panamá, USA, Venezuela, España y Colombia, adaptado a las reglas de cada país. Es un producto de PROOQ LLC (USA).">
+<BaseLayout title="Sobre nosotros · SuiteHub" description={`SuiteHub es un sistema de gestión para PYMEs de Panamá, USA, Venezuela, España y Colombia, adaptado a las reglas de cada país.${rs(' Es un producto de PROOQ LLC (USA).')}`}>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -76,7 +79,9 @@ const hitos = [
         </h1>
         <p class="mt-6 text-lg text-ink-300 leading-relaxed">
           SuiteHub nació en Panamá en 2020, pero detrás hay más de dos décadas de trabajo en Estados Unidos, muy cerca de los negocios hispanohablantes y de cómo operan en el día a día.
-          Hoy es un producto de <strong class="text-white">PROOQ LLC</strong> (USA), con operación local en Panamá a través de PROOQ S.A. Hoy atendemos clientes en USA, Panamá y España, y estamos empezando en Venezuela y Colombia.
+          {MOSTRAR_RAZON_SOCIAL
+            ? <Fragment>Hoy es un producto de <strong class="text-white">PROOQ LLC</strong> (USA), con operación local en Panamá a través de PROOQ S.A. Hoy atendemos clientes en USA, Panamá y España, y estamos empezando en Venezuela y Colombia.</Fragment>
+            : <Fragment>Hoy tiene sede en Estados Unidos y operación local en Panamá. Atendemos clientes en USA, Panamá y España, y estamos empezando en Venezuela y Colombia.</Fragment>}
         </p>
       </div>
     </div>
@@ -103,7 +108,9 @@ const hitos = [
               clínica en Bella Vista.
             </p>
             <p class="text-sm text-ink-500 pt-2">
-              Producto de <strong class="text-ink-300">PROOQ LLC</strong> (USA). Operación local en Panamá a través de PROOQ S.A.
+              {MOSTRAR_RAZON_SOCIAL
+                ? <Fragment>Producto de <strong class="text-ink-300">PROOQ LLC</strong> (USA). Operación local en Panamá a través de PROOQ S.A.</Fragment>
+                : <Fragment>Sede en Estados Unidos. Operación local en Panamá.</Fragment>}
             </p>
           </div>
         </div>
@@ -130,7 +137,7 @@ const hitos = [
             <div class="mt-6 pt-6 border-t border-white/5 text-sm text-ink-400 space-y-1.5">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
-                Elmwood Park, Chicago IL · USA (PROOQ LLC)
+                Elmwood Park, Chicago IL · USA{rs(' (PROOQ LLC)')}
               </div>
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>

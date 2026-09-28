@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../config/razon-social';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -24,8 +25,8 @@ const defaultTitle = isEn
   : 'SuiteHub: sistema de gestión para PYMEs en varios países';
 
 const defaultDesc = isEn
-  ? 'Business management software for SMBs, made by PROOQ LLC (USA). E-invoicing already live with DGI Panama and SENIAT Venezuela, with Facturae Spain, DIAN Colombia and US state-level compliance planned for 2026. Multiple branches, automations and an API. From $24/month, in Spanish and English.'
-  : 'Sistema de gestión para PYMEs, hecho por PROOQ LLC (USA). Facturación electrónica ya funcionando con la DGI de Panamá y el SENIAT de Venezuela, y en camino para 2026 Facturae (España), DIAN (Colombia) y cumplimiento en USA. Varias sucursales, automatizaciones y API. Desde $24/mes, en español e inglés.';
+  ? `Business management software for SMBs.${rs(' Made by PROOQ LLC (USA).')} E-invoicing already live with DGI Panama and SENIAT Venezuela, with Facturae Spain, DIAN Colombia and US state-level compliance planned for 2026. Multiple branches, automations and an API. From $24/month, in Spanish and English.`
+  : `Sistema de gestión para PYMEs.${rs(' Hecho por PROOQ LLC (USA).')} Facturación electrónica ya funcionando con la DGI de Panamá y el SENIAT de Venezuela, y en camino para 2026 Facturae (España), DIAN (Colombia) y cumplimiento en USA. Varias sucursales, automatizaciones y API. Desde $24/mes, en español e inglés.`;
 
 const {
   title       = defaultTitle,
@@ -110,7 +111,7 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
       "publisher": {
         "@type": "Organization",
         "name": "SuiteHub",
-        "legalName": "PROOQ LLC",
+        ...(MOSTRAR_RAZON_SOCIAL ? { "legalName": "PROOQ LLC" } : {}),
         "url": "https://suitehub.net",
         "logo": "https://suitehub.net/images/products/suite/light-600.png",
         "address": [

@@ -1,4 +1,5 @@
 ---
+import { MOSTRAR_RAZON_SOCIAL, rs } from '../../config/razon-social';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import instalaciones from '../../data/instalaciones.json';
 
@@ -91,7 +92,7 @@ const stats = [
 ---
 <BaseLayout
   title="SuiteHub: business management and e-invoicing for SMBs"
-  description="Business management software for small businesses, made by PROOQ LLC (USA). Electronic invoicing is live with DGI in Panama and SENIAT in Venezuela, with Facturae (Spain), DIAN (Colombia) and US state-level compliance planned for 2026. Multi-branch, automations and API. Available in English and Spanish, from $24/month.">
+  description={`Business management software for small businesses.${rs(' Made by PROOQ LLC (USA).')} Electronic invoicing is live with DGI in Panama and SENIAT in Venezuela, with Facturae (Spain), DIAN (Colombia) and US state-level compliance planned for 2026. Multi-branch, automations and API. Available in English and Spanish, from $24/month.`}>
 
   <!-- HERO -->
   <section class="relative overflow-hidden">

@@ -1,3 +1,5 @@
+import { MOSTRAR_RAZON_SOCIAL } from '../config/razon-social';
+
 export const locales = ['es', 'en'] as const;
 export type Locale = (typeof locales)[number];
 
@@ -86,7 +88,9 @@ export const ui = {
     'footer.company.pricing': 'Precios',
     'footer.company.about':   'Nosotros',
     'footer.company.contact': 'Contacto',
-    'footer.copyright':       'Todos los derechos reservados. Producto de PROOQ LLC (USA). Operado en Panamá por PROOQ S.A.',
+    'footer.copyright':       MOSTRAR_RAZON_SOCIAL
+      ? 'Todos los derechos reservados. Producto de PROOQ LLC (USA). Operado en Panamá por PROOQ S.A.'
+      : 'Todos los derechos reservados.',
     'footer.privacy':         'Privacidad',
     'footer.terms':           'Términos',
     'footer.madeWith':        'Hecho con',
@@ -130,7 +134,9 @@ export const ui = {
     'footer.company.pricing': 'Pricing',
     'footer.company.about':   'About us',
     'footer.company.contact': 'Contact',
-    'footer.copyright':       'All rights reserved. A PROOQ LLC (USA) product. Operated in Panama by PROOQ S.A.',
+    'footer.copyright':       MOSTRAR_RAZON_SOCIAL
+      ? 'All rights reserved. A PROOQ LLC (USA) product. Operated in Panama by PROOQ S.A.'
+      : 'All rights reserved.',
     'footer.privacy':         'Privacy',
     'footer.terms':           'Terms',
     'footer.madeWith':        'Made with',
