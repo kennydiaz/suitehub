@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
 
 const offices = [
   {
@@ -104,6 +105,9 @@ const offices = [
       </div>
     </div>
   </section>
+
+  <!-- Formulario: publica en HubPro (lead.php) -->
+  <LeadForm lang="en" />
 
   <!-- Offices by country -->
   <section class="section">

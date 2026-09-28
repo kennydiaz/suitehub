@@ -1,0 +1,107 @@
+---
+/**
+ * Formulario de contacto: publica en HubPro (lead.php), que crea el lead y avisa a ventas.
+ * No hay backend propio en este sitio: el navegador hace un fetch "simple" (form-urlencoded,
+ * sin cabeceras propias) y HubPro valida el origen. Si falla, se ofrece WhatsApp.
+ * Ver infra/arquitectura/12-propuesta-reorganizacion.md (C1).
+ */
+interface Props {
+  lang?: 'es' | 'en';
+  interes?: string;
+}
+const { lang = 'es', interes = '' } = Astro.props;
+const endpoint = import.meta.env.PUBLIC_LEADS_URL || 'https://hubpro.prooq.com/lead.php';
+const t = lang === 'en' ? {
+  eyebrow: 'Write to us', title: 'Tell us about your business',
+  sub: 'We reply the same business day. Nothing is shared with third parties.',
+  nombre: 'Your name', empresa: 'Business (optional)', email: 'Email', telefono: 'Phone / WhatsApp',
+  interes: 'What are you interested in?', mensaje: 'Message', enviar: 'Send',
+  enviando: 'Sending…', ok: 'Thank you! We received your message and will contact you soon.',
+  falta: 'We need your name and an email or phone.', error: 'We could not send it. Please write to us on WhatsApp.',
+  opciones: ['Point of sale (HubPOS)', 'Business panel (Hub Core / Pro)', 'Industry solution', 'Other'],
+} : {
+  eyebrow: 'Escríbenos', title: 'Cuéntanos de tu negocio',
+  sub: 'Respondemos el mismo día hábil. No compartimos tus datos con terceros.',
+  nombre: 'Tu nombre', empresa: 'Negocio (opcional)', email: 'Correo', telefono: 'Teléfono / WhatsApp',
+  interes: '¿Qué te interesa?', mensaje: 'Mensaje', enviar: 'Enviar',
+  enviando: 'Enviando…', ok: '¡Gracias! Recibimos tu mensaje y te contactamos pronto.',
+  falta: 'Necesitamos tu nombre y un correo o teléfono.', error: 'No pudimos enviarlo. Escríbenos por WhatsApp.',
+  opciones: ['Punto de venta (HubPOS)', 'Panel para mi empresa (Hub Core / Pro)', 'Solución para mi industria', 'Otro'],
+};
+const campo = 'w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-white placeholder:text-ink-400 focus:outline-none focus:border-brand-500';
+---
+<section class="pb-8" id="escribenos">
+  <div class="wrap">
+    <div class="card-glass p-7 sm:p-9 max-w-3xl mx-auto">
+      <span class="eyebrow">{t.eyebrow}</span>
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mt-1">{t.title}</h2>
+      <p class="text-ink-300 mt-2 mb-6 text-sm">{t.sub}</p>
+      <form class="lead-form grid sm:grid-cols-2 gap-4" data-endpoint={endpoint}
+            data-msg-ok={t.ok} data-msg-falta={t.falta} data-msg-error={t.error} data-msg-enviando={t.enviando}>
+        <input type="hidden" name="sitio" value="suitehub" />
+        <input type="hidden" name="t" value="0" />
+        <div class="absolute -left-[9999px]" aria-hidden="true">
+          <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <label class="sm:col-span-1"><span class="sr-only">{t.nombre}</span>
+          <input class={campo} name="nombre" required maxlength="150" placeholder={t.nombre} autocomplete="name" /></label>
+        <label class="sm:col-span-1"><span class="sr-only">{t.empresa}</span>
+          <input class={campo} name="empresa" maxlength="150" placeholder={t.empresa} autocomplete="organization" /></label>
+        <label><span class="sr-only">{t.email}</span>
+          <input class={campo} type="email" name="email" maxlength="150" placeholder={t.email} autocomplete="email" /></label>
+        <label><span class="sr-only">{t.telefono}</span>
+          <input class={campo} type="tel" name="telefono" maxlength="40" placeholder={t.telefono} autocomplete="tel" /></label>
+        <label class="sm:col-span-2"><span class="sr-only">{t.interes}</span>
+          <select class={campo} name="interes">
+            <option value={interes}>{interes || t.interes}</option>
+            {t.opciones.map((o) => <option value={o}>{o}</option>)}
+          </select></label>
+        <label class="sm:col-span-2"><span class="sr-only">{t.mensaje}</span>
+          <textarea class={campo} name="mensaje" rows="4" maxlength="2000" placeholder={t.mensaje}></textarea></label>
+        <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+          <button type="submit" class="btn btn-primary">{t.enviar}</button>
+          <p class="lead-estado text-sm text-ink-300" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('form.lead-form').forEach((form) => {
+    const inicio = Date.now();
+    const estado = form.querySelector<HTMLElement>('.lead-estado')!;
+    const boton = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const datos = new FormData(form);
+      const nombre = String(datos.get('nombre') || '').trim();
+      if (!nombre || (!String(datos.get('email') || '').trim() && !String(datos.get('telefono') || '').trim())) {
+        estado.textContent = form.dataset.msgFalta || '';
+        return;
+      }
+      datos.set('t', String(Date.now() - inicio));
+      datos.set('pagina', location.pathname);
+      boton.disabled = true;
+      estado.textContent = form.dataset.msgEnviando || '';
+      try {
+        const r = await fetch(form.dataset.endpoint!, {
+          method: 'POST',
+          body: new URLSearchParams(datos as unknown as Record<string, string>),
+        });
+        const j = await r.json().catch(() => ({ ok: false }));
+        if (r.ok && j.ok) {
+          form.reset();
+          estado.textContent = form.dataset.msgOk || '';
+          (window as any).gtag?.('event', 'generate_lead', { method: 'formulario' });
+        } else {
+          estado.textContent = j.error || form.dataset.msgError || '';
+          boton.disabled = false;
+        }
+      } catch {
+        estado.textContent = form.dataset.msgError || '';
+        boton.disabled = false;
+      }
+    });
+  });
+</script>
