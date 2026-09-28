@@ -41,6 +41,27 @@ export async function getEdiciones(): Promise<Record<string, any>> {
 }
 
 /**
+ * Precio mensual de una edición, sin respaldo inventado: si falta, revienta el build.
+ *
+ * Es a propósito. Lo usa el JSON-LD, que es lo que lee Google para mostrar el precio
+ * en los resultados, y un número escrito a mano ahí envejece sin que nadie lo note.
+ * Pasó: el respaldo decía 64 para Hub Pro cuando el precio real ya era 96, y solo no
+ * se publicó mal porque el espejo local siempre respondió. Un build en rojo se
+ * arregla en cinco minutos; un precio equivocado indexado, no.
+ */
+export async function precioEdicion(key: string): Promise<number> {
+  const ed = await getEdiciones();
+  const precio = ed[key]?.precio_mes;
+  if (typeof precio !== 'number' || precio <= 0) {
+    throw new Error(
+      `catalogo: la edición "${key}" no trae un precio_mes válido (${JSON.stringify(precio)}). ` +
+        'El JSON-LD publica precios y no puede inventarlos: revisa el panel o src/data/catalogo.json.',
+    );
+  }
+  return precio;
+}
+
+/**
  * Implementación: { precio, gratis_con_anual, incluye }.
  * Entró al catálogo el 2026-09-15. Si el panel que responde todavía no la publica,
  * se toma la del respaldo local en vez de romper el build o escribirla a mano.

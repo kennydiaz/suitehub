@@ -4,7 +4,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getLocaleFromUrl, useTranslations, alternateHref } from '../i18n/utils';
-import { getEdiciones } from '../lib/catalog';
+import { getEdiciones, precioEdicion } from '../lib/catalog';
 
 interface Props {
   title?: string;
@@ -19,6 +19,10 @@ const isEn = locale === 'en';
 
 // Precios de ediciones desde el catálogo canónico del panel (con respaldo local).
 const _ed = await getEdiciones();
+// Sin respaldo escrito a mano: ver precioEdicion() en lib/catalog.ts.
+const _precio = Object.fromEntries(await Promise.all(
+  ['lite', 'core', 'pro', 'enterprise'].map(async (k) => [k, await precioEdicion(k)]),
+));
 
 const defaultTitle = isEn
   ? 'SuiteHub: business management software for SMBs in several countries'
@@ -102,10 +106,10 @@ const altOgLoc  = isEn ? 'es_PA' : 'en_US';
       "url": "https://suitehub.net",
       "description": description,
       "offers": [
-        { "@type": "Offer", "name": "Hub Lite",       "price": String(_ed.lite?.precio_mes ?? 24),        "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Hub Core",       "price": String(_ed.core?.precio_mes ?? 48),        "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Hub Pro",        "price": String(_ed.pro?.precio_mes ?? 64),         "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Hub Enterprise", "price": String(_ed.enterprise?.precio_mes ?? 196), "priceCurrency": "USD" }
+        { "@type": "Offer", "name": "Hub Lite",       "price": String(_precio.lite),       "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Hub Core",       "price": String(_precio.core),       "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Hub Pro",        "price": String(_precio.pro),        "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Hub Enterprise", "price": String(_precio.enterprise),"priceCurrency": "USD" }
       ],
       "inLanguage": ["es", "en"],
       "publisher": {
