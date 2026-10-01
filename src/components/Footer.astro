@@ -1,6 +1,7 @@
 ---
 import { MOSTRAR_RAZON_SOCIAL, rs } from '../config/razon-social';
 import { getLocaleFromUrl, useTranslations, localizedHref } from '../i18n/utils';
+import { enlaceVertical } from '../lib/presentaciones';
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -8,6 +9,7 @@ const year = new Date().getFullYear();
 
 const productsHref  = localizedHref('products', locale);
 const verticalsHref = localizedHref('verticals', locale);
+const posHref       = await enlaceVertical('pos', locale === 'en' ? 'en' : 'es');
 const casesHref     = localizedHref('cases', locale);
 const blogHref      = localizedHref('blog', locale);
 const pricingHref   = localizedHref('pricing', locale);
@@ -32,7 +34,7 @@ const cols = [
       { label: t('footer.verticals.workshop'),   href: localizedHref('verticalTaller', locale) },
       { label: t('footer.verticals.restaurant'), href: localizedHref('verticalRestaurant', locale) },
       { label: t('footer.verticals.salon'),      href: localizedHref('verticalSalon', locale) },
-      { label: t('footer.verticals.pos'),        href: `${verticalsHref}#pos` },
+      { label: t('footer.verticals.pos'),        href: posHref },
       { label: t('footer.verticals.all'),        href: verticalsHref },
     ],
   },

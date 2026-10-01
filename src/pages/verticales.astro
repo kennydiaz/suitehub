@@ -287,7 +287,9 @@ const vista = verticales.map((v: any) => {
   </section>
 
   <!-- Cada vertical en detalle -->
-  {vista.map((v, i) => (
+  <!-- Ficha completa solo de los verticales sin página propia: los que ya la tienen se
+       enlazan desde la rejilla de arriba, y repetirla aquí alargaba esto a ~19.000 px. -->
+  {vista.filter((v) => !v.landing).map((v, i) => (
     <section id={v.key} class={`section ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
       <div class="wrap">
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">

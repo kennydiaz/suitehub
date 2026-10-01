@@ -205,3 +205,17 @@ export function partes(v: Partes | undefined): { antes: string; destacado: strin
 export function ruta(slug: string, lang: Idioma): string {
   return lang === 'en' ? `/en/verticals/${slug}` : `/verticales/${slug}`;
 }
+
+/**
+ * A dónde lleva un enlace a un vertical: su página si está publicada, o su ficha
+ * dentro de /verticales si todavía no la tiene.
+ *
+ * Una sola regla para todo el sitio. Antes la portada y el pie mandaban siempre al
+ * ancla, y en /verticales solo quedan fichas de los verticales sin página: un ancla
+ * a uno que ya tiene página no llevaría a ningún lado.
+ */
+export async function enlaceVertical(key: string, lang: Idioma): Promise<string> {
+  const p = (await getPresentaciones())[key];
+  if (p?.publicado) return ruta(p.slug, lang);
+  return (lang === 'en' ? '/en/verticals' : '/verticales') + '#' + key;
+}

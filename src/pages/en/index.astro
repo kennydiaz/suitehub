@@ -2,6 +2,7 @@
 import { MOSTRAR_RAZON_SOCIAL, rs } from '../../config/razon-social';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import instalaciones from '../../data/instalaciones.json';
+import { enlaceVertical } from '../../lib/presentaciones';
 
 const verticals = [
   { key: 'taller',     name: 'HUB Workshop',    desc: 'Auto repair shops',         icon: 'fa-screwdriver-wrench' },
@@ -81,6 +82,11 @@ const clients = [
   // The ones below come straight from instalaciones.json, the same file behind /casos.
   ...instalaciones.filter((s) => s.logo).map((s) => ({ name: s.nombre, sector: s.sector.en, logo: s.logo })),
 ];
+
+// Each vertical links to its own page when it has one, otherwise to its entry on /verticals.
+const enlace = Object.fromEntries(
+  await Promise.all(verticals.map(async (v) => [v.key, await enlaceVertical(v.key, 'en')])),
+);
 
 const stats = [
   { num: '+50',  label: 'Active SMBs (Panama)' },
@@ -262,7 +268,7 @@ const stats = [
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {verticals.map((v, i) => (
-          <a href={`/en/verticals#${v.key}`}
+          <a href={enlace[v.key]}
              class={`reveal reveal-delay-${(i % 4) + 1} group lift card-glass p-5 hover:border-brand-500/30 hover:bg-white/[0.05] transition-all`}>
             <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} width="48" height="48" class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" loading="lazy" />
             <h3 class="text-base font-display font-semibold mb-1">{v.name}</h3>
