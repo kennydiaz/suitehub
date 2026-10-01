@@ -347,7 +347,8 @@
     "texto": {
       "es": "El mapa del salón completo en el monitor de caja: dos zonas, cada mesa con su número y su estado. Quien está en la barra ve de una sola mirada qué mesa está libre y cuál ya tiene pedido abierto.",
       "en": "The full floor map on the counter monitor: two zones, every table with its number and status. Whoever is at the bar can see at a glance which tables are free and which already have an open order."
-    }
+    },
+    "vertical": "pos"
   },
   {
     "slug": "palermo",
@@ -367,7 +368,8 @@
     "texto": {
       "es": "En la caja, la pantalla muestra el salón principal con cada mesa como un botón y, al lado, las acciones del turno: cobrar, dividir cuenta, cambiar mesa, cerrar cuenta. Quien está en caja ve de una sola vista qué mesa está abierta y qué falta cobrar.",
       "en": "At the register, the screen shows the main dining room with every table as a button, and next to it the shift actions: take payment, split the bill, move a table, close it out. Whoever works the register sees at a glance which tables are open and what is still unpaid."
-    }
+    },
+    "vertical": "pos"
   },
   {
     "slug": "waka-food",
@@ -387,6 +389,7 @@
     "texto": {
       "es": "El mostrador de arepas, hamburguesas y hot dogs trabaja con una pantalla táctil en la esquina de la barra. Desde ese tablero de botones grandes se toma el pedido y se cobra sin moverse del punto de atención, con la factura electrónica DGI incluida.",
       "en": "The arepa, burger and hot dog counter runs on a single touchscreen at the end of the bar. From that grid of large buttons the staff takes the order and charges for it without leaving the service point, with DGI electronic invoicing built in."
-    }
+    },
+    "vertical": "pos"
   }
 ]
