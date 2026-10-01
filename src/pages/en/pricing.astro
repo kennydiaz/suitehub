@@ -183,8 +183,9 @@ const faqLd = {
   </section>
 
   <!-- Pricing cards -->
-  <section class="pb-12">
+  <section class="pb-12" aria-labelledby="ediciones-titulo">
     <div class="wrap">
+      <h2 id="ediciones-titulo" class="sr-only">SuiteHub editions</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {editions.map(e => (
           <div class={`relative card-glass p-6 ${e.featured ? 'border-brand-500/50 shadow-glow' : ''}`}>
@@ -396,7 +397,7 @@ const faqLd = {
         </h2>
         <p class="text-ink-300 mb-8">Message us on WhatsApp, tell us a bit about how you work, and we'll point you to the right edition.</p>
         <a href="https://wa.me/50766326006?text=I%20have%20questions%20about%20SuiteHub%20pricing" target="_blank" rel="noopener" class="btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Chat on WhatsApp
         </a>
       </div>
     </div>

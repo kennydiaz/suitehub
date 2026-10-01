@@ -60,7 +60,7 @@ const demoText = t('wa.text.demo');
       <a href={`https://wa.me/50766326006?text=${demoText}`}
          target="_blank" rel="noopener"
          class="hidden sm:inline-flex btn-primary text-sm py-2 px-4">
-        <i class="fa-brands fa-whatsapp text-base"></i>
+        <svg class="ico text-base" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
         {t('nav.demo')}
       </a>
       <button id="mobile-toggle" class="lg:hidden text-white text-xl p-2" aria-label={t('nav.menu')}>
@@ -82,7 +82,7 @@ const demoText = t('wa.text.demo');
           <i class="fa-solid fa-globe"></i> {altLocale.toUpperCase()}
         </a>
         <a href={`https://wa.me/50766326006?text=${demoText}`} target="_blank" rel="noopener" class="flex-1 text-center btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> {t('nav.demo')}
+          <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> {t('nav.demo')}
         </a>
       </li>
     </ul>

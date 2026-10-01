@@ -190,7 +190,7 @@ const colorMap = {
 
               <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(ed.name)}`}
                  target="_blank" rel="noopener" class="btn-primary w-full">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <svg class="ico text-xl" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
                 Get a quote for {ed.name}
               </a>
             </div>
@@ -238,7 +238,7 @@ const colorMap = {
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="/en/pricing" class="btn-secondary"><i class="fa-solid fa-table-list"></i> See comparison table</a>
           <a href="https://wa.me/50766326006?text=Hello%2C%20I%27m%20not%20sure%20which%20edition%20fits" target="_blank" rel="noopener" class="btn-primary">
-            <i class="fa-brands fa-whatsapp"></i> Get a recommendation
+            <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Get a recommendation
           </a>
         </div>
       </div>

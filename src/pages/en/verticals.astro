@@ -278,7 +278,7 @@ const vista = verticals.map((v: any) => {
             {v.landing && (
               <span class="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-2 py-0.5">View</span>
             )}
-            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-10 h-10 mx-auto mb-2 group-hover:scale-110 transition-transform" loading="lazy" />
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} width="40" height="40" class="w-10 h-10 mx-auto mb-2 group-hover:scale-110 transition-transform" loading="lazy" />
             <div class="text-xs font-display font-semibold">{v.name}</div>
           </a>
         ))}
@@ -292,7 +292,7 @@ const vista = verticals.map((v: any) => {
       <div class="wrap">
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="h-20 w-20 mb-6" />
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} width="80" height="80" loading="lazy" decoding="async" class="h-20 w-20 mb-6" />
             <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold mb-2">{v.sector}</div>
             <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{v.name}</h2>
             <p class="text-base text-ink-300 leading-relaxed mb-6">{v.pitch}</p>
@@ -315,7 +315,7 @@ const vista = verticals.map((v: any) => {
               )}
               <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(v.name)}`}
                  target="_blank" rel="noopener" class={v.landing ? 'btn-secondary' : 'btn-primary'}>
-                <i class="fa-brands fa-whatsapp"></i>
+                <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
                 Ask about {v.name}
               </a>
             </div>
@@ -364,7 +364,7 @@ const vista = verticals.map((v: any) => {
           Message us on WhatsApp and we'll take a look.
         </p>
         <a href="https://wa.me/50766326006?text=My%20industry%20is%20...%20can%20you%20build%20a%20vertical%3F" target="_blank" rel="noopener" class="btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> Tell us about your industry
+          <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Tell us about your industry
         </a>
       </div>
     </div>

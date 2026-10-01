@@ -184,8 +184,9 @@ const faqLd = {
   </section>
 
   <!-- Cards de pricing -->
-  <section class="pb-12">
+  <section class="pb-12" aria-labelledby="ediciones-titulo">
     <div class="wrap">
+      <h2 id="ediciones-titulo" class="sr-only">Ediciones de SuiteHub</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {ediciones.map(e => (
           <div class={`relative card-glass p-6 ${e.featured ? 'border-brand-500/50 shadow-glow' : ''}`}>
@@ -400,7 +401,7 @@ const faqLd = {
         </h2>
         <p class="text-ink-300 mb-8">Escríbenos por WhatsApp, cuéntanos cómo trabajas y te decimos qué edición te conviene.</p>
         <a href="https://wa.me/50766326006?text=Tengo%20preguntas%20sobre%20precios%20SuiteHub" target="_blank" rel="noopener" class="btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
+          <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Escríbenos por WhatsApp
         </a>
       </div>
     </div>

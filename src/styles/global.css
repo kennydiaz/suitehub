@@ -26,6 +26,17 @@
 }
 
 @layer components {
+  /* Icono en SVG en línea: mismo tamaño y alineación que uno de Font Awesome.
+     :where() lo deja sin especificidad, así que w-5, text-xl y compañía mandan. */
+  :where(.ico) {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    fill: currentColor;
+    overflow: visible;
+  }
+
   /* Container */
   .wrap {
     @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;

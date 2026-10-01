@@ -128,7 +128,7 @@ const stats = [
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
             <a href="https://wa.me/50766326006?text=Hola%2C%20quiero%20una%20demo"
                target="_blank" rel="noopener" class="btn-primary text-base">
-              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <svg class="ico text-xl" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
               Habla con un asesor
             </a>
             <a href="/precios" class="btn-secondary text-base">
@@ -274,7 +274,7 @@ const stats = [
         {verticales.map((v, i) => (
           <a href={`/verticales#${v.key}`}
              class={`reveal reveal-delay-${(i % 4) + 1} group lift card-glass p-5 hover:border-brand-500/30 hover:bg-white/[0.05] transition-all`}>
-            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" loading="lazy" />
+            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} width="48" height="48" class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" loading="lazy" />
             <h3 class="text-base font-display font-semibold mb-1">{v.name}</h3>
             <p class="text-xs text-ink-400">{v.desc}</p>
           </a>
@@ -328,7 +328,7 @@ const stats = [
             </blockquote>
             <figcaption class="mt-6 pt-6 border-t border-white/5 flex items-center gap-3">
               {t.logo ? (
-                <img src={t.logo} alt={t.author} class="w-10 h-10 rounded-full bg-white/10 object-contain p-1" />
+                <img src={t.logo} alt={t.author} width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 rounded-full bg-white/10 object-contain p-1" />
               ) : (
                 <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-sm">
                   {t.initial}
@@ -370,7 +370,7 @@ const stats = [
           <a href="https://wa.me/50766326006?text=Hola%2C%20quiero%20agendar%20una%20demo"
              target="_blank" rel="noopener"
              class="btn-primary text-base px-8">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <svg class="ico text-xl" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
             Hablar por WhatsApp
           </a>
           <a href="mailto:info@suitehub.net?subject=Quiero%20conocer%20SuiteHub"

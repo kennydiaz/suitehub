@@ -106,7 +106,7 @@ const breadcrumb = {
 
           <div class="mt-8 flex flex-wrap gap-3 justify-center">
             <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
-              <i class="fa-brands fa-whatsapp text-lg"></i> {UI.pregunta} {b.titulo}
+              <svg class="ico text-lg" aria-hidden="true"><use href="#i-whatsapp"></use></svg> {UI.pregunta} {b.titulo}
             </a>
             <a href={waDemo} target="_blank" rel="noopener" class="btn-secondary">
               <i class="fa-solid fa-play"></i> {UI.demo}
@@ -347,7 +347,7 @@ const breadcrumb = {
           )}
           <div class="flex flex-wrap gap-3 justify-center">
             <a href={waInfo} target="_blank" rel="noopener" class="btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow-sm">
-              <i class="fa-brands fa-whatsapp text-lg"></i> {UI.escribenos}
+              <svg class="ico text-lg" aria-hidden="true"><use href="#i-whatsapp"></use></svg> {UI.escribenos}
             </a>
             <a href={mailto} class="btn-secondary">
               <i class="fa-solid fa-envelope"></i> info@suitehub.net
@@ -367,7 +367,7 @@ const breadcrumb = {
           </h2>
           {b.cta.texto && <p class="reveal text-ink-300 mb-8 max-w-xl mx-auto">{b.cta.texto}</p>}
           <a href={waDemo} target="_blank" rel="noopener" class="reveal btn bg-emerald-500 text-white hover:bg-emerald-400 shadow-glow text-base px-8 py-4">
-            <i class="fa-brands fa-whatsapp text-xl"></i> {UI.agenda}
+            <svg class="ico text-xl" aria-hidden="true"><use href="#i-whatsapp"></use></svg> {UI.agenda}
           </a>
         </div>
       </section>
