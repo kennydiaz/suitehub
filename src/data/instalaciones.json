@@ -368,5 +368,25 @@
       "es": "En la caja, la pantalla muestra el salón principal con cada mesa como un botón y, al lado, las acciones del turno: cobrar, dividir cuenta, cambiar mesa, cerrar cuenta. Quien está en caja ve de una sola vista qué mesa está abierta y qué falta cobrar.",
       "en": "At the register, the screen shows the main dining room with every table as a button, and next to it the shift actions: take payment, split the bill, move a table, close it out. Whoever works the register sees at a glance which tables are open and what is still unpaid."
     }
+  },
+  {
+    "slug": "waka-food",
+    "nombre": "Waka Food",
+    "sector": {
+      "es": "Comida rápida Venezolana y Colombiana",
+      "en": "Venezuelan fast food counter"
+    },
+    "foto": "/images/casos/waka-food.webp",
+    "logo": "/images/casos/waka-food-logo.webp",
+    "logoW": 512,
+    "logoH": 512,
+    "alt": {
+      "es": "Barra de un local de comida rápida con menú iluminado y una pantalla táctil de punto de venta sobre el mostrador.",
+      "en": "Fast food counter with an illuminated menu board and a touchscreen point of sale terminal on the bar."
+    },
+    "texto": {
+      "es": "El mostrador de arepas, hamburguesas y hot dogs trabaja con una pantalla táctil en la esquina de la barra. Desde ese tablero de botones grandes se toma el pedido y se cobra sin moverse del punto de atención, con la factura electrónica DGI incluida.",
+      "en": "The arepa, burger and hot dog counter runs on a single touchscreen at the end of the bar. From that grid of large buttons the staff takes the order and charges for it without leaving the service point, with DGI electronic invoicing built in."
+    }
   }
 ]
