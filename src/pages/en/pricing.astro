@@ -217,10 +217,10 @@ const faqLd = {
       <p class="text-sm text-ink-400 mb-8">Every vertical comes in two versions: "HUB X" on Hub Core and "HUB X Pro" on Hub Pro. Paying annually costs 10 months.</p>
 
       <div class="card-glass overflow-x-auto">
-        <table class="w-full text-sm min-w-[560px]">
+        <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-white/10">
-              <th class="text-left p-4 px-5 font-display font-semibold text-ink-200">Vertical</th>
+              <th class="text-left p-3 px-4 sm:p-4 sm:px-5 font-display font-semibold text-ink-200">Vertical</th>
               <th class="p-4 text-center font-display font-semibold text-ink-200">HUB X</th>
               <th class="p-4 text-center font-display font-semibold text-ink-200">HUB X Pro</th>
             </tr>
@@ -228,9 +228,9 @@ const faqLd = {
           <tbody>
             {verticals.map((v, idx) => (
               <tr class={`border-b border-white/5 ${idx % 2 === 0 ? '' : 'bg-white/[0.015]'}`}>
-                <td class="p-4 px-5 text-ink-100 font-medium">{v.name}</td>
+                <td class="p-3 px-4 sm:p-4 sm:px-5 text-ink-100 font-medium">{v.name}</td>
                 {['core', 'pro'].map((ed) => (
-                  <td class="p-4 text-center text-ink-200 whitespace-nowrap">
+                  <td class="p-3 sm:p-4 text-center text-ink-200 whitespace-nowrap">
                     <span class="font-semibold">${v.planes?.[ed]?.precio_mes}</span><span class="text-xs text-ink-500">/mo</span>
                     <div class="text-xs text-ink-500">${v.planes?.[ed]?.precio_anio}/year</div>
                   </td>
@@ -289,6 +289,16 @@ const faqLd = {
       <h2 class="text-2xl font-display font-bold mb-2">Full comparison</h2>
       <p class="text-sm text-ink-400 mb-8">What each edition includes, row by row.</p>
 
+      <details id="comparativa" open class="group">
+        <summary class="lg:hidden list-none [&::-webkit-details-marker]:hidden cursor-pointer card-glass p-4 mb-4 flex items-center justify-between gap-3 text-sm font-semibold text-ink-100">
+          <span>See all {comparison.reduce((n, c) => n + c.rows.length, 0)} features, edition by edition</span>
+          <i class="fa-solid fa-chevron-down text-brand-400 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <script is:inline>
+          /* En pantallas angostas la comparativa empieza cerrada: son cinco columnas que en
+             un teléfono se recorren de lado y ~3.400 px de alto. En escritorio queda abierta. */
+          if (matchMedia('(max-width: 1023px)').matches) document.getElementById('comparativa').removeAttribute('open');
+        </script>
       <div class="card-glass overflow-x-auto">
         <table class="w-full text-sm min-w-[760px]">
           <thead class="sticky top-20 bg-navy-950 z-10">
@@ -324,6 +334,8 @@ const faqLd = {
           </tbody>
         </table>
       </div>
+
+      </details>
 
       <p class="text-xs text-ink-500 mt-6 text-center">
         Don't see something you need? <a href="https://wa.me/50766326006?text=I%20have%20a%20question%20about%20pricing" target="_blank" rel="noopener" class="text-brand-400 hover:text-brand-300">Ask us on WhatsApp</a>
