@@ -1,7 +1,6 @@
 {
   "meta": {
     "marca": "SuiteHub",
-    "empresa": "PROOQ S.A. (Panamá) · PROOQ LLC (EE.UU.)",
     "moneda": "USD",
     "ciclo_anual_factor": 10,
     "descuento_anual_pct": 16,
@@ -266,41 +265,6 @@
         "Inventario con mínimos",
         "Lotes y caducidad",
         "Compras y proveedores"
-      ]
-    },
-    {
-      "key": "boutique",
-      "name": "HUB Boutique",
-      "icon": "fa-shirt",
-      "sector": "Boutiques de ropa y retail",
-      "caso_real": null,
-      "nota": null,
-      "propio_core_mes": null,
-      "propio_pro_mes": null,
-      "planes": {
-        "core": {
-          "precio_mes": 48,
-          "precio_anio": 480,
-          "propio": false
-        },
-        "pro": {
-          "precio_mes": 96,
-          "precio_anio": 960,
-          "propio": false
-        }
-      },
-      "edicion_minima": "core",
-      "precio_mes": 48,
-      "precio_anio": 480,
-      "precio_pro_mes": 96,
-      "precio_pro_anio": 960,
-      "features": [
-        "Variantes talla × color",
-        "Multi-sucursal",
-        "POS táctil",
-        "Tienda online",
-        "Pago online",
-        "Factura electrónica"
       ]
     },
     {
@@ -610,6 +574,76 @@
         "Cadena de custodia",
         "Prueba de entrega",
         "Nivel de servicio"
+      ]
+    },
+    {
+      "key": "supply",
+      "name": "HUB Supply",
+      "icon": "fa-warehouse",
+      "sector": "Distribuidoras y mayoristas que venden a otros negocios",
+      "caso_real": null,
+      "nota": "Incluye el portal de pedidos en línea para los clientes del mayorista.",
+      "propio_core_mes": null,
+      "propio_pro_mes": null,
+      "planes": {
+        "core": {
+          "precio_mes": 48,
+          "precio_anio": 480,
+          "propio": false
+        },
+        "pro": {
+          "precio_mes": 96,
+          "precio_anio": 960,
+          "propio": false
+        }
+      },
+      "edicion_minima": "core",
+      "precio_mes": 48,
+      "precio_anio": 480,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Portal de pedidos",
+        "Precio por cliente",
+        "Crédito y saldo",
+        "Inventario",
+        "Despacho",
+        "Facturación electrónica"
+      ]
+    },
+    {
+      "key": "pedidos",
+      "name": "HUB Pedidos",
+      "icon": "fa-motorcycle",
+      "sector": "Pedidos a domicilio para negocios sin POS",
+      "caso_real": null,
+      "nota": "Cocinas fantasma, food trucks, fondas, panaderías. Quien ya tiene HUB POS o HUB Restaurant usa el módulo de pedidos de ese producto.",
+      "propio_core_mes": null,
+      "propio_pro_mes": null,
+      "planes": {
+        "core": {
+          "precio_mes": 48,
+          "precio_anio": 480,
+          "propio": false
+        },
+        "pro": {
+          "precio_mes": 96,
+          "precio_anio": 960,
+          "propio": false
+        }
+      },
+      "edicion_minima": "core",
+      "precio_mes": 48,
+      "precio_anio": 480,
+      "precio_pro_mes": 96,
+      "precio_pro_anio": 960,
+      "features": [
+        "Carta por QR o enlace",
+        "Carrito y pago",
+        "Tablero de cocina",
+        "Ticket automático",
+        "Reparto",
+        "Cierre del día"
       ]
     },
     {
