@@ -95,6 +95,8 @@ const Producto = z.object({
   publicado: z.boolean(),
   acento: z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#1582F5'),
   imagenes_base: z.string().min(1),
+  // Fecha en que se rehicieron las capturas: va como ?v= para saltarse la caché de 7 días.
+  version_imagenes: z.string().default(''),
   sitio: z.object({ es: z.string(), en: z.string() }),
   hero: z.object({
     imagen: z.string().min(1),
@@ -192,7 +194,10 @@ export function bloque(p: Producto, lang: Idioma): Bloque {
 /** Ruta de una imagen del producto. Las del propio sitio quedan relativas (sirven igual en local). */
 export function imagen(p: Producto, archivo: string): string {
   const base = p.imagenes_base.startsWith(SITIO) ? p.imagenes_base.slice(SITIO.length) : p.imagenes_base;
-  return base.replace(/\/?$/, '/') + archivo;
+  const url = base.replace(/\/?$/, '/') + archivo;
+  // Una captura rehecha conserva su nombre y el servidor la cachea 7 días: sin la versión
+  // quien ya visitó la página seguiría viendo la vieja.
+  return p.version_imagenes ? `${url}?v=${encodeURIComponent(p.version_imagenes)}` : url;
 }
 
 /** Partes normalizadas de un texto resaltable. */
