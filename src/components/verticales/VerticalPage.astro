@@ -4,23 +4,32 @@
  * (src/lib/presentaciones.ts). Una sola plantilla para todos: ningún vertical tiene su
  * propio .astro. Sin precios: el cierre es la cotización por proyecto.
  *
- * Secciones: hero (+ portada) · problema → solución · recorrido (desktop y tablet en marco
- * de navegador, móvil en marco de teléfono, ticket en papel angosto; con subtítulo cuando
- * cambia el `grupo`) · funciones · adicionales · hardware · hablemos · CTA.
- * Las opcionales (adicionales, hardware, cta) solo salen si el JSON las trae.
+ * Es LA presentación del producto: el correo del panel solo lleva a esta página.
+ *
+ * Secciones: hero (+ portada) · problema → solución · índice de grupos · recorrido (desktop
+ * y tablet en marco de navegador, móvil en marco de teléfono, ticket en papel angosto; con
+ * subtítulo cuando cambia el `grupo`) · funciones · adicionales · hardware · casos del
+ * vertical · preguntas · hablemos · CTA.
+ * Las opcionales (portada, recorrido, adicionales, hardware, casos, preguntas, cta) solo
+ * salen si hay con qué: un borrador sin capturas también tiene su página.
+ *
+ * `borrador`: la página de un producto aún sin publicar (/vista/<slug>). Misma plantilla,
+ * con `noindex` y fuera de los listados y del sitemap: existe para poder mandarla.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { bloque, imagen, partes, ruta } from '../../lib/presentaciones';
 import type { Idioma, Producto } from '../../lib/presentaciones';
+import instalaciones from '../../data/instalaciones.json';
 
 interface Props {
   p: Producto;
   lang: Idioma;
+  borrador?: boolean;
 }
 
-const { p, lang } = Astro.props;
+const { p, lang, borrador = false } = Astro.props;
 const b = bloque(p, lang);
-const hero = p.hero!;
+const hero = p.hero;
 
 const UI = {
   es: {
@@ -28,14 +37,20 @@ const UI = {
     incluye: 'Todo lo que incluye', funcionesDe: 'Funciones de', recorrido: 'Así se ve por dentro',
     hablemos: 'Hablemos', escribenos: 'Escríbenos por WhatsApp', agenda: 'Agenda tu demo',
     inicio: 'Inicio', verticales: 'Verticales', asunto: 'Quiero info de', portada: 'Dashboard de',
-    listado: '/verticales', home: '/',
+    listado: '/verticales', home: '/', casos: '/casos', verCasos: 'Ver todos los casos',
+    casosEyebrow: 'En sitio', casosTitulo: 'Ya trabajan con', preguntasEyebrow: 'Preguntas frecuentes',
+    preguntasTitulo: 'Lo que nos preguntan antes de empezar', ampliar: 'Ampliar', cerrar: 'Cerrar',
+    mas: (n: number) => `Ver ${n} ${n === 1 ? 'pantalla más' : 'pantallas más'}`, indice: 'Ir a',
   },
   en: {
     todas: 'All verticals', familia: 'SuiteHub family', pregunta: 'Ask about', demo: 'Book a demo',
     incluye: "What's included", funcionesDe: 'Features of', recorrido: 'A look inside',
     hablemos: "Let's talk", escribenos: 'Message us on WhatsApp', agenda: 'Book your demo',
     inicio: 'Home', verticales: 'Verticals', asunto: 'Info about', portada: 'Dashboard for',
-    listado: '/en/verticals', home: '/en/',
+    listado: '/en/verticals', home: '/en/', casos: '/en/cases', verCasos: 'See all case studies',
+    casosEyebrow: 'On site', casosTitulo: 'Already running', preguntasEyebrow: 'FAQ',
+    preguntasTitulo: 'What people ask before getting started', ampliar: 'Zoom in', cerrar: 'Close',
+    mas: (n: number) => `See ${n} more ${n === 1 ? 'screen' : 'screens'}`, indice: 'Go to',
   },
 }[lang];
 
@@ -45,11 +60,38 @@ const waDemo = wa(b.wa_demo || b.wa_text || `${UI.demo}: ${b.titulo}`);
 const mailto = `mailto:info@suitehub.net?subject=${encodeURIComponent(`${UI.asunto} ${b.titulo}`)}`;
 
 const urlLabel = b.url_label || `suitehub.net/${p.slug}`;
-const conPortada = hero.portada !== false;
+const conPortada = !!hero && hero.portada !== false;
 const titular = b.titular ? partes(b.titular) : { antes: b.titulo, destacado: '', despues: '' };
 const solucion = partes(b.solucion);
 const ctaTitular = b.cta ? partes(b.cta.titular) : null;
 const hablemosTexto = [b.hablemos?.texto, b.cierre].filter(Boolean).join(' ');
+
+// Casi todos los recorridos abren con la misma imagen de la portada: se muestra una vez,
+// arriba, y el título y el texto de esa pantalla pasan a ser el pie de la portada.
+const repite = conPortada && b.recorrido[0]?.imagen === hero!.imagen;
+const pieDePortada = repite ? b.recorrido[0] : null;
+const pantallas = repite ? b.recorrido.slice(1) : b.recorrido;
+
+// El recorrido por grupos: un grupo nuevo empieza cuando cambia `grupo`; lo que no trae
+// grupo sigue en el anterior. La numeración es corrida.
+type Pantalla = (typeof b.recorrido)[number];
+const grupos: { nombre: string; id: string; items: { s: Pantalla; n: number }[] }[] = [];
+pantallas.forEach((s, i) => {
+  const nombre = s.grupo ?? '';
+  const ultimo = grupos[grupos.length - 1];
+  if (!ultimo || (nombre !== '' && nombre !== ultimo.nombre)) {
+    grupos.push({ nombre, id: `grupo-${grupos.length + 1}`, items: [] });
+  }
+  grupos[grupos.length - 1].items.push({ s, n: i + 1 });
+});
+const conIndice = grupos.filter((g) => g.nombre !== '').length >= 2;
+// En el teléfono el recorrido completo pasaba de 20.000 px: cada grupo muestra las primeras
+// y pliega el resto detrás de un botón. Sin grupos, se ven unas cuantas más.
+const VISIBLES_MOVIL = conIndice ? 2 : 4;
+
+// Casos «En sitio» del mismo vertical (src/data/instalaciones.json, lo publica el panel).
+type Caso = (typeof instalaciones)[number] & { vertical?: string };
+const casos = (instalaciones as Caso[]).filter((c) => c.vertical === p.slug).slice(0, 3);
 
 // `icono` de funciones y adicionales: el panel admite una clase de Font Awesome (fa-bolt)
 // o un emoji (📋). Antes se pintaba siempre como `fa-solid <icono>`, y un emoji salía como
@@ -57,7 +99,7 @@ const hablemosTexto = [b.hablemos?.texto, b.cierre].filter(Boolean).join(' ');
 const esFa = (icono: string) => /^fa-[a-z0-9-]+$/.test(icono.trim());
 
 // El hero: foto de fondo si el producto la trae; si no, el degradado con su acento.
-const heroFondo = hero.fondo
+const heroFondo = hero?.fondo
   ? `background-image: linear-gradient(180deg, rgba(7,10,18,.55), #06192E 92%), url('${imagen(p, hero.fondo)}'); background-size: cover; background-position: center 30%;`
   : 'background-image: radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--acento) 32%, transparent), transparent 70%), linear-gradient(180deg, #071A2B, #06192E 92%);';
 
@@ -77,13 +119,22 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 3, name: b.titulo, item: origen + ruta(p.slug, lang) },
   ],
 };
+const faq = b.preguntas.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: b.preguntas.map((q) => ({
+    '@type': 'Question', name: q.pregunta, acceptedAnswer: { '@type': 'Answer', text: q.respuesta },
+  })),
+} : null;
 ---
 <BaseLayout
   title={b.seo.title || `${b.titulo}: ${b.tagline}`}
   description={b.seo.description || b.intro || b.tagline}
-  ogImage={imagen(p, hero.imagen)}
+  ogImage={hero ? imagen(p, hero.imagen) : undefined}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  {borrador && <meta slot="head" name="robots" content="noindex, nofollow, noarchive" />}
+  {!borrador && <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />}
+  {!borrador && faq && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faq)} />}
 
   <div class="vertical" style={`--acento: ${p.acento};`}>
 
@@ -97,7 +148,7 @@ const breadcrumb = {
         </a>
 
         <div class="reveal max-w-3xl mx-auto">
-          <img src={imagen(p, 'badge.svg')} alt={b.titulo} width="80" height="80" class="h-20 w-20 mx-auto mb-6" />
+          <img src={imagen(p, 'badge.svg')} alt={b.titulo} width="80" height="80" class="h-20 w-20 mx-auto mb-6" onerror="this.remove()" />
           <span class="eyebrow">{b.eyebrow ? `${b.eyebrow} · ${UI.familia}` : UI.familia}</span>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05]">
             {titular.antes}{titular.destacado && <span class="acento">{titular.destacado}</span>}{titular.despues}
@@ -122,15 +173,22 @@ const breadcrumb = {
 
         {conPortada && (
           <div class="reveal show-glow max-w-4xl mx-auto mt-14">
-            <figure class="browser">
+            <figure class="browser ampliable">
               <div class="browser-bar">
                 <span class="browser-dot bg-[#ff5f57]"></span>
                 <span class="browser-dot bg-[#febc2e]"></span>
                 <span class="browser-dot bg-[#28c840]"></span>
                 <span class="browser-url">{urlLabel}</span>
               </div>
-              <img src={imagen(p, hero.imagen)} alt={`${UI.portada} ${b.titulo}`} width={hero.ancho} height={hero.alto} decoding="async" fetchpriority="high" class="w-full h-auto" />
+              <img src={imagen(p, hero!.imagen)} alt={`${UI.portada} ${b.titulo}`} width={hero!.ancho} height={hero!.alto} decoding="async" fetchpriority="high" class="w-full h-auto" data-ampliar />
+              <span class="lupa" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
             </figure>
+            {pieDePortada && (
+              <div class="max-w-2xl mx-auto mt-8">
+                <h2 class="text-xl sm:text-2xl font-display font-bold">{pieDePortada.titulo}</h2>
+                {pieDePortada.texto && <p class="mt-2 text-ink-300 leading-relaxed">{pieDePortada.texto}</p>}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -152,97 +210,123 @@ const breadcrumb = {
     )}
 
     <!-- ░░ RECORRIDO ░░ -->
-    <section class="section" id="recorrido">
-      <div class="wrap">
-        <h2 class="acento text-center text-sm uppercase tracking-[0.2em] font-semibold mb-16">
-          {b.recorrido_titulo || UI.recorrido}
-        </h2>
+    {pantallas.length > 0 && (
+      <section class="section" id="recorrido">
+        {conIndice && (
+          <nav class="indice" aria-label={b.recorrido_titulo || UI.recorrido}>
+            <div class="wrap flex gap-2 overflow-x-auto py-3">
+              {grupos.filter((g) => g.nombre !== '').map((g) => (
+                <a href={`#${g.id}`} class="indice-chip" data-indice={g.id} aria-label={`${UI.indice} ${g.nombre}`}>{g.nombre}</a>
+              ))}
+            </div>
+          </nav>
+        )}
 
-        <div class="space-y-20 lg:space-y-28">
-          {b.recorrido.map((s, i) => {
-            // Teléfono y ticket son angostos: la columna de la imagen se achica.
-            const angosto = s.tipo === 'movil' || s.tipo === 'ticket';
-            // Un grupo nuevo abre con su subtítulo; la numeración sigue corrida.
-            const grupoNuevo = !!s.grupo && s.grupo !== b.recorrido[i - 1]?.grupo;
-            const fila = (
-              <div class={`reveal grid gap-8 lg:gap-14 items-center ${angosto ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'}`}>
-                <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div class="acento flex items-center gap-3 font-display font-bold text-sm tracking-widest mb-4">
-                    {String(i + 1).padStart(2, '0')}
-                    <span class="linea h-px w-12"></span>
-                  </div>
-                  <h3 class="text-2xl lg:text-3xl font-display font-bold mb-3">{s.titulo}</h3>
-                  {s.texto && <p class="text-ink-300 leading-relaxed">{s.texto}</p>}
-                  {s.puntos.length > 0 && (
-                    <ul class="mt-5 space-y-2">
-                      {s.puntos.map((pt) => (
-                        <li class="flex items-start gap-2.5 text-sm text-ink-200">
-                          <i class="acento fa-solid fa-check mt-1"></i><span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
+        <div class="wrap">
+          <h2 class="acento text-center text-sm uppercase tracking-[0.2em] font-semibold mb-16 mt-10">
+            {b.recorrido_titulo || UI.recorrido}
+          </h2>
+
+          <div class="space-y-20 lg:space-y-28">
+            {grupos.map((g) => {
+              const ocultas = Math.max(0, g.items.length - VISIBLES_MOVIL);
+              return (
+                <div id={g.id} class="grupo-cuerpo scroll-mt-40 space-y-20 lg:space-y-28">
+                  {g.nombre && (
+                    <h3 class="grupo reveal acento flex items-center gap-4 font-display font-semibold text-sm uppercase tracking-[0.2em] -mb-10 lg:-mb-14">
+                      {g.nombre}
+                      <span class="linea h-px flex-1 max-w-[180px]"></span>
+                    </h3>
                   )}
-                </div>
-                <div class={`show-glow ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  {s.tipo === 'movil' ? (
-                    <figure class="phone mx-auto">
-                      <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
-                    </figure>
-                  ) : s.tipo === 'ticket' ? (
-                    <figure class="ticket mx-auto">
-                      <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
-                    </figure>
-                  ) : (
-                    <figure class="browser">
-                      <div class="browser-bar">
-                        <span class="browser-dot bg-[#ff5f57]"></span>
-                        <span class="browser-dot bg-[#febc2e]"></span>
-                        <span class="browser-dot bg-[#28c840]"></span>
-                        <span class="browser-url">{urlLabel}</span>
+                  {g.items.map(({ s, n }, k) => {
+                    // Teléfono y ticket son angostos: la columna de la imagen se achica.
+                    const angosto = s.tipo === 'movil' || s.tipo === 'ticket';
+                    return (
+                      <div class={`reveal grid gap-8 lg:gap-14 items-center ${angosto ? 'lg:grid-cols-[1.3fr_.7fr]' : 'lg:grid-cols-2'} ${k >= VISIBLES_MOVIL ? 'extra' : ''}`}>
+                        <div class={n % 2 === 0 ? 'lg:order-2' : ''}>
+                          <div class="acento flex items-center gap-3 font-display font-bold text-sm tracking-widest mb-4">
+                            {String(n).padStart(2, '0')}
+                            <span class="linea h-px w-12"></span>
+                          </div>
+                          <h3 class="text-2xl lg:text-3xl font-display font-bold mb-3">{s.titulo}</h3>
+                          {s.texto && <p class="text-ink-300 leading-relaxed">{s.texto}</p>}
+                          {s.puntos.length > 0 && (
+                            <ul class="mt-5 space-y-2">
+                              {s.puntos.map((pt) => (
+                                <li class="flex items-start gap-2.5 text-sm text-ink-200">
+                                  <i class="acento fa-solid fa-check mt-1"></i><span>{pt}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                        <div class={`show-glow ${n % 2 === 0 ? 'lg:order-1' : ''}`}>
+                          {s.tipo === 'movil' ? (
+                            <figure class="phone ampliable mx-auto">
+                              <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" data-ampliar />
+                              <span class="lupa" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </figure>
+                          ) : s.tipo === 'ticket' ? (
+                            <figure class="ticket ampliable mx-auto">
+                              <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" data-ampliar />
+                              <span class="lupa" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </figure>
+                          ) : (
+                            <figure class="browser ampliable">
+                              <div class="browser-bar">
+                                <span class="browser-dot bg-[#ff5f57]"></span>
+                                <span class="browser-dot bg-[#febc2e]"></span>
+                                <span class="browser-dot bg-[#28c840]"></span>
+                                <span class="browser-url">{urlLabel}</span>
+                              </div>
+                              <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" data-ampliar />
+                              <span class="lupa" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </figure>
+                          )}
+                        </div>
                       </div>
-                      <img src={imagen(p, s.imagen)} alt={s.titulo} width={s.ancho} height={s.alto} loading="lazy" decoding="async" class="w-full h-auto" />
-                    </figure>
+                    );
+                  })}
+                  {ocultas > 0 && (
+                    <div class="text-center lg:hidden">
+                      <button type="button" class="btn-secondary ver-mas" data-mas={g.id}>
+                        <i class="fa-solid fa-chevron-down"></i> {UI.mas(ocultas)}
+                      </button>
+                    </div>
                   )}
                 </div>
-              </div>
-            );
-            return grupoNuevo ? (
-              <div>
-                <h3 class="grupo reveal acento flex items-center gap-4 font-display font-semibold text-sm uppercase tracking-[0.2em] mb-10 lg:mb-14">
-                  {s.grupo}
-                  <span class="linea h-px flex-1 max-w-[180px]"></span>
-                </h3>
-                {fila}
-              </div>
-            ) : fila;
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    )}
 
     <!-- ░░ FUNCIONES ░░ -->
-    <section class="section bg-navy-900/30">
-      <div class="wrap">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <span class="eyebrow">{b.funciones_eyebrow || UI.incluye}</span>
-          <h2 class="text-3xl lg:text-4xl font-display font-bold">{b.funciones_titulo || `${UI.funcionesDe} ${b.titulo}`}</h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {b.funciones.map((f) => (
-            <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
-              <div class="acento w-11 h-11 rounded-xl flex items-center justify-center bg-white/5 mb-4">
-                {esFa(f.icono)
-                  ? <i class={`fa-solid ${f.icono} text-lg`}></i>
-                  : <span class="text-2xl leading-none" aria-hidden="true">{f.icono}</span>}
+    {b.funciones.length > 0 && (
+      <section class="section bg-navy-900/30">
+        <div class="wrap">
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="eyebrow">{b.funciones_eyebrow || UI.incluye}</span>
+            <h2 class="text-3xl lg:text-4xl font-display font-bold">{b.funciones_titulo || `${UI.funcionesDe} ${b.titulo}`}</h2>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {b.funciones.map((f) => (
+              <div class="reveal card-glass p-6 hover:border-white/15 transition-colors">
+                <div class="acento w-11 h-11 rounded-xl flex items-center justify-center bg-white/5 mb-4">
+                  {esFa(f.icono)
+                    ? <i class={`fa-solid ${f.icono} text-lg`}></i>
+                    : <span class="text-2xl leading-none" aria-hidden="true">{f.icono}</span>}
+                </div>
+                <div class="font-display font-semibold mb-1.5">{f.titulo}</div>
+                <div class="text-sm text-ink-400 leading-relaxed">{f.texto}</div>
               </div>
-              <div class="font-display font-semibold mb-1.5">{f.titulo}</div>
-              <div class="text-sm text-ink-400 leading-relaxed">{f.texto}</div>
-            </div>
-          ))}
+            ))}
+          </div>
+          {b.funciones_nota && <p class="mt-7 text-xs text-ink-500 text-center">{b.funciones_nota}</p>}
         </div>
-        {b.funciones_nota && <p class="mt-7 text-xs text-ink-500 text-center">{b.funciones_nota}</p>}
-      </div>
-    </section>
+      </section>
+    )}
 
     <!-- ░░ ADICIONALES ░░ -->
     {b.adicionales && (
@@ -328,6 +412,64 @@ const breadcrumb = {
       </section>
     )}
 
+    <!-- ░░ CASOS DEL VERTICAL ░░ -->
+    {casos.length > 0 && (
+      <section class="section">
+        <div class="wrap">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="eyebrow">{UI.casosEyebrow}</span>
+            <h2 class="text-3xl lg:text-4xl font-display font-bold">{UI.casosTitulo} {b.titulo}</h2>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6">
+            {casos.map((c) => (
+              <figure class="reveal card-glass overflow-hidden basis-full sm:basis-[calc(50%-0.75rem)] lg:basis-[calc(33.333%-1rem)]">
+                <img src={c.foto} alt={c.alt[lang]} width="1400" height="1050" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover" />
+                <figcaption class="p-6">
+                  <div class="flex items-center gap-3">
+                    {c.logo && (
+                      <img src={c.logo} alt={c.nombre} width={c.logoW} height={c.logoH} loading="lazy"
+                           class="h-10 w-auto max-w-[92px] object-contain rounded-lg bg-white p-1.5" />
+                    )}
+                    <div>
+                      <div class="text-sm font-display font-semibold text-white">{c.nombre}</div>
+                      <div class="text-xs text-ink-400">{c.sector[lang]}</div>
+                    </div>
+                  </div>
+                  <p class="mt-4 text-sm text-ink-300 leading-relaxed">{c.texto[lang]}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p class="text-center mt-8">
+            <a href={UI.casos} class="acento text-sm font-semibold hover:underline">{UI.verCasos} <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </p>
+        </div>
+      </section>
+    )}
+
+    <!-- ░░ PREGUNTAS ░░ -->
+    {b.preguntas.length > 0 && (
+      <section class="section bg-navy-900/30">
+        <div class="wrap max-w-3xl">
+          <div class="text-center mb-12">
+            <span class="eyebrow">{UI.preguntasEyebrow}</span>
+            <h2 class="text-3xl lg:text-4xl font-display font-bold">{UI.preguntasTitulo}</h2>
+          </div>
+          <div class="space-y-3">
+            {b.preguntas.map((q, i) => (
+              <details class="reveal card-glass pregunta" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 cursor-pointer p-5 font-display font-semibold">
+                  {q.pregunta}
+                  <i class="acento fa-solid fa-plus text-sm transition-transform"></i>
+                </summary>
+                <p class="px-5 pb-5 -mt-1 text-ink-300 leading-relaxed">{q.respuesta}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- ░░ HABLEMOS ░░ -->
     <section class="section">
       <div class="wrap">
@@ -373,8 +515,55 @@ const breadcrumb = {
       </section>
     )}
 
+    <!-- Visor de capturas: la imagen a su tamaño, para leer la pantalla. -->
+    <dialog id="visor" class="visor" aria-label={UI.ampliar}>
+      <button type="button" class="visor-cerrar" aria-label={UI.cerrar}><i class="fa-solid fa-xmark"></i></button>
+      <img alt="" />
+    </dialog>
   </div>
 </BaseLayout>
+
+<script>
+  // Ampliar una captura: click (o toque) en cualquier imagen marcada con data-ampliar.
+  const visor = document.getElementById('visor') as HTMLDialogElement | null;
+  const imgVisor = visor?.querySelector('img');
+  document.addEventListener('click', (ev) => {
+    const img = (ev.target as HTMLElement).closest('.ampliable')?.querySelector<HTMLImageElement>('img[data-ampliar]');
+    if (!img || !visor || !imgVisor) return;
+    imgVisor.src = img.currentSrc || img.src;
+    imgVisor.alt = img.alt;
+    // Los comprobantes y los teléfonos son angostos: a su ancho natural se leen; una
+    // pantalla de escritorio llena el ancho disponible.
+    imgVisor.style.width = `${Math.min(img.naturalWidth || 1600, window.innerWidth * 0.94)}px`;
+    visor.showModal();
+    visor.scrollTop = 0;
+  });
+  visor?.addEventListener('click', (ev) => {
+    // Cierra al tocar el fondo o la X; tocar la imagen no (se puede querer hacer zoom).
+    if (ev.target === visor || (ev.target as HTMLElement).closest('.visor-cerrar')) visor.close();
+  });
+
+  // En el teléfono cada grupo muestra sus primeras pantallas; el botón despliega el resto.
+  document.querySelectorAll<HTMLButtonElement>('[data-mas]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.getElementById(btn.dataset.mas!)?.classList.add('abierto');
+      btn.parentElement?.remove();
+    });
+  });
+
+  // Índice: marca el grupo que está en pantalla. Saltar a un grupo plegado lo despliega.
+  const chips = document.querySelectorAll<HTMLAnchorElement>('[data-indice]');
+  if (chips.length) {
+    const marcar = (id: string) => chips.forEach((c) => c.classList.toggle('activo', c.dataset.indice === id));
+    const obs = new IntersectionObserver((entradas) => {
+      entradas.filter((e) => e.isIntersecting).forEach((e) => marcar(e.target.id));
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    chips.forEach((c) => {
+      const g = document.getElementById(c.dataset.indice!);
+      if (g) obs.observe(g);
+    });
+  }
+</script>
 
 <style>
   /* El acento del producto (brand kit) es un tono -600: sobre fondo oscuro se aclara para leerse. */
@@ -395,4 +584,32 @@ const breadcrumb = {
   .show-glow { position: relative; }
   .show-glow::before { content: ''; position: absolute; inset: -2px; z-index: -1; border-radius: 16px; background: radial-gradient(60% 80% at 50% 0%, color-mix(in srgb, var(--acento) 32%, transparent), transparent 70%); filter: blur(22px); }
   @media (max-width: 640px) { .browser-url { display: none; } }
+
+  /* Capturas ampliables: lupa en la esquina; en pantallas táctiles siempre visible. */
+  .ampliable { position: relative; cursor: zoom-in; }
+  .lupa { position: absolute; right: 10px; bottom: 10px; width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+          background: rgba(2,6,23,.72); color: #fff; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .ampliable:hover .lupa { opacity: 1; }
+  @media (hover: none) { .lupa { opacity: .85; } }
+
+  .visor { max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; padding: 3vh 3vw; margin: 0; background: transparent; border: 0; overflow: auto; }
+  .visor::backdrop { background: rgba(2,6,23,.9); backdrop-filter: blur(4px); }
+  .visor img { display: block; margin: 0 auto; height: auto; max-width: none; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.6); background: #fff; }
+  .visor-cerrar { position: fixed; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,.12); color: #fff; font-size: 20px; z-index: 1; }
+  .visor-cerrar:hover { background: rgba(255,255,255,.22); }
+
+  /* Índice del recorrido: pegado bajo la cabecera fija (h-20). */
+  .indice { position: sticky; top: 5rem; z-index: 40; background: rgba(6,25,46,.85); backdrop-filter: blur(10px); border-block: 1px solid rgba(255,255,255,.06); }
+  .indice-chip { flex: none; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; color: #94A3B8; border: 1px solid rgba(255,255,255,.08); white-space: nowrap; transition: color .2s, border-color .2s, background .2s; }
+  .indice-chip:hover { color: #fff; }
+  .indice-chip.activo { color: #fff; border-color: color-mix(in srgb, var(--acento) 60%, transparent); background: color-mix(in srgb, var(--acento) 18%, transparent); }
+  .indice .wrap { scrollbar-width: none; }
+  .scroll-mt-40 { scroll-margin-top: 10rem; }
+
+  /* Pantallas plegadas en el teléfono hasta tocar «Ver N más». */
+  @media (max-width: 1023px) { .grupo-cuerpo:not(.abierto) .extra { display: none; } }
+
+  .pregunta summary { list-style: none; }
+  .pregunta summary::-webkit-details-marker { display: none; }
+  .pregunta[open] summary i { transform: rotate(45deg); }
 </style>

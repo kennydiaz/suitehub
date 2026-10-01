@@ -29,13 +29,12 @@ const Item = z.object({ icono: z.string(), titulo: z.string().min(1), texto: z.s
 /**
  * Una pantalla del recorrido. `tipo` elige el marco: desktop y tablet en navegador,
  * movil en teléfono, ticket como papel angosto. `grupo` abre un subtítulo cuando cambia
- * respecto a la anterior. `correo` solo lo usa el panel (qué capturas lleva el correo).
+ * respecto a la anterior.
  */
 const Captura = z.object({
   imagen: z.string().min(1),
   tipo: z.enum(['desktop', 'movil', 'ticket', 'tablet']),
   grupo: z.string().optional(),
-  correo: z.boolean().optional(),
   ancho: z.number().int().positive(),
   alto: z.number().int().positive(),
   titulo: z.string().min(1),
@@ -81,6 +80,8 @@ const Bloque = z.object({
     })).default([]),
   }).optional(),
   hablemos: z.object({ titulo: z.string().min(1), texto: z.string().default('') }).optional(),
+  // Preguntas frecuentes: un bloque en la página y el FAQPage de schema.org.
+  preguntas: z.array(z.object({ pregunta: z.string().min(1), respuesta: z.string().min(1) })).default([]),
   beneficios: z.array(z.string()).default([]),
   cta: z.object({ titular: Partes, texto: z.string().default('') }).optional(),
   cierre: z.string().default(''),
@@ -181,9 +182,18 @@ export async function getPresentaciones(): Promise<Record<string, Producto>> {
   return _cache;
 }
 
-/** Solo las que tienen página en el sitio. */
+/** Las que tienen página pública en el sitio (listados, sitemap, /verticales/<slug>). */
 export async function getPublicadas(): Promise<Producto[]> {
   return Object.values(await getPresentaciones()).filter((p) => p.publicado);
+}
+
+/**
+ * Las que aún no se publican: tienen página en /vista/<slug>, sin listar, fuera del
+ * sitemap y con `noindex`, para que el panel pueda mandarlas igual. Cuando se publican,
+ * esa ruta pasa a redirigir a /verticales/<slug>.
+ */
+export async function getBorradores(): Promise<Producto[]> {
+  return Object.values(await getPresentaciones()).filter((p) => !p.publicado);
 }
 
 /** El bloque de un idioma; sin bloque `en`, el de `es`. */

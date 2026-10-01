@@ -1,0 +1,27 @@
+---
+/** /en/vista/<slug> — la versión en inglés de /vista/<slug> (ver ese archivo). */
+import VerticalPage from '../../../components/verticales/VerticalPage.astro';
+import { getPresentaciones, ruta } from '../../../lib/presentaciones';
+import type { Producto } from '../../../lib/presentaciones';
+
+export async function getStaticPaths() {
+  return Object.values(await getPresentaciones()).map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props as { p: Producto };
+const destino = ruta(p.slug, 'en');
+---
+{p.publicado ? (
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="robots" content="noindex" />
+      <link rel="canonical" href={new URL(destino, Astro.site).toString()} />
+      <meta http-equiv="refresh" content={`0; url=${destino}`} />
+      <title>{p.nombre}</title>
+    </head>
+    <body><a href={destino}>{p.nombre}</a></body>
+  </html>
+) : (
+  <VerticalPage p={p} lang="en" borrador />
+)}

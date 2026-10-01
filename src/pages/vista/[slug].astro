@@ -1,0 +1,32 @@
+---
+/**
+ * /vista/<slug> — la presentación de un producto que aún no se publica: misma plantilla,
+ * con `noindex`, fuera de los listados y del sitemap. Existe para que el panel la pueda
+ * mandar. Si el producto ya está publicado, redirige a su página (/verticales/<slug>),
+ * así un enlace mandado antes de publicar sigue funcionando después.
+ */
+import VerticalPage from '../../components/verticales/VerticalPage.astro';
+import { getPresentaciones, ruta } from '../../lib/presentaciones';
+import type { Producto } from '../../lib/presentaciones';
+
+export async function getStaticPaths() {
+  return Object.values(await getPresentaciones()).map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props as { p: Producto };
+const destino = ruta(p.slug, 'es');
+---
+{p.publicado ? (
+  <html lang="es">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="robots" content="noindex" />
+      <link rel="canonical" href={new URL(destino, Astro.site).toString()} />
+      <meta http-equiv="refresh" content={`0; url=${destino}`} />
+      <title>{p.nombre}</title>
+    </head>
+    <body><a href={destino}>{p.nombre}</a></body>
+  </html>
+) : (
+  <VerticalPage p={p} lang="es" borrador />
+)}
