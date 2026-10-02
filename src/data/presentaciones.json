@@ -7,6 +7,7 @@
       "publicado": true,
       "acento": "#0284C7",
       "imagenes_base": "https://suitehub.net/images/products/carwash/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/carwash",
         "en": "https://suitehub.net/en/verticals/carwash"
@@ -637,6 +638,7 @@
       "publicado": false,
       "acento": "#06B6D4",
       "imagenes_base": "https://suitehub.net/images/products/clean/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/clean",
         "en": "https://suitehub.net/en/verticals/clean"
@@ -765,6 +767,7 @@
       "publicado": false,
       "acento": "#2563EB",
       "imagenes_base": "https://suitehub.net/images/products/clinic/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/clinic",
         "en": "https://suitehub.net/en/verticals/clinic"
@@ -873,6 +876,7 @@
       "publicado": false,
       "acento": "#1F4570",
       "imagenes_base": "https://suitehub.net/images/products/core/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/core",
         "en": "https://suitehub.net/en/verticals/core"
@@ -1105,6 +1109,7 @@
       "publicado": false,
       "acento": "#0A2540",
       "imagenes_base": "https://suitehub.net/images/products/enterprise/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/enterprise",
         "en": "https://suitehub.net/en/verticals/enterprise"
@@ -1215,6 +1220,7 @@
       "publicado": true,
       "acento": "#DC2626",
       "imagenes_base": "https://suitehub.net/images/products/gym/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/gym",
         "en": "https://suitehub.net/en/verticals/gym"
@@ -1272,7 +1278,6 @@
           },
           {
             "grupo": "La puerta",
-            "correo": true,
             "imagen": "kiosko.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -1315,7 +1320,6 @@
           },
           {
             "grupo": "Cada socio",
-            "correo": true,
             "imagen": "riesgo.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -1372,7 +1376,6 @@
           },
           {
             "grupo": "El dinero",
-            "correo": true,
             "imagen": "caja.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -1533,7 +1536,6 @@
           },
           {
             "grupo": "The door",
-            "correo": true,
             "imagen": "kiosko.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -1576,7 +1578,6 @@
           },
           {
             "grupo": "Every member",
-            "correo": true,
             "imagen": "riesgo.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -1633,7 +1634,6 @@
           },
           {
             "grupo": "The money",
-            "correo": true,
             "imagen": "caja.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -1753,6 +1753,7 @@
       "publicado": true,
       "acento": "#CA8A04",
       "imagenes_base": "https://suitehub.net/images/products/hotel/",
+      "version_imagenes": "2026-10-01",
       "sitio": {
         "es": "https://suitehub.net/verticales/hotel",
         "en": "https://suitehub.net/en/verticals/hotel"
@@ -2011,6 +2012,7 @@
       "publicado": false,
       "acento": "#57534E",
       "imagenes_base": "https://suitehub.net/images/products/inmobiliaria/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/inmobiliaria",
         "en": "https://suitehub.net/en/verticals/inmobiliaria"
@@ -2119,6 +2121,7 @@
       "publicado": false,
       "acento": "#64748B",
       "imagenes_base": "https://suitehub.net/images/products/lite/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/lite",
         "en": "https://suitehub.net/en/verticals/lite"
@@ -2331,6 +2334,7 @@
       "publicado": true,
       "acento": "#F97316",
       "imagenes_base": "https://suitehub.net/images/products/market/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/market",
         "en": "https://suitehub.net/en/verticals/market"
@@ -2993,6 +2997,7 @@
       "publicado": false,
       "acento": "#BE123C",
       "imagenes_base": "https://suitehub.net/images/products/pedidos/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/pedidos",
         "en": "https://suitehub.net/en/verticals/pedidos"
@@ -3066,6 +3071,7 @@
       "publicado": false,
       "acento": "#0D9488",
       "imagenes_base": "https://suitehub.net/images/products/pet/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/pet",
         "en": "https://suitehub.net/en/verticals/pet"
@@ -3244,6 +3250,7 @@
       "publicado": false,
       "acento": "#4F46E5",
       "imagenes_base": "https://suitehub.net/images/products/phone/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/phone",
         "en": "https://suitehub.net/en/verticals/phone"
@@ -3352,6 +3359,7 @@
       "publicado": true,
       "acento": "#16A34A",
       "imagenes_base": "https://suitehub.net/images/products/pos/",
+      "version_imagenes": "2026-10-01.3",
       "sitio": {
         "es": "https://suitehub.net/verticales/pos",
         "en": "https://suitehub.net/en/verticals/pos"
@@ -3515,11 +3523,10 @@
           },
           {
             "grupo": "Cobro y factura electrónica",
-            "correo": true,
             "imagen": "factura-ticket.webp",
             "tipo": "ticket",
             "ancho": 610,
-            "alto": 1540,
+            "alto": 1728,
             "titulo": "Factura electrónica ante la DGI, en ticket de 80 mm",
             "texto": "Al cobrar, la factura se emite y autoriza ante la DGI y sale por la térmica con su CUFE y el código QR que el cliente puede escanear. Consumidor final o cliente con RUC, con búsqueda de la razón social por RUC.",
             "puntos": [
@@ -3558,7 +3565,6 @@
           },
           {
             "grupo": "El cliente se atiende solo",
-            "correo": true,
             "imagen": "kiosko-menu.webp",
             "tipo": "tablet",
             "ancho": 2560,
@@ -3601,7 +3607,6 @@
           },
           {
             "grupo": "Control del negocio",
-            "correo": true,
             "imagen": "aprobaciones-movil.webp",
             "tipo": "movil",
             "ancho": 488,
@@ -3818,6 +3823,32 @@
             }
           ]
         },
+        "preguntas": [
+          {
+            "pregunta": "¿Qué pasa si se cae el internet?",
+            "respuesta": "Sigues vendiendo. HUB POS corre en tu red local, así que la caja, la cocina, el kiosko y los celulares del salón siguen conectados entre sí. Lo único que necesita internet es la factura electrónica: queda pendiente y se envía sola cuando vuelve la conexión, sin riesgo de que salga dos veces."
+          },
+          {
+            "pregunta": "¿Cómo paso mi menú al sistema?",
+            "respuesta": "Lo cargamos nosotros: productos, categorías y modificadores, y dejamos configurada la impresora de cada estación. Si ya tienes tu catálogo en una hoja de cálculo, también se importa desde Excel."
+          },
+          {
+            "pregunta": "¿Qué equipos necesito?",
+            "respuesta": "Una PC o tablet para la caja, una impresora térmica de 80 mm con su gaveta y, si no quieres la comanda en papel, un monitor o tablet en la cocina. El kiosko y el visor de cliente funcionan en una tablet. Te recomendamos equipos compatibles y los dejamos instalados y configurados."
+          },
+          {
+            "pregunta": "¿Cómo funciona la factura electrónica?",
+            "respuesta": "Al cobrar, la factura se emite y se autoriza ante la DGI en el mismo paso, y el ticket sale con su CUFE y su código QR. Desde el sistema buscas al cliente por su RUC y anulas una factura cuando hace falta. La conexión con el proveedor autorizado la dejamos configurada nosotros."
+          },
+          {
+            "pregunta": "¿Puedo tenerlo en la nube?",
+            "respuesta": "Sí. Lo habitual es que corra en un equipo de tu local, con tus datos en tu poder; si prefieres la nube, también se puede. Tú eliges."
+          },
+          {
+            "pregunta": "¿Cuánto cuesta?",
+            "respuesta": "Se cotiza por proyecto: depende de tu negocio, de cuántas cajas y estaciones tengas y de los módulos que actives. No cobramos comisión por venta. Escríbenos y te armamos la propuesta."
+          }
+        ],
         "hablemos": {
           "titulo": "¿Abres un restaurante o quieres ordenar el que ya tienes?",
           "texto": "Te mostramos HUB POS funcionando con tu menú y tu salón. Cargamos tu catálogo, configuramos tus impresoras y la factura electrónica, y capacitamos a tu equipo."
@@ -4000,11 +4031,10 @@
           },
           {
             "grupo": "Checkout and e-invoicing",
-            "correo": true,
             "imagen": "factura-ticket.webp",
             "tipo": "ticket",
             "ancho": 610,
-            "alto": 1540,
+            "alto": 1728,
             "titulo": "DGI electronic invoice on an 80 mm receipt",
             "texto": "At checkout the invoice is issued and authorized with the DGI and prints on the thermal printer with its CUFE and a QR code the guest can scan. Walk-in customer or business with a tax ID, with company lookup by tax ID.",
             "puntos": [
@@ -4043,7 +4073,6 @@
           },
           {
             "grupo": "Self-service for your guests",
-            "correo": true,
             "imagen": "kiosko-menu.webp",
             "tipo": "tablet",
             "ancho": 2560,
@@ -4086,7 +4115,6 @@
           },
           {
             "grupo": "Running the business",
-            "correo": true,
             "imagen": "aprobaciones-movil.webp",
             "tipo": "movil",
             "ancho": 488,
@@ -4303,6 +4331,32 @@
             }
           ]
         },
+        "preguntas": [
+          {
+            "pregunta": "What happens if the internet goes down?",
+            "respuesta": "You keep selling. HUB POS runs on your local network, so the register, the kitchen, the kiosk and the phones on the floor stay connected to each other. The only thing that needs the internet is e-invoicing: the invoice waits and goes out on its own when the connection comes back, with no risk of it being issued twice."
+          },
+          {
+            "pregunta": "How do I get my menu into the system?",
+            "respuesta": "We load it for you: products, categories and modifiers, and we set up the printer for each station. If your catalog is already in a spreadsheet, it can also be imported from Excel."
+          },
+          {
+            "pregunta": "What equipment do I need?",
+            "respuesta": "A PC or tablet for the register, an 80 mm thermal printer with its cash drawer and, if you would rather not use paper tickets, a monitor or tablet in the kitchen. The kiosk and the customer display run on a tablet. We recommend compatible equipment and leave it installed and configured."
+          },
+          {
+            "pregunta": "How does e-invoicing work?",
+            "respuesta": "At checkout the invoice is issued and authorized with Panama's DGI in the same step, and the receipt prints with its CUFE and QR code. From the system you look up customers by tax ID and void an invoice when needed. We set up the connection with the authorized provider for you."
+          },
+          {
+            "pregunta": "Can I run it in the cloud?",
+            "respuesta": "Yes. It usually runs on a computer at your business, with your data in your hands; if you prefer the cloud, that works too. Your choice."
+          },
+          {
+            "pregunta": "How much does it cost?",
+            "respuesta": "It's quoted per project: it depends on your business, how many registers and stations you have and which modules you turn on. We don't charge a commission per sale. Message us and we'll put the proposal together."
+          }
+        ],
         "hablemos": {
           "titulo": "Opening a restaurant, or want the one you have to run smoother?",
           "texto": "We show you HUB POS running with your menu and your floor. We load your catalog, set up your printers and e-invoicing, and train your team."
@@ -4338,6 +4392,7 @@
       "publicado": false,
       "acento": "#7C3AED",
       "imagenes_base": "https://suitehub.net/images/products/pro/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/pro",
         "en": "https://suitehub.net/en/verticals/pro"
@@ -4446,6 +4501,7 @@
       "publicado": true,
       "acento": "#EA580C",
       "imagenes_base": "https://suitehub.net/images/products/restaurant/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/restaurant",
         "en": "https://suitehub.net/en/verticals/restaurant"
@@ -4763,6 +4819,7 @@
       "publicado": true,
       "acento": "#DB2777",
       "imagenes_base": "https://suitehub.net/images/products/salon/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/salon",
         "en": "https://suitehub.net/en/verticals/salon"
@@ -5335,6 +5392,7 @@
       "publicado": true,
       "acento": "#0F766E",
       "imagenes_base": "https://suitehub.net/images/products/ship/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/ship",
         "en": "https://suitehub.net/en/verticals/ship"
@@ -5881,6 +5939,7 @@
       "publicado": false,
       "acento": "#78350F",
       "imagenes_base": "https://suitehub.net/images/products/supply/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/supply",
         "en": "https://suitehub.net/en/verticals/supply"
@@ -5954,6 +6013,7 @@
       "publicado": true,
       "acento": "#F59E0B",
       "imagenes_base": "https://suitehub.net/images/products/taller/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/taller",
         "en": "https://suitehub.net/en/verticals/taller"
@@ -6755,6 +6815,7 @@
       "publicado": true,
       "acento": "#1E40AF",
       "imagenes_base": "https://suitehub.net/images/products/time/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/time",
         "en": "https://suitehub.net/en/verticals/time"
@@ -6792,7 +6853,6 @@
         "recorrido": [
           {
             "grupo": "El empleado marca",
-            "correo": true,
             "imagen": "marcar.webp",
             "tipo": "movil",
             "ancho": 488,
@@ -6821,7 +6881,6 @@
           },
           {
             "grupo": "La oficina mira",
-            "correo": true,
             "imagen": "semana.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -6977,7 +7036,6 @@
         "recorrido": [
           {
             "grupo": "Clocking in",
-            "correo": true,
             "imagen": "marcar.webp",
             "tipo": "movil",
             "ancho": 488,
@@ -7006,7 +7064,6 @@
           },
           {
             "grupo": "What the office sees",
-            "correo": true,
             "imagen": "semana.webp",
             "tipo": "desktop",
             "ancho": 2852,
@@ -7141,6 +7198,7 @@
       "publicado": false,
       "acento": "#A21CAF",
       "imagenes_base": "https://suitehub.net/images/products/traffic/",
+      "version_imagenes": "",
       "sitio": {
         "es": "https://suitehub.net/verticales/traffic",
         "en": "https://suitehub.net/en/verticals/traffic"
