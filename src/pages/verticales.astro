@@ -40,8 +40,6 @@ const verticales = [
     key:    'market',
     name:   'HUB Market',
     icon:   'fa-cart-shopping',
-    screenshot: '/images/products/market/web-1280.webp',
-    screenshotH: 940,
     sector: 'Minimarkets, abarroterías y supermercados',
     short:  'Para minimarkets, abarroterías y supermercados de barrio.',
     pitch:  'Venta rápida por código de barras y por peso con balanza, inventario con fechas de caducidad, compras y proveedores, caja con arqueo y factura electrónica DGI en el ticket.',
@@ -70,8 +68,6 @@ const verticales = [
     key:    'pet',
     name:   'HUB Pet',
     icon:   'fa-paw',
-    screenshot: '/images/products/pet/web-1280.webp',
-    screenshotH: 994,
     sector: 'Veterinarias y pet shops',
     short:  'Para clínicas veterinarias, peluquerías caninas y pet shops.',
     pitch:  'Cada mascota tiene su ficha médica digital. Los recordatorios de vacunas y desparasitación salen solos, la agenda guarda dueño y mascota juntos y los productos veterinarios se venden con receta.',
@@ -95,8 +91,6 @@ const verticales = [
     key:    'clinic',
     name:   'HUB Clinic',
     icon:   'fa-stethoscope',
-    screenshot: '/images/products/clinic/hub-clinic-dashboard.webp',
-    screenshotH: 940,
     sector: 'Consultorios y clínicas',
     short:  'Para consultorios médicos, odontológicos y clínicas multi-especialidad.',
     pitch:  'Expediente clínico digital, agenda por médico, recetas electrónicas, historial de cada paciente y facturación a las aseguradoras.',
@@ -111,8 +105,6 @@ const verticales = [
     key:    'gym',
     name:   'HUB Gym',
     icon:   'fa-dumbbell',
-    screenshot: '/images/products/gym/dashboard.webp',
-    screenshotH: 1436,
     sector: 'Gimnasios, crossfit y estudios',
     short:  'Para gimnasios, boxes de crossfit, estudios y centros deportivos.',
     pitch:  'La puerta decide sola con la regla del gimnasio, las clases se llenan con lista de espera y la caja se cuadra a ciegas. Y cada mañana tienes la lista de los socios que pagan y ya dejaron de venir.',
@@ -127,8 +119,6 @@ const verticales = [
     key:    'clean',
     name:   'HUB Clean',
     icon:   'fa-soap',
-    screenshot: '/images/products/clean/hub-clean-dashboard.webp',
-    screenshotH: 940,
     sector: 'Lavanderías y lavado de tenis',
     short:  'Para lavanderías de ropa y lavado de tenis, con servicio a domicilio.',
     pitch:  'Una orden puede llevar libras de ropa, piezas sueltas y pares de tenis a la vez, y cada línea va a su ritmo: su servicio, su fecha prometida y su estado. Un solo ticket.',
@@ -143,8 +133,6 @@ const verticales = [
     key:    'inmobiliaria',
     name:   'HUB Inmobiliaria',
     icon:   'fa-building',
-    screenshot: '/images/products/inmobiliaria/hub-inmobiliaria-dashboard.webp',
-    screenshotH: 940,
     sector: 'Bienes raíces',
     short:  'Para corredoras inmobiliarias y desarrolladoras pequeñas.',
     pitch:  'Cartera de propiedades, leads ordenados por etapa, contratos de alquiler con cobro mensual y comisiones por agente.',
@@ -159,8 +147,6 @@ const verticales = [
     key:    'hotel',
     name:   'HUB Hotel',
     icon:   'fa-hotel',
-    screenshot: '/images/products/hotel/web-1200.webp',
-    screenshotH: 922,
     sector: 'Hoteles boutique y hostales',
     short:  'Para hoteles boutique, hostales, glampings y B&B.',
     pitch:  'Calendario de habitaciones, reservas por canal (Booking, Airbnb o directas), check-in y check-out con factura, consumos de minibar y control de limpieza.',
@@ -175,8 +161,6 @@ const verticales = [
     key:    'phone',
     name:   'HUB Phone',
     icon:   'fa-mobile-screen',
-    screenshot: '/images/products/phone/hub-phone-dashboard.webp',
-    screenshotH: 940,
     sector: 'Reparación de celulares',
     short:  'Para tiendas de reparación de celulares, tablets y laptops.',
     pitch:  'Recibes el equipo con su diagnóstico, cotizas según el daño, ligas los repuestos a la orden y entregas garantía digital y ticket con código.',
@@ -191,8 +175,6 @@ const verticales = [
     key:    'ship',
     name:   'HUB Ship',
     icon:   'fa-truck-fast',
-    screenshot: '/images/products/ship/dashboard.webp',
-    screenshotH: 940,
     sector: 'Reparto de paquetería y última milla',
     short:  'Para empresas que entregan paquetería desde un hub hasta el destinatario final.',
     pitch:  'Recibes la carga del contratante contra su manifiesto, escaneas la entrada, despachas por zona y entregas con foto y nombre de quien recibió. Cada paquete lleva su cadena de custodia: cuando algo se pierde, el sistema dice quién lo tenía y desde cuándo.',
@@ -209,8 +191,6 @@ const verticales = [
     key:    'traffic',
     name:   'HUB Traffic',
     icon:   'fa-people-arrows',
-    screenshot: '/images/products/traffic/hub-traffic-dashboard.webp',
-    screenshotH: 940,
     sector: 'Analítica de afluencia y conducta en tienda',
     short:  'Para tiendas, centros comerciales, locales retail y espacios de alto tráfico.',
     pitch:  'Cuenta cuántas personas entran, muestra mapas de calor por zona y cuánto tiempo pasa la gente en cada una, cruza las visitas con las ventas de tu POS, compara horas y días, y te avisa en tiempo real si se supera el aforo.',
@@ -286,75 +266,64 @@ const vista = verticales.map((v: any) => {
     </div>
   </section>
 
-  <!-- Cada vertical en detalle -->
-  <!-- Ficha completa solo de los verticales sin página propia: los que ya la tienen se
-       enlazan desde la rejilla de arriba, y repetirla aquí alargaba esto a ~19.000 px. -->
-  {vista.filter((v) => !v.landing).map((v, i) => (
-    <section id={v.key} class={`section ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
-      <div class="wrap">
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
-          <!-- Header -->
-          <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} width="80" height="80" loading="lazy" decoding="async" class="h-20 w-20 mb-6" />
-            <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold mb-2">{v.sector}</div>
-            <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{v.name}</h2>
-            <p class="text-base text-ink-300 leading-relaxed mb-6">{v.pitch}</p>
-
-            {v.cliente && (
-              <div class="card-glass p-4 mb-6">
-                <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">
-                  <i class="fa-solid fa-circle-check"></i> En producción
-                </div>
-                <div class="text-sm text-ink-200">{v.cliente}</div>
-              </div>
-            )}
-
-            <div class="flex flex-wrap gap-3">
-              {v.landing && (
-                <a href={v.landing} class="btn-primary">
-                  <i class="fa-solid fa-arrow-right"></i>
-                  Ver todo sobre {v.name}
-                </a>
-              )}
-              <a href={`https://wa.me/50766326006?text=Hola%2C%20quiero%20info%20de%20${encodeURIComponent(v.name)}`}
-                 target="_blank" rel="noopener" class={v.landing ? 'btn-secondary' : 'btn-primary'}>
-                <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
-                Pregunta por {v.name}
-              </a>
-            </div>
-          </div>
-
-          <!-- Features grid -->
-          <div class="lg:col-span-7">
-            {v.screenshot && (
-              <figure class="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-glow-sm bg-navy-950">
-                <img src={v.screenshot} alt={`Captura de pantalla de ${v.name}`} width={v.screenshotW ?? 1280} height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
-              </figure>
-            )}
-            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Funciones propias de este vertical</h3>
-            <div class="grid sm:grid-cols-2 gap-3">
-              {(v.features ?? []).map(f => (
-                <div class="card-glass p-5 hover:border-white/15 transition-colors">
-                  <div class="flex items-start gap-3">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-400 bg-white/5 flex-shrink-0">
-                      <i class={`fa-solid ${f.icon}`}></i>
-                    </div>
-                    <div>
-                      <div class="font-display font-semibold text-sm">{f.name}</div>
-                      <div class="text-xs text-ink-400 mt-1 leading-relaxed">{f.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p class="mt-6 text-xs text-ink-500">
-              + Las funciones del núcleo de SuiteHub que incluya la edición que elijas.
-            </p>
-          </div>
-        </div>
+  <!-- Verticales publicados: la captura es la portada de su presentación, o sea la app real.
+       Aquí no se escriben capturas a mano: las que había eran de verticales en desarrollo. -->
+  <section class="section">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="eyebrow">Capturas reales</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mt-3">Míralos <span class="text-gradient">por dentro</span>.</h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">Cada captura sale del sistema funcionando. Entra a la página de cada uno para ver su recorrido completo.</p>
       </div>
-    </section>
-  ))}
+      <div class="grid md:grid-cols-2 gap-6">
+        {vista.filter((v) => v.landing).map((v) => (
+          <a id={v.key} href={v.landing} class="group card-glass overflow-hidden hover:border-brand-500/30 transition-colors scroll-mt-28">
+            <img src={v.screenshot} alt={`Captura real de ${v.name}`} width={v.screenshotW} height={v.screenshotH} loading="lazy" decoding="async"
+                 class="w-full aspect-[16/10] object-cover object-left-top border-b border-white/10 bg-navy-950" />
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <img src={`/images/products/${v.key}/badge.svg`} alt="" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 flex-shrink-0" />
+                <div>
+                  <h3 class="text-lg font-display font-bold">{v.name}</h3>
+                  <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold">{v.sector}</div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-ink-300 leading-relaxed">{v.short}</p>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:text-brand-300">
+                Ver todo sobre {v.name} <i class="fa-solid fa-arrow-right text-xs"></i>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Los demás: sin captura hasta que su presentación se publique con pantallas reales. -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <h2 class="text-2xl font-display font-bold mb-2">Más verticales</h2>
+      <p class="text-sm text-ink-400 mb-8">Estos todavía no tienen su página con recorrido. Escríbenos y te mostramos cómo funcionan.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {vista.filter((v) => !v.landing).map((v) => (
+          <div id={v.key} class="card-glass p-6 flex flex-col scroll-mt-28">
+            <div class="flex items-center gap-3">
+              <img src={`/images/products/${v.key}/badge.svg`} alt="" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 flex-shrink-0" />
+              <div>
+                <h3 class="text-base font-display font-bold">{v.name}</h3>
+                <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold">{v.sector}</div>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-ink-300 leading-relaxed flex-1">{v.pitch}</p>
+            <a href={`https://wa.me/50766326006?text=Hola%2C%20quiero%20info%20de%20${encodeURIComponent(v.name)}`} target="_blank" rel="noopener"
+               class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
+              <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pregunta por {v.name}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="section">

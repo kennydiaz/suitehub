@@ -40,8 +40,6 @@ const verticals = [
     key:    'market',
     name:   'HUB Market',
     icon:   'fa-cart-shopping',
-    screenshot: '/images/products/market/web-1280.webp',
-    screenshotH: 940,
     sector: 'Minimarkets, grocery stores and supermarkets',
     short:  'For minimarkets, corner groceries and neighborhood supermarkets.',
     pitch:  'Fast barcode checkout and scale-based sales by weight, inventory with expiration dates, purchasing and suppliers, cash drawer with reconciliation and DGI electronic invoice on the receipt.',
@@ -70,8 +68,6 @@ const verticals = [
     key:    'pet',
     name:   'HUB Pet',
     icon:   'fa-paw',
-    screenshot: '/images/products/pet/web-1280.webp',
-    screenshotH: 994,
     sector: 'Veterinarians and pet shops',
     short:  'For vet clinics, dog grooming and pet shops.',
     pitch:  'Every pet gets a digital medical record. Vaccine and deworming reminders go out automatically, appointments keep owner and pet together, and vet products are sold with a prescription.',
@@ -95,8 +91,6 @@ const verticals = [
     key:    'clinic',
     name:   'HUB Clinic',
     icon:   'fa-stethoscope',
-    screenshot: '/images/products/clinic/hub-clinic-dashboard.webp',
-    screenshotH: 940,
     sector: 'Practices and clinics',
     short:  'For medical and dental practices and multi-specialty clinics.',
     pitch:  'Digital patient charts, a schedule for each doctor, e-prescriptions, patient history and insurance billing.',
@@ -111,8 +105,6 @@ const verticals = [
     key:    'gym',
     name:   'HUB Gym',
     icon:   'fa-dumbbell',
-    screenshot: '/images/products/gym/dashboard.webp',
-    screenshotH: 1436,
     sector: 'Gyms, crossfit and studios',
     short:  'For gyms, crossfit boxes, studios and sports centers.',
     pitch:  'The door decides on its own with the gym’s own rule, classes fill up with a waiting list and the drawer is counted blind. And every morning you get the list of members who pay and have stopped coming.',
@@ -127,8 +119,6 @@ const verticals = [
     key:    'clean',
     name:   'HUB Clean',
     icon:   'fa-soap',
-    screenshot: '/images/products/clean/hub-clean-dashboard.webp',
-    screenshotH: 940,
     sector: 'Laundries and sneaker cleaning',
     short:  'For laundries and sneaker cleaning, with pickup and delivery.',
     pitch:  'One order can carry pounds of laundry, single items and pairs of sneakers at once, and each line moves at its own pace: its service, its promised date and its status. One ticket.',
@@ -143,8 +133,6 @@ const verticals = [
     key:    'inmobiliaria',
     name:   'HUB Real Estate',
     icon:   'fa-building',
-    screenshot: '/images/products/inmobiliaria/hub-inmobiliaria-dashboard.webp',
-    screenshotH: 940,
     sector: 'Real estate',
     short:  'For real estate agencies and small developers.',
     pitch:  'Property listings, leads sorted by pipeline stage, rental contracts with monthly billing and commissions for each agent.',
@@ -159,8 +147,6 @@ const verticals = [
     key:    'hotel',
     name:   'HUB Hotel',
     icon:   'fa-hotel',
-    screenshot: '/images/products/hotel/web-1200.webp',
-    screenshotH: 922,
     sector: 'Boutique hotels and hostels',
     short:  'For boutique hotels, hostels, glampings and B&Bs.',
     pitch:  'Room calendar, bookings by channel (Booking, Airbnb or direct), check-in and check-out with an invoice, minibar charges and housekeeping.',
@@ -175,8 +161,6 @@ const verticals = [
     key:    'phone',
     name:   'HUB Phone',
     icon:   'fa-mobile-screen',
-    screenshot: '/images/products/phone/hub-phone-dashboard.webp',
-    screenshotH: 940,
     sector: 'Phone repair shops',
     short:  'For phone, tablet and laptop repair shops.',
     pitch:  'Check in each device with a diagnosis, quote based on the damage, link parts to the order, and hand over a digital warranty and a ticket with a code.',
@@ -191,8 +175,6 @@ const verticals = [
     key:    'ship',
     name:   'HUB Ship',
     icon:   'fa-truck-fast',
-    screenshot: '/images/products/ship/dashboard.webp',
-    screenshotH: 940,
     sector: 'Parcel delivery and last mile',
     short:  'For companies delivering parcels from a hub to the final recipient.',
     pitch:  'Receive the client load against their manifest, scan it in, dispatch by zone and deliver with a photo and the name of whoever signed. Every parcel carries its chain of custody: when something goes missing, the system says who had it and since when.',
@@ -209,8 +191,6 @@ const verticals = [
     key:    'traffic',
     name:   'HUB Traffic',
     icon:   'fa-people-arrows',
-    screenshot: '/images/products/traffic/hub-traffic-dashboard.webp',
-    screenshotH: 940,
     sector: 'Footfall analytics and shopper behavior',
     short:  'For retail stores, malls, brick-and-mortar locations and high-traffic venues.',
     pitch:  'Counts the people who walk in, shows heatmaps by zone and how long people stay in each one, matches visits with sales from your POS, compares hours and days, and alerts you in real time when you hit capacity.',
@@ -286,73 +266,64 @@ const vista = verticals.map((v: any) => {
     </div>
   </section>
 
-  <!-- Each vertical in detail -->
-  <!-- Full entry only for verticals without their own page: the ones that have one are
-       linked from the grid above, and repeating them here stretched this to ~19,000 px. -->
-  {vista.filter((v) => !v.landing).map((v, i) => (
-    <section id={v.key} class={`section ${i % 2 === 1 ? 'bg-navy-900/30' : ''}`}>
-      <div class="wrap">
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
-          <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            <img src={`/images/products/${v.key}/badge.svg`} alt={v.name} width="80" height="80" loading="lazy" decoding="async" class="h-20 w-20 mb-6" />
-            <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold mb-2">{v.sector}</div>
-            <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">{v.name}</h2>
-            <p class="text-base text-ink-300 leading-relaxed mb-6">{v.pitch}</p>
-
-            {v.client && (
-              <div class="card-glass p-4 mb-6">
-                <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">
-                  <i class="fa-solid fa-circle-check"></i> In production
-                </div>
-                <div class="text-sm text-ink-200">{v.client}</div>
-              </div>
-            )}
-
-            <div class="flex flex-wrap gap-3">
-              {v.landing && (
-                <a href={v.landing} class="btn-primary">
-                  <i class="fa-solid fa-arrow-right"></i>
-                  Learn more about {v.name}
-                </a>
-              )}
-              <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(v.name)}`}
-                 target="_blank" rel="noopener" class={v.landing ? 'btn-secondary' : 'btn-primary'}>
-                <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
-                Ask about {v.name}
-              </a>
-            </div>
-          </div>
-
-          <div class="lg:col-span-7">
-            {v.screenshot && (
-              <figure class="mb-8 rounded-xl overflow-hidden border border-white/10 shadow-glow-sm bg-navy-950">
-                <img src={v.screenshot} alt={`${v.name} screenshot`} width={v.screenshotW ?? 1280} height={v.screenshotH} loading="lazy" decoding="async" class="w-full h-auto" />
-              </figure>
-            )}
-            <h3 class="text-xs uppercase tracking-[0.2em] text-brand-400 font-semibold mb-5">Features for this vertical</h3>
-            <div class="grid sm:grid-cols-2 gap-3">
-              {(v.features ?? []).map(f => (
-                <div class="card-glass p-5 hover:border-white/15 transition-colors">
-                  <div class="flex items-start gap-3">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-400 bg-white/5 flex-shrink-0">
-                      <i class={`fa-solid ${f.icon}`}></i>
-                    </div>
-                    <div>
-                      <div class="font-display font-semibold text-sm">{f.name}</div>
-                      <div class="text-xs text-ink-400 mt-1 leading-relaxed">{f.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p class="mt-6 text-xs text-ink-500">
-              + The SuiteHub core features included in the edition you choose.
-            </p>
-          </div>
-        </div>
+  <!-- Verticales publicados: la captura es la portada de su presentación, o sea la app real.
+       Aquí no se escriben capturas a mano: las que había eran de verticales en desarrollo. -->
+  <section class="section">
+    <div class="wrap">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="eyebrow">Real screenshots</span>
+        <h2 class="text-3xl lg:text-4xl font-display font-bold mt-3">See them <span class="text-gradient">from the inside</span>.</h2>
+        <p class="mt-5 text-ink-300 leading-relaxed">Every screenshot comes from the running system. Open each page for the full walkthrough.</p>
       </div>
-    </section>
-  ))}
+      <div class="grid md:grid-cols-2 gap-6">
+        {vista.filter((v) => v.landing).map((v) => (
+          <a id={v.key} href={v.landing} class="group card-glass overflow-hidden hover:border-brand-500/30 transition-colors scroll-mt-28">
+            <img src={v.screenshot} alt={`Real screenshot of ${v.name}`} width={v.screenshotW} height={v.screenshotH} loading="lazy" decoding="async"
+                 class="w-full aspect-[16/10] object-cover object-left-top border-b border-white/10 bg-navy-950" />
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <img src={`/images/products/${v.key}/badge.svg`} alt="" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 flex-shrink-0" />
+                <div>
+                  <h3 class="text-lg font-display font-bold">{v.name}</h3>
+                  <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold">{v.sector}</div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-ink-300 leading-relaxed">{v.short}</p>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:text-brand-300">
+                See everything about {v.name} <i class="fa-solid fa-arrow-right text-xs"></i>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Los demás: sin captura hasta que su presentación se publique con pantallas reales. -->
+  <section class="section bg-navy-900/30">
+    <div class="wrap">
+      <h2 class="text-2xl font-display font-bold mb-2">More verticals</h2>
+      <p class="text-sm text-ink-400 mb-8">These do not have a walkthrough page yet. Message us and we will show you how they work.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {vista.filter((v) => !v.landing).map((v) => (
+          <div id={v.key} class="card-glass p-6 flex flex-col scroll-mt-28">
+            <div class="flex items-center gap-3">
+              <img src={`/images/products/${v.key}/badge.svg`} alt="" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 flex-shrink-0" />
+              <div>
+                <h3 class="text-base font-display font-bold">{v.name}</h3>
+                <div class="text-xs uppercase tracking-wider text-brand-400 font-semibold">{v.sector}</div>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-ink-300 leading-relaxed flex-1">{v.pitch}</p>
+            <a href={`https://wa.me/50766326006?text=Hello%2C%20I%27d%20like%20info%20about%20${encodeURIComponent(v.name)}`} target="_blank" rel="noopener"
+               class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
+              <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Ask about {v.name}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="section">
