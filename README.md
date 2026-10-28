@@ -131,7 +131,7 @@ npm run preview   # Sirve dist/ localmente
 
 ## PACs integrados
 
-> Fuente canónica de las integraciones: `C:\prooq\_pacs-reference` (fuera de todo repo git y del web root).
+> Fuente canónica de las integraciones: `C:\kenny\prooq-sa\integraciones\pacs` (fuera de todo repo git y del web root).
 > Ahí viven READMEs, `notas.md` con quirks de producción y el código real de cada PAC. Leer antes de tocar copy de FE.
 
 **Panamá — DGI (5 conexiones contratables):**
